@@ -1,0 +1,7 @@
+
+---
+int32 status   # 状态码
+string[] devicelist  # 设备列表
+string message # 消息
+
+

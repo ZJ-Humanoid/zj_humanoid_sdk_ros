@@ -1,0 +1,8 @@
+uplimb_msgs/Joints[] path         # 关节角路径,
+float64 time                    # 运行总时间,当指定总时间时 忽略时间戳参数
+float64[] timestamp             # 每一个关节角路径对应的时间戳
+# float64[] t                     
+bool async                      # 是否同步运行
+---
+bool ret
+string msg

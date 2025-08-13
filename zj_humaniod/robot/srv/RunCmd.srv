@@ -1,0 +1,5 @@
+string session_name
+string[] cmd_list
+string success_flag
+---
+bool success

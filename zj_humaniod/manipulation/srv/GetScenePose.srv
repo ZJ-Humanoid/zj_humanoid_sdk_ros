@@ -1,0 +1,5 @@
+int16 scene_id
+---
+string which_scene
+bool[] success
+geometry_msgs/Pose[] scene_poses

@@ -1,0 +1,5 @@
+string name     # WiFi名称
+string password # WiFi密码
+---
+bool success    # 是否成功
+string message  # 返回消息（如成功或失败的原因）

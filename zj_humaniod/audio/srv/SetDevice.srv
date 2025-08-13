@@ -1,0 +1,4 @@
+string name      # 设备名称
+---
+int32 status     # 状态码
+

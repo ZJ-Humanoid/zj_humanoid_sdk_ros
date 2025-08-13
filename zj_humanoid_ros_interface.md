@@ -1,0 +1,793 @@
+# /zj_humanoid
+## /robot
+- /robot_state
+  - decription
+    - 小脑状态机值发布
+  - type
+    - Topic/Publish
+  - msg
+    - robot_state.msg
+  - hz
+    - 1
+  - demos
+    - robot_state_get_set.cpp
+- /set_robot_state
+  - decription
+    - 小脑状态重设置
+  - type
+    - Service
+  - srv
+    - set_robot_state.srv
+  - demos
+    - robot_state_get_set.cpp
+- /battery_info
+  - description
+    - 电池信息
+  - type
+    - Topic/Publish
+  - msg
+    - Robot_BatteryInfo.msg
+  - hz
+    - 1
+- /orin_states
+  - /errors
+    - description
+      - 大脑orin错误汇总
+    - type
+      - Topic/Publish
+    - msg
+      - over_temp,over_cpu,over_mem,over_disk
+    - hz
+      - 1
+  - /resource
+    - description
+      - 大脑orin资源统计
+    - type
+      - Topic/Publish
+    - msg
+      - cpu,temperature,memory,disk
+    - hz
+      - 1
+  - /connect_wifi
+    - description
+      - 连接wifi热点
+    - type
+      - Service
+    - srv
+      - Robot_ConnectWifi.srv
+    - demos
+      - connect_wifi_orin.py
+- /pico_states
+  - /errors
+    - description
+      - 小脑pico错误汇总
+    - type
+      - Topic/Publish
+    - msg
+      - over_temp,over_cpu,over_mem,over_disk
+    - hz
+      - 1
+  - /resource
+    - description
+      - 小脑pico资源统计
+    - type
+      - Topic/Publish
+    - msg
+      - cpu,temperature,memory,disk
+  - /connect_wifi
+    - description
+      - 连接wifi热点
+    - type
+      - Service
+    - srv
+      - Robot_ConnectWifi.srv
+    - demos
+      - connect_wifi_pico.py
+- /joint_motor
+  - /errors
+    - description
+      - 关节电机错误信息
+    - type
+      - Topic/Publish
+    - msg
+      - sensor_msgs/JointState
+    - hz
+      - 1
+  - /temperatures
+    - description
+      - 关节电机温度信息
+    - type
+      - Topic/Publish
+    - msg
+      - sensor_msgs/JointState
+    - hz
+      - 1
+  - /set_zero
+    - description
+      - 电机自动标零服务
+  - /values
+    - description
+      - 关节电机实时参数
+  - type
+    - Topic/Publish
+  - msg
+    - motor_values.msg
+  - hz
+    - 20
+- /basic_info
+  - description
+    - 机器人基础信息
+  - type
+    - Service
+  - srv
+    - Robot_BasicInfo.srv
+  - demos
+    - get_robot_basic_info.py
+- /robot_workstatus
+  - description
+    - 机器人工作状态发布
+  - type
+    - Topic/Publish
+  - msg
+    - Robot_WorkStatus.msg
+  - hz
+    - 1
+- /face_srceen
+  - description
+    - 机器人脸部屏幕显示
+  - type
+    - Service
+  - srv
+    - Robot_FaceSrceen.srv
+  - demos
+    - Robot_VideoPlay.py
+## /uplimb
+- /versions
+  - decription
+    - 上肢模块版本号信息
+  - type
+    - Service
+  - srv
+    - software_version, hardware_verion
+  - demos
+- /joint_states
+  - description
+    - 机器人上肢关节状态值发布
+  - type
+    - Topic/Publish
+  - msg
+    - sensor_msgs/JointState
+  - hz
+    - 100
+- /cmd_states
+  - description
+    - 上肢当前运行模式
+  - type
+    - Topic/Publish
+  - msg
+    - uplimb_msgs/CmdState.msg
+  - hz
+    - 100
+- /tcp_pose
+  - left_arm
+    - description
+      - 左手臂末端位姿
+    - type
+      - Topic/Publish
+    - msg
+      - geometry_msgs/Pose
+    - hz
+      - 100
+  - right_arm
+    - description
+      - 右手臂末端位姿
+    - type
+      - Topic/Publish
+    - msg
+      - uplimb_msgs/Pose.msg
+    - hz
+      - 100
+- /tcp_speed
+  - description
+    - 左右手臂末端速度
+  - type
+    - Topic/Publish
+  - msg
+    - uplimb_msgs/TcpSpeed.msg
+  - hz
+    - 100
+- /speedj
+  - /left_arm
+    - description
+      - 左手单臂速度控制
+    - type
+      - Topic/Subscribe
+    - msg
+      - uplimb_msgs/TcpSpeed.msg
+    - hz
+      - 100
+  - /right_arm
+  - /neck
+  - /waist
+  - /lift
+  - /whole_body
+  - /enable_speedj
+- /speedl
+  - /left_arm
+  - /right_arm
+  - /dual_arm
+  - /enable_speedl
+- /servoj
+  - /left_arm
+  - /right_arm
+  - /whole_body
+  - /set_params
+- /servol
+  - /left_arm
+  - /right_arm
+  - /dual_arm
+  - /set_params
+- /movej
+  - /left_arm
+  - /right_arm
+  - /neck
+  - /waist
+  - /lift
+  - /whole_body
+- /movej_by_pose
+  - /left_arm
+  - /right_arm
+  - /dual_arm
+- /movej_by_path
+  - /left_arm
+  - /right_arm
+  - /dual_arm
+  - /whole_body
+- /movel
+  - /left_arm
+  - /right_arm
+  - /dual_arm
+- /movel_by_path
+  - /left_arm
+  - /right_arm
+  - /dual_arm
+- /go_home
+  - /left_arm
+  - /right_arm
+  - /dual_arm
+  - /whole_body
+- /teach_mode
+- /stop_moving
+- /IK
+  - /left_arm
+  - /right_arm
+- /FK
+  - /left_arm
+  - /right_arm
+## /hand
+- /hand_joint_states
+  - description
+    - 手部关节状态
+  - type
+    - Topic/Publish
+  - msg
+    - sensor_msgs/JointState
+  - hz
+    - 100
+- /wrist_force_6d
+  - /left_hand
+    - description
+      - 右手腕部6维力传感器值
+    - type
+      - Topic/Publish
+    - msg
+      - geometry_msgs/WrenchStamped
+    - hz
+      - 100
+  - /right_hand
+    - description
+      - 左手腕部6维力传感器值
+    - type
+      - Topic/Publish
+    - msg
+      - geometry_msgs/WrenchStamped
+    - hz
+      - 100
+- /finger_pressures
+  - description
+    - 手指压力传感器状态值
+  - type
+    - Topic/Publish
+  - msg
+    - sensor_msgs/JointState
+  - hz
+    - 100
+- /gesture_switch
+  - /left_hand
+    - description
+      - 左手掌手势控制
+    - type
+      - Service
+    - srv
+    - demos
+  - /right_hand
+    - description
+      - 右手掌手势控制
+    - type
+      - Service
+    - srv
+    - demos
+- /task_switch
+  - /left_hand
+    - description
+      - 左手掌任务控制
+    - type
+      - Service
+    - srv
+    - demos
+  - /right_hand
+    - description
+      - 右手掌手势控制
+    - type
+      - Service
+    - srv
+    - demos
+- /joint_switch
+  - /left_hand
+    - description
+      - 左手掌关节控制
+    - type
+      - Service
+    - srv
+    - demos
+  - /right_hand
+    - description
+      - 左手掌关节控制
+    - type
+      - Service
+    - srv
+    - demos
+- /versions
+  - decription
+    - 灵巧手版本号信息
+  - type
+    - Service
+  - srv
+    - software_version, hardware_verion
+  - demos
+## /downlimb
+- /cmd_vel
+  - /joy
+    - description
+      - 游戏手柄控制行走
+    - type
+      - Topic/Subscribe
+    - msg
+      - geometry_msgs/Twist
+    - hz
+      - 10
+  - /web
+    - description
+      - 网络控制行走
+    - type
+      - Topic/Subscribe
+    - msg
+      - geometry_msgs/Twist
+    - hz
+      - 10
+  - /calib
+    - description
+      - 导航算法控制行走
+    - type
+      - Topic/Subscribe
+    - msg
+      - geometry_msgs/Twist
+    - hz
+      - 10
+- /set_stand
+  - decription
+    - 站立姿态
+  - type
+    - Topic/Subscribe
+- /set_lie
+  - decription
+    - 下肢泄力
+  - type
+    - Topic/Subscribe
+- /start_move
+  - decription
+    - 开启运动模式
+  - type
+    - Topic/Subscribe
+- /uplimb_occupation
+  - decription
+    - 上肢控制请求
+  - type
+    - Service
+- /versions
+  - decription
+    - 上肢模块版本号信息
+  - type
+    - Service
+  - srv
+    - software_version, hardware_verion
+  - demos
+- /sacrum_imu
+  - description
+    - 腰部imu值
+  - type
+    - Topic/Publish
+  - msg
+    - sensor_msgs/JointState
+  - hz
+    - 100
+## /sensor
+- /CAM_A
+  - /camera_info
+    - decription
+      - 相机A的参数信息
+    - type
+      - Service
+    - srv
+      - Robot_CameraInfo.srv
+    - demos
+  - /image_raw
+    - description
+      - 相机A的RGB图像源数据
+    - type
+      - Topic/Publish
+    - msg
+      - sensor_msgs/Image
+    - hz
+      - 16
+  - /compressed
+    - description
+      - 相机A的RGB图像源数据
+    - type
+      - Topic/Publish
+    - msg
+      - sensor_msgs/CompressedImage
+    - hz
+      - 16
+- /CAM_B
+  - /camera_info
+    - decription
+      - 相机B的参数信息
+    - type
+      - Service
+    - srv
+      - Robot_CameraInfo.srv
+    - demos
+  - /image_raw
+    - description
+      - 相机B的RGB图像源数据
+    - type
+      - Topic/Publish
+    - msg
+      - sensor_msgs/Image
+    - hz
+      - 16
+  - /compressed
+    - description
+      - 相机B的RGB图像源数据
+    - type
+      - Topic/Publish
+    - msg
+      - sensor_msgs/CompressedImage
+    - hz
+      - 16
+- /CAM_C
+  - /camera_info
+    - decription
+      - 相机C的参数信息
+    - type
+      - Service
+    - srv
+      - Robot_CameraInfo.srv
+    - demos
+  - /image_raw
+    - description
+      - 相机C的RGB图像源数据
+    - type
+      - Topic/Publish
+    - msg
+      - sensor_msgs/Image
+    - hz
+      - 16
+  - /compressed
+    - description
+      - 相机C的RGB图像源数据
+    - type
+      - Topic/Publish
+    - msg
+      - sensor_msgs/CompressedImage
+    - hz
+      - 16
+- /CAM_D
+  - /camera_info
+    - decription
+      - 相机D的参数信息
+    - type
+      - Service
+    - srv
+      - Robot_CameraInfo.srv
+    - demos
+  - /image_raw
+    - description
+      - 相机D的RGB图像源数据
+    - type
+      - Topic/Publish
+    - msg
+      - sensor_msgs/Image
+    - hz
+      - 16
+  - /compressed
+    - description
+      - 相机D的RGB图像JPG格式
+    - type
+      - Topic/Publish
+    - msg
+      - sensor_msgs/CompressedImage
+    - hz
+      - 16
+- /head_imu
+  - description
+    - 头部相机的IMU数据
+  - type
+    - Topic/Publish
+  - msg
+    - sensor_msgs/Imu
+  - hz
+    - 16
+- /realsense_up
+  - /aligned_depth_to_color
+    - description
+      - 和RGB对齐后的深度图
+    - /camera_info
+      - decription
+        - 胸部深度相机的参数信息
+      - type
+        - Topic/Publish
+      - msg
+        - sensor_msgs/CameraInfo
+      - hz
+        - 30
+    - /image_raw
+      - description
+        - 胸部深度相机的RGB图像源数据
+      - type
+        - Topic/Publish
+      - msg
+        - sensor_msgs/Image
+      - hz
+        - 30
+    - /image_raw
+      - /compressed
+        - description
+          - 胸部深度相机的RGB图像JPG格式
+        - type
+          - Topic/Publish
+        - msg
+          - sensor_msgs/Image
+        - hz
+          - 30
+  - /color
+    - description
+      - 深度相机RGB图
+    - /camera_info
+      - decription
+        - 胸部深度相机的参数信息
+      - type
+        - Topic/Publish
+      - msg
+        - sensor_msgs/CameraInfo
+      - hz
+        - 30
+    - /image_raw
+      - description
+        - 胸部深度相机的RGB图像源数据
+      - type
+        - Topic/Publish
+      - msg
+        - sensor_msgs/Image
+      - hz
+        - 30
+    - /image_raw
+      - /compressed
+        - description
+          - 胸部深度相机的RGB图像JPG格式
+        - type
+          - Topic/Publish
+        - msg
+          - sensor_msgs/Image
+        - hz
+          - 30
+  - /depth
+    - 名称：深度图
+    - /camera_info
+      - decription
+        - 胸部深度相机的参数信息
+      - type
+        - Topic/Publish
+      - msg
+        - sensor_msgs/CameraInfo
+      - hz
+        - 30
+    - /image_raw
+      - description
+        - 胸部深度相机的RGB图像源数据
+      - type
+        - Topic/Publish
+      - msg
+        - sensor_msgs/Image
+      - hz
+        - 30
+    - /image_raw
+      - /compressed
+        - description
+          - 胸部深度相机的RGB图像JPG格式
+        - type
+          - Topic/Publish
+        - msg
+          - sensor_msgs/Image
+        - hz
+          - 30
+- /realsense_down
+  - /aligned_depth_to_color
+    - description
+      - 和RGB对齐后的深度图
+    - /camera_info
+      - decription
+        - 胸部深度相机的参数信息
+      - type
+        - Topic/Publish
+      - msg
+        - sensor_msgs/CameraInfo
+      - hz
+        - 30
+    - /image_raw
+      - description
+        - 胸部深度相机的RGB图像源数据
+      - type
+        - Topic/Publish
+      - msg
+        - sensor_msgs/Image
+      - hz
+        - 30
+    - /image_raw
+      - /compressed
+        - description
+          - 胸部深度相机的RGB图像JPG格式
+        - type
+          - Topic/Publish
+        - msg
+          - sensor_msgs/Image
+        - hz
+          - 30
+  - /color
+    - description
+      - 深度相机RGB图
+    - /camera_info
+      - decription
+        - 胸部深度相机的参数信息
+      - type
+        - Topic/Publish
+      - msg
+        - sensor_msgs/CameraInfo
+      - hz
+        - 30
+    - /image_raw
+      - description
+        - 胸部深度相机的RGB图像源数据
+      - type
+        - Topic/Publish
+      - msg
+        - sensor_msgs/Image
+      - hz
+        - 30
+    - /image_raw
+      - /compressed
+        - description
+          - 胸部深度相机的RGB图像JPG格式
+        - type
+          - Topic/Publish
+        - msg
+          - sensor_msgs/Image
+        - hz
+          - 30
+  - /depth
+    - 名称：深度图
+    - /camera_info
+      - decription
+        - 胸部深度相机的参数信息
+      - type
+        - Topic/Publish
+      - msg
+        - sensor_msgs/CameraInfo
+      - hz
+        - 30
+    - /image_raw
+      - description
+        - 胸部深度相机的RGB图像源数据
+      - type
+        - Topic/Publish
+      - msg
+        - sensor_msgs/Image
+      - hz
+        - 30
+    - /image_raw
+      - /compressed
+        - description
+          - 胸部深度相机的RGB图像JPG格式
+        - type
+          - Topic/Publish
+        - msg
+          - sensor_msgs/Image
+        - hz
+          - 30
+## /audio
+- /microphone
+  - /get_devices_list
+    - 名称：获取设备列表
+  - /select_device
+    - 名称：选择设备
+  - /set_record
+    - 名称：录音设置
+    - srv: record_button
+  - /audio_date
+    - 名称：音频数据流
+    - msg:
+- /speaker
+  - /get_devices_list
+  - /select_device
+  - /get_volume
+  - /set_volume
+- /listen
+  - 名称：倾听服务
+- /awake_state
+  - 名称：唤醒状态发布
+- /asr_text
+  - 名称：语音转文字服务
+- /tts_service
+  - 名称：文字转语音服务
+- /media_play
+  - 名称：音频文件播放
+- /LLM_chat
+  - 名称：智能对话服务
+## /navigation
+- /odom_info
+  - 名称：定位消息
+- /local_map
+  - 名称：局部障碍物
+- /task_info
+  - 名称：任务信息
+- /navigation_status
+  - 名称：规划调试信息
+## /manipulate
+- /get_scene_pose
+  - description
+    - 场景更新服务
+  - type
+    - Service
+- /joint_space_trajectory_planner
+  - description
+    - 关节空间轨迹规划服务
+  - type
+    - Service
+- /pose_estimation_service
+  - description
+    - 获取目标物体位姿
+  - type
+    - Service
+- /tcp_space_trajectory_planner
+  - 名称：末端空间轨迹规划服务
+- /instance_segmentation_service
+  - description
+    - 实例分割服务
+  - type
+    - Service
+- /grasp_teach_service
+  - description
+    - 视觉抓取示教服务
+  - type
+    - Service

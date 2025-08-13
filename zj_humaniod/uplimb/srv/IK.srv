@@ -1,0 +1,8 @@
+geometry_msgs/Pose pose         # tcp的位姿
+float64 q7                      # 第七关节角
+---
+bool ret                          # 是否有解
+int32 nums                        # 解的数量
+uplimb_msgs/Joints[] joints         # 关节角
+float64[] phi                     # 臂角,索引与逆解后的关节角对应
+

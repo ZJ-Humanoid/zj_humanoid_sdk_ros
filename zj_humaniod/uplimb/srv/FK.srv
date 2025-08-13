@@ -1,0 +1,3 @@
+float32[7] joints               # 关节角
+---
+geometry_msgs/Pose pose         # tcp的位姿

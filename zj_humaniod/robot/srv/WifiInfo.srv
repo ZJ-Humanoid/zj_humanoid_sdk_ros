@@ -1,0 +1,4 @@
+---
+bool success    # 是否成功
+string message  # 返回消息（如成功或失败的原因）
+string[] wifi_name  # WiFi名列表

@@ -1,0 +1,4 @@
+int32 target_state  # STATE_ROBOT_NULL = 0 , STATE_ROBOT_CONFIG = 1,STATE_ROBOT_ON = 2,START = 3,INIT = 4,RUN = 5,HALT = 6,STOP = 7,OFF = 8,ERR = 9
+---
+bool success        # indicate successful run of triggered service
+string message      # state_info  "STATE_ROBOT_RUN" or "STATE_ROBOT_STOP" ...

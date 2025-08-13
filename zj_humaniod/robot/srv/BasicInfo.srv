@@ -1,0 +1,7 @@
+---
+bool success             # 是否成功
+string message           # 返回消息（如成功或失败的原因）
+string robot_version     # 机器人版本
+string hardware_version  # 硬件版本
+string software_version  # 软件版本
+string ip_addr           # IP地址

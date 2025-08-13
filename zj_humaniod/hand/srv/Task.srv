@@ -1,0 +1,7 @@
+string leftHand_mode      # Grasp,  Drill,  Pinch, PinchEgg
+string leftHand_action    # Home,   Open,   Close
+string rightHand_mode     # Grasp,  Drill,  Pinch, PinchEgg
+string rightHand_action   # Home,   Open,   Close
+---
+bool success   # indicate successful run of triggered service
+string message # informational

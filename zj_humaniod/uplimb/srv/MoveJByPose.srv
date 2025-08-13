@@ -1,0 +1,13 @@
+geometry_msgs/Pose[2] pose                # 对应的关节
+float32[2] q7                   # 第七关节角度
+float32 v                        # 最大速度
+float32 acc                      # 最大加速度
+bool async              # 执行方式 true:立即返回,并且可以被打断;false:阻塞执行,等待执行完成后返回.
+---
+bool ret                # 执行结果,该结果只反映命令的调用结果,并不能代表动作是否执行到位   
+string msg                       # 提示信息
+
+
+
+# TODO
+# 添加说明

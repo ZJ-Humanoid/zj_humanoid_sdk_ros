@@ -1,0 +1,4 @@
+string file_path # 文件路径
+---
+int32 status     # 状态码
+string message   # 其他消息
