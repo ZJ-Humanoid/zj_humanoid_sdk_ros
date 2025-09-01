@@ -20,6 +20,17 @@
 └── README.md
 ```
 
+## .run Supported Sub-package
+```mermaid
+graph TD
+  A[zj_humanoid] --> B[upperlimb]
+  A --> C[lowerlimb]
+  A --> D[lowerlimb]
+  A --> E[navigation]
+  A --> F[manipulation]
+  A --> G[sensor]
+  A --> H[audio]
+```
 
 
 
