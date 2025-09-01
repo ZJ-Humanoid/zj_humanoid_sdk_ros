@@ -20,22 +20,16 @@
 └── README.md
 ```
 
-## Supported sub-items
+## .run Supported Sub-package
 ```mermaid
-  root((我的项目))
-    🚀 使用
-      安装
-      运行
-    🧩 架构
-      后端
-        接口
-        数据库
-      前端
-        组件
-        路由
-    📌 计划
-      v1.0
-      v1.1
+graph TD
+  A[zj_humanoid] --> B[upperlimb]
+  A --> C[lowerlimb]
+  A --> D[lowerlimb]
+  A --> E[navigation]
+  A --> F[manipulation]
+  A --> G[sensor]
+  A --> H[audio]
 ```
 
 
