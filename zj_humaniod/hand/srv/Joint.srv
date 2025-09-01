@@ -1,5 +1,0 @@
-int8 id        # 0 = left_hand ; 1 = right_hand
-float32[] q    # 关节数组;0,1 拇指两个关节; 2 食指关节; 3 中指关节; 4 无名指关节; 5 小指关节
----
-bool success   # indicate successful run of triggered service
-string message # informational

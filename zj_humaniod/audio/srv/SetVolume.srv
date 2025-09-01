@@ -1,4 +1,0 @@
-int32 volume   # 音量
----
-int32 status   # 状态码
-string message # 其他消息

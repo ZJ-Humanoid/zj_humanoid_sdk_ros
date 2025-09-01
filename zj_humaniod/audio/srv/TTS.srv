@@ -1,5 +1,0 @@
-string[] text # 文本
-bool isPlay  # 是否播放
----
-int32 status # 状态码
-string file_path # 文件路径

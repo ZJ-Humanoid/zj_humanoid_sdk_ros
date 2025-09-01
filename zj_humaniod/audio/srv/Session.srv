@@ -1,7 +1,0 @@
-string raw_input          # 原始输入文本
-bool   enable_context     # 启用上下文理解
-bool   enable_save        # 是否记录
-string context_id         # 会话上下文ID
----
-int32 status     #标准接口状态
-string response #文本生成结果
