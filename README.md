@@ -22,7 +22,6 @@
 
 ## Supported sub-items
 ```mermaid
-mindmap
   root((我的项目))
     🚀 使用
       安装
