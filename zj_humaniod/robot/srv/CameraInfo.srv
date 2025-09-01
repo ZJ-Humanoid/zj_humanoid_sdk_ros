@@ -1,8 +1,0 @@
-uint32 id # 取值范围1~6，其中1~4是头部相机的编号（机器人面朝方向从左到右编号依次是1、2、3、4），5是上方的深度相机，6是下方的深度相机
----
-bool success   # 是否成功
-string message # 返回消息（如成功或失败的原因）
-uint32 height  # 图形高度     //固定值
-uint32 width   # 图形宽度     
-float32[] intrinsic_matrix  # 相机内参
-float32[] extrinsic_matrix  # 相机外参

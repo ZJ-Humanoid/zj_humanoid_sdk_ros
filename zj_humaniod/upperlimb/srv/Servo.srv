@@ -1,8 +1,0 @@
-
-# float32 v                       # 最大速度,最大速度，此版本无效，写入0.0。
-# float32 acc                     # 最大加速度，此版本无效，写入0.0。 [rad/s^2]
-float32 lookahead_time          # 暂时写入0.2
-int32 gain                      # 位置跟踪参数，该参数越大，跟踪越慢，超调量越小，范围[100, 1000]
----
-bool ret
-string msg
