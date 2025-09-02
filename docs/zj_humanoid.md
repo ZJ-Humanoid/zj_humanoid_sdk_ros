@@ -134,20 +134,6 @@ string message  # 反馈信息
 
 ### ACTION
 
-#### `Search_object`
-
-```bash
-# Goal
-string[] labels  # 要搜索的物品名称
----
-# Result
-bool success  # 是否成功
-string message  # 反馈信息
----
-# Feedback
-string message  # 反馈信息
-
-```
 #### `Pick`
 
 ```bash
@@ -182,6 +168,20 @@ bool loosen_hand_flag  # True表示机器人末端附近 xx cm 内有 人的手�
 ```bash
 # Goal 
 manipulation/ObjPose obj_pose  # 物体位姿
+---
+# Result
+bool success  # 是否成功
+string message  # 反馈信息
+---
+# Feedback
+string message  # 反馈信息
+
+```
+#### `SearchObject`
+
+```bash
+# Goal
+string[] labels  # 要搜索的物品名称
 ---
 # Result
 bool success  # 是否成功
@@ -409,16 +409,6 @@ float32[] extrinsic_matrix  # 相机外参
 
 ### MSG
 
-#### `ListenInfo`
-
-```bash
-# Audio_WakeInfo.msg
-std_msgs/Header header
-string timestamp
-int32 angle
-string keyword
-string raw_json
-```
 #### `AudioData`
 
 ```bash
@@ -466,6 +456,25 @@ int32 status # 状态码
 string file_path # 文件路径
 
 ```
+#### `LLMNLU`
+
+```bash
+# NLUService.srv
+
+# 请求部分
+string raw_input        # 原始输入文本
+bool enable_context     # 启用上下文理解
+bool enable_save        # 是否记录
+string context_id       # 会话上下文ID
+
+---
+# 响应部分
+bool success
+string message   # 消息
+int32 status            # 返回的状态码
+nlu_result[] nlu_result  # NLU 识别结果
+
+```
 #### `SetVolume`
 
 ```bash
@@ -505,6 +514,20 @@ string file_path # 文件路径
 bool success
 string message   # 消息
 int32 status     # 状态码
+
+```
+#### `LLMChat`
+
+```bash
+string raw_input          # 原始输入文本
+bool   enable_context     # 启用上下文理解
+bool   enable_save        # 是否记录
+string context_id         # 会话上下文ID
+---
+bool success
+string message   # 消息
+int32 status     #标准接口状态
+string response #文本生成结果
 
 ```
 
