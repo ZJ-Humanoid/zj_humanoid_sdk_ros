@@ -111,6 +111,14 @@ string mode  # 模式，可选值：["from_folder", "run_trajectory"]
 bool success  # 是否成功
 string message  # 反馈信息
 ```
+#### `SceneUpdate`
+
+```bash
+string[] obstacle_names  # 加载的模型名称
+---
+bool success  # 是否成功
+string message  # 反馈信息
+```
 #### `PoseSpaceTrajPlan`
 
 ```bash
@@ -380,6 +388,89 @@ float32[] jointsCurrentTorque
 float32[] jointsTargetPosition # after mpc optimized
 float32[] jointsTargetVelocity # after mpc optimized
 float32[] jointsTargetTorque # after mpc optimized
+
+```
+
+## hand
+
+> version:1.0.0
+
+
+### MSG
+
+#### `PressureSensor`
+
+```bash
+Header header 
+float64[] pressure          # 指尖压力传感器压力值 顺序依次为:[none,拇指,食指,中指,无名指,none] 0.1N
+```
+
+### SRV
+
+#### `Gesture`
+
+```bash
+string[] gesture_name                   # 手势名称,大小写不敏感(当控制一只手时,索引0生效,当控制两只手时,索引0为左手,索引1为右手)
+---
+bool success                            # 执行结果,该结果只反映命令的调用结果,并不能代表动作是否执行到位   
+string message                          # 提示信息
+
+
+
+
+
+
+
+# -----------------------------------------------------------------
+# gesture_name
+
+# RESET
+# ROCK
+# ONE
+# TWO
+# THREE
+# FOUR
+# FIVE
+# YEAH
+# POINTING_UP
+# THUMPS_UP
+# ILOVEYOU
+# BIU
+# FUCK
+
+# Tips
+# 可能会存在当前手的状态如果直接控制手势运动的话,会出现无法运动到指定手势的情况
+
+# -----------------------------------------------------------------
+
+```
+#### `HandJoint`
+
+```bash
+float32[] q    # 关节数组;     [拇指弯曲,拇指摆动,食指弯曲,中指弯曲,无名指弯曲,小指弯曲] 单位:弧度
+---
+bool success   # indicate successful run of triggered service
+string message # informational
+
+
+
+
+
+
+
+
+
+
+
+
+
+# -----------------------------------------------------------------
+# 手势定义
+
+
+
+
+# -----------------------------------------------------------------
 
 ```
 
