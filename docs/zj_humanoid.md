@@ -486,11 +486,17 @@ string message # informational
 ```bash
 ---
 bool success   # 是否成功
-string message # 返回消息（如成功或失败的原因）
-uint32 height  # 图形高度     //固定值
-uint32 width   # 图形宽度     
-float32[] intrinsic_matrix  # 相机内参
-float32[] extrinsic_matrix  # 相机外参
+string message # 返回消息
+string camera_name  # 相机名称/ID, ["CAM_A", "CAM_B", "CAM_C", "CAM_D"]
+uint32 height  # 图像分辨率
+uint32 width   # 图像分辨率
+string distortion_model  # 失真模型, e.g., "plumb_bob", "radtan"
+float64[] D  # 失真系数 D (k1, k2, p1, p2, k3, ...)
+# [fx, 0,  cx]
+# [0,  fy, cy]
+# [0,  0,  1 ]
+float64[9] K  # 内参矩阵 K (3x3), 以行主序展开为9个元素的数组
+geometry_msgs/Transform T_cam_body  # 外参: 相机在机器人本体坐标系下的位姿 (T_cam_body: Transform from body frame to camera frame)
 ```
 
 ## audio
@@ -985,4 +991,59 @@ bool is_async                                      # 是否同步运行
 ---
 bool success
 string message
+```
+
+## robot
+
+> version:1.0.0
+
+
+### MSG
+
+#### `RobotState`
+
+```bash
+uint8 state         # State enums ; state: 5
+string state_info   # 打印目前获取的状态 ；state_info: "STATE_ROBOT_RUN"
+
+# State enums
+uint8 STATE_ROBOT_NULL = 0
+uint8 STATE_ROBOT_CONFIG = 1
+uint8 STATE_ROBOT_ON = 2
+uint8 STATE_ROBOT_START = 3
+uint8 STATE_ROBOT_INIT = 4
+uint8 STATE_ROBOT_RUN = 5
+uint8 STATE_ROBOT_HALT = 6
+uint8 STATE_ROBOT_STOP = 7
+uint8 STATE_ROBOT_OFF = 8
+uint8 STATE_ROBOT_ERR = 9
+```
+
+### SRV
+
+#### `SetZero`
+
+```bash
+# 标零服务消息定义
+# Request
+int32[] joint_ids    # 要标零的关节ID数组 (0-28)
+---
+# Response
+bool success         # 标零是否成功
+string message       # 详细信息
+
+
+
+# =============================================================================
+# 关节名称到算法编号的映射 (注释，供参考)
+# =============================================================================
+# leftShoulderPitch: 0,    leftShoulderRoll: 1,     leftShoulderYaw: 2
+# leftElbow: 3,           leftWristYaw: 4,         leftWristPitch: 5,        leftWristRoll: 6
+# rightShoulderPitch: 7,   rightShoulderRoll: 8,    rightShoulderYaw: 9
+# rightElbow: 10,         rightWristYaw: 11,       rightWristPitch: 12,      rightWristRoll: 13
+# neckYaw: 14,            neckPitch: 15,           waist: 16
+# leftHipYaw: 17,         leftHipRoll: 18,         leftHipPitch: 19,         leftKnee: 20
+# leftAnklePitch: 21,     leftAnkleRoll: 22
+# rightHipYaw: 23,        rightHipRoll: 24,        rightHipPitch: 25,        rightKnee: 26
+# rightAnklePitch: 27,    rightAnkleRoll: 28
 ```
