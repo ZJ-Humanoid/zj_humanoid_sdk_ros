@@ -3,7 +3,7 @@
 
 ## manipulation
 
-> version:1.0.3
+> version:1.0.0
 
 
 ### MSG
@@ -303,94 +303,6 @@ float64 speed # 移动速度 m/s
 float64 direction # 移动方向 [-pi, pi]
 ```
 
-## lowerlimb
-
-> version:1.0.0
-
-
-### MSG
-
-#### `BaseInfo`
-
-```bash
-std_msgs/Header header
-float32[] baseCurrentPose  # state estimated: euler angle(ZYX), base position
-float32[] baseCurrentTwistWrtBody # state estimated: angular velocity, linear velocity
-float32[] baseCurrentTwistWrtWorld
-float32[] baseTargetPose  # mpc optimized: euler angle(ZYX), base position
-float32[] baseTargetTwistWrtBody # mpc optimized: angular velocity, linear velocity
-float32[] baseTargetTwistWrtWorld
-
-```
-#### `ContactInfo`
-
-```bash
-std_msgs/Header header
-float32[] cmdContactFlag
-float32[] estContactFlag
-float32[] fusionProbability
-float32[] swingPhase
-float32[] stancePhase
-float32[] endEffectorCurrentPositionZ
-float32[] contactForceZ
-float32[] pPhase
-float32[] pHeight
-float32[] pForce
-
-
-```
-#### `EndOffectorInfo`
-
-```bash
-std_msgs/Header header
-float32[] endEffectorCurrentForce
-float32[] endEffectorCurrentPosition
-float32[] endEffectorCurrentVelocity
-float32[] endEffectorTargetForce
-float32[] endEffectorTargetPosition
-float32[] endEffectorTargetVelocity
-
-
-```
-#### `WBCCommand`
-
-```bash
-std_msgs/Header header
-float32[] wbc_planned_torque
-float32[] wbc_planned_joint_acc
-float32[] wbc_planned_body_acc
-float32[] wbc_planned_contact_force
-float32[] wbc_planned_joint_pos
-float32[] wbc_planned_joint_vel
-
-```
-#### `MotorInfo`
-
-```bash
-std_msgs/Header header
-float32[] motorsCurrentPosition
-float32[] motorsCurrentVelocity
-float32[] motorsCurrentTorque
-float32[] motorsCurrentTempreture
-float32[] motorsCurrent
-float32[] motorsTargetPosition # after mpc optimized
-float32[] motorsTargetVelocity # after mpc optimized
-float32[] motorsTargetTorque # after mpc optimized
-
-```
-#### `JointInfo`
-
-```bash
-std_msgs/Header header
-float32[] jointsCurrentPosition
-float32[] jointsCurrentVelocity
-float32[] jointsCurrentTorque
-float32[] jointsTargetPosition # after mpc optimized
-float32[] jointsTargetVelocity # after mpc optimized
-float32[] jointsTargetTorque # after mpc optimized
-
-```
-
 ## hand
 
 > version:1.0.0
@@ -440,6 +352,7 @@ string message                          # 提示信息
 
 # Tips
 # 可能会存在当前手的状态如果直接控制手势运动的话,会出现无法运动到指定手势的情况
+# 该数据只用来进行单次控制运动,无法通过设置手势数组状态进行连续的控制
 
 # -----------------------------------------------------------------
 
@@ -447,7 +360,7 @@ string message                          # 提示信息
 #### `HandJoint`
 
 ```bash
-float32[] q    # 关节数组;     [拇指弯曲,拇指摆动,食指弯曲,中指弯曲,无名指弯曲,小指弯曲] 单位:弧度
+float32[] q    # 关节数组;     [拇指弯曲,拇指摆动,食指弯曲,中指弯曲,无名指弯曲,小指弯曲] 单位:弧度 当使用双手
 ---
 bool success   # indicate successful run of triggered service
 string message # informational
@@ -465,11 +378,7 @@ string message # informational
 
 
 # -----------------------------------------------------------------
-# 手势定义
-
-
-
-
+# 手掌关节角度限位,如果发送超过关节角度限位的数据会被限制到限位内,并进行提示
 # -----------------------------------------------------------------
 
 ```
@@ -1000,6 +909,99 @@ string message
 
 ### MSG
 
+#### `Errors`
+
+```bash
+bool over_temp
+bool over_cpu
+bool over_mem
+bool over_disk
+```
+#### `ModulesMonitor`
+
+```bash
+# 上肢模块状态
+bool upper_limb_ok
+# 灵巧手模块状态
+bool dexterous_hand_ok
+# 下肢模块状态
+bool lower_limb_ok
+# 四目相机（CAM_A - CAM_D）状态
+bool cam_a_ok
+bool cam_b_ok
+bool cam_c_ok
+bool cam_d_ok
+# 深度相机（realsense_up、realsense_down）状态
+bool realsense_up_ok
+bool realsense_down_ok
+# 定位模块状态
+bool localization_module_ok
+# 导航模块状态
+bool navigation_module_ok
+# 语音模块状态
+bool voice_module_ok
+```
+#### `BatteryInfo`
+
+```bash
+# 电池基本信息
+uint8 battery_type          # 电池类型  1 - 鼎力2014b, 2 - 鼎力2015型, 3 - 云帆
+
+# LED状态
+uint8 led1_status           # 0x01 - 绿灯常亮，0x02 - 红灯常亮，0x03 - 绿灯闪烁，0x04 - 红灯闪烁, 0x05 - 红绿闪烁，其他 - 灭
+uint8 led2_status           # 同上
+
+# 电压电流信息
+float32 total_voltage       # 电池组总电压，单位V
+float32 total_current       # 电池组总电流，单位A
+
+# 容量信息
+uint16 soc                  # 剩余容量 0-1000表示0%-100%
+float32 remaining_capacity  # 剩余容量，单位Ah
+uint32 remaining_time       # 剩余充电时间, 单位分钟
+
+# 单体电池电压信息
+float32 max_cell_voltage    # 最高单体电压, 单位V
+float32 min_cell_voltage    # 最低单体电压, 单位V
+uint8 max_voltage_cell_num  # 最高单体电压电池位置
+uint8 min_voltage_cell_num  # 最低单体电压电池位置
+float32 voltage_diff        # 单体最高最低电芯压差，单位V
+
+# 温度信息
+int16 max_cell_temperature  # 最高电芯温度，单位摄氏度
+int16 min_cell_temperature  # 最低电芯温度，单位摄氏度
+int16 avg_cell_temperature  # 电芯平均温度，单位摄氏度
+uint8 max_temp_cell_num     # 最高温度电池位置
+uint8 min_temp_cell_num     # 最低温度电池位置
+float32 temperature_diff    # 单体最高最低温度差，单位摄氏度
+
+# 状态信息
+uint8 operation_status      # 充放电状态： 0 - 静置， 1 - 充电， 2 - 放电
+uint16 cycle_count          # 电池循环次数
+
+# 报警和状态标志
+bool is_temperature_high    # 电池温度是否过高
+bool is_battery_low         # 电池电量是否过低
+uint32[16] warnings         # 报警信息位
+
+# 版本信息
+string version              # 版本号
+```
+#### `WorkStatus`
+
+```bash
+int32 remain_work_time  # 剩余工作时长，单位分钟
+int32 work_time         # 运行时间，单位分钟
+float32 walk_distance   # 行进里程
+```
+#### `Resource`
+
+```bash
+float32 cpu_usage
+float32 temperature
+float32 memory_usage
+float32 disk_usage
+```
 #### `RobotState`
 
 ```bash
@@ -1021,6 +1023,49 @@ uint8 STATE_ROBOT_ERR = 9
 
 ### SRV
 
+#### `WifiList`
+
+```bash
+# 请求部分（无参数）
+---
+# 响应部分
+bool success             # 操作是否成功
+string message           # 状态描述（成功/错误信息）
+int32 wifi_count         # WiFi热点数量
+string[] wifi_names      # WiFi信息数组，格式："BSSID|SSID"（例如："14:D8:64:73:95:0C|teleoperation_1"）
+```
+#### `FaceScreen`
+
+```bash
+# text_display.srv
+string text           # 要展示的内容，可以为空
+bool force_stop       # 是否强制终止当前显示
+---
+bool success          # 是否成功
+string message        # 返回提示或异常信息
+int32 status_code     #状态码（0 = 成功，1 = 无活跃显示，2 = 显示冲突，3 = 初始化失败）
+
+```
+#### `BasicInfo`
+
+```bash
+---
+bool success             # 是否成功
+string message           # 返回消息（如成功或失败的原因）
+string robot_version     # 机器人版本
+string hardware_version  # 硬件版本
+string software_version  # 软件版本
+string ip_addr           # IP地址
+```
+#### `ConnectWifi`
+
+```bash
+string wifi_name
+string wifi_password
+---
+bool success
+string message
+```
 #### `SetZero`
 
 ```bash
@@ -1046,4 +1091,18 @@ string message       # 详细信息
 # leftAnklePitch: 21,     leftAnkleRoll: 22
 # rightHipYaw: 23,        rightHipRoll: 24,        rightHipPitch: 25,        rightKnee: 26
 # rightAnklePitch: 27,    rightAnkleRoll: 28
+```
+#### `FaceShow`
+
+```bash
+# 请求部分：指定要播放的媒体信息
+string media_path    # 媒体文件路径，可以是图片或视频
+bool loop            # 是否循环播放，true为循环，false为播放一次
+float32 duration       # 播放时长(秒)，0表示直到结束
+---
+# 响应部分：返回播放操作的结果
+bool success         # 操作是否成功
+string message       # 状态信息，如成功或错误原因
+int32 status_code    # 状态码，0表示成功，非0表示错误类型
+
 ```
