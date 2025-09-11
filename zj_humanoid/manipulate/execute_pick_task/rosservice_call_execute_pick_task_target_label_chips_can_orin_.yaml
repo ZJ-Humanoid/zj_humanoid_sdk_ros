@@ -1,0 +1,1 @@
+# Demo: rosservice call /execute_pick_task "target_label: chips_can_orin"

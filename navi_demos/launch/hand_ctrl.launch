@@ -1,5 +1,0 @@
-<launch>
-    <!-- 启动 service_gesture_client 节点 -->
-    <node name="service_gesture_client" pkg="navi_sdk_examples" type="navi_sdk_examples_gesture" output="screen">
-    </node>
-</launch>
