@@ -10,7 +10,7 @@
 - [SceneUpdate](../../../../zj_humanoid_types.md#SceneUpdate)
 
 ## demos
-- naviai_manip_scene_update_client.py
+- rosservice call /zj_humanoid/manipulate/scene_update "obstacle_names: ['table']"
 
 ## agent
 - 机器人抓取物品前的环境感知

@@ -10,7 +10,7 @@
 - std_srvs/Trigger
 
 ## demos
-- 
+- rosservice call /zj_humanoid/manipulation/version "{}"
 
 ## agent
 - 操作代码的版本号是多少

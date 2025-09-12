@@ -10,7 +10,7 @@
 - [ExecutePickTask](../../../../zj_humanoid_types.md#ExecutePickTask)
 
 ## demos
-- rosservice call /execute_pick_task "target_label: chips_can_orin"
+- rosservice call /zj_humanoid/manipulation/execute_pick_task "target_label: 'melon_seeds'
 
 ## agent
 - 帮我拿xxx物品
