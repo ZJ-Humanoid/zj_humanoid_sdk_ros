@@ -13,7 +13,7 @@
 - 1
 
 ## demos
-- point2point.py
+- [data](./rostopic_pub_zj_humanoid_navigation_task_info.yaml)
 
 ## agent
 - 
