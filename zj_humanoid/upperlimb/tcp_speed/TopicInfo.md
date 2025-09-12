@@ -7,7 +7,7 @@
 - Topic/Publish
 
 ## msg_type
-- [TcpSpeed](../../../zj_humanoid_types.md#TcpSpeed)
+- [TcpSpeed](../../../../zj_humanoid_types.md#TcpSpeed)
 
 ## hz
 - 100

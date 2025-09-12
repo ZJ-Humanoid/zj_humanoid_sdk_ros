@@ -7,7 +7,7 @@
 - Service
 
 ## msg_type
-- [BasicInfo](../../../zj_humanoid_types.md#BasicInfo)
+- [BasicInfo](../../../../zj_humanoid_types.md#BasicInfo)
 
 ## demos
 - I2_info

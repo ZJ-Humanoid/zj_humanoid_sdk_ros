@@ -7,7 +7,7 @@
 - Service
 
 ## msg_type
-- [Listen](../../../zj_humanoid_types.md#Listen)
+- [Listen](../../../../zj_humanoid_types.md#Listen)
 
 ## agent
 - 开始倾听

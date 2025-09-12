@@ -7,11 +7,14 @@
 - Topic/Publish
 
 ## msg_type
-- [TakInfo](../../../zj_humanoid_types.md#TakInfo)
+- [TakInfo](../../../../zj_humanoid_types.md#TakInfo)
 
 ## hz
 - 1
 
 ## demos
 - point2point.py
+
+## agent
+- 
 

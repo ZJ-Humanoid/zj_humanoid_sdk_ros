@@ -7,5 +7,5 @@
 - Topic/Subscribe
 
 ## msg_type
-- [SpeedL](../../../../zj_humanoid_types.md#SpeedL)
+- [SpeedL](../../../../../zj_humanoid_types.md#SpeedL)
 

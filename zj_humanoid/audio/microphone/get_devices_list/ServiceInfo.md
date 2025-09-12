@@ -7,7 +7,7 @@
 - Service
 
 ## msg_type
-- [GetDeviceList](../../../../zj_humanoid_types.md#GetDeviceList)
+- [GetDeviceList](../../../../../zj_humanoid_types.md#GetDeviceList)
 
 ## demos
 - 

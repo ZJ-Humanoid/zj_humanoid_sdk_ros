@@ -7,7 +7,7 @@
 - Topic/Publish
 
 ## msg_type
-- [Robot_WorkStatus](../../../zj_humanoid_types.md#Robot_WorkStatus)
+- [WorkStatus](../../../../zj_humanoid_types.md#WorkStatus)
 
 ## hz
 - 1

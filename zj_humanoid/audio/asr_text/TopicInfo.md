@@ -7,7 +7,7 @@
 - Topic/Publish
 
 ## msg_type
-- [](../../../zj_humanoid_types.md#)
+- [](../../../../zj_humanoid_types.md#)
 
 ## agent
 - 当前机器人听到了什么

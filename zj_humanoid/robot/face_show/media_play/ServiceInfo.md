@@ -7,7 +7,7 @@
 - Service
 
 ## msg_type
-- [Robot_FaceShow](../../../../zj_humanoid_types.md#Robot_FaceShow)
+- [FaceShow](../../../../../zj_humanoid_types.md#FaceShow)
 
 ## demos
 - Robot_media_play

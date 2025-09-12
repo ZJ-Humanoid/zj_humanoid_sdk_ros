@@ -7,7 +7,7 @@
 - Topic/Subscriber
 
 ## msg_type
-- [LocalMap](../../../zj_humanoid_types.md#LocalMap)
+- [LocalMap](../../../../zj_humanoid_types.md#LocalMap)
 
 ## hz
 - 10

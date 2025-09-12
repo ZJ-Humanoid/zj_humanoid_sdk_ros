@@ -7,5 +7,5 @@
 - Service
 
 ## msg_type
-- [IK](../../../../zj_humanoid_types.md#IK)
+- [IK](../../../../../zj_humanoid_types.md#IK)
 

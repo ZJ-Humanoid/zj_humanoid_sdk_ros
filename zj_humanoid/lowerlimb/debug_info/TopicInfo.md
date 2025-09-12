@@ -7,7 +7,7 @@
 - Topic/Publish
 
 ## msg_type
-- [](../../../zj_humanoid_types.md#)
+- std_msgs/String
 
 ## hz
 - 1

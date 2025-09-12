@@ -7,7 +7,7 @@
 - Topic/Subscribe
 
 ## msg_type
-- [TcpSpeed](../../../../zj_humanoid_types.md#TcpSpeed)
+- [TcpSpeed](../../../../../zj_humanoid_types.md#TcpSpeed)
 
 ## demos
 - enable_speedj

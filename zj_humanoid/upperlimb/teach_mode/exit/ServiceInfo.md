@@ -7,7 +7,7 @@
 - Service
 
 ## msg_type
-- [ArmType](../../../../zj_humanoid_types.md#ArmType)
+- [ArmType](../../../../../zj_humanoid_types.md#ArmType)
 
 ## demos
 - exit_left_arm_teach_mode

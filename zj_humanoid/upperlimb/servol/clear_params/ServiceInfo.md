@@ -7,5 +7,5 @@
 - Service
 
 ## msg_type
-- [Servo](../../../../zj_humanoid_types.md#Servo)
+- [Servo](../../../../../zj_humanoid_types.md#Servo)
 

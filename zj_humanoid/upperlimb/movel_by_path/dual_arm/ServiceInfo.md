@@ -7,5 +7,5 @@
 - Service
 
 ## msg_type
-- [MoveLByPath](../../../../zj_humanoid_types.md#MoveLByPath)
+- [MoveLByPath](../../../../../zj_humanoid_types.md#MoveLByPath)
 

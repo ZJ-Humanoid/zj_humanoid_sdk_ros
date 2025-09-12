@@ -7,5 +7,5 @@
 - Service
 
 ## msg_type
-- [FK](../../../../zj_humanoid_types.md#FK)
+- [FK](../../../../../zj_humanoid_types.md#FK)
 

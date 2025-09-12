@@ -7,7 +7,7 @@
 - Topic/Subscriber
 
 ## msg_type
-- [NavigationStatus](../../../zj_humanoid_types.md#NavigationStatus)
+- [NavigationStatus](../../../../zj_humanoid_types.md#NavigationStatus)
 
 ## hz
 - 20

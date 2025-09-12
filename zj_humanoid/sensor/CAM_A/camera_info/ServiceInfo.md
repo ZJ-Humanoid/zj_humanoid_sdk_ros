@@ -7,7 +7,7 @@
 - Service
 
 ## msg_type
-- [CameraInfo](../../../../zj_humanoid_types.md#CameraInfo)
+- [CameraInfo](../../../../../zj_humanoid_types.md#CameraInfo)
 
 ## demos
 - 

@@ -13,5 +13,5 @@
 - 检查当前有多少个喇叭设备
 
 ## msg_type
-- [GetDeviceList](../../../../zj_humanoid_types.md#GetDeviceList)
+- [GetDeviceList](../../../../../zj_humanoid_types.md#GetDeviceList)
 

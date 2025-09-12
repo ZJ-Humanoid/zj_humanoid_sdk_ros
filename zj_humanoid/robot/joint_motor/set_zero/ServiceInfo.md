@@ -13,5 +13,5 @@
 - set_zero
 
 ## msg_type
-- [](../../../../zj_humanoid_types.md#)
+- [](../../../../../zj_humanoid_types.md#)
 

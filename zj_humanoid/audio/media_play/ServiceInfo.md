@@ -7,5 +7,5 @@
 - Service
 
 ## msg_type
-- [MediaPlay](../../../zj_humanoid_types.md#MediaPlay)
+- [MediaPlay](../../../../zj_humanoid_types.md#MediaPlay)
 

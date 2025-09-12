@@ -10,5 +10,5 @@
 - 设置音量为50
 
 ## msg_type
-- [SetVolume](../../../../zj_humanoid_types.md#SetVolume)
+- [SetVolume](../../../../../zj_humanoid_types.md#SetVolume)
 

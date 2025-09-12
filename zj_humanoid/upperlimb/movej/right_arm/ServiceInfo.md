@@ -7,5 +7,5 @@
 - Service
 
 ## msg_type
-- [MoveJ](../../../../zj_humanoid_types.md#MoveJ)
+- [MoveJ](../../../../../zj_humanoid_types.md#MoveJ)
 

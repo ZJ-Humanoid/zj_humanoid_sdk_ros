@@ -7,7 +7,7 @@
 - Topic/Publish
 
 ## msg_type
-- [CmdState](../../../zj_humanoid_types.md#CmdState)
+- [CmdState](../../../../zj_humanoid_types.md#CmdState)
 
 ## hz
 - 100

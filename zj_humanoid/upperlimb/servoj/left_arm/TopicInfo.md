@@ -7,5 +7,5 @@
 - Topic/Subscribe
 
 ## msg_type
-- [Joints](../../../../zj_humanoid_types.md#Joints)
+- [Joints](../../../../../zj_humanoid_types.md#Joints)
 

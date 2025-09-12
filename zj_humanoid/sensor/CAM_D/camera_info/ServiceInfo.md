@@ -7,7 +7,7 @@
 - Service
 
 ## msg_type
-- [CameraInfo](../../../../zj_humanoid_types.md#CameraInfo)
+- [CameraInfo](../../../../../zj_humanoid_types.md#CameraInfo)
 
 ## agent
 - 相机D的目前帧率是多少

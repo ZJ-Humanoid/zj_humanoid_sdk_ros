@@ -7,7 +7,7 @@
 - Topic/Publish
 
 ## msg_type
-- [ListenInfo](../../../zj_humanoid_types.md#ListenInfo)
+- [ListenInfo](../../../../zj_humanoid_types.md#ListenInfo)
 
 ## hz
 - 100hz

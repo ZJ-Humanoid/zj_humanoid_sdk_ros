@@ -7,7 +7,7 @@
 - Topic/Publish
 
 ## msg_type
-- [BatteryInfo](../../../zj_humanoid_types.md#BatteryInfo)
+- [BatteryInfo](../../../../zj_humanoid_types.md#BatteryInfo)
 
 ## hz
 - 1

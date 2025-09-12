@@ -7,7 +7,7 @@
 - Service
 
 ## msg_type
-- [Robot_FaceText](../../../../zj_humanoid_types.md#Robot_FaceText)
+- [FaceText](../../../../../zj_humanoid_types.md#FaceText)
 
 ## demos
 - Robot_text_show

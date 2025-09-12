@@ -7,5 +7,5 @@
 - Service
 
 ## msg_type
-- [Gesture](../../../../zj_humanoid_types.md#Gesture)
+- [Gesture](../../../../../zj_humanoid_types.md#Gesture)
 

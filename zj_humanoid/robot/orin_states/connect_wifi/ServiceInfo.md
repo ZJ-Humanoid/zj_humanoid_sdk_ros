@@ -7,7 +7,7 @@
 - Service
 
 ## msg_type
-- [ConnectWifi](../../../../zj_humanoid_types.md#ConnectWifi)
+- [ConnectWifi](../../../../../zj_humanoid_types.md#ConnectWifi)
 
 ## demos
 - connect_wifi_orin

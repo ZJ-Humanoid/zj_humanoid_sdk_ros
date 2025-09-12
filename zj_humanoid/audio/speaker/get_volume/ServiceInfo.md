@@ -7,7 +7,7 @@
 - Service
 
 ## msg_type
-- [GetVolume](../../../../zj_humanoid_types.md#GetVolume)
+- [GetVolume](../../../../../zj_humanoid_types.md#GetVolume)
 
 ## agent
 - 获取当前的系统音量大小

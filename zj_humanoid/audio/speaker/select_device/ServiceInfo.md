@@ -7,7 +7,7 @@
 - Service
 
 ## msg_type
-- [SetDevice](../../../../zj_humanoid_types.md#SetDevice)
+- [SetDevice](../../../../../zj_humanoid_types.md#SetDevice)
 
 ## agent
 - 选择第一个喇叭

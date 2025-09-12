@@ -7,7 +7,7 @@
 - Service
 
 ## msg_type
-- [WifiList](../../../../zj_humanoid_types.md#WifiList)
+- [WifiList](../../../../../zj_humanoid_types.md#WifiList)
 
 ## demos
 - connect_wifi_pico

@@ -7,7 +7,7 @@
 - Topic/Publish
 
 ## msg_type
-- [](../../../../zj_humanoid_types.md#)
+- [Resource](../../../../../zj_humanoid_types.md#Resource)
 
 ## agent
 - 机器人大脑的资源状态

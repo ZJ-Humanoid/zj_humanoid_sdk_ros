@@ -7,7 +7,7 @@
 - Service
 
 ## msg_type
-- [](../../../zj_humanoid_types.md#)
+- std_srvs/Trigger
 
 ## demos
 - get_uplimb_version

@@ -6,3 +6,6 @@
 ## type
 - Topic/Subscribe
 
+## msg_type
+- std_msgs/Float32
+

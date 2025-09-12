@@ -1,0 +1,31 @@
+/* Markmap 样式 */
+  .markmap-container {
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  .markmap-svg {
+    width: 100%;
+    display: block;
+  }
+  
+  /* 思维导图节点样式优化 */
+  .markmap-node {
+    font-size: 14px;
+  }
+  
+  .markmap-node-circle {
+    fill: #4CAF50;
+    stroke: #45a049;
+    stroke-width: 2px;
+  }
+  
+  .markmap-link {
+    stroke: #999;
+    stroke-width: 2px;
+    fill: none;
+  }
+  
+  .VPNavBarAppearance { display: none !important; }
+
+  

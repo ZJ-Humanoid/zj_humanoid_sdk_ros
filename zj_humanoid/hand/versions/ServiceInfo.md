@@ -7,7 +7,7 @@
 - Service
 
 ## msg_type
-- [software_version, hardware_verion](../../../zj_humanoid_types.md#software_version, hardware_verion)
+- std_srvs/Trigger
 
 ## agent
 - 查询当前灵巧手子系统的版本号

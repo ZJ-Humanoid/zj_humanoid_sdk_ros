@@ -7,7 +7,7 @@
 - Topic/Publish
 
 ## msg_type
-- [ModulesMonitor](../../../zj_humanoid_types.md#ModulesMonitor)
+- [ModulesMonitor](../../../../zj_humanoid_types.md#ModulesMonitor)
 
 ## hz
 - 1

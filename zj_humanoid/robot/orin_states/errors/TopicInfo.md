@@ -7,7 +7,7 @@
 - Topic/Publish
 
 ## msg_type
-- [](../../../../zj_humanoid_types.md#)
+- [Errors](../../../../../zj_humanoid_types.md#Errors)
 
 ## hz
 - 1

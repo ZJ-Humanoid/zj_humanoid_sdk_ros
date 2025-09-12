@@ -7,7 +7,7 @@
 - Service
 
 ## msg_type
-- [HandJoint](../../../../zj_humanoid_types.md#HandJoint)
+- [HandJoint](../../../../../zj_humanoid_types.md#HandJoint)
 
 ## agent
 - 右手食指弯曲40度
