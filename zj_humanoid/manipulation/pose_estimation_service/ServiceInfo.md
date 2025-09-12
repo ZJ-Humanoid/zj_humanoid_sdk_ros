@@ -10,7 +10,7 @@
 - [PoseEst](../../../../zj_humanoid_types.md#PoseEst)
 
 ## demos
-- rosservice call /zj_humanoid/manipulation/pose_estimation_service "$(cat ./data.yaml)"
+- [data](./data.yaml)
 
 ## agent
 - 输入图像获取指定物品的6D位姿
