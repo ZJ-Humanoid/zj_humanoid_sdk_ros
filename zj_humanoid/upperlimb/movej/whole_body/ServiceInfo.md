@@ -1,11 +1,22 @@
-# /zj_humanoid/upperlimb/movej/whole_body
+
+# zj_humanoid/upperlimb/movej/whole_body/
 
 ## description
-- 关节轨迹点运动
+- 关节空间下,全身各部位点到点运动
+
 
 ## type
 - Service
 
 ## msg_type
-- [MoveJ](../../../../../zj_humanoid_types.md#MoveJ)
+- [upperlimb/MoveJ](../../../../zj_humanoid_types.md#upperlimb/MoveJ)
+
+## demos
+- [whole_body_v_acc_case1](./whole_body_v_acc_case1.yaml)
+- [whole_body_t_case1](./whole_body_t_case1.yaml)
+
+
+## agent
+- 
+
 

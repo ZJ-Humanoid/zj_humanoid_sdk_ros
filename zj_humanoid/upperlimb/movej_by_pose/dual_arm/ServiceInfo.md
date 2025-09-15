@@ -1,11 +1,21 @@
-# /zj_humanoid/upperlimb/movej_by_pose/dual_arm
+
+# zj_humanoid/upperlimb/movej_by_pose/dual_arm/
 
 ## description
-- 关节轨迹点运动(通过位姿)
+- None
+
 
 ## type
 - Service
 
 ## msg_type
-- [MoveJByPose](../../../../../zj_humanoid_types.md#MoveJByPose)
+- [upperlimb/MoveJByPose](../../../../zj_humanoid_types.md#upperlimb/MoveJByPose)
+
+## demos
+- [case1](./case1.yaml)
+
+
+## agent
+- 
+
 

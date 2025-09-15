@@ -1,11 +1,21 @@
-# /zj_humanoid/upperlimb/movel/left_arm
+
+# zj_humanoid/upperlimb/movel/left_arm/
 
 ## description
-- 直线轨迹点运动
+- None
+
 
 ## type
 - Service
 
 ## msg_type
-- [MoveL](../../../../../zj_humanoid_types.md#MoveL)
+- [upperlimb/MoveL](../../../../zj_humanoid_types.md#upperlimb/MoveL)
+
+## demos
+- [case1](./case1.yaml)
+
+
+## agent
+- 
+
 
