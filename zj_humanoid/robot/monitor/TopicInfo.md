@@ -14,4 +14,4 @@
 
 ## demos
 - robot_modules_monitor
-
+rostopic echo /zj_humanoid/robot/monitor

@@ -1,1 +1,2 @@
 # Demo: connect_wifi_orin
+"wifi_name: '你的WiFi名称' wifi_password: '你的WiFi密码'"

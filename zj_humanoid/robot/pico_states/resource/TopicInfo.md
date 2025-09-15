@@ -14,4 +14,4 @@
 
 ## demos
 - get_pico_resouce
-
+rostopic echo /zj_humanoid/robot/pico_states/resource

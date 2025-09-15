@@ -17,4 +17,4 @@
 
 ## demos
 - battery_info
-
+rostopic echo /zj_humanoid/robot/battery_info

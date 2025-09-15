@@ -11,7 +11,7 @@
 
 ## demos
 - connect_wifi_pico
-
+rosservice call /zj_humanoid/robot/pico_states/wifi_list 
 ## agent
 - 当前机器人小脑检测到多少个wifi信号
 

@@ -11,7 +11,7 @@
 
 ## demos
 - Robot_media_play
-
+rosservice call /zj_humanoid/robot/face_show/media_play 
 ## agent
 - 播放“Hello_World.mp4”
 

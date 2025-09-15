@@ -17,4 +17,4 @@
 
 ## demos
 - over_temp_err
-
+rostopic echo /zj_humanoid/robot/pico_states/errors

@@ -11,4 +11,4 @@
 
 ## demos
 - connect_wifi_orin
-
+rosservice call /zj_humanoid/robot/orin_states/connect_wifi 

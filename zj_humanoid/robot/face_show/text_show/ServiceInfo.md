@@ -11,7 +11,7 @@
 
 ## demos
 - Robot_text_show
-
+rosservice call /zj_humanoid/robot/face_screen 
 ## agent
 - 显示“Hello World”
 

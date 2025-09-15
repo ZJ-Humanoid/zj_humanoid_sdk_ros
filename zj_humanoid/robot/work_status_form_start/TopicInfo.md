@@ -17,4 +17,4 @@
 
 ## demos
 - robot_work_status
-
+rostopic echo /zj_humanoid/robot/work_status_form_start

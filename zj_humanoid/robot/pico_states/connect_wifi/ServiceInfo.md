@@ -11,4 +11,4 @@
 
 ## demos
 - connect_wifi_pico
-
+rosservice call /zj_humanoid/robot/pico_states/connect_wifi 

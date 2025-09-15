@@ -11,7 +11,7 @@
 
 ## demos
 - wifi_detected
-
+rosservice call /zj_humanoid/robot/orin_states/wifi_list 
 ## agent
 - 当前机器人大脑检测到多少个wifi信号
 

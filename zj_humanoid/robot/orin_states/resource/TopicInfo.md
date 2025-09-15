@@ -17,4 +17,4 @@
 
 ## demos
 - get_orin_resouce
-
+rostopic echo /zj_humanoid/robot/orin_states/resource
