@@ -1,11 +1,21 @@
-# /zj_humanoid/hand/gesture_switch/right
+
+# zj_humanoid/hand/gesture_switch/right
 
 ## description
-- 左手掌手势控制
+- 右手手势切换
+
 
 ## type
 - Service
 
 ## msg_type
-- [Gesture](../../../../../zj_humanoid_types.md#Gesture)
+- [hand/Gesture](../../../../zj_humanoid_types.md#hand/Gesture)
+
+## demos
+- [right_hand_gesture_switch](./right_hand_gesture_switch.yaml)
+
+
+## agent
+- 
+
 

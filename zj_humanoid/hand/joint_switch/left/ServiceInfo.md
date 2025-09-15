@@ -1,14 +1,23 @@
-# /zj_humanoid/hand/joint_switch/left
+
+# zj_humanoid/hand/joint_switch/left
 
 ## description
-- 左手掌关节控制
+- 左手手掌关节运动
+
 
 ## type
 - Service
 
 ## msg_type
-- [HandJoint](../../../../../zj_humanoid_types.md#HandJoint)
+- [hand/HandJoint](../../../../zj_humanoid_types.md#hand/HandJoint)
+
+## demos
+- [left_hand_joint_reset](./left_hand_joint_reset.yaml)
+- [left_hand_set_gesture_'two'](./left_hand_set_gesture_'two'.yaml)
+- [left_hand_set_gesture_'yeah'](./left_hand_set_gesture_'yeah'.yaml)
+
 
 ## agent
-- 左手食指弯曲40度
+- 
+
 

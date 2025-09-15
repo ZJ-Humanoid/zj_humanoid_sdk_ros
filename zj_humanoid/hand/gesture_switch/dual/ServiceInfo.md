@@ -1,8 +1,8 @@
 
-# zj_humanoid/hand/gesture_switch/left
+# zj_humanoid/hand/gesture_switch/dual
 
 ## description
-- 左手手势切换
+- 双手手势切换
 
 
 ## type
@@ -12,7 +12,7 @@
 - [hand/Gesture](../../../../zj_humanoid_types.md#hand/Gesture)
 
 ## demos
-- [left_hand_gesture_switch](./left_hand_gesture_switch.yaml)
+- [dual_hand_gesture_switch](./dual_hand_gesture_switch.yaml)
 
 
 ## agent
