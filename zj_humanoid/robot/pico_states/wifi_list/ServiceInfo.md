@@ -10,8 +10,8 @@
 - [WifiList](../../../../../zj_humanoid_types.md#WifiList)
 
 ## demos
-- connect_wifi_pico
-rosservice call /zj_humanoid/robot/pico_states/wifi_list 
+- [connect_wifi_pico](./connect_wifi_pico.yaml)
+
 ## agent
 - 当前机器人小脑检测到多少个wifi信号
 

@@ -10,8 +10,8 @@
 - [FaceText](../../../../../zj_humanoid_types.md#FaceText)
 
 ## demos
-- Robot_text_show
-rosservice call /zj_humanoid/robot/face_screen 
+- [Robot_text_show](./Robot_text_show.yaml)
+
 ## agent
 - 显示“Hello World”
 

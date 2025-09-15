@@ -16,5 +16,5 @@
 - 描述下机器人本次开机后工作状态
 
 ## demos
-- robot_work_status
-rostopic echo /zj_humanoid/robot/work_status_form_start
+- [robot_work_status](./robot_work_status.yaml)
+

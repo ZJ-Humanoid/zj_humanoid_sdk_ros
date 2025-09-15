@@ -16,5 +16,5 @@
 - 机器人当前电量还剩多少
 
 ## demos
-- battery_info
-rostopic echo /zj_humanoid/robot/battery_info
+- [battery_info](./battery_info.yaml)
+

@@ -10,5 +10,5 @@
 - [ConnectWifi](../../../../../zj_humanoid_types.md#ConnectWifi)
 
 ## demos
-- connect_wifi_pico
-rosservice call /zj_humanoid/robot/pico_states/connect_wifi 
+- [connect_wifi_pico](./connect_wifi_pico.yaml)
+

@@ -10,9 +10,9 @@
 - [BasicInfo](../../../../zj_humanoid_types.md#BasicInfo)
 
 ## demos
-- I2_info
-- WA2_info
-rosservice call /zj_humanoid/robot/basic_info 
+- [I2_info](./I2_info.yaml)
+- [WA2_info](./WA2_info.yaml)
+
 ## agent
 - 描述下机器人的基础信息
 

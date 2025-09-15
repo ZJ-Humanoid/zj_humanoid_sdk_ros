@@ -16,5 +16,5 @@
 - 机器人大脑模块是否有错误发生
 
 ## demos
-- over_temp_err
-rostopic echo /zj_humanoid/robot/pico_states/errors
+- [over_temp_err](./over_temp_err.yaml)
+

@@ -1,2 +1,2 @@
 # Demo: Robot_text_show
-"text: '测试文本显示'"
+"text: 'Hello Robot' force_stop: false"

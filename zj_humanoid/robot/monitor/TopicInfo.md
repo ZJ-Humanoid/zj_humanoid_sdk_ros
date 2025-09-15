@@ -13,5 +13,5 @@
 - 1
 
 ## demos
-- robot_modules_monitor
-rostopic echo /zj_humanoid/robot/monitor
+- [robot_modules_monitor](./robot_modules_monitor.yaml)
+

@@ -16,5 +16,5 @@
 - 机器人大脑的资源状态
 
 ## demos
-- get_orin_resouce
-rostopic echo /zj_humanoid/robot/orin_states/resource
+- [get_orin_resouce](./get_orin_resouce.yaml)
+
