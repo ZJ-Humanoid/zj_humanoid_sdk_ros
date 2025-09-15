@@ -1,0 +1,5 @@
+joints:
+- 0.2
+v: 0.3
+acc: 0.5
+is_async: true

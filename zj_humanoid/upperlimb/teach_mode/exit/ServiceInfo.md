@@ -1,14 +1,21 @@
-# /zj_humanoid/upperlimb/teach_mode/exit
+
+# zj_humanoid/upperlimb/teach_mode/exit
 
 ## description
 - 退出示教模式
+
 
 ## type
 - Service
 
 ## msg_type
-- [ArmType](../../../../../zj_humanoid_types.md#ArmType)
+- [upperlimb/ArmType](../../../../zj_humanoid_types.md#upperlimb/ArmType)
 
 ## demos
-- exit_left_arm_teach_mode
+- [left_arm_disenable_teachmode](./left_arm_disenable_teachmode.yaml)
+
+
+## agent
+- 
+
 

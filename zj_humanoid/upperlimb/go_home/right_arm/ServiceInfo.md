@@ -1,7 +1,9 @@
-# /zj_humanoid/upperlimb/go_home/right_arm
+
+# zj_humanoid/upperlimb/go_home/right_arm/
 
 ## description
-- 回原点（该原点数据为内置设置）
+- 右臂回到内置设置的home点
+
 
 ## type
 - Service
@@ -10,5 +12,10 @@
 - std_srvs/Trigger
 
 ## demos
-- right_arm_go_home
+- [data](./data.yaml)
+
+
+## agent
+- 
+
 

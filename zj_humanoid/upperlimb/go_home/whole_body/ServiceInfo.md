@@ -1,14 +1,21 @@
-# /zj_humanoid/upperlimb/go_home/whole_body
+
+# zj_humanoid/upperlimb/go_home/whole_body/
 
 ## description
-- 回原点（该原点数据为内置设置）
+- 全身指定部位回到内置设置的home点
+
 
 ## type
 - Service
 
 ## msg_type
-- std_srvs/Trigger
+- [upperlimb/ArmType](../../../../zj_humanoid_types.md#upperlimb/ArmType)
 
 ## demos
-- whole_go_home
+- [left_arm_disenable_teachmode](./left_arm_disenable_teachmode.yaml)
+
+
+## agent
+- 
+
 
