@@ -1,0 +1,7 @@
+﻿topic:
+  name: /zj_humanoid/robot/pico_states/errors
+  description: 小脑pico错误汇总，包含over_temp,over_cpu,over_mem,over_disk等
+  type: zj_humanoid/robot/Errors
+  direction: publish
+  throttle_rate: 1000
+  demos: over_temp_err.yaml

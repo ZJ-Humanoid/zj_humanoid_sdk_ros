@@ -1,9 +1,0 @@
-﻿{
-    "description":  "关节空间下,腰部点到点运动",
-    "name":  null,
-    "type":  "zj_humanoid/upperlimb/MoveJ",
-    "demos":  [
-                  "./waist_v_acc_case1.yaml",
-                  "./waist_t_case1.yaml"
-              ]
-}

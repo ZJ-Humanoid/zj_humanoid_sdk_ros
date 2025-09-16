@@ -1,5 +1,0 @@
-﻿{
-    "description":  "获取喇叭设备列表",
-    "name":  "/zj_humanoid/audio/speaker/get_devices_list",
-    "type":  "zj_humanoid/audio/GetDeviceList"
-}

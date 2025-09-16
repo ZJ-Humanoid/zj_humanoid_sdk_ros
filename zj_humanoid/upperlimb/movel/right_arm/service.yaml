@@ -1,0 +1,5 @@
+﻿service:
+  name: /zj_humanoid/upperlimb/movel/right_arm
+  description: None
+  type: zj_humanoid/upperlimb/MoveL
+  demos: case1.yaml

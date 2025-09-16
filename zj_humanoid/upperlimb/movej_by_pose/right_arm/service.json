@@ -1,8 +1,0 @@
-﻿{
-    "description":  "None",
-    "name":  null,
-    "type":  "zj_humanoid/upperlimb/MoveJByPose",
-    "demos":  [
-                  "./case1.yaml"
-              ]
-}

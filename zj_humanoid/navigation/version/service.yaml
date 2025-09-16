@@ -1,0 +1,5 @@
+﻿service:
+  name: /zj_humanoid/navigation/version
+  description: 定位导航代码的版本号
+  type: std_srvs/Trigger
+  demos: data.yaml

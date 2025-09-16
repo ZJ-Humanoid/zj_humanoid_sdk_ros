@@ -1,7 +1,0 @@
-﻿{
-    "direction":  "publish",
-    "description":  "胸部深度相机的参数信息",
-    "name":  "/zj_humanoid/sensor/realsense_down/depth/camera_info",
-    "type":  "sensor_msgs/CameraInfo",
-    "throttle_rate":  33.33
-}

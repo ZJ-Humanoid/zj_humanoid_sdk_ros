@@ -1,0 +1,6 @@
+﻿topic:
+  name: /zj_humanoid/sensor/CAM_C/compressed
+  description: 右侧太阳穴相机C的JPG图像数据
+  type: sensor_msgs/CompressedImage
+  direction: publish
+  throttle_rate: 62.5

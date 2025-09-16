@@ -1,0 +1,5 @@
+﻿service:
+  name: /zj_humanoid/upperlimb/teach_mode/enter
+  description: 进入示教模式
+  type: zj_humanoid/upperlimb/ArmType
+  demos: left_arm_enable_teachmode.yaml

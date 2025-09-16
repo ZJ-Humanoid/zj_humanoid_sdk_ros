@@ -1,7 +1,0 @@
-﻿{
-    "direction":  "subscribe",
-    "description":  "局部障碍物信息",
-    "name":  "/zj_humanoid/navigation/local_map",
-    "type":  "zj_humanoid/navigation/LocalMap",
-    "throttle_rate":  100
-}

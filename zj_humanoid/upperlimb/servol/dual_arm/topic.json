@@ -1,6 +1,0 @@
-﻿{
-    "direction":  "subscribe",
-    "description":  "笛卡尔空间 高频位置跟随控制",
-    "name":  "/zj_humanoid/upperlimb/servol/dual_arm",
-    "type":  "geometry_msgs/Pose"
-}

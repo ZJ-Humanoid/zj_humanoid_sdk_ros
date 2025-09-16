@@ -1,0 +1,5 @@
+﻿service:
+  name: /zj_humanoid/manipulation/camera_calibration
+  description: 相机内外参标定
+  type: zj_humanoid/manipulation/CameraCalibration
+  demos: data.yaml

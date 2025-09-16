@@ -1,0 +1,6 @@
+﻿topic:
+  name: /zj_humanoid/sensor/realsense_up/depth/camera_info
+  description: 胸部深度相机的参数信息
+  type: sensor_msgs/CameraInfo
+  direction: publish
+  throttle_rate: 33.33

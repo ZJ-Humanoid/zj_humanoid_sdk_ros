@@ -1,8 +1,0 @@
-﻿{
-    "description":  "右手手势切换",
-    "name":  null,
-    "type":  "zj_humanoid/hand/Gesture",
-    "demos":  [
-                  "./right_hand_gesture_switch.yaml"
-              ]
-}

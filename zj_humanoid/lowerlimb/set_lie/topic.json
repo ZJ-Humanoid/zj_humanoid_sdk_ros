@@ -1,6 +1,0 @@
-﻿{
-    "direction":  "subscribe",
-    "description":  "下肢泄力",
-    "name":  "/zj_humanoid/lowerlimb/set_lie",
-    "type":  "std_msgs/Float32"
-}

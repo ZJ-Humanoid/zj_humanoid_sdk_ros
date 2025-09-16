@@ -1,0 +1,5 @@
+﻿topic:
+  name: /zj_humanoid/hand/finger_pressures/right
+  description: 右手压力传感器数据
+  type: zj_humanoid/hand/PressureSensor
+  direction: publish

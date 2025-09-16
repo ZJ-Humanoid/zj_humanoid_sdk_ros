@@ -1,0 +1,5 @@
+﻿service:
+  name: /zj_humanoid/upperlimb/FK/left_arm
+  description: 左臂正解
+  type: zj_humanoid/upperlimb/FK
+  demos: case1.yaml

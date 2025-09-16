@@ -1,0 +1,5 @@
+﻿service:
+  name: /zj_humanoid/manipulation/scene_update
+  description: 机器人场景更新,基于二维码，需要场景中有二维码
+  type: zj_humanoid/manipulation/SceneUpdate
+  demos: data.yaml

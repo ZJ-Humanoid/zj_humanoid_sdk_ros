@@ -1,0 +1,5 @@
+﻿service:
+  name: /zj_humanoid/upperlimb/IK/left_arm
+  description: 左臂逆解
+  type: zj_humanoid/upperlimb/IK
+  demos: case1.yaml

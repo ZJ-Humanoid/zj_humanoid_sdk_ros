@@ -1,7 +1,0 @@
-﻿{
-    "direction":  "publish",
-    "description":  "左眼相机的RGB图像源数据",
-    "name":  "/zj_humanoid/sensor/CAM_A/image_raw",
-    "type":  "sensor_msgs/Image",
-    "throttle_rate":  62.5
-}

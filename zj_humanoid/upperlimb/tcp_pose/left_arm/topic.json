@@ -1,7 +1,0 @@
-﻿{
-    "direction":  "publish",
-    "description":  "左手臂末端位姿",
-    "name":  "/zj_humanoid/upperlimb/tcp_pose/left_arm",
-    "type":  "zj_humanoid/upperlimb/Pose",
-    "throttle_rate":  10
-}

@@ -1,7 +1,0 @@
-﻿{
-    "direction":  "publish",
-    "description":  "胸部深度相机的RGB图像JPG格式",
-    "name":  "/zj_humanoid/sensor/realsense_up/depth/image_raw/compressed",
-    "type":  "sensor_msgs/Image",
-    "throttle_rate":  33.33
-}

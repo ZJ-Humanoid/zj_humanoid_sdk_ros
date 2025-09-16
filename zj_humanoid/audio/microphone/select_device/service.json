@@ -1,5 +1,0 @@
-﻿{
-    "description":  "选中生效麦克风",
-    "name":  "/zj_humanoid/audio/microphone/select_device",
-    "type":  "zj_humanoid/audio/SetDevice"
-}

@@ -1,5 +1,0 @@
-﻿{
-    "description":  "机器人关机，大小脑将同步关机",
-    "name":  "/zj_humanoid/robot/set_robot_state/OFF",
-    "type":  "std_srvs/Trigger"
-}

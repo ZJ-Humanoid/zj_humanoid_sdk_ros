@@ -1,7 +1,0 @@
-﻿{
-    "direction":  "publish",
-    "description":  "胸部深度相机的RGB图像源数据",
-    "name":  "/zj_humanoid/sensor/realsense_up/aligned_depth_to_color/image_raw",
-    "type":  "sensor_msgs/Image",
-    "throttle_rate":  33.33
-}

@@ -1,0 +1,6 @@
+﻿topic:
+  name: /zj_humanoid/lowerlimb/cmd_vel/joy
+  description: 游戏手柄控制行走
+  type: geometry_msgs/Twist
+  direction: subscribe
+  throttle_rate: 100

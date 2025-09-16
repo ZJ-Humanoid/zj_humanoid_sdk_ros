@@ -1,8 +1,0 @@
-﻿{
-    "description":  "全身指定部位回到内置设置的home点",
-    "name":  null,
-    "type":  "zj_humanoid/upperlimb/ArmType",
-    "demos":  [
-                  "./left_arm_disenable_teachmode.yaml"
-              ]
-}

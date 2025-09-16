@@ -1,0 +1,6 @@
+﻿topic:
+  name: /zj_humanoid/sensor/CAM_A/image_raw
+  description: 左眼相机的RGB图像源数据
+  type: sensor_msgs/Image
+  direction: publish
+  throttle_rate: 62.5

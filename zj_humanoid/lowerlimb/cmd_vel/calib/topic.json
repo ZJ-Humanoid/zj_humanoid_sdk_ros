@@ -1,7 +1,0 @@
-﻿{
-    "direction":  "subscribe",
-    "description":  "导航算法控制行走",
-    "name":  "/zj_humanoid/lowerlimb/cmd_vel/calib",
-    "type":  "geometry_msgs/Twist",
-    "throttle_rate":  100
-}

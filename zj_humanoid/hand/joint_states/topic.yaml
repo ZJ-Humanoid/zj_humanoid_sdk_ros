@@ -1,0 +1,6 @@
+﻿topic:
+  name: /zj_humanoid/hand/joint_states
+  description: 手部关节状态
+  type: sensor_msgs/JointState
+  direction: publish
+  throttle_rate: 10

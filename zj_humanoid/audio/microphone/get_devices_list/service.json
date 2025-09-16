@@ -1,5 +1,0 @@
-﻿{
-    "description":  "获取麦克风设备列表",
-    "name":  "/zj_humanoid/audio/microphone/get_devices_list",
-    "type":  "zj_humanoid/audio/GetDeviceList"
-}

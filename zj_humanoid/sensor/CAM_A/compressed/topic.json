@@ -1,7 +1,0 @@
-﻿{
-    "direction":  "publish",
-    "description":  "左眼相机的JPG图像数据",
-    "name":  "/zj_humanoid/sensor/CAM_A/compressed",
-    "type":  "sensor_msgs/CompressedImage",
-    "throttle_rate":  62.5
-}

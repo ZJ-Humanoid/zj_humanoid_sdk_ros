@@ -1,0 +1,4 @@
+﻿service:
+  name: /zj_humanoid/audio/LLM_chat
+  description: LLM智能对话服务
+  type: zj_humanoid/audio/LLM_chat

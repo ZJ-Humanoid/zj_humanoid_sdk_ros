@@ -1,0 +1,6 @@
+﻿topic:
+  name: /zj_humanoid/upperlimb/cmd_states
+  description: 上肢当前运行模式
+  type: zj_humanoid/upperlimb/CmdState
+  direction: publish
+  throttle_rate: 10

@@ -1,8 +1,0 @@
-﻿{
-    "description":  "退出示教模式",
-    "name":  null,
-    "type":  "zj_humanoid/upperlimb/ArmType",
-    "demos":  [
-                  "./left_arm_disenable_teachmode.yaml"
-              ]
-}

@@ -1,8 +1,0 @@
-﻿{
-    "description":  "None",
-    "name":  null,
-    "type":  "zj_humanoid/upperlimb/MoveL",
-    "demos":  [
-                  "./case1.yaml"
-              ]
-}

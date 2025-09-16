@@ -1,0 +1,6 @@
+﻿topic:
+  name: /zj_humanoid/audio/listen_state
+  description: 唤醒倾听状态发布
+  type: zj_humanoid/audio/ListenInfo
+  direction: publish
+  throttle_rate: 10

@@ -1,0 +1,5 @@
+﻿service:
+  name: /zj_humanoid/manipulationversion
+  description: 操作代码的版本号
+  type: ""
+  demos: data.yaml

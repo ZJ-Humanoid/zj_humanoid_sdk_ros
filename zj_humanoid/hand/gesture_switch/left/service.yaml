@@ -1,0 +1,5 @@
+﻿service:
+  name: /zj_humanoid/hand/gesture_switch/left
+  description: 左手手势切换
+  type: zj_humanoid/hand/Gesture
+  demos: left_hand_gesture_switch.yaml

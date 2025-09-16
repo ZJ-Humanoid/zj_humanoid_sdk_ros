@@ -1,6 +1,0 @@
-﻿{
-    "direction":  "subscribe",
-    "description":  "笛卡尔空间 速度控制",
-    "name":  "/zj_humanoid/upperlimb/speedl/dual_arm",
-    "type":  "zj_humanoid/upperlimb/SpeedL"
-}

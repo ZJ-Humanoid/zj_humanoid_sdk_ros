@@ -1,0 +1,6 @@
+﻿topic:
+  name: /zj_humanoid/hand/wrist_force_sensor/right
+  description: 左手腕部6维力传感器值
+  type: geometry_msgs/WrenchStamped
+  direction: publish
+  throttle_rate: 10

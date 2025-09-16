@@ -1,0 +1,6 @@
+﻿topic:
+  name: /zj_humanoid/navigation/navigation_status
+  description: 当前导航状态信息
+  type: zj_humanoid/navigation/NavigationStatus
+  direction: subscribe
+  throttle_rate: 50

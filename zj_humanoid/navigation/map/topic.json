@@ -1,6 +1,0 @@
-﻿{
-    "direction":  "subscribe",
-    "description":  "全局地图信息",
-    "name":  "/zj_humanoid/navigation/map",
-    "type":  "nav_msgs/OccupancyGrid"
-}

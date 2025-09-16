@@ -1,6 +1,0 @@
-﻿{
-    "direction":  "publish",
-    "description":  "语音转文字服务",
-    "name":  "/zj_humanoid/audio/asr_text",
-    "type":  "std_msgs/String"
-}

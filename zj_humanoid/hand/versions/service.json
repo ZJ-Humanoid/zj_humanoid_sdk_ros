@@ -1,5 +1,0 @@
-﻿{
-    "description":  "灵巧手版本号信息",
-    "name":  "/zj_humanoid/hand/versions",
-    "type":  "std_srvs/Trigger"
-}

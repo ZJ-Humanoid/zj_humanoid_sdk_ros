@@ -1,7 +1,0 @@
-﻿{
-    "direction":  "subscribe",
-    "description":  "网络控制行走",
-    "name":  "/zj_humanoid/lowerlimb/cmd_vel/web",
-    "type":  "geometry_msgs/Twist",
-    "throttle_rate":  100
-}

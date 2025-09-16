@@ -1,0 +1,4 @@
+﻿service:
+  name: /zj_humanoid/robot/joint_motor/set_zero
+  description: 电机自动标零服务
+  type: /zj_humanoid/robot/SetZero

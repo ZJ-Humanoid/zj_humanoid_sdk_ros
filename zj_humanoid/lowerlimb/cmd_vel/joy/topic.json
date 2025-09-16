@@ -1,7 +1,0 @@
-﻿{
-    "direction":  "subscribe",
-    "description":  "游戏手柄控制行走",
-    "name":  "/zj_humanoid/lowerlimb/cmd_vel/joy",
-    "type":  "geometry_msgs/Twist",
-    "throttle_rate":  100
-}

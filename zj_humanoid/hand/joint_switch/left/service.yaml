@@ -1,0 +1,8 @@
+﻿service:
+  name: /zj_humanoid/hand/joint_switch/left
+  description: 左手手掌关节运动
+  type: zj_humanoid/hand/HandJoint
+  demos:
+      - left_hand_joint_reset.yaml
+      - left_hand_set_gesture_two.yaml
+      - left_hand_set_gesture_yeah.yaml

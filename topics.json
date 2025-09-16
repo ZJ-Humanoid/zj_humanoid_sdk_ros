@@ -1,0 +1,569 @@
+﻿[
+    {
+        "direction":  "publish",
+        "description":  "语音转文字服务",
+        "name":  "/zj_humanoid/audio/asr_text",
+        "type":  "std_msgs/String"
+    },
+    {
+        "direction":  "publish",
+        "description":  "唤醒倾听状态发布",
+        "name":  "/zj_humanoid/audio/listen_state",
+        "type":  "zj_humanoid/audio/ListenInfo",
+        "throttle_rate":  10
+    },
+    {
+        "direction":  "publish",
+        "description":  "左手压力传感器数据",
+        "name":  "/zj_humanoid/hand/finger_pressures/left",
+        "type":  "zj_humanoid/hand/PressureSensor"
+    },
+    {
+        "direction":  "publish",
+        "description":  "右手压力传感器数据",
+        "name":  "/zj_humanoid/hand/finger_pressures/right",
+        "type":  "zj_humanoid/hand/PressureSensor"
+    },
+    {
+        "direction":  "publish",
+        "description":  "手部关节状态",
+        "name":  "/zj_humanoid/hand/joint_states",
+        "type":  "sensor_msgs/JointState",
+        "throttle_rate":  10
+    },
+    {
+        "direction":  "publish",
+        "description":  "右手腕部6维力传感器值",
+        "name":  "/zj_humanoid/hand/wrist_force_sensor/left",
+        "type":  "geometry_msgs/WrenchStamped",
+        "throttle_rate":  10
+    },
+    {
+        "direction":  "publish",
+        "description":  "左手腕部6维力传感器值",
+        "name":  "/zj_humanoid/hand/wrist_force_sensor/right",
+        "type":  "geometry_msgs/WrenchStamped",
+        "throttle_rate":  10
+    },
+    {
+        "direction":  "publish",
+        "description":  "腰部imu值",
+        "name":  "/zj_humanoid/lowerlimb/body_imu",
+        "type":  "sensor_msgs/JointState",
+        "throttle_rate":  10
+    },
+    {
+        "direction":  "subscribe",
+        "description":  "导航算法控制行走",
+        "name":  "/zj_humanoid/lowerlimb/cmd_vel/calib",
+        "type":  "geometry_msgs/Twist",
+        "throttle_rate":  100
+    },
+    {
+        "direction":  "subscribe",
+        "description":  "游戏手柄控制行走",
+        "name":  "/zj_humanoid/lowerlimb/cmd_vel/joy",
+        "type":  "geometry_msgs/Twist",
+        "throttle_rate":  100
+    },
+    {
+        "direction":  "subscribe",
+        "description":  "网络控制行走",
+        "name":  "/zj_humanoid/lowerlimb/cmd_vel/web",
+        "type":  "geometry_msgs/Twist",
+        "throttle_rate":  100
+    },
+    {
+        "direction":  "publish",
+        "description":  "运控模块延时信息",
+        "name":  "/zj_humanoid/lowerlimb/debug_info",
+        "type":  "std_msgs/String",
+        "throttle_rate":  1000
+    },
+    {
+        "direction":  "subscribe",
+        "description":  "下肢泄力",
+        "name":  "/zj_humanoid/lowerlimb/set_lie",
+        "type":  "std_msgs/Float32"
+    },
+    {
+        "direction":  "subscribe",
+        "description":  "站立姿态初始化",
+        "name":  "/zj_humanoid/lowerlimb/set_stand",
+        "type":  "std_msgs/Float32"
+    },
+    {
+        "direction":  "subscribe",
+        "description":  "开启运动模式",
+        "name":  "/zj_humanoid/lowerlimb/start_move",
+        "type":  "std_msgs/Float32"
+    },
+    {
+        "direction":  "publish",
+        "description":  "上肢控制请求",
+        "name":  "/zj_humanoid/lowerlimb/uplimb_ctrl_mode",
+        "type":  "std_msgs/Float32"
+    },
+    {
+        "direction":  "publish",
+        "description":  "实例分割Action",
+        "name":  "/zj_humanoid/manipulation/instance_segmentation_action/goal",
+        "type":  "zj_humanoid/manipulation/InstSeg",
+        "demos":  [
+                      "data.yaml"
+                  ]
+    },
+    {
+        "direction":  "subscribe",
+        "description":  "局部障碍物信息",
+        "name":  "/zj_humanoid/navigation/local_map",
+        "type":  "zj_humanoid/navigation/LocalMap",
+        "throttle_rate":  100
+    },
+    {
+        "direction":  "subscribe",
+        "description":  "全局地图信息",
+        "name":  "/zj_humanoid/navigation/map",
+        "type":  "nav_msgs/OccupancyGrid"
+    },
+    {
+        "direction":  "subscribe",
+        "description":  "当前导航状态信息",
+        "name":  "/zj_humanoid/navigation/navigation_status",
+        "type":  "zj_humanoid/navigation/NavigationStatus",
+        "throttle_rate":  50
+    },
+    {
+        "direction":  "subscribe",
+        "description":  "当前位姿信息，有定位时才会输出结果",
+        "name":  "/zj_humanoid/navigation/odom_info",
+        "type":  "nav_msgs/Odometry",
+        "throttle_rate":  100
+    },
+    {
+        "direction":  "publish",
+        "description":  "发布导航任务信息，该话题仅发布导航任务，不返回导航的结果",
+        "name":  "/zj_humanoid/navigation/task_info",
+        "type":  "zj_humanoid/navigation/TakInfo",
+        "demos":  [
+                      "rostopic_pub_zj_humanoid_navigation_task_info.yaml"
+                  ],
+        "throttle_rate":  1000
+    },
+    {
+        "direction":  "publish",
+        "description":  "机器人主电池和BMS相关信息",
+        "name":  "/zj_humanoid/robot/battery_info",
+        "type":  "zj_humanoid/robot/BatteryInfo",
+        "demos":  [
+                      "battery_info.yaml"
+                  ],
+        "throttle_rate":  1000
+    },
+    {
+        "direction":  "publish",
+        "description":  "机器人关节电机错误信息",
+        "name":  "/zj_humanoid/robot/joint_motor/errors",
+        "type":  "sensor_msgs/JointState",
+        "throttle_rate":  1000
+    },
+    {
+        "direction":  "publish",
+        "description":  "机器人关节电机温度信息",
+        "name":  "/zj_humanoid/robot/joint_motor/temperatures",
+        "type":  "sensor_msgs/JointState",
+        "throttle_rate":  1000
+    },
+    {
+        "direction":  "publish",
+        "description":  "机器人内部软件和算法模块运行状态检测, 包含上肢，灵巧手，遥控器，下肢，四目相机，深度相机，定位模块，导航模块，语音模块等",
+        "name":  "/zj_humanoid/robot/monitor",
+        "type":  "zj_humanoid/robot/ModulesMonitor",
+        "demos":  [
+                      "robot_modules_monitor.yaml"
+                  ],
+        "throttle_rate":  1000
+    },
+    {
+        "direction":  "publish",
+        "description":  "机器人大脑orin错误汇总，包括over_temp,over_cpu,over_mem,over_disk等",
+        "name":  "/zj_humanoid/robot/orin_states/errors",
+        "type":  "zj_humanoid/robot/Errors",
+        "demos":  [
+                      "over_temp_err.yaml"
+                  ],
+        "throttle_rate":  1000
+    },
+    {
+        "direction":  "publish",
+        "description":  "机器人大脑orin资源统计，包括cpu,temperature,memory,disk等信息",
+        "name":  "/zj_humanoid/robot/orin_states/resource",
+        "type":  "zj_humanoid/robot/Resource",
+        "demos":  [
+                      "get_orin_resouce.yaml"
+                  ],
+        "throttle_rate":  1000
+    },
+    {
+        "direction":  "publish",
+        "description":  "小脑pico错误汇总，包含over_temp,over_cpu,over_mem,over_disk等",
+        "name":  "/zj_humanoid/robot/pico_states/errors",
+        "type":  "zj_humanoid/robot/Errors",
+        "demos":  [
+                      "over_temp_err.yaml"
+                  ],
+        "throttle_rate":  1000
+    },
+    {
+        "direction":  "publish",
+        "description":  "小脑pico资源统计，包含cpu,temperature,memory,disk等信息",
+        "name":  "/zj_humanoid/robot/pico_states/resource",
+        "type":  "zj_humanoid/robot/Resource",
+        "demos":  [
+                      "get_pico_resouce.yaml"
+                  ]
+    },
+    {
+        "direction":  "publish",
+        "description":  "机器人状态机值实时发布，只有当机器人进入RUN状态，机器人才能进行动作的执行",
+        "name":  "/zj_humanoid/robot/robot_state",
+        "type":  "zj_humanoid/robot/RobotState",
+        "throttle_rate":  1000
+    },
+    {
+        "direction":  "publish",
+        "description":  "机器人开机后单次工作状态发布，包含已运行时间，剩余工作时间，行进里程数等",
+        "name":  "/zj_humanoid/robot/work_status_form_start",
+        "type":  "zj_humanoid/robot/WorkStatus",
+        "demos":  [
+                      "robot_work_status.yaml"
+                  ],
+        "throttle_rate":  1000
+    },
+    {
+        "direction":  "publish",
+        "description":  "左眼相机的JPG图像数据",
+        "name":  "/zj_humanoid/sensor/CAM_A/compressed",
+        "type":  "sensor_msgs/CompressedImage",
+        "throttle_rate":  62.5
+    },
+    {
+        "direction":  "publish",
+        "description":  "左眼相机的RGB图像源数据",
+        "name":  "/zj_humanoid/sensor/CAM_A/image_raw",
+        "type":  "sensor_msgs/Image",
+        "throttle_rate":  62.5
+    },
+    {
+        "direction":  "publish",
+        "description":  "右眼相机的JPG图像数据",
+        "name":  "/zj_humanoid/sensor/CAM_B/compressed",
+        "type":  "sensor_msgs/CompressedImage",
+        "throttle_rate":  62.5
+    },
+    {
+        "direction":  "publish",
+        "description":  "右眼相机的RGB图像源数据",
+        "name":  "/zj_humanoid/sensor/CAM_B/image_raw",
+        "type":  "sensor_msgs/Image",
+        "throttle_rate":  62.5
+    },
+    {
+        "direction":  "publish",
+        "description":  "右侧太阳穴相机C的JPG图像数据",
+        "name":  "/zj_humanoid/sensor/CAM_C/compressed",
+        "type":  "sensor_msgs/CompressedImage",
+        "throttle_rate":  62.5
+    },
+    {
+        "direction":  "publish",
+        "description":  "右侧太阳穴相机C的RGB图像源数据",
+        "name":  "/zj_humanoid/sensor/CAM_C/image_raw",
+        "type":  "sensor_msgs/Image",
+        "throttle_rate":  62.5
+    },
+    {
+        "direction":  "publish",
+        "description":  "左侧太阳穴相机D的JPG图像格式",
+        "name":  "/zj_humanoid/sensor/CAM_D/compressed",
+        "type":  "sensor_msgs/CompressedImage",
+        "throttle_rate":  62.5
+    },
+    {
+        "direction":  "publish",
+        "description":  "左侧太阳穴相机D的RGB图像源数据",
+        "name":  "/zj_humanoid/sensor/CAM_D/image_raw",
+        "type":  "sensor_msgs/Image",
+        "throttle_rate":  62.5
+    },
+    {
+        "direction":  "publish",
+        "description":  "头部相机的IMU数据",
+        "name":  "/zj_humanoid/sensor/head_imu",
+        "type":  "sensor_msgs/Imu",
+        "throttle_rate":  10
+    },
+    {
+        "direction":  "publish",
+        "description":  "胸部深度相机的参数信息",
+        "name":  "/zj_humanoid/sensor/realsense_down/aligned_depth_to_color/camera_info",
+        "type":  "",
+        "throttle_rate":  33.33
+    },
+    {
+        "direction":  "publish",
+        "description":  "胸部深度相机的RGB图像JPG格式",
+        "name":  "/zj_humanoid/sensor/realsense_down/aligned_depth_to_color/image_raw/compressed",
+        "type":  "",
+        "throttle_rate":  33.33
+    },
+    {
+        "direction":  "publish",
+        "description":  "胸部深度相机的RGB图像源数据",
+        "name":  "/zj_humanoid/sensor/realsense_down/aligned_depth_to_color/image_raw",
+        "type":  "",
+        "throttle_rate":  33.33
+    },
+    {
+        "direction":  "publish",
+        "description":  "胸部深度相机的参数信息",
+        "name":  "/zj_humanoid/sensor/realsense_down/color/camera_info",
+        "type":  "sensor_msgs/CameraInfo",
+        "throttle_rate":  33.33
+    },
+    {
+        "direction":  "publish",
+        "description":  "胸部深度相机的RGB图像JPG格式",
+        "name":  "/zj_humanoid/sensor/realsense_down/color/image_raw/compressed",
+        "type":  "sensor_msgs/Image",
+        "throttle_rate":  33.33
+    },
+    {
+        "direction":  "publish",
+        "description":  "胸部深度相机的RGB图像源数据",
+        "name":  "/zj_humanoid/sensor/realsense_down/color/image_raw",
+        "type":  "sensor_msgs/Image",
+        "throttle_rate":  33.33
+    },
+    {
+        "direction":  "publish",
+        "description":  "胸部深度相机的参数信息",
+        "name":  "/zj_humanoid/sensor/realsense_down/depth/camera_info",
+        "type":  "sensor_msgs/CameraInfo",
+        "throttle_rate":  33.33
+    },
+    {
+        "direction":  "publish",
+        "description":  "胸部深度相机的RGB图像JPG格式",
+        "name":  "/zj_humanoid/sensor/realsense_down/depth/image_raw/compressed",
+        "type":  "sensor_msgs/Image",
+        "throttle_rate":  33.33
+    },
+    {
+        "direction":  "publish",
+        "description":  "胸部深度相机的RGB图像源数据",
+        "name":  "/zj_humanoid/sensor/realsense_down/depth/image_raw",
+        "type":  "sensor_msgs/Image",
+        "throttle_rate":  33.33
+    },
+    {
+        "direction":  "publish",
+        "description":  "胸部深度相机的参数信息",
+        "name":  "/zj_humanoid/sensor/realsense_up/aligned_depth_to_color/camera_info",
+        "type":  "sensor_msgs/CameraInfo",
+        "throttle_rate":  33.33
+    },
+    {
+        "direction":  "publish",
+        "description":  "胸部深度相机的RGB图像JPG格式",
+        "name":  "/zj_humanoid/sensor/realsense_up/aligned_depth_to_color/image_raw/compressed",
+        "type":  "sensor_msgs/Image",
+        "throttle_rate":  33.33
+    },
+    {
+        "direction":  "publish",
+        "description":  "胸部深度相机的RGB图像源数据",
+        "name":  "/zj_humanoid/sensor/realsense_up/aligned_depth_to_color/image_raw",
+        "type":  "sensor_msgs/Image",
+        "throttle_rate":  33.33
+    },
+    {
+        "direction":  "publish",
+        "description":  "胸部深度相机的参数信息",
+        "name":  "/zj_humanoid/sensor/realsense_up/color/camera_info",
+        "type":  "sensor_msgs/CameraInfo",
+        "throttle_rate":  33.33
+    },
+    {
+        "direction":  "publish",
+        "description":  "胸部深度相机的RGB图像JPG格式",
+        "name":  "/zj_humanoid/sensor/realsense_up/color/image_raw/compressed",
+        "type":  "sensor_msgs/Image",
+        "throttle_rate":  33.33
+    },
+    {
+        "direction":  "publish",
+        "description":  "胸部深度相机的RGB图像源数据",
+        "name":  "/zj_humanoid/sensor/realsense_up/color/image_raw",
+        "type":  "sensor_msgs/Image",
+        "throttle_rate":  33.33
+    },
+    {
+        "direction":  "publish",
+        "description":  "胸部深度相机的参数信息",
+        "name":  "/zj_humanoid/sensor/realsense_up/depth/camera_info",
+        "type":  "sensor_msgs/CameraInfo",
+        "throttle_rate":  33.33
+    },
+    {
+        "direction":  "publish",
+        "description":  "胸部深度相机的RGB图像JPG格式",
+        "name":  "/zj_humanoid/sensor/realsense_up/depth/image_raw/compressed",
+        "type":  "sensor_msgs/Image",
+        "throttle_rate":  33.33
+    },
+    {
+        "direction":  "publish",
+        "description":  "胸部深度相机的RGB图像源数据",
+        "name":  "/zj_humanoid/sensor/realsense_up/depth/image_raw",
+        "type":  "sensor_msgs/Image",
+        "throttle_rate":  33.33
+    },
+    {
+        "direction":  "publish",
+        "description":  "上肢当前运行模式",
+        "name":  "/zj_humanoid/upperlimb/cmd_states",
+        "type":  "zj_humanoid/upperlimb/CmdState",
+        "throttle_rate":  10
+    },
+    {
+        "direction":  "publish",
+        "description":  "机器人上肢关节position状态值发布",
+        "name":  "/zj_humanoid/upperlimb/joint_states",
+        "type":  "sensor_msgs/JointState",
+        "throttle_rate":  10
+    },
+    {
+        "direction":  "subscribe",
+        "description":  "关节空间 高频位置控制",
+        "name":  "/zj_humanoid/upperlimb/servoj/left_arm",
+        "type":  "zj_humanoid/upperlimb/Joints"
+    },
+    {
+        "direction":  "subscribe",
+        "description":  "关节空间 高频位置控制",
+        "name":  "/zj_humanoid/upperlimb/servoj/right_arm",
+        "type":  "zj_humanoid/upperlimb/Joints"
+    },
+    {
+        "direction":  "subscribe",
+        "description":  "关节空间 高频位置控制",
+        "name":  "/zj_humanoid/upperlimb/servoj/whole_body",
+        "type":  "zj_humanoid/upperlimb/Joints"
+    },
+    {
+        "direction":  "subscribe",
+        "description":  "笛卡尔空间 高频位置跟随控制",
+        "name":  "/zj_humanoid/upperlimb/servol/dual_arm",
+        "type":  "geometry_msgs/Pose"
+    },
+    {
+        "direction":  "subscribe",
+        "description":  "笛卡尔空间 高频位置跟随控制",
+        "name":  "/zj_humanoid/upperlimb/servol/left_arm",
+        "type":  "geometry_msgs/Pose"
+    },
+    {
+        "direction":  "subscribe",
+        "description":  "笛卡尔空间 高频位置跟随控制",
+        "name":  "/zj_humanoid/upperlimb/servol/right_arm",
+        "type":  "geometry_msgs/Pose"
+    },
+    {
+        "direction":  "subscribe",
+        "description":  "启用关节空间速度控制",
+        "name":  "/zj_humanoid/upperlimb/speedj/enable_speedj",
+        "type":  "zj_humanoid/upperlimb/TcpSpeed"
+    },
+    {
+        "direction":  "subscribe",
+        "description":  "关节空间速度控制",
+        "name":  "/zj_humanoid/upperlimb/speedj/left_arm",
+        "type":  "zj_humanoid/upperlimb/TcpSpeed",
+        "throttle_rate":  10
+    },
+    {
+        "direction":  "subscribe",
+        "description":  "关节空间速度控制",
+        "name":  "/zj_humanoid/upperlimb/speedj/lift",
+        "type":  "zj_humanoid/upperlimb/TcpSpeed",
+        "throttle_rate":  10
+    },
+    {
+        "direction":  "subscribe",
+        "description":  "关节空间速度控制",
+        "name":  "/zj_humanoid/upperlimb/speedj/neck",
+        "type":  "zj_humanoid/upperlimb/TcpSpeed",
+        "throttle_rate":  10
+    },
+    {
+        "direction":  "subscribe",
+        "description":  "关节空间速度控制",
+        "name":  "/zj_humanoid/upperlimb/speedj/right_arm",
+        "type":  "zj_humanoid/upperlimb/TcpSpeed",
+        "throttle_rate":  100
+    },
+    {
+        "direction":  "subscribe",
+        "description":  "关节空间速度控制",
+        "name":  "/zj_humanoid/upperlimb/speedj/waist",
+        "type":  "zj_humanoid/upperlimb/TcpSpeed",
+        "throttle_rate":  10
+    },
+    {
+        "direction":  "subscribe",
+        "description":  "关节空间速度控制",
+        "name":  "/zj_humanoid/upperlimb/speedj/whole_body",
+        "type":  "zj_humanoid/upperlimb/TcpSpeed",
+        "throttle_rate":  10
+    },
+    {
+        "direction":  "subscribe",
+        "description":  "笛卡尔空间 速度控制",
+        "name":  "/zj_humanoid/upperlimb/speedl/dual_arm",
+        "type":  "zj_humanoid/upperlimb/SpeedL"
+    },
+    {
+        "direction":  "subscribe",
+        "description":  "笛卡尔空间 速度控制",
+        "name":  "/zj_humanoid/upperlimb/speedl/left_arm",
+        "type":  "zj_humanoid/upperlimb/SpeedL"
+    },
+    {
+        "direction":  "subscribe",
+        "description":  "笛卡尔空间 速度控制",
+        "name":  "/zj_humanoid/upperlimb/speedl/right_arm",
+        "type":  "zj_humanoid/upperlimb/SpeedL"
+    },
+    {
+        "direction":  "publish",
+        "description":  "左手臂末端位姿",
+        "name":  "/zj_humanoid/upperlimb/tcp_pose/left_arm",
+        "type":  "zj_humanoid/upperlimb/Pose",
+        "throttle_rate":  10
+    },
+    {
+        "direction":  "publish",
+        "description":  "右手臂末端位姿",
+        "name":  "/zj_humanoid/upperlimb/tcp_pose/right_arm",
+        "type":  "zj_humanoid/upperlimb/Pose",
+        "throttle_rate":  10
+    },
+    {
+        "direction":  "publish",
+        "description":  "左右手臂末端速度",
+        "name":  "/zj_humanoid/upperlimb/tcp_speed",
+        "type":  "zj_humanoid/upperlimb/TcpSpeed",
+        "throttle_rate":  10
+    }
+]

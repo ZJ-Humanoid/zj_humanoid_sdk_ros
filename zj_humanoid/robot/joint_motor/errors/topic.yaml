@@ -1,0 +1,6 @@
+﻿topic:
+  name: /zj_humanoid/robot/joint_motor/errors
+  description: 机器人关节电机错误信息
+  type: sensor_msgs/JointState
+  direction: publish
+  throttle_rate: 1000

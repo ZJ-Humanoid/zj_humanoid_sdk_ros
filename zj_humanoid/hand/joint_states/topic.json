@@ -1,7 +1,0 @@
-﻿{
-    "direction":  "publish",
-    "description":  "手部关节状态",
-    "name":  "/zj_humanoid/hand/joint_states",
-    "type":  "sensor_msgs/JointState",
-    "throttle_rate":  10
-}

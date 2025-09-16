@@ -1,0 +1,6 @@
+﻿topic:
+  name: /zj_humanoid/upperlimb/tcp_speed
+  description: 左右手臂末端速度
+  type: zj_humanoid/upperlimb/TcpSpeed
+  direction: publish
+  throttle_rate: 10

@@ -1,0 +1,4 @@
+﻿service:
+  name: /zj_humanoid/hand/versions
+  description: 灵巧手版本号信息
+  type: std_srvs/Trigger

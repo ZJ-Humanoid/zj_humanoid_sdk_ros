@@ -1,0 +1,4 @@
+﻿service:
+  name: /zj_humanoid/lowerlimb/versions
+  description: 上肢模块版本号信息
+  type: std_srvs/Trigger

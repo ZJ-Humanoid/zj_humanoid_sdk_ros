@@ -1,0 +1,5 @@
+﻿service:
+  name: /zj_humanoid/upperlimb/movej_by_path/right_arm
+  description: 关节空间下,右臂轨迹点路径运动
+  type: zj_humanoid/upperlimb/MoveJByPath
+  demos: case1.yaml

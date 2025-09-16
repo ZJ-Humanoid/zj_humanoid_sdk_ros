@@ -1,8 +1,0 @@
-﻿{
-    "description":  "停止机器人运动",
-    "name":  null,
-    "type":  "std_srvs/Trigger",
-    "demos":  [
-                  "./data.yaml"
-              ]
-}

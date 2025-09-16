@@ -1,8 +1,0 @@
-﻿{
-    "description":  "获取目标物体位姿",
-    "name":  "/zj_humanoid/manipulation/pose_estimation_service",
-    "type":  "zj_humanoid/manipulation/PoseEst",
-    "demos":  [
-                  "./data.yaml"
-              ]
-}

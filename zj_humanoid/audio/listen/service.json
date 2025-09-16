@@ -1,5 +1,0 @@
-﻿{
-    "description":  "倾听服务",
-    "name":  "/zj_humanoid/audio/listen",
-    "type":  "zj_humanoid/audio/Listen"
-}

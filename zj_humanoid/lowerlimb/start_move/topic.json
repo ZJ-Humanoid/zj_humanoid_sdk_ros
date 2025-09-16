@@ -1,6 +1,0 @@
-﻿{
-    "direction":  "subscribe",
-    "description":  "开启运动模式",
-    "name":  "/zj_humanoid/lowerlimb/start_move",
-    "type":  "std_msgs/Float32"
-}

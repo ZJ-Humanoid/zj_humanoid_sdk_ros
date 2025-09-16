@@ -1,0 +1,6 @@
+﻿topic:
+  name: /zj_humanoid/sensor/CAM_D/compressed
+  description: 左侧太阳穴相机D的JPG图像格式
+  type: sensor_msgs/CompressedImage
+  direction: publish
+  throttle_rate: 62.5

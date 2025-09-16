@@ -1,0 +1,5 @@
+﻿service:
+  name: /zj_humanoid/upperlimb/movej_by_pose/right_arm
+  description: None
+  type: zj_humanoid/upperlimb/MoveJByPose
+  demos: case1.yaml

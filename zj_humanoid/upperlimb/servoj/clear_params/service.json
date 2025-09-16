@@ -1,5 +1,0 @@
-﻿{
-    "description":  "退出笛卡尔空间 高频位置跟随控制",
-    "name":  "/zj_humanoid/upperlimb/servoj/clear_params",
-    "type":  "zj_humanoid/upperlimb/Servo"
-}

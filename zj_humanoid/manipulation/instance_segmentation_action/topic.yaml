@@ -1,0 +1,6 @@
+﻿topic:
+  name: /zj_humanoid/manipulation/instance_segmentation_action/goal
+  description: 实例分割Action
+  type: zj_humanoid/manipulation/InstSeg
+  direction: publish
+  demos: data.yaml

@@ -1,0 +1,6 @@
+﻿topic:
+  name: /zj_humanoid/lowerlimb/body_imu
+  description: 腰部imu值
+  type: sensor_msgs/JointState
+  direction: publish
+  throttle_rate: 10

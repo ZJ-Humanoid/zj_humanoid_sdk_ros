@@ -1,0 +1,5 @@
+﻿service:
+  name: /zj_humanoid/manipulation/pose_space_trajectory_planner
+  description: 末端空间轨迹规划
+  type: zj_humanoid/manipulation/MotionPlan
+  demos: data.yaml

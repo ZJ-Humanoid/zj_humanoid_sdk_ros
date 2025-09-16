@@ -1,0 +1,635 @@
+﻿[
+    {
+        "description":  "倾听服务",
+        "name":  "/zj_humanoid/audio/listen",
+        "type":  "zj_humanoid/audio/Listen"
+    },
+    {
+        "description":  "LLM智能对话服务",
+        "name":  "/zj_humanoid/audio/LLM_chat",
+        "type":  "zj_humanoid/audio/LLM_chat"
+    },
+    {
+        "description":  "音频文件播放",
+        "name":  "/zj_humanoid/audio/media_play",
+        "type":  "zj_humanoid/audio/MediaPlay"
+    },
+    {
+        "description":  "获取麦克风设备列表",
+        "name":  "/zj_humanoid/audio/microphone/get_devices_list",
+        "type":  "zj_humanoid/audio/GetDeviceList"
+    },
+    {
+        "description":  "选中生效麦克风",
+        "name":  "/zj_humanoid/audio/microphone/select_device",
+        "type":  "zj_humanoid/audio/SetDevice"
+    },
+    {
+        "description":  "获取喇叭设备列表",
+        "name":  "/zj_humanoid/audio/speaker/get_devices_list",
+        "type":  "zj_humanoid/audio/GetDeviceList"
+    },
+    {
+        "description":  "获取当前音量",
+        "name":  "/zj_humanoid/audio/speaker/get_volume",
+        "type":  "zj_humanoid/audio/GetVolume"
+    },
+    {
+        "description":  "选中生效喇叭",
+        "name":  "/zj_humanoid/audio/speaker/select_device",
+        "type":  "zj_humanoid/audio/SetDevice"
+    },
+    {
+        "description":  "设置当前音量大小",
+        "name":  "/zj_humanoid/audio/speaker/set_volume",
+        "type":  "zj_humanoid/audio/SetVolume"
+    },
+    {
+        "description":  "文字转语音服务",
+        "name":  "/zj_humanoid/audio/tts_service",
+        "type":  "zj_humanoid/audio/TTS"
+    },
+    {
+        "description":  "语音模块的版本号",
+        "name":  "/zj_humanoid/audio/version",
+        "type":  "std_srvs/Trigger"
+    },
+    {
+        "description":  "置零左手压力传感器数值",
+        "name":  "/zj_humanoid/hand/finger_pressures/left/zero",
+        "type":  "std_srvs/Trigger",
+        "demos":  [
+                      "data.yaml"
+                  ]
+    },
+    {
+        "description":  "置零右手压力传感器数值",
+        "name":  "/zj_humanoid/hand/finger_pressures/right/zero",
+        "type":  "std_srvs/Trigger",
+        "demos":  [
+                      "data.yaml"
+                  ]
+    },
+    {
+        "description":  "双手手势切换",
+        "name":  "/zj_humanoid/hand/gesture_switch/dual",
+        "type":  "zj_humanoid/hand/Gesture",
+        "demos":  [
+                      "dual_hand_gesture_switch.yaml"
+                  ]
+    },
+    {
+        "description":  "左手手势切换",
+        "name":  "/zj_humanoid/hand/gesture_switch/left",
+        "type":  "zj_humanoid/hand/Gesture",
+        "demos":  [
+                      "left_hand_gesture_switch.yaml"
+                  ]
+    },
+    {
+        "description":  "右手手势切换",
+        "name":  "/zj_humanoid/hand/gesture_switch/right",
+        "type":  "zj_humanoid/hand/Gesture",
+        "demos":  [
+                      "right_hand_gesture_switch.yaml"
+                  ]
+    },
+    {
+        "description":  "双手手掌关节运动",
+        "name":  "/zj_humanoid/hand/joint_switch/dual",
+        "type":  "zj_humanoid/hand/HandJoint",
+        "demos":  [
+                      "dual_hand_joint_reset.yaml",
+                      "dual_hand_set_gesture_two.yaml",
+                      "dual_hand_set_gesture_yeah.yaml"
+                  ]
+    },
+    {
+        "description":  "左手手掌关节运动",
+        "name":  "/zj_humanoid/hand/joint_switch/left",
+        "type":  "zj_humanoid/hand/HandJoint",
+        "demos":  [
+                      "left_hand_joint_reset.yaml",
+                      "left_hand_set_gesture_two.yaml",
+                      "left_hand_set_gesture_yeah.yaml"
+                  ]
+    },
+    {
+        "description":  "右手手掌关节运动",
+        "name":  "/zj_humanoid/hand/joint_switch/right",
+        "type":  "zj_humanoid/hand/HandJoint",
+        "demos":  [
+                      "right_hand_joint_reset.yaml",
+                      "right_hand_set_gesture_two.yaml",
+                      "right_hand_set_gesture_yeah.yaml"
+                  ]
+    },
+    {
+        "description":  "左手掌任务控制",
+        "name":  "/zj_humanoid/hand/task_switch/left",
+        "type":  "std_srvs/Bool"
+    },
+    {
+        "description":  "右手掌任务控制",
+        "name":  "/zj_humanoid/hand/task_switch/right",
+        "type":  "std_srvs/Bool"
+    },
+    {
+        "description":  "灵巧手版本号信息",
+        "name":  "/zj_humanoid/hand/versions",
+        "type":  "std_srvs/Trigger"
+    },
+    {
+        "description":  "置零左手力传感器",
+        "name":  "/zj_humanoid/hand/wrist_force_sensor/left/zero",
+        "type":  "std_srvs/Trigger",
+        "demos":  [
+                      "data.yaml"
+                  ]
+    },
+    {
+        "description":  "置零右手力传感器",
+        "name":  "/zj_humanoid/hand/wrist_force_sensor/right/zero",
+        "type":  "std_srvs/Trigger",
+        "demos":  [
+                      "data.yaml"
+                  ]
+    },
+    {
+        "description":  "上肢模块版本号信息",
+        "name":  "/zj_humanoid/lowerlimb/versions",
+        "type":  "std_srvs/Trigger"
+    },
+    {
+        "description":  "相机内外参标定",
+        "name":  "/zj_humanoid/manipulation/camera_calibration",
+        "type":  "zj_humanoid/manipulation/CameraCalibration",
+        "demos":  [
+                      "data.yaml"
+                  ]
+    },
+    {
+        "description":  "输出物品名称执行抓取服务",
+        "name":  "/zj_humanoid/manipulation/execute_pick_task",
+        "type":  "zj_humanoid/manipulation/ExecutePickTask",
+        "demos":  [
+                      "data.yaml"
+                  ]
+    },
+    {
+        "description":  "视觉抓取示教服务",
+        "name":  "/zj_humanoid/manipulation/grasp_teach_service",
+        "type":  "zj_humanoid/manipulation/GraspTeach",
+        "demos":  [
+                      "data.yaml"
+                  ]
+    },
+    {
+        "description":  "关节空间轨迹规划，输出关节轨迹",
+        "name":  "/zj_humanoid/manipulation/joint_space_trajectory_planner",
+        "type":  "zj_humanoid/manipulation/GetTrajectory",
+        "demos":  [
+                      "data.yaml"
+                  ]
+    },
+    {
+        "description":  "获取目标物体位姿",
+        "name":  "/zj_humanoid/manipulation/pose_estimation_service",
+        "type":  "zj_humanoid/manipulation/PoseEst",
+        "demos":  [
+                      "data.yaml"
+                  ]
+    },
+    {
+        "description":  "末端空间轨迹规划",
+        "name":  "/zj_humanoid/manipulation/pose_space_trajectory_planner",
+        "type":  "zj_humanoid/manipulation/MotionPlan",
+        "demos":  [
+                      "data.yaml"
+                  ]
+    },
+    {
+        "description":  "机器人场景更新,基于二维码，需要场景中有二维码",
+        "name":  "/zj_humanoid/manipulation/scene_update",
+        "type":  "zj_humanoid/manipulation/SceneUpdate",
+        "demos":  [
+                      "data.yaml"
+                  ]
+    },
+    {
+        "description":  "操作代码的版本号",
+        "name":  "/zj_humanoid/manipulationversion",
+        "type":  "",
+        "demos":  [
+                      "data.yaml"
+                  ]
+    },
+    {
+        "description":  "定位导航代码的版本号",
+        "name":  "/zj_humanoid/navigation/version",
+        "type":  "std_srvs/Trigger",
+        "demos":  [
+                      "data.yaml"
+                  ]
+    },
+    {
+        "description":  "机器人基础信息，机器人的型号，硬件版本号，软件版本号，IP地址等",
+        "name":  "/zj_humanoid/robot/basic_info",
+        "type":  "zj_humanoid/robot/BasicInfo",
+        "demos":  [
+                      "I2_info.yaml",
+                      "WA2_info.yaml"
+                  ]
+    },
+    {
+        "description":  "机器人脸部屏幕显示,播放视频或图像文件",
+        "name":  "/zj_humanoid/robot/face_show/media_play",
+        "type":  "zj_humanoid/robot/FaceShow",
+        "demos":  [
+                      "Robot_media_play.yaml"
+                  ]
+    },
+    {
+        "description":  "机器人脸部屏幕显示文字",
+        "name":  "/zj_humanoid/robot/face_show/text_show",
+        "type":  "zj_humanoid/robot/FaceText",
+        "demos":  [
+                      "Robot_text_show.yaml"
+                  ]
+    },
+    {
+        "description":  "电机自动标零服务",
+        "name":  "/zj_humanoid/robot/joint_motor/set_zero",
+        "type":  "/zj_humanoid/robot/SetZero"
+    },
+    {
+        "description":  "尝试让机器人大脑orin去连接wifi热点",
+        "name":  "/zj_humanoid/robot/orin_states/connect_wifi",
+        "type":  "zj_humanoid/robot/ConnectWifi"
+    },
+    {
+        "description":  "获取机器人大脑检测到的wifi热点名称",
+        "name":  "/zj_humanoid/robot/orin_states/wifi_list",
+        "type":  "zj_humanoid/robot/WifiList",
+        "demos":  [
+                      "wifi_detected.yaml"
+                  ]
+    },
+    {
+        "description":  "尝试让机器人大脑orin连接wifi热点",
+        "name":  "/zj_humanoid/robot/pico_states/connect_wifi",
+        "type":  "zj_humanoid/robot/ConnectWifi",
+        "demos":  [
+                      "connect_wifi_pico.yaml"
+                  ]
+    },
+    {
+        "description":  "获取机器人小脑检测到的wifi热点名称",
+        "name":  "/zj_humanoid/robot/pico_states/wifi_list",
+        "type":  "zj_humanoid/robot/WifiList",
+        "demos":  [
+                      "connect_wifi_pico.yaml"
+                  ]
+    },
+    {
+        "description":  "机器人关机，大小脑将同步关机",
+        "name":  "/zj_humanoid/robot/set_robot_state/OFF",
+        "type":  "std_srvs/Trigger"
+    },
+    {
+        "description":  "机器人先进stop软急停状态，再自动变为RUN启动运行，在某些故障状态可以执行，但如果有异常的存在，也可能会失败",
+        "name":  "/zj_humanoid/robot/set_robot_state/restart",
+        "type":  "std_srvs/Trigger"
+    },
+    {
+        "description":  "如果机器人处于非RUN状态，尝试将机器人状态值设置为RUN，但如果有异常的存在，也可能会失败",
+        "name":  "/zj_humanoid/robot/set_robot_state/run",
+        "type":  "std_srvs/Trigger"
+    },
+    {
+        "description":  "机器人软急停状态，状态机值将切换为ERR，在机器发生异常时使用",
+        "name":  "/zj_humanoid/robot/set_robot_state/stop",
+        "type":  "std_srvs/Trigger"
+    },
+    {
+        "description":  "相机A的参数信息,相机A安装在机器人左眼的位置上",
+        "name":  "/zj_humanoid/sensor/CAM_A/camera_info",
+        "type":  "zj_humanoid/sensor/CameraInfo"
+    },
+    {
+        "description":  "相机B的参数信息，相机B安装在机器人右眼的位置上",
+        "name":  "/zj_humanoid/sensor/CAM_B/camera_info",
+        "type":  "zj_humanoid/sensor/CameraInfo"
+    },
+    {
+        "description":  "相机C的参数信息，相机C大致安装在机器人右侧太阳穴的位置上",
+        "name":  "/zj_humanoid/sensor/CAM_C/camera_info",
+        "type":  "zj_humanoid/sensor/CameraInfo"
+    },
+    {
+        "description":  "左侧太阳穴相机D的参数信息",
+        "name":  "/zj_humanoid/sensor/CAM_D/camera_info",
+        "type":  "zj_humanoid/sensor/CameraInfo"
+    },
+    {
+        "description":  "左臂正解",
+        "name":  "/zj_humanoid/upperlimb/FK/left_arm",
+        "type":  "zj_humanoid/upperlimb/FK",
+        "demos":  [
+                      "case1.yaml"
+                  ]
+    },
+    {
+        "description":  "右臂正解",
+        "name":  "/zj_humanoid/upperlimb/FK/right_arm",
+        "type":  "zj_humanoid/upperlimb/FK",
+        "demos":  [
+                      "case1.yaml"
+                  ]
+    },
+    {
+        "description":  "双臂放下",
+        "name":  "/zj_humanoid/upperlimb/go_down/dual_arm",
+        "type":  "std_srvs/Trigger",
+        "demos":  [
+                      "data.yaml"
+                  ]
+    },
+    {
+        "description":  "左臂放下",
+        "name":  "/zj_humanoid/upperlimb/go_down/left_arm",
+        "type":  "std_srvs/Trigger",
+        "demos":  [
+                      "data.yaml"
+                  ]
+    },
+    {
+        "description":  "右臂放下",
+        "name":  "/zj_humanoid/upperlimb/go_down/right_arm",
+        "type":  "std_srvs/Trigger",
+        "demos":  [
+                      "data.yaml"
+                  ]
+    },
+    {
+        "description":  "双臂回到内置设置的home点",
+        "name":  "/zj_humanoid/upperlimb/go_home/dual_arm",
+        "type":  "std_srvs/Trigger",
+        "demos":  [
+                      "data.yaml"
+                  ]
+    },
+    {
+        "description":  "左臂回到内置设置的home点",
+        "name":  "/zj_humanoid/upperlimb/go_home/left_arm",
+        "type":  "std_srvs/Trigger",
+        "demos":  [
+                      "data.yaml"
+                  ]
+    },
+    {
+        "description":  "升降回到内置设置的home点",
+        "name":  "/zj_humanoid/upperlimb/go_home/lifting",
+        "type":  "std_srvs/Trigger",
+        "demos":  [
+                      "data.yaml"
+                  ]
+    },
+    {
+        "description":  "脖子回到内置设置的home点",
+        "name":  "/zj_humanoid/upperlimb/go_home/neck",
+        "type":  "std_srvs/Trigger",
+        "demos":  [
+                      "data.yaml"
+                  ]
+    },
+    {
+        "description":  "右臂回到内置设置的home点",
+        "name":  "/zj_humanoid/upperlimb/go_home/right_arm",
+        "type":  "std_srvs/Trigger",
+        "demos":  [
+                      "data.yaml"
+                  ]
+    },
+    {
+        "description":  "腰部回到内置设置的home点",
+        "name":  "/zj_humanoid/upperlimb/go_home/waist",
+        "type":  "std_srvs/Trigger",
+        "demos":  [
+                      "data.yaml"
+                  ]
+    },
+    {
+        "description":  "全身指定部位回到内置设置的home点",
+        "name":  "/zj_humanoid/upperlimb/go_home/whole_body",
+        "type":  "zj_humanoid/upperlimb/ArmType",
+        "demos":  [
+                      "left_arm_disenable_teachmode.yaml"
+                  ]
+    },
+    {
+        "description":  "左臂逆解",
+        "name":  "/zj_humanoid/upperlimb/IK/left_arm",
+        "type":  "zj_humanoid/upperlimb/IK",
+        "demos":  [
+                      "case1.yaml"
+                  ]
+    },
+    {
+        "description":  "右臂逆解",
+        "name":  "/zj_humanoid/upperlimb/IK/right_arm",
+        "type":  "zj_humanoid/upperlimb/IK",
+        "demos":  [
+                      "case1.yaml"
+                  ]
+    },
+    {
+        "description":  "关节空间下,双臂点到点运动",
+        "name":  "/zj_humanoid/upperlimb/movej/dual_arm",
+        "type":  "zj_humanoid/upperlimb/MoveJ",
+        "demos":  [
+                      "dual_arm_v_acc_case1.yaml",
+                      "dual_arm_t_case1.yaml"
+                  ]
+    },
+    {
+        "description":  "关节空间下,左臂点到点运动",
+        "name":  "/zj_humanoid/upperlimb/movej/left_arm",
+        "type":  "zj_humanoid/upperlimb/MoveJ",
+        "demos":  [
+                      "left_arm_v_acc_case1.yaml",
+                      "left_arm_t_case1.yaml"
+                  ]
+    },
+    {
+        "description":  "关节空间下,升降点到点运动",
+        "name":  "/zj_humanoid/upperlimb/movej/lift",
+        "type":  "zj_humanoid/upperlimb/MoveJ",
+        "demos":  [
+                      "lift_v_acc_case1.yaml",
+                      "lift_t_case1.yaml"
+                  ]
+    },
+    {
+        "description":  "关节空间下,脖子点到点运动",
+        "name":  "/zj_humanoid/upperlimb/movej/neck",
+        "type":  "zj_humanoid/upperlimb/MoveJ",
+        "demos":  [
+                      "neck_v_acc_case1.yaml",
+                      "neck_t_case1.yaml"
+                  ]
+    },
+    {
+        "description":  "关节空间下,右臂点到点运动",
+        "name":  "/zj_humanoid/upperlimb/movej/right_arm",
+        "type":  "zj_humanoid/upperlimb/MoveJ",
+        "demos":  [
+                      "right_arm_v_acc_case1.yaml",
+                      "right_arm_t_case1.yaml"
+                  ]
+    },
+    {
+        "description":  "关节空间下,腰部点到点运动",
+        "name":  "/zj_humanoid/upperlimb/movej/waist",
+        "type":  "zj_humanoid/upperlimb/MoveJ",
+        "demos":  [
+                      "waist_v_acc_case1.yaml",
+                      "waist_t_case1.yaml"
+                  ]
+    },
+    {
+        "description":  "关节空间下,全身各部位点到点运动",
+        "name":  "/zj_humanoid/upperlimb/movej/whole_body",
+        "type":  "zj_humanoid/upperlimb/MoveJ",
+        "demos":  [
+                      "whole_body_v_acc_case1.yaml",
+                      "whole_body_t_case1.yaml"
+                  ]
+    },
+    {
+        "description":  "关节空间下,双臂轨迹点路径运动",
+        "name":  "/zj_humanoid/upperlimb/movej_by_path/dual_arm",
+        "type":  "zj_humanoid/upperlimb/MoveJByPath",
+        "demos":  [
+                      "case1.yaml"
+                  ]
+    },
+    {
+        "description":  "关节空间下,左臂轨迹点路径运动",
+        "name":  "/zj_humanoid/upperlimb/movej_by_path/left_arm",
+        "type":  "zj_humanoid/upperlimb/MoveJByPath",
+        "demos":  [
+                      "case1.yaml"
+                  ]
+    },
+    {
+        "description":  "关节空间下,右臂轨迹点路径运动",
+        "name":  "/zj_humanoid/upperlimb/movej_by_path/right_arm",
+        "type":  "zj_humanoid/upperlimb/MoveJByPath",
+        "demos":  [
+                      "case1.yaml"
+                  ]
+    },
+    {
+        "description":  "None",
+        "name":  "/zj_humanoid/upperlimb/movej_by_pose/dual_arm",
+        "type":  "zj_humanoid/upperlimb/MoveJByPose",
+        "demos":  [
+                      "case1.yaml"
+                  ]
+    },
+    {
+        "description":  "None",
+        "name":  "/zj_humanoid/upperlimb/movej_by_pose/left_arm",
+        "type":  "zj_humanoid/upperlimb/MoveJByPose",
+        "demos":  [
+                      "case1.yaml"
+                  ]
+    },
+    {
+        "description":  "None",
+        "name":  "/zj_humanoid/upperlimb/movej_by_pose/right_arm",
+        "type":  "zj_humanoid/upperlimb/MoveJByPose",
+        "demos":  [
+                      "case1.yaml"
+                  ]
+    },
+    {
+        "description":  "None",
+        "name":  "/zj_humanoid/upperlimb/movel/dual_arm",
+        "type":  "zj_humanoid/upperlimb/MoveL",
+        "demos":  [
+                      "case1.yaml"
+                  ]
+    },
+    {
+        "description":  "None",
+        "name":  "/zj_humanoid/upperlimb/movel/left_arm",
+        "type":  "zj_humanoid/upperlimb/MoveL",
+        "demos":  [
+                      "case1.yaml"
+                  ]
+    },
+    {
+        "description":  "None",
+        "name":  "/zj_humanoid/upperlimb/movel/right_arm",
+        "type":  "zj_humanoid/upperlimb/MoveL",
+        "demos":  [
+                      "case1.yaml"
+                  ]
+    },
+    {
+        "description":  "退出笛卡尔空间 高频位置跟随控制",
+        "name":  "/zj_humanoid/upperlimb/servoj/clear_params",
+        "type":  "zj_humanoid/upperlimb/Servo"
+    },
+    {
+        "description":  "设置关节空间 高频位置跟随控制参数",
+        "name":  "/zj_humanoid/upperlimb/servoj/set_params",
+        "type":  "zj_humanoid/upperlimb/Servo"
+    },
+    {
+        "description":  "退出笛卡尔空间 高频位置跟随控制",
+        "name":  "/zj_humanoid/upperlimb/servol/clear_params",
+        "type":  "zj_humanoid/upperlimb/Servo"
+    },
+    {
+        "description":  "设置笛卡尔空间 高频位置跟随控制参数",
+        "name":  "/zj_humanoid/upperlimb/servol/set_params",
+        "type":  "zj_humanoid/upperlimb/Servo"
+    },
+    {
+        "description":  "启用笛卡尔空间 速度控制",
+        "name":  "/zj_humanoid/upperlimb/speedl/enable_speedl",
+        "type":  "std_srvs/SetBool"
+    },
+    {
+        "description":  "停止机器人运动",
+        "name":  "/zj_humanoid/upperlimb/stop_robot",
+        "type":  "std_srvs/Trigger",
+        "demos":  [
+                      "data.yaml"
+                  ]
+    },
+    {
+        "description":  "进入示教模式",
+        "name":  "/zj_humanoid/upperlimb/teach_mode/enter",
+        "type":  "zj_humanoid/upperlimb/ArmType",
+        "demos":  [
+                      "left_arm_enable_teachmode.yaml"
+                  ]
+    },
+    {
+        "description":  "退出示教模式",
+        "name":  "/zj_humanoid/upperlimb/teach_mode/exit",
+        "type":  "zj_humanoid/upperlimb/ArmType",
+        "demos":  [
+                      "left_arm_disenable_teachmode.yaml"
+                  ]
+    },
+    {
+        "description":  "上肢模块版本号信息，包含software_version, hardware_verion等",
+        "name":  "/zj_humanoid/upperlimb/versions",
+        "type":  "std_srvs/Trigger"
+    }
+]

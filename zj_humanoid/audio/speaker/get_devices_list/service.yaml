@@ -1,0 +1,4 @@
+﻿service:
+  name: /zj_humanoid/audio/speaker/get_devices_list
+  description: 获取喇叭设备列表
+  type: zj_humanoid/audio/GetDeviceList

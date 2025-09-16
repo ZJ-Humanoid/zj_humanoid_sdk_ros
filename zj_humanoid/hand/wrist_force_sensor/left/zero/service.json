@@ -1,8 +1,0 @@
-﻿{
-    "description":  "置零左手力传感器",
-    "name":  null,
-    "type":  "std_srvs/Trigger",
-    "demos":  [
-                  "./data.yaml"
-              ]
-}

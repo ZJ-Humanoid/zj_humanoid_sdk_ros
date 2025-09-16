@@ -1,8 +1,0 @@
-﻿{
-    "description":  "末端空间轨迹规划",
-    "name":  "/zj_humanoid/manipulation/pose_space_trajectory_planner",
-    "type":  "zj_humanoid/manipulation/MotionPlan",
-    "demos":  [
-                  "./data.yaml"
-              ]
-}

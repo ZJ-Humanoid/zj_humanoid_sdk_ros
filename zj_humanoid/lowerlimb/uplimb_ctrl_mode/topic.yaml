@@ -1,0 +1,5 @@
+﻿topic:
+  name: /zj_humanoid/lowerlimb/uplimb_ctrl_mode
+  description: 上肢控制请求
+  type: std_msgs/Float32
+  direction: publish

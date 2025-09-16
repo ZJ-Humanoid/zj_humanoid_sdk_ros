@@ -1,0 +1,5 @@
+﻿service:
+  name: /zj_humanoid/manipulation/joint_space_trajectory_planner
+  description: 关节空间轨迹规划，输出关节轨迹
+  type: zj_humanoid/manipulation/GetTrajectory
+  demos: data.yaml

@@ -1,0 +1,4 @@
+﻿service:
+  name: /zj_humanoid/sensor/CAM_D/camera_info
+  description: 左侧太阳穴相机D的参数信息
+  type: zj_humanoid/sensor/CameraInfo

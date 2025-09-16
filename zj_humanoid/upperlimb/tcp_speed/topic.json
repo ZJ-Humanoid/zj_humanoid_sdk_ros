@@ -1,7 +1,0 @@
-﻿{
-    "direction":  "publish",
-    "description":  "左右手臂末端速度",
-    "name":  "/zj_humanoid/upperlimb/tcp_speed",
-    "type":  "zj_humanoid/upperlimb/TcpSpeed",
-    "throttle_rate":  10
-}

@@ -1,5 +1,0 @@
-﻿{
-    "description":  "获取当前音量",
-    "name":  "/zj_humanoid/audio/speaker/get_volume",
-    "type":  "zj_humanoid/audio/GetVolume"
-}

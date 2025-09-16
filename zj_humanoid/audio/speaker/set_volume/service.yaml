@@ -1,0 +1,4 @@
+﻿service:
+  name: /zj_humanoid/audio/speaker/set_volume
+  description: 设置当前音量大小
+  type: zj_humanoid/audio/SetVolume
