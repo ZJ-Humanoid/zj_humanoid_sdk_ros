@@ -1,0 +1,7 @@
+﻿{
+    "direction":  "publish",
+    "description":  "右手腕部6维力传感器值",
+    "name":  "/zj_humanoid/hand/wrist_force_sensor/left",
+    "type":  "geometry_msgs/WrenchStamped",
+    "throttle_rate":  10
+}

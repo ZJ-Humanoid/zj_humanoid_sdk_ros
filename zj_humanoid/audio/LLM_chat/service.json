@@ -1,0 +1,5 @@
+﻿{
+    "description":  "LLM智能对话服务",
+    "name":  "/zj_humanoid/audio/LLM_chat",
+    "type":  "zj_humanoid/audio/LLM_chat"
+}

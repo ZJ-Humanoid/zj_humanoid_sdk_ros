@@ -1,0 +1,7 @@
+﻿{
+    "direction":  "subscribe",
+    "description":  "当前导航状态信息",
+    "name":  "/zj_humanoid/navigation/navigation_status",
+    "type":  "zj_humanoid/navigation/NavigationStatus",
+    "throttle_rate":  50
+}

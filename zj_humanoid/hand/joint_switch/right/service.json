@@ -1,0 +1,10 @@
+﻿{
+    "description":  "右手手掌关节运动",
+    "name":  null,
+    "type":  "zj_humanoid/hand/HandJoint",
+    "demos":  [
+                  "./right_hand_joint_reset.yaml",
+                  "./right_hand_set_gesture_\u0027two\u0027.yaml",
+                  "./right_hand_set_gesture_\u0027yeah\u0027.yaml"
+              ]
+}

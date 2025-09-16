@@ -1,0 +1,9 @@
+﻿{
+    "description":  "关节空间下,左臂点到点运动",
+    "name":  null,
+    "type":  "zj_humanoid/upperlimb/MoveJ",
+    "demos":  [
+                  "./left_arm_v_acc_case1.yaml",
+                  "./left_arm_t_case1.yaml"
+              ]
+}

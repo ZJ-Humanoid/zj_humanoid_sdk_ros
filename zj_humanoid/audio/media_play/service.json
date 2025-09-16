@@ -1,0 +1,5 @@
+﻿{
+    "description":  "音频文件播放",
+    "name":  "/zj_humanoid/audio/media_play",
+    "type":  "zj_humanoid/audio/MediaPlay"
+}

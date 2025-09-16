@@ -1,0 +1,8 @@
+﻿{
+    "description":  "关节空间下,右臂轨迹点路径运动",
+    "name":  null,
+    "type":  "zj_humanoid/upperlimb/MoveJByPath",
+    "demos":  [
+                  "./case1.yaml"
+              ]
+}

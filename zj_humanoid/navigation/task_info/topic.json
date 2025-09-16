@@ -1,0 +1,10 @@
+﻿{
+    "direction":  "publish",
+    "description":  "发布导航任务信息，该话题仅发布导航任务，不返回导航的结果",
+    "name":  "/zj_humanoid/navigation/task_info",
+    "type":  "zj_humanoid/navigation/TakInfo",
+    "demos":  [
+                  "./rostopic_pub_zj_humanoid_navigation_task_info.yaml"
+              ],
+    "throttle_rate":  1000
+}

@@ -1,0 +1,9 @@
+﻿{
+    "direction":  "publish",
+    "description":  "实例分割Action",
+    "name":  "/zj_humanoid/manipulation/instance_segmentation_action/goal",
+    "type":  "zj_humanoid/manipulation/InstSeg",
+    "demos":  [
+                  "./data.yaml"
+              ]
+}

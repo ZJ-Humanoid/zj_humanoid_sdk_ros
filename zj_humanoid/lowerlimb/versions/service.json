@@ -1,0 +1,5 @@
+﻿{
+    "description":  "上肢模块版本号信息",
+    "name":  "/zj_humanoid/lowerlimb/versions",
+    "type":  "std_srvs/Trigger"
+}

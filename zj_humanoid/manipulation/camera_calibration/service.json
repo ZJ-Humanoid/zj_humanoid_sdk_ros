@@ -1,0 +1,8 @@
+﻿{
+    "description":  "相机内外参标定",
+    "name":  "/zj_humanoid/manipulation/camera_calibration",
+    "type":  "zj_humanoid/manipulation/CameraCalibration",
+    "demos":  [
+                  "./data.yaml"
+              ]
+}

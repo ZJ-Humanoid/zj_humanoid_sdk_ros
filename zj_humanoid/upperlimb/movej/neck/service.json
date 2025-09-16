@@ -1,0 +1,9 @@
+﻿{
+    "description":  "关节空间下,脖子点到点运动",
+    "name":  null,
+    "type":  "zj_humanoid/upperlimb/MoveJ",
+    "demos":  [
+                  "./neck_v_acc_case1.yaml",
+                  "./neck_t_case1.yaml"
+              ]
+}

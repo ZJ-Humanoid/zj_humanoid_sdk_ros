@@ -1,0 +1,5 @@
+﻿{
+    "description":  "左手掌任务控制",
+    "name":  "/zj_humanoid/hand/task_switch/left",
+    "type":  "std_srvs/Bool"
+}

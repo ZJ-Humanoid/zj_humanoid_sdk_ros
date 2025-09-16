@@ -1,0 +1,8 @@
+﻿{
+    "description":  "右臂逆解",
+    "name":  null,
+    "type":  "zj_humanoid/upperlimb/IK",
+    "demos":  [
+                  "./case1.yaml"
+              ]
+}

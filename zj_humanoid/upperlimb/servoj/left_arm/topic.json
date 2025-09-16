@@ -1,0 +1,6 @@
+﻿{
+    "direction":  "subscribe",
+    "description":  "关节空间 高频位置控制",
+    "name":  "/zj_humanoid/upperlimb/servoj/left_arm",
+    "type":  "zj_humanoid/upperlimb/Joints"
+}

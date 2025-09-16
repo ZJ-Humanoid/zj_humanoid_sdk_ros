@@ -1,0 +1,8 @@
+﻿{
+    "description":  "操作代码的版本号",
+    "name":  "/zj_humanoid/manipulationversion",
+    "type":  "",
+    "demos":  [
+                  "./data.yaml"
+              ]
+}

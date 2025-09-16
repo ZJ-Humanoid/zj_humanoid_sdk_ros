@@ -1,0 +1,8 @@
+﻿{
+    "description":  "进入示教模式",
+    "name":  null,
+    "type":  "zj_humanoid/upperlimb/ArmType",
+    "demos":  [
+                  "./left_arm_enable_teachmode.yaml"
+              ]
+}

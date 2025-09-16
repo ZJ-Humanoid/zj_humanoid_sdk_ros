@@ -1,0 +1,5 @@
+﻿{
+    "description":  "左侧太阳穴相机D的参数信息",
+    "name":  "/zj_humanoid/sensor/CAM_D/camera_info",
+    "type":  "zj_humanoid/sensor/CameraInfo"
+}

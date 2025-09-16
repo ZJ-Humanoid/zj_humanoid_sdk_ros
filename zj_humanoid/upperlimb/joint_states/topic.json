@@ -1,0 +1,7 @@
+﻿{
+    "direction":  "publish",
+    "description":  "机器人上肢关节position状态值发布",
+    "name":  "/zj_humanoid/upperlimb/joint_states",
+    "type":  "sensor_msgs/JointState",
+    "throttle_rate":  10
+}

@@ -1,0 +1,7 @@
+﻿{
+    "direction":  "publish",
+    "description":  "右侧太阳穴相机C的RGB图像源数据",
+    "name":  "/zj_humanoid/sensor/CAM_C/image_raw",
+    "type":  "sensor_msgs/Image",
+    "throttle_rate":  62.5
+}

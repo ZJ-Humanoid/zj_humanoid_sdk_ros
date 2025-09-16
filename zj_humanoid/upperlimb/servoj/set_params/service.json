@@ -1,0 +1,5 @@
+﻿{
+    "description":  "设置关节空间 高频位置跟随控制参数",
+    "name":  "/zj_humanoid/upperlimb/servoj/set_params",
+    "type":  "zj_humanoid/upperlimb/Servo"
+}

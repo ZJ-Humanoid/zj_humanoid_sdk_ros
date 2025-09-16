@@ -1,0 +1,7 @@
+﻿{
+    "direction":  "publish",
+    "description":  "运控模块延时信息",
+    "name":  "/zj_humanoid/lowerlimb/debug_info",
+    "type":  "std_msgs/String",
+    "throttle_rate":  1000
+}

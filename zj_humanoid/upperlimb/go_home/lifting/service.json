@@ -1,0 +1,8 @@
+﻿{
+    "description":  "升降回到内置设置的home点",
+    "name":  null,
+    "type":  "std_srvs/Trigger",
+    "demos":  [
+                  "./data.yaml"
+              ]
+}

@@ -1,0 +1,7 @@
+﻿{
+    "direction":  "subscribe",
+    "description":  "关节空间速度控制",
+    "name":  "/zj_humanoid/upperlimb/speedj/left_arm",
+    "type":  "zj_humanoid/upperlimb/TcpSpeed",
+    "throttle_rate":  10
+}

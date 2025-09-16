@@ -1,0 +1,6 @@
+﻿{
+    "direction":  "subscribe",
+    "description":  "站立姿态初始化",
+    "name":  "/zj_humanoid/lowerlimb/set_stand",
+    "type":  "std_msgs/Float32"
+}

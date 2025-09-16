@@ -1,0 +1,7 @@
+﻿{
+    "direction":  "publish",
+    "description":  "上肢当前运行模式",
+    "name":  "/zj_humanoid/upperlimb/cmd_states",
+    "type":  "zj_humanoid/upperlimb/CmdState",
+    "throttle_rate":  10
+}

@@ -1,0 +1,5 @@
+﻿{
+    "description":  "文字转语音服务",
+    "name":  "/zj_humanoid/audio/tts_service",
+    "type":  "zj_humanoid/audio/TTS"
+}

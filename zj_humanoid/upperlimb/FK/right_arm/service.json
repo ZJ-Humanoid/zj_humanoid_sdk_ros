@@ -1,0 +1,8 @@
+﻿{
+    "description":  "右臂正解",
+    "name":  null,
+    "type":  "zj_humanoid/upperlimb/FK",
+    "demos":  [
+                  "./case1.yaml"
+              ]
+}

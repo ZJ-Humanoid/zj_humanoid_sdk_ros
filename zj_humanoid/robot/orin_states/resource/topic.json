@@ -1,0 +1,10 @@
+﻿{
+    "direction":  "publish",
+    "description":  "机器人大脑orin资源统计，包括cpu,temperature,memory,disk等信息",
+    "name":  "/zj_humanoid/robot/orin_states/resource",
+    "type":  "zj_humanoid/robot/Resource",
+    "demos":  [
+                  "./get_orin_resouce.yaml"
+              ],
+    "throttle_rate":  1000
+}

@@ -1,0 +1,8 @@
+﻿{
+    "description":  "左臂放下",
+    "name":  null,
+    "type":  "std_srvs/Trigger",
+    "demos":  [
+                  "./data.yaml"
+              ]
+}

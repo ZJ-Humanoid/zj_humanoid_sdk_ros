@@ -1,0 +1,7 @@
+﻿{
+    "direction":  "publish",
+    "description":  "腰部imu值",
+    "name":  "/zj_humanoid/lowerlimb/body_imu",
+    "type":  "sensor_msgs/JointState",
+    "throttle_rate":  10
+}

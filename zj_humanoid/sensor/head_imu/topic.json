@@ -1,0 +1,7 @@
+﻿{
+    "direction":  "publish",
+    "description":  "头部相机的IMU数据",
+    "name":  "/zj_humanoid/sensor/head_imu",
+    "type":  "sensor_msgs/Imu",
+    "throttle_rate":  10
+}

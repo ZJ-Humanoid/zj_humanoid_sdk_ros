@@ -1,0 +1,5 @@
+﻿{
+    "description":  "语音模块的版本号",
+    "name":  "/zj_humanoid/audio/version",
+    "type":  "std_srvs/Trigger"
+}

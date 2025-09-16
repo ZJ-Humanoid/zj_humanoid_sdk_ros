@@ -1,0 +1,5 @@
+﻿{
+    "description":  "如果机器人处于非RUN状态，尝试将机器人状态值设置为RUN，但如果有异常的存在，也可能会失败",
+    "name":  "/zj_humanoid/robot/set_robot_state/run",
+    "type":  "std_srvs/Trigger"
+}

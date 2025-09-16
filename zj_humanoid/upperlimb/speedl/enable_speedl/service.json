@@ -1,0 +1,5 @@
+﻿{
+    "description":  "启用笛卡尔空间 速度控制",
+    "name":  "/zj_humanoid/upperlimb/speedl/enable_speedl",
+    "type":  "std_srvs/SetBool"
+}

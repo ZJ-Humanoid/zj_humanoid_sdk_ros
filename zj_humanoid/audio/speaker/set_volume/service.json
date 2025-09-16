@@ -1,0 +1,5 @@
+﻿{
+    "description":  "设置当前音量大小",
+    "name":  "/zj_humanoid/audio/speaker/set_volume",
+    "type":  "zj_humanoid/audio/SetVolume"
+}

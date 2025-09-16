@@ -1,0 +1,7 @@
+﻿{
+    "direction":  "publish",
+    "description":  "机器人关节电机错误信息",
+    "name":  "/zj_humanoid/robot/joint_motor/errors",
+    "type":  "sensor_msgs/JointState",
+    "throttle_rate":  1000
+}

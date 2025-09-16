@@ -1,0 +1,6 @@
+﻿{
+    "direction":  "publish",
+    "description":  "右手压力传感器数据",
+    "name":  "/zj_humanoid/hand/finger_pressures/right",
+    "type":  "zj_humanoid/hand/PressureSensor"
+}

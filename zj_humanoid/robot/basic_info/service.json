@@ -1,0 +1,9 @@
+﻿{
+    "description":  "机器人基础信息，机器人的型号，硬件版本号，软件版本号，IP地址等",
+    "name":  "/zj_humanoid/robot/basic_info",
+    "type":  "zj_humanoid/robot/BasicInfo",
+    "demos":  [
+                  "./I2_info.yaml",
+                  "./WA2_info.yaml"
+              ]
+}

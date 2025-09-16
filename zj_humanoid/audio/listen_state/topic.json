@@ -1,0 +1,7 @@
+﻿{
+    "direction":  "publish",
+    "description":  "唤醒倾听状态发布",
+    "name":  "/zj_humanoid/audio/listen_state",
+    "type":  "zj_humanoid/audio/ListenInfo",
+    "throttle_rate":  10
+}

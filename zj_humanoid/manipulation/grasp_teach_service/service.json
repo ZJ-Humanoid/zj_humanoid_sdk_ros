@@ -1,0 +1,8 @@
+﻿{
+    "description":  "视觉抓取示教服务",
+    "name":  "/zj_humanoid/manipulation/grasp_teach_service",
+    "type":  "zj_humanoid/manipulation/GraspTeach",
+    "demos":  [
+                  "./data.yaml"
+              ]
+}
