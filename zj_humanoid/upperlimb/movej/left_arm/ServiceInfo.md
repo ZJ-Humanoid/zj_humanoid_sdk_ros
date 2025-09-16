@@ -1,4 +1,4 @@
-
+﻿
 # zj_humanoid/upperlimb/movej/left_arm/
 
 ## description
@@ -9,7 +9,7 @@
 - Service
 
 ## msg_type
-- [upperlimb/MoveJ](../../../../zj_humanoid_types.md#upperlimb/MoveJ)
+- zj_humanoid/upperlimb/MoveJ
 
 ## demos
 - [left_arm_v_acc_case1](./left_arm_v_acc_case1.yaml)

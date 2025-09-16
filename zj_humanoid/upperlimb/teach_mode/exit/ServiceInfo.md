@@ -1,4 +1,4 @@
-
+﻿
 # zj_humanoid/upperlimb/teach_mode/exit
 
 ## description
@@ -9,7 +9,7 @@
 - Service
 
 ## msg_type
-- [upperlimb/ArmType](../../../../zj_humanoid_types.md#upperlimb/ArmType)
+- zj_humanoid/upperlimb/ArmType
 
 ## demos
 - [left_arm_disenable_teachmode](./left_arm_disenable_teachmode.yaml)

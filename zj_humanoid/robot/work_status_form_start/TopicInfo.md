@@ -1,4 +1,4 @@
-# /zj_humanoid/robot/work_status_form_start
+﻿# /zj_humanoid/robot/work_status_form_start
 
 ## description
 - 机器人开机后单次工作状态发布，包含已运行时间，剩余工作时间，行进里程数等
@@ -7,7 +7,7 @@
 - Topic/Publish
 
 ## msg_type
-- [WorkStatus](../../../../zj_humanoid_types.md#WorkStatus)
+- zj_humanoid/robot/WorkStatus
 
 ## hz
 - 1

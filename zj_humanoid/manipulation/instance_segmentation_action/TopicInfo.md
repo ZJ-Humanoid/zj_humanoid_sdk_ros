@@ -1,4 +1,4 @@
-# /zj_humanoid/manipulation/instance_segmentation_action/goal
+﻿# /zj_humanoid/manipulation/instance_segmentation_action/goal
 
 ## description
 - 实例分割Action
@@ -7,7 +7,7 @@
 - Topic/Publish
 
 ## msg_type
-- [InstSeg](../../../../zj_humanoid_types.md#InstSeg)
+- zj_humanoid/manipulation/InstSeg
 
 ## demos
 - [data](./data.yaml)

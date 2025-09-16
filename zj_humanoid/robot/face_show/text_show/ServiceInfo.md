@@ -1,4 +1,4 @@
-# /zj_humanoid/robot/face_show/text_show
+﻿# /zj_humanoid/robot/face_show/text_show
 
 ## description
 - 机器人脸部屏幕显示文字
@@ -7,7 +7,7 @@
 - Service
 
 ## msg_type
-- [FaceText](../../../../../zj_humanoid_types.md#FaceText)
+- zj_humanoid/robot/FaceText
 
 ## demos
 - [Robot_text_show](./Robot_text_show.yaml)

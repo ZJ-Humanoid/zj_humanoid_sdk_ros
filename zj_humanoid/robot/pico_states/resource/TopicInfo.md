@@ -1,4 +1,4 @@
-# /zj_humanoid/robot/pico_states/resource
+﻿# /zj_humanoid/robot/pico_states/resource
 
 ## description
 - 小脑pico资源统计，包含cpu,temperature,memory,disk等信息
@@ -7,7 +7,7 @@
 - Topic/Publish
 
 ## msg_type
-- [Resource](../../../../../zj_humanoid_types.md#Resource)
+- zj_humanoid/robot/Resource
 
 ## agent
 - 机器人大脑的资源状态

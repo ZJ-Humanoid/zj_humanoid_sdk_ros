@@ -1,4 +1,4 @@
-# /zj_humanoid/hand/finger_pressures/right
+﻿# /zj_humanoid/hand/finger_pressures/right
 
 ## description
 - 右手压力传感器数据
@@ -7,5 +7,5 @@
 - Topic
 
 ## msg_type
-- hand/PressureSensor
+- zj_humanoid/hand/PressureSensor
 

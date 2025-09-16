@@ -1,4 +1,4 @@
-# /zj_humanoid/navigation/local_map
+﻿# /zj_humanoid/navigation/local_map
 
 ## description
 - 局部障碍物信息
@@ -7,7 +7,7 @@
 - Topic/Subscriber
 
 ## msg_type
-- [LocalMap](../../../../zj_humanoid_types.md#LocalMap)
+- zj_humanoid/navigation/LocalMap
 
 ## hz
 - 10

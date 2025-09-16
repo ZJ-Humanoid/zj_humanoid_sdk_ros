@@ -1,4 +1,4 @@
-
+﻿
 # zj_humanoid/upperlimb/movej/whole_body/
 
 ## description
@@ -9,7 +9,7 @@
 - Service
 
 ## msg_type
-- [upperlimb/MoveJ](../../../../zj_humanoid_types.md#upperlimb/MoveJ)
+- zj_humanoid/upperlimb/MoveJ
 
 ## demos
 - [whole_body_v_acc_case1](./whole_body_v_acc_case1.yaml)

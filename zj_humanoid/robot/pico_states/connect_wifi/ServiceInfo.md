@@ -1,4 +1,4 @@
-# /zj_humanoid/robot/pico_states/connect_wifi
+﻿# /zj_humanoid/robot/pico_states/connect_wifi
 
 ## description
 - 尝试让机器人大脑orin连接wifi热点
@@ -7,7 +7,7 @@
 - Service
 
 ## msg_type
-- [ConnectWifi](../../../../../zj_humanoid_types.md#ConnectWifi)
+- zj_humanoid/robot/ConnectWifi
 
 ## demos
 - [connect_wifi_pico](./connect_wifi_pico.yaml)

@@ -1,4 +1,4 @@
-# /zj_humanoid/manipulation/joint_space_trajectory_planner
+﻿# /zj_humanoid/manipulation/joint_space_trajectory_planner
 
 ## description
 - 关节空间轨迹规划，输出关节轨迹
@@ -7,7 +7,7 @@
 - Service
 
 ## msg_type
-- [GetTrajectory](../../../../zj_humanoid_types.md#GetTrajectory)
+- zj_humanoid/manipulation/GetTrajectory
 
 ## demos
 - [data](./data.yaml)

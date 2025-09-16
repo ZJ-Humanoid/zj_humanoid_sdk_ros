@@ -1,4 +1,4 @@
-# /zj_humanoid/manipulation/pose_estimation_service
+﻿# /zj_humanoid/manipulation/pose_estimation_service
 
 ## description
 - 获取目标物体位姿
@@ -7,7 +7,7 @@
 - Service
 
 ## msg_type
-- [PoseEst](../../../../zj_humanoid_types.md#PoseEst)
+- zj_humanoid/manipulation/PoseEst
 
 ## demos
 - [data](./data.yaml)

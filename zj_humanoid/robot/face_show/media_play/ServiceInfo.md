@@ -1,4 +1,4 @@
-# /zj_humanoid/robot/face_show/media_play
+﻿# /zj_humanoid/robot/face_show/media_play
 
 ## description
 - 机器人脸部屏幕显示,播放视频或图像文件
@@ -7,7 +7,7 @@
 - Service
 
 ## msg_type
-- [FaceShow](../../../../../zj_humanoid_types.md#FaceShow)
+- zj_humanoid/robot/FaceShow
 
 ## demos
 - [Robot_media_play](./Robot_media_play.yaml)

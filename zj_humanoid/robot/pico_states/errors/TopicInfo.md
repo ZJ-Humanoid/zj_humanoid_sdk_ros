@@ -1,4 +1,4 @@
-# /zj_humanoid/robot/pico_states/errors
+﻿# /zj_humanoid/robot/pico_states/errors
 
 ## description
 - 小脑pico错误汇总，包含over_temp,over_cpu,over_mem,over_disk等
@@ -7,7 +7,7 @@
 - Topic/Publish
 
 ## msg_type
-- [Errors](../../../../../zj_humanoid_types.md#Errors)
+- zj_humanoid/robot/Errors
 
 ## hz
 - 1

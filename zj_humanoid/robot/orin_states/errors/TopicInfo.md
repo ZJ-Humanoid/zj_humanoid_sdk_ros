@@ -1,4 +1,4 @@
-# /zj_humanoid/robot/orin_states/errors
+﻿# /zj_humanoid/robot/orin_states/errors
 
 ## description
 - 机器人大脑orin错误汇总，包括over_temp,over_cpu,over_mem,over_disk等
@@ -7,7 +7,7 @@
 - Topic/Publish
 
 ## msg_type
-- [Errors](../../../../../zj_humanoid_types.md#Errors)
+- zj_humanoid/robot/Errors
 
 ## hz
 - 1

@@ -1,4 +1,4 @@
-# /zj_humanoid/manipulation/execute_pick_task
+﻿# /zj_humanoid/manipulation/execute_pick_task
 
 ## description
 - 输出物品名称执行抓取服务
@@ -7,7 +7,7 @@
 - Service
 
 ## msg_type
-- [ExecutePickTask](../../../../zj_humanoid_types.md#ExecutePickTask)
+- zj_humanoid/manipulation/ExecutePickTask
 
 ## demos
 - [data](./data.yaml)

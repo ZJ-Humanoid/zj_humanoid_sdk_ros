@@ -1,4 +1,4 @@
-
+﻿
 # zj_humanoid/upperlimb/movej/dual_arm/
 
 ## description
@@ -9,7 +9,7 @@
 - Service
 
 ## msg_type
-- [upperlimb/MoveJ](../../../../zj_humanoid_types.md#upperlimb/MoveJ)
+- zj_humanoid/upperlimb/MoveJ
 
 ## demos
 - [dual_arm_v_acc_case1](./dual_arm_v_acc_case1.yaml)

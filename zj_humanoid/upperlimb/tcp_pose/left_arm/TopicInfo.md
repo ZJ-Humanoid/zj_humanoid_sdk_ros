@@ -1,4 +1,4 @@
-# /zj_humanoid/upperlimb/tcp_pose/left_arm
+﻿# /zj_humanoid/upperlimb/tcp_pose/left_arm
 
 ## description
 - 左手臂末端位姿
@@ -7,7 +7,7 @@
 - Topic/Publish
 
 ## msg_type
-- [Pose](../../../../../zj_humanoid_types.md#Pose)
+- zj_humanoid/upperlimb/Pose
 
 ## hz
 - 100

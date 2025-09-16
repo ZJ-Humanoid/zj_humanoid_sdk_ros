@@ -1,4 +1,4 @@
-
+﻿
 # zj_humanoid/hand/joint_switch/dual
 
 ## description
@@ -9,7 +9,7 @@
 - Service
 
 ## msg_type
-- [hand/HandJoint](../../../../zj_humanoid_types.md#hand/HandJoint)
+- zj_humanoid/hand/HandJoint
 
 ## demos
 - [dual_hand_joint_reset](./dual_hand_joint_reset.yaml)

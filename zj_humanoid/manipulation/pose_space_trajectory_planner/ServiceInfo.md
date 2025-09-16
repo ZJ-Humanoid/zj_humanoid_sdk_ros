@@ -1,4 +1,4 @@
-# /zj_humanoid/manipulation/pose_space_trajectory_planner
+﻿# /zj_humanoid/manipulation/pose_space_trajectory_planner
 
 ## description
 - 末端空间轨迹规划
@@ -7,7 +7,7 @@
 - Service
 
 ## msg_type
-- [MotionPlan](../../../../zj_humanoid_types.md#MotionPlan)
+- zj_humanoid/manipulation/MotionPlan
 
 ## demos
 - [data](./data.yaml)

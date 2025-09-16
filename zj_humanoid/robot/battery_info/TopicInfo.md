@@ -1,4 +1,4 @@
-# /zj_humanoid/robot/battery_info
+﻿# /zj_humanoid/robot/battery_info
 
 ## description
 - 机器人主电池和BMS相关信息
@@ -7,7 +7,7 @@
 - Topic/Publish
 
 ## msg_type
-- [BatteryInfo](../../../../zj_humanoid_types.md#BatteryInfo)
+- zj_humanoid/robot/BatteryInfo
 
 ## hz
 - 1

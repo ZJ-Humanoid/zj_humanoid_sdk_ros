@@ -1,4 +1,4 @@
-# /zj_humanoid/manipulation/camera_calibration
+﻿# /zj_humanoid/manipulation/camera_calibration
 
 ## description
 - 相机内外参标定
@@ -7,7 +7,7 @@
 - Service
 
 ## msg_type
-- [CameraCalibration](../../../../zj_humanoid_types.md#CameraCalibration)
+- zj_humanoid/manipulation/CameraCalibration
 
 ## demos
 - [data](./data.yaml)

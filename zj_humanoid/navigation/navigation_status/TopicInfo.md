@@ -1,4 +1,4 @@
-# /zj_humanoid/navigation/navigation_status
+﻿# /zj_humanoid/navigation/navigation_status
 
 ## description
 - 当前导航状态信息
@@ -7,7 +7,7 @@
 - Topic/Subscriber
 
 ## msg_type
-- [NavigationStatus](../../../../zj_humanoid_types.md#NavigationStatus)
+- zj_humanoid/navigation/NavigationStatus
 
 ## hz
 - 20

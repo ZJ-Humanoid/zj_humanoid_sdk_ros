@@ -1,4 +1,4 @@
-# /zj_humanoid/audio/microphone/get_devices_list
+﻿# /zj_humanoid/audio/microphone/get_devices_list
 
 ## description
 - 获取麦克风设备列表
@@ -7,7 +7,7 @@
 - Service
 
 ## msg_type
-- [GetDeviceList](../../../../../zj_humanoid_types.md#GetDeviceList)
+- zj_humanoid/audio/GetDeviceList
 
 ## demos
 - 

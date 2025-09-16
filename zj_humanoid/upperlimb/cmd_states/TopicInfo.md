@@ -1,4 +1,4 @@
-# /zj_humanoid/upperlimb/cmd_states
+﻿# /zj_humanoid/upperlimb/cmd_states
 
 ## description
 - 上肢当前运行模式
@@ -7,7 +7,7 @@
 - Topic/Publish
 
 ## msg_type
-- [CmdState](../../../../zj_humanoid_types.md#CmdState)
+- zj_humanoid/upperlimb/CmdState
 
 ## hz
 - 100

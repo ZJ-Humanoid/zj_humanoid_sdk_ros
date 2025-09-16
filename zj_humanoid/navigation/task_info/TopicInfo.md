@@ -1,4 +1,4 @@
-# /zj_humanoid/navigation/task_info
+﻿# /zj_humanoid/navigation/task_info
 
 ## description
 - 发布导航任务信息，该话题仅发布导航任务，不返回导航的结果
@@ -7,7 +7,7 @@
 - Topic/Publish
 
 ## msg_type
-- [TakInfo](../../../../zj_humanoid_types.md#TakInfo)
+- zj_humanoid/navigation/TakInfo
 
 ## hz
 - 1

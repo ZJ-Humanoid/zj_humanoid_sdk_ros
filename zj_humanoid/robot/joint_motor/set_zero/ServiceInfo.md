@@ -1,4 +1,4 @@
-# /zj_humanoid/robot/joint_motor/set_zero
+﻿# /zj_humanoid/robot/joint_motor/set_zero
 
 ## description
 - 电机自动标零服务
@@ -13,5 +13,5 @@
 - set_zero
 
 ## msg_type
-- [](../../../../../zj_humanoid_types.md#)
+- [](../../../../zj_humanoid_types.md#)
 

@@ -1,4 +1,4 @@
-
+﻿
 # zj_humanoid/hand/gesture_switch/left
 
 ## description
@@ -9,7 +9,7 @@
 - Service
 
 ## msg_type
-- [hand/Gesture](../../../../zj_humanoid_types.md#hand/Gesture)
+- zj_humanoid/hand/Gesture
 
 ## demos
 - [left_hand_gesture_switch](./left_hand_gesture_switch.yaml)

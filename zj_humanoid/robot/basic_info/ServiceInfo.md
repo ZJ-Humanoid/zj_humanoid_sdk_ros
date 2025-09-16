@@ -1,4 +1,4 @@
-# /zj_humanoid/robot/basic_info
+﻿# /zj_humanoid/robot/basic_info
 
 ## description
 - 机器人基础信息，机器人的型号，硬件版本号，软件版本号，IP地址等
@@ -7,7 +7,7 @@
 - Service
 
 ## msg_type
-- [BasicInfo](../../../../zj_humanoid_types.md#BasicInfo)
+- zj_humanoid/robot/BasicInfo
 
 ## demos
 - [I2_info](./I2_info.yaml)

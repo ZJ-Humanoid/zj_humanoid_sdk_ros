@@ -1,4 +1,4 @@
-# /zj_humanoid/upperlimb/tcp_speed
+﻿# /zj_humanoid/upperlimb/tcp_speed
 
 ## description
 - 左右手臂末端速度
@@ -7,7 +7,7 @@
 - Topic/Publish
 
 ## msg_type
-- [TcpSpeed](../../../../zj_humanoid_types.md#TcpSpeed)
+- zj_humanoid/upperlimb/TcpSpeed
 
 ## hz
 - 100

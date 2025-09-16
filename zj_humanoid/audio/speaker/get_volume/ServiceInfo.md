@@ -1,4 +1,4 @@
-# /zj_humanoid/audio/speaker/get_volume
+﻿# /zj_humanoid/audio/speaker/get_volume
 
 ## description
 - 获取当前音量
@@ -7,7 +7,7 @@
 - Service
 
 ## msg_type
-- [GetVolume](../../../../../zj_humanoid_types.md#GetVolume)
+- zj_humanoid/audio/GetVolume
 
 ## agent
 - 获取当前的系统音量大小

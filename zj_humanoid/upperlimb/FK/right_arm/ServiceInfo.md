@@ -1,4 +1,4 @@
-
+﻿
 # zj_humanoid/upperlimb/FK/right_arm/
 
 ## description
@@ -9,7 +9,7 @@
 - Service
 
 ## msg_type
-- [upperlimb/FK](../../../../zj_humanoid_types.md#upperlimb/FK)
+- zj_humanoid/upperlimb/FK
 
 ## demos
 - [case1](./case1.yaml)

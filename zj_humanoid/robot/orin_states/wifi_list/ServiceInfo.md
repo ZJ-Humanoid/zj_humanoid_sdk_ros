@@ -1,4 +1,4 @@
-# /zj_humanoid/robot/orin_states/wifi_list
+﻿# /zj_humanoid/robot/orin_states/wifi_list
 
 ## description
 - 获取机器人大脑检测到的wifi热点名称
@@ -7,7 +7,7 @@
 - Service
 
 ## msg_type
-- [WifiList](../../../../../zj_humanoid_types.md#WifiList)
+- zj_humanoid/robot/WifiList
 
 ## demos
 - [wifi_detected](./wifi_detected.yaml)

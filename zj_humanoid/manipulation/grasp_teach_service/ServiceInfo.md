@@ -1,4 +1,4 @@
-# /zj_humanoid/manipulation/grasp_teach_service
+﻿# /zj_humanoid/manipulation/grasp_teach_service
 
 ## description
 - 视觉抓取示教服务
@@ -7,7 +7,7 @@
 - Service
 
 ## msg_type
-- [GraspTeach](../../../../zj_humanoid_types.md#GraspTeach)
+- zj_humanoid/manipulation/GraspTeach
 
 ## demos
 - [data](./data.yaml)

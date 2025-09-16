@@ -1,4 +1,4 @@
-# /zj_humanoid/upperlimb/speedj/waist
+﻿# /zj_humanoid/upperlimb/speedj/waist
 
 ## description
 - 关节空间速度控制
@@ -7,7 +7,7 @@
 - Topic/Subscribe
 
 ## msg_type
-- [TcpSpeed](../../../../../zj_humanoid_types.md#TcpSpeed)
+- zj_humanoid/upperlimb/TcpSpeed
 
 ## hz
 - 100
