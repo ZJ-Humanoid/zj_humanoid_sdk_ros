@@ -1,2 +1,3 @@
 # Demo: Robot_text_show
-"text: 'Hello Robot' force_stop: false"
+text: 'Hello Robot'
+force_stop: false
