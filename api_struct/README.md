@@ -10,9 +10,13 @@
     - 如路经下包含service.yaml这表示该ros api是service，同时文件内存储了service的信息
 - `zj_humanoid_interfaces.json` - ROS API 接口定义文件，它是由j_humanoid/下的topic和service的yaml转换为
 
-- `demos_test.py` - API demos test， by python3，包含 `ZJHumanoidROSTester` 和 `ROSServiceCaller` 两个核心类
+- `demos_ros_test.py` - API demos test， by python3，包含 `ZJHumanoidROSTester` 和 `ROSServiceCaller` 两个核心类
 
-## demos_test.py 使用方法
+## 使用命令行调用API Demos
+    rosservice call /zj_humanoid/upperlimb/movej/left_arm "$(cat zj_humanoid/upperlimb/movej/left_arm/left_arm_t_case1.yaml)"
+    sh demos_shell_test.sh zj_humanoid/upperlimb/movej/left_arm/left_arm_t_case1.yaml
+    
+## demos_ros_test.py 使用方法
 
 ### 1. 基本服务调用
 
@@ -22,19 +26,19 @@ YAML 文件所在的路径包含隐含的 `service_name`。
 `--service` 是可选参数，如果该参数存在，表示显式指定 `service_name`，覆盖隐式指定的服务名。
 
 ```bash
-python3 demos_test.py <service_path/yaml_file> --service <service_name>
+python3 demos_ros_test.py <service_path/yaml_file> --service <service_name>
 ```
 
 **示例：**
 ```bash
 # 调用左手手掌控制服务
-python3 demos_test.py zj_humanoid/hand/joint_switch/left/left_hand_joint_reset.yaml
+python3 demos_ros_test.py zj_humanoid/hand/joint_switch/left/left_hand_joint_reset.yaml
 
 # 调用左手手臂控制服务
-python3 demos_test.py zj_humanoid/upperlimb/movej/left_arm/left_arm_t_case1.yaml
+python3 demos_ros_test.py zj_humanoid/upperlimb/movej/left_arm/left_arm_t_case1.yaml
 
 # 调用音频服务
-python3 demos_test.py zj_humanoid/audio/listen/hello_world.yaml --service /zj_humanoid/audio/listen
+python3 demos_ros_test.py zj_humanoid/audio/listen/hello_world.yaml --service /zj_humanoid/audio/listen
 ```
 
 ## 功能特性
