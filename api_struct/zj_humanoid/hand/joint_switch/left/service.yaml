@@ -1,8 +1,9 @@
-﻿service:
+service:
   name: /zj_humanoid/hand/joint_switch/left
   description: 左手手掌关节运动
-  type: zj_humanoid/hand/HandJoint
+  type: hand/HandJoint
   demos:
-      - left_hand_joint_reset.yaml
-      - left_hand_set_gesture_two.yaml
-      - left_hand_set_gesture_yeah.yaml
+  - left_hand_joint_reset.yaml
+  - left_hand_set_gesture_two.yaml
+  - left_hand_set_gesture_yeah.yaml
+  note: "左手食指弯曲40度 订阅/hand_joint_states左手食指数值应接近40度"

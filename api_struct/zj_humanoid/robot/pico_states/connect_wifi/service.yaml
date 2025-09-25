@@ -1,5 +1,6 @@
-﻿service:
+service:
   name: /zj_humanoid/robot/pico_states/connect_wifi
-  description: 尝试让机器人大脑orin连接wifi热点
-  type: zj_humanoid/robot/ConnectWifi
+  description: pico连接wifi
+  type: robot/ConnectWifi
   demos: connect_wifi_pico.yaml
+  note: "尝试让机器人小脑pico去连接wifi热点"

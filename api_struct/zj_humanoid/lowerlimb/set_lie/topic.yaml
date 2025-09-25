@@ -3,3 +3,4 @@
   description: 下肢泄力
   type: std_msgs/Float32
   direction: subscribe
+  note: "下肢泄力，软急停"

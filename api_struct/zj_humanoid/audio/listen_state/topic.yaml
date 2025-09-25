@@ -1,6 +1,7 @@
-﻿topic:
+topic:
   name: /zj_humanoid/audio/listen_state
-  description: 唤醒倾听状态发布
-  type: zj_humanoid/audio/ListenInfo
+  description: 唤醒倾听状态
+  type: audio/ListenInfo
   direction: publish
   throttle_rate: 10
+  note: "当前是否为倾听状态"

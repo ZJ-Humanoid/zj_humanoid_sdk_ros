@@ -1,5 +1,6 @@
 ﻿topic:
   name: /zj_humanoid/lowerlimb/uplimb_ctrl_mode
-  description: 上肢控制请求
+  description: 上肢模式控制
   type: std_msgs/Float32
   direction: publish
+  note: "上肢模式控制，可设置为下肢控制模式"

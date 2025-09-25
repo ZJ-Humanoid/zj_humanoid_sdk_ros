@@ -3,3 +3,4 @@
   description: 全局地图信息
   type: nav_msgs/OccupancyGrid
   direction: subscribe
+  note: "全局地图信息"

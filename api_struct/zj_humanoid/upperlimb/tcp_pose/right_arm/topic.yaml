@@ -1,6 +1,7 @@
-﻿topic:
+topic:
   name: /zj_humanoid/upperlimb/tcp_pose/right_arm
-  description: 右手臂末端位姿
-  type: zj_humanoid/upperlimb/Pose
+  description: 右臂tcp位姿控制
+  type: upperlimb/Pose
   direction: publish
   throttle_rate: 10
+  note: "右手臂末端位姿"

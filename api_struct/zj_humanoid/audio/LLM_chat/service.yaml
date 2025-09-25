@@ -1,4 +1,5 @@
-﻿service:
+service:
   name: /zj_humanoid/audio/LLM_chat
-  description: LLM智能对话服务
-  type: zj_humanoid/audio/LLM_chat
+  description: LLM对话服务
+  type: audio/LLM_chat
+  note: "语音模块的版本号是多少"

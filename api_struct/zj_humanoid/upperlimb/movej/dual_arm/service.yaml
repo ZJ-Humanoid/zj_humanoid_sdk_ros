@@ -1,7 +1,8 @@
-﻿service:
+service:
   name: /zj_humanoid/upperlimb/movej/dual_arm
-  description: 关节空间下,双臂点到点运动
-  type: zj_humanoid/upperlimb/MoveJ
+  description: 双臂movej
+  type: upperlimb/MoveJ
   demos:
-      - dual_arm_v_acc_case1.yaml
-      - dual_arm_t_case1.yaml
+  - dual_arm_v_acc_case1.yaml
+  - dual_arm_t_case1.yaml
+  note: "关节空间下,双臂点到点运动"

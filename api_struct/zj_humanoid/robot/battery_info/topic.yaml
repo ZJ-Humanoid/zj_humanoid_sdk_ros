@@ -1,7 +1,8 @@
-﻿topic:
+topic:
   name: /zj_humanoid/robot/battery_info
-  description: 机器人主电池和BMS相关信息
-  type: zj_humanoid/robot/BatteryInfo
+  description: 电池相关信息
+  type: robot/BatteryInfo
   direction: publish
   throttle_rate: 1000
   demos: battery_info.yaml
+  note: "电池BMS相关信息，机器人当前电量还剩多少 回复值应为1~100%"

@@ -1,6 +1,7 @@
 ﻿topic:
   name: /zj_humanoid/sensor/CAM_A/compressed
-  description: 左眼相机的JPG图像数据
+  description: 左眼相机JPG
   type: sensor_msgs/CompressedImage
   direction: publish
   throttle_rate: 62.5
+  note: "左眼相机的JPG图像数据"

@@ -1,6 +1,7 @@
 ﻿topic:
   name: /zj_humanoid/sensor/CAM_C/image_raw
-  description: 右侧太阳穴相机C的RGB图像源数据
+  description: 相机C的RGB
   type: sensor_msgs/Image
   direction: publish
   throttle_rate: 62.5
+  note: "右侧太阳穴相机C的RGB图像源数据"

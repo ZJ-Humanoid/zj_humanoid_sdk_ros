@@ -1,6 +1,7 @@
-﻿topic:
+topic:
   name: /zj_humanoid/upperlimb/speedj/whole_body
-  description: 关节空间速度控制
-  type: zj_humanoid/upperlimb/TcpSpeed
+  description: 全身speedj
+  type: upperlimb/TcpSpeed
   direction: subscribe
   throttle_rate: 10
+  note: "关节空间速度控制"

@@ -1,5 +1,6 @@
 ﻿service:
   name: /zj_humanoid/upperlimb/go_home/dual_arm
-  description: 双臂回到内置设置的home点
+  description: 双臂回到home点
   type: std_srvs/Trigger
   demos: data.yaml
+  note: "双臂回到内置设置的home点"

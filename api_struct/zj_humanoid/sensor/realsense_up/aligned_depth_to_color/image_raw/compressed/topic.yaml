@@ -1,6 +1,7 @@
 ﻿topic:
   name: /zj_humanoid/sensor/realsense_up/aligned_depth_to_color/image_raw/compressed
-  description: 胸部深度相机的RGB图像JPG格式
+  description: 胸部深度aligned压缩图
   type: sensor_msgs/Image
   direction: publish
   throttle_rate: 33.33
+  note: "胸部深度相机的aligned_depth_to_color压缩格式"

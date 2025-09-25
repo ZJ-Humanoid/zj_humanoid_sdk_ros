@@ -4,3 +4,4 @@
   type: geometry_msgs/Twist
   direction: subscribe
   throttle_rate: 100
+  note: ""

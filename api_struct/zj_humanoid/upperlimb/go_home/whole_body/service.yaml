@@ -1,5 +1,6 @@
-﻿service:
+service:
   name: /zj_humanoid/upperlimb/go_home/whole_body
-  description: 全身指定部位回到内置设置的home点
-  type: zj_humanoid/upperlimb/ArmType
+  description: 全身回到home点
+  type: upperlimb/ArmType
   demos: left_arm_disenable_teachmode.yaml
+  note: "全身指定部位回到内置设置的home点"

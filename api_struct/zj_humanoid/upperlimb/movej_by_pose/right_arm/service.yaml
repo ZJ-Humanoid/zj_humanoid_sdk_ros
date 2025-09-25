@@ -1,5 +1,6 @@
-﻿service:
+service:
   name: /zj_humanoid/upperlimb/movej_by_pose/right_arm
-  description: None
-  type: zj_humanoid/upperlimb/MoveJByPose
+  description: 右臂末端movej
+  type: upperlimb/MoveJByPose
   demos: case1.yaml
+  note: "tcp末端空间下,右臂末端位姿movej"

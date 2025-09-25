@@ -1,5 +1,6 @@
-﻿service:
+service:
   name: /zj_humanoid/upperlimb/movel/right_arm
-  description: None
-  type: zj_humanoid/upperlimb/MoveL
+  description: 右臂movel
+  type: upperlimb/MoveL
   demos: case1.yaml
+  note: "关节空间下,右臂直线轨迹点运动"

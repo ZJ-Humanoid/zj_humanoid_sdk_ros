@@ -1,5 +1,6 @@
-﻿topic:
+topic:
   name: /zj_humanoid/upperlimb/servoj/right_arm
-  description: 关节空间 高频位置控制
-  type: zj_humanoid/upperlimb/Joints
+  description: 右臂servoj
+  type: upperlimb/Joints
   direction: subscribe
+  note: "关节空间 高频位置控制"

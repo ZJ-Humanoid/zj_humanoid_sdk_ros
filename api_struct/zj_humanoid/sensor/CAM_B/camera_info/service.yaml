@@ -1,4 +1,5 @@
-﻿service:
+service:
   name: /zj_humanoid/sensor/CAM_B/camera_info
-  description: 相机B的参数信息，相机B安装在机器人右眼的位置上
-  type: zj_humanoid/sensor/CameraInfo
+  description: 右眼参数信息
+  type: sensor/CameraInfo
+  note: "相机B的参数信息，相机B安装在机器人右眼的位置上，相机B的分辨率是多少 回复应包含1280和720"

@@ -1,5 +1,6 @@
-﻿service:
+service:
   name: /zj_humanoid/manipulation/pose_space_trajectory_planner
-  description: 末端空间轨迹规划
-  type: zj_humanoid/manipulation/MotionPlan
+  description: 末端轨迹规划
+  type: manipulation/MotionPlan
   demos: data.yaml
+  note: "末端空间轨迹规划，示教模式下记录各个末端执行器数据，据此生成完整的执行轨迹"

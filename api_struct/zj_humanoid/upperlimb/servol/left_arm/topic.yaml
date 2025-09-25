@@ -1,5 +1,6 @@
 ﻿topic:
   name: /zj_humanoid/upperlimb/servol/left_arm
-  description: 笛卡尔空间 高频位置跟随控制
+  description: 左臂servol
   type: geometry_msgs/Pose
   direction: subscribe
+  note: "笛卡尔空间 高频位置跟随控制"

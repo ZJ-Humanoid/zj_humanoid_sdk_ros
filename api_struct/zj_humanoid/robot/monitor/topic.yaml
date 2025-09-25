@@ -1,7 +1,8 @@
-﻿topic:
+topic:
   name: /zj_humanoid/robot/monitor
-  description: 机器人内部软件和算法模块运行状态检测, 包含上肢，灵巧手，遥控器，下肢，四目相机，深度相机，定位模块，导航模块，语音模块等
-  type: zj_humanoid/robot/ModulesMonitor
+  description: 运行状态检测
+  type: robot/ModulesMonitor
   direction: publish
   throttle_rate: 1000
   demos: robot_modules_monitor.yaml
+  note: "机器人内部软件和算法模块运行状态检测, 包含上肢，灵巧手，遥控器，下肢，四目相机，深度相机，定位模块，导航模块，语音模块等"

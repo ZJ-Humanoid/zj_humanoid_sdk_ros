@@ -1,5 +1,6 @@
-﻿topic:
+topic:
   name: /zj_humanoid/upperlimb/speedl/left_arm
-  description: 笛卡尔空间 速度控制
-  type: zj_humanoid/upperlimb/SpeedL
+  description: 左臂speedl
+  type: upperlimb/SpeedL
   direction: subscribe
+  note: "笛卡尔空间 速度控制"

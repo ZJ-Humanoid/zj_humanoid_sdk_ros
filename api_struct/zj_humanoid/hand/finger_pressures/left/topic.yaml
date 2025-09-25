@@ -1,5 +1,6 @@
-﻿topic:
+topic:
   name: /zj_humanoid/hand/finger_pressures/left
-  description: 左手压力传感器数据
-  type: zj_humanoid/hand/PressureSensor
+  description: 左手压力传感器
+  type: hand/PressureSensor
   direction: publish
+  note: "当前左手压力传感器数值"

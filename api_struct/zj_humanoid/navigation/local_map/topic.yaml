@@ -1,6 +1,7 @@
-﻿topic:
+topic:
   name: /zj_humanoid/navigation/local_map
   description: 局部障碍物信息
-  type: zj_humanoid/navigation/LocalMap
+  type: navigation/LocalMap
   direction: subscribe
   throttle_rate: 100
+  note: ""

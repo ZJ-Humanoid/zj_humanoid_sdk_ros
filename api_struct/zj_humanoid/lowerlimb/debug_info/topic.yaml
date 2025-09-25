@@ -1,6 +1,7 @@
 ﻿topic:
   name: /zj_humanoid/lowerlimb/debug_info
-  description: 运控模块延时信息
+  description: 运控debug信息
   type: std_msgs/String
   direction: publish
   throttle_rate: 1000
+  note: "运控debug信息"

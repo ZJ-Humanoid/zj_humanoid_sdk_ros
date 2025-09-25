@@ -1,5 +1,6 @@
-﻿service:
+service:
   name: /zj_humanoid/robot/face_show/text_show
-  description: 机器人脸部屏幕显示文字
-  type: zj_humanoid/robot/FaceText
+  description: 脸部显示文字
+  type: robot/FaceText
   demos: Robot_text_show.yaml
+  note: "机器人脸部屏幕显示文字，支持指令显示“Hello World”"

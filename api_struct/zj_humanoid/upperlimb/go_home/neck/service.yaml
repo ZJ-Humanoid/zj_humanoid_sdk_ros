@@ -1,5 +1,6 @@
 ﻿service:
   name: /zj_humanoid/upperlimb/go_home/neck
-  description: 脖子回到内置设置的home点
+  description: 脖子回到home点
   type: std_srvs/Trigger
   demos: data.yaml
+  note: "脖子回到内置设置的home点"

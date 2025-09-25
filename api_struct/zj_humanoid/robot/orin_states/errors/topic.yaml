@@ -1,7 +1,8 @@
-﻿topic:
+topic:
   name: /zj_humanoid/robot/orin_states/errors
-  description: 机器人大脑orin错误汇总，包括over_temp,over_cpu,over_mem,over_disk等
-  type: zj_humanoid/robot/Errors
+  description: orin错误汇总
+  type: robot/Errors
   direction: publish
   throttle_rate: 1000
   demos: over_temp_err.yaml
+  note: "机器人大脑orin错误汇总，包括over_temp,over_cpu,over_mem,over_disk等，机器人大脑模块是否有错误发生 回复应包含：没有"

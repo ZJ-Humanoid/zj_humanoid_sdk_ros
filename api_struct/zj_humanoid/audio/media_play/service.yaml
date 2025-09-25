@@ -1,4 +1,5 @@
-﻿service:
+service:
   name: /zj_humanoid/audio/media_play
   description: 音频文件播放
-  type: zj_humanoid/audio/MediaPlay
+  type: audio/MediaPlay
+  note: "播放’公司介绍.mp3‘"

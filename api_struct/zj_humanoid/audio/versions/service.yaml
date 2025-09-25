@@ -2,3 +2,4 @@
   name: /zj_humanoid/audio/version
   description: 语音模块的版本号
   type: std_srvs/Trigger
+  note: ""

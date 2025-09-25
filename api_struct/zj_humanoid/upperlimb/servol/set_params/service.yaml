@@ -1,4 +1,5 @@
-﻿service:
+service:
   name: /zj_humanoid/upperlimb/servol/set_params
-  description: 设置笛卡尔空间 高频位置跟随控制参数
-  type: zj_humanoid/upperlimb/Servo
+  description: 设置servol参数
+  type: upperlimb/Servo
+  note: "设置笛卡尔空间 高频位置跟随控制参数"

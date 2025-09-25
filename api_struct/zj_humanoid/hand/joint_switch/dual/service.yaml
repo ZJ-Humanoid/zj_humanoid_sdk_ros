@@ -1,8 +1,9 @@
-﻿service:
+service:
   name: /zj_humanoid/hand/joint_switch/dual
   description: 双手手掌关节运动
-  type: zj_humanoid/hand/HandJoint
+  type: hand/HandJoint
   demos:
-      - dual_hand_joint_reset.yaml
-      - dual_hand_set_gesture_two.yaml
-      - dual_hand_set_gesture_yeah.yaml
+  - dual_hand_joint_reset.yaml
+  - dual_hand_set_gesture_two.yaml
+  - dual_hand_set_gesture_yeah.yaml
+  note: ""

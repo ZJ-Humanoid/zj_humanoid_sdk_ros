@@ -1,5 +1,6 @@
-﻿service:
+service:
   name: /zj_humanoid/manipulation/grasp_teach_service
-  description: 视觉抓取示教服务
-  type: zj_humanoid/manipulation/GraspTeach
+  description: 视觉抓取示教
+  type: manipulation/GraspTeach
   demos: data.yaml
+  note: "视觉示教抓取，让机器人知道该从什么方位抓取物品"

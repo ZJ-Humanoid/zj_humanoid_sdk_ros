@@ -1,4 +1,5 @@
-﻿service:
+service:
   name: /zj_humanoid/audio/microphone/select_device
-  description: 选中生效麦克风
-  type: zj_humanoid/audio/SetDevice
+  description: 选中麦克风
+  type: audio/SetDevice
+  note: "选择第一个麦克风"

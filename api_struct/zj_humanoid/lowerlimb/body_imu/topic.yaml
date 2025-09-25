@@ -4,3 +4,4 @@
   type: sensor_msgs/JointState
   direction: publish
   throttle_rate: 10
+  note: ""

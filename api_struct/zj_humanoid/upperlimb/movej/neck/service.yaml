@@ -1,7 +1,8 @@
-﻿service:
+service:
   name: /zj_humanoid/upperlimb/movej/neck
-  description: 关节空间下,脖子点到点运动
-  type: zj_humanoid/upperlimb/MoveJ
+  description: 脖子movej
+  type: upperlimb/MoveJ
   demos:
-      - neck_v_acc_case1.yaml
-      - neck_t_case1.yaml
+  - neck_v_acc_case1.yaml
+  - neck_t_case1.yaml
+  note: "关节空间下,脖子点到点运动"

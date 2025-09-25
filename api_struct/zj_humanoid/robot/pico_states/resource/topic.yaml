@@ -1,6 +1,7 @@
-﻿topic:
+topic:
   name: /zj_humanoid/robot/pico_states/resource
-  description: 小脑pico资源统计，包含cpu,temperature,memory,disk等信息
-  type: zj_humanoid/robot/Resource
+  description: pico资源统计
+  type: robot/Resource
   direction: publish
   demos: get_pico_resouce.yaml
+  note: "机器人小脑pico资源状态 回复应包含：小脑的cpu,温度，内存，硬盘的用量"

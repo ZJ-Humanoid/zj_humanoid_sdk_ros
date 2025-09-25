@@ -1,6 +1,7 @@
 ﻿topic:
   name: /zj_humanoid/robot/joint_motor/temperatures
-  description: 机器人关节电机温度信息
+  description: 关节电机温度信息
   type: sensor_msgs/JointState
   direction: publish
   throttle_rate: 1000
+  note: "关节电机温度信息，当前机器人膝关节温度是多少 回复应介于10-80度之间"

@@ -1,5 +1,6 @@
-﻿service:
+service:
   name: /zj_humanoid/manipulation/camera_calibration
   description: 相机内外参标定
-  type: zj_humanoid/manipulation/CameraCalibration
+  type: manipulation/CameraCalibration
   demos: data.yaml
+  note: "自动相机内外参标定，外参标定时机器人会执行一段轨迹，拍摄不同角度的照片，从而计算外参"

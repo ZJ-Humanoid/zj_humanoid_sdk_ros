@@ -1,4 +1,5 @@
 ﻿service:
   name: /zj_humanoid/upperlimb/versions
-  description: 上肢模块版本号信息，包含software_version, hardware_verion等
+  description: 上肢模块版本
   type: std_srvs/Trigger
+  note: "查询当前上肢子系统的软件版本号 应回复软件版本号"

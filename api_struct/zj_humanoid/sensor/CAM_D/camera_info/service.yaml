@@ -1,4 +1,5 @@
-﻿service:
+service:
   name: /zj_humanoid/sensor/CAM_D/camera_info
-  description: 左侧太阳穴相机D的参数信息
-  type: zj_humanoid/sensor/CameraInfo
+  description: 相机D参数信息
+  type: sensor/CameraInfo
+  note: "相机D的参数信息，相机D大致安装在机器人左侧太阳穴的位置上，相机D的分辨率是多少 回复应包含1280和720"

@@ -1,4 +1,5 @@
-﻿service:
+service:
   name: /zj_humanoid/audio/tts_service
-  description: 文字转语音服务
-  type: zj_humanoid/audio/TTS
+  description: 文字转语音
+  type: audio/TTS
+  note: "请让机器人说‘hello world‘"

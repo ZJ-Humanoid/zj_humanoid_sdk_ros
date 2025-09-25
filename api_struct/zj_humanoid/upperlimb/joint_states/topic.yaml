@@ -1,6 +1,7 @@
 ﻿topic:
   name: /zj_humanoid/upperlimb/joint_states
-  description: 机器人上肢关节position状态值发布
+  description: 上肢关节位置状态
   type: sensor_msgs/JointState
   direction: publish
   throttle_rate: 10
+  note: "机器人上肢关节position状态值发布，查询当前机器人颈部pitch的角度 回复应处于+-42度间"

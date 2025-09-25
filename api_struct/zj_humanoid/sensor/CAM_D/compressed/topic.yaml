@@ -1,6 +1,7 @@
 ﻿topic:
   name: /zj_humanoid/sensor/CAM_D/compressed
-  description: 左侧太阳穴相机D的JPG图像格式
+  description: 相机D的JPG
   type: sensor_msgs/CompressedImage
   direction: publish
   throttle_rate: 62.5
+  note: "左侧太阳穴相机D的JPG图像数据"

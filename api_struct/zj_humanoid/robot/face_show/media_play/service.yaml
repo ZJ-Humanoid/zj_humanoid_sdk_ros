@@ -1,5 +1,6 @@
-﻿service:
+service:
   name: /zj_humanoid/robot/face_show/media_play
-  description: 机器人脸部屏幕显示,播放视频或图像文件
-  type: zj_humanoid/robot/FaceShow
+  description: 脸部显示视频
+  type: robot/FaceShow
   demos: Robot_media_play.yaml
+  note: "机器人脸部屏幕显示,播放视频或图像文件，如播放“Hello_World.mp4”"
