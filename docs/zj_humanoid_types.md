@@ -933,10 +933,6 @@ geometry_msgs/Pose pose         # tcp的位姿     xyz:[m]
 
 ```bash
 int8 arm_type               # 机器人类型,使用8421叠加使用
----
-bool success
-string message
-
 
 
 
@@ -945,6 +941,14 @@ byte RIGHT_ARM = 2
 byte NECK      = 4
 byte WAIST     = 8
 byte LIFT      = 16
+
+---
+bool success
+string message
+
+
+
+
 
 # -----------------------------------------------------------------
 # arm_type 8421码定义:
