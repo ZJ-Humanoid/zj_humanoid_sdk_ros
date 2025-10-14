@@ -742,6 +742,107 @@ float64[9] K  # 内参矩阵 K (3x3), 以行主序展开为9个元素的数组
 geometry_msgs/Transform T_cam_body  # 外参: 相机在机器人本体坐标系下的位姿 (T_cam_body: Transform from body frame to camera frame)
 ```
 
+## zj_robot
+
+> version:1.1.0
+
+
+### MSG
+
+#### `BatteryInfo`
+
+```bash
+# 电池基本信息
+uint8 battery_type          # 电池类型  1 - 鼎力2014b, 2 - 鼎力2015型, 3 - 云帆
+
+# LED状态
+uint8 led1_status           # 0x01 - 绿灯常亮，0x02 - 红灯常亮，0x03 - 绿灯闪烁，0x04 - 红灯闪烁, 0x05 - 红绿闪烁，其他 - 灭
+uint8 led2_status           # 同上
+
+# 电压电流信息
+float32 total_voltage       # 电池组总电压，单位V
+float32 total_current       # 电池组总电流，单位A
+
+# 容量信息
+uint16 soc                  # 剩余容量 0-1000表示0%-100%
+float32 remaining_capacity  # 剩余容量，单位Ah
+uint32 remaining_time       # 剩余充电时间, 单位分钟
+
+# 单体电池电压信息
+float32 max_cell_voltage    # 最高单体电压, 单位V
+float32 min_cell_voltage    # 最低单体电压, 单位V
+uint8 max_voltage_cell_num  # 最高单体电压电池位置
+uint8 min_voltage_cell_num  # 最低单体电压电池位置
+float32 voltage_diff        # 单体最高最低电芯压差，单位V
+
+# 温度信息
+int16 max_cell_temperature  # 最高电芯温度，单位摄氏度
+int16 min_cell_temperature  # 最低电芯温度，单位摄氏度
+int16 avg_cell_temperature  # 电芯平均温度，单位摄氏度
+uint8 max_temp_cell_num     # 最高温度电池位置
+uint8 min_temp_cell_num     # 最低温度电池位置
+float32 temperature_diff    # 单体最高最低温度差，单位摄氏度
+
+# 状态信息
+uint8 operation_status      # 充放电状态： 0 - 静置， 1 - 充电， 2 - 放电
+uint16 cycle_count          # 电池循环次数
+
+# 报警和状态标志
+bool is_temperature_high    # 电池温度是否过高
+bool is_battery_low         # 电池电量是否过低
+uint32[16] warnings         # 报警信息位
+
+# 版本信息
+string version              # 版本号
+```
+#### `RobotState`
+
+```bash
+uint8 state         # State enums ; state: 5
+string state_info   # 打印目前获取的状态 ；state_info: "STATE_ROBOT_RUN"
+
+# State enums
+uint8 STATE_ROBOT_NULL = 0
+uint8 STATE_ROBOT_CONFIG = 1
+uint8 STATE_ROBOT_ON = 2
+uint8 STATE_ROBOT_START = 3
+uint8 STATE_ROBOT_INIT = 4
+uint8 STATE_ROBOT_RUN = 5
+uint8 STATE_ROBOT_HALT = 6
+uint8 STATE_ROBOT_STOP = 7
+uint8 STATE_ROBOT_OFF = 8
+uint8 STATE_ROBOT_ERR = 9
+```
+
+### SRV
+
+#### `SetZero`
+
+```bash
+# 标零服务消息定义
+# Request
+int32[] joint_ids    # 要标零的关节ID数组 (0-28)
+---
+# Response
+bool success         # 标零是否成功
+string message       # 详细信息
+
+
+
+# =============================================================================
+# 关节名称到算法编号的映射 (注释，供参考)
+# =============================================================================
+# leftShoulderPitch: 0,    leftShoulderRoll: 1,     leftShoulderYaw: 2
+# leftElbow: 3,           leftWristYaw: 4,         leftWristPitch: 5,        leftWristRoll: 6
+# rightShoulderPitch: 7,   rightShoulderRoll: 8,    rightShoulderYaw: 9
+# rightElbow: 10,         rightWristYaw: 11,       rightWristPitch: 12,      rightWristRoll: 13
+# neckYaw: 14,            neckPitch: 15,           waist: 16
+# leftHipYaw: 17,         leftHipRoll: 18,         leftHipPitch: 19,         leftKnee: 20
+# leftAnklePitch: 21,     leftAnkleRoll: 22
+# rightHipYaw: 23,        rightHipRoll: 24,        rightHipPitch: 25,        rightKnee: 26
+# rightAnklePitch: 27,    rightAnkleRoll: 28
+```
+
 ## upperlimb
 
 > version:1.0.0
