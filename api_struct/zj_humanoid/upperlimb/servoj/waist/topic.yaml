@@ -1,0 +1,6 @@
+topic:
+  name: /zj_humanoid/upperlimb/servoj/waist
+  description: 腰部servoj
+  type: upperlimb/Joints
+  direction: subscribe
+  note: "关节空间 高频位置控制"

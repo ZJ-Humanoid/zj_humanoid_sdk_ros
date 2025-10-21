@@ -1,0 +1,7 @@
+topic:
+  name: /zj_humanoid/audio/audio_data
+  description: 音频流数据
+  type: audio/AudioData
+  direction: publish
+  throttle_rate: 10
+  note: "麦克风收音后的音频数据流"

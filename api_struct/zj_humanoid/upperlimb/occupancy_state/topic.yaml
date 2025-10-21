@@ -1,5 +1,5 @@
 ﻿topic:
-  name: /zj_humanoid/lowerlimb/uplimb_ctrl_mode
+  name: /zj_humanoid/lowerlimb/occupancy_state
   description: 上肢模式控制
   type: std_msgs/Float32
   direction: publish

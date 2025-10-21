@@ -13,21 +13,24 @@
 - `demos_ros_test.py` - API demos test， by python3，包含 `ZJHumanoidROSTester` 和 `ROSServiceCaller` 两个核心类
 
 ## 使用命令行调用API Demos
+
+### rosservice
     rosservice call /zj_humanoid/upperlimb/movej/left_arm "$(cat zj_humanoid/upperlimb/movej/left_arm/left_arm_t_case1.yaml)"
+### demos_shell_test.sh
     sh demos_shell_test.sh zj_humanoid/upperlimb/movej/left_arm/left_arm_t_case1.yaml
-    
+
 ## demos_ros_test.py 使用方法
 
 ### 1. 基本服务调用
+
+python3 demos_ros_test.py <yaml_path> 
+或
+python3 demos_ros_test.py <yaml_path> --service <service_name>
 
 `yaml_file` 是必选参数，表示 `rosservice call` 的请求数据；
 YAML 文件所在的路径包含隐含的 `service_name`。
 如 `zj_humanoid/audio/listen/hello_world.yaml` 表示调用 `/zj_humanoid/audio/listen` 服务。
 `--service` 是可选参数，如果该参数存在，表示显式指定 `service_name`，覆盖隐式指定的服务名。
-
-```bash
-python3 demos_ros_test.py <service_path/yaml_file> --service <service_name>
-```
 
 **示例：**
 ```bash
