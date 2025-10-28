@@ -1,5 +1,5 @@
 ﻿service:
-  name: /zj_humanoid/manipulationversion
+  name: /zj_humanoid/manipulation/version
   description: 操作模块版本号
   type: ""
   demos: data.yaml
