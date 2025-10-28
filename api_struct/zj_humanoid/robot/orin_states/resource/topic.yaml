@@ -1,7 +1,7 @@
 topic:
   name: /zj_humanoid/robot/orin_states/resource
   description: orin资源统计
-  type: robot/Resource
+  type: zj_robot/Resource
   direction: publish
   throttle_rate: 1000
   demos: get_orin_resouce.yaml

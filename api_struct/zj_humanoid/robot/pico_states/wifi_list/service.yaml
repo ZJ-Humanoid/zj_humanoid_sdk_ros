@@ -1,6 +1,6 @@
 service:
   name: /zj_humanoid/robot/pico_states/wifi_list
   description: pico_wifi列表
-  type: robot/WifiList
+  type: zj_robot/WifiList
   demos: connect_wifi_pico.yaml
   note: "获取机器人小脑检测到的wifi热点名称，当前机器人小脑检测到多少个wifi信号 回复应大于1"

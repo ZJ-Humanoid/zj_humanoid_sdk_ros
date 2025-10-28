@@ -1,7 +1,7 @@
 topic:
   name: /zj_humanoid/robot/work_status_form_start
   description: 工作状态
-  type: robot/WorkStatus
+  type: zj_robot/WorkStatus
   direction: publish
   throttle_rate: 1000
   demos: robot_work_status.yaml

@@ -1,7 +1,7 @@
 topic:
   name: /zj_humanoid/robot/battery_info
   description: 电池相关信息
-  type: robot/BatteryInfo
+  type: zj_robot/BatteryInfo
   direction: publish
   throttle_rate: 1000
   demos: battery_info.yaml

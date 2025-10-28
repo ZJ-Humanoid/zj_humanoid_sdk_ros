@@ -1,7 +1,7 @@
 topic:
   name: /zj_humanoid/robot/pico_states/errors
   description: pico错误汇总
-  type: robot/Errors
+  type: zj_robot/Errors
   direction: publish
   throttle_rate: 1000
   demos: over_temp_err.yaml
