@@ -63,8 +63,8 @@ API运行所需的demos的数据（yaml格式）位于api_struct/zj_humanoid/下
     rosservice call /zj_humanoid/upperlimb/movej/left_arm "$(cat zj_humanoid/upperlimb/movej/left_arm/left_arm_t_case1.yaml)"
 
 ### rostopic publish
-    rosservice pub /zj_humanoid/upperlimb/servoj/left_arm "$(cat zj_humanoid/upperlimb/servoj/left_arm/left_arm_t_case1.yaml)"
+    rostopic pub /zj_humanoid/upperlimb/servoj/left_arm "$(cat zj_humanoid/upperlimb/servoj/left_arm/left_arm_t_case1.yaml)"
     
 ### rostopic subscriber
     rosservice echo /zj_humanoid/upperlimb/joint_states
-    
+

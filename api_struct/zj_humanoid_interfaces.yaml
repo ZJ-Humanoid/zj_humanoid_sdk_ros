@@ -33,7 +33,7 @@ services:
   type: audio/AudioData
   direction: publish
   throttle_rate: 10
-  note: "麦克风收音后的音频数据流"
+  note: "麦克风收音后的音频数据流,模块启动后会自动发布选中麦克风的音频数据流"
   demos: []
 - name: /zj_humanoid/audio/speaker/get_devices_list
   description: 获取播放设备
