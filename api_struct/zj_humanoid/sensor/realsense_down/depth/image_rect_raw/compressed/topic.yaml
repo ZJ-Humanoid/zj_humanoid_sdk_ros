@@ -1,5 +1,5 @@
 ﻿topic:
-  name: /zj_humanoid/sensor/realsense_down/depth/image_raw/compressed
+  name: /zj_humanoid/sensor/realsense_down/depth/image_rect_raw/compressed
   description: 腹部深度压缩图
   type: sensor_msgs/Image
   direction: publish
