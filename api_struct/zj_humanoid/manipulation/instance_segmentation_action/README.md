@@ -1,0 +1,7 @@
+# 说明
+此action下有五个话题，分别为
+/zj_humanoid/manipulation/instance_segmentation_action/cancel
+/zj_humanoid/manipulation/instance_segmentation_action/feedback
+/zj_humanoid/manipulation/instance_segmentation_action/goal
+/zj_humanoid/manipulation/instance_segmentation_action/result
+/zj_humanoid/manipulation/instance_segmentation_action/status
