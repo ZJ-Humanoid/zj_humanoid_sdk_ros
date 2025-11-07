@@ -4,3 +4,4 @@ service:
   type: upperlimb/ArmType
   demos: left_arm_disenable_teachmode.yaml
   note: ""
+  applicable_robot_models: [H1, rx, wa1]

@@ -1,5 +1,6 @@
 ﻿service:
   name: /zj_humanoid/lowerlimb/versions
-  description: 上肢模块版本
+  description: 下肢模块版本
   type: std_srvs/Trigger
   note: ""
+  applicable_robot_models: [rx]  # 适用机器人型号

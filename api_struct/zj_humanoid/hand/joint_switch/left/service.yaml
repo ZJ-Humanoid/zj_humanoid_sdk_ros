@@ -7,3 +7,4 @@ service:
   - left_hand_set_gesture_two.yaml
   - left_hand_set_gesture_yeah.yaml
   note: "左手食指弯曲40度 订阅/hand_joint_states左手食指数值应接近40度"
+  applicable_robot_models: [H1, rx, wa1, wa2]  # 适用机器人型号

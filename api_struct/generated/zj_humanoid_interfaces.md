@@ -2,7 +2,7 @@
 
 **Description**: ZJ Humanoid ROS APIs - Services and Topics
 **Version**: v1.0.0
-**Generated At**: 2025-10-21 15:59:48
+**Generated At**: 2025-11-07 17:29:30
 
 ## Services
 
@@ -53,16 +53,6 @@
 **Type**: `audio/SetDevice`
 
 **Note**: 选择第一个麦克风
-
----
-
-### /zj_humanoid/audio/microphone/audio_data
-
-**Description**: 音频流数据
-
-**Type**: `audio/AudioData`
-
-**Note**: 麦克风收音后的音频数据流
 
 ---
 
@@ -240,7 +230,7 @@
 
 ### /zj_humanoid/lowerlimb/versions
 
-**Description**: 上肢模块版本
+**Description**: 下肢模块版本
 
 **Type**: `std_srvs/Trigger`
 
@@ -330,7 +320,7 @@
 
 ---
 
-### /zj_humanoid/manipulationversion
+### /zj_humanoid/manipulation/version
 
 **Description**: 操作模块版本号
 
@@ -354,7 +344,7 @@
 
 **Description**: 机器人基础信息
 
-**Type**: `robot/BasicInfo`
+**Type**: `zj_robot/BasicInfo`
 
 **Note**: 描述下机器人的基础信息 回复应包含机器人的型号，硬件版本号，软件版本号，IP地址
 
@@ -366,7 +356,7 @@
 
 **Description**: 脸部显示视频
 
-**Type**: `robot/FaceShow`
+**Type**: `zj_robot/FaceShow`
 
 **Note**: 机器人脸部屏幕显示,播放视频或图像文件，如播放“Hello_World.mp4”
 
@@ -378,7 +368,7 @@
 
 **Description**: 脸部显示文字
 
-**Type**: `robot/FaceText`
+**Type**: `zj_robot/FaceText`
 
 **Note**: 机器人脸部屏幕显示文字，支持指令显示“Hello World”
 
@@ -390,7 +380,7 @@
 
 **Description**: 电机自动标零
 
-**Type**: `/zj_humanoid/robot/SetZero`
+**Type**: `zj_robot/SetZero`
 
 **Note**: 机器人关节自动标零
 
@@ -400,7 +390,7 @@
 
 **Description**: orin连接wifi
 
-**Type**: `robot/ConnectWifi`
+**Type**: `zj_robot/ConnectWifi`
 
 **Note**: 尝试让机器人大脑orin去连接wifi热点
 
@@ -410,7 +400,7 @@
 
 **Description**: orin_wifi列表
 
-**Type**: `robot/WifiList`
+**Type**: `zj_robot/WifiList`
 
 **Note**: 获取机器人大脑检测到的wifi热点名称，当前机器人大脑检测到多少个wifi信号 回复应大于1
 
@@ -422,7 +412,7 @@
 
 **Description**: pico连接wifi
 
-**Type**: `robot/ConnectWifi`
+**Type**: `zj_robot/ConnectWifi`
 
 **Note**: 尝试让机器人小脑pico去连接wifi热点
 
@@ -434,7 +424,7 @@
 
 **Description**: pico_wifi列表
 
-**Type**: `robot/WifiList`
+**Type**: `zj_robot/WifiList`
 
 **Note**: 获取机器人小脑检测到的wifi热点名称，当前机器人小脑检测到多少个wifi信号 回复应大于1
 
@@ -976,6 +966,20 @@
 
 ---
 
+### /zj_humanoid/audio/audio_data
+
+**Description**: 音频流数据
+
+**Type**: `audio/AudioData`
+
+**Direction**: publish
+
+**Throttle Rate**: 10 Hz
+
+**Note**: 麦克风收音后的音频数据流
+
+---
+
 ### /zj_humanoid/audio/listen_state
 
 **Description**: 唤醒倾听状态
@@ -1118,6 +1122,18 @@
 
 ---
 
+### /zj_humanoid/lowerlimb/occupancy_state
+
+**Description**: 上肢模式控制
+
+**Type**: `std_msgs/Float32`
+
+**Direction**: publish
+
+**Note**: 上肢模式控制，可设置为下肢控制模式
+
+---
+
 ### /zj_humanoid/lowerlimb/set_lie
 
 **Description**: 下肢泄力
@@ -1151,18 +1167,6 @@
 **Direction**: subscribe
 
 **Note**: 开启运动模式，算法开始响应速度控制请求
-
----
-
-### /zj_humanoid/manipulation/instance_segmentation_action/goal
-
-**Description**: 实例分割Action
-
-**Type**: `manipulation/InstSeg`
-
-**Direction**: publish
-
-**Demos**: data.yaml
 
 ---
 
@@ -1238,7 +1242,7 @@
 
 **Description**: 电池相关信息
 
-**Type**: `robot/BatteryInfo`
+**Type**: `zj_robot/BatteryInfo`
 
 **Direction**: publish
 
@@ -1282,7 +1286,7 @@
 
 **Description**: 运行状态检测
 
-**Type**: `robot/ModulesMonitor`
+**Type**: `zj_robot/ModulesMonitor`
 
 **Direction**: publish
 
@@ -1298,7 +1302,7 @@
 
 **Description**: orin错误汇总
 
-**Type**: `robot/Errors`
+**Type**: `zj_robot/Errors`
 
 **Direction**: publish
 
@@ -1314,7 +1318,7 @@
 
 **Description**: orin资源统计
 
-**Type**: `robot/Resource`
+**Type**: `zj_robot/Resource`
 
 **Direction**: publish
 
@@ -1330,7 +1334,7 @@
 
 **Description**: pico错误汇总
 
-**Type**: `robot/Errors`
+**Type**: `zj_robot/Errors`
 
 **Direction**: publish
 
@@ -1346,7 +1350,7 @@
 
 **Description**: pico资源统计
 
-**Type**: `robot/Resource`
+**Type**: `zj_robot/Resource`
 
 **Direction**: publish
 
@@ -1360,7 +1364,7 @@
 
 **Description**: 机器人状态机值
 
-**Type**: `robot/RobotState`
+**Type**: `zj_robot/RobotState`
 
 **Direction**: publish
 
@@ -1374,7 +1378,7 @@
 
 **Description**: 工作状态
 
-**Type**: `robot/WorkStatus`
+**Type**: `zj_robot/WorkStatus`
 
 **Direction**: publish
 
@@ -1410,7 +1414,7 @@
 
 **Throttle Rate**: 62.5 Hz
 
-**Note**: 左眼相机的RGB图像源数据 
+**Note**: 左眼相机的RGB图像源数据
 
 ---
 
@@ -1438,7 +1442,7 @@
 
 **Throttle Rate**: 62.5 Hz
 
-**Note**: 右眼相机的RGB图像源数据 
+**Note**: 右眼相机的RGB图像源数据
 
 ---
 
@@ -1526,20 +1530,6 @@
 
 ---
 
-### /zj_humanoid/sensor/realsense_down/aligned_depth_to_color/image_raw/compressed
-
-**Description**: 腹部深度aligned压缩图
-
-**Type**: `sensor_msgs/Image`
-
-**Direction**: publish
-
-**Throttle Rate**: 33.33 Hz
-
-**Note**: 腹部深度相机的aligned_depth_to_color压缩格式
-
----
-
 ### /zj_humanoid/sensor/realsense_down/aligned_depth_to_color/image_raw
 
 **Description**: 腹部深度aligned图像
@@ -1551,6 +1541,20 @@
 **Throttle Rate**: 33.33 Hz
 
 **Note**: 腹部深度相机的aligned_depth_to_color RGB图像源数据
+
+---
+
+### /zj_humanoid/sensor/realsense_down/aligned_depth_to_color/image_raw/compressed
+
+**Description**: 腹部深度aligned压缩图
+
+**Type**: `sensor_msgs/Image`
+
+**Direction**: publish
+
+**Throttle Rate**: 33.33 Hz
+
+**Note**: 腹部深度相机的aligned_depth_to_color压缩格式
 
 ---
 
@@ -1568,20 +1572,6 @@
 
 ---
 
-### /zj_humanoid/sensor/realsense_down/color/image_raw/compressed
-
-**Description**: 腹部深度压缩图
-
-**Type**: `sensor_msgs/Image`
-
-**Direction**: publish
-
-**Throttle Rate**: 33.33 Hz
-
-**Note**: 腹部深度相机的RGB图像JPG格式
-
----
-
 ### /zj_humanoid/sensor/realsense_down/color/image_raw
 
 **Description**: 腹部深度RGB图像
@@ -1593,6 +1583,20 @@
 **Throttle Rate**: 33.33 Hz
 
 **Note**: 腹部深度相机的RGB图像源数据
+
+---
+
+### /zj_humanoid/sensor/realsense_down/color/image_raw/compressed
+
+**Description**: 腹部深度压缩图
+
+**Type**: `sensor_msgs/Image`
+
+**Direction**: publish
+
+**Throttle Rate**: 33.33 Hz
+
+**Note**: 腹部深度相机的RGB图像JPG格式
 
 ---
 
@@ -1610,21 +1614,7 @@
 
 ---
 
-### /zj_humanoid/sensor/realsense_down/depth/image_raw/compressed
-
-**Description**: 腹部深度压缩图
-
-**Type**: `sensor_msgs/Image`
-
-**Direction**: publish
-
-**Throttle Rate**: 33.33 Hz
-
-**Note**: 腹部深度相机的RGB图像JPG格式
-
----
-
-### /zj_humanoid/sensor/realsense_down/depth/image_raw
+### /zj_humanoid/sensor/realsense_down/depth/image_rect_raw
 
 **Description**: 腹部深度RGB图像
 
@@ -1635,6 +1625,20 @@
 **Throttle Rate**: 33.33 Hz
 
 **Note**: 腹部深度相机的RGB图像源数据
+
+---
+
+### /zj_humanoid/sensor/realsense_down/depth/image_rect_raw/compressed
+
+**Description**: 腹部深度压缩图
+
+**Type**: `sensor_msgs/Image`
+
+**Direction**: publish
+
+**Throttle Rate**: 33.33 Hz
+
+**Note**: 腹部深度相机的RGB图像JPG格式
 
 ---
 
@@ -1652,20 +1656,6 @@
 
 ---
 
-### /zj_humanoid/sensor/realsense_up/aligned_depth_to_color/image_raw/compressed
-
-**Description**: 胸部深度aligned压缩图
-
-**Type**: `sensor_msgs/Image`
-
-**Direction**: publish
-
-**Throttle Rate**: 33.33 Hz
-
-**Note**: 胸部深度相机的aligned_depth_to_color压缩格式
-
----
-
 ### /zj_humanoid/sensor/realsense_up/aligned_depth_to_color/image_raw
 
 **Description**: 胸部深度aligned图像
@@ -1677,6 +1667,20 @@
 **Throttle Rate**: 33.33 Hz
 
 **Note**: 胸部深度相机的aligned_depth_to_color RGB图像源数据
+
+---
+
+### /zj_humanoid/sensor/realsense_up/aligned_depth_to_color/image_raw/compressed
+
+**Description**: 胸部深度aligned压缩图
+
+**Type**: `sensor_msgs/Image`
+
+**Direction**: publish
+
+**Throttle Rate**: 33.33 Hz
+
+**Note**: 胸部深度相机的aligned_depth_to_color压缩格式
 
 ---
 
@@ -1694,20 +1698,6 @@
 
 ---
 
-### /zj_humanoid/sensor/realsense_up/color/image_raw/compressed
-
-**Description**: 胸部深度压缩图
-
-**Type**: `sensor_msgs/Image`
-
-**Direction**: publish
-
-**Throttle Rate**: 33.33 Hz
-
-**Note**: 胸部深度相机的RGB图像JPG格式
-
----
-
 ### /zj_humanoid/sensor/realsense_up/color/image_raw
 
 **Description**: 胸部深度RGB图像
@@ -1719,6 +1709,20 @@
 **Throttle Rate**: 33.33 Hz
 
 **Note**: 胸部深度相机的RGB图像源数据
+
+---
+
+### /zj_humanoid/sensor/realsense_up/color/image_raw/compressed
+
+**Description**: 胸部深度压缩图
+
+**Type**: `sensor_msgs/Image`
+
+**Direction**: publish
+
+**Throttle Rate**: 33.33 Hz
+
+**Note**: 胸部深度相机的RGB图像JPG格式
 
 ---
 
@@ -1736,7 +1740,21 @@
 
 ---
 
-### /zj_humanoid/sensor/realsense_up/depth/image_raw/compressed
+### /zj_humanoid/sensor/realsense_up/depth/image_rect_raw
+
+**Description**: 胸部深度RGB图像
+
+**Type**: `sensor_msgs/Image`
+
+**Direction**: publishs
+
+**Throttle Rate**: 33.33 Hz
+
+**Note**: 胸部深度相机的RGB图像源数据
+
+---
+
+### /zj_humanoid/sensor/realsense_up/depth/image_rect_raw/compressed
 
 **Description**: 胸部深度压缩图
 
@@ -1747,20 +1765,6 @@
 **Throttle Rate**: 33.33 Hz
 
 **Note**: 胸部深度相机的RGB图像JPG格式
-
----
-
-### /zj_humanoid/sensor/realsense_up/depth/image_raw
-
-**Description**: 胸部深度RGB图像
-
-**Type**: `sensor_msgs/Image`
-
-**Direction**: publish
-
-**Throttle Rate**: 33.33 Hz
-
-**Note**: 胸部深度相机的RGB图像源数据
 
 ---
 
@@ -1792,57 +1796,9 @@
 
 ---
 
-### /zj_humanoid/upperlimb/upperlimb_ctrl_mode/occupancy_set
-
-**Description**: 上肢模式控制
-
-**Type**: `std_msgs/Float32`
-
-**Direction**: subscribe
-
-**Note**: 上肢模式控制，可设置为下肢控制模式
-
----
-
-### /zj_humanoid/upperlimb/upperlimb_ctrl_mode/occupancy_state
-
-**Description**: 上肢模式状态
-
-**Type**: `std_msgs/Float32`
-
-**Direction**: publish
-
-**Note**: 上肢模式控制，可设置为下肢控制模式
-
----
-
 ### /zj_humanoid/upperlimb/servoj/left_arm
 
 **Description**: 左臂servoj
-
-**Type**: `upperlimb/Joints`
-
-**Direction**: subscribe
-
-**Note**: 关节空间 高频位置控制
-
----
-
-### /zj_humanoid/upperlimb/servoj/right_arm
-
-**Description**: 右臂servoj
-
-**Type**: `upperlimb/Joints`
-
-**Direction**: subscribe
-
-**Note**: 关节空间 高频位置控制
-
----
-
-### /zj_humanoid/upperlimb/servoj/whole_body
-
-**Description**: 全身servoj
 
 **Type**: `upperlimb/Joints`
 
@@ -1864,9 +1820,33 @@
 
 ---
 
+### /zj_humanoid/upperlimb/servoj/right_arm
+
+**Description**: 右臂servoj
+
+**Type**: `upperlimb/Joints`
+
+**Direction**: subscribe
+
+**Note**: 关节空间 高频位置控制
+
+---
+
 ### /zj_humanoid/upperlimb/servoj/waist
 
 **Description**: 腰部servoj
+
+**Type**: `upperlimb/Joints`
+
+**Direction**: subscribe
+
+**Note**: 关节空间 高频位置控制
+
+---
+
+### /zj_humanoid/upperlimb/servoj/whole_body
+
+**Description**: 全身servoj
 
 **Type**: `upperlimb/Joints`
 

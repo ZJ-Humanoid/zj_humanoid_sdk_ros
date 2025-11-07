@@ -5,3 +5,4 @@
   direction: subscribe
   throttle_rate: 100
   note: ""
+  applicable_robot_models: [rx]  # 适用机器人型号

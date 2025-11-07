@@ -5,3 +5,4 @@
   direction: publish
   throttle_rate: 1000
   note: "机器人关节电机错误信息，机器人关节是否有错误发生 回复应包含：没有"
+  applicable_robot_models: [H1, rx, wa1, wa2]

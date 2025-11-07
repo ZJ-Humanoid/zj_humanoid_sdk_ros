@@ -6,3 +6,4 @@ service:
   - I2_info.yaml
   - WA2_info.yaml
   note: "描述下机器人的基础信息 回复应包含机器人的型号，硬件版本号，软件版本号，IP地址"
+  applicable_robot_models: [H1, rx, wa1, wa2]

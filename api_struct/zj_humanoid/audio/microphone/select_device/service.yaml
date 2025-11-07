@@ -3,3 +3,4 @@ service:
   description: 选中麦克风
   type: audio/SetDevice
   note: "选择第一个麦克风"
+  applicable_robot_models: [H1, rx, wa1, wa2]  # 适用机器人型号

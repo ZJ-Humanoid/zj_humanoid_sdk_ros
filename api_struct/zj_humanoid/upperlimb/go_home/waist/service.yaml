@@ -4,3 +4,4 @@
   type: std_srvs/Trigger
   demos: data.yaml
   note: "腰部回到内置设置的home点"
+  applicable_robot_models: [H1, rx, wa1, wa2]

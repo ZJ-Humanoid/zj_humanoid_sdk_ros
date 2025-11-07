@@ -6,3 +6,4 @@ topic:
   throttle_rate: 1000
   demos: get_orin_resouce.yaml
   note: "机器人大脑的资源状态 回复应包含：大脑的cpu,温度，内存，硬盘的用量"
+  applicable_robot_models: [H1, rx, wa1, wa2]

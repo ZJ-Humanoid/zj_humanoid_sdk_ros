@@ -5,3 +5,4 @@
   direction: subscribe
   throttle_rate: 100
   note: "当前位姿信息，有定位时才会输出结果"
+  applicable_robot_models: [rx, wa1, wa2]

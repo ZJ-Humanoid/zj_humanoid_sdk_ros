@@ -5,3 +5,4 @@
   direction: publish
   throttle_rate: 10
   note: "当前左手食指的角度是多少 应回复0-80度之间"
+  applicable_robot_models: [H1, rx, wa1, wa2]  # 适用机器人型号

@@ -5,3 +5,4 @@
   direction: publish
   throttle_rate: 10
   note: "当前右手腕部的检测到多少力 应回复0牛顿"
+  applicable_robot_models: [H1, rx, wa1, wa2]  # 适用机器人型号

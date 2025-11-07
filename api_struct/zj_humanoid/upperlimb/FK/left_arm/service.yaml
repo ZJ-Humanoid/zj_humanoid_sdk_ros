@@ -4,3 +4,4 @@ service:
   type: upperlimb/FK
   demos: case1.yaml
   note: ""
+  applicable_robot_models: [H1, rx, wa1, wa2]

@@ -4,3 +4,4 @@ topic:
   type: upperlimb/Joints
   direction: subscribe
   note: "关节空间 高频位置控制"
+  applicable_robot_models: [H1, rx, wa1, wa2]

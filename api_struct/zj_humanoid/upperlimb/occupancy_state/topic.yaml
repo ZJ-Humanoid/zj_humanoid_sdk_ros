@@ -4,3 +4,4 @@
   type: std_msgs/Float32
   direction: publish
   note: "上肢模式控制，可设置为下肢控制模式"
+  applicable_robot_models: [H1, rx, wa1, wa2]

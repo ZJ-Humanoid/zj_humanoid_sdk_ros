@@ -3,3 +3,4 @@ service:
   description: 音频文件播放
   type: audio/MediaPlay
   note: "播放’公司介绍.mp3‘"
+  applicable_robot_models: [H1, rx, wa1, wa2]  # 适用机器人型号

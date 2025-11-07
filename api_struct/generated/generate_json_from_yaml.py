@@ -10,13 +10,13 @@ File Structure:
     api_struct/
     ├── zj_humanoid_interfaces.yaml (input file)
     └── generated/
-        ├── generate_from_yaml.py (this script)
+        ├── generate_json_from_yaml.py (this script)
         ├── zj_humanoid_interfaces.json (output)
         └── zj_humanoid_interfaces.md (output)
 
 Usage:
     cd generated/
-    python3 generate_from_yaml.py
+    python3 generate_json_from_yaml.py
 
 Requirements:
     - Python 3.6+
@@ -79,24 +79,48 @@ class InterfaceGenerator:
     
     def save_to_json(self, output_file: str = None) -> None:
         """
-        Save data to JSON file.
+        Save data to JSON files based on applicable_robot_models.
         
         Args:
-            output_file: Output JSON file path. If None, will save to generated/ directory.
+            output_file: Output JSON file path (deprecated, kept for compatibility).
         """
-        if output_file is None:
-            # Save to generated/ directory
-            if os.path.exists("generated/"):
-                output_file = "generated/zj_humanoid_interfaces.json"
-            else:
-                output_file = "zj_humanoid_interfaces.json"
+        # Define robot models
+        robot_models = ['H1', 'rx', 'wa1', 'wa2']
         
+        # Create a dictionary to hold data for each robot model
+        robot_data = {}
+        for model in robot_models:
+            robot_data[model] = {
+                'metadata': self.data['metadata'].copy(),
+                'services': [],
+                'topics': []
+            }
+        
+        # Filter services based on applicable_robot_models
+        for service in self.data.get('services', []):
+            applicable_models = service.get('applicable_robot_models', [])
+            for model in robot_models:
+                if model in applicable_models:
+                    robot_data[model]['services'].append(service)
+        
+        # Filter topics based on applicable_robot_models
+        for topic in self.data.get('topics', []):
+            applicable_models = topic.get('applicable_robot_models', [])
+            for model in robot_models:
+                if model in applicable_models:
+                    robot_data[model]['topics'].append(topic)
+        
+        # Save a JSON file for each robot model
         try:
-            with open(output_file, 'w', encoding='utf-8') as f:
-                json.dump(self.data, f, ensure_ascii=False, indent=4)
-            print(f"Successfully saved to {output_file}")
+            for model in robot_models:
+                output_filename = f"zj_humanoid_interfaces_{model}.json"
+                with open(output_filename, 'w', encoding='utf-8') as f:
+                    json.dump(robot_data[model], f, ensure_ascii=False, indent=4)
+                print(f"Successfully saved to {output_filename}")
+                print(f"  - Services: {len(robot_data[model]['services'])}")
+                print(f"  - Topics: {len(robot_data[model]['topics'])}")
         except Exception as e:
-            print(f"Error saving to JSON file {output_file}: {e}")
+            print(f"Error saving to JSON files: {e}")
     
     def save_to_markdown(self, output_file: str = None) -> None:
         """
@@ -163,15 +187,13 @@ class InterfaceGenerator:
         self.data['metadata']['generated_at'] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         
         # Generate files
+        print("\nGenerating JSON files for each robot model...")
         self.save_to_json()
+        
+        print("\nGenerating Markdown documentation...")
         self.save_to_markdown()
         
-        # Print statistics
-        services_count = len(self.data.get('services', []))
-        topics_count = len(self.data.get('topics', []))
-        print(f"\nGeneration complete:")
-        print(f"  - Services: {services_count}")
-        print(f"  - Topics: {topics_count}")
+        print("\nGeneration completed successfully!")
 
 
 def main():
@@ -179,13 +201,8 @@ def main():
     print("ZJ Humanoid ROS Interfaces Generator")
     print("=" * 50)
     
-    # Initialize generator
     generator = InterfaceGenerator()
-    
-    # Generate files
     generator.generate_files()
-    
-    print("\nGeneration completed successfully!")
 
 
 if __name__ == "__main__":
