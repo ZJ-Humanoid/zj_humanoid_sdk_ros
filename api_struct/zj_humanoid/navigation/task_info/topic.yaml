@@ -6,4 +6,4 @@ topic:
   throttle_rate: 1000
   demos: rostopic_pub_zj_humanoid_navigation_task_info.yaml
   note: "任务信息，该话题仅发布导航任务，不返回导航的结果"
-  applicable_robot_models: [rx, wa1, wa2]
+  applicable_robot_models: [I2, WA1, WA2]

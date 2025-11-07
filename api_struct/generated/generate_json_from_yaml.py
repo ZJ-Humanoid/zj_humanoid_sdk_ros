@@ -85,7 +85,7 @@ class InterfaceGenerator:
             output_file: Output JSON file path (deprecated, kept for compatibility).
         """
         # Define robot models
-        robot_models = ['H1', 'rx', 'wa1', 'wa2']
+        robot_models = ['H1', 'I2', 'WA1', 'WA2']
         
         # Create a dictionary to hold data for each robot model
         robot_data = {}

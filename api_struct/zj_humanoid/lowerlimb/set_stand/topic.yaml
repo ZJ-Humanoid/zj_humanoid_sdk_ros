@@ -4,4 +4,4 @@
   type: std_msgs/Float32
   direction: subscribe
   note: "站立姿态初始化"
-  applicable_robot_models: [rx]  # 适用机器人型号
+  applicable_robot_models: [I2]  # 适用机器人型号

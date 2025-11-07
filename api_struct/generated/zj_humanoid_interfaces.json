@@ -13,8 +13,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -26,8 +26,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -39,8 +39,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -52,8 +52,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -65,8 +65,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -78,8 +78,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -91,8 +91,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -104,8 +104,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -117,8 +117,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -130,8 +130,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -143,8 +143,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -159,8 +159,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -174,8 +174,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -189,8 +189,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -204,8 +204,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -221,8 +221,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -238,8 +238,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -255,8 +255,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -267,8 +267,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -280,8 +280,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -293,8 +293,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -309,8 +309,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -333,7 +333,7 @@
             "note": "自动相机内外参标定，外参标定时机器人会执行一段轨迹，拍摄不同角度的照片，从而计算外参",
             "applicable_robot_models": [
                 "H1",
-                "wa1"
+                "WA1"
             ]
         },
         {
@@ -346,7 +346,7 @@
             "note": "输出物品名称执行抓取服务",
             "applicable_robot_models": [
                 "H1",
-                "wa1"
+                "WA1"
             ]
         },
         {
@@ -359,7 +359,7 @@
             "note": "视觉示教抓取，让机器人知道该从什么方位抓取物品",
             "applicable_robot_models": [
                 "H1",
-                "wa1"
+                "WA1"
             ]
         },
         {
@@ -372,7 +372,7 @@
             "note": "节空间轨迹规划，输出关节轨迹，示教模式下记录各个关节数据，据此生成完整的执行轨迹",
             "applicable_robot_models": [
                 "H1",
-                "wa1"
+                "WA1"
             ]
         },
         {
@@ -385,7 +385,7 @@
             "note": "输入图像获取指定物品的6D位姿",
             "applicable_robot_models": [
                 "H1",
-                "wa1"
+                "WA1"
             ]
         },
         {
@@ -398,7 +398,7 @@
             "note": "末端空间轨迹规划，示教模式下记录各个末端执行器数据，据此生成完整的执行轨迹",
             "applicable_robot_models": [
                 "H1",
-                "wa1"
+                "WA1"
             ]
         },
         {
@@ -411,7 +411,7 @@
             "note": "机器人场景更新,基于二维码，需要场景中有二维码，机器人抓取物品前的环境感知",
             "applicable_robot_models": [
                 "H1",
-                "wa1"
+                "WA1"
             ]
         },
         {
@@ -424,7 +424,7 @@
             "note": "",
             "applicable_robot_models": [
                 "H1",
-                "wa1"
+                "WA1"
             ]
         },
         {
@@ -437,8 +437,8 @@
             "note": "",
             "applicable_robot_models": [
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -453,8 +453,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -468,8 +468,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -483,8 +483,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -495,8 +495,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -508,8 +508,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -524,8 +524,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -539,8 +539,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -554,8 +554,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -566,8 +566,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -579,8 +579,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -592,8 +592,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -605,8 +605,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -618,8 +618,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -631,8 +631,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -644,8 +644,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -657,8 +657,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -673,8 +673,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -688,8 +688,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -703,8 +703,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -718,8 +718,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -733,8 +733,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -748,8 +748,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -763,8 +763,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -778,8 +778,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -793,8 +793,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -808,8 +808,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -823,8 +823,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -838,8 +838,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -853,8 +853,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -868,8 +868,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -884,8 +884,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -900,8 +900,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -916,8 +916,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -932,8 +932,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -948,8 +948,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -964,8 +964,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -980,8 +980,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -995,8 +995,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -1010,8 +1010,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -1025,8 +1025,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -1040,8 +1040,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -1055,8 +1055,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -1070,8 +1070,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -1085,8 +1085,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -1100,8 +1100,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -1115,8 +1115,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -1127,8 +1127,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1140,8 +1140,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1153,8 +1153,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1166,8 +1166,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1179,8 +1179,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1195,8 +1195,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -1210,7 +1210,7 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1"
+                "WA1"
             ]
         },
         {
@@ -1224,7 +1224,7 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1"
+                "WA1"
             ]
         },
         {
@@ -1235,8 +1235,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         }
@@ -1251,8 +1251,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1266,8 +1266,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1281,8 +1281,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1295,8 +1295,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1309,8 +1309,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1324,8 +1324,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1339,8 +1339,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1354,8 +1354,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1428,8 +1428,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1475,8 +1475,8 @@
             "note": "",
             "applicable_robot_models": [
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1488,8 +1488,8 @@
             "note": "全局地图信息",
             "applicable_robot_models": [
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1502,8 +1502,8 @@
             "note": "当前导航状态信息",
             "applicable_robot_models": [
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1516,8 +1516,8 @@
             "note": "当前位姿信息，有定位时才会输出结果",
             "applicable_robot_models": [
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1533,8 +1533,8 @@
             "note": "任务信息，该话题仅发布导航任务，不返回导航的结果",
             "applicable_robot_models": [
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -1550,8 +1550,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -1564,8 +1564,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1579,8 +1579,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1597,8 +1597,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -1614,8 +1614,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -1631,8 +1631,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -1648,8 +1648,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -1664,8 +1664,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -1678,8 +1678,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1696,8 +1696,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -1710,8 +1710,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1725,8 +1725,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1740,8 +1740,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1755,8 +1755,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1770,8 +1770,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1785,8 +1785,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1800,8 +1800,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1815,8 +1815,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1830,8 +1830,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1845,8 +1845,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1860,8 +1860,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1884,8 +1884,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1899,8 +1899,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1914,8 +1914,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1929,8 +1929,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1944,8 +1944,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1959,8 +1959,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1974,8 +1974,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1989,8 +1989,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -2004,8 +2004,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -2019,8 +2019,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -2034,8 +2034,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -2049,8 +2049,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -2064,8 +2064,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -2079,8 +2079,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -2094,8 +2094,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -2109,8 +2109,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -2124,8 +2124,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -2138,8 +2138,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -2152,8 +2152,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -2166,8 +2166,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -2180,8 +2180,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -2194,8 +2194,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -2208,8 +2208,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -2222,8 +2222,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -2236,8 +2236,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -2250,8 +2250,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -2265,8 +2265,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -2280,8 +2280,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -2295,8 +2295,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -2310,8 +2310,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -2325,8 +2325,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -2340,8 +2340,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -2354,8 +2354,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -2368,8 +2368,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -2382,8 +2382,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -2397,8 +2397,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -2412,8 +2412,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -2427,8 +2427,8 @@
             "applicable_robot_models": [
                 "H1",
                 "rx",
-                "wa1",
-                "wa2"
+                "WA1",
+                "WA2"
             ],
             "demos": []
         }
@@ -2445,7 +2445,7 @@
             "note": "",
             "applicable_robot_models": [
                 "H1",
-                "wa1"
+                "WA1"
             ]
         }
     ]

@@ -6,4 +6,4 @@ service:
   - waist_v_acc_case1.yaml
   - waist_t_case1.yaml
   note: "关节空间下,腰部点到点运动"
-  applicable_robot_models: [H1, rx, wa1, wa2]
+  applicable_robot_models: [H1, I2, WA1, WA2]

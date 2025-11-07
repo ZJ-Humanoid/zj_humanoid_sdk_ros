@@ -3,4 +3,4 @@
   description: 电机自动标零
   type: zj_robot/SetZero
   note: "机器人关节自动标零"
-  applicable_robot_models: [H1, rx, wa1, wa2]
+  applicable_robot_models: [H1, I2, WA1, WA2]

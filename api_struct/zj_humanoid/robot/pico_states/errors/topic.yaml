@@ -6,4 +6,4 @@ topic:
   throttle_rate: 1000
   demos: over_temp_err.yaml
   note: "机器人小脑pico错误汇总，包括over_temp,over_cpu,over_mem,over_disk等，机器人小脑模块是否有错误发生 回复应包含：没有"
-  applicable_robot_models: [H1, rx, wa1, wa2]
+  applicable_robot_models: [H1, I2, WA1, WA2]

@@ -1,6 +1,6 @@
 {
     "metadata": {
-        "generated_at": "2025-11-07 17:29:30",
+        "generated_at": "2025-11-07 18:32:42",
         "description": "ZJ Humanoid ROS APIs - Services and Topics",
         "version": "v1.0.0"
     },
@@ -12,9 +12,9 @@
             "note": "语音模块的版本号是多少",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -25,9 +25,9 @@
             "note": "开始倾听",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -38,9 +38,9 @@
             "note": "播放’公司介绍.mp3‘",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -51,9 +51,9 @@
             "note": "检查当前有多少个麦克风设备 回复数量应大于1",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -64,9 +64,9 @@
             "note": "选择第一个麦克风",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -77,9 +77,9 @@
             "note": "检查当前有多少个喇叭设备 回复数量应大于1",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -90,9 +90,9 @@
             "note": "获取当前的系统音量大小 应回复音量0~100",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -103,9 +103,9 @@
             "note": "选择第一个喇叭",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -116,9 +116,9 @@
             "note": "设置音量为50",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -129,9 +129,9 @@
             "note": "请让机器人说‘hello world‘",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -142,9 +142,9 @@
             "note": "",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -158,9 +158,9 @@
             "note": "置零压力传感器数值",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -173,9 +173,9 @@
             "note": "",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -188,9 +188,9 @@
             "note": "",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -203,9 +203,9 @@
             "note": "",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -220,9 +220,9 @@
             "note": "",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -237,9 +237,9 @@
             "note": "左手食指弯曲40度 订阅/hand_joint_states左手食指数值应接近40度",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -254,9 +254,9 @@
             "note": "右手食指弯曲40度 订阅/hand_joint_states左手食指数值应接近40度",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -266,9 +266,9 @@
             "note": "",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -279,9 +279,9 @@
             "note": "",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -292,9 +292,9 @@
             "note": "查询当前灵巧手子系统的版本号",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -308,9 +308,9 @@
             "note": "置零腕部传感器数值",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -323,7 +323,7 @@
             "note": "自动相机内外参标定，外参标定时机器人会执行一段轨迹，拍摄不同角度的照片，从而计算外参",
             "applicable_robot_models": [
                 "H1",
-                "wa1"
+                "WA1"
             ]
         },
         {
@@ -336,7 +336,7 @@
             "note": "输出物品名称执行抓取服务",
             "applicable_robot_models": [
                 "H1",
-                "wa1"
+                "WA1"
             ]
         },
         {
@@ -349,7 +349,7 @@
             "note": "视觉示教抓取，让机器人知道该从什么方位抓取物品",
             "applicable_robot_models": [
                 "H1",
-                "wa1"
+                "WA1"
             ]
         },
         {
@@ -362,7 +362,7 @@
             "note": "节空间轨迹规划，输出关节轨迹，示教模式下记录各个关节数据，据此生成完整的执行轨迹",
             "applicable_robot_models": [
                 "H1",
-                "wa1"
+                "WA1"
             ]
         },
         {
@@ -375,7 +375,7 @@
             "note": "输入图像获取指定物品的6D位姿",
             "applicable_robot_models": [
                 "H1",
-                "wa1"
+                "WA1"
             ]
         },
         {
@@ -388,7 +388,7 @@
             "note": "末端空间轨迹规划，示教模式下记录各个末端执行器数据，据此生成完整的执行轨迹",
             "applicable_robot_models": [
                 "H1",
-                "wa1"
+                "WA1"
             ]
         },
         {
@@ -401,7 +401,7 @@
             "note": "机器人场景更新,基于二维码，需要场景中有二维码，机器人抓取物品前的环境感知",
             "applicable_robot_models": [
                 "H1",
-                "wa1"
+                "WA1"
             ]
         },
         {
@@ -414,7 +414,7 @@
             "note": "",
             "applicable_robot_models": [
                 "H1",
-                "wa1"
+                "WA1"
             ]
         },
         {
@@ -428,9 +428,9 @@
             "note": "描述下机器人的基础信息 回复应包含机器人的型号，硬件版本号，软件版本号，IP地址",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -443,9 +443,9 @@
             "note": "机器人脸部屏幕显示,播放视频或图像文件，如播放“Hello_World.mp4”",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -458,9 +458,9 @@
             "note": "机器人脸部屏幕显示文字，支持指令显示“Hello World”",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -470,9 +470,9 @@
             "note": "机器人关节自动标零",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -483,9 +483,9 @@
             "note": "尝试让机器人大脑orin去连接wifi热点",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -499,9 +499,9 @@
             "note": "获取机器人大脑检测到的wifi热点名称，当前机器人大脑检测到多少个wifi信号 回复应大于1",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -514,9 +514,9 @@
             "note": "尝试让机器人小脑pico去连接wifi热点",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -529,9 +529,9 @@
             "note": "获取机器人小脑检测到的wifi热点名称，当前机器人小脑检测到多少个wifi信号 回复应大于1",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -541,9 +541,9 @@
             "note": "将机器人关机 3秒后，大小脑关机，之后后没法检测到机器人建立ros链接",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -554,9 +554,9 @@
             "note": "机器人先进stop软急停状态，再自动变为RUN启动运行，在某些故障状态可以执行，但如果有异常的存在，也可能会失败，将机器人状态机重启 持续检测robot_state话题，经过最长60秒钟的等待，状态应切换为：RUN",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -567,9 +567,9 @@
             "note": "如果机器人处于非RUN状态，尝试将机器人状态值设置为RUN，但如果有异常的存在，也可能会失败，将机器人状态设置为RUN 持续检测robot_state话题，经过最长60秒钟的等待，状态应切换为：RUN",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -580,9 +580,9 @@
             "note": "机器人软急停状态，状态机值将切换为ERR，在机器发生异常时使用，将机器人状态设置为stop 1秒后，检测robot_state话题，状态应切换为：ERR",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -593,9 +593,9 @@
             "note": "相机A的参数信息,相机A安装在机器人左眼的位置上，相机A的分辨率是多少 回复应包含1280和720",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -606,9 +606,9 @@
             "note": "相机B的参数信息，相机B安装在机器人右眼的位置上，相机B的分辨率是多少 回复应包含1280和720",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -619,9 +619,9 @@
             "note": "相机C的参数信息，相机C大致安装在机器人右侧太阳穴的位置上，相机C的分辨率是多少 回复应包含1280和720",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -632,9 +632,9 @@
             "note": "相机D的参数信息，相机D大致安装在机器人左侧太阳穴的位置上，相机D的分辨率是多少 回复应包含1280和720",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -648,9 +648,9 @@
             "note": "",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -663,9 +663,9 @@
             "note": "",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -678,9 +678,9 @@
             "note": "左臂逆解",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -693,9 +693,9 @@
             "note": "",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -708,9 +708,9 @@
             "note": "",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -723,9 +723,9 @@
             "note": "",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -738,9 +738,9 @@
             "note": "",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -753,9 +753,9 @@
             "note": "双臂回到内置设置的home点",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -768,9 +768,9 @@
             "note": "左臂回到内置设置的home点",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -783,9 +783,9 @@
             "note": "升降回到内置设置的home点",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -798,9 +798,9 @@
             "note": "脖子回到内置设置的home点",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -813,9 +813,9 @@
             "note": "右臂回到内置设置的home点",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -828,9 +828,9 @@
             "note": "腰部回到内置设置的home点",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -843,9 +843,9 @@
             "note": "全身指定部位回到内置设置的home点",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -859,9 +859,9 @@
             "note": "关节空间下,双臂点到点运动",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -875,9 +875,9 @@
             "note": "关节空间下,左臂点到点运动",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -891,9 +891,9 @@
             "note": "关节空间下,升降点到点运动",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -907,9 +907,9 @@
             "note": "关节空间下,脖子点到点运动",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -923,9 +923,9 @@
             "note": "关节空间下,右臂点到点运动",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -939,9 +939,9 @@
             "note": "关节空间下,腰部点到点运动",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -955,9 +955,9 @@
             "note": "关节空间下,全身各部位点到点运动",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -970,9 +970,9 @@
             "note": "关节空间下,双臂轨迹点路径运动",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -985,9 +985,9 @@
             "note": "关节空间下,左臂轨迹点路径运动",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -1000,9 +1000,9 @@
             "note": "关节空间下,右臂轨迹点路径运动",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -1015,9 +1015,9 @@
             "note": "tcp末端空间下,双臂末端位姿movej",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -1030,9 +1030,9 @@
             "note": "tcp末端空间下,左臂末端位姿movej",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -1045,9 +1045,9 @@
             "note": "tcp末端空间下,右臂末端位姿movej",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -1060,9 +1060,9 @@
             "note": "关节空间下,双臂直线轨迹点运动",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -1075,9 +1075,9 @@
             "note": "关节空间下,左臂直线轨迹点运动",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -1090,9 +1090,9 @@
             "note": "关节空间下,右臂直线轨迹点运动",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -1102,9 +1102,9 @@
             "note": "退出笛卡尔空间 高频位置跟随控制",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1115,9 +1115,9 @@
             "note": "设置关节空间 高频位置跟随控制参数",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1128,9 +1128,9 @@
             "note": "退出笛卡尔空间 高频位置跟随控制",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1141,9 +1141,9 @@
             "note": "设置笛卡尔空间 高频位置跟随控制参数",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1154,9 +1154,9 @@
             "note": "启用笛卡尔空间 速度控制",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1170,9 +1170,9 @@
             "note": "停止机器人运动",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -1185,8 +1185,8 @@
             "note": "",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1"
+                "I2",
+                "WA1"
             ]
         },
         {
@@ -1199,8 +1199,8 @@
             "note": "",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1"
+                "I2",
+                "WA1"
             ]
         },
         {
@@ -1210,9 +1210,9 @@
             "note": "查询当前上肢子系统的软件版本号 应回复软件版本号",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         }
@@ -1226,9 +1226,9 @@
             "note": "当前机器人听到了什么",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1241,9 +1241,9 @@
             "note": "麦克风收音后的音频数据流",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1256,9 +1256,9 @@
             "note": "当前是否为倾听状态",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1270,9 +1270,9 @@
             "note": "当前左手压力传感器数值",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1284,9 +1284,9 @@
             "note": "当前右手压力传感器数值",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1299,9 +1299,9 @@
             "note": "当前左手食指的角度是多少 应回复0-80度之间",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1314,9 +1314,9 @@
             "note": "当前左手腕部的检测到多少力 应回复0牛顿",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1329,9 +1329,9 @@
             "note": "当前右手腕部的检测到多少力 应回复0牛顿",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1343,9 +1343,9 @@
             "note": "上肢模式控制，可设置为下肢控制模式",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1361,9 +1361,9 @@
             "note": "电池BMS相关信息，机器人当前电量还剩多少 回复值应为1~100%",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -1375,9 +1375,9 @@
             "note": "机器人关节电机错误信息，机器人关节是否有错误发生 回复应包含：没有",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1390,9 +1390,9 @@
             "note": "关节电机温度信息，当前机器人膝关节温度是多少 回复应介于10-80度之间",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1408,9 +1408,9 @@
             "note": "机器人内部软件和算法模块运行状态检测, 包含上肢，灵巧手，遥控器，下肢，四目相机，深度相机，定位模块，导航模块，语音模块等",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -1425,9 +1425,9 @@
             "note": "机器人大脑orin错误汇总，包括over_temp,over_cpu,over_mem,over_disk等，机器人大脑模块是否有错误发生 回复应包含：没有",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -1442,9 +1442,9 @@
             "note": "机器人大脑的资源状态 回复应包含：大脑的cpu,温度，内存，硬盘的用量",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -1459,9 +1459,9 @@
             "note": "机器人小脑pico错误汇总，包括over_temp,over_cpu,over_mem,over_disk等，机器人小脑模块是否有错误发生 回复应包含：没有",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -1475,9 +1475,9 @@
             "note": "机器人小脑pico资源状态 回复应包含：小脑的cpu,温度，内存，硬盘的用量",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -1489,9 +1489,9 @@
             "note": "机器人状态机值实时发布，只有当机器人进入RUN状态，机器人才能进行动作的执行，机器人当前处于什么状态 回复应包含：RUN状态",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1507,9 +1507,9 @@
             "note": "机器人开机后单次工作状态发布，包含已运行时间，剩余工作时间，行进里程数等，描述下机器人本次开机后工作状态 回复因包含：已运行时间，剩余工作时间，行进里程数",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ]
         },
         {
@@ -1521,9 +1521,9 @@
             "note": "左眼相机的JPG图像数据",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1536,9 +1536,9 @@
             "note": "左眼相机的RGB图像源数据",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1551,9 +1551,9 @@
             "note": "右眼相机的JPG图像数据",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1566,9 +1566,9 @@
             "note": "右眼相机的RGB图像源数据",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1581,9 +1581,9 @@
             "note": "右侧太阳穴相机C的JPG图像数据",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1596,9 +1596,9 @@
             "note": "右侧太阳穴相机C的RGB图像源数据",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1611,9 +1611,9 @@
             "note": "左侧太阳穴相机D的JPG图像数据",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1626,9 +1626,9 @@
             "note": "左侧太阳穴相机D的RGB图像源数据",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1641,9 +1641,9 @@
             "note": "头部IMU的目前帧率是多少 回复应接近100",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1656,9 +1656,9 @@
             "note": "腹部深度相机的aligned_depth_to_color参数信息",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1671,9 +1671,9 @@
             "note": "腹部深度相机的aligned_depth_to_color RGB图像源数据",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1686,9 +1686,9 @@
             "note": "腹部深度相机的参数信息",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1701,9 +1701,9 @@
             "note": "腹部深度相机的RGB图像源数据",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1716,9 +1716,9 @@
             "note": "腹部深度相机的RGB图像JPG格式",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1731,9 +1731,9 @@
             "note": "腹部深度相机的参数信息",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1746,9 +1746,9 @@
             "note": "腹部深度相机的RGB图像源数据",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1761,9 +1761,9 @@
             "note": "腹部深度相机的RGB图像JPG格式",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1776,9 +1776,9 @@
             "note": "胸部深度相机的aligned_depth_to_color参数信息",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1791,9 +1791,9 @@
             "note": "胸部深度相机的aligned_depth_to_color RGB图像源数据",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1806,9 +1806,9 @@
             "note": "胸部深度相机的aligned_depth_to_color压缩格式",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1821,9 +1821,9 @@
             "note": "胸部深度相机的参数信息",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1836,9 +1836,9 @@
             "note": "胸部深度相机的RGB图像源数据",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1851,9 +1851,9 @@
             "note": "胸部深度相机的RGB图像JPG格式",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1866,9 +1866,9 @@
             "note": "胸部深度相机的参数信息",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1881,9 +1881,9 @@
             "note": "胸部深度相机的RGB图像源数据",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1896,9 +1896,9 @@
             "note": "胸部深度相机的RGB图像JPG格式",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1911,9 +1911,9 @@
             "note": "当前上肢运行模式是什么 回复应处于停止状态",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1926,9 +1926,9 @@
             "note": "机器人上肢关节position状态值发布，查询当前机器人颈部pitch的角度 回复应处于+-42度间",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1940,9 +1940,9 @@
             "note": "关节空间 高频位置控制",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1954,9 +1954,9 @@
             "note": "关节空间 高频位置控制",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1968,9 +1968,9 @@
             "note": "关节空间 高频位置控制",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1982,9 +1982,9 @@
             "note": "关节空间 高频位置控制",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -1996,9 +1996,9 @@
             "note": "关节空间 高频位置控制",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -2010,9 +2010,9 @@
             "note": "笛卡尔空间 高频位置跟随控制",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -2024,9 +2024,9 @@
             "note": "笛卡尔空间 高频位置跟随控制",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -2038,9 +2038,9 @@
             "note": "笛卡尔空间 高频位置跟随控制",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -2052,9 +2052,9 @@
             "note": "启用关节空间速度控制",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -2067,9 +2067,9 @@
             "note": "关节空间速度控制",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -2082,9 +2082,9 @@
             "note": "关节空间速度控制",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -2097,9 +2097,9 @@
             "note": "关节空间速度控制",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -2112,9 +2112,9 @@
             "note": "关节空间速度控制",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -2127,9 +2127,9 @@
             "note": "关节空间速度控制",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -2142,9 +2142,9 @@
             "note": "关节空间速度控制",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -2156,9 +2156,9 @@
             "note": "笛卡尔空间 速度控制",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -2170,9 +2170,9 @@
             "note": "笛卡尔空间 速度控制",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -2184,9 +2184,9 @@
             "note": "笛卡尔空间 速度控制",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -2199,9 +2199,9 @@
             "note": "左手臂末端位姿",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -2214,9 +2214,9 @@
             "note": "右手臂末端位姿",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         },
@@ -2229,9 +2229,9 @@
             "note": "左右手臂末端速度",
             "applicable_robot_models": [
                 "H1",
-                "rx",
-                "wa1",
-                "wa2"
+                "I2",
+                "WA1",
+                "WA2"
             ],
             "demos": []
         }

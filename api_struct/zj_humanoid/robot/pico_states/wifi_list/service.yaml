@@ -4,4 +4,4 @@ service:
   type: zj_robot/WifiList
   demos: connect_wifi_pico.yaml
   note: "获取机器人小脑检测到的wifi热点名称，当前机器人小脑检测到多少个wifi信号 回复应大于1"
-  applicable_robot_models: [H1, rx, wa1, wa2]
+  applicable_robot_models: [H1, I2, WA1, WA2]

@@ -5,4 +5,4 @@ topic:
   direction: publish
   throttle_rate: 10
   note: "当前上肢运行模式是什么 回复应处于停止状态"
-  applicable_robot_models: [H1, rx, wa1, wa2]
+  applicable_robot_models: [H1, I2, WA1, WA2]

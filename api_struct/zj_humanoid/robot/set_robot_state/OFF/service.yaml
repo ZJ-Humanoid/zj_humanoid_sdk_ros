@@ -3,4 +3,4 @@
   description: 机器人关机
   type: std_srvs/Trigger
   note: "将机器人关机 3秒后，大小脑关机，之后后没法检测到机器人建立ros链接"
-  applicable_robot_models: [H1, rx, wa1, wa2]
+  applicable_robot_models: [H1, I2, WA1, WA2]

@@ -5,4 +5,4 @@
   direction: publish
   throttle_rate: 10
   note: ""
-  applicable_robot_models: [rx]  # 适用机器人型号
+  applicable_robot_models: [I2]  # 适用机器人型号

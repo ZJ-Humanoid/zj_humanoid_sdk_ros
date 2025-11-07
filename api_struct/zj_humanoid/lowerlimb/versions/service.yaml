@@ -3,4 +3,4 @@
   description: 下肢模块版本
   type: std_srvs/Trigger
   note: ""
-  applicable_robot_models: [rx]  # 适用机器人型号
+  applicable_robot_models: [I2]  # 适用机器人型号

@@ -4,4 +4,4 @@ topic:
   type: upperlimb/TcpSpeed
   direction: subscribe
   note: "启用关节空间速度控制"
-  applicable_robot_models: [H1, rx, wa1, wa2]
+  applicable_robot_models: [H1, I2, WA1, WA2]

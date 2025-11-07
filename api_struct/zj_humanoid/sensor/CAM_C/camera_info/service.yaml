@@ -3,4 +3,4 @@ service:
   description: 相机C参数信息
   type: sensor/CameraInfo
   note: "相机C的参数信息，相机C大致安装在机器人右侧太阳穴的位置上，相机C的分辨率是多少 回复应包含1280和720"
-  applicable_robot_models: [H1, rx, wa1, wa2]
+  applicable_robot_models: [H1, I2, WA1, WA2]

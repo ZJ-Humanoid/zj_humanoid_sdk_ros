@@ -3,4 +3,4 @@ service:
   description: 麦克风列表
   type: audio/GetDeviceList
   note: "检查当前有多少个麦克风设备 回复数量应大于1"
-  applicable_robot_models: [H1, rx, wa1, wa2]  # 适用机器人型号
+  applicable_robot_models: [H1, I2, WA1, WA2]  # 适用机器人型号

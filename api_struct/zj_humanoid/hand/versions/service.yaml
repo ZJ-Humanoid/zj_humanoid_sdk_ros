@@ -3,4 +3,4 @@
   description: 灵巧手版本号
   type: std_srvs/Trigger
   note: "查询当前灵巧手子系统的版本号"
-  applicable_robot_models: [H1, rx, wa1, wa2]  # 适用机器人型号
+  applicable_robot_models: [H1, I2, WA1, WA2]  # 适用机器人型号

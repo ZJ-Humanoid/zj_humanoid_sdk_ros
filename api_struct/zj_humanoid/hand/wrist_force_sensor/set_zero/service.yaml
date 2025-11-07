@@ -4,4 +4,4 @@
   type: std_srvs/Trigger
   demos: data.yaml
   note: "置零腕部传感器数值"
-  applicable_robot_models: [H1, rx, wa1, wa2]  # 适用机器人型号
+  applicable_robot_models: [H1, I2, WA1, WA2]  # 适用机器人型号

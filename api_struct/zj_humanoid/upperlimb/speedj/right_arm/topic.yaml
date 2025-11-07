@@ -5,4 +5,4 @@ topic:
   direction: subscribe
   throttle_rate: 100
   note: "关节空间速度控制"
-  applicable_robot_models: [H1, rx, wa1, wa2]
+  applicable_robot_models: [H1, I2, WA1, WA2]

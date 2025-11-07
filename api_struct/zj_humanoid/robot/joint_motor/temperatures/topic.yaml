@@ -5,4 +5,4 @@
   direction: publish
   throttle_rate: 1000
   note: "关节电机温度信息，当前机器人膝关节温度是多少 回复应介于10-80度之间"
-  applicable_robot_models: [H1, rx, wa1, wa2]
+  applicable_robot_models: [H1, I2, WA1, WA2]
