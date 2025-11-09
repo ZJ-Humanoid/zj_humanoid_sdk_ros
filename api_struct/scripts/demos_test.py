@@ -521,16 +521,16 @@ def main():
         epilog="""
 示例用法:
   # 调用左手手掌控制服务
-  python demos_test.py zj_humanoid/hand/joint_switch/left/left_hand_joint_reset.yaml
+  python demos_test.py ../zj_humanoid/hand/joint_switch/left/left_hand_joint_reset.yaml
 
   # 调用左手手臂控制服务
-python3 demos_test.py zj_humanoid/upperlimb/movej/left_arm/left_arm_t_case1.yaml
+python3 demos_test.py ../zj_humanoid/upperlimb/movej/left_arm/left_arm_t_case1.yaml
 
   # 调用音频服务
-  python demos_test.py zj_humanoid/audio/listen/hello_world.yaml
+  python demos_test.py ../zj_humanoid/audio/listen/hello_world.yaml
   
   # 显式指定服务名
-  python demos_test.py zj_humanoid/audio/LLM_chat/hello_world.yaml --service /custom/service/name
+  python demos_test.py ../zj_humanoid/audio/LLM_chat/hello_world.yaml --service /custom/service/name
         """
     )
     

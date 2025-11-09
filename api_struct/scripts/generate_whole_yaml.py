@@ -143,12 +143,15 @@ def generate_whole_yaml(base_path, output_file):
 
 
 if __name__ == '__main__':
-    # 获取脚本所在目录
+    # api_struct所在路径
     script_dir = Path(__file__).parent.parent
     
     # 设置路径
     base_path = script_dir / 'zj_humanoid'
     output_file = script_dir / 'generated' / 'zj_humanoid_interfaces.yaml'
+    
+    # 确保输出目录存在
+    output_file.parent.mkdir(parents=True, exist_ok=True)
     
     # 生成 YAML 文件
     generate_whole_yaml(base_path, output_file)

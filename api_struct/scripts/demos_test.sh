@@ -1,14 +1,18 @@
 #!/bin/sh
 
-# 示例：sh demos_test_shell.sh zj_humanoid/upperlimb/movej/left_arm/left_arm_t_case1.yaml
+# 示例：sh demos_test_shell.sh ../zj_humanoid/upperlimb/movej/left_arm/left_arm_t_case1.yaml
 # 路径 zj_humanoid/upperlimb/movej/left_arm 即是service_name，也是demo data数据的yaml_path
+# 
+# 从 api_struct/scripts/ 目录运行
 
 if [ $# -ne 1 ]; then
     echo "Usage: $0 <yaml_path>" >&2
+    echo "Example: $0 ../zj_humanoid/upperlimb/movej/left_arm/left_arm_t_case1.yaml" >&2
     exit 1
 fi
 
-SCRIPT_DIR=$(cd "$(dirname "$0")" && pwd)
+# 获取脚本所在目录的父目录 (api_struct/)
+SCRIPT_DIR=$(cd "$(dirname "$0")/.." && pwd)
 YAML_PATH="$SCRIPT_DIR/$1"
 
 # 根据yaml_path，推断出service_name
@@ -25,11 +29,12 @@ esac
 
 PAYLOAD=$(cat "$YAML_PATH")
 
-# 读取./zj_humanoid_interfaces.yaml, 判断SERVICE_NAME是topic还是service
-INTERFACES_YAML="$SCRIPT_DIR/zj_humanoid_interfaces.yaml"
+# 读取 generated/zj_humanoid_interfaces.yaml, 判断SERVICE_NAME是topic还是service
+INTERFACES_YAML="$SCRIPT_DIR/generated/zj_humanoid_interfaces.yaml"
 
 if [ ! -f "$INTERFACES_YAML" ]; then
     echo "Error: zj_humanoid_interfaces.yaml not found: $INTERFACES_YAML" >&2
+    echo "Please run generate_whole_yaml.py first to generate the interfaces file." >&2
     exit 1
 fi
 

@@ -3,7 +3,7 @@
 ROS Topic Test Script
 
 Topic: /zj_humanoid/robot/orin_states/resource
-Type: robot/Resource
+Type: zj_robot/Resource
 Description: orin资源统计
 
 Usage:
@@ -16,7 +16,7 @@ Press Ctrl+C to stop.
 import rospy
 import yaml
 import sys
-from robot.msg import Resource
+from zj_robot.msg import Resource
 
 
 def load_yaml_data(yaml_file):
@@ -61,7 +61,7 @@ def main():
     rate = rospy.Rate(10)
     
     rospy.loginfo(f"Publishing to /zj_humanoid/robot/orin_states/resource at 10Hz...")
-    rospy.loginfo(f"Message type: robot/Resource")
+    rospy.loginfo(f"Message type: zj_robot/Resource")
     rospy.loginfo(f"Data: {msg}")
     
     while not rospy.is_shutdown():

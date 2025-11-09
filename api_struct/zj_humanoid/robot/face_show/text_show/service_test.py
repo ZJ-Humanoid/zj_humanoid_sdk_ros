@@ -3,7 +3,7 @@
 ROS Service Test Script
 
 Service: /zj_humanoid/robot/face_show/text_show
-Type: robot/FaceText
+Type: zj_robot/FaceText
 Description: 脸部显示文字
 
 Usage:
@@ -15,7 +15,7 @@ This script calls the service with request data from a YAML file.
 import rospy
 import yaml
 import sys
-from robot.srv import FaceText, FaceTextRequest
+from zj_robot.srv import FaceText, FaceTextRequest
 
 
 def load_yaml_data(yaml_file):

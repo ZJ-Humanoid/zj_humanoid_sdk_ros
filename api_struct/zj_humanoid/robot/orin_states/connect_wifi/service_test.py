@@ -3,7 +3,7 @@
 ROS Service Test Script
 
 Service: /zj_humanoid/robot/orin_states/connect_wifi
-Type: robot/ConnectWifi
+Type: zj_robot/ConnectWifi
 Description: orin连接wifi
 
 Usage:
@@ -15,7 +15,7 @@ This script calls the service with request data from a YAML file.
 import rospy
 import yaml
 import sys
-from robot.srv import ConnectWifi, ConnectWifiRequest
+from zj_robot.srv import ConnectWifi, ConnectWifiRequest
 
 
 def load_yaml_data(yaml_file):

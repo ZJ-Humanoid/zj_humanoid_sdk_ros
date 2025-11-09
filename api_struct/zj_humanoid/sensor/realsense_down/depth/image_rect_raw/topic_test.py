@@ -2,7 +2,7 @@
 """
 ROS Topic Test Script
 
-Topic: /zj_humanoid/sensor/realsense_down/depth/image_raw
+Topic: /zj_humanoid/sensor/realsense_down/depth/image_rect_raw
 Type: sensor_msgs/Image
 Description: 腹部深度RGB图像
 
@@ -46,13 +46,13 @@ def main():
     yaml_file = sys.argv[1]
     
     # Initialize ROS node
-    rospy.init_node('topic_test_zj_humanoid_sensor_realsense_down_depth_image_raw', anonymous=True)
+    rospy.init_node('topic_test_zj_humanoid_sensor_realsense_down_depth_image_rect_raw', anonymous=True)
     
     # Load data from YAML
     data = load_yaml_data(yaml_file)
     
     # Create publisher
-    pub = rospy.Publisher('/zj_humanoid/sensor/realsense_down/depth/image_raw', Image, queue_size=10)
+    pub = rospy.Publisher('/zj_humanoid/sensor/realsense_down/depth/image_rect_raw', Image, queue_size=10)
     
     # Create message
     msg = dict_to_msg(data, Image)
@@ -60,7 +60,7 @@ def main():
     # Publish at 10Hz
     rate = rospy.Rate(10)
     
-    rospy.loginfo(f"Publishing to /zj_humanoid/sensor/realsense_down/depth/image_raw at 10Hz...")
+    rospy.loginfo(f"Publishing to /zj_humanoid/sensor/realsense_down/depth/image_rect_raw at 10Hz...")
     rospy.loginfo(f"Message type: sensor_msgs/Image")
     rospy.loginfo(f"Data: {msg}")
     

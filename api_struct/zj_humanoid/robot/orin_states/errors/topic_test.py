@@ -3,7 +3,7 @@
 ROS Topic Test Script
 
 Topic: /zj_humanoid/robot/orin_states/errors
-Type: robot/Errors
+Type: zj_robot/Errors
 Description: orin错误汇总
 
 Usage:
@@ -16,7 +16,7 @@ Press Ctrl+C to stop.
 import rospy
 import yaml
 import sys
-from robot.msg import Errors
+from zj_robot.msg import Errors
 
 
 def load_yaml_data(yaml_file):
@@ -61,7 +61,7 @@ def main():
     rate = rospy.Rate(10)
     
     rospy.loginfo(f"Publishing to /zj_humanoid/robot/orin_states/errors at 10Hz...")
-    rospy.loginfo(f"Message type: robot/Errors")
+    rospy.loginfo(f"Message type: zj_robot/Errors")
     rospy.loginfo(f"Data: {msg}")
     
     while not rospy.is_shutdown():

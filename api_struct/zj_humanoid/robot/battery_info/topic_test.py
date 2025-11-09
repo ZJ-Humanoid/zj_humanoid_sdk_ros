@@ -3,7 +3,7 @@
 ROS Topic Test Script
 
 Topic: /zj_humanoid/robot/battery_info
-Type: robot/BatteryInfo
+Type: zj_robot/BatteryInfo
 Description: 电池相关信息
 
 Usage:
@@ -16,7 +16,7 @@ Press Ctrl+C to stop.
 import rospy
 import yaml
 import sys
-from robot.msg import BatteryInfo
+from zj_robot.msg import BatteryInfo
 
 
 def load_yaml_data(yaml_file):
@@ -61,7 +61,7 @@ def main():
     rate = rospy.Rate(10)
     
     rospy.loginfo(f"Publishing to /zj_humanoid/robot/battery_info at 10Hz...")
-    rospy.loginfo(f"Message type: robot/BatteryInfo")
+    rospy.loginfo(f"Message type: zj_robot/BatteryInfo")
     rospy.loginfo(f"Data: {msg}")
     
     while not rospy.is_shutdown():

@@ -3,7 +3,7 @@
 ROS Service Test Script
 
 Service: /zj_humanoid/robot/pico_states/connect_wifi
-Type: robot/ConnectWifi
+Type: zj_robot/ConnectWifi
 Description: pico连接wifi
 
 Usage:
@@ -15,7 +15,7 @@ This script calls the service with request data from a YAML file.
 import rospy
 import yaml
 import sys
-from robot.srv import ConnectWifi, ConnectWifiRequest
+from zj_robot.srv import ConnectWifi, ConnectWifiRequest
 
 
 def load_yaml_data(yaml_file):

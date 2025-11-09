@@ -3,7 +3,7 @@
 ROS Service Test Script
 
 Service: /zj_humanoid/robot/pico_states/wifi_list
-Type: robot/WifiList
+Type: zj_robot/WifiList
 Description: pico_wifi列表
 
 Usage:
@@ -15,7 +15,7 @@ This script calls the service with request data from a YAML file.
 import rospy
 import yaml
 import sys
-from robot.srv import WifiList, WifiListRequest
+from zj_robot.srv import WifiList, WifiListRequest
 
 
 def load_yaml_data(yaml_file):

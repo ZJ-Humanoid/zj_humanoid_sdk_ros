@@ -3,7 +3,7 @@
 ROS Topic Test Script
 
 Topic: /zj_humanoid/robot/robot_state
-Type: robot/RobotState
+Type: zj_robot/RobotState
 Description: 机器人状态机值
 
 Usage:
@@ -16,7 +16,7 @@ Press Ctrl+C to stop.
 import rospy
 import yaml
 import sys
-from robot.msg import RobotState
+from zj_robot.msg import RobotState
 
 
 def load_yaml_data(yaml_file):
@@ -61,7 +61,7 @@ def main():
     rate = rospy.Rate(10)
     
     rospy.loginfo(f"Publishing to /zj_humanoid/robot/robot_state at 10Hz...")
-    rospy.loginfo(f"Message type: robot/RobotState")
+    rospy.loginfo(f"Message type: zj_robot/RobotState")
     rospy.loginfo(f"Data: {msg}")
     
     while not rospy.is_shutdown():

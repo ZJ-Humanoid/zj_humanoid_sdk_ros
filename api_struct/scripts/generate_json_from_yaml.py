@@ -2,20 +2,24 @@
 """
 ZJ Humanoid ROS Interfaces Generator
 
-This script reads ../zj_humanoid_interfaces.yaml and generates:
-- zj_humanoid_interfaces.json: JSON format for programmatic access
+This script reads zj_humanoid_interfaces.yaml from generated/ and generates:
+- zj_humanoid_interfaces_*.json: JSON format for each robot model
 - zj_humanoid_interfaces.md: Markdown format for human-readable documentation
 
 File Structure:
     api_struct/
-    ├── zj_humanoid_interfaces.yaml (input file)
+    ├── scripts/
+    │   └── generate_json_from_yaml.py (this script)
     └── generated/
-        ├── generate_json_from_yaml.py (this script)
-        ├── zj_humanoid_interfaces.json (output)
+        ├── zj_humanoid_interfaces.yaml (input file)
+        ├── zj_humanoid_interfaces_H1.json (output)
+        ├── zj_humanoid_interfaces_I2.json (output)
+        ├── zj_humanoid_interfaces_WA1.json (output)
+        ├── zj_humanoid_interfaces_WA2.json (output)
         └── zj_humanoid_interfaces.md (output)
 
 Usage:
-    cd generated/
+    cd api_struct/scripts/
     python3 generate_json_from_yaml.py
 
 Requirements:
@@ -28,6 +32,7 @@ import json
 import os
 from datetime import datetime
 from typing import Dict, Any
+from pathlib import Path
 
 
 class InterfaceGenerator:
@@ -41,15 +46,14 @@ class InterfaceGenerator:
             yaml_file: Path to the input YAML file. If None, will auto-detect.
         """
         if yaml_file is None:
-            # Auto-detect the YAML file path
-            if os.path.exists("../zj_humanoid_interfaces.yaml"):
-                self.yaml_file = "../zj_humanoid_interfaces.yaml"
-            elif os.path.exists("zj_humanoid_interfaces.yaml"):
-                self.yaml_file = "zj_humanoid_interfaces.yaml"
-            else:
-                self.yaml_file = "zj_humanoid_interfaces.yaml"  # Default fallback
+            # Auto-detect the YAML file path from scripts/ directory
+            script_dir = Path(__file__).parent.parent
+            yaml_path = script_dir / 'generated' / 'zj_humanoid_interfaces.yaml'
+            self.yaml_file = str(yaml_path)
+            self.output_dir = script_dir / 'generated'
         else:
             self.yaml_file = yaml_file
+            self.output_dir = Path(yaml_file).parent
         self.data = None
     
     def load_yaml_data(self) -> bool:
@@ -112,8 +116,11 @@ class InterfaceGenerator:
         
         # Save a JSON file for each robot model
         try:
+            # Ensure output directory exists
+            self.output_dir.mkdir(parents=True, exist_ok=True)
+            
             for model in robot_models:
-                output_filename = f"zj_humanoid_interfaces_{model}.json"
+                output_filename = self.output_dir / f"zj_humanoid_interfaces_{model}.json"
                 with open(output_filename, 'w', encoding='utf-8') as f:
                     json.dump(robot_data[model], f, ensure_ascii=False, indent=4)
                 print(f"Successfully saved to {output_filename}")
@@ -131,11 +138,13 @@ class InterfaceGenerator:
         """
         if output_file is None:
             # Save to generated/ directory
-            if os.path.exists("generated/"):
-                output_file = "generated/zj_humanoid_interfaces.md"
-            else:
-                output_file = "zj_humanoid_interfaces.md"
+            output_file = self.output_dir / "zj_humanoid_interfaces.md"
+        else:
+            output_file = Path(output_file)
+        
         try:
+            # Ensure output directory exists
+            output_file.parent.mkdir(parents=True, exist_ok=True)
             with open(output_file, 'w', encoding='utf-8') as f:
                 # Write header
                 f.write("# ZJ Humanoid ROS API 接口文档\n\n")

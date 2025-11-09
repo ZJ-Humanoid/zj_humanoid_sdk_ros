@@ -3,7 +3,7 @@
 ROS Service Test Script
 
 Service: /zj_humanoid/robot/basic_info
-Type: robot/BasicInfo
+Type: zj_robot/BasicInfo
 Description: 机器人基础信息
 
 Usage:
@@ -15,7 +15,7 @@ This script calls the service with request data from a YAML file.
 import rospy
 import yaml
 import sys
-from robot.srv import BasicInfo, BasicInfoRequest
+from zj_robot.srv import BasicInfo, BasicInfoRequest
 
 
 def load_yaml_data(yaml_file):

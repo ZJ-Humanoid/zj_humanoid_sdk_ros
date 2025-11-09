@@ -6,11 +6,12 @@ This script generates topic_test.py and service_test.py for each ROS interface
 in the zj_humanoid/ directory structure.
 
 Usage:
+    cd api_struct/scripts/
     python3 generate_ros_tests.py
 
 The generator:
 - Scans zj_humanoid/ for topic.yaml and service.yaml files
-- Reads type information from zj_humanoid_interfaces.yaml
+- Reads type information from generated/zj_humanoid_interfaces.yaml
 - Generates Python test scripts that accept YAML data files
 - Topics publish at 10Hz, services call once
 """
@@ -19,18 +20,19 @@ import os
 import sys
 import yaml
 from typing import Optional, Dict, List
+from pathlib import Path
 
 
 # Path configuration
-SCRIPT_DIR = os.path.abspath(os.path.dirname(__file__))
-ZJ_HUMANOID_DIR = os.path.join(SCRIPT_DIR, "zj_humanoid")
-INTERFACES_YAML = os.path.join(SCRIPT_DIR, "zj_humanoid_interfaces.yaml")
+SCRIPT_DIR = Path(__file__).parent.parent  # api_struct/
+ZJ_HUMANOID_DIR = SCRIPT_DIR / "zj_humanoid"
+INTERFACES_YAML = SCRIPT_DIR / "generated" / "zj_humanoid_interfaces.yaml"
 
 
 def load_interfaces_data() -> Optional[Dict]:
     """Load the aggregated interfaces YAML file."""
     try:
-        with open(INTERFACES_YAML, 'r', encoding='utf-8') as f:
+        with open(str(INTERFACES_YAML), 'r', encoding='utf-8') as f:
             return yaml.safe_load(f)
     except Exception as e:
         print(f"Error loading {INTERFACES_YAML}: {e}")
@@ -64,13 +66,20 @@ def build_interface_map(data: Dict) -> Dict[str, Dict]:
     return interface_map
 
 
-def infer_interface_name(dir_path: str) -> str:
+def infer_interface_name(dir_path: Path) -> str:
     """Infer the full ROS interface name from directory path."""
-    rel = os.path.relpath(dir_path, SCRIPT_DIR)
-    if not rel.startswith("zj_humanoid" + os.sep):
+    try:
+        rel = dir_path.relative_to(SCRIPT_DIR)
+    except ValueError:
+        raise ValueError(f"Directory not under {SCRIPT_DIR}: {dir_path}")
+    
+    if not str(rel).startswith("zj_humanoid"):
         raise ValueError(f"Directory not under zj_humanoid/: {dir_path}")
-    rel_after = rel.split("zj_humanoid" + os.sep, 1)[1]
-    return "/zj_humanoid/" + rel_after.replace(os.sep, "/")
+    
+    rel_str = str(rel).replace(os.sep, "/")
+    # Remove "zj_humanoid/" prefix and add it back with leading slash
+    rel_after = rel_str.split("zj_humanoid/", 1)[1]
+    return "/zj_humanoid/" + rel_after
 
 
 # Python template for topic test
@@ -248,7 +257,7 @@ def parse_msg_type(msg_type: str) -> tuple:
     return '', msg_type
 
 
-def generate_topic_test(dir_path: str, topic_name: str, interface_info: Dict) -> bool:
+def generate_topic_test(dir_path: Path, topic_name: str, interface_info: Dict) -> bool:
     """Generate topic_test.py for a topic."""
     msg_type = interface_info.get('type', '')
     if not msg_type:
@@ -274,7 +283,7 @@ def generate_topic_test(dir_path: str, topic_name: str, interface_info: Dict) ->
     )
     
     # Write to file
-    output_path = os.path.join(dir_path, 'topic_test.py')
+    output_path = dir_path / 'topic_test.py'
     try:
         with open(output_path, 'w', encoding='utf-8') as f:
             f.write(script_content)
@@ -285,7 +294,7 @@ def generate_topic_test(dir_path: str, topic_name: str, interface_info: Dict) ->
         return False
 
 
-def generate_service_test(dir_path: str, service_name: str, interface_info: Dict) -> bool:
+def generate_service_test(dir_path: Path, service_name: str, interface_info: Dict) -> bool:
     """Generate service_test.py for a service."""
     srv_type = interface_info.get('type', '')
     if not srv_type:
@@ -311,7 +320,7 @@ def generate_service_test(dir_path: str, service_name: str, interface_info: Dict
     )
     
     # Write to file
-    output_path = os.path.join(dir_path, 'service_test.py')
+    output_path = dir_path / 'service_test.py'
     try:
         with open(output_path, 'w', encoding='utf-8') as f:
             f.write(script_content)
@@ -345,7 +354,8 @@ def main():
     service_count = 0
     skipped_count = 0
     
-    for root, dirs, files in os.walk(ZJ_HUMANOID_DIR):
+    for root, dirs, files in os.walk(str(ZJ_HUMANOID_DIR)):
+        root_path = Path(root)
         has_topic_yaml = 'topic.yaml' in files
         has_service_yaml = 'service.yaml' in files
         
@@ -354,7 +364,7 @@ def main():
         
         # Infer interface name
         try:
-            interface_name = infer_interface_name(root)
+            interface_name = infer_interface_name(root_path)
         except ValueError as e:
             print(f"Skipping {root}: {e}")
             skipped_count += 1
@@ -369,14 +379,14 @@ def main():
         
         # Generate test scripts
         if has_topic_yaml and interface_info['kind'] == 'topic':
-            if generate_topic_test(root, interface_name, interface_info):
+            if generate_topic_test(root_path, interface_name, interface_info):
                 topic_count += 1
                 print(f"✓ Generated topic_test.py for {interface_name}")
             else:
                 skipped_count += 1
         
         if has_service_yaml and interface_info['kind'] == 'service':
-            if generate_service_test(root, interface_name, interface_info):
+            if generate_service_test(root_path, interface_name, interface_info):
                 service_count += 1
                 print(f"✓ Generated service_test.py for {interface_name}")
             else:

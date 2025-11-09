@@ -1,0 +1,15 @@
+project:
+  name: "ZJ Humanoid ROS SDK"
+  version: "v1.0.0"
+
+paths:
+  source_dir: "zj_humanoid"
+  output_dir: "generated"
+  
+generation:
+  robot_models: [H1, I2, WA1, WA2]
+  test_frequency_hz: 10
+  
+templates:
+  topic_test: "templates/topic_test.py.jinja2"
+  service_test: "templates/service_test.py.jinja2"

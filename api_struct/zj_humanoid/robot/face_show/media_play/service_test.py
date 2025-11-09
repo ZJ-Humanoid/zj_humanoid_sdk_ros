@@ -3,7 +3,7 @@
 ROS Service Test Script
 
 Service: /zj_humanoid/robot/face_show/media_play
-Type: robot/FaceShow
+Type: zj_robot/FaceShow
 Description: 脸部显示视频
 
 Usage:
@@ -15,7 +15,7 @@ This script calls the service with request data from a YAML file.
 import rospy
 import yaml
 import sys
-from robot.srv import FaceShow, FaceShowRequest
+from zj_robot.srv import FaceShow, FaceShowRequest
 
 
 def load_yaml_data(yaml_file):

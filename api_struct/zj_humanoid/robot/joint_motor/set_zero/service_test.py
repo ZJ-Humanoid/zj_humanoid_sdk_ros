@@ -2,9 +2,9 @@
 """
 ROS Service Test Script
 
-Service: /zj_humanoid/lowerlimb/versions
-Type: std_srvs/Trigger
-Description: 下肢模块版本
+Service: /zj_humanoid/robot/joint_motor/set_zero
+Type: zj_robot/SetZero
+Description: 电机自动标零
 
 Usage:
     python3 service_test.py <request_data.yaml>
@@ -15,7 +15,7 @@ This script calls the service with request data from a YAML file.
 import rospy
 import yaml
 import sys
-from std_srvs.srv import Trigger, TriggerRequest
+from zj_robot.srv import SetZero, SetZeroRequest
 
 
 def load_yaml_data(yaml_file):
@@ -45,23 +45,23 @@ def main():
     yaml_file = sys.argv[1]
     
     # Initialize ROS node
-    rospy.init_node('service_test_zj_humanoid_lowerlimb_versions', anonymous=True)
+    rospy.init_node('service_test_zj_humanoid_robot_joint_motor_set_zero', anonymous=True)
     
     # Load request data from YAML
     data = load_yaml_data(yaml_file)
     
     # Wait for service
-    rospy.loginfo(f"Waiting for service /zj_humanoid/lowerlimb/versions...")
-    rospy.wait_for_service('/zj_humanoid/lowerlimb/versions')
+    rospy.loginfo(f"Waiting for service /zj_humanoid/robot/joint_motor/set_zero...")
+    rospy.wait_for_service('/zj_humanoid/robot/joint_motor/set_zero')
     
     try:
         # Create service proxy
-        service_proxy = rospy.ServiceProxy('/zj_humanoid/lowerlimb/versions', Trigger)
+        service_proxy = rospy.ServiceProxy('/zj_humanoid/robot/joint_motor/set_zero', SetZero)
         
         # Create request
-        req = dict_to_request(data, TriggerRequest)
+        req = dict_to_request(data, SetZeroRequest)
         
-        rospy.loginfo(f"Calling service /zj_humanoid/lowerlimb/versions...")
+        rospy.loginfo(f"Calling service /zj_humanoid/robot/joint_motor/set_zero...")
         rospy.loginfo(f"Request: {req}")
         
         # Call service
