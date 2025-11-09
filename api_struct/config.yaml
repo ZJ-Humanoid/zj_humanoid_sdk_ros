@@ -1,5 +1,5 @@
 project:
-  name: "ZJ Humanoid ROS SDK"
+  description: 'ZJ Humanoid ROS1 APIs'
   version: "v1.0.0"
 
 paths:

@@ -1,6 +1,6 @@
 metadata:
-  generated_at: '2025-11-09 11:04:28'
-  description: ZJ Humanoid ROS APIs - Services and Topics
+  generated_at: '2025-11-09 11:28:20'
+  description: ZJ Humanoid ROS1 APIs
   version: v1.0.0
 services:
 - name: /zj_humanoid/audio/LLM_chat
