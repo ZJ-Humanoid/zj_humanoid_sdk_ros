@@ -3,4 +3,3 @@ service:
   description: 倾听服务
   type: audio/Listen
   note: "开始倾听"
-  applicable_robot_models: [H1, I2, WA1, WA2]  # 适用机器人型号

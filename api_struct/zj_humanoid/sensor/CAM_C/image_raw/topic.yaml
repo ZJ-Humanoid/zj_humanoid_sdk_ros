@@ -5,4 +5,3 @@
   direction: publish
   throttle_rate: 62.5
   note: "右侧太阳穴相机C的RGB图像源数据"
-  applicable_robot_models: [H1, I2, WA1, WA2]

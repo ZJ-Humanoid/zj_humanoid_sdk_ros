@@ -3,4 +3,3 @@ service:
   description: orin连接wifi
   type: zj_robot/ConnectWifi
   note: "尝试让机器人大脑orin去连接wifi热点"
-  applicable_robot_models: [H1, I2, WA1, WA2]

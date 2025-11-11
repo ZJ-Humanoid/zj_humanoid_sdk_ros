@@ -6,4 +6,3 @@ topic:
   throttle_rate: 1000
   demos: robot_work_status.yaml
   note: "机器人开机后单次工作状态发布，包含已运行时间，剩余工作时间，行进里程数等，描述下机器人本次开机后工作状态 回复因包含：已运行时间，剩余工作时间，行进里程数"
-  applicable_robot_models: [H1, I2, WA1, WA2]

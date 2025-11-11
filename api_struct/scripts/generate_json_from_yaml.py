@@ -51,10 +51,13 @@ class InterfaceGenerator:
             yaml_path = script_dir / 'generated' / 'zj_humanoid_interfaces.yaml'
             self.yaml_file = str(yaml_path)
             self.output_dir = script_dir / 'generated'
+            self.config_file = script_dir / 'config.yaml'
         else:
             self.yaml_file = yaml_file
             self.output_dir = Path(yaml_file).parent
+            self.config_file = Path(yaml_file).parent.parent / 'config.yaml'
         self.data = None
+        self.config = None
     
     def load_yaml_data(self) -> bool:
         """
@@ -81,15 +84,101 @@ class InterfaceGenerator:
             print(f"Error reading file {self.yaml_file}: {e}")
             return False
     
+    def load_config(self) -> bool:
+        """
+        Load configuration from config.yaml file.
+        
+        Returns:
+            True if successful, False otherwise
+        """
+        try:
+            if not os.path.exists(self.config_file):
+                print(f"Warning: Config file {self.config_file} not found! Using default configuration.")
+                # Use default configuration
+                self.config = {
+                    'robot_models': {
+                        'H1': {'exclude_modules': []},
+                        'I2': {'exclude_modules': []},
+                        'WA1': {'exclude_modules': []},
+                        'WA2': {'exclude_modules': []}
+                    }
+                }
+                return True
+            
+            with open(self.config_file, 'r', encoding='utf-8') as f:
+                self.config = yaml.safe_load(f)
+            
+            print(f"Successfully loaded config from {self.config_file}")
+            return True
+            
+        except yaml.YAMLError as e:
+            print(f"Error parsing config file {self.config_file}: {e}")
+            return False
+        except Exception as e:
+            print(f"Error reading config file {self.config_file}: {e}")
+            return False
+    
+    def get_module_from_name(self, interface_name: str) -> str:
+        """
+        Extract module name from interface name.
+        
+        Args:
+            interface_name: Full interface name (e.g., /zj_humanoid/audio/asr_text)
+        
+        Returns:
+            Module name (e.g., audio) or empty string if not found
+        """
+        if not interface_name:
+            return ''
+        
+        # Remove leading slash
+        name = interface_name.lstrip('/')
+        
+        # Split by slash and get the parts
+        # Expected format: zj_humanoid/module/...
+        parts = name.split('/')
+        if len(parts) >= 2:
+            # Return the second part (module name)
+            return parts[1]
+        
+        return ''
+    
+    def should_include_interface(self, interface_name: str, robot_model: str) -> bool:
+        """
+        Check if an interface should be included for a specific robot model.
+        
+        Args:
+            interface_name: Full interface name
+            robot_model: Robot model name (H1, I2, WA1, WA2)
+        
+        Returns:
+            True if the interface should be included, False otherwise
+        """
+        module = self.get_module_from_name(interface_name)
+        
+        if not module:
+            return True
+        
+        # Get exclude modules for this robot model
+        robot_config = self.config.get('robot_models', {}).get(robot_model, {})
+        exclude_modules = robot_config.get('exclude_modules', [])
+        
+        # Include if module is not in exclude list
+        return module not in exclude_modules
+    
     def save_to_json(self, output_file: str = None) -> None:
         """
-        Save data to JSON files based on applicable_robot_models.
+        Save data to JSON files based on config.yaml robot models and exclude rules.
         
         Args:
             output_file: Output JSON file path (deprecated, kept for compatibility).
         """
-        # Define robot models
-        robot_models = ['H1', 'I2', 'WA1', 'WA2']
+        # Get robot models from config
+        robot_models = list(self.config.get('robot_models', {}).keys())
+        
+        if not robot_models:
+            print("Warning: No robot models found in config! Using defaults.")
+            robot_models = ['H1', 'I2', 'WA1', 'WA2']
         
         # Create a dictionary to hold data for each robot model
         robot_data = {}
@@ -100,18 +189,18 @@ class InterfaceGenerator:
                 'topics': []
             }
         
-        # Filter services based on applicable_robot_models
+        # Filter services based on module exclusion rules
         for service in self.data.get('services', []):
-            applicable_models = service.get('applicable_robot_models', [])
+            service_name = service.get('name', '')
             for model in robot_models:
-                if model in applicable_models:
+                if self.should_include_interface(service_name, model):
                     robot_data[model]['services'].append(service)
         
-        # Filter topics based on applicable_robot_models
+        # Filter topics based on module exclusion rules
         for topic in self.data.get('topics', []):
-            applicable_models = topic.get('applicable_robot_models', [])
+            topic_name = topic.get('name', '')
             for model in robot_models:
-                if model in applicable_models:
+                if self.should_include_interface(topic_name, model):
                     robot_data[model]['topics'].append(topic)
         
         # Save a JSON file for each robot model
@@ -126,6 +215,11 @@ class InterfaceGenerator:
                 print(f"Successfully saved to {output_filename}")
                 print(f"  - Services: {len(robot_data[model]['services'])}")
                 print(f"  - Topics: {len(robot_data[model]['topics'])}")
+                
+                # Print excluded modules info
+                exclude_modules = self.config.get('robot_models', {}).get(model, {}).get('exclude_modules', [])
+                if exclude_modules:
+                    print(f"  - Excluded modules: {', '.join(exclude_modules)}")
         except Exception as e:
             print(f"Error saving to JSON files: {e}")
     
@@ -185,6 +279,11 @@ class InterfaceGenerator:
     
     def generate_files(self) -> None:
         """Generate JSON and Markdown files from YAML data."""
+        # Load config first
+        if not self.load_config():
+            print("Failed to load config! Aborting.")
+            return
+        
         if not self.load_yaml_data():
             return
         

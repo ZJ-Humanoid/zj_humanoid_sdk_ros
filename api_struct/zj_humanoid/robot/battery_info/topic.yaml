@@ -6,4 +6,3 @@ topic:
   throttle_rate: 1000
   demos: battery_info.yaml
   note: "电池BMS相关信息，机器人当前电量还剩多少 回复值应为1~100%"
-  applicable_robot_models: [H1, I2, WA1, WA2]

@@ -3,4 +3,3 @@ service:
   description: 选中生效喇叭
   type: audio/SetDevice
   note: "选择第一个喇叭"
-  applicable_robot_models: [H1, I2, WA1, WA2]  # 适用机器人型号

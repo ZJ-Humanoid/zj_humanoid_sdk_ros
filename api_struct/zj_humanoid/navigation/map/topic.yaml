@@ -4,4 +4,3 @@
   type: nav_msgs/OccupancyGrid
   direction: subscribe
   note: "全局地图信息"
-  applicable_robot_models: [I2, WA1, WA2]

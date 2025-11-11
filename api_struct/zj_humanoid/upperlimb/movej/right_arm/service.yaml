@@ -6,4 +6,3 @@ service:
   - right_arm_v_acc_case1.yaml
   - right_arm_t_case1.yaml
   note: "关节空间下,右臂点到点运动"
-  applicable_robot_models: [H1, I2, WA1, WA2]

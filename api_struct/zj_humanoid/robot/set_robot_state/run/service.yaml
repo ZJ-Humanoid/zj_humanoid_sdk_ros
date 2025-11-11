@@ -3,4 +3,3 @@
   description: 状态机运行
   type: std_srvs/Trigger
   note: "如果机器人处于非RUN状态，尝试将机器人状态值设置为RUN，但如果有异常的存在，也可能会失败，将机器人状态设置为RUN 持续检测robot_state话题，经过最长60秒钟的等待，状态应切换为：RUN"
-  applicable_robot_models: [H1, I2, WA1, WA2]

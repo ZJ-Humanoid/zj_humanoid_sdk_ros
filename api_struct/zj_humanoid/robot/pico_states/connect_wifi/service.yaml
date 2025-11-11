@@ -4,4 +4,3 @@ service:
   type: zj_robot/ConnectWifi
   demos: connect_wifi_pico.yaml
   note: "尝试让机器人小脑pico去连接wifi热点"
-  applicable_robot_models: [H1, I2, WA1, WA2]

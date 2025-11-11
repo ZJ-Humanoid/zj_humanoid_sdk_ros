@@ -3,4 +3,3 @@ service:
   description: 文字转语音
   type: audio/TTS
   note: "请让机器人说‘hello world‘"
-  applicable_robot_models: [H1, I2, WA1, WA2]  # 适用机器人型号

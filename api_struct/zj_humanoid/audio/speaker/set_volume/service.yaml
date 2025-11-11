@@ -3,4 +3,3 @@ service:
   description: 设置音量大小
   type: audio/SetVolume
   note: "设置音量为50"
-  applicable_robot_models: [H1, I2, WA1, WA2]  # 适用机器人型号

@@ -5,4 +5,3 @@ topic:
   direction: publish
   demos: get_pico_resouce.yaml
   note: "机器人小脑pico资源状态 回复应包含：小脑的cpu,温度，内存，硬盘的用量"
-  applicable_robot_models: [H1, I2, WA1, WA2]

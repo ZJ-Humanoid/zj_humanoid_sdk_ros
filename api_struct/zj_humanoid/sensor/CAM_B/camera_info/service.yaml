@@ -3,4 +3,3 @@ service:
   description: 右眼参数信息
   type: sensor/CameraInfo
   note: "相机B的参数信息，相机B安装在机器人右眼的位置上，相机B的分辨率是多少 回复应包含1280和720"
-  applicable_robot_models: [H1, I2, WA1, WA2]

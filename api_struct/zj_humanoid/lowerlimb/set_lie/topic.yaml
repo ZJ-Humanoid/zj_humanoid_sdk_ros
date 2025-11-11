@@ -4,4 +4,3 @@
   type: std_msgs/Float32
   direction: subscribe
   note: "下肢泄力，软急停"
-  applicable_robot_models: [I2]  # 适用机器人型号

@@ -5,4 +5,3 @@
   direction: publish
   throttle_rate: 1000
   note: "运控debug信息"
-  applicable_robot_models: [I2]  # 适用机器人型号

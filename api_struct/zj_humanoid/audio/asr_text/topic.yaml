@@ -4,4 +4,3 @@
   type: std_msgs/String
   direction: publish
   note: "当前机器人听到了什么"
-  applicable_robot_models: [H1, I2, WA1, WA2]  # 适用机器人型号

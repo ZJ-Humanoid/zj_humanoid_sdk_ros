@@ -3,4 +3,3 @@ service:
   description: LLM对话服务
   type: audio/LLM_chat
   note: "语音模块的版本号是多少"
-  applicable_robot_models: [H1, I2, WA1, WA2]  # 适用机器人型号

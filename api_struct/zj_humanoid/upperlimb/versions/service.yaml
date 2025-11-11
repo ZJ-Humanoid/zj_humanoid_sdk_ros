@@ -3,4 +3,3 @@
   description: 上肢模块版本
   type: std_srvs/Trigger
   note: "查询当前上肢子系统的软件版本号 应回复软件版本号"
-  applicable_robot_models: [H1, I2, WA1, WA2]

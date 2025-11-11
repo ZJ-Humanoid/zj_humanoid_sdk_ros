@@ -3,4 +3,3 @@ service:
   description: 设置servol参数
   type: upperlimb/Servo
   note: "设置笛卡尔空间 高频位置跟随控制参数"
-  applicable_robot_models: [H1, I2, WA1, WA2]

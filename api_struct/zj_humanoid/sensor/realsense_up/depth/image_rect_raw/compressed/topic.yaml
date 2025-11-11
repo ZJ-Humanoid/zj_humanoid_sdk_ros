@@ -5,4 +5,3 @@
   direction: publish
   throttle_rate: 33.33
   note: "胸部深度相机的RGB图像JPG格式"
-  applicable_robot_models: [H1, I2, WA1, WA2]

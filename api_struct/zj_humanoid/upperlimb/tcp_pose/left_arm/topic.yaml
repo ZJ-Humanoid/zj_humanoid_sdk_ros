@@ -5,4 +5,3 @@ topic:
   direction: publish
   throttle_rate: 10
   note: "左手臂末端位姿"
-  applicable_robot_models: [H1, I2, WA1, WA2]

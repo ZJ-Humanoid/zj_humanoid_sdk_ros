@@ -2,14 +2,24 @@ project:
   description: 'ZJ Humanoid ROS1 APIs'
   version: "v1.0.0"
 
-paths:
-  source_dir: "zj_humanoid"
-  output_dir: "generated"
-  
-generation:
-  robot_models: [H1, I2, WA1, WA2]
-  test_frequency_hz: 10
-  
-templates:
-  topic_test: "templates/topic_test.py.jinja2"
-  service_test: "templates/service_test.py.jinja2"
+# 功能模块列表
+modules:
+  - audio
+  - hand
+  - lowerlimb
+  - manipulation
+  - navigation
+  - robot
+  - sensor
+  - upperlimb
+
+# 机器人型号及其对应的功能模块排除列表
+robot_models:
+  H1:
+    exclude_modules: []
+  I2:
+    exclude_modules: [navigation]  # I2型号不支持导航功能
+  WA1:
+    exclude_modules: []  
+  WA2:
+    exclude_modules: [manipulation]  # WA2型号不支持操作功能

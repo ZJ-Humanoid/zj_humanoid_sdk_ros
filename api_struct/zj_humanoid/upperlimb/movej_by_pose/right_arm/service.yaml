@@ -4,4 +4,3 @@ service:
   type: upperlimb/MoveJByPose
   demos: case1.yaml
   note: "tcp末端空间下,右臂末端位姿movej"
-  applicable_robot_models: [H1, I2, WA1, WA2]

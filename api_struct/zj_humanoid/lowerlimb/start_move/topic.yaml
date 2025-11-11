@@ -4,4 +4,3 @@
   type: std_msgs/Float32
   direction: subscribe
   note: "开启运动模式，算法开始响应速度控制请求"
-  applicable_robot_models: [I2]  # 适用机器人型号
