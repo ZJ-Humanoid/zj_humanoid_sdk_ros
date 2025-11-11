@@ -16,9 +16,9 @@ modules:
 # 机器人型号及其对应的功能模块排除列表
 robot_models:
   H1:
-    exclude_modules: []
+    exclude_modules: [navigation]  # H1型号不支持导航功能
   I2:
-    exclude_modules: [navigation]  # I2型号不支持导航功能
+    exclude_modules: []
   WA1:
     exclude_modules: []  
   WA2:

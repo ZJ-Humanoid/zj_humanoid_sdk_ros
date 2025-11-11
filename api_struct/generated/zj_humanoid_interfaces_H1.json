@@ -1,6 +1,6 @@
 {
     "metadata": {
-        "generated_at": "2025-11-11 13:17:11",
+        "generated_at": "2025-11-11 13:25:00",
         "description": "ZJ Humanoid ROS1 APIs",
         "version": "v1.0.0"
     },
@@ -255,15 +255,6 @@
             "name": "/zj_humanoid/manipulation/version",
             "description": "操作模块版本号",
             "type": "",
-            "demos": [
-                "data.yaml"
-            ],
-            "note": ""
-        },
-        {
-            "name": "/zj_humanoid/navigation/version",
-            "description": "定位导航版本号",
-            "type": "std_srvs/Trigger",
             "demos": [
                 "data.yaml"
             ],
@@ -887,52 +878,6 @@
             "direction": "subscribe",
             "note": "开启运动模式，算法开始响应速度控制请求",
             "demos": []
-        },
-        {
-            "name": "/zj_humanoid/navigation/local_map",
-            "description": "局部障碍物信息",
-            "type": "navigation/LocalMap",
-            "direction": "subscribe",
-            "throttle_rate": 100,
-            "note": "",
-            "demos": []
-        },
-        {
-            "name": "/zj_humanoid/navigation/map",
-            "description": "全局地图信息",
-            "type": "nav_msgs/OccupancyGrid",
-            "direction": "subscribe",
-            "note": "全局地图信息",
-            "demos": []
-        },
-        {
-            "name": "/zj_humanoid/navigation/navigation_status",
-            "description": "当前导航状态",
-            "type": "navigation/NavigationStatus",
-            "direction": "subscribe",
-            "throttle_rate": 50,
-            "note": "当前导航状态信息",
-            "demos": []
-        },
-        {
-            "name": "/zj_humanoid/navigation/odom_info",
-            "description": "当前位姿信息",
-            "type": "nav_msgs/Odometry",
-            "direction": "subscribe",
-            "throttle_rate": 100,
-            "note": "当前位姿信息，有定位时才会输出结果",
-            "demos": []
-        },
-        {
-            "name": "/zj_humanoid/navigation/task_info",
-            "description": "发布导航任务",
-            "type": "navigation/TakInfo",
-            "direction": "publish",
-            "throttle_rate": 1000,
-            "demos": [
-                "rostopic_pub_zj_humanoid_navigation_task_info.yaml"
-            ],
-            "note": "任务信息，该话题仅发布导航任务，不返回导航的结果"
         },
         {
             "name": "/zj_humanoid/robot/battery_info",
