@@ -11,19 +11,39 @@ from datetime import datetime
 from pathlib import Path
 
 
+def extract_subsystem(name):
+    """
+    从接口名称中提取子系统名称
+    
+    Args:
+        name: 接口完整名称，如 /zj_humanoid/audio/LLM_chat
+    
+    Returns:
+        子系统名称，如 audio
+    """
+    if not name or not name.startswith('/zj_humanoid/'):
+        return 'other'
+    
+    parts = name.split('/')
+    if len(parts) >= 3:
+        return parts[2]  # /zj_humanoid/audio/... -> audio
+    return 'other'
+
+
 def find_yaml_files(base_path):
     """
     遍历目录，查找所有的 service.yaml、topic.yaml 和 action.yaml 文件
+    按子系统分组
     
     Args:
         base_path: 基础路径 (api_struct/zj_humanoid)
     
     Returns:
-        包含三个列表的字典: services, topics, actions
+        包含按子系统分组的字典: services, topics, actions
     """
-    services = []
-    topics = []
-    actions = []
+    services_by_subsystem = {}
+    topics_by_subsystem = {}
+    actions_by_subsystem = {}
     
     base_path = Path(base_path)
     
@@ -48,7 +68,12 @@ def find_yaml_files(base_path):
                                 service_info['demos'] = []
                         else:
                             service_info['demos'] = []
-                        services.append(service_info)
+                        
+                        # 提取子系统名称
+                        subsystem = extract_subsystem(service_info.get('name', ''))
+                        if subsystem not in services_by_subsystem:
+                            services_by_subsystem[subsystem] = []
+                        services_by_subsystem[subsystem].append(service_info)
             except Exception as e:
                 print(f"Error reading {service_file}: {e}")
         
@@ -69,7 +94,12 @@ def find_yaml_files(base_path):
                                 topic_info['demos'] = []
                         else:
                             topic_info['demos'] = []
-                        topics.append(topic_info)
+                        
+                        # 提取子系统名称
+                        subsystem = extract_subsystem(topic_info.get('name', ''))
+                        if subsystem not in topics_by_subsystem:
+                            topics_by_subsystem[subsystem] = []
+                        topics_by_subsystem[subsystem].append(topic_info)
             except Exception as e:
                 print(f"Error reading {topic_file}: {e}")
         
@@ -90,19 +120,27 @@ def find_yaml_files(base_path):
                                 action_info['demos'] = []
                         else:
                             action_info['demos'] = []
-                        actions.append(action_info)
+                        
+                        # 提取子系统名称
+                        subsystem = extract_subsystem(action_info.get('name', ''))
+                        if subsystem not in actions_by_subsystem:
+                            actions_by_subsystem[subsystem] = []
+                        actions_by_subsystem[subsystem].append(action_info)
             except Exception as e:
                 print(f"Error reading {action_file}: {e}")
     
-    # 按名称排序
-    services.sort(key=lambda x: x.get('name', ''))
-    topics.sort(key=lambda x: x.get('name', ''))
-    actions.sort(key=lambda x: x.get('name', ''))
+    # 对每个子系统内的接口按名称排序
+    for subsystem in services_by_subsystem:
+        services_by_subsystem[subsystem].sort(key=lambda x: x.get('name', ''))
+    for subsystem in topics_by_subsystem:
+        topics_by_subsystem[subsystem].sort(key=lambda x: x.get('name', ''))
+    for subsystem in actions_by_subsystem:
+        actions_by_subsystem[subsystem].sort(key=lambda x: x.get('name', ''))
     
     return {
-        'services': services,
-        'topics': topics,
-        'actions': actions
+        'services': services_by_subsystem,
+        'topics': topics_by_subsystem,
+        'actions': actions_by_subsystem
     }
 
 
@@ -133,32 +171,62 @@ def generate_whole_yaml(base_path, output_file, config_file):
     config = load_config(config_file)
     project_config = config.get('project', {})
     
-    # 查找所有 YAML 文件
+    # 查找所有 YAML 文件（按子系统分组）
     result = find_yaml_files(base_path)
     
-    # 构建输出数据结构
+    # 构建输出数据结构（按子系统分组）
     output_data = {
         'metadata': {
             'generated_at': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
             'description': project_config.get('description', 'ZJ Humanoid ROS1 APIs'),
             'version': project_config.get('version', 'v1.0.0')
-        },
-        'services': result['services'],
-        'topics': result['topics']
+        }
     }
+    
+    # 添加 services（按子系统分组）
+    if result['services']:
+        output_data['services'] = {}
+        # 按子系统名称排序
+        for subsystem in sorted(result['services'].keys()):
+            output_data['services'][subsystem] = result['services'][subsystem]
+    
+    # 添加 topics（按子系统分组）
+    if result['topics']:
+        output_data['topics'] = {}
+        # 按子系统名称排序
+        for subsystem in sorted(result['topics'].keys()):
+            output_data['topics'][subsystem] = result['topics'][subsystem]
     
     # 只有在有 actions 时才添加 actions 字段
     if result['actions']:
-        output_data['actions'] = result['actions']
+        output_data['actions'] = {}
+        # 按子系统名称排序
+        for subsystem in sorted(result['actions'].keys()):
+            output_data['actions'][subsystem] = result['actions'][subsystem]
     
     # 写入 YAML 文件
     with open(output_file, 'w', encoding='utf-8') as f:
         yaml.dump(output_data, f, allow_unicode=True, default_flow_style=False, sort_keys=False)
     
+    # 统计数量
+    total_services = sum(len(v) for v in result['services'].values())
+    total_topics = sum(len(v) for v in result['topics'].values())
+    total_actions = sum(len(v) for v in result['actions'].values())
+    
     print(f"Generated {output_file}")
-    print(f"  Services: {len(result['services'])}")
-    print(f"  Topics: {len(result['topics'])}")
-    print(f"  Actions: {len(result['actions'])}")
+    print(f"\n按子系统分组统计:")
+    print(f"  Subsystems: {len(result['services'])} (services), {len(result['topics'])} (topics)")
+    print(f"  Total Services: {total_services}")
+    print(f"  Total Topics: {total_topics}")
+    print(f"  Total Actions: {total_actions}")
+    
+    print(f"\n各子系统接口数量:")
+    all_subsystems = set(result['services'].keys()) | set(result['topics'].keys()) | set(result['actions'].keys())
+    for subsystem in sorted(all_subsystems):
+        s_count = len(result['services'].get(subsystem, []))
+        t_count = len(result['topics'].get(subsystem, []))
+        a_count = len(result['actions'].get(subsystem, []))
+        print(f"  {subsystem}: {s_count} services, {t_count} topics, {a_count} actions")
 
 
 if __name__ == '__main__':

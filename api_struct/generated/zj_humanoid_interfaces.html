@@ -1,0 +1,2507 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZJ Humanoid ROS API 接口文档</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+        
+        h2 {
+            color: #34495e;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ecf0f1;
+            font-size: 2em;
+        }
+        
+        h3 {
+            color: #2980b9;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+            padding: 10px;
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+        }
+        
+        .metadata {
+            background: #ecf0f1;
+            padding: 15px 20px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            font-size: 0.95em;
+        }
+        
+        .metadata p {
+            margin: 5px 0;
+        }
+        
+        .metadata strong {
+            color: #2c3e50;
+            min-width: 120px;
+            display: inline-block;
+        }
+        
+        .total-count {
+            background: #e8f4f8;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            color: #2980b9;
+            font-weight: bold;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0 30px 0;
+            background: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        th {
+            background: #95a5a6;
+            color: white;
+            padding: 12px 15px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        
+        tr:last-child td {
+            border-bottom: none;
+        }
+        
+        tr:hover {
+            background: #f8f9fa;
+        }
+        
+        td:first-child {
+            font-weight: 600;
+            color: #555;
+            width: 30%;
+            background: #fafafa;
+        }
+        
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            color: #e74c3c;
+            font-size: 0.9em;
+        }
+        
+        .direction-publish {
+            color: #27ae60;
+            font-weight: 600;
+        }
+        
+        .direction-subscribe {
+            color: #2980b9;
+            font-weight: 600;
+        }
+        
+        .summary {
+            background: #e8f8f5;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 40px;
+            border-left: 4px solid #27ae60;
+        }
+        
+        .summary h2 {
+            margin-top: 0;
+            color: #27ae60;
+            border: none;
+        }
+        
+        .summary ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .summary li {
+            padding: 8px 0;
+            font-size: 1.1em;
+        }
+        
+        .summary strong {
+            color: #2c3e50;
+        }
+        
+        hr {
+            border: none;
+            border-top: 2px solid #ecf0f1;
+            margin: 30px 0;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ZJ Humanoid ROS API 接口文档</h1>
+
+        <div class="metadata">
+            <p><strong>Description:</strong> ZJ Humanoid ROS1 APIs</p>
+            <p><strong>Version:</strong> v1.0.0</p>
+            <p><strong>Generated At:</strong> 2025-11-12 15:33:05</p>
+        </div>
+
+        <h2>Services</h2>
+        <div class="total-count">Total: 87 services in 8 subsystems</div>
+
+        <h2 style="color: #e67e22; border-left: 5px solid #e67e22; padding-left: 15px; margin-top: 40px;">📦 AUDIO (11 services)</h2>
+
+        <h3>audio.1. /zj_humanoid/audio/LLM_chat</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/audio/LLM_chat</code></td></tr>
+                <tr><td>Type</td><td><code>audio/LLM_chat</code></td></tr>
+                <tr><td>Description</td><td>LLM对话服务</td></tr>
+                <tr><td>Note</td><td>语音模块的版本号是多少</td></tr>
+            </tbody>
+        </table>
+
+        <h3>audio.2. /zj_humanoid/audio/listen</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/audio/listen</code></td></tr>
+                <tr><td>Type</td><td><code>audio/Listen</code></td></tr>
+                <tr><td>Description</td><td>倾听服务</td></tr>
+                <tr><td>Note</td><td>开始倾听</td></tr>
+            </tbody>
+        </table>
+
+        <h3>audio.3. /zj_humanoid/audio/media_play</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/audio/media_play</code></td></tr>
+                <tr><td>Type</td><td><code>audio/MediaPlay</code></td></tr>
+                <tr><td>Description</td><td>音频文件播放</td></tr>
+                <tr><td>Note</td><td>播放’公司介绍.mp3‘</td></tr>
+            </tbody>
+        </table>
+
+        <h3>audio.4. /zj_humanoid/audio/microphone/get_devices_list</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/audio/microphone/get_devices_list</code></td></tr>
+                <tr><td>Type</td><td><code>audio/GetDeviceList</code></td></tr>
+                <tr><td>Description</td><td>麦克风列表</td></tr>
+                <tr><td>Note</td><td>检查当前有多少个麦克风设备 回复数量应大于1</td></tr>
+            </tbody>
+        </table>
+
+        <h3>audio.5. /zj_humanoid/audio/microphone/select_device</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/audio/microphone/select_device</code></td></tr>
+                <tr><td>Type</td><td><code>audio/SetDevice</code></td></tr>
+                <tr><td>Description</td><td>选中麦克风</td></tr>
+                <tr><td>Note</td><td>选择第一个麦克风</td></tr>
+            </tbody>
+        </table>
+
+        <h3>audio.6. /zj_humanoid/audio/speaker/get_devices_list</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/audio/speaker/get_devices_list</code></td></tr>
+                <tr><td>Type</td><td><code>audio/GetDeviceList</code></td></tr>
+                <tr><td>Description</td><td>获取播放设备</td></tr>
+                <tr><td>Note</td><td>检查当前有多少个喇叭设备 回复数量应大于1</td></tr>
+            </tbody>
+        </table>
+
+        <h3>audio.7. /zj_humanoid/audio/speaker/get_volume</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/audio/speaker/get_volume</code></td></tr>
+                <tr><td>Type</td><td><code>audio/GetVolume</code></td></tr>
+                <tr><td>Description</td><td>获取当前音量</td></tr>
+                <tr><td>Note</td><td>获取当前的系统音量大小 应回复音量0~100</td></tr>
+            </tbody>
+        </table>
+
+        <h3>audio.8. /zj_humanoid/audio/speaker/select_device</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/audio/speaker/select_device</code></td></tr>
+                <tr><td>Type</td><td><code>audio/SetDevice</code></td></tr>
+                <tr><td>Description</td><td>选中生效喇叭</td></tr>
+                <tr><td>Note</td><td>选择第一个喇叭</td></tr>
+            </tbody>
+        </table>
+
+        <h3>audio.9. /zj_humanoid/audio/speaker/set_volume</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/audio/speaker/set_volume</code></td></tr>
+                <tr><td>Type</td><td><code>audio/SetVolume</code></td></tr>
+                <tr><td>Description</td><td>设置音量大小</td></tr>
+                <tr><td>Note</td><td>设置音量为50</td></tr>
+            </tbody>
+        </table>
+
+        <h3>audio.10. /zj_humanoid/audio/tts_service</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/audio/tts_service</code></td></tr>
+                <tr><td>Type</td><td><code>audio/TTS</code></td></tr>
+                <tr><td>Description</td><td>文字转语音</td></tr>
+                <tr><td>Note</td><td>请让机器人说‘hello world‘</td></tr>
+            </tbody>
+        </table>
+
+        <h3>audio.11. /zj_humanoid/audio/version</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/audio/version</code></td></tr>
+                <tr><td>Type</td><td><code>std_srvs/Trigger</code></td></tr>
+                <tr><td>Description</td><td>语音模块的版本号</td></tr>
+            </tbody>
+        </table>
+
+        <h2 style="color: #e67e22; border-left: 5px solid #e67e22; padding-left: 15px; margin-top: 40px;">📦 HAND (11 services)</h2>
+
+        <h3>hand.1. /zj_humanoid/hand/finger_pressures/left/zero</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/hand/finger_pressures/left/zero</code></td></tr>
+                <tr><td>Type</td><td><code>std_srvs/Trigger</code></td></tr>
+                <tr><td>Description</td><td>置零手指传感器</td></tr>
+                <tr><td>Note</td><td>置零压力传感器数值</td></tr>
+            </tbody>
+        </table>
+
+        <h3>hand.2. /zj_humanoid/hand/gesture_switch/dual</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/hand/gesture_switch/dual</code></td></tr>
+                <tr><td>Type</td><td><code>hand/Gesture</code></td></tr>
+                <tr><td>Description</td><td>双手手势切换</td></tr>
+            </tbody>
+        </table>
+
+        <h3>hand.3. /zj_humanoid/hand/gesture_switch/left</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/hand/gesture_switch/left</code></td></tr>
+                <tr><td>Type</td><td><code>hand/Gesture</code></td></tr>
+                <tr><td>Description</td><td>左手手势切换</td></tr>
+            </tbody>
+        </table>
+
+        <h3>hand.4. /zj_humanoid/hand/gesture_switch/right</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/hand/gesture_switch/right</code></td></tr>
+                <tr><td>Type</td><td><code>hand/Gesture</code></td></tr>
+                <tr><td>Description</td><td>右手手势切换</td></tr>
+            </tbody>
+        </table>
+
+        <h3>hand.5. /zj_humanoid/hand/joint_switch/dual</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/hand/joint_switch/dual</code></td></tr>
+                <tr><td>Type</td><td><code>hand/HandJoint</code></td></tr>
+                <tr><td>Description</td><td>双手手掌关节运动</td></tr>
+            </tbody>
+        </table>
+
+        <h3>hand.6. /zj_humanoid/hand/joint_switch/left</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/hand/joint_switch/left</code></td></tr>
+                <tr><td>Type</td><td><code>hand/HandJoint</code></td></tr>
+                <tr><td>Description</td><td>左手手掌关节运动</td></tr>
+                <tr><td>Note</td><td>左手食指弯曲40度 订阅/hand_joint_states左手食指数值应接近40度</td></tr>
+            </tbody>
+        </table>
+
+        <h3>hand.7. /zj_humanoid/hand/joint_switch/right</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/hand/joint_switch/right</code></td></tr>
+                <tr><td>Type</td><td><code>hand/HandJoint</code></td></tr>
+                <tr><td>Description</td><td>右手手掌关节运动</td></tr>
+                <tr><td>Note</td><td>右手食指弯曲40度 订阅/hand_joint_states左手食指数值应接近40度</td></tr>
+            </tbody>
+        </table>
+
+        <h3>hand.8. /zj_humanoid/hand/task_switch/left</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/hand/task_switch/left</code></td></tr>
+                <tr><td>Type</td><td><code>std_srvs/Bool</code></td></tr>
+                <tr><td>Description</td><td>左手掌任务控制</td></tr>
+            </tbody>
+        </table>
+
+        <h3>hand.9. /zj_humanoid/hand/task_switch/right</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/hand/task_switch/right</code></td></tr>
+                <tr><td>Type</td><td><code>std_srvs/Bool</code></td></tr>
+                <tr><td>Description</td><td>右手掌任务控制</td></tr>
+            </tbody>
+        </table>
+
+        <h3>hand.10. /zj_humanoid/hand/versions</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/hand/versions</code></td></tr>
+                <tr><td>Type</td><td><code>std_srvs/Trigger</code></td></tr>
+                <tr><td>Description</td><td>灵巧手版本号</td></tr>
+                <tr><td>Note</td><td>查询当前灵巧手子系统的版本号</td></tr>
+            </tbody>
+        </table>
+
+        <h3>hand.11. /zj_humanoid/hand/wrist_force_sensor/left/zero</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/hand/wrist_force_sensor/left/zero</code></td></tr>
+                <tr><td>Type</td><td><code>std_srvs/Trigger</code></td></tr>
+                <tr><td>Description</td><td>置零腕部传感器</td></tr>
+                <tr><td>Note</td><td>置零腕部传感器数值</td></tr>
+            </tbody>
+        </table>
+
+        <h2 style="color: #e67e22; border-left: 5px solid #e67e22; padding-left: 15px; margin-top: 40px;">📦 LOWERLIMB (1 services)</h2>
+
+        <h3>lowerlimb.1. /zj_humanoid/lowerlimb/versions</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/lowerlimb/versions</code></td></tr>
+                <tr><td>Type</td><td><code>std_srvs/Trigger</code></td></tr>
+                <tr><td>Description</td><td>下肢模块版本</td></tr>
+            </tbody>
+        </table>
+
+        <h2 style="color: #e67e22; border-left: 5px solid #e67e22; padding-left: 15px; margin-top: 40px;">📦 MANIPULATION (8 services)</h2>
+
+        <h3>manipulation.1. /zj_humanoid/manipulation/camera_calibration</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/manipulation/camera_calibration</code></td></tr>
+                <tr><td>Type</td><td><code>manipulation/CameraCalibration</code></td></tr>
+                <tr><td>Description</td><td>相机内外参标定</td></tr>
+                <tr><td>Note</td><td>自动相机内外参标定，外参标定时机器人会执行一段轨迹，拍摄不同角度的照片，从而计算外参</td></tr>
+            </tbody>
+        </table>
+
+        <h3>manipulation.2. /zj_humanoid/manipulation/execute_pick_task</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/manipulation/execute_pick_task</code></td></tr>
+                <tr><td>Type</td><td><code>manipulation/ExecutePickTask</code></td></tr>
+                <tr><td>Description</td><td>执行抓取服务</td></tr>
+                <tr><td>Note</td><td>输出物品名称执行抓取服务</td></tr>
+            </tbody>
+        </table>
+
+        <h3>manipulation.3. /zj_humanoid/manipulation/grasp_teach_service</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/manipulation/grasp_teach_service</code></td></tr>
+                <tr><td>Type</td><td><code>manipulation/GraspTeach</code></td></tr>
+                <tr><td>Description</td><td>视觉抓取示教</td></tr>
+                <tr><td>Note</td><td>视觉示教抓取，让机器人知道该从什么方位抓取物品</td></tr>
+            </tbody>
+        </table>
+
+        <h3>manipulation.4. /zj_humanoid/manipulation/joint_space_trajectory_planner</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/manipulation/joint_space_trajectory_planner</code></td></tr>
+                <tr><td>Type</td><td><code>manipulation/GetTrajectory</code></td></tr>
+                <tr><td>Description</td><td>关节空间轨迹规划</td></tr>
+                <tr><td>Note</td><td>节空间轨迹规划，输出关节轨迹，示教模式下记录各个关节数据，据此生成完整的执行轨迹</td></tr>
+            </tbody>
+        </table>
+
+        <h3>manipulation.5. /zj_humanoid/manipulation/pose_estimation_service</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/manipulation/pose_estimation_service</code></td></tr>
+                <tr><td>Type</td><td><code>manipulation/PoseEst</code></td></tr>
+                <tr><td>Description</td><td>获取目标位姿</td></tr>
+                <tr><td>Note</td><td>输入图像获取指定物品的6D位姿</td></tr>
+            </tbody>
+        </table>
+
+        <h3>manipulation.6. /zj_humanoid/manipulation/pose_space_trajectory_planner</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/manipulation/pose_space_trajectory_planner</code></td></tr>
+                <tr><td>Type</td><td><code>manipulation/MotionPlan</code></td></tr>
+                <tr><td>Description</td><td>末端轨迹规划</td></tr>
+                <tr><td>Note</td><td>末端空间轨迹规划，示教模式下记录各个末端执行器数据，据此生成完整的执行轨迹</td></tr>
+            </tbody>
+        </table>
+
+        <h3>manipulation.7. /zj_humanoid/manipulation/scene_update</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/manipulation/scene_update</code></td></tr>
+                <tr><td>Type</td><td><code>manipulation/SceneUpdate</code></td></tr>
+                <tr><td>Description</td><td>场景更新</td></tr>
+                <tr><td>Note</td><td>机器人场景更新,基于二维码，需要场景中有二维码，机器人抓取物品前的环境感知</td></tr>
+            </tbody>
+        </table>
+
+        <h3>manipulation.8. /zj_humanoid/manipulation/version</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/manipulation/version</code></td></tr>
+                <tr><td>Type</td><td><code></code></td></tr>
+                <tr><td>Description</td><td>操作模块版本号</td></tr>
+            </tbody>
+        </table>
+
+        <h2 style="color: #e67e22; border-left: 5px solid #e67e22; padding-left: 15px; margin-top: 40px;">📦 NAVIGATION (1 services)</h2>
+
+        <h3>navigation.1. /zj_humanoid/navigation/version</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/navigation/version</code></td></tr>
+                <tr><td>Type</td><td><code>std_srvs/Trigger</code></td></tr>
+                <tr><td>Description</td><td>定位导航版本号</td></tr>
+            </tbody>
+        </table>
+
+        <h2 style="color: #e67e22; border-left: 5px solid #e67e22; padding-left: 15px; margin-top: 40px;">📦 ROBOT (12 services)</h2>
+
+        <h3>robot.1. /zj_humanoid/robot/basic_info</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/robot/basic_info</code></td></tr>
+                <tr><td>Type</td><td><code>zj_robot/BasicInfo</code></td></tr>
+                <tr><td>Description</td><td>机器人基础信息</td></tr>
+                <tr><td>Note</td><td>描述下机器人的基础信息 回复应包含机器人的型号，硬件版本号，软件版本号，IP地址</td></tr>
+            </tbody>
+        </table>
+
+        <h3>robot.2. /zj_humanoid/robot/face_show/media_play</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/robot/face_show/media_play</code></td></tr>
+                <tr><td>Type</td><td><code>zj_robot/FaceShow</code></td></tr>
+                <tr><td>Description</td><td>脸部显示视频</td></tr>
+                <tr><td>Note</td><td>机器人脸部屏幕显示,播放视频或图像文件，如播放“Hello_World.mp4”</td></tr>
+            </tbody>
+        </table>
+
+        <h3>robot.3. /zj_humanoid/robot/face_show/text_show</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/robot/face_show/text_show</code></td></tr>
+                <tr><td>Type</td><td><code>zj_robot/FaceText</code></td></tr>
+                <tr><td>Description</td><td>脸部显示文字</td></tr>
+                <tr><td>Note</td><td>机器人脸部屏幕显示文字，支持指令显示“Hello World”</td></tr>
+            </tbody>
+        </table>
+
+        <h3>robot.4. /zj_humanoid/robot/joint_motor/set_zero</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/robot/joint_motor/set_zero</code></td></tr>
+                <tr><td>Type</td><td><code>zj_robot/SetZero</code></td></tr>
+                <tr><td>Description</td><td>电机自动标零</td></tr>
+                <tr><td>Note</td><td>机器人关节自动标零</td></tr>
+            </tbody>
+        </table>
+
+        <h3>robot.5. /zj_humanoid/robot/orin_states/connect_wifi</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/robot/orin_states/connect_wifi</code></td></tr>
+                <tr><td>Type</td><td><code>zj_robot/ConnectWifi</code></td></tr>
+                <tr><td>Description</td><td>orin连接wifi</td></tr>
+                <tr><td>Note</td><td>尝试让机器人大脑orin去连接wifi热点</td></tr>
+            </tbody>
+        </table>
+
+        <h3>robot.6. /zj_humanoid/robot/orin_states/wifi_list</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/robot/orin_states/wifi_list</code></td></tr>
+                <tr><td>Type</td><td><code>zj_robot/WifiList</code></td></tr>
+                <tr><td>Description</td><td>orin_wifi列表</td></tr>
+                <tr><td>Note</td><td>获取机器人大脑检测到的wifi热点名称，当前机器人大脑检测到多少个wifi信号 回复应大于1</td></tr>
+            </tbody>
+        </table>
+
+        <h3>robot.7. /zj_humanoid/robot/pico_states/connect_wifi</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/robot/pico_states/connect_wifi</code></td></tr>
+                <tr><td>Type</td><td><code>zj_robot/ConnectWifi</code></td></tr>
+                <tr><td>Description</td><td>pico连接wifi</td></tr>
+                <tr><td>Note</td><td>尝试让机器人小脑pico去连接wifi热点</td></tr>
+            </tbody>
+        </table>
+
+        <h3>robot.8. /zj_humanoid/robot/pico_states/wifi_list</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/robot/pico_states/wifi_list</code></td></tr>
+                <tr><td>Type</td><td><code>zj_robot/WifiList</code></td></tr>
+                <tr><td>Description</td><td>pico_wifi列表</td></tr>
+                <tr><td>Note</td><td>获取机器人小脑检测到的wifi热点名称，当前机器人小脑检测到多少个wifi信号 回复应大于1</td></tr>
+            </tbody>
+        </table>
+
+        <h3>robot.9. /zj_humanoid/robot/set_robot_state/OFF</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/robot/set_robot_state/OFF</code></td></tr>
+                <tr><td>Type</td><td><code>std_srvs/Trigger</code></td></tr>
+                <tr><td>Description</td><td>机器人关机</td></tr>
+                <tr><td>Note</td><td>将机器人关机 3秒后，大小脑关机，之后后没法检测到机器人建立ros链接</td></tr>
+            </tbody>
+        </table>
+
+        <h3>robot.10. /zj_humanoid/robot/set_robot_state/restart</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/robot/set_robot_state/restart</code></td></tr>
+                <tr><td>Type</td><td><code>std_srvs/Trigger</code></td></tr>
+                <tr><td>Description</td><td>状态机重启</td></tr>
+                <tr><td>Note</td><td>机器人先进stop软急停状态，再自动变为RUN启动运行，在某些故障状态可以执行，但如果有异常的存在，也可能会失败，将机器人状态机重启 持续检测robot_state话题，经过最长60秒钟的等待，状态应切换为：RUN</td></tr>
+            </tbody>
+        </table>
+
+        <h3>robot.11. /zj_humanoid/robot/set_robot_state/run</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/robot/set_robot_state/run</code></td></tr>
+                <tr><td>Type</td><td><code>std_srvs/Trigger</code></td></tr>
+                <tr><td>Description</td><td>状态机运行</td></tr>
+                <tr><td>Note</td><td>如果机器人处于非RUN状态，尝试将机器人状态值设置为RUN，但如果有异常的存在，也可能会失败，将机器人状态设置为RUN 持续检测robot_state话题，经过最长60秒钟的等待，状态应切换为：RUN</td></tr>
+            </tbody>
+        </table>
+
+        <h3>robot.12. /zj_humanoid/robot/set_robot_state/stop</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/robot/set_robot_state/stop</code></td></tr>
+                <tr><td>Type</td><td><code>std_srvs/Trigger</code></td></tr>
+                <tr><td>Description</td><td>机器人软急停</td></tr>
+                <tr><td>Note</td><td>机器人软急停状态，状态机值将切换为ERR，在机器发生异常时使用，将机器人状态设置为stop 1秒后，检测robot_state话题，状态应切换为：ERR</td></tr>
+            </tbody>
+        </table>
+
+        <h2 style="color: #e67e22; border-left: 5px solid #e67e22; padding-left: 15px; margin-top: 40px;">📦 SENSOR (4 services)</h2>
+
+        <h3>sensor.1. /zj_humanoid/sensor/CAM_A/camera_info</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/sensor/CAM_A/camera_info</code></td></tr>
+                <tr><td>Type</td><td><code>sensor/CameraInfo</code></td></tr>
+                <tr><td>Description</td><td>左眼参数信息</td></tr>
+                <tr><td>Note</td><td>相机A的参数信息,相机A安装在机器人左眼的位置上，相机A的分辨率是多少 回复应包含1280和720</td></tr>
+            </tbody>
+        </table>
+
+        <h3>sensor.2. /zj_humanoid/sensor/CAM_B/camera_info</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/sensor/CAM_B/camera_info</code></td></tr>
+                <tr><td>Type</td><td><code>sensor/CameraInfo</code></td></tr>
+                <tr><td>Description</td><td>右眼参数信息</td></tr>
+                <tr><td>Note</td><td>相机B的参数信息，相机B安装在机器人右眼的位置上，相机B的分辨率是多少 回复应包含1280和720</td></tr>
+            </tbody>
+        </table>
+
+        <h3>sensor.3. /zj_humanoid/sensor/CAM_C/camera_info</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/sensor/CAM_C/camera_info</code></td></tr>
+                <tr><td>Type</td><td><code>sensor/CameraInfo</code></td></tr>
+                <tr><td>Description</td><td>相机C参数信息</td></tr>
+                <tr><td>Note</td><td>相机C的参数信息，相机C大致安装在机器人右侧太阳穴的位置上，相机C的分辨率是多少 回复应包含1280和720</td></tr>
+            </tbody>
+        </table>
+
+        <h3>sensor.4. /zj_humanoid/sensor/CAM_D/camera_info</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/sensor/CAM_D/camera_info</code></td></tr>
+                <tr><td>Type</td><td><code>sensor/CameraInfo</code></td></tr>
+                <tr><td>Description</td><td>相机D参数信息</td></tr>
+                <tr><td>Note</td><td>相机D的参数信息，相机D大致安装在机器人左侧太阳穴的位置上，相机D的分辨率是多少 回复应包含1280和720</td></tr>
+            </tbody>
+        </table>
+
+        <h2 style="color: #e67e22; border-left: 5px solid #e67e22; padding-left: 15px; margin-top: 40px;">📦 UPPERLIMB (39 services)</h2>
+
+        <h3>upperlimb.1. /zj_humanoid/upperlimb/FK/left_arm</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/upperlimb/FK/left_arm</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/FK</code></td></tr>
+                <tr><td>Description</td><td>左臂正解</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.2. /zj_humanoid/upperlimb/FK/right_arm</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/upperlimb/FK/right_arm</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/FK</code></td></tr>
+                <tr><td>Description</td><td>右臂正解</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.3. /zj_humanoid/upperlimb/IK/left_arm</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/upperlimb/IK/left_arm</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/IK</code></td></tr>
+                <tr><td>Description</td><td>左臂逆解</td></tr>
+                <tr><td>Note</td><td>左臂逆解</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.4. /zj_humanoid/upperlimb/IK/right_arm</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/upperlimb/IK/right_arm</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/IK</code></td></tr>
+                <tr><td>Description</td><td>右臂逆解</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.5. /zj_humanoid/upperlimb/go_down/dual_arm</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/upperlimb/go_down/dual_arm</code></td></tr>
+                <tr><td>Type</td><td><code>std_srvs/Trigger</code></td></tr>
+                <tr><td>Description</td><td>双臂放下</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.6. /zj_humanoid/upperlimb/go_down/left_arm</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/upperlimb/go_down/left_arm</code></td></tr>
+                <tr><td>Type</td><td><code>std_srvs/Trigger</code></td></tr>
+                <tr><td>Description</td><td>左臂放下</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.7. /zj_humanoid/upperlimb/go_down/right_arm</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/upperlimb/go_down/right_arm</code></td></tr>
+                <tr><td>Type</td><td><code>std_srvs/Trigger</code></td></tr>
+                <tr><td>Description</td><td>右臂放下</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.8. /zj_humanoid/upperlimb/go_home/dual_arm</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/upperlimb/go_home/dual_arm</code></td></tr>
+                <tr><td>Type</td><td><code>std_srvs/Trigger</code></td></tr>
+                <tr><td>Description</td><td>双臂回到home点</td></tr>
+                <tr><td>Note</td><td>双臂回到内置设置的home点</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.9. /zj_humanoid/upperlimb/go_home/left_arm</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/upperlimb/go_home/left_arm</code></td></tr>
+                <tr><td>Type</td><td><code>std_srvs/Trigger</code></td></tr>
+                <tr><td>Description</td><td>左臂回到home点</td></tr>
+                <tr><td>Note</td><td>左臂回到内置设置的home点</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.10. /zj_humanoid/upperlimb/go_home/lifting</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/upperlimb/go_home/lifting</code></td></tr>
+                <tr><td>Type</td><td><code>std_srvs/Trigger</code></td></tr>
+                <tr><td>Description</td><td>升降回到内home点</td></tr>
+                <tr><td>Note</td><td>升降回到内置设置的home点</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.11. /zj_humanoid/upperlimb/go_home/neck</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/upperlimb/go_home/neck</code></td></tr>
+                <tr><td>Type</td><td><code>std_srvs/Trigger</code></td></tr>
+                <tr><td>Description</td><td>脖子回到home点</td></tr>
+                <tr><td>Note</td><td>脖子回到内置设置的home点</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.12. /zj_humanoid/upperlimb/go_home/right_arm</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/upperlimb/go_home/right_arm</code></td></tr>
+                <tr><td>Type</td><td><code>std_srvs/Trigger</code></td></tr>
+                <tr><td>Description</td><td>右臂回到home点</td></tr>
+                <tr><td>Note</td><td>右臂回到内置设置的home点</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.13. /zj_humanoid/upperlimb/go_home/waist</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/upperlimb/go_home/waist</code></td></tr>
+                <tr><td>Type</td><td><code>std_srvs/Trigger</code></td></tr>
+                <tr><td>Description</td><td>腰部回到home点</td></tr>
+                <tr><td>Note</td><td>腰部回到内置设置的home点</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.14. /zj_humanoid/upperlimb/go_home/whole_body</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/upperlimb/go_home/whole_body</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/ArmType</code></td></tr>
+                <tr><td>Description</td><td>全身回到home点</td></tr>
+                <tr><td>Note</td><td>全身指定部位回到内置设置的home点</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.15. /zj_humanoid/upperlimb/movej/dual_arm</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/upperlimb/movej/dual_arm</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/MoveJ</code></td></tr>
+                <tr><td>Description</td><td>双臂movej</td></tr>
+                <tr><td>Note</td><td>关节空间下,双臂点到点运动</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.16. /zj_humanoid/upperlimb/movej/left_arm</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/upperlimb/movej/left_arm</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/MoveJ</code></td></tr>
+                <tr><td>Description</td><td>左臂movej</td></tr>
+                <tr><td>Note</td><td>关节空间下,左臂点到点运动</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.17. /zj_humanoid/upperlimb/movej/lift</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/upperlimb/movej/lift</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/MoveJ</code></td></tr>
+                <tr><td>Description</td><td>升降movej</td></tr>
+                <tr><td>Note</td><td>关节空间下,升降点到点运动</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.18. /zj_humanoid/upperlimb/movej/neck</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/upperlimb/movej/neck</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/MoveJ</code></td></tr>
+                <tr><td>Description</td><td>脖子movej</td></tr>
+                <tr><td>Note</td><td>关节空间下,脖子点到点运动</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.19. /zj_humanoid/upperlimb/movej/right_arm</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/upperlimb/movej/right_arm</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/MoveJ</code></td></tr>
+                <tr><td>Description</td><td>右臂movej</td></tr>
+                <tr><td>Note</td><td>关节空间下,右臂点到点运动</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.20. /zj_humanoid/upperlimb/movej/waist</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/upperlimb/movej/waist</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/MoveJ</code></td></tr>
+                <tr><td>Description</td><td>腰部movej</td></tr>
+                <tr><td>Note</td><td>关节空间下,腰部点到点运动</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.21. /zj_humanoid/upperlimb/movej/whole_body</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/upperlimb/movej/whole_body</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/MoveJ</code></td></tr>
+                <tr><td>Description</td><td>全身movej</td></tr>
+                <tr><td>Note</td><td>关节空间下,全身各部位点到点运动</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.22. /zj_humanoid/upperlimb/movej_by_path/dual_arm</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/upperlimb/movej_by_path/dual_arm</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/MoveJByPath</code></td></tr>
+                <tr><td>Description</td><td>双臂轨迹movej</td></tr>
+                <tr><td>Note</td><td>关节空间下,双臂轨迹点路径运动</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.23. /zj_humanoid/upperlimb/movej_by_path/left_arm</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/upperlimb/movej_by_path/left_arm</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/MoveJByPath</code></td></tr>
+                <tr><td>Description</td><td>左臂轨迹movej</td></tr>
+                <tr><td>Note</td><td>关节空间下,左臂轨迹点路径运动</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.24. /zj_humanoid/upperlimb/movej_by_path/right_arm</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/upperlimb/movej_by_path/right_arm</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/MoveJByPath</code></td></tr>
+                <tr><td>Description</td><td>右臂轨迹movej</td></tr>
+                <tr><td>Note</td><td>关节空间下,右臂轨迹点路径运动</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.25. /zj_humanoid/upperlimb/movej_by_pose/dual_arm</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/upperlimb/movej_by_pose/dual_arm</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/MoveJByPose</code></td></tr>
+                <tr><td>Description</td><td>双臂末端movej</td></tr>
+                <tr><td>Note</td><td>tcp末端空间下,双臂末端位姿movej</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.26. /zj_humanoid/upperlimb/movej_by_pose/left_arm</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/upperlimb/movej_by_pose/left_arm</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/MoveJByPose</code></td></tr>
+                <tr><td>Description</td><td>左臂末端movej</td></tr>
+                <tr><td>Note</td><td>tcp末端空间下,左臂末端位姿movej</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.27. /zj_humanoid/upperlimb/movej_by_pose/right_arm</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/upperlimb/movej_by_pose/right_arm</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/MoveJByPose</code></td></tr>
+                <tr><td>Description</td><td>右臂末端movej</td></tr>
+                <tr><td>Note</td><td>tcp末端空间下,右臂末端位姿movej</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.28. /zj_humanoid/upperlimb/movel/dual_arm</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/upperlimb/movel/dual_arm</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/MoveL</code></td></tr>
+                <tr><td>Description</td><td>双臂movel</td></tr>
+                <tr><td>Note</td><td>关节空间下,双臂直线轨迹点运动</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.29. /zj_humanoid/upperlimb/movel/left_arm</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/upperlimb/movel/left_arm</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/MoveL</code></td></tr>
+                <tr><td>Description</td><td>左臂movel</td></tr>
+                <tr><td>Note</td><td>关节空间下,左臂直线轨迹点运动</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.30. /zj_humanoid/upperlimb/movel/right_arm</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/upperlimb/movel/right_arm</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/MoveL</code></td></tr>
+                <tr><td>Description</td><td>右臂movel</td></tr>
+                <tr><td>Note</td><td>关节空间下,右臂直线轨迹点运动</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.31. /zj_humanoid/upperlimb/servoj/clear_params</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/upperlimb/servoj/clear_params</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/Servo</code></td></tr>
+                <tr><td>Description</td><td>退出servoj</td></tr>
+                <tr><td>Note</td><td>退出笛卡尔空间 高频位置跟随控制</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.32. /zj_humanoid/upperlimb/servoj/set_params</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/upperlimb/servoj/set_params</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/Servo</code></td></tr>
+                <tr><td>Description</td><td>设置servoj参数</td></tr>
+                <tr><td>Note</td><td>设置关节空间 高频位置跟随控制参数</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.33. /zj_humanoid/upperlimb/servol/clear_params</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/upperlimb/servol/clear_params</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/Servo</code></td></tr>
+                <tr><td>Description</td><td>退出servol</td></tr>
+                <tr><td>Note</td><td>退出笛卡尔空间 高频位置跟随控制</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.34. /zj_humanoid/upperlimb/servol/set_params</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/upperlimb/servol/set_params</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/Servo</code></td></tr>
+                <tr><td>Description</td><td>设置servol参数</td></tr>
+                <tr><td>Note</td><td>设置笛卡尔空间 高频位置跟随控制参数</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.35. /zj_humanoid/upperlimb/speedl/enable_speedl</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/upperlimb/speedl/enable_speedl</code></td></tr>
+                <tr><td>Type</td><td><code>std_srvs/SetBool</code></td></tr>
+                <tr><td>Description</td><td>启用speedl</td></tr>
+                <tr><td>Note</td><td>启用笛卡尔空间 速度控制</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.36. /zj_humanoid/upperlimb/stop_robot</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/upperlimb/stop_robot</code></td></tr>
+                <tr><td>Type</td><td><code>std_srvs/Trigger</code></td></tr>
+                <tr><td>Description</td><td>停止上肢运动</td></tr>
+                <tr><td>Note</td><td>停止机器人运动</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.37. /zj_humanoid/upperlimb/teach_mode/enter</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/upperlimb/teach_mode/enter</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/ArmType</code></td></tr>
+                <tr><td>Description</td><td>进入示教模式</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.38. /zj_humanoid/upperlimb/teach_mode/exit</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/upperlimb/teach_mode/exit</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/ArmType</code></td></tr>
+                <tr><td>Description</td><td>退出示教模式</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.39. /zj_humanoid/upperlimb/versions</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/upperlimb/versions</code></td></tr>
+                <tr><td>Type</td><td><code>std_srvs/Trigger</code></td></tr>
+                <tr><td>Description</td><td>上肢模块版本</td></tr>
+                <tr><td>Note</td><td>查询当前上肢子系统的软件版本号 应回复软件版本号</td></tr>
+            </tbody>
+        </table>
+
+        <h2>Topics</h2>
+        <div class="total-count">Total: 82 topics in 7 subsystems</div>
+
+        <h2 style="color: #3498db; border-left: 5px solid #3498db; padding-left: 15px; margin-top: 40px;">📡 AUDIO (3 topics)</h2>
+
+        <h3>audio.1. /zj_humanoid/audio/asr_text</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/audio/asr_text</code></td></tr>
+                <tr><td>Type</td><td><code>std_msgs/String</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>语音转文字</td></tr>
+                <tr><td>Note</td><td>当前机器人听到了什么</td></tr>
+            </tbody>
+        </table>
+
+        <h3>audio.2. /zj_humanoid/audio/audio_data</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/audio/audio_data</code></td></tr>
+                <tr><td>Type</td><td><code>audio/AudioData</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>音频流数据</td></tr>
+                <tr><td>Note</td><td>麦克风收音后的音频数据流</td></tr>
+            </tbody>
+        </table>
+
+        <h3>audio.3. /zj_humanoid/audio/listen_state</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/audio/listen_state</code></td></tr>
+                <tr><td>Type</td><td><code>audio/ListenInfo</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>唤醒倾听状态</td></tr>
+                <tr><td>Note</td><td>当前是否为倾听状态</td></tr>
+            </tbody>
+        </table>
+
+        <h2 style="color: #3498db; border-left: 5px solid #3498db; padding-left: 15px; margin-top: 40px;">📡 HAND (5 topics)</h2>
+
+        <h3>hand.1. /zj_humanoid/hand/finger_pressures/left</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/hand/finger_pressures/left</code></td></tr>
+                <tr><td>Type</td><td><code>hand/PressureSensor</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>左手压力传感器</td></tr>
+                <tr><td>Note</td><td>当前左手压力传感器数值</td></tr>
+            </tbody>
+        </table>
+
+        <h3>hand.2. /zj_humanoid/hand/finger_pressures/right</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/hand/finger_pressures/right</code></td></tr>
+                <tr><td>Type</td><td><code>hand/PressureSensor</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>右手压力传感器数据</td></tr>
+                <tr><td>Note</td><td>当前右手压力传感器数值</td></tr>
+            </tbody>
+        </table>
+
+        <h3>hand.3. /zj_humanoid/hand/joint_states</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/hand/joint_states</code></td></tr>
+                <tr><td>Type</td><td><code>sensor_msgs/JointState</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>手部关节状态</td></tr>
+                <tr><td>Note</td><td>当前左手食指的角度是多少 应回复0-80度之间</td></tr>
+            </tbody>
+        </table>
+
+        <h3>hand.4. /zj_humanoid/hand/wrist_force_sensor/left</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/hand/wrist_force_sensor/left</code></td></tr>
+                <tr><td>Type</td><td><code>geometry_msgs/WrenchStamped</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>右手腕部传感器值</td></tr>
+                <tr><td>Note</td><td>当前左手腕部的检测到多少力 应回复0牛顿</td></tr>
+            </tbody>
+        </table>
+
+        <h3>hand.5. /zj_humanoid/hand/wrist_force_sensor/right</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/hand/wrist_force_sensor/right</code></td></tr>
+                <tr><td>Type</td><td><code>geometry_msgs/WrenchStamped</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>左手腕部传感器值</td></tr>
+                <tr><td>Note</td><td>当前右手腕部的检测到多少力 应回复0牛顿</td></tr>
+            </tbody>
+        </table>
+
+        <h2 style="color: #3498db; border-left: 5px solid #3498db; padding-left: 15px; margin-top: 40px;">📡 LOWERLIMB (9 topics)</h2>
+
+        <h3>lowerlimb.1. /zj_humanoid/lowerlimb/body_imu</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/lowerlimb/body_imu</code></td></tr>
+                <tr><td>Type</td><td><code>sensor_msgs/JointState</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>腰部imu值</td></tr>
+            </tbody>
+        </table>
+
+        <h3>lowerlimb.2. /zj_humanoid/lowerlimb/cmd_vel/calib</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/lowerlimb/cmd_vel/calib</code></td></tr>
+                <tr><td>Type</td><td><code>geometry_msgs/Twist</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-subscribe">📥 Subscribe</span></td></tr>
+                <tr><td>Description</td><td>导航控制行走</td></tr>
+            </tbody>
+        </table>
+
+        <h3>lowerlimb.3. /zj_humanoid/lowerlimb/cmd_vel/joy</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/lowerlimb/cmd_vel/joy</code></td></tr>
+                <tr><td>Type</td><td><code>geometry_msgs/Twist</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-subscribe">📥 Subscribe</span></td></tr>
+                <tr><td>Description</td><td>游戏手柄控制行走</td></tr>
+            </tbody>
+        </table>
+
+        <h3>lowerlimb.4. /zj_humanoid/lowerlimb/cmd_vel/web</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/lowerlimb/cmd_vel/web</code></td></tr>
+                <tr><td>Type</td><td><code>geometry_msgs/Twist</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-subscribe">📥 Subscribe</span></td></tr>
+                <tr><td>Description</td><td>网页控制行走</td></tr>
+            </tbody>
+        </table>
+
+        <h3>lowerlimb.5. /zj_humanoid/lowerlimb/debug_info</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/lowerlimb/debug_info</code></td></tr>
+                <tr><td>Type</td><td><code>std_msgs/String</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>运控debug信息</td></tr>
+                <tr><td>Note</td><td>运控debug信息</td></tr>
+            </tbody>
+        </table>
+
+        <h3>lowerlimb.6. /zj_humanoid/lowerlimb/occupancy_state</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/lowerlimb/occupancy_state</code></td></tr>
+                <tr><td>Type</td><td><code>std_msgs/Float32</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>上肢模式控制</td></tr>
+                <tr><td>Note</td><td>上肢模式控制，可设置为下肢控制模式</td></tr>
+            </tbody>
+        </table>
+
+        <h3>lowerlimb.7. /zj_humanoid/lowerlimb/set_lie</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/lowerlimb/set_lie</code></td></tr>
+                <tr><td>Type</td><td><code>std_msgs/Float32</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-subscribe">📥 Subscribe</span></td></tr>
+                <tr><td>Description</td><td>下肢泄力</td></tr>
+                <tr><td>Note</td><td>下肢泄力，软急停</td></tr>
+            </tbody>
+        </table>
+
+        <h3>lowerlimb.8. /zj_humanoid/lowerlimb/set_stand</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/lowerlimb/set_stand</code></td></tr>
+                <tr><td>Type</td><td><code>std_msgs/Float32</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-subscribe">📥 Subscribe</span></td></tr>
+                <tr><td>Description</td><td>站立姿态</td></tr>
+                <tr><td>Note</td><td>站立姿态初始化</td></tr>
+            </tbody>
+        </table>
+
+        <h3>lowerlimb.9. /zj_humanoid/lowerlimb/start_move</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/lowerlimb/start_move</code></td></tr>
+                <tr><td>Type</td><td><code>std_msgs/Float32</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-subscribe">📥 Subscribe</span></td></tr>
+                <tr><td>Description</td><td>开启运动模式</td></tr>
+                <tr><td>Note</td><td>开启运动模式，算法开始响应速度控制请求</td></tr>
+            </tbody>
+        </table>
+
+        <h2 style="color: #3498db; border-left: 5px solid #3498db; padding-left: 15px; margin-top: 40px;">📡 NAVIGATION (5 topics)</h2>
+
+        <h3>navigation.1. /zj_humanoid/navigation/local_map</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/navigation/local_map</code></td></tr>
+                <tr><td>Type</td><td><code>navigation/LocalMap</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-subscribe">📥 Subscribe</span></td></tr>
+                <tr><td>Description</td><td>局部障碍物信息</td></tr>
+            </tbody>
+        </table>
+
+        <h3>navigation.2. /zj_humanoid/navigation/map</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/navigation/map</code></td></tr>
+                <tr><td>Type</td><td><code>nav_msgs/OccupancyGrid</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-subscribe">📥 Subscribe</span></td></tr>
+                <tr><td>Description</td><td>全局地图信息</td></tr>
+                <tr><td>Note</td><td>全局地图信息</td></tr>
+            </tbody>
+        </table>
+
+        <h3>navigation.3. /zj_humanoid/navigation/navigation_status</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/navigation/navigation_status</code></td></tr>
+                <tr><td>Type</td><td><code>navigation/NavigationStatus</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-subscribe">📥 Subscribe</span></td></tr>
+                <tr><td>Description</td><td>当前导航状态</td></tr>
+                <tr><td>Note</td><td>当前导航状态信息</td></tr>
+            </tbody>
+        </table>
+
+        <h3>navigation.4. /zj_humanoid/navigation/odom_info</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/navigation/odom_info</code></td></tr>
+                <tr><td>Type</td><td><code>nav_msgs/Odometry</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-subscribe">📥 Subscribe</span></td></tr>
+                <tr><td>Description</td><td>当前位姿信息</td></tr>
+                <tr><td>Note</td><td>当前位姿信息，有定位时才会输出结果</td></tr>
+            </tbody>
+        </table>
+
+        <h3>navigation.5. /zj_humanoid/navigation/task_info</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/navigation/task_info</code></td></tr>
+                <tr><td>Type</td><td><code>navigation/TakInfo</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>发布导航任务</td></tr>
+                <tr><td>Note</td><td>任务信息，该话题仅发布导航任务，不返回导航的结果</td></tr>
+            </tbody>
+        </table>
+
+        <h2 style="color: #3498db; border-left: 5px solid #3498db; padding-left: 15px; margin-top: 40px;">📡 ROBOT (10 topics)</h2>
+
+        <h3>robot.1. /zj_humanoid/robot/battery_info</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/robot/battery_info</code></td></tr>
+                <tr><td>Type</td><td><code>zj_robot/BatteryInfo</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>电池相关信息</td></tr>
+                <tr><td>Note</td><td>电池BMS相关信息，机器人当前电量还剩多少 回复值应为1~100%</td></tr>
+            </tbody>
+        </table>
+
+        <h3>robot.2. /zj_humanoid/robot/joint_motor/errors</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/robot/joint_motor/errors</code></td></tr>
+                <tr><td>Type</td><td><code>sensor_msgs/JointState</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>关节电机错误信息</td></tr>
+                <tr><td>Note</td><td>机器人关节电机错误信息，机器人关节是否有错误发生 回复应包含：没有</td></tr>
+            </tbody>
+        </table>
+
+        <h3>robot.3. /zj_humanoid/robot/joint_motor/temperatures</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/robot/joint_motor/temperatures</code></td></tr>
+                <tr><td>Type</td><td><code>sensor_msgs/JointState</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>关节电机温度信息</td></tr>
+                <tr><td>Note</td><td>关节电机温度信息，当前机器人膝关节温度是多少 回复应介于10-80度之间</td></tr>
+            </tbody>
+        </table>
+
+        <h3>robot.4. /zj_humanoid/robot/monitor</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/robot/monitor</code></td></tr>
+                <tr><td>Type</td><td><code>zj_robot/ModulesMonitor</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>运行状态检测</td></tr>
+                <tr><td>Note</td><td>机器人内部软件和算法模块运行状态检测, 包含上肢，灵巧手，遥控器，下肢，四目相机，深度相机，定位模块，导航模块，语音模块等</td></tr>
+            </tbody>
+        </table>
+
+        <h3>robot.5. /zj_humanoid/robot/orin_states/errors</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/robot/orin_states/errors</code></td></tr>
+                <tr><td>Type</td><td><code>zj_robot/Errors</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>orin错误汇总</td></tr>
+                <tr><td>Note</td><td>机器人大脑orin错误汇总，包括over_temp,over_cpu,over_mem,over_disk等，机器人大脑模块是否有错误发生 回复应包含：没有</td></tr>
+            </tbody>
+        </table>
+
+        <h3>robot.6. /zj_humanoid/robot/orin_states/resource</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/robot/orin_states/resource</code></td></tr>
+                <tr><td>Type</td><td><code>zj_robot/Resource</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>orin资源统计</td></tr>
+                <tr><td>Note</td><td>机器人大脑的资源状态 回复应包含：大脑的cpu,温度，内存，硬盘的用量</td></tr>
+            </tbody>
+        </table>
+
+        <h3>robot.7. /zj_humanoid/robot/pico_states/errors</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/robot/pico_states/errors</code></td></tr>
+                <tr><td>Type</td><td><code>zj_robot/Errors</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>pico错误汇总</td></tr>
+                <tr><td>Note</td><td>机器人小脑pico错误汇总，包括over_temp,over_cpu,over_mem,over_disk等，机器人小脑模块是否有错误发生 回复应包含：没有</td></tr>
+            </tbody>
+        </table>
+
+        <h3>robot.8. /zj_humanoid/robot/pico_states/resource</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/robot/pico_states/resource</code></td></tr>
+                <tr><td>Type</td><td><code>zj_robot/Resource</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>pico资源统计</td></tr>
+                <tr><td>Note</td><td>机器人小脑pico资源状态 回复应包含：小脑的cpu,温度，内存，硬盘的用量</td></tr>
+            </tbody>
+        </table>
+
+        <h3>robot.9. /zj_humanoid/robot/robot_state</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/robot/robot_state</code></td></tr>
+                <tr><td>Type</td><td><code>zj_robot/RobotState</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>机器人状态机值</td></tr>
+                <tr><td>Note</td><td>机器人状态机值实时发布，只有当机器人进入RUN状态，机器人才能进行动作的执行，机器人当前处于什么状态 回复应包含：RUN状态</td></tr>
+            </tbody>
+        </table>
+
+        <h3>robot.10. /zj_humanoid/robot/work_status_form_start</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/robot/work_status_form_start</code></td></tr>
+                <tr><td>Type</td><td><code>zj_robot/WorkStatus</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>工作状态</td></tr>
+                <tr><td>Note</td><td>机器人开机后单次工作状态发布，包含已运行时间，剩余工作时间，行进里程数等，描述下机器人本次开机后工作状态 回复因包含：已运行时间，剩余工作时间，行进里程数</td></tr>
+            </tbody>
+        </table>
+
+        <h2 style="color: #3498db; border-left: 5px solid #3498db; padding-left: 15px; margin-top: 40px;">📡 SENSOR (27 topics)</h2>
+
+        <h3>sensor.1. /zj_humanoid/sensor/CAM_A/compressed</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/sensor/CAM_A/compressed</code></td></tr>
+                <tr><td>Type</td><td><code>sensor_msgs/CompressedImage</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>左眼相机JPG</td></tr>
+                <tr><td>Note</td><td>左眼相机的JPG图像数据</td></tr>
+            </tbody>
+        </table>
+
+        <h3>sensor.2. /zj_humanoid/sensor/CAM_A/image_raw</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/sensor/CAM_A/image_raw</code></td></tr>
+                <tr><td>Type</td><td><code>sensor_msgs/Image</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>左眼相机RGB</td></tr>
+                <tr><td>Note</td><td>左眼相机的RGB图像源数据</td></tr>
+            </tbody>
+        </table>
+
+        <h3>sensor.3. /zj_humanoid/sensor/CAM_B/compressed</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/sensor/CAM_B/compressed</code></td></tr>
+                <tr><td>Type</td><td><code>sensor_msgs/CompressedImage</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>右眼相机JPG</td></tr>
+                <tr><td>Note</td><td>右眼相机的JPG图像数据</td></tr>
+            </tbody>
+        </table>
+
+        <h3>sensor.4. /zj_humanoid/sensor/CAM_B/image_raw</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/sensor/CAM_B/image_raw</code></td></tr>
+                <tr><td>Type</td><td><code>sensor_msgs/Image</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>右眼相机RGB</td></tr>
+                <tr><td>Note</td><td>右眼相机的RGB图像源数据</td></tr>
+            </tbody>
+        </table>
+
+        <h3>sensor.5. /zj_humanoid/sensor/CAM_C/compressed</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/sensor/CAM_C/compressed</code></td></tr>
+                <tr><td>Type</td><td><code>sensor_msgs/CompressedImage</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>相机C的JPG</td></tr>
+                <tr><td>Note</td><td>右侧太阳穴相机C的JPG图像数据</td></tr>
+            </tbody>
+        </table>
+
+        <h3>sensor.6. /zj_humanoid/sensor/CAM_C/image_raw</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/sensor/CAM_C/image_raw</code></td></tr>
+                <tr><td>Type</td><td><code>sensor_msgs/Image</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>相机C的RGB</td></tr>
+                <tr><td>Note</td><td>右侧太阳穴相机C的RGB图像源数据</td></tr>
+            </tbody>
+        </table>
+
+        <h3>sensor.7. /zj_humanoid/sensor/CAM_D/compressed</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/sensor/CAM_D/compressed</code></td></tr>
+                <tr><td>Type</td><td><code>sensor_msgs/CompressedImage</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>相机D的JPG</td></tr>
+                <tr><td>Note</td><td>左侧太阳穴相机D的JPG图像数据</td></tr>
+            </tbody>
+        </table>
+
+        <h3>sensor.8. /zj_humanoid/sensor/CAM_D/image_raw</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/sensor/CAM_D/image_raw</code></td></tr>
+                <tr><td>Type</td><td><code>sensor_msgs/Image</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>相机D的RGB</td></tr>
+                <tr><td>Note</td><td>左侧太阳穴相机D的RGB图像源数据</td></tr>
+            </tbody>
+        </table>
+
+        <h3>sensor.9. /zj_humanoid/sensor/head_imu</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/sensor/head_imu</code></td></tr>
+                <tr><td>Type</td><td><code>sensor_msgs/Imu</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>头部IMU数据</td></tr>
+                <tr><td>Note</td><td>头部IMU的目前帧率是多少 回复应接近100</td></tr>
+            </tbody>
+        </table>
+
+        <h3>sensor.10. /zj_humanoid/sensor/realsense_down/aligned_depth_to_color/camera_info</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/sensor/realsense_down/aligned_depth_to_color/camera_info</code></td></tr>
+                <tr><td>Type</td><td><code>sensor_msgs/CameraInfo</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>腹部深度aligned参数</td></tr>
+                <tr><td>Note</td><td>腹部深度相机的aligned_depth_to_color参数信息</td></tr>
+            </tbody>
+        </table>
+
+        <h3>sensor.11. /zj_humanoid/sensor/realsense_down/aligned_depth_to_color/image_raw</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/sensor/realsense_down/aligned_depth_to_color/image_raw</code></td></tr>
+                <tr><td>Type</td><td><code>sensor_msgs/Image</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>腹部深度aligned图像</td></tr>
+                <tr><td>Note</td><td>腹部深度相机的aligned_depth_to_color RGB图像源数据</td></tr>
+            </tbody>
+        </table>
+
+        <h3>sensor.12. /zj_humanoid/sensor/realsense_down/aligned_depth_to_color/image_raw/compressed</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/sensor/realsense_down/aligned_depth_to_color/image_raw/compressed</code></td></tr>
+                <tr><td>Type</td><td><code>sensor_msgs/Image</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>腹部深度aligned压缩图</td></tr>
+                <tr><td>Note</td><td>腹部深度相机的aligned_depth_to_color压缩格式</td></tr>
+            </tbody>
+        </table>
+
+        <h3>sensor.13. /zj_humanoid/sensor/realsense_down/color/camera_info</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/sensor/realsense_down/color/camera_info</code></td></tr>
+                <tr><td>Type</td><td><code>sensor_msgs/CameraInfo</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>腹部深度RGB参数</td></tr>
+                <tr><td>Note</td><td>腹部深度相机的参数信息</td></tr>
+            </tbody>
+        </table>
+
+        <h3>sensor.14. /zj_humanoid/sensor/realsense_down/color/image_raw</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/sensor/realsense_down/color/image_raw</code></td></tr>
+                <tr><td>Type</td><td><code>sensor_msgs/Image</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>腹部深度RGB图像</td></tr>
+                <tr><td>Note</td><td>腹部深度相机的RGB图像源数据</td></tr>
+            </tbody>
+        </table>
+
+        <h3>sensor.15. /zj_humanoid/sensor/realsense_down/color/image_raw/compressed</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/sensor/realsense_down/color/image_raw/compressed</code></td></tr>
+                <tr><td>Type</td><td><code>sensor_msgs/Image</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>腹部深度压缩图</td></tr>
+                <tr><td>Note</td><td>腹部深度相机的RGB图像JPG格式</td></tr>
+            </tbody>
+        </table>
+
+        <h3>sensor.16. /zj_humanoid/sensor/realsense_down/depth/camera_info</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/sensor/realsense_down/depth/camera_info</code></td></tr>
+                <tr><td>Type</td><td><code>sensor_msgs/CameraInfo</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>腹部相机深度参数</td></tr>
+                <tr><td>Note</td><td>腹部深度相机的参数信息</td></tr>
+            </tbody>
+        </table>
+
+        <h3>sensor.17. /zj_humanoid/sensor/realsense_down/depth/image_rect_raw</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/sensor/realsense_down/depth/image_rect_raw</code></td></tr>
+                <tr><td>Type</td><td><code>sensor_msgs/Image</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>腹部深度RGB图像</td></tr>
+                <tr><td>Note</td><td>腹部深度相机的RGB图像源数据</td></tr>
+            </tbody>
+        </table>
+
+        <h3>sensor.18. /zj_humanoid/sensor/realsense_down/depth/image_rect_raw/compressed</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/sensor/realsense_down/depth/image_rect_raw/compressed</code></td></tr>
+                <tr><td>Type</td><td><code>sensor_msgs/Image</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>腹部深度压缩图</td></tr>
+                <tr><td>Note</td><td>腹部深度相机的RGB图像JPG格式</td></tr>
+            </tbody>
+        </table>
+
+        <h3>sensor.19. /zj_humanoid/sensor/realsense_up/aligned_depth_to_color/camera_info</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/sensor/realsense_up/aligned_depth_to_color/camera_info</code></td></tr>
+                <tr><td>Type</td><td><code>sensor_msgs/CameraInfo</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>胸部深度aligned参数</td></tr>
+                <tr><td>Note</td><td>胸部深度相机的aligned_depth_to_color参数信息</td></tr>
+            </tbody>
+        </table>
+
+        <h3>sensor.20. /zj_humanoid/sensor/realsense_up/aligned_depth_to_color/image_raw</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/sensor/realsense_up/aligned_depth_to_color/image_raw</code></td></tr>
+                <tr><td>Type</td><td><code>sensor_msgs/Image</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>胸部深度aligned图像</td></tr>
+                <tr><td>Note</td><td>胸部深度相机的aligned_depth_to_color RGB图像源数据</td></tr>
+            </tbody>
+        </table>
+
+        <h3>sensor.21. /zj_humanoid/sensor/realsense_up/aligned_depth_to_color/image_raw/compressed</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/sensor/realsense_up/aligned_depth_to_color/image_raw/compressed</code></td></tr>
+                <tr><td>Type</td><td><code>sensor_msgs/Image</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>胸部深度aligned压缩图</td></tr>
+                <tr><td>Note</td><td>胸部深度相机的aligned_depth_to_color压缩格式</td></tr>
+            </tbody>
+        </table>
+
+        <h3>sensor.22. /zj_humanoid/sensor/realsense_up/color/camera_info</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/sensor/realsense_up/color/camera_info</code></td></tr>
+                <tr><td>Type</td><td><code>sensor_msgs/CameraInfo</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>胸部深度RGB参数</td></tr>
+                <tr><td>Note</td><td>胸部深度相机的参数信息</td></tr>
+            </tbody>
+        </table>
+
+        <h3>sensor.23. /zj_humanoid/sensor/realsense_up/color/image_raw</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/sensor/realsense_up/color/image_raw</code></td></tr>
+                <tr><td>Type</td><td><code>sensor_msgs/Image</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>胸部深度RGB图像</td></tr>
+                <tr><td>Note</td><td>胸部深度相机的RGB图像源数据</td></tr>
+            </tbody>
+        </table>
+
+        <h3>sensor.24. /zj_humanoid/sensor/realsense_up/color/image_raw/compressed</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/sensor/realsense_up/color/image_raw/compressed</code></td></tr>
+                <tr><td>Type</td><td><code>sensor_msgs/Image</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>胸部深度压缩图</td></tr>
+                <tr><td>Note</td><td>胸部深度相机的RGB图像JPG格式</td></tr>
+            </tbody>
+        </table>
+
+        <h3>sensor.25. /zj_humanoid/sensor/realsense_up/depth/camera_info</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/sensor/realsense_up/depth/camera_info</code></td></tr>
+                <tr><td>Type</td><td><code>sensor_msgs/CameraInfo</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>胸部相机深度参数</td></tr>
+                <tr><td>Note</td><td>胸部深度相机的参数信息</td></tr>
+            </tbody>
+        </table>
+
+        <h3>sensor.26. /zj_humanoid/sensor/realsense_up/depth/image_rect_raw</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/sensor/realsense_up/depth/image_rect_raw</code></td></tr>
+                <tr><td>Type</td><td><code>sensor_msgs/Image</code></td></tr>
+                <tr><td>Direction</td><td>publishs</td></tr>
+                <tr><td>Description</td><td>胸部深度RGB图像</td></tr>
+                <tr><td>Note</td><td>胸部深度相机的RGB图像源数据</td></tr>
+            </tbody>
+        </table>
+
+        <h3>sensor.27. /zj_humanoid/sensor/realsense_up/depth/image_rect_raw/compressed</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/sensor/realsense_up/depth/image_rect_raw/compressed</code></td></tr>
+                <tr><td>Type</td><td><code>sensor_msgs/Image</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>胸部深度压缩图</td></tr>
+                <tr><td>Note</td><td>胸部深度相机的RGB图像JPG格式</td></tr>
+            </tbody>
+        </table>
+
+        <h2 style="color: #3498db; border-left: 5px solid #3498db; padding-left: 15px; margin-top: 40px;">📡 UPPERLIMB (23 topics)</h2>
+
+        <h3>upperlimb.1. /zj_humanoid/upperlimb/cmd_states</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/upperlimb/cmd_states</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/CmdState</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>上肢运行模式</td></tr>
+                <tr><td>Note</td><td>当前上肢运行模式是什么 回复应处于停止状态</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.2. /zj_humanoid/upperlimb/joint_states</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/upperlimb/joint_states</code></td></tr>
+                <tr><td>Type</td><td><code>sensor_msgs/JointState</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>上肢关节位置状态</td></tr>
+                <tr><td>Note</td><td>机器人上肢关节position状态值发布，查询当前机器人颈部pitch的角度 回复应处于+-42度间</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.3. /zj_humanoid/upperlimb/servoj/left_arm</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/upperlimb/servoj/left_arm</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/Joints</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-subscribe">📥 Subscribe</span></td></tr>
+                <tr><td>Description</td><td>左臂servoj</td></tr>
+                <tr><td>Note</td><td>关节空间 高频位置控制</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.4. /zj_humanoid/upperlimb/servoj/neck</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/upperlimb/servoj/neck</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/Joints</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-subscribe">📥 Subscribe</span></td></tr>
+                <tr><td>Description</td><td>颈部servoj</td></tr>
+                <tr><td>Note</td><td>关节空间 高频位置控制</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.5. /zj_humanoid/upperlimb/servoj/right_arm</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/upperlimb/servoj/right_arm</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/Joints</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-subscribe">📥 Subscribe</span></td></tr>
+                <tr><td>Description</td><td>右臂servoj</td></tr>
+                <tr><td>Note</td><td>关节空间 高频位置控制</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.6. /zj_humanoid/upperlimb/servoj/waist</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/upperlimb/servoj/waist</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/Joints</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-subscribe">📥 Subscribe</span></td></tr>
+                <tr><td>Description</td><td>腰部servoj</td></tr>
+                <tr><td>Note</td><td>关节空间 高频位置控制</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.7. /zj_humanoid/upperlimb/servoj/whole_body</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/upperlimb/servoj/whole_body</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/Joints</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-subscribe">📥 Subscribe</span></td></tr>
+                <tr><td>Description</td><td>全身servoj</td></tr>
+                <tr><td>Note</td><td>关节空间 高频位置控制</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.8. /zj_humanoid/upperlimb/servol/dual_arm</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/upperlimb/servol/dual_arm</code></td></tr>
+                <tr><td>Type</td><td><code>geometry_msgs/Pose</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-subscribe">📥 Subscribe</span></td></tr>
+                <tr><td>Description</td><td>双臂servol</td></tr>
+                <tr><td>Note</td><td>笛卡尔空间 高频位置跟随控制</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.9. /zj_humanoid/upperlimb/servol/left_arm</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/upperlimb/servol/left_arm</code></td></tr>
+                <tr><td>Type</td><td><code>geometry_msgs/Pose</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-subscribe">📥 Subscribe</span></td></tr>
+                <tr><td>Description</td><td>左臂servol</td></tr>
+                <tr><td>Note</td><td>笛卡尔空间 高频位置跟随控制</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.10. /zj_humanoid/upperlimb/servol/right_arm</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/upperlimb/servol/right_arm</code></td></tr>
+                <tr><td>Type</td><td><code>geometry_msgs/Pose</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-subscribe">📥 Subscribe</span></td></tr>
+                <tr><td>Description</td><td>右臂servol</td></tr>
+                <tr><td>Note</td><td>笛卡尔空间 高频位置跟随控制</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.11. /zj_humanoid/upperlimb/speedj/enable_speedj</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/upperlimb/speedj/enable_speedj</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/TcpSpeed</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-subscribe">📥 Subscribe</span></td></tr>
+                <tr><td>Description</td><td>启用speedj</td></tr>
+                <tr><td>Note</td><td>启用关节空间速度控制</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.12. /zj_humanoid/upperlimb/speedj/left_arm</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/upperlimb/speedj/left_arm</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/TcpSpeed</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-subscribe">📥 Subscribe</span></td></tr>
+                <tr><td>Description</td><td>左臂speedj</td></tr>
+                <tr><td>Note</td><td>关节空间速度控制</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.13. /zj_humanoid/upperlimb/speedj/lift</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/upperlimb/speedj/lift</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/TcpSpeed</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-subscribe">📥 Subscribe</span></td></tr>
+                <tr><td>Description</td><td>升降speedj</td></tr>
+                <tr><td>Note</td><td>关节空间速度控制</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.14. /zj_humanoid/upperlimb/speedj/neck</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/upperlimb/speedj/neck</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/TcpSpeed</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-subscribe">📥 Subscribe</span></td></tr>
+                <tr><td>Description</td><td>脖子speedj</td></tr>
+                <tr><td>Note</td><td>关节空间速度控制</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.15. /zj_humanoid/upperlimb/speedj/right_arm</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/upperlimb/speedj/right_arm</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/TcpSpeed</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-subscribe">📥 Subscribe</span></td></tr>
+                <tr><td>Description</td><td>右臂speedj</td></tr>
+                <tr><td>Note</td><td>关节空间速度控制</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.16. /zj_humanoid/upperlimb/speedj/waist</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/upperlimb/speedj/waist</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/TcpSpeed</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-subscribe">📥 Subscribe</span></td></tr>
+                <tr><td>Description</td><td>腰speedj</td></tr>
+                <tr><td>Note</td><td>关节空间速度控制</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.17. /zj_humanoid/upperlimb/speedj/whole_body</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/upperlimb/speedj/whole_body</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/TcpSpeed</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-subscribe">📥 Subscribe</span></td></tr>
+                <tr><td>Description</td><td>全身speedj</td></tr>
+                <tr><td>Note</td><td>关节空间速度控制</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.18. /zj_humanoid/upperlimb/speedl/dual_arm</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/upperlimb/speedl/dual_arm</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/SpeedL</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-subscribe">📥 Subscribe</span></td></tr>
+                <tr><td>Description</td><td>双臂speedl</td></tr>
+                <tr><td>Note</td><td>笛卡尔空间 速度控制</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.19. /zj_humanoid/upperlimb/speedl/left_arm</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/upperlimb/speedl/left_arm</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/SpeedL</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-subscribe">📥 Subscribe</span></td></tr>
+                <tr><td>Description</td><td>左臂speedl</td></tr>
+                <tr><td>Note</td><td>笛卡尔空间 速度控制</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.20. /zj_humanoid/upperlimb/speedl/right_arm</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/upperlimb/speedl/right_arm</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/SpeedL</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-subscribe">📥 Subscribe</span></td></tr>
+                <tr><td>Description</td><td>右臂speedl</td></tr>
+                <tr><td>Note</td><td>笛卡尔空间 速度控制</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.21. /zj_humanoid/upperlimb/tcp_pose/left_arm</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/upperlimb/tcp_pose/left_arm</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/Pose</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>左臂tcp位姿控制</td></tr>
+                <tr><td>Note</td><td>左手臂末端位姿</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.22. /zj_humanoid/upperlimb/tcp_pose/right_arm</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/upperlimb/tcp_pose/right_arm</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/Pose</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>右臂tcp位姿控制</td></tr>
+                <tr><td>Note</td><td>右手臂末端位姿</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.23. /zj_humanoid/upperlimb/tcp_speed</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/upperlimb/tcp_speed</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/TcpSpeed</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>双臂tcp速度控制</td></tr>
+                <tr><td>Note</td><td>左右手臂末端速度</td></tr>
+            </tbody>
+        </table>
+
+        <hr>
+
+        <div class="summary">
+            <h2>Summary</h2>
+            <ul>
+                <li><strong>Total Services:</strong> 87</li>
+                <li><strong>Total Topics:</strong> 82</li>
+                <li><strong>Total Interfaces:</strong> 169</li>
+                <li><strong>Subsystems:</strong> 8 (services), 7 (topics)</li>
+            </ul>
+        </div>
+
+    </div>
+</body>
+</html>
