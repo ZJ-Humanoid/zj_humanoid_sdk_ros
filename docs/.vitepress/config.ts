@@ -5,36 +5,47 @@ import path from 'path';
 const BASE = '/navi_sdk_documents/' // 根据你的 config.base 修改
 
 function getAutoSidebar(dir) {
-  const entries = fs.readdirSync(dir, { withFileTypes: true })
+  // 检查目录是否存在
+  if (!fs.existsSync(dir)) {
+    return []
+  }
 
-  return entries.map(entry => {
-    const fullPath = path.join(dir, entry.name)
+  try {
+    const entries = fs.readdirSync(dir, { withFileTypes: true })
 
-    if (entry.isDirectory()) {
-      const children = getAutoSidebar(fullPath)
-      return {
-        text: `📂 ${entry.name}`,
-        collapsed: true,
-        items: children
-      }
-    } else {
-      const ext = path.extname(entry.name)
-      if (['.md', '.yaml', '.yml'].includes(ext)) {
+    return entries.map(entry => {
+      const fullPath = path.join(dir, entry.name)
+
+      if (entry.isDirectory()) {
+        const children = getAutoSidebar(fullPath)
         return {
-          text: `📄 ${entry.name.replace(ext, '')}`,
-          // ⚠️ 这里去掉 BASE，让 VitePress 自动加
-          link:
-            '/' +
-            path
-              .relative('./docs', fullPath)
-              .replace(/\\/g, '/')
-              .replace(/\.md$/, '') // 去掉 .md 扩展名
+          text: `📂 ${entry.name}`,
+          collapsed: true,
+          items: children
+        }
+      } else {
+        const ext = path.extname(entry.name)
+        if (['.md', '.yaml', '.yml'].includes(ext)) {
+          return {
+            text: `📄 ${entry.name.replace(ext, '')}`,
+            // ⚠️ 这里去掉 BASE，让 VitePress 自动加
+            link:
+              '/' +
+              path
+                .relative('./docs', fullPath)
+                .replace(/\\/g, '/')
+                .replace(/\.md$/, '') // 去掉 .md 扩展名
+          }
         }
       }
-    }
-  }).filter(Boolean)
+    }).filter(Boolean)
+  } catch (error) {
+    console.warn(`Warning: Could not read directory ${dir}:`, error.message)
+    return []
+  }
 }
 
+// 尝试读取 zj_humanoid 目录（如果存在），否则返回空数组
 const autoSidebar = getAutoSidebar('./docs/zj_humanoid/');
 // console.log('自动生成的侧边栏:', JSON.stringify(autoSidebar, null, 1));
 const repositorySlug = process.env.GITHUB_REPOSITORY || '';
@@ -57,12 +68,22 @@ export default defineConfig({
           {
             text: 'ROS API',
             items: [          
-              { text: '导图', link: '/markmap_ros_api' },
-              { text: '文档', link: '/zj_humanoid_ros_api' },
-              { text: '文件列表',
-                collapsed: true,   // ✅ 默认折叠
-                items: autoSidebar
+              { text: '完整API文档', link: '/api/zj_humanoid_ros_api' },
+              { 
+                text: '子系统',
+                collapsed: true,
+                items: [
+                  { text: '🔊 Audio', link: '/api/subsystems/audio' },
+                  { text: '🖐️ Hand', link: '/api/subsystems/hand' },
+                  { text: '🦵 Lowerlimb', link: '/api/subsystems/lowerlimb' },
+                  { text: '🔧 Manipulation', link: '/api/subsystems/manipulation' },
+                  { text: '🧭 Navigation', link: '/api/subsystems/navigation' },
+                  { text: '🤖 Robot', link: '/api/subsystems/robot' },
+                  { text: '📷 Sensor', link: '/api/subsystems/sensor' },
+                  { text: '🦾 Upperlimb', link: '/api/subsystems/upperlimb' },
+                ]
               }
+
             ]
           },
           {
@@ -76,7 +97,10 @@ export default defineConfig({
       }
     ],
 
-    outline: { level: [2, 3], label: 'On this page' },
+    outline: { 
+      level: [2, 3, 4],  // 包含h2, h3, h4，显示更详细的导航
+      label: '本页导航'  // 自定义标签
+    },
 
   },
 

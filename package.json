@@ -17,6 +17,8 @@
     "markmap-common": "^0.18.9",
     "markmap-lib": "^0.18.11",
     "markmap-view": "^0.18.10",
+    "markdown-it": "^14.0.0",
+    "markdown-it-container": "^3.0.0",
     "roslib": "^1.3.0"
   }
 }

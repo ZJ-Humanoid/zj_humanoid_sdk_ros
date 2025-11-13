@@ -28,4 +28,302 @@
   
   .VPNavBarAppearance { display: none !important; }
 
+  /* API文档样式优化 */
+  .api-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    background: var(--vp-c-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .api-table th {
+    background: var(--vp-c-brand-1);
+    color: white;
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.9em;
+  }
+
+  .api-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--vp-c-divider);
+  }
+
+  .api-table tr:last-child td {
+    border-bottom: none;
+  }
+
+  .api-table tr:hover {
+    background: var(--vp-c-bg-soft);
+  }
+
+  .api-table td:first-child {
+    font-weight: 600;
+    color: var(--vp-c-text-2);
+    width: 30%;
+    background: var(--vp-c-bg-soft);
+  }
+
+  /* 子系统标题样式 */
+  h2:has-text("📦"),
+  h2:has-text("📡") {
+    margin-top: 2rem;
+    padding: 1rem;
+    border-left: 4px solid var(--vp-c-brand-1);
+    background: var(--vp-c-bg-soft);
+    border-radius: 4px;
+  }
+
+  h3:has-text("audio"),
+  h3:has-text("hand"),
+  h3:has-text("upperlimb") {
+    margin-top: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--vp-c-divider);
+  }
+
+  /* 代码块样式 */
+  .api-table code {
+    background: var(--vp-c-bg-alt);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    color: var(--vp-c-brand-1);
+  }
+
+  /* 统计信息卡片 */
+  .stats-card {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  .stat-item {
+    padding: 1rem;
+    background: var(--vp-c-bg-soft);
+    border-radius: 8px;
+    border-left: 4px solid var(--vp-c-brand-1);
+  }
+
+  .stat-item strong {
+    display: block;
+    font-size: 1.2em;
+    color: var(--vp-c-brand-1);
+    margin-bottom: 0.5rem;
+  }
+
+  /* API接口表格美化 */
+  .api-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    background: var(--vp-c-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+
+  .api-table th {
+    background: linear-gradient(135deg, var(--vp-c-brand-1) 0%, var(--vp-c-brand-2) 100%);
+    color: white;
+    padding: 14px 18px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.9em;
+    letter-spacing: 0.5px;
+  }
+
+  .api-table td {
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--vp-c-divider);
+    transition: background-color 0.2s;
+  }
+
+  .api-table tr:last-child td {
+    border-bottom: none;
+  }
+
+  .api-table tr:hover {
+    background: var(--vp-c-bg-soft);
+  }
+
+  .api-table td:first-child {
+    font-weight: 600;
+    color: var(--vp-c-text-2);
+    width: 25%;
+    background: var(--vp-c-bg-soft);
+  }
+
+  /* 子系统标题样式 */
+  h2:has-text("📦"),
+  h2:has-text("📡") {
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem 1.5rem;
+    border-left: 5px solid var(--vp-c-brand-1);
+    background: linear-gradient(90deg, var(--vp-c-bg-soft) 0%, transparent 100%);
+    border-radius: 6px;
+    font-size: 1.5em;
+  }
+
+  h3:has-text("audio"),
+  h3:has-text("hand"),
+  h3:has-text("upperlimb"),
+  h3:has-text("lowerlimb"),
+  h3:has-text("sensor"),
+  h3:has-text("robot"),
+  h3:has-text("navigation"),
+  h3:has-text("manipulation") {
+    margin-top: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--vp-c-divider);
+    color: var(--vp-c-brand-1);
+  }
+
+  /* 代码块样式 */
+  .api-table code {
+    background: var(--vp-c-bg-alt);
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    color: var(--vp-c-brand-1);
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  }
+
+  /* 接口名称样式 */
+  h4 code {
+    background: var(--vp-c-bg-alt);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.95em;
+    color: var(--vp-c-brand-1);
+    font-weight: 600;
+  }
+
+  /* 统计信息区域 */
+  .stats-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+
+  .stat-card {
+    padding: 1.2rem;
+    background: var(--vp-c-bg-soft);
+    border-radius: 8px;
+    border-left: 4px solid var(--vp-c-brand-1);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .stat-card strong {
+    display: block;
+    font-size: 1.3em;
+    color: var(--vp-c-brand-1);
+    margin-bottom: 0.5rem;
+  }
+
+  .stat-card span {
+    color: var(--vp-c-text-2);
+    font-size: 0.9em;
+  }
+
+  /* Markdown表格统一样式 */
+  .markdown-body table,
+  .vp-doc table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    background: var(--vp-c-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    display: table;
+  }
+
+  .markdown-body table thead,
+  .vp-doc table thead {
+    background: linear-gradient(135deg, var(--vp-c-brand-1) 0%, var(--vp-c-brand-2) 100%);
+  }
+
+  .markdown-body table th,
+  .vp-doc table th {
+    background: linear-gradient(135deg, var(--vp-c-brand-1) 0%, var(--vp-c-brand-2) 100%);
+    color: white;
+    padding: 14px 18px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.9em;
+    letter-spacing: 0.5px;
+    border: none;
+  }
+
+  .markdown-body table td,
+  .vp-doc table td {
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--vp-c-divider);
+    transition: background-color 0.2s;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .markdown-body table tr:last-child td,
+  .vp-doc table tr:last-child td {
+    border-bottom: none;
+  }
+
+  .markdown-body table tr:hover,
+  .vp-doc table tr:hover {
+    background: var(--vp-c-bg-soft);
+  }
+
+  /* 第一列（字段列）样式 */
+  .markdown-body table td:first-child,
+  .vp-doc table td:first-child,
+  .markdown-body table th:first-child,
+  .vp-doc table th:first-child {
+    font-weight: 600;
+    color: var(--vp-c-text-2);
+    width: 20%;
+    min-width: 100px;
+    max-width: 200px;
+    background: var(--vp-c-bg-soft);
+  }
+
+  /* 第二列（值列）样式 */
+  .markdown-body table td:last-child,
+  .vp-doc table td:last-child,
+  .markdown-body table th:last-child,
+  .vp-doc table th:last-child {
+    width: 80%;
+  }
+
+  /* 表格内的代码样式 */
+  .markdown-body table code,
+  .vp-doc table code {
+    background: var(--vp-c-bg-alt);
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    color: var(--vp-c-brand-1);
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  }
+
+  /* 表格内的strong标签样式 */
+  .markdown-body table strong,
+  .vp-doc table strong {
+    font-weight: 600;
+    color: var(--vp-c-text-1);
+  }
+
   
