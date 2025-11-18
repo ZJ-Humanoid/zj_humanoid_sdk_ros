@@ -1,0 +1,9 @@
+topic:
+  name: /zj_humanoid/audio/listen
+  description: 唤醒控制
+  type: std_msgs/Bool
+  direction: subscribe
+  note: "手动唤醒/关闭唤醒模式，true=唤醒，false=休眠"
+  
+# 示例数据
+data: true  # true=唤醒，false=休眠

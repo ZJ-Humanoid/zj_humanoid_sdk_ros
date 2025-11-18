@@ -1,0 +1,28 @@
+# request_data.yaml
+# ROS Service: /zj_humanoid/upperlimb/movej/right_arm
+# Service Type: upperlimb/MoveJ
+
+# 目标关节值 (float64[])
+joints:
+  - -0.3618516968617769
+  - -0.2868064784161106
+  - 0.0004194478833596804
+  - -0.16812369981948908
+  - 0.0032357408144889632
+  - -0.0007009585207771745
+  - -0.0013047973548415066
+
+# 速度 (float64)
+v: 0.5
+
+# 加速度 (float64)
+acc: 0.5
+
+# 执行时间 (float64)
+t: 2.0
+
+# 阻塞执行 (bool)
+is_async: False
+
+# 手臂类型标识 (int8): 2 表示右臂
+arm_type: 2

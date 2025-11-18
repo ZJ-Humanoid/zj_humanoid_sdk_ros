@@ -2,9 +2,9 @@
 """
 ROS Service Test Script
 
-Service: /zj_humanoid/audio/listen
-Type: audio/Listen
-Description: 倾听服务
+Service: /zj_humanoid/audio/tts_service
+Type: audio/TTS
+Description: 文字转语音
 
 Usage:
     python3 service_test.py <request_data.yaml>
@@ -15,7 +15,7 @@ This script calls the service with request data from a YAML file.
 import rospy
 import yaml
 import sys
-from audio.srv import Listen, ListenRequest
+from audio.srv import TTS, TTSRequest
 
 
 def load_yaml_data(yaml_file):
@@ -45,23 +45,23 @@ def main():
     yaml_file = sys.argv[1]
     
     # Initialize ROS node
-    rospy.init_node('service_test_zj_humanoid_audio_listen', anonymous=True)
+    rospy.init_node('service_test_zj_humanoid_audio_tts_service', anonymous=True)
     
     # Load request data from YAML
     data = load_yaml_data(yaml_file)
     
     # Wait for service
-    rospy.loginfo(f"Waiting for service /zj_humanoid/audio/listen...")
-    rospy.wait_for_service('/zj_humanoid/audio/listen')
+    rospy.loginfo(f"Waiting for service /zj_humanoid/audio/tts_service...")
+    rospy.wait_for_service('/zj_humanoid/audio/tts_service')
     
     try:
         # Create service proxy
-        service_proxy = rospy.ServiceProxy('/zj_humanoid/audio/listen', Listen)
+        service_proxy = rospy.ServiceProxy('/zj_humanoid/audio/tts_service', TTS)
         
         # Create request
-        req = dict_to_request(data, ListenRequest)
+        req = dict_to_request(data, TTSRequest)
         
-        rospy.loginfo(f"Calling service /zj_humanoid/audio/listen...")
+        rospy.loginfo(f"Calling service /zj_humanoid/audio/tts_service...")
         rospy.loginfo(f"Request: {req}")
         
         # Call service

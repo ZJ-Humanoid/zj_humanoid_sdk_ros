@@ -326,4 +326,164 @@
     color: var(--vp-c-text-1);
   }
 
+  /* 段落首行缩进两个字符 */
+  .markdown-body p,
+  .vp-doc p {
+    text-indent: 2em;
+  }
+
+  /* 列表、代码块等不需要缩进 */
+  .markdown-body p:first-child,
+  .vp-doc p:first-child,
+  .markdown-body li p,
+  .vp-doc li p {
+    text-indent: 0;
+  }
+
+  /* 根据标题等级设置不同的背景灰度 */
+  /* h1: 最深背景（100%），h2: 80%，h3: 60%，h4: 40%，h5: 30%，h6: 20% */
+  /* 使用伪元素设置背景，避免影响文字颜色 */
+  .markdown-body h1,
+  .vp-doc h1 {
+    position: relative;
+    padding: 0.8em 1em;
+    margin: 1.5em 0 1em 0;
+    border-left: 4px solid var(--vp-c-brand-1);
+    border-radius: 4px;
+    font-weight: 700;
+    color: var(--vp-c-text-1);
+  }
+  .markdown-body h1::before,
+  .vp-doc h1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--vp-c-bg-soft);
+    border-radius: 4px;
+    z-index: -1;
+  }
+
+  .markdown-body h2,
+  .vp-doc h2 {
+    position: relative;
+    padding: 0.7em 0.9em;
+    margin: 1.3em 0 0.9em 0;
+    border-left: 3px solid var(--vp-c-brand-1);
+    border-radius: 4px;
+    font-weight: 650;
+    color: var(--vp-c-text-1);
+  }
+  .markdown-body h2::before,
+  .vp-doc h2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--vp-c-bg-soft);
+    opacity: 0.8;
+    border-radius: 4px;
+    z-index: -1;
+  }
+
+  .markdown-body h3,
+  .vp-doc h3 {
+    position: relative;
+    padding: 0.6em 0.8em;
+    margin: 1.1em 0 0.8em 0;
+    border-left: 2px solid var(--vp-c-brand-2);
+    border-radius: 3px;
+    font-weight: 600;
+    color: var(--vp-c-text-1);
+  }
+  .markdown-body h3::before,
+  .vp-doc h3::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--vp-c-bg-soft);
+    opacity: 0.6;
+    border-radius: 3px;
+    z-index: -1;
+  }
+
+  .markdown-body h4,
+  .vp-doc h4 {
+    position: relative;
+    padding: 0.5em 0.7em;
+    margin: 1em 0 0.7em 0;
+    border-left: 2px solid var(--vp-c-divider);
+    border-radius: 3px;
+    font-weight: 600;
+    color: var(--vp-c-text-1);
+  }
+  .markdown-body h4::before,
+  .vp-doc h4::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--vp-c-bg-soft);
+    opacity: 0.4;
+    border-radius: 3px;
+    z-index: -1;
+  }
+
+  .markdown-body h5,
+  .vp-doc h5 {
+    position: relative;
+    padding: 0.4em 0.6em;
+    margin: 0.9em 0 0.6em 0;
+    border-left: 1px solid var(--vp-c-divider);
+    border-radius: 2px;
+    font-weight: 550;
+    color: var(--vp-c-text-1);
+  }
+  .markdown-body h5::before,
+  .vp-doc h5::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--vp-c-bg-soft);
+    opacity: 0.3;
+    border-radius: 2px;
+    z-index: -1;
+  }
+
+  .markdown-body h6,
+  .vp-doc h6 {
+    position: relative;
+    padding: 0.3em 0.5em;
+    margin: 0.8em 0 0.5em 0;
+    border-left: 1px solid var(--vp-c-divider);
+    border-radius: 2px;
+    font-weight: 500;
+    color: var(--vp-c-text-1);
+  }
+  .markdown-body h6::before,
+  .vp-doc h6::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--vp-c-bg-soft);
+    opacity: 0.2;
+    border-radius: 2px;
+    z-index: -1;
+  }
+
   

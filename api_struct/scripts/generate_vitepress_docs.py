@@ -53,6 +53,29 @@ class VitePressDocGenerator:
             return ''
         return str(text).replace('|', '\\|').replace('\n', ' ')
     
+    def format_type_link(self, type_name: str) -> str:
+        """Format type name as a link to zj_humanoid_types.md."""
+        if not type_name:
+            return ''
+        # 只对 zj_humanoid 相关的类型添加链接（排除标准库类型如 std_msgs, std_srvs 等）
+        # 检查类型是否属于 zj_humanoid 命名空间
+        zj_humanoid_namespaces = ['audio', 'hand', 'lowerlimb', 'manipulation', 'navigation', 
+                                  'robot', 'sensor', 'upperlimb']
+        type_namespace = type_name.split('/')[0] if '/' in type_name else ''
+        
+        if type_namespace in zj_humanoid_namespaces:
+            # 提取类型名称的最后部分作为锚点（去掉命名空间前缀）
+            # 例如：audio/LLMChat -> LLMChat
+            type_anchor = type_name.split('/')[-1] if '/' in type_name else type_name
+            # 生成链接：从 docs/api/subsystems/xxx.md 到 docs/zj_humanoid_types.md
+            # 使用相对路径 ../../zj_humanoid_types（向上两级到 docs/，然后 zj_humanoid_types）
+            # VitePress 的锚点格式：对于标题 `#### `LLMChat``，锚点通常是 `#LLMChat`（保持原样）
+            # 但 VitePress 也可能转换为小写，所以先尝试原始格式
+            return f"[{type_name}](../../zj_humanoid_types#{type_anchor})"
+        else:
+            # 标准库类型或其他类型，不添加链接，直接返回类型名称
+            return type_name
+    
     def generate_main_page(self):
         """Generate the main API documentation page using component nesting."""
         output_file = self.output_dir / 'zj_humanoid_ros_api.md'
@@ -211,13 +234,13 @@ class VitePressDocGenerator:
                     if len(root_services) > 10:
                         markmap_lines.append(f"- ... 还有 {len(root_services) - 10} 个")
                     
-                    # 再显示分组后的服务
+                    # 再显示分组后的服务，分组名作为列表项，子项使用缩进
                     for group, items in sorted(service_groups.items()):
-                        markmap_lines.append(f"### {group}")
+                        markmap_lines.append(f"- {group}")
                         for item in items[:8]:  # 每组最多显示8个
-                            markmap_lines.append(f"- {item}")
+                            markmap_lines.append(f"  - {item}")  # 使用两个空格缩进表示子项
                         if len(items) > 8:
-                            markmap_lines.append(f"- ... 还有 {len(items) - 8} 个")
+                            markmap_lines.append(f"  - ... 还有 {len(items) - 8} 个")
                 
                 if topics:
                     markmap_lines.append(f"## 📡 Topics ({len(topics)})")
@@ -254,15 +277,17 @@ markmap:
                     f.write(f"## 📦 Services ({len(services)})\n\n")
                     for idx, service in enumerate(services, 1):
                         name = service.get('name', '')
+                        # 提取服务名称的最后部分（去掉 /zj_humanoid/{subsystem}/ 前缀）
+                        short_name = name.split('/')[-1] if '/' in name else name
                         srv_type = service.get('type', '')
                         description = self.escape_markdown(service.get('description', ''))
                         note = self.escape_markdown(service.get('note', ''))
                         
-                        f.write(f"### {idx}. `{name}`\n\n")
+                        f.write(f"### {idx}. `{short_name}`\n\n")
                         f.write("| 字段 | 值 |\n")
                         f.write("|------|-----|\n")
-                        f.write(f"| **Service Name** | `{name}` |\n")
-                        f.write(f"| **Type** | `{srv_type}` |\n")
+                        f.write(f"| **Service Name** | {name} |\n")
+                        f.write(f"| **Type** | {self.format_type_link(srv_type)} |\n")
                         f.write(f"| **Description** | {description} |\n")
                         if note:
                             f.write(f"| **Note** | {note} |\n")
@@ -273,6 +298,8 @@ markmap:
                     f.write(f"## 📡 Topics ({len(topics)})\n\n")
                     for idx, topic in enumerate(topics, 1):
                         name = topic.get('name', '')
+                        # 提取话题名称的最后部分（去掉 /zj_humanoid/{subsystem}/ 前缀）
+                        short_name = name.split('/')[-1] if '/' in name else name
                         msg_type = topic.get('type', '')
                         direction = topic.get('direction', '')
                         description = self.escape_markdown(topic.get('description', ''))
@@ -286,11 +313,11 @@ markmap:
                         else:
                             direction_icon = direction
                         
-                        f.write(f"### {idx}. `{name}`\n\n")
+                        f.write(f"### {idx}. `{short_name}`\n\n")
                         f.write("| 字段 | 值 |\n")
                         f.write("|------|-----|\n")
-                        f.write(f"| **Topic Name** | `{name}` |\n")
-                        f.write(f"| **Type** | `{msg_type}` |\n")
+                        f.write(f"| **Topic Name** | {name} |\n")
+                        f.write(f"| **Type** | {self.format_type_link(msg_type)} |\n")
                         f.write(f"| **Direction** | {direction_icon} |\n")
                         f.write(f"| **Description** | {description} |\n")
                         if note:

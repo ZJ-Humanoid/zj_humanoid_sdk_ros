@@ -31,74 +31,74 @@ markmap:
 
 ## 📦 Services (8)
 
-### 1. `/zj_humanoid/manipulation/camera_calibration`
+### 1. `camera_calibration`
 
 | 字段 | 值 |
 |------|-----|
-| **Service Name** | `/zj_humanoid/manipulation/camera_calibration` |
-| **Type** | `manipulation/CameraCalibration` |
+| **Service Name** | /zj_humanoid/manipulation/camera_calibration |
+| **Type** | [manipulation/CameraCalibration](../../zj_humanoid_types#CameraCalibration) |
 | **Description** | 相机内外参标定 |
 | **Note** | 自动相机内外参标定，外参标定时机器人会执行一段轨迹，拍摄不同角度的照片，从而计算外参 |
 
-### 2. `/zj_humanoid/manipulation/execute_pick_task`
+### 2. `execute_pick_task`
 
 | 字段 | 值 |
 |------|-----|
-| **Service Name** | `/zj_humanoid/manipulation/execute_pick_task` |
-| **Type** | `manipulation/ExecutePickTask` |
+| **Service Name** | /zj_humanoid/manipulation/execute_pick_task |
+| **Type** | [manipulation/ExecutePickTask](../../zj_humanoid_types#ExecutePickTask) |
 | **Description** | 执行抓取服务 |
 | **Note** | 输出物品名称执行抓取服务 |
 
-### 3. `/zj_humanoid/manipulation/grasp_teach_service`
+### 3. `grasp_teach_service`
 
 | 字段 | 值 |
 |------|-----|
-| **Service Name** | `/zj_humanoid/manipulation/grasp_teach_service` |
-| **Type** | `manipulation/GraspTeach` |
+| **Service Name** | /zj_humanoid/manipulation/grasp_teach_service |
+| **Type** | [manipulation/GraspTeach](../../zj_humanoid_types#GraspTeach) |
 | **Description** | 视觉抓取示教 |
 | **Note** | 视觉示教抓取，让机器人知道该从什么方位抓取物品 |
 
-### 4. `/zj_humanoid/manipulation/joint_space_trajectory_planner`
+### 4. `joint_space_trajectory_planner`
 
 | 字段 | 值 |
 |------|-----|
-| **Service Name** | `/zj_humanoid/manipulation/joint_space_trajectory_planner` |
-| **Type** | `manipulation/GetTrajectory` |
+| **Service Name** | /zj_humanoid/manipulation/joint_space_trajectory_planner |
+| **Type** | [manipulation/GetTrajectory](../../zj_humanoid_types#GetTrajectory) |
 | **Description** | 关节空间轨迹规划 |
 | **Note** | 节空间轨迹规划，输出关节轨迹，示教模式下记录各个关节数据，据此生成完整的执行轨迹 |
 
-### 5. `/zj_humanoid/manipulation/pose_estimation_service`
+### 5. `pose_estimation_service`
 
 | 字段 | 值 |
 |------|-----|
-| **Service Name** | `/zj_humanoid/manipulation/pose_estimation_service` |
-| **Type** | `manipulation/PoseEst` |
+| **Service Name** | /zj_humanoid/manipulation/pose_estimation_service |
+| **Type** | [manipulation/PoseEst](../../zj_humanoid_types#PoseEst) |
 | **Description** | 获取目标位姿 |
 | **Note** | 输入图像获取指定物品的6D位姿 |
 
-### 6. `/zj_humanoid/manipulation/pose_space_trajectory_planner`
+### 6. `pose_space_trajectory_planner`
 
 | 字段 | 值 |
 |------|-----|
-| **Service Name** | `/zj_humanoid/manipulation/pose_space_trajectory_planner` |
-| **Type** | `manipulation/MotionPlan` |
+| **Service Name** | /zj_humanoid/manipulation/pose_space_trajectory_planner |
+| **Type** | [manipulation/MotionPlan](../../zj_humanoid_types#MotionPlan) |
 | **Description** | 末端轨迹规划 |
 | **Note** | 末端空间轨迹规划，示教模式下记录各个末端执行器数据，据此生成完整的执行轨迹 |
 
-### 7. `/zj_humanoid/manipulation/scene_update`
+### 7. `scene_update`
 
 | 字段 | 值 |
 |------|-----|
-| **Service Name** | `/zj_humanoid/manipulation/scene_update` |
-| **Type** | `manipulation/SceneUpdate` |
+| **Service Name** | /zj_humanoid/manipulation/scene_update |
+| **Type** | [manipulation/SceneUpdate](../../zj_humanoid_types#SceneUpdate) |
 | **Description** | 场景更新 |
 | **Note** | 机器人场景更新,基于二维码，需要场景中有二维码，机器人抓取物品前的环境感知 |
 
-### 8. `/zj_humanoid/manipulation/version`
+### 8. `version`
 
 | 字段 | 值 |
 |------|-----|
-| **Service Name** | `/zj_humanoid/manipulation/version` |
-| **Type** | `` |
+| **Service Name** | /zj_humanoid/manipulation/version |
+| **Type** |  |
 | **Description** | 操作模块版本号 |
 

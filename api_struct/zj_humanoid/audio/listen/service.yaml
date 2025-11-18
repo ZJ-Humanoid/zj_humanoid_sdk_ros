@@ -1,5 +1,0 @@
-service:
-  name: /zj_humanoid/audio/listen
-  description: 倾听服务
-  type: audio/Listen
-  note: "开始倾听"

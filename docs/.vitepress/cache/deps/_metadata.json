@@ -1,62 +1,68 @@
 {
-  "hash": "54f603c7",
+  "hash": "28c3bf9d",
   "configHash": "e8e9042b",
-  "lockfileHash": "4c8bf683",
-  "browserHash": "d90d7e58",
+  "lockfileHash": "c93e9121",
+  "browserHash": "21ef8514",
   "optimized": {
     "vue": {
       "src": "../../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "aa1c5556",
+      "fileHash": "1ae2e3e0",
       "needsInterop": false
     },
     "vitepress > @vue/devtools-api": {
       "src": "../../../../node_modules/@vue/devtools-api/dist/index.js",
       "file": "vitepress___@vue_devtools-api.js",
-      "fileHash": "dedeb989",
+      "fileHash": "d8d0ece1",
       "needsInterop": false
     },
     "vitepress > @vueuse/core": {
       "src": "../../../../node_modules/@vueuse/core/index.mjs",
       "file": "vitepress___@vueuse_core.js",
-      "fileHash": "bdcf6d9e",
+      "fileHash": "66c96d76",
       "needsInterop": false
     },
     "markmap-lib": {
       "src": "../../../../node_modules/markmap-lib/dist/browser/index.mjs",
       "file": "markmap-lib.js",
-      "fileHash": "9112e12e",
+      "fileHash": "ff3485f5",
       "needsInterop": false
     },
     "markmap-view": {
       "src": "../../../../node_modules/markmap-view/dist/index.js",
       "file": "markmap-view.js",
-      "fileHash": "91a1f197",
+      "fileHash": "45be931a",
       "needsInterop": false
-    },
-    "markdown-it": {
-      "src": "../../../../node_modules/markdown-it/index.mjs",
-      "file": "markdown-it.js",
-      "fileHash": "791e2035",
-      "needsInterop": false
-    },
-    "markdown-it-container": {
-      "src": "../../../../node_modules/markdown-it-container/index.js",
-      "file": "markdown-it-container.js",
-      "fileHash": "00cc6600",
-      "needsInterop": true
     },
     "roslib": {
       "src": "../../../../node_modules/roslib/src/RosLib.js",
       "file": "roslib.js",
-      "fileHash": "cc57f5f0",
+      "fileHash": "92e55fa0",
       "needsInterop": true
     },
     "js-yaml": {
       "src": "../../../../node_modules/js-yaml/index.js",
       "file": "js-yaml.js",
-      "fileHash": "ad0c3451",
+      "fileHash": "aff8b5ad",
       "needsInterop": true
+    },
+    "markdown-it": {
+      "src": "../../../../node_modules/markdown-it/index.mjs",
+      "file": "markdown-it.js",
+      "fileHash": "a51cad9f",
+      "needsInterop": false
+    },
+    "markdown-it-container": {
+      "src": "../../../../node_modules/markdown-it-container/index.js",
+      "file": "markdown-it-container.js",
+      "fileHash": "fe47d17d",
+      "needsInterop": true
+    },
+    "markdown-it-anchor": {
+      "src": "../../../../node_modules/markdown-it-anchor/dist/markdownItAnchor.mjs",
+      "file": "markdown-it-anchor.js",
+      "fileHash": "21ee6ad3",
+      "needsInterop": false
     }
   },
   "chunks": {

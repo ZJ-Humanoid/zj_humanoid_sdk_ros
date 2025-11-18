@@ -59,12 +59,18 @@ export default defineConfig({
   title: 'Navi机器人SDK开发指南',
   description: '这是浙江人形机器人Navi系列的SDK和编程指引文档站点。',
   base: '/navi_sdk_documents/',
+  outDir: '../dist', // 构建输出到项目根目录的 dist 文件夹
+  ignoreDeadLinks: true, // 忽略死链接检查，允许构建继续
 
   themeConfig: {
     sidebar: [
       {
         items: [
-          { text: '快速开始', link: '/' },
+          { text: '开发指南', link: '/',
+            items: [          
+              { text: '概述', link: '/#概述' },
+              { text: '快速开始', link: '/#快速开始' },]
+           },
           {
             text: 'ROS API',
             items: [          
@@ -93,12 +99,40 @@ export default defineConfig({
               { text: '文档', link: '/zj_humanoid_types' },
             ]
           },
+          {
+            text: '开发示例',
+            items: [          
+              { 
+                text: '子系统示例',
+                collapsed: true,
+                items: [
+                  // { text: '🔊 Audio', link: '/api/subsystems/audio' ,},
+                  { text: '🖐️ Hand', link: '/demos/dexhand_interface' },
+                  { text: '🦵 Lowerlimb', link: '/demos/lowerlimb' },
+                  { text: '🔧 Manipulation', link: '/demos/manipulation' },
+                  { text: '🧭 Navigation', link: '/demos/navigation' },
+                  { text: '🤖 Robot', link: '/demos/robot_interfaces' },
+                  { text: '📷 Sensor', link: '/demos/sensor' },
+                  { text: '🦾 Upperlimb', link: '/demos/uplimb_interface' },
+                ]
+              },
+              { text: '综合示例', link: '/demos/Combined_Example.md' },
+            ]
+          },
+          {
+            text: '调试工具',
+            items: [
+              { text: 'WEB 遥控器', link: '/web_telec' },
+              { text: 'WEB 示教器', link: '/web_tech' },
+              { text: 'HOS 开发', link: 'http://172.16.8.72:30001/hos/login' },
+            ]
+          },
         ]
       }
     ],
 
     outline: { 
-      level: [2, 3, 4],  // 包含h2, h3, h4，显示更详细的导航
+      level: [2, 4],  // 包含h2到h4，显示更详细的导航
       label: '本页导航'  // 自定义标签
     },
 
@@ -107,6 +141,14 @@ export default defineConfig({
   vite: {
     optimizeDeps: {
       include: ['markmap-lib', 'markmap-view']
+    },
+    assetsInclude: ['**/*.py'],
+    server: {
+      host: '0.0.0.0', // 监听所有网络接口，允许局域网访问
+      port: 5173,      // 端口号
+      fs: {
+        allow: ['..']
+      }
     }
   }
 });

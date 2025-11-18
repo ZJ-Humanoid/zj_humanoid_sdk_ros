@@ -11,6 +11,7 @@ import { ref, onMounted, onBeforeMount } from 'vue'
 import { useRoute } from 'vitepress'
 import MarkdownIt from 'markdown-it'
 import markdownItContainer from 'markdown-it-container'
+import markdownItAnchor from 'markdown-it-anchor'
 
 // 调试：组件创建时立即输出
 console.log('[MarkdownInclude] Component script loaded')
@@ -50,6 +51,18 @@ const md = new MarkdownIt({
   html: true,
   linkify: true,
   typographer: true
+})
+
+// 添加锚点插件，为标题生成ID
+// VitePress 风格的锚点ID生成：直接使用标题文本，保持中文原样
+md.use(markdownItAnchor, {
+  level: [2, 3, 4, 5, 6], // 为 h2-h6 生成锚点
+  permalink: false, // 不显示永久链接图标
+  slugify: (s) => {
+    // VitePress 对于中文标题直接使用原文本作为ID
+    // 例如 "概述" -> "概述", "快速开始" -> "快速开始"
+    return s.trim()
+  }
 })
 
 // 添加容器插件支持（支持 ::: info, ::: tip, ::: warning, ::: danger 等）

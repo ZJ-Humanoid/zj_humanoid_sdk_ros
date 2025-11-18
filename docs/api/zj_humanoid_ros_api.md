@@ -10,13 +10,13 @@ version: v1.0.0
 ::: info 文档信息
 - **描述**: ZJ Humanoid ROS1 APIs
 - **版本**: v1.0.0
-- **生成时间**: 2025-11-12 15:33:05
+- **生成时间**: 2025-11-18 15:38:48
 :::
 
 ## 📊 统计信息
 
-- **Services**: 87 个服务
-- **Topics**: 82 个话题
+- **Services**: 86 个服务
+- **Topics**: 83 个话题
 - **总计**: 169 个接口
 - **子系统**: 8 个 (services), 7 个 (topics)
 
@@ -25,7 +25,7 @@ version: v1.0.0
 本文档包含所有ROS接口的详细信息，您可以通过滚动浏览所有内容，或使用右侧导航快速跳转。
 
 **Services (服务):**
-- [🔊 AUDIO](#audio-services) (11 services)
+- [🔊 AUDIO](#audio-services) (10 services)
 - [🖐️ HAND](#hand-services) (11 services)
 - [🦵 LOWERLIMB](#lowerlimb-services) (1 services)
 - [🔧 MANIPULATION](#manipulation-services) (8 services)
@@ -35,7 +35,7 @@ version: v1.0.0
 - [🦾 UPPERLIMB](#upperlimb-services) (39 services)
 
 **Topics (话题):**
-- [🔊 AUDIO](#audio-topics) (3 topics)
+- [🔊 AUDIO](#audio-topics) (4 topics)
 - [🖐️ HAND](#hand-topics) (5 topics)
 - [🦵 LOWERLIMB](#lowerlimb-topics) (9 topics)
 - [🧭 NAVIGATION](#navigation-topics) (5 topics)
@@ -47,9 +47,9 @@ version: v1.0.0
 
 ## 📦 Services
 
-共 87 个服务，分布在 8 个子系统中。
+共 86 个服务，分布在 8 个子系统中。
 
-### 🔊 AUDIO (11 services) {#audio-services}
+### 🔊 AUDIO (10 services) {#audio-services}
 
 <MarkdownInclude src="subsystems/audio.md" :skip-frontmatter="true" :skip-title="true" section="services" />
 
@@ -100,9 +100,9 @@ version: v1.0.0
 
 ## 📡 Topics
 
-共 82 个话题，分布在 7 个子系统中。
+共 83 个话题，分布在 7 个子系统中。
 
-### 🔊 AUDIO (3 topics) {#audio-topics}
+### 🔊 AUDIO (4 topics) {#audio-topics}
 
 <MarkdownInclude src="subsystems/audio.md" :skip-frontmatter="true" :skip-title="true" section="topics" />
 
