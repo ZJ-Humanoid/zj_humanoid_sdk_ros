@@ -11,15 +11,37 @@ modules:
   - navigation
   - robot
   - sensor
+    - CAM_A
+    - CAM_B
+    - CAM_C
+    - CAM_D
+    - head_imu
+    - realsense_down
+    - realsense_up
   - upperlimb
 
 # 机器人型号及其对应的功能模块排除列表
 robot_models:
   H1:
-    exclude_modules: [navigation]  # H1型号不支持导航功能
+    exclude_modules:
+      - navigation
+      - lowerlimb
+      - sensor/realsense_down
   I2:
-    exclude_modules: []
+    exclude_modules:
+      - manipulation
+      - sensor/realsense_down
   WA1:
-    exclude_modules: []  
+    exclude_modules:
+      - lowerlimb
+      - sensor/realsense_down
   WA2:
-    exclude_modules: [manipulation]  # WA2型号不支持操作功能
+    exclude_modules:
+      - manipulation
+      - lowerlimb
+      - sensor/CAM_A
+      - sensor/CAM_B
+      - sensor/CAM_C
+      - sensor/CAM_D
+      - sensor/head_imu
+      - sensor/realsense_down

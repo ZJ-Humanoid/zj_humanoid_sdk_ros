@@ -120,13 +120,19 @@ class InterfaceGenerator:
     
     def get_module_from_name(self, interface_name: str) -> str:
         """
-        Extract module name from interface name.
+        Extract module name or module path from interface name.
+        
+        Supports both coarse-grained and fine-grained module extraction:
+        - Coarse: /zj_humanoid/audio/asr_text → 'audio'
+        - Fine: /zj_humanoid/sensor/CAM_A/camera_info → 'sensor/CAM_A'
+        - Fine: /zj_humanoid/manipulation/camera_calibration → 'manipulation/camera_calibration'
         
         Args:
-            interface_name: Full interface name (e.g., /zj_humanoid/audio/asr_text)
+            interface_name: Full interface name
         
         Returns:
-            Module name (e.g., audio) or empty string if not found
+            Module path (e.g., 'audio', 'sensor/CAM_A', 'manipulation/grasp_teach_service') 
+            or empty string if not found
         """
         if not interface_name:
             return ''
@@ -135,17 +141,29 @@ class InterfaceGenerator:
         name = interface_name.lstrip('/')
         
         # Split by slash and get the parts
-        # Expected format: zj_humanoid/module/...
+        # Expected format: zj_humanoid/module/submodule/...
         parts = name.split('/')
         if len(parts) >= 2:
             # Return the second part (module name)
-            return parts[1]
+            module = parts[1]
+            
+            # Support fine-grained control: include submodule (third part) if exists
+            # This allows patterns like 'sensor/CAM_A', 'manipulation/grasp_teach_service', etc.
+            # Enable fine-grained control for all modules that have submodules
+            if len(parts) >= 3:
+                return f"{module}/{parts[2]}"
+            
+            return module
         
         return ''
     
     def should_include_interface(self, interface_name: str, robot_model: str) -> bool:
         """
         Check if an interface should be included for a specific robot model.
+        
+        Supports hierarchical module exclusion:
+        - Exact match: 'sensor/CAM_A' excludes only sensor/CAM_A interfaces
+        - Parent match: 'sensor' excludes all sensor/* interfaces
         
         Args:
             interface_name: Full interface name
@@ -163,8 +181,18 @@ class InterfaceGenerator:
         robot_config = self.config.get('robot_models', {}).get(robot_model, {})
         exclude_modules = robot_config.get('exclude_modules', [])
         
-        # Include if module is not in exclude list
-        return module not in exclude_modules
+        # Check if module should be excluded
+        for exclude_pattern in exclude_modules:
+            # Exact match: e.g., 'sensor/CAM_A' matches 'sensor/CAM_A'
+            if module == exclude_pattern:
+                return False
+            
+            # Parent match: e.g., 'sensor' matches 'sensor/CAM_A'
+            # This ensures that excluding 'sensor' will exclude all sensor submodules
+            if module.startswith(exclude_pattern + '/'):
+                return False
+        
+        return True
     
     def save_to_json(self, output_file: str = None) -> None:
         """
@@ -235,70 +263,6 @@ class InterfaceGenerator:
         except Exception as e:
             print(f"Error saving to JSON files: {e}")
     
-    def save_to_markdown(self, output_file: str = None) -> None:
-        """
-        Save data to Markdown file.
-        
-        Args:
-            output_file: Output Markdown file path. If None, will save to generated/ directory.
-        """
-        if output_file is None:
-            # Save to generated/ directory
-            output_file = self.output_dir / "zj_humanoid_interfaces.md"
-        else:
-            output_file = Path(output_file)
-        
-        try:
-            # Ensure output directory exists
-            output_file.parent.mkdir(parents=True, exist_ok=True)
-            with open(output_file, 'w', encoding='utf-8') as f:
-                # Write header
-                f.write("# ZJ Humanoid ROS API 接口文档\n\n")
-                f.write(f"**Description**: {self.data['metadata']['description']}\n")
-                f.write(f"**Version**: {self.data['metadata']['version']}\n")
-                f.write(f"**Generated At**: {self.data['metadata']['generated_at']}\n\n")
-                
-                # Write services section
-                f.write("## Services\n\n")
-                services_data = self.data.get('services', {})
-                if isinstance(services_data, dict):
-                    for module, service_list in services_data.items():
-                        if isinstance(service_list, list):
-                            for service in service_list:
-                                if isinstance(service, dict):
-                                    f.write(f"### {service.get('name', '')}\n\n")
-                                    f.write(f"**Description**: {service.get('description', '')}\n\n")
-                                    f.write(f"**Type**: `{service.get('type', '')}`\n\n")
-                                    if service.get('note'):
-                                        f.write(f"**Note**: {service.get('note', '')}\n\n")
-                                    if service.get('demos'):
-                                        f.write(f"**Demos**: {', '.join(service.get('demos', []))}\n\n")
-                                    f.write("---\n\n")
-                
-                # Write topics section
-                f.write("## Topics\n\n")
-                topics_data = self.data.get('topics', {})
-                if isinstance(topics_data, dict):
-                    for module, topic_list in topics_data.items():
-                        if isinstance(topic_list, list):
-                            for topic in topic_list:
-                                if isinstance(topic, dict):
-                                    f.write(f"### {topic.get('name', '')}\n\n")
-                                    f.write(f"**Description**: {topic.get('description', '')}\n\n")
-                                    f.write(f"**Type**: `{topic.get('type', '')}`\n\n")
-                                    f.write(f"**Direction**: {topic.get('direction', '')}\n\n")
-                                    if topic.get('throttle_rate'):
-                                        f.write(f"**Throttle Rate**: {topic.get('throttle_rate')} Hz\n\n")
-                                    if topic.get('note'):
-                                        f.write(f"**Note**: {topic.get('note', '')}\n\n")
-                                    if topic.get('demos'):
-                                        f.write(f"**Demos**: {', '.join(topic.get('demos', []))}\n\n")
-                                    f.write("---\n\n")
-                
-            print(f"Successfully saved to {output_file}")
-        except Exception as e:
-            print(f"Error saving to Markdown file {output_file}: {e}")
-    
     def generate_files(self) -> None:
         """Generate JSON and Markdown files from YAML data."""
         # Load config first
@@ -319,9 +283,6 @@ class InterfaceGenerator:
         # Generate files
         print("\nGenerating JSON files for each robot model...")
         self.save_to_json()
-        
-        # print("\nGenerating Markdown documentation...")
-        # self.save_to_markdown()
         
         print("\nGeneration completed successfully!")
 
