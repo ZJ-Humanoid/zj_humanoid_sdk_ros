@@ -7,19 +7,19 @@
 ### 2.1 登入界面
 打开终端浏览器，输入”机器人ip:8084”，即可打开机器人控制界面，机器人的IP地址一般贴于机器人躯干上，开发测试所使用浏览器是chrome，可优先选用；
 如果机器人连接成功，会弹出如下界面，获取页面所需资源；
-![page_load](./images/page_load.png)
+![page_load](../images/page_load.png)
 
 ### 2.2 自检界面
 领航者机器人连接完成后，界面自动跳转到如下机器人自检界面；
 该界面会向机器人发送自检指令，并实时动画显示机器人自检进度；
-![self_check](./images/self_check.png)
+![self_check](../images/self_check.png)
 
 机器人自检完成后，跳出如下自检成功界面：
 点击左上角功能按键跳转进入主功能菜单页面；
-![check_done](./images/check_done.png)
+![check_done](../images/check_done.png)
 
 如果机器人自检发现了关节异常，界面将提示相应异常的关节图示，无法进入主功能页面；请在排除相应异常后在再点击重新自检按键重新尝试；
-![joint_err](./images/joint_err.png)
+![joint_err](../images/joint_err.png)
 
 ### 2.3 功能菜单界面
 自检成功点击功能菜单按键后，进入如下功能菜单页面；
@@ -28,12 +28,12 @@
   - 导航模式：获取机器人当前支持的地图以及任务，并选择任务执行；
   - 示教模式：配置机器人的行走路径和相应的工作任务；
 点击后跳转到相应模式的操作页面；
-![main_page](./images/main_page.png)
+![main_page](../images/main_page.png)
 
 ### 2.4 遥控模式界面
 在功能菜单界面点击遥控模式后，进入遥控模式界面；
 遥控模式按键元素说明标注如下图：
-![telecontrl_page](./images/telecontrl_page.png)
+![telecontrl_page](../images/telecontrl_page.png)
 在进入遥控模式后，软件自动获取机器人头部摄像头的视频流并作为遥控模式界面的背景元素；可以通过界面下部中间三个按键执行音量调节、视频录制、快照抓拍等功能；
   - 机器人的遥控主要由中部左右两侧的摇杆和按键完成行走和转向等动作；
   - 界面右下角还有机器人动作相关操作按键：回零、急停、站立、动作切换等

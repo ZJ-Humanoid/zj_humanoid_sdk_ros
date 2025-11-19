@@ -308,6 +308,32 @@
     width: 80%;
   }
 
+  /* 4列表格均分列宽 */
+  .markdown-body table:has(th:nth-child(4)),
+  .vp-doc table:has(th:nth-child(4)) {
+    table-layout: fixed;
+  }
+
+  .markdown-body table:has(th:nth-child(4)) th,
+  .vp-doc table:has(th:nth-child(4)) th,
+  .markdown-body table:has(th:nth-child(4)) td,
+  .vp-doc table:has(th:nth-child(4)) td {
+    width: 25%;
+  }
+
+  /* 如果浏览器不支持 :has()，使用更通用的方式 */
+  .markdown-body table[data-columns="4"],
+  .vp-doc table[data-columns="4"] {
+    table-layout: fixed;
+  }
+
+  .markdown-body table[data-columns="4"] th,
+  .vp-doc table[data-columns="4"] th,
+  .markdown-body table[data-columns="4"] td,
+  .vp-doc table[data-columns="4"] td {
+    width: 25%;
+  }
+
   /* 表格内的代码样式 */
   .markdown-body table code,
   .vp-doc table code {

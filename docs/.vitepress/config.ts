@@ -122,9 +122,10 @@ export default defineConfig({
           {
             text: '调试工具',
             items: [
-              { text: 'WEB 遥控器', link: '/web_telec' },
-              { text: 'WEB 示教器', link: '/web_tech' },
-              { text: 'HOS 开发', link: 'http://172.16.8.72:30001/hos/login' },
+              { text: 'WEB 遥控器', link: 'tools/web_telec' },
+              { text: 'WEB 示教器', link: 'tools/web_tech' },
+              { text: 'HOS 安装', link: 'tools/hos_install' },
+              { text: 'HOS 开发', link: 'tools/hos_dev' },
             ]
           },
         ]

@@ -5,13 +5,13 @@
 如果机器人连接成功，会弹出如下界面，获取页面所需资源；
 
 ## 关节空间控制
-![joint_contrl](./images/joint_contrl.jpg)
+![joint_contrl](../images/joint_contrl.jpg)
 
 ## 末端空间控制
-![tcp_contrl](./images/tcp_contrl.jpg)
+![tcp_contrl](../images/tcp_contrl.jpg)
 
 ## 灵巧手控制
-![hand_contrl](./images/hand_contrl.jpg)
+![hand_contrl](../images/hand_contrl.jpg)
 
 ## 预设动作控制
-![action_contrl](./images/action_contrl.jpg)
+![action_contrl](../images/action_contrl.jpg)
