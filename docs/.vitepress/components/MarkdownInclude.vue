@@ -94,23 +94,14 @@ const fileMap = {
   // API文档
   'api/zj_humanoid_ros_api.md': () => import('../../api/zj_humanoid_ros_api.md?raw'),
   // 子系统文档（完整路径）
-  'api/subsystems/audio.md': () => import('../../api/subsystems/audio.md?raw'),
-  'api/subsystems/hand.md': () => import('../../api/subsystems/hand.md?raw'),
-  'api/subsystems/lowerlimb.md': () => import('../../api/subsystems/lowerlimb.md?raw'),
-  'api/subsystems/manipulation.md': () => import('../../api/subsystems/manipulation.md?raw'),
-  'api/subsystems/navigation.md': () => import('../../api/subsystems/navigation.md?raw'),
-  'api/subsystems/robot.md': () => import('../../api/subsystems/robot.md?raw'),
-  'api/subsystems/sensor.md': () => import('../../api/subsystems/sensor.md?raw'),
-  'api/subsystems/upperlimb.md': () => import('../../api/subsystems/upperlimb.md?raw'),
-  // 子系统文档（相对路径，从api目录引用）
-  'subsystems/audio.md': () => import('../../api/subsystems/audio.md?raw'),
-  'subsystems/hand.md': () => import('../../api/subsystems/hand.md?raw'),
-  'subsystems/lowerlimb.md': () => import('../../api/subsystems/lowerlimb.md?raw'),
-  'subsystems/manipulation.md': () => import('../../api/subsystems/manipulation.md?raw'),
-  'subsystems/navigation.md': () => import('../../api/subsystems/navigation.md?raw'),
-  'subsystems/robot.md': () => import('../../api/subsystems/robot.md?raw'),
-  'subsystems/sensor.md': () => import('../../api/subsystems/sensor.md?raw'),
-  'subsystems/upperlimb.md': () => import('../../api/subsystems/upperlimb.md?raw'),
+  'api/audio.md': () => import('../../api/audio.md?raw'),
+  'api/hand.md': () => import('../../api/hand.md?raw'),
+  'api/lowerlimb.md': () => import('../../api/lowerlimb.md?raw'),
+  'api/manipulation.md': () => import('../../api/manipulation.md?raw'),
+  'api/navigation.md': () => import('../../api/navigation.md?raw'),
+  'api/robot.md': () => import('../../api/robot.md?raw'),
+  'api/sensor.md': () => import('../../api/sensor.md?raw'),
+  'api/upperlimb.md': () => import('../../api/upperlimb.md?raw'),
 }
 
 onBeforeMount(() => {
@@ -133,16 +124,16 @@ onMounted(async () => {
     
     // 如果路径是相对路径，需要根据当前页面位置解析
     if (!normalizedSrc.startsWith('docs/') && !normalizedSrc.startsWith('api/')) {
-      // 如果当前页面在api目录下，且路径是subsystems/开头，路径正确
-      if (currentPath.includes('/api/') && normalizedSrc.startsWith('subsystems/')) {
+      // 如果当前页面在api目录下，且路径是api/开头，路径正确
+      if (currentPath.includes('/api/') && normalizedSrc.startsWith('api/')) {
         // 路径已经是正确的
       }
       // 如果当前页面在根目录，且路径是api/开头，路径正确
       else if (!currentPath.includes('/api/') && normalizedSrc.startsWith('api/')) {
         // 路径已经是正确的
       }
-      // 如果当前页面在api目录下，且路径不是subsystems/开头，可能需要添加api/前缀
-      else if (currentPath.includes('/api/') && !normalizedSrc.startsWith('subsystems/') && !normalizedSrc.startsWith('api/')) {
+      // 如果当前页面在api目录下，且路径不是api/开头，可能需要添加api/前缀
+      else if (currentPath.includes('/api/') && !normalizedSrc.startsWith('api/')) {
         // 可能是相对于api目录的路径，保持不变
       }
       // 如果当前页面在根目录，且路径不是api/开头，可能需要添加docs/前缀
@@ -180,10 +171,7 @@ onMounted(async () => {
         let importSrc = normalizedSrc
         
         // 根据路径类型和当前路由处理路径
-        if (importSrc.startsWith('subsystems/')) {
-          // subsystems/ 路径需要添加 api/ 前缀
-          importSrc = `api/${importSrc}`
-        } else if (importSrc.startsWith('api/')) {
+        if (importSrc.startsWith('api/')) {
           // api/ 路径保持不变
         } else if (!importSrc.startsWith('docs/')) {
           // 其他路径，如果当前在api目录下，可能需要添加api/前缀
@@ -204,9 +192,7 @@ onMounted(async () => {
     if (!content) {
       // 构建fetch路径，处理子系统文档路径
       let fetchSrc = normalizedSrc
-      if (fetchSrc.startsWith('subsystems/')) {
-        fetchSrc = `api/${fetchSrc}`
-      }
+      // 现在子系统文档直接在 api/ 目录下，不需要特殊处理
       
       // 构建多个可能的fetch路径
       const fetchPaths = [

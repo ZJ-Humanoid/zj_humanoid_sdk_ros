@@ -53,7 +53,7 @@ markmap:
 | **Direction** | 📤 Publish |
 | **Description** | 腰部imu值 |
 
-### 2. `calib`
+### 2. `cmd_vel/calib`
 
 | 字段 | 值 |
 |------|-----|
@@ -62,7 +62,7 @@ markmap:
 | **Direction** | 📥 Subscribe |
 | **Description** | 导航控制行走 |
 
-### 3. `joy`
+### 3. `cmd_vel/joy`
 
 | 字段 | 值 |
 |------|-----|
@@ -71,7 +71,7 @@ markmap:
 | **Direction** | 📥 Subscribe |
 | **Description** | 游戏手柄控制行走 |
 
-### 4. `web`
+### 4. `cmd_vel/web`
 
 | 字段 | 值 |
 |------|-----|

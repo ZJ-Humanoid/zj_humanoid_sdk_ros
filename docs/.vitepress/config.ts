@@ -79,14 +79,14 @@ export default defineConfig({
                 text: '子系统',
                 collapsed: true,
                 items: [
-                  { text: '🔊 Audio', link: '/api/subsystems/audio' },
-                  { text: '🖐️ Hand', link: '/api/subsystems/hand' },
-                  { text: '🦵 Lowerlimb', link: '/api/subsystems/lowerlimb' },
-                  { text: '🔧 Manipulation', link: '/api/subsystems/manipulation' },
-                  { text: '🧭 Navigation', link: '/api/subsystems/navigation' },
-                  { text: '🤖 Robot', link: '/api/subsystems/robot' },
-                  { text: '📷 Sensor', link: '/api/subsystems/sensor' },
-                  { text: '🦾 Upperlimb', link: '/api/subsystems/upperlimb' },
+                  { text: '🔊 Audio', link: '/api/audio' },
+                  { text: '🖐️ Hand', link: '/api/hand' },
+                  { text: '🦵 Lowerlimb', link: '/api/lowerlimb' },
+                  { text: '🔧 Manipulation', link: '/api/manipulation' },
+                  { text: '🧭 Navigation', link: '/api/navigation' },
+                  { text: '🤖 Robot', link: '/api/robot' },
+                  { text: '📷 Sensor', link: '/api/sensor' },
+                  { text: '🦾 Upperlimb', link: '/api/upperlimb' },
                 ]
               }
 

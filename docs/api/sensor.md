@@ -53,45 +53,45 @@ markmap:
 
 ## 📦 Services (4)
 
-### 1. `camera_info`
+### 1. `CAM_A/camera_info`
 
 | 字段 | 值 |
 |------|-----|
 | **Service Name** | /zj_humanoid/sensor/CAM_A/camera_info |
-| **Type** | [sensor/CameraInfo](../../zj_humanoid_types#CameraInfo) |
+| **Type** | [sensor/CameraInfo](../zj_humanoid_types#camerainfo) |
 | **Description** | 左眼参数信息 |
 | **Note** | 相机A的参数信息,相机A安装在机器人左眼的位置上，相机A的分辨率是多少 回复应包含1280和720 |
 
-### 2. `camera_info`
+### 2. `CAM_B/camera_info`
 
 | 字段 | 值 |
 |------|-----|
 | **Service Name** | /zj_humanoid/sensor/CAM_B/camera_info |
-| **Type** | [sensor/CameraInfo](../../zj_humanoid_types#CameraInfo) |
+| **Type** | [sensor/CameraInfo](../zj_humanoid_types#camerainfo) |
 | **Description** | 右眼参数信息 |
 | **Note** | 相机B的参数信息，相机B安装在机器人右眼的位置上，相机B的分辨率是多少 回复应包含1280和720 |
 
-### 3. `camera_info`
+### 3. `CAM_C/camera_info`
 
 | 字段 | 值 |
 |------|-----|
 | **Service Name** | /zj_humanoid/sensor/CAM_C/camera_info |
-| **Type** | [sensor/CameraInfo](../../zj_humanoid_types#CameraInfo) |
+| **Type** | [sensor/CameraInfo](../zj_humanoid_types#camerainfo) |
 | **Description** | 相机C参数信息 |
 | **Note** | 相机C的参数信息，相机C大致安装在机器人右侧太阳穴的位置上，相机C的分辨率是多少 回复应包含1280和720 |
 
-### 4. `camera_info`
+### 4. `CAM_D/camera_info`
 
 | 字段 | 值 |
 |------|-----|
 | **Service Name** | /zj_humanoid/sensor/CAM_D/camera_info |
-| **Type** | [sensor/CameraInfo](../../zj_humanoid_types#CameraInfo) |
+| **Type** | [sensor/CameraInfo](../zj_humanoid_types#camerainfo) |
 | **Description** | 相机D参数信息 |
 | **Note** | 相机D的参数信息，相机D大致安装在机器人左侧太阳穴的位置上，相机D的分辨率是多少 回复应包含1280和720 |
 
 ## 📡 Topics (27)
 
-### 1. `compressed`
+### 1. `CAM_A/compressed`
 
 | 字段 | 值 |
 |------|-----|
@@ -101,7 +101,7 @@ markmap:
 | **Description** | 左眼相机JPG |
 | **Note** | 左眼相机的JPG图像数据 |
 
-### 2. `image_raw`
+### 2. `CAM_A/image_raw`
 
 | 字段 | 值 |
 |------|-----|
@@ -111,7 +111,7 @@ markmap:
 | **Description** | 左眼相机RGB |
 | **Note** | 左眼相机的RGB图像源数据 |
 
-### 3. `compressed`
+### 3. `CAM_B/compressed`
 
 | 字段 | 值 |
 |------|-----|
@@ -121,7 +121,7 @@ markmap:
 | **Description** | 右眼相机JPG |
 | **Note** | 右眼相机的JPG图像数据 |
 
-### 4. `image_raw`
+### 4. `CAM_B/image_raw`
 
 | 字段 | 值 |
 |------|-----|
@@ -131,7 +131,7 @@ markmap:
 | **Description** | 右眼相机RGB |
 | **Note** | 右眼相机的RGB图像源数据 |
 
-### 5. `compressed`
+### 5. `CAM_C/compressed`
 
 | 字段 | 值 |
 |------|-----|
@@ -141,7 +141,7 @@ markmap:
 | **Description** | 相机C的JPG |
 | **Note** | 右侧太阳穴相机C的JPG图像数据 |
 
-### 6. `image_raw`
+### 6. `CAM_C/image_raw`
 
 | 字段 | 值 |
 |------|-----|
@@ -151,7 +151,7 @@ markmap:
 | **Description** | 相机C的RGB |
 | **Note** | 右侧太阳穴相机C的RGB图像源数据 |
 
-### 7. `compressed`
+### 7. `CAM_D/compressed`
 
 | 字段 | 值 |
 |------|-----|
@@ -161,7 +161,7 @@ markmap:
 | **Description** | 相机D的JPG |
 | **Note** | 左侧太阳穴相机D的JPG图像数据 |
 
-### 8. `image_raw`
+### 8. `CAM_D/image_raw`
 
 | 字段 | 值 |
 |------|-----|
@@ -181,7 +181,7 @@ markmap:
 | **Description** | 头部IMU数据 |
 | **Note** | 头部IMU的目前帧率是多少 回复应接近100 |
 
-### 10. `camera_info`
+### 10. `realsense_down/aligned_depth_to_color/camera_info`
 
 | 字段 | 值 |
 |------|-----|
@@ -191,7 +191,7 @@ markmap:
 | **Description** | 腹部深度aligned参数 |
 | **Note** | 腹部深度相机的aligned_depth_to_color参数信息 |
 
-### 11. `image_raw`
+### 11. `realsense_down/aligned_depth_to_color/image_raw`
 
 | 字段 | 值 |
 |------|-----|
@@ -201,7 +201,7 @@ markmap:
 | **Description** | 腹部深度aligned图像 |
 | **Note** | 腹部深度相机的aligned_depth_to_color RGB图像源数据 |
 
-### 12. `compressed`
+### 12. `realsense_down/aligned_depth_to_color/image_raw/compressed`
 
 | 字段 | 值 |
 |------|-----|
@@ -211,7 +211,7 @@ markmap:
 | **Description** | 腹部深度aligned压缩图 |
 | **Note** | 腹部深度相机的aligned_depth_to_color压缩格式 |
 
-### 13. `camera_info`
+### 13. `realsense_down/color/camera_info`
 
 | 字段 | 值 |
 |------|-----|
@@ -221,7 +221,7 @@ markmap:
 | **Description** | 腹部深度RGB参数 |
 | **Note** | 腹部深度相机的参数信息 |
 
-### 14. `image_raw`
+### 14. `realsense_down/color/image_raw`
 
 | 字段 | 值 |
 |------|-----|
@@ -231,7 +231,7 @@ markmap:
 | **Description** | 腹部深度RGB图像 |
 | **Note** | 腹部深度相机的RGB图像源数据 |
 
-### 15. `compressed`
+### 15. `realsense_down/color/image_raw/compressed`
 
 | 字段 | 值 |
 |------|-----|
@@ -241,7 +241,7 @@ markmap:
 | **Description** | 腹部深度压缩图 |
 | **Note** | 腹部深度相机的RGB图像JPG格式 |
 
-### 16. `camera_info`
+### 16. `realsense_down/depth/camera_info`
 
 | 字段 | 值 |
 |------|-----|
@@ -251,7 +251,7 @@ markmap:
 | **Description** | 腹部相机深度参数 |
 | **Note** | 腹部深度相机的参数信息 |
 
-### 17. `image_rect_raw`
+### 17. `realsense_down/depth/image_rect_raw`
 
 | 字段 | 值 |
 |------|-----|
@@ -261,7 +261,7 @@ markmap:
 | **Description** | 腹部深度RGB图像 |
 | **Note** | 腹部深度相机的RGB图像源数据 |
 
-### 18. `compressed`
+### 18. `realsense_down/depth/image_rect_raw/compressed`
 
 | 字段 | 值 |
 |------|-----|
@@ -271,7 +271,7 @@ markmap:
 | **Description** | 腹部深度压缩图 |
 | **Note** | 腹部深度相机的RGB图像JPG格式 |
 
-### 19. `camera_info`
+### 19. `realsense_up/aligned_depth_to_color/camera_info`
 
 | 字段 | 值 |
 |------|-----|
@@ -281,7 +281,7 @@ markmap:
 | **Description** | 胸部深度aligned参数 |
 | **Note** | 胸部深度相机的aligned_depth_to_color参数信息 |
 
-### 20. `image_raw`
+### 20. `realsense_up/aligned_depth_to_color/image_raw`
 
 | 字段 | 值 |
 |------|-----|
@@ -291,7 +291,7 @@ markmap:
 | **Description** | 胸部深度aligned图像 |
 | **Note** | 胸部深度相机的aligned_depth_to_color RGB图像源数据 |
 
-### 21. `compressed`
+### 21. `realsense_up/aligned_depth_to_color/image_raw/compressed`
 
 | 字段 | 值 |
 |------|-----|
@@ -301,7 +301,7 @@ markmap:
 | **Description** | 胸部深度aligned压缩图 |
 | **Note** | 胸部深度相机的aligned_depth_to_color压缩格式 |
 
-### 22. `camera_info`
+### 22. `realsense_up/color/camera_info`
 
 | 字段 | 值 |
 |------|-----|
@@ -311,7 +311,7 @@ markmap:
 | **Description** | 胸部深度RGB参数 |
 | **Note** | 胸部深度相机的参数信息 |
 
-### 23. `image_raw`
+### 23. `realsense_up/color/image_raw`
 
 | 字段 | 值 |
 |------|-----|
@@ -321,7 +321,7 @@ markmap:
 | **Description** | 胸部深度RGB图像 |
 | **Note** | 胸部深度相机的RGB图像源数据 |
 
-### 24. `compressed`
+### 24. `realsense_up/color/image_raw/compressed`
 
 | 字段 | 值 |
 |------|-----|
@@ -331,7 +331,7 @@ markmap:
 | **Description** | 胸部深度压缩图 |
 | **Note** | 胸部深度相机的RGB图像JPG格式 |
 
-### 25. `camera_info`
+### 25. `realsense_up/depth/camera_info`
 
 | 字段 | 值 |
 |------|-----|
@@ -341,7 +341,7 @@ markmap:
 | **Description** | 胸部相机深度参数 |
 | **Note** | 胸部深度相机的参数信息 |
 
-### 26. `image_rect_raw`
+### 26. `realsense_up/depth/image_rect_raw`
 
 | 字段 | 值 |
 |------|-----|
@@ -351,7 +351,7 @@ markmap:
 | **Description** | 胸部深度RGB图像 |
 | **Note** | 胸部深度相机的RGB图像源数据 |
 
-### 27. `compressed`
+### 27. `realsense_up/depth/image_rect_raw/compressed`
 
 | 字段 | 值 |
 |------|-----|

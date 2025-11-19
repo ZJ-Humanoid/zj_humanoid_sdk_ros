@@ -67,11 +67,14 @@ class VitePressDocGenerator:
             # 提取类型名称的最后部分作为锚点（去掉命名空间前缀）
             # 例如：audio/LLMChat -> LLMChat
             type_anchor = type_name.split('/')[-1] if '/' in type_name else type_name
-            # 生成链接：从 docs/api/subsystems/xxx.md 到 docs/zj_humanoid_types.md
-            # 使用相对路径 ../../zj_humanoid_types（向上两级到 docs/，然后 zj_humanoid_types）
-            # VitePress 的锚点格式：对于标题 `#### `LLMChat``，锚点通常是 `#LLMChat`（保持原样）
-            # 但 VitePress 也可能转换为小写，所以先尝试原始格式
-            return f"[{type_name}](../../zj_humanoid_types#{type_anchor})"
+            # VitePress 的锚点格式：对于标题 `#### `BatteryInfo``，锚点通常是全部小写
+            # 例如：BatteryInfo -> #batteryinfo
+            # 但 VitePress 也可能保持原样，所以先尝试小写格式
+            type_anchor_lower = type_anchor.lower()
+            # 生成链接：在 VitePress 中，跨文档链接应使用绝对路径（相对于 base）
+            # base 是 /navi_sdk_documents/，所以绝对路径是 /zj_humanoid_types
+            # 使用绝对路径确保在不同页面都能正确跳转
+            return f"[{type_name}](../zj_humanoid_types#{type_anchor_lower})"
         else:
             # 标准库类型或其他类型，不添加链接，直接返回类型名称
             return type_name
@@ -141,7 +144,7 @@ class VitePressDocGenerator:
                     # 使用组件嵌套子系统文档的Services部分
                     icon = self.SUBSYSTEM_ICONS.get(subsystem, '📦')
                     f.write(f"### {icon} {subsystem.upper()} ({len(services)} services) {{#{subsystem.lower()}-services}}\n\n")
-                    f.write(f"<MarkdownInclude src=\"subsystems/{subsystem}.md\" :skip-frontmatter=\"true\" :skip-title=\"true\" section=\"services\" />\n\n")
+                    f.write(f"<MarkdownInclude src=\"api/{subsystem}.md\" :skip-frontmatter=\"true\" :skip-title=\"true\" section=\"services\" />\n\n")
                     
                     # 只在子系统之间添加分隔线，最后一个不添加
                     if subsystem_idx < len(services_data) - 1:
@@ -163,7 +166,7 @@ class VitePressDocGenerator:
                     # 使用组件嵌套子系统文档的Topics部分
                     icon = self.SUBSYSTEM_ICONS.get(subsystem, '📡')
                     f.write(f"### {icon} {subsystem.upper()} ({len(topics)} topics) {{#{subsystem.lower()}-topics}}\n\n")
-                    f.write(f"<MarkdownInclude src=\"subsystems/{subsystem}.md\" :skip-frontmatter=\"true\" :skip-title=\"true\" section=\"topics\" />\n\n")
+                    f.write(f"<MarkdownInclude src=\"api/{subsystem}.md\" :skip-frontmatter=\"true\" :skip-title=\"true\" section=\"topics\" />\n\n")
                     
                     # 只在子系统之间添加分隔线，最后一个不添加
                     if subsystem_idx < len(topics_data) - 1:
@@ -176,8 +179,9 @@ class VitePressDocGenerator:
         services_data = self.data.get('services', {})
         topics_data = self.data.get('topics', {})
         
-        # Create subsystem directory
-        subsystem_dir = self.output_dir / 'subsystems'
+        # 子系统文件直接输出到 api 目录（不再使用 subsystems 子目录）
+        # subsystem_dir 就是 self.output_dir（即 api 目录）
+        subsystem_dir = self.output_dir
         subsystem_dir.mkdir(exist_ok=True)
         
         # Get all subsystems
@@ -277,8 +281,15 @@ markmap:
                     f.write(f"## 📦 Services ({len(services)})\n\n")
                     for idx, service in enumerate(services, 1):
                         name = service.get('name', '')
-                        # 提取服务名称的最后部分（去掉 /zj_humanoid/{subsystem}/ 前缀）
-                        short_name = name.split('/')[-1] if '/' in name else name
+                        # 去掉前两级目录（/zj_humanoid/{subsystem}/），保留后续部分
+                        # 例如：/zj_humanoid/hand/finger_pressures/left/zero -> finger_pressures/left/zero
+                        parts = [p for p in name.split('/') if p]  # 移除空字符串
+                        if len(parts) >= 3:
+                            # 去掉前两个部分（zj_humanoid 和子系统名），保留剩余部分
+                            short_name = '/'.join(parts[2:])
+                        else:
+                            # 如果路径太短，只保留最后一部分
+                            short_name = parts[-1] if parts else name
                         srv_type = service.get('type', '')
                         description = self.escape_markdown(service.get('description', ''))
                         note = self.escape_markdown(service.get('note', ''))
@@ -298,8 +309,15 @@ markmap:
                     f.write(f"## 📡 Topics ({len(topics)})\n\n")
                     for idx, topic in enumerate(topics, 1):
                         name = topic.get('name', '')
-                        # 提取话题名称的最后部分（去掉 /zj_humanoid/{subsystem}/ 前缀）
-                        short_name = name.split('/')[-1] if '/' in name else name
+                        # 去掉前两级目录（/zj_humanoid/{subsystem}/），保留后续部分
+                        # 例如：/zj_humanoid/hand/finger_pressures/left -> finger_pressures/left
+                        parts = [p for p in name.split('/') if p]  # 移除空字符串
+                        if len(parts) >= 3:
+                            # 去掉前两个部分（zj_humanoid 和子系统名），保留剩余部分
+                            short_name = '/'.join(parts[2:])
+                        else:
+                            # 如果路径太短，只保留最后一部分
+                            short_name = parts[-1] if parts else name
                         msg_type = topic.get('type', '')
                         direction = topic.get('direction', '')
                         description = self.escape_markdown(topic.get('description', ''))

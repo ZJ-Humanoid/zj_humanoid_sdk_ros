@@ -58,6 +58,9 @@
 ##### 轮臂型外设接口
 ![轮臂外设接口](images/device_port_wa.png)
 
+##### 轮臂型网络拓扑
+![轮臂外设接口](images/device_port_wa_net.png)
+
 #### 使用机器人AP热点
 对于不方便接USB键鼠和HDMI屏幕的场景，也可以通过连接机器人自身的AP热点来配置机器人的网络；
 机器人大脑默认的AP名称前缀为nav01ap的Wi-Fi，此Wi-Fi就是机器人大脑的AP热点，密码为88888888。
@@ -69,9 +72,20 @@
 - 登入到demos容器：
     - 在Linux终端内，支持使用docker exec -it navi_project-demos-1 bash
     - 外部终端，可通过ssh协议登入demos，指令：ssh root@ip -p 2222，密码：naviai@2025
-  
+
 ### 开发
 对于开发者，需要机器人完成更复杂任务时，我们提供了ROS开发以及基于ROS API的HOS图形化编程； ROS API列表参考下一章节；
+
+#### 开发环境配置
+在[开发环境](#开发环境)中安装[zj_humanoid_types_25_R3.run](../types_package/zj_humanoid_types_25_R3.run)，就可以使用我们机器人api的数据结构了； 数据结构内容，请查阅：[zj_humanoid_types](./zj_humanoid_types)
+```
+Help:
+  ./zj_humanoid_types_25_R3.run                      # Install all .deb files in the current directory
+  ./zj_humanoid_types_25_R3.run -- --uninstall       # Uninstall all .deb files in the current directory
+  ./zj_humanoid_types_25_R3.run -- --version         # Show verison
+  ./zj_humanoid_types_25_R3.run -- --changelog       # Show changelog
+  ./zj_humanoid_types_25_R3.run -- --help            # Show the help info
+```
 #### ROS Python/C++
 我们提供了标准的ROS编程环境，帮助开发者快速的启动开发；demos可参考[demos](./demos/Combined_Example)
     

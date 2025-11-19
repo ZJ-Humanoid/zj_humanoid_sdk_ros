@@ -36,7 +36,7 @@ markmap:
 | 字段 | 值 |
 |------|-----|
 | **Service Name** | /zj_humanoid/manipulation/camera_calibration |
-| **Type** | [manipulation/CameraCalibration](../../zj_humanoid_types#CameraCalibration) |
+| **Type** | [manipulation/CameraCalibration](../zj_humanoid_types#cameracalibration) |
 | **Description** | 相机内外参标定 |
 | **Note** | 自动相机内外参标定，外参标定时机器人会执行一段轨迹，拍摄不同角度的照片，从而计算外参 |
 
@@ -45,7 +45,7 @@ markmap:
 | 字段 | 值 |
 |------|-----|
 | **Service Name** | /zj_humanoid/manipulation/execute_pick_task |
-| **Type** | [manipulation/ExecutePickTask](../../zj_humanoid_types#ExecutePickTask) |
+| **Type** | [manipulation/ExecutePickTask](../zj_humanoid_types#executepicktask) |
 | **Description** | 执行抓取服务 |
 | **Note** | 输出物品名称执行抓取服务 |
 
@@ -54,7 +54,7 @@ markmap:
 | 字段 | 值 |
 |------|-----|
 | **Service Name** | /zj_humanoid/manipulation/grasp_teach_service |
-| **Type** | [manipulation/GraspTeach](../../zj_humanoid_types#GraspTeach) |
+| **Type** | [manipulation/GraspTeach](../zj_humanoid_types#graspteach) |
 | **Description** | 视觉抓取示教 |
 | **Note** | 视觉示教抓取，让机器人知道该从什么方位抓取物品 |
 
@@ -63,7 +63,7 @@ markmap:
 | 字段 | 值 |
 |------|-----|
 | **Service Name** | /zj_humanoid/manipulation/joint_space_trajectory_planner |
-| **Type** | [manipulation/GetTrajectory](../../zj_humanoid_types#GetTrajectory) |
+| **Type** | [manipulation/GetTrajectory](../zj_humanoid_types#gettrajectory) |
 | **Description** | 关节空间轨迹规划 |
 | **Note** | 节空间轨迹规划，输出关节轨迹，示教模式下记录各个关节数据，据此生成完整的执行轨迹 |
 
@@ -72,7 +72,7 @@ markmap:
 | 字段 | 值 |
 |------|-----|
 | **Service Name** | /zj_humanoid/manipulation/pose_estimation_service |
-| **Type** | [manipulation/PoseEst](../../zj_humanoid_types#PoseEst) |
+| **Type** | [manipulation/PoseEst](../zj_humanoid_types#poseest) |
 | **Description** | 获取目标位姿 |
 | **Note** | 输入图像获取指定物品的6D位姿 |
 
@@ -81,7 +81,7 @@ markmap:
 | 字段 | 值 |
 |------|-----|
 | **Service Name** | /zj_humanoid/manipulation/pose_space_trajectory_planner |
-| **Type** | [manipulation/MotionPlan](../../zj_humanoid_types#MotionPlan) |
+| **Type** | [manipulation/MotionPlan](../zj_humanoid_types#motionplan) |
 | **Description** | 末端轨迹规划 |
 | **Note** | 末端空间轨迹规划，示教模式下记录各个末端执行器数据，据此生成完整的执行轨迹 |
 
@@ -90,7 +90,7 @@ markmap:
 | 字段 | 值 |
 |------|-----|
 | **Service Name** | /zj_humanoid/manipulation/scene_update |
-| **Type** | [manipulation/SceneUpdate](../../zj_humanoid_types#SceneUpdate) |
+| **Type** | [manipulation/SceneUpdate](../zj_humanoid_types#sceneupdate) |
 | **Description** | 场景更新 |
 | **Note** | 机器人场景更新,基于二维码，需要场景中有二维码，机器人抓取物品前的环境感知 |
 

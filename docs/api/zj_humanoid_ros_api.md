@@ -51,49 +51,49 @@ version: v1.0.0
 
 ### 🔊 AUDIO (10 services) {#audio-services}
 
-<MarkdownInclude src="subsystems/audio.md" :skip-frontmatter="true" :skip-title="true" section="services" />
+<MarkdownInclude src="api/audio.md" :skip-frontmatter="true" :skip-title="true" section="services" />
 
 <div style='margin: 2rem 0; border-top: 2px solid var(--vp-c-divider);'></div>
 
 ### 🖐️ HAND (11 services) {#hand-services}
 
-<MarkdownInclude src="subsystems/hand.md" :skip-frontmatter="true" :skip-title="true" section="services" />
+<MarkdownInclude src="api/hand.md" :skip-frontmatter="true" :skip-title="true" section="services" />
 
 <div style='margin: 2rem 0; border-top: 2px solid var(--vp-c-divider);'></div>
 
 ### 🦵 LOWERLIMB (1 services) {#lowerlimb-services}
 
-<MarkdownInclude src="subsystems/lowerlimb.md" :skip-frontmatter="true" :skip-title="true" section="services" />
+<MarkdownInclude src="api/lowerlimb.md" :skip-frontmatter="true" :skip-title="true" section="services" />
 
 <div style='margin: 2rem 0; border-top: 2px solid var(--vp-c-divider);'></div>
 
 ### 🔧 MANIPULATION (8 services) {#manipulation-services}
 
-<MarkdownInclude src="subsystems/manipulation.md" :skip-frontmatter="true" :skip-title="true" section="services" />
+<MarkdownInclude src="api/manipulation.md" :skip-frontmatter="true" :skip-title="true" section="services" />
 
 <div style='margin: 2rem 0; border-top: 2px solid var(--vp-c-divider);'></div>
 
 ### 🧭 NAVIGATION (1 services) {#navigation-services}
 
-<MarkdownInclude src="subsystems/navigation.md" :skip-frontmatter="true" :skip-title="true" section="services" />
+<MarkdownInclude src="api/navigation.md" :skip-frontmatter="true" :skip-title="true" section="services" />
 
 <div style='margin: 2rem 0; border-top: 2px solid var(--vp-c-divider);'></div>
 
 ### 🤖 ROBOT (12 services) {#robot-services}
 
-<MarkdownInclude src="subsystems/robot.md" :skip-frontmatter="true" :skip-title="true" section="services" />
+<MarkdownInclude src="api/robot.md" :skip-frontmatter="true" :skip-title="true" section="services" />
 
 <div style='margin: 2rem 0; border-top: 2px solid var(--vp-c-divider);'></div>
 
 ### 📷 SENSOR (4 services) {#sensor-services}
 
-<MarkdownInclude src="subsystems/sensor.md" :skip-frontmatter="true" :skip-title="true" section="services" />
+<MarkdownInclude src="api/sensor.md" :skip-frontmatter="true" :skip-title="true" section="services" />
 
 <div style='margin: 2rem 0; border-top: 2px solid var(--vp-c-divider);'></div>
 
 ### 🦾 UPPERLIMB (39 services) {#upperlimb-services}
 
-<MarkdownInclude src="subsystems/upperlimb.md" :skip-frontmatter="true" :skip-title="true" section="services" />
+<MarkdownInclude src="api/upperlimb.md" :skip-frontmatter="true" :skip-title="true" section="services" />
 
 
 <div style='margin: 3rem 0; padding: 2rem 0; border-top: 3px solid var(--vp-c-brand-1);'></div>
@@ -104,41 +104,41 @@ version: v1.0.0
 
 ### 🔊 AUDIO (4 topics) {#audio-topics}
 
-<MarkdownInclude src="subsystems/audio.md" :skip-frontmatter="true" :skip-title="true" section="topics" />
+<MarkdownInclude src="api/audio.md" :skip-frontmatter="true" :skip-title="true" section="topics" />
 
 <div style='margin: 2rem 0; border-top: 2px solid var(--vp-c-divider);'></div>
 
 ### 🖐️ HAND (5 topics) {#hand-topics}
 
-<MarkdownInclude src="subsystems/hand.md" :skip-frontmatter="true" :skip-title="true" section="topics" />
+<MarkdownInclude src="api/hand.md" :skip-frontmatter="true" :skip-title="true" section="topics" />
 
 <div style='margin: 2rem 0; border-top: 2px solid var(--vp-c-divider);'></div>
 
 ### 🦵 LOWERLIMB (9 topics) {#lowerlimb-topics}
 
-<MarkdownInclude src="subsystems/lowerlimb.md" :skip-frontmatter="true" :skip-title="true" section="topics" />
+<MarkdownInclude src="api/lowerlimb.md" :skip-frontmatter="true" :skip-title="true" section="topics" />
 
 <div style='margin: 2rem 0; border-top: 2px solid var(--vp-c-divider);'></div>
 
 ### 🧭 NAVIGATION (5 topics) {#navigation-topics}
 
-<MarkdownInclude src="subsystems/navigation.md" :skip-frontmatter="true" :skip-title="true" section="topics" />
+<MarkdownInclude src="api/navigation.md" :skip-frontmatter="true" :skip-title="true" section="topics" />
 
 <div style='margin: 2rem 0; border-top: 2px solid var(--vp-c-divider);'></div>
 
 ### 🤖 ROBOT (10 topics) {#robot-topics}
 
-<MarkdownInclude src="subsystems/robot.md" :skip-frontmatter="true" :skip-title="true" section="topics" />
+<MarkdownInclude src="api/robot.md" :skip-frontmatter="true" :skip-title="true" section="topics" />
 
 <div style='margin: 2rem 0; border-top: 2px solid var(--vp-c-divider);'></div>
 
 ### 📷 SENSOR (27 topics) {#sensor-topics}
 
-<MarkdownInclude src="subsystems/sensor.md" :skip-frontmatter="true" :skip-title="true" section="topics" />
+<MarkdownInclude src="api/sensor.md" :skip-frontmatter="true" :skip-title="true" section="topics" />
 
 <div style='margin: 2rem 0; border-top: 2px solid var(--vp-c-divider);'></div>
 
 ### 🦾 UPPERLIMB (23 topics) {#upperlimb-topics}
 
-<MarkdownInclude src="subsystems/upperlimb.md" :skip-frontmatter="true" :skip-title="true" section="topics" />
+<MarkdownInclude src="api/upperlimb.md" :skip-frontmatter="true" :skip-title="true" section="topics" />
 

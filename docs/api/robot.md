@@ -60,7 +60,7 @@ markmap:
 | **Description** | 机器人基础信息 |
 | **Note** | 描述下机器人的基础信息 回复应包含机器人的型号，硬件版本号，软件版本号，IP地址 |
 
-### 2. `media_play`
+### 2. `face_show/media_play`
 
 | 字段 | 值 |
 |------|-----|
@@ -69,7 +69,7 @@ markmap:
 | **Description** | 脸部显示视频 |
 | **Note** | 机器人脸部屏幕显示,播放视频或图像文件，如播放“Hello_World.mp4” |
 
-### 3. `text_show`
+### 3. `face_show/text_show`
 
 | 字段 | 值 |
 |------|-----|
@@ -78,7 +78,7 @@ markmap:
 | **Description** | 脸部显示文字 |
 | **Note** | 机器人脸部屏幕显示文字，支持指令显示“Hello World” |
 
-### 4. `set_zero`
+### 4. `joint_motor/set_zero`
 
 | 字段 | 值 |
 |------|-----|
@@ -87,7 +87,7 @@ markmap:
 | **Description** | 电机自动标零 |
 | **Note** | 机器人关节自动标零 |
 
-### 5. `connect_wifi`
+### 5. `orin_states/connect_wifi`
 
 | 字段 | 值 |
 |------|-----|
@@ -96,7 +96,7 @@ markmap:
 | **Description** | orin连接wifi |
 | **Note** | 尝试让机器人大脑orin去连接wifi热点 |
 
-### 6. `wifi_list`
+### 6. `orin_states/wifi_list`
 
 | 字段 | 值 |
 |------|-----|
@@ -105,7 +105,7 @@ markmap:
 | **Description** | orin_wifi列表 |
 | **Note** | 获取机器人大脑检测到的wifi热点名称，当前机器人大脑检测到多少个wifi信号 回复应大于1 |
 
-### 7. `connect_wifi`
+### 7. `pico_states/connect_wifi`
 
 | 字段 | 值 |
 |------|-----|
@@ -114,7 +114,7 @@ markmap:
 | **Description** | pico连接wifi |
 | **Note** | 尝试让机器人小脑pico去连接wifi热点 |
 
-### 8. `wifi_list`
+### 8. `pico_states/wifi_list`
 
 | 字段 | 值 |
 |------|-----|
@@ -123,7 +123,7 @@ markmap:
 | **Description** | pico_wifi列表 |
 | **Note** | 获取机器人小脑检测到的wifi热点名称，当前机器人小脑检测到多少个wifi信号 回复应大于1 |
 
-### 9. `OFF`
+### 9. `set_robot_state/OFF`
 
 | 字段 | 值 |
 |------|-----|
@@ -132,7 +132,7 @@ markmap:
 | **Description** | 机器人关机 |
 | **Note** | 将机器人关机 3秒后，大小脑关机，之后后没法检测到机器人建立ros链接 |
 
-### 10. `restart`
+### 10. `set_robot_state/restart`
 
 | 字段 | 值 |
 |------|-----|
@@ -141,7 +141,7 @@ markmap:
 | **Description** | 状态机重启 |
 | **Note** | 机器人先进stop软急停状态，再自动变为RUN启动运行，在某些故障状态可以执行，但如果有异常的存在，也可能会失败，将机器人状态机重启 持续检测robot_state话题，经过最长60秒钟的等待，状态应切换为：RUN |
 
-### 11. `run`
+### 11. `set_robot_state/run`
 
 | 字段 | 值 |
 |------|-----|
@@ -150,7 +150,7 @@ markmap:
 | **Description** | 状态机运行 |
 | **Note** | 如果机器人处于非RUN状态，尝试将机器人状态值设置为RUN，但如果有异常的存在，也可能会失败，将机器人状态设置为RUN 持续检测robot_state话题，经过最长60秒钟的等待，状态应切换为：RUN |
 
-### 12. `stop`
+### 12. `set_robot_state/stop`
 
 | 字段 | 值 |
 |------|-----|
@@ -171,7 +171,7 @@ markmap:
 | **Description** | 电池相关信息 |
 | **Note** | 电池BMS相关信息，机器人当前电量还剩多少 回复值应为1~100% |
 
-### 2. `errors`
+### 2. `joint_motor/errors`
 
 | 字段 | 值 |
 |------|-----|
@@ -181,7 +181,7 @@ markmap:
 | **Description** | 关节电机错误信息 |
 | **Note** | 机器人关节电机错误信息，机器人关节是否有错误发生 回复应包含：没有 |
 
-### 3. `temperatures`
+### 3. `joint_motor/temperatures`
 
 | 字段 | 值 |
 |------|-----|
@@ -201,7 +201,7 @@ markmap:
 | **Description** | 运行状态检测 |
 | **Note** | 机器人内部软件和算法模块运行状态检测, 包含上肢，灵巧手，遥控器，下肢，四目相机，深度相机，定位模块，导航模块，语音模块等 |
 
-### 5. `errors`
+### 5. `orin_states/errors`
 
 | 字段 | 值 |
 |------|-----|
@@ -211,7 +211,7 @@ markmap:
 | **Description** | orin错误汇总 |
 | **Note** | 机器人大脑orin错误汇总，包括over_temp,over_cpu,over_mem,over_disk等，机器人大脑模块是否有错误发生 回复应包含：没有 |
 
-### 6. `resource`
+### 6. `orin_states/resource`
 
 | 字段 | 值 |
 |------|-----|
@@ -221,7 +221,7 @@ markmap:
 | **Description** | orin资源统计 |
 | **Note** | 机器人大脑的资源状态 回复应包含：大脑的cpu,温度，内存，硬盘的用量 |
 
-### 7. `errors`
+### 7. `pico_states/errors`
 
 | 字段 | 值 |
 |------|-----|
@@ -231,7 +231,7 @@ markmap:
 | **Description** | pico错误汇总 |
 | **Note** | 机器人小脑pico错误汇总，包括over_temp,over_cpu,over_mem,over_disk等，机器人小脑模块是否有错误发生 回复应包含：没有 |
 
-### 8. `resource`
+### 8. `pico_states/resource`
 
 | 字段 | 值 |
 |------|-----|

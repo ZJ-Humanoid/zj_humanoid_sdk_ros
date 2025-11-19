@@ -45,7 +45,7 @@ markmap:
 | 字段 | 值 |
 |------|-----|
 | **Service Name** | /zj_humanoid/audio/LLM_chat |
-| **Type** | [audio/LLMChat](../../zj_humanoid_types#LLMChat) |
+| **Type** | [audio/LLMChat](../zj_humanoid_types#llmchat) |
 | **Description** | LLM对话服务 |
 | **Note** | 语音模块的版本号是多少 |
 
@@ -54,61 +54,61 @@ markmap:
 | 字段 | 值 |
 |------|-----|
 | **Service Name** | /zj_humanoid/audio/media_play |
-| **Type** | [audio/MediaPlay](../../zj_humanoid_types#MediaPlay) |
+| **Type** | [audio/MediaPlay](../zj_humanoid_types#mediaplay) |
 | **Description** | 音频文件播放 |
 | **Note** | 播放'公司介绍.mp3' |
 
-### 3. `get_devices_list`
+### 3. `microphone/get_devices_list`
 
 | 字段 | 值 |
 |------|-----|
 | **Service Name** | /zj_humanoid/audio/microphone/get_devices_list |
-| **Type** | [audio/GetDeviceList](../../zj_humanoid_types#GetDeviceList) |
+| **Type** | [audio/GetDeviceList](../zj_humanoid_types#getdevicelist) |
 | **Description** | 麦克风列表 |
 | **Note** | 检查当前有多少个麦克风设备 回复数量应大于1 |
 
-### 4. `select_device`
+### 4. `microphone/select_device`
 
 | 字段 | 值 |
 |------|-----|
 | **Service Name** | /zj_humanoid/audio/microphone/select_device |
-| **Type** | [audio/SetDevice](../../zj_humanoid_types#SetDevice) |
+| **Type** | [audio/SetDevice](../zj_humanoid_types#setdevice) |
 | **Description** | 选中麦克风 |
 | **Note** | 选择第一个麦克风 |
 
-### 5. `get_devices_list`
+### 5. `speaker/get_devices_list`
 
 | 字段 | 值 |
 |------|-----|
 | **Service Name** | /zj_humanoid/audio/speaker/get_devices_list |
-| **Type** | [audio/GetDeviceList](../../zj_humanoid_types#GetDeviceList) |
+| **Type** | [audio/GetDeviceList](../zj_humanoid_types#getdevicelist) |
 | **Description** | 获取播放设备 |
 | **Note** | 检查当前有多少个喇叭设备 回复数量应大于1 |
 
-### 6. `get_volume`
+### 6. `speaker/get_volume`
 
 | 字段 | 值 |
 |------|-----|
 | **Service Name** | /zj_humanoid/audio/speaker/get_volume |
-| **Type** | [audio/GetVolume](../../zj_humanoid_types#GetVolume) |
+| **Type** | [audio/GetVolume](../zj_humanoid_types#getvolume) |
 | **Description** | 获取当前音量 |
 | **Note** | 获取当前的系统音量大小 应回复音量0~100 |
 
-### 7. `select_device`
+### 7. `speaker/select_device`
 
 | 字段 | 值 |
 |------|-----|
 | **Service Name** | /zj_humanoid/audio/speaker/select_device |
-| **Type** | [audio/SetDevice](../../zj_humanoid_types#SetDevice) |
+| **Type** | [audio/SetDevice](../zj_humanoid_types#setdevice) |
 | **Description** | 选中生效喇叭 |
 | **Note** | 选择第一个喇叭 |
 
-### 8. `set_volume`
+### 8. `speaker/set_volume`
 
 | 字段 | 值 |
 |------|-----|
 | **Service Name** | /zj_humanoid/audio/speaker/set_volume |
-| **Type** | [audio/SetVolume](../../zj_humanoid_types#SetVolume) |
+| **Type** | [audio/SetVolume](../zj_humanoid_types#setvolume) |
 | **Description** | 设置音量大小 |
 | **Note** | 设置音量为50 |
 
@@ -117,7 +117,7 @@ markmap:
 | 字段 | 值 |
 |------|-----|
 | **Service Name** | /zj_humanoid/audio/tts_service |
-| **Type** | [audio/TTS](../../zj_humanoid_types#TTS) |
+| **Type** | [audio/TTS](../zj_humanoid_types#tts) |
 | **Description** | 文字转语音 |
 | **Note** | 请让机器人说'hello world' |
 
@@ -146,7 +146,7 @@ markmap:
 | 字段 | 值 |
 |------|-----|
 | **Topic Name** | /zj_humanoid/audio/audio_data |
-| **Type** | [audio/AudioData](../../zj_humanoid_types#AudioData) |
+| **Type** | [audio/AudioData](../zj_humanoid_types#audiodata) |
 | **Direction** | 📤 Publish |
 | **Description** | 音频流数据 |
 | **Note** | 麦克风收音后的音频数据流 |

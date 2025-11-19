@@ -45,7 +45,7 @@ markmap:
 
 ## 📦 Services (11)
 
-### 1. `zero`
+### 1. `finger_pressures/left/zero`
 
 | 字段 | 值 |
 |------|-----|
@@ -54,57 +54,57 @@ markmap:
 | **Description** | 置零手指传感器 |
 | **Note** | 置零压力传感器数值 |
 
-### 2. `dual`
+### 2. `gesture_switch/dual`
 
 | 字段 | 值 |
 |------|-----|
 | **Service Name** | /zj_humanoid/hand/gesture_switch/dual |
-| **Type** | [hand/Gesture](../../zj_humanoid_types#Gesture) |
+| **Type** | [hand/Gesture](../zj_humanoid_types#gesture) |
 | **Description** | 双手手势切换 |
 
-### 3. `left`
+### 3. `gesture_switch/left`
 
 | 字段 | 值 |
 |------|-----|
 | **Service Name** | /zj_humanoid/hand/gesture_switch/left |
-| **Type** | [hand/Gesture](../../zj_humanoid_types#Gesture) |
+| **Type** | [hand/Gesture](../zj_humanoid_types#gesture) |
 | **Description** | 左手手势切换 |
 
-### 4. `right`
+### 4. `gesture_switch/right`
 
 | 字段 | 值 |
 |------|-----|
 | **Service Name** | /zj_humanoid/hand/gesture_switch/right |
-| **Type** | [hand/Gesture](../../zj_humanoid_types#Gesture) |
+| **Type** | [hand/Gesture](../zj_humanoid_types#gesture) |
 | **Description** | 右手手势切换 |
 
-### 5. `dual`
+### 5. `joint_switch/dual`
 
 | 字段 | 值 |
 |------|-----|
 | **Service Name** | /zj_humanoid/hand/joint_switch/dual |
-| **Type** | [hand/HandJoint](../../zj_humanoid_types#HandJoint) |
+| **Type** | [hand/HandJoint](../zj_humanoid_types#handjoint) |
 | **Description** | 双手手掌关节运动 |
 
-### 6. `left`
+### 6. `joint_switch/left`
 
 | 字段 | 值 |
 |------|-----|
 | **Service Name** | /zj_humanoid/hand/joint_switch/left |
-| **Type** | [hand/HandJoint](../../zj_humanoid_types#HandJoint) |
+| **Type** | [hand/HandJoint](../zj_humanoid_types#handjoint) |
 | **Description** | 左手手掌关节运动 |
 | **Note** | 左手食指弯曲40度 订阅/hand_joint_states左手食指数值应接近40度 |
 
-### 7. `right`
+### 7. `joint_switch/right`
 
 | 字段 | 值 |
 |------|-----|
 | **Service Name** | /zj_humanoid/hand/joint_switch/right |
-| **Type** | [hand/HandJoint](../../zj_humanoid_types#HandJoint) |
+| **Type** | [hand/HandJoint](../zj_humanoid_types#handjoint) |
 | **Description** | 右手手掌关节运动 |
 | **Note** | 右手食指弯曲40度 订阅/hand_joint_states左手食指数值应接近40度 |
 
-### 8. `left`
+### 8. `task_switch/left`
 
 | 字段 | 值 |
 |------|-----|
@@ -112,7 +112,7 @@ markmap:
 | **Type** | std_srvs/Bool |
 | **Description** | 左手掌任务控制 |
 
-### 9. `right`
+### 9. `task_switch/right`
 
 | 字段 | 值 |
 |------|-----|
@@ -129,7 +129,7 @@ markmap:
 | **Description** | 灵巧手版本号 |
 | **Note** | 查询当前灵巧手子系统的版本号 |
 
-### 11. `zero`
+### 11. `wrist_force_sensor/left/zero`
 
 | 字段 | 值 |
 |------|-----|
@@ -140,22 +140,22 @@ markmap:
 
 ## 📡 Topics (5)
 
-### 1. `left`
+### 1. `finger_pressures/left`
 
 | 字段 | 值 |
 |------|-----|
 | **Topic Name** | /zj_humanoid/hand/finger_pressures/left |
-| **Type** | [hand/PressureSensor](../../zj_humanoid_types#PressureSensor) |
+| **Type** | [hand/PressureSensor](../zj_humanoid_types#pressuresensor) |
 | **Direction** | 📤 Publish |
 | **Description** | 左手压力传感器 |
 | **Note** | 当前左手压力传感器数值 |
 
-### 2. `right`
+### 2. `finger_pressures/right`
 
 | 字段 | 值 |
 |------|-----|
 | **Topic Name** | /zj_humanoid/hand/finger_pressures/right |
-| **Type** | [hand/PressureSensor](../../zj_humanoid_types#PressureSensor) |
+| **Type** | [hand/PressureSensor](../zj_humanoid_types#pressuresensor) |
 | **Direction** | 📤 Publish |
 | **Description** | 右手压力传感器数据 |
 | **Note** | 当前右手压力传感器数值 |
@@ -170,7 +170,7 @@ markmap:
 | **Description** | 手部关节状态 |
 | **Note** | 当前左手食指的角度是多少 应回复0-80度之间 |
 
-### 4. `left`
+### 4. `wrist_force_sensor/left`
 
 | 字段 | 值 |
 |------|-----|
@@ -180,7 +180,7 @@ markmap:
 | **Description** | 右手腕部传感器值 |
 | **Note** | 当前左手腕部的检测到多少力 应回复0牛顿 |
 
-### 5. `right`
+### 5. `wrist_force_sensor/right`
 
 | 字段 | 值 |
 |------|-----|

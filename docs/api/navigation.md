@@ -45,7 +45,7 @@ markmap:
 | 字段 | 值 |
 |------|-----|
 | **Topic Name** | /zj_humanoid/navigation/local_map |
-| **Type** | [navigation/LocalMap](../../zj_humanoid_types#LocalMap) |
+| **Type** | [navigation/LocalMap](../zj_humanoid_types#localmap) |
 | **Direction** | 📥 Subscribe |
 | **Description** | 局部障碍物信息 |
 
@@ -64,7 +64,7 @@ markmap:
 | 字段 | 值 |
 |------|-----|
 | **Topic Name** | /zj_humanoid/navigation/navigation_status |
-| **Type** | [navigation/NavigationStatus](../../zj_humanoid_types#NavigationStatus) |
+| **Type** | [navigation/NavigationStatus](../zj_humanoid_types#navigationstatus) |
 | **Direction** | 📥 Subscribe |
 | **Description** | 当前导航状态 |
 | **Note** | 当前导航状态信息 |
@@ -84,7 +84,7 @@ markmap:
 | 字段 | 值 |
 |------|-----|
 | **Topic Name** | /zj_humanoid/navigation/task_info |
-| **Type** | [navigation/TakInfo](../../zj_humanoid_types#TakInfo) |
+| **Type** | [navigation/TakInfo](../zj_humanoid_types#takinfo) |
 | **Direction** | 📤 Publish |
 | **Description** | 发布导航任务 |
 | **Note** | 任务信息，该话题仅发布导航任务，不返回导航的结果 |
