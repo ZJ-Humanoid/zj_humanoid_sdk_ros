@@ -118,16 +118,41 @@ npm run docs:preview
 
 ## 🌐 部署
 
-### GitHub Pages
+### GitHub Pages（自动部署）
 
-1. 构建文档：
-   ```bash
-   npm run docs:build
+项目已配置 GitHub Actions 自动部署，无需手动操作：
+
+1. **自动触发**：当代码推送到 `main` 分支时，GitHub Actions 会自动：
+   - 生成合并的 YAML 文件（运行 `generate_whole_yaml.py`）
+   - 生成 API 文档（运行 `generate_vitepress_docs.py`）
+   - 构建 VitePress 站点
+   - 部署到 GitHub Pages
+
+2. **访问地址**：部署完成后，文档会自动发布到：
+   ```
+   https://zj-humanoid.github.io/zj_humanoid_sdk_ros/
    ```
 
-2. 将 `.vitepress/dist/` 目录内容推送到 `gh-pages` 分支
+### 本地构建
 
-3. 在GitHub仓库设置中启用Pages，选择 `gh-pages` 分支
+如果需要本地构建测试：
+
+```bash
+# 生成合并的 YAML 文件
+cd api_struct/scripts
+python3 generate_whole_yaml.py
+
+# 生成 API 文档
+python3 generate_vitepress_docs.py
+
+# 构建 VitePress 站点
+cd ../../..
+npm run docs:build
+
+# 构建输出在 dist/ 目录
+```
+
+**注意**：构建输出目录是项目根目录的 `dist/` 文件夹，不是 `.vitepress/dist/`。
 
 ### 其他平台
 

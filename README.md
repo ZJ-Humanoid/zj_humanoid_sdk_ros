@@ -5,17 +5,16 @@
 
 ```
 .
-├── types_package                                   # .run包 一键安装所有的msg和srv文件
-│   ├── zj_humanoid_types.md                        # msg和srv说明文档
-│   └── zj_humanoid_types_25_R3.run                 # ros数据结构安装包
-├── docs                                            # 相关文档
+├── docs                                            # 相关文档, 这个文件夹会自动生成github page
 │   ├── images/                                     # 相关图片
+│   ├── zj_humanoid_types.md                        # msg和srv说明文档
 │   └── develop_guides.md                           # Navi机器人SDK开发指南
 ├── api_struct                                      # 相关demo功能包
 │   ├── zj_humanoid/                                # ros api的说明和demos的数据，路径表示service或topic name
 │   ├── generated/                                  # 根据zj_humanoid_interfaces.yaml生成的及其他格式API说明
 │   ├── zj_humanoid_ros_interfaces.md               # ros api的整体集合markdown版本
-│   └── demos_shell_test.sh                         # ros api的测试工具
+│   ├── demos_shell_test.sh                         # ros api的测试工具
+│   └── zj_humanoid_types_25_R3.run                 # ros数据结构安装包
 └── README.md                                       # this file
 ```
 
@@ -33,12 +32,12 @@ graph TD
 ```
 
 ## Navi Robots SDK Develop Guides
-[guides github-pages](https://zj-humanoid.github.io/navi_sdk_documents/)
+[guides github-pages](https://zj-humanoid.github.io/zj_humanoid_sdk_ros/)
 或者 [develop_guides.md](./docs/develop_guides.md)
 
 ## How To Use .run
 在开发环境中安装zj_humanoid_types_25_R3.run，就可以使用我们机器人api的数据结构了；
-数据结构内容，请查阅：[zj_humanoid_types](./types_package/zj_humanoid_types.md)
+数据结构内容，请查阅：[zj_humanoid_types](./docs/zj_humanoid_types.md)
 
 ```
 Help:

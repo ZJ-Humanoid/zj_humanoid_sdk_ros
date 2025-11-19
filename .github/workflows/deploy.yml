@@ -40,6 +40,7 @@ jobs:
       - name: Generate API documentation
         run: |
           cd api_struct/scripts
+          python3 generate_whole_yaml.py
           python3 generate_vitepress_docs.py
 
       - name: Build VitePress

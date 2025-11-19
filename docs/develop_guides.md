@@ -77,7 +77,7 @@
 对于开发者，需要机器人完成更复杂任务时，我们提供了ROS开发以及基于ROS API的HOS图形化编程； ROS API列表参考下一章节；
 
 #### 开发环境配置
-在[开发环境](#开发环境)中安装[zj_humanoid_types_25_R3.run](../types_package/zj_humanoid_types_25_R3.run)，就可以使用我们机器人api的数据结构了； 数据结构内容，请查阅：[zj_humanoid_types](./zj_humanoid_types)
+在[开发环境](#开发环境)中安装<a href="/zj_humanoid_sdk_ros/zj_humanoid_types_25_R3.run" download>zj_humanoid_types_25_R3.run</a>，就可以使用我们机器人api的数据结构了； 数据结构内容，请查阅：[zj_humanoid_types](./zj_humanoid_types)
 ```
 Help:
   ./zj_humanoid_types_25_R3.run                      # Install all .deb files in the current directory

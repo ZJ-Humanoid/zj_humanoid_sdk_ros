@@ -177,7 +177,6 @@ def generate_whole_yaml(base_path, output_file, config_file):
     # 构建输出数据结构（按子系统分组）
     output_data = {
         'metadata': {
-            'generated_at': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
             'description': project_config.get('description', 'ZJ Humanoid ROS1 APIs'),
             'version': project_config.get('version', 'v1.0.0')
         }
