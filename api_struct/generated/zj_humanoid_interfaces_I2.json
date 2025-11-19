@@ -1,6 +1,6 @@
 {
     "metadata": {
-        "generated_at": "2025-11-18 14:47:17",
+        "generated_at": "2025-11-19 13:37:20",
         "description": "ZJ Humanoid ROS1 APIs",
         "version": "v1.0.0"
     },
@@ -8,22 +8,15 @@
         {
             "name": "/zj_humanoid/audio/LLM_chat",
             "description": "LLM对话服务",
-            "type": "audio/LLM_chat",
+            "type": "audio/LLMChat",
             "note": "语音模块的版本号是多少",
-            "demos": []
-        },
-        {
-            "name": "/zj_humanoid/audio/listen",
-            "description": "倾听服务",
-            "type": "audio/Listen",
-            "note": "开始倾听",
             "demos": []
         },
         {
             "name": "/zj_humanoid/audio/media_play",
             "description": "音频文件播放",
             "type": "audio/MediaPlay",
-            "note": "播放’公司介绍.mp3‘",
+            "note": "播放'公司介绍.mp3'",
             "demos": []
         },
         {
@@ -72,7 +65,7 @@
             "name": "/zj_humanoid/audio/tts_service",
             "description": "文字转语音",
             "type": "audio/TTS",
-            "note": "请让机器人说‘hello world‘",
+            "note": "请让机器人说'hello world'",
             "demos": []
         },
         {
@@ -688,12 +681,20 @@
             "demos": []
         },
         {
+            "name": "/zj_humanoid/audio/listen",
+            "description": "唤醒控制",
+            "type": "std_msgs/Bool",
+            "direction": "subscribe",
+            "note": "手动唤醒/关闭唤醒模式，true=唤醒，false=休眠",
+            "demos": []
+        },
+        {
             "name": "/zj_humanoid/audio/listen_state",
             "description": "唤醒倾听状态",
-            "type": "audio/ListenInfo",
+            "type": "std_msgs/Bool",
             "direction": "publish",
             "throttle_rate": 10,
-            "note": "当前是否为倾听状态",
+            "note": "当前是否为倾听状态，true=正在倾听，false=未倾听",
             "demos": []
         },
         {
