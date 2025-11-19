@@ -1,0 +1,7 @@
+﻿topic:
+  name: /zj_humanoid/sensor/realsense_head/color/camera_info
+  description: 头部深度RGB参数
+  type: sensor_msgs/CameraInfo
+  direction: publish
+  throttle_rate: 33.33
+  note: "头部深度相机的参数信息"

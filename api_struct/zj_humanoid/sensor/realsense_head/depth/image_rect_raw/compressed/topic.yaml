@@ -1,0 +1,7 @@
+﻿topic:
+  name: /zj_humanoid/sensor/realsense_head/depth/image_rect_raw/compressed
+  description: 头部深度压缩图
+  type: sensor_msgs/Image
+  direction: publish
+  throttle_rate: 33.33
+  note: "头部深度相机的深度图像JPG格式"

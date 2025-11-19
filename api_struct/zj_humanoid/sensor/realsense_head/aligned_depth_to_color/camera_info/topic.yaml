@@ -1,0 +1,7 @@
+﻿topic:
+  name: /zj_humanoid/sensor/realsense_head/aligned_depth_to_color/camera_info
+  description: 头部深度aligned参数
+  type: sensor_msgs/CameraInfo
+  direction: publish
+  throttle_rate: 33.33
+  note: "头部深度相机的aligned_depth_to_color参数信息"
