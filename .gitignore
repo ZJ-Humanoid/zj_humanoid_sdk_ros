@@ -3,4 +3,3 @@ node_modules
 docs\.vitepress\cache
 docs\.vitepress\dist
 dist
-package-lock.json
