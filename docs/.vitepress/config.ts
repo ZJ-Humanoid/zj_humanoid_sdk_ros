@@ -58,7 +58,7 @@ const isUserOrOrgSite = repositoryName.endsWith('.github.io');
 export default defineConfig({
   title: 'Navi机器人SDK开发指南',
   description: '这是浙江人形机器人Navi系列的SDK和编程指引文档站点。',
-  base: '/navi_sdk_documents/',
+  base: '/zj_humanoid_sdk_ros/',
   outDir: '../dist', // 构建输出到项目根目录的 dist 文件夹
   ignoreDeadLinks: true, // 忽略死链接检查，允许构建继续
 

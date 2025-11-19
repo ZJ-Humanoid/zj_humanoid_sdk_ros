@@ -1,5 +1,5 @@
 # wave_and_say_hello.py程序设计
-> <a href="/navi_sdk_documents/demos/wave_and_say_hello.py" download="wave_and_say_hello.py">wave_and_say_hello.py</a>的执行效果是机器人抬起右臂挥手，在此期间播放语言，然后右臂放下
+> <a href="/zj_humanoid_sdk_ros/demos/wave_and_say_hello.py" download="wave_and_say_hello.py">wave_and_say_hello.py</a>的执行效果是机器人抬起右臂挥手，在此期间播放语言，然后右臂放下
 
 1、开启示教模式（`rosservice call /zj_humanoid/upperlimb/teach_mode/enter "arm_type: 2"`，这里只开启右臂示教）
 
@@ -45,7 +45,7 @@ effort: [-0.5671744998190978, 2.618777306218922, 0.09673953043275081, -0.5577147
 5、执行`python3 wave_and_say_hello.py wave_and_say_hello.yaml`
 
 # right_arm_movej.py程序设计
-><a href="/navi_sdk_documents/demos/right_arm_movej.py" download="right_arm_movej.py">right_arm_movej.py</a>的执行效果是机器人右臂先回到初始位置，然后运动一小段距离
+><a href="/zj_humanoid_sdk_ros/demos/right_arm_movej.py" download="right_arm_movej.py">right_arm_movej.py</a>的执行效果是机器人右臂先回到初始位置，然后运动一小段距离
 
 1、开启示教模式（`rosservice call /zj_humanoid/upperlimb/teach_mode/enter "arm_type: 2"`，这里只开启右臂示教）
 

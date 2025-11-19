@@ -52,7 +52,7 @@ python3 generate_vitepress_docs.py
 npm run docs:dev
 ```
 
-访问 http://localhost:5173/navi_sdk_documents/ 查看文档
+访问 http://localhost:5173/zj_humanoid_sdk_ros/ 查看文档
 
 ### 4. 构建生产版本
 
