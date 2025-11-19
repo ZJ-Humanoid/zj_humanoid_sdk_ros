@@ -9,7 +9,7 @@ description: zj_humanoid 消息类型数据结构导图
 <Markmap :content="basicContent" />
 
 <script setup>
-import basicContentMd from '../types_package/zj_humanoid_types.md?raw'
+import basicContentMd from './zj_humanoid_types.md?raw'
 const frontmatter = `---
 title: markmap
 markmap:
