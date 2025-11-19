@@ -1,6 +1,6 @@
 {
     "metadata": {
-        "generated_at": "2025-11-19 13:37:20",
+        "generated_at": "2025-11-19 16:14:37",
         "description": "ZJ Humanoid ROS1 APIs",
         "version": "v1.0.0"
     },
@@ -1114,7 +1114,7 @@
             "name": "/zj_humanoid/sensor/realsense_up/depth/image_rect_raw",
             "description": "胸部深度RGB图像",
             "type": "sensor_msgs/Image",
-            "direction": "publishs",
+            "direction": "publish",
             "throttle_rate": 33.33,
             "note": "胸部深度相机的RGB图像源数据",
             "demos": []

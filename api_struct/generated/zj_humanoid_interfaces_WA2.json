@@ -1,6 +1,6 @@
 {
     "metadata": {
-        "generated_at": "2025-11-19 13:37:20",
+        "generated_at": "2025-11-19 16:14:37",
         "description": "ZJ Humanoid ROS1 APIs",
         "version": "v1.0.0"
     },
@@ -855,6 +855,87 @@
             "note": "机器人开机后单次工作状态发布，包含已运行时间，剩余工作时间，行进里程数等，描述下机器人本次开机后工作状态 回复因包含：已运行时间，剩余工作时间，行进里程数"
         },
         {
+            "name": "/zj_humanoid/sensor/realsense_head/aligned_depth_to_color/camera_info",
+            "description": "头部深度aligned参数",
+            "type": "sensor_msgs/CameraInfo",
+            "direction": "publish",
+            "throttle_rate": 33.33,
+            "note": "头部深度相机的aligned_depth_to_color参数信息",
+            "demos": []
+        },
+        {
+            "name": "/zj_humanoid/sensor/realsense_head/aligned_depth_to_color/image_raw",
+            "description": "头部深度aligned图像",
+            "type": "sensor_msgs/Image",
+            "direction": "publish",
+            "throttle_rate": 33.33,
+            "note": "头部深度相机的aligned_depth_to_color RGB图像源数据",
+            "demos": []
+        },
+        {
+            "name": "/zj_humanoid/sensor/realsense_head/aligned_depth_to_color/image_raw/compressed",
+            "description": "头部深度aligned压缩图",
+            "type": "sensor_msgs/Image",
+            "direction": "publish",
+            "throttle_rate": 33.33,
+            "note": "头部深度相机的aligned_depth_to_color压缩格式",
+            "demos": []
+        },
+        {
+            "name": "/zj_humanoid/sensor/realsense_head/color/camera_info",
+            "description": "头部深度RGB参数",
+            "type": "sensor_msgs/CameraInfo",
+            "direction": "publish",
+            "throttle_rate": 33.33,
+            "note": "头部深度相机的参数信息",
+            "demos": []
+        },
+        {
+            "name": "/zj_humanoid/sensor/realsense_head/color/image_raw",
+            "description": "头部深度RGB图像",
+            "type": "sensor_msgs/Image",
+            "direction": "publish",
+            "throttle_rate": 33.33,
+            "note": "头部深度相机的RGB图像源数据",
+            "demos": []
+        },
+        {
+            "name": "/zj_humanoid/sensor/realsense_head/color/image_raw/compressed",
+            "description": "头部深度压缩图",
+            "type": "sensor_msgs/Image",
+            "direction": "publish",
+            "throttle_rate": 33.33,
+            "note": "头部深度相机的RGB图像JPG格式",
+            "demos": []
+        },
+        {
+            "name": "/zj_humanoid/sensor/realsense_head/depth/camera_info",
+            "description": "头部相机深度参数",
+            "type": "sensor_msgs/CameraInfo",
+            "direction": "publish",
+            "throttle_rate": 33.33,
+            "note": "头部深度相机的参数信息",
+            "demos": []
+        },
+        {
+            "name": "/zj_humanoid/sensor/realsense_head/depth/image_rect_raw",
+            "description": "头部深度RGB图像",
+            "type": "sensor_msgs/Image",
+            "direction": "publish",
+            "throttle_rate": 33.33,
+            "note": "头部深度相机的深度图像源数据",
+            "demos": []
+        },
+        {
+            "name": "/zj_humanoid/sensor/realsense_head/depth/image_rect_raw/compressed",
+            "description": "头部深度压缩图",
+            "type": "sensor_msgs/Image",
+            "direction": "publish",
+            "throttle_rate": 33.33,
+            "note": "头部深度相机的深度图像JPG格式",
+            "demos": []
+        },
+        {
             "name": "/zj_humanoid/sensor/realsense_up/aligned_depth_to_color/camera_info",
             "description": "胸部深度aligned参数",
             "type": "sensor_msgs/CameraInfo",
@@ -921,7 +1002,7 @@
             "name": "/zj_humanoid/sensor/realsense_up/depth/image_rect_raw",
             "description": "胸部深度RGB图像",
             "type": "sensor_msgs/Image",
-            "direction": "publishs",
+            "direction": "publish",
             "throttle_rate": 33.33,
             "note": "胸部深度相机的RGB图像源数据",
             "demos": []

@@ -2,6 +2,6 @@
   name: /zj_humanoid/sensor/realsense_up/depth/image_rect_raw
   description: 胸部深度RGB图像
   type: sensor_msgs/Image
-  direction: publishs
+  direction: publish
   throttle_rate: 33.33
   note: "胸部深度相机的RGB图像源数据"

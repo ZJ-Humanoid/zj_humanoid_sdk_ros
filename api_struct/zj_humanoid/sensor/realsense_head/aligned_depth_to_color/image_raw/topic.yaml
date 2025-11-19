@@ -1,0 +1,7 @@
+﻿topic:
+  name: /zj_humanoid/sensor/realsense_head/aligned_depth_to_color/image_raw
+  description: 头部深度aligned图像
+  type: sensor_msgs/Image
+  direction: publish
+  throttle_rate: 33.33
+  note: "头部深度相机的aligned_depth_to_color RGB图像源数据"
