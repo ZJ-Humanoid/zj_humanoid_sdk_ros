@@ -1,9 +1,0 @@
-service:
-  name: /zj_humanoid/audio/tts_service
-  description: 文字转语音
-  type: audio/TTS
-  note: "请让机器人说'hello world'"
-  
-# 请求示例数据
-text: ["hello world"]  # 文本数组
-isPlay: true  # 是否播放，true=播放，false=仅生成文件

@@ -1,8 +1,0 @@
-service:
-  name: /zj_humanoid/audio/microphone/get_devices_list
-  description: 麦克风列表
-  type: audio/GetDeviceList
-  note: "检查当前有多少个麦克风设备 回复数量应大于1"
-  
-# 请求示例数据（该服务无请求参数）
-# 响应包含: success, message, status, devicelist[]

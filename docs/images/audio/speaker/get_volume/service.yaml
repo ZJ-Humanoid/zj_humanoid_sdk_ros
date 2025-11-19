@@ -1,8 +1,0 @@
-service:
-  name: /zj_humanoid/audio/speaker/get_volume
-  description: 获取当前音量
-  type: audio/GetVolume
-  note: "获取当前的系统音量大小 应回复音量0~100"
-  
-# 请求示例数据（该服务无请求参数）
-# 响应包含: success, message, status, volume (0-100)

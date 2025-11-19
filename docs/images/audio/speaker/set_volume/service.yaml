@@ -1,8 +1,0 @@
-service:
-  name: /zj_humanoid/audio/speaker/set_volume
-  description: 设置音量大小
-  type: audio/SetVolume
-  note: "设置音量为50"
-  
-# 请求示例数据
-volume: 50  # 音量大小，范围0-100

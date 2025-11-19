@@ -6,13 +6,14 @@
 ```
 .
 ├── docs                                            # 相关文档, 这个文件夹会自动生成github page
+│   ├── .vitepress/                                 # Vuepress 配置文件夹
 │   ├── images/                                     # 相关图片
 │   ├── zj_humanoid_types.md                        # msg和srv说明文档
 │   └── develop_guides.md                           # Navi机器人SDK开发指南
 ├── api_struct                                      # 相关demo功能包
 │   ├── zj_humanoid/                                # ros api的说明和demos的数据，路径表示service或topic name
 │   ├── generated/                                  # 根据zj_humanoid_interfaces.yaml生成的及其他格式API说明
-│   ├── zj_humanoid_ros_interfaces.md               # ros api的整体集合markdown版本
+│   ├── scripts/                                    # ros api转化为其他格式的工具集
 │   ├── demos_shell_test.sh                         # ros api的测试工具
 │   └── zj_humanoid_types_25_R3.run                 # ros数据结构安装包
 └── README.md                                       # this file

@@ -1,8 +1,0 @@
-service:
-  name: /zj_humanoid/audio/microphone/select_device
-  description: 选中麦克风
-  type: audio/SetDevice
-  note: "选择第一个麦克风"
-  
-# 请求示例数据
-name: "Microphone Device Name"  # 设备名称，需要先通过get_devices_list获取

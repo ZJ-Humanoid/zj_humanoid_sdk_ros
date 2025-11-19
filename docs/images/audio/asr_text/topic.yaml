@@ -1,6 +1,0 @@
-﻿topic:
-  name: /zj_humanoid/audio/asr_text
-  description: 语音转文字
-  type: std_msgs/String
-  direction: publish
-  note: "当前机器人听到了什么"

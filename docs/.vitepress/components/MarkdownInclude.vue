@@ -89,8 +89,6 @@ containerTypes.forEach(type => {
 
 // 文件内容映射（在构建时预加载）
 const fileMap = {
-  // 根目录文件
-  'develop_guides.md': () => import('../../develop_guides.md?raw'),
   // API文档
   'api/zj_humanoid_ros_api.md': () => import('../../api/zj_humanoid_ros_api.md?raw'),
   // 子系统文档（完整路径）
