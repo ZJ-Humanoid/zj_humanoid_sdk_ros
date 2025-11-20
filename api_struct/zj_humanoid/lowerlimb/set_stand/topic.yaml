@@ -3,4 +3,4 @@
   description: 站立姿态
   type: std_msgs/Float32
   direction: subscribe
-  note: "站立姿态初始化"
+  note: "双足机器人站立姿态初始化，轮臂机器人暂不适用"

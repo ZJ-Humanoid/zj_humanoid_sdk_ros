@@ -4,4 +4,4 @@
   type: sensor_msgs/JointState
   direction: publish
   throttle_rate: 10
-  note: ""
+  note: "在双足I2机器人中，IMU位于URDF中的base_link，轮臂机器人目前暂不适用该topic"

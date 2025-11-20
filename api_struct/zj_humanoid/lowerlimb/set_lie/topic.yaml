@@ -3,4 +3,4 @@
   description: 下肢泄力
   type: std_msgs/Float32
   direction: subscribe
-  note: "下肢泄力，软急停"
+  note: "双足型号下肢泄力，软急停，轮臂机器人暂不适用"
