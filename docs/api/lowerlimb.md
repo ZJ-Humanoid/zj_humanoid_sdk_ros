@@ -20,13 +20,14 @@ markmap:
 - versions
 ## 📡 Topics (8)
 - body_imu
-- calib
-- joy
-- web
 - debug_info
 - set_lie
 - set_stand
-- start_move`
+- start_move
+- cmd_vel
+  - calib
+  - joy
+  - web`
 </script>
 
 ---
@@ -51,6 +52,7 @@ markmap:
 | **Type** | sensor_msgs/JointState |
 | **Direction** | 📤 Publish |
 | **Description** | 腰部imu值 |
+| **Note** | 在双足I2机器人中，IMU位于URDF中的base_link，轮臂机器人目前暂不适用该topic |
 
 ### 2. `cmd_vel/calib`
 
@@ -60,6 +62,7 @@ markmap:
 | **Type** | geometry_msgs/Twist |
 | **Direction** | 📥 Subscribe |
 | **Description** | 导航控制行走 |
+| **Note** | 在多个cmd_vel topic中，优先级joy > calib > web |
 
 ### 3. `cmd_vel/joy`
 
@@ -69,6 +72,7 @@ markmap:
 | **Type** | geometry_msgs/Twist |
 | **Direction** | 📥 Subscribe |
 | **Description** | 游戏手柄控制行走 |
+| **Note** | 在多个cmd_vel topic中，优先级joy > calib > web |
 
 ### 4. `cmd_vel/web`
 
@@ -78,6 +82,7 @@ markmap:
 | **Type** | geometry_msgs/Twist |
 | **Direction** | 📥 Subscribe |
 | **Description** | 网页控制行走 |
+| **Note** | 在多个cmd_vel topic中，优先级joy > calib > web |
 
 ### 5. `debug_info`
 
@@ -87,7 +92,7 @@ markmap:
 | **Type** | std_msgs/String |
 | **Direction** | 📤 Publish |
 | **Description** | 运控debug信息 |
-| **Note** | 运控debug信息 |
+| **Note** | 双足型号运控debug信息，轮臂机器人暂不适用 |
 
 ### 6. `set_lie`
 
@@ -97,7 +102,7 @@ markmap:
 | **Type** | std_msgs/Float32 |
 | **Direction** | 📥 Subscribe |
 | **Description** | 下肢泄力 |
-| **Note** | 下肢泄力，软急停 |
+| **Note** | 双足型号下肢泄力，软急停，轮臂机器人暂不适用 |
 
 ### 7. `set_stand`
 
@@ -107,7 +112,7 @@ markmap:
 | **Type** | std_msgs/Float32 |
 | **Direction** | 📥 Subscribe |
 | **Description** | 站立姿态 |
-| **Note** | 站立姿态初始化 |
+| **Note** | 双足机器人站立姿态初始化，轮臂机器人暂不适用 |
 
 ### 8. `start_move`
 
@@ -117,5 +122,5 @@ markmap:
 | **Type** | std_msgs/Float32 |
 | **Direction** | 📥 Subscribe |
 | **Description** | 开启运动模式 |
-| **Note** | 开启运动模式，算法开始响应速度控制请求 |
+| **Note** | 双足机器人开启运动模式，算法开始响应速度控制请求，轮臂机器人暂不适用 |
 

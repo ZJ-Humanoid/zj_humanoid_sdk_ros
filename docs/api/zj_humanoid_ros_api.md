@@ -15,9 +15,9 @@ version: v1.0.0
 
 ## 📊 统计信息
 
-- **Services**: 94 个服务
+- **Services**: 92 个服务
 - **Topics**: 96 个话题
-- **总计**: 190 个接口
+- **总计**: 188 个接口
 - **子系统**: 8 个 (services), 7 个 (topics)
 
 ## 📑 目录导航
@@ -26,7 +26,7 @@ version: v1.0.0
 
 **Services (服务):**
 - [🔊 AUDIO](#audio-services) (10 services)
-- [🖐️ HAND](#hand-services) (15 services)
+- [🖐️ HAND](#hand-services) (13 services)
 - [🦵 LOWERLIMB](#lowerlimb-services) (1 services)
 - [🔧 MANIPULATION](#manipulation-services) (8 services)
 - [🧭 NAVIGATION](#navigation-services) (1 services)
@@ -47,7 +47,7 @@ version: v1.0.0
 
 ## 📦 Services
 
-共 94 个服务，分布在 8 个子系统中。
+共 92 个服务，分布在 8 个子系统中。
 
 ### 🔊 AUDIO (10 services) {#audio-services}
 
@@ -55,7 +55,7 @@ version: v1.0.0
 
 <div style='margin: 2rem 0; border-top: 2px solid var(--vp-c-divider);'></div>
 
-### 🖐️ HAND (15 services) {#hand-services}
+### 🖐️ HAND (13 services) {#hand-services}
 
 <MarkdownInclude src="api/hand.md" :skip-frontmatter="true" :skip-title="true" section="services" />
 
