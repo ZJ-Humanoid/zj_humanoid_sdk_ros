@@ -1,6 +1,6 @@
 ﻿service:
   name: /zj_humanoid/manipulation/version
   description: 操作模块版本号
-  type: ""
+  type: std_srvs/Trigger
   demos: data.yaml
   note: ""
