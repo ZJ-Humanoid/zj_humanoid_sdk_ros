@@ -1,6 +1,6 @@
 service:
   name: /zj_humanoid/hand/gesture_switch/dual
-  description: 调用双手手势切换服务
+  description: 双手手势切换
   type: hand/Gesture
   demos: dual_hand_gesture_switch.yaml
   note: "同时控制左右手执行指定手势。gesture_name数组中索引0为左手,索引1为右手。支持的手势包括:RESET、ROCK、ONE、TWO、THREE、FOUR等"

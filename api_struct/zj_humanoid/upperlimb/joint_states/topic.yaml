@@ -1,6 +1,6 @@
 ﻿topic:
   name: /zj_humanoid/upperlimb/joint_states
-  description: 上肢关节位置状态
+  description: 上肢关节位置
   type: sensor_msgs/JointState
   direction: publish
   throttle_rate: 10

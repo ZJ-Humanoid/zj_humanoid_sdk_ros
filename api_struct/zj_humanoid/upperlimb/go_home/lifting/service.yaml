@@ -1,6 +1,6 @@
 ﻿service:
   name: /zj_humanoid/upperlimb/go_home/lifting
-  description: 升降回到内home点
+  description: 升降回到home点
   type: std_srvs/Trigger
   demos: data.yaml
   note: "升降回到内置设置的home点"

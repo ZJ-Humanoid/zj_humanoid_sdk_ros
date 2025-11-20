@@ -1,6 +1,6 @@
 topic:
   name: /zj_humanoid/upperlimb/tcp_speed/dual_arm
-  description: 订阅双臂TCP速度
+  description: 双臂TCP速度
   type: upperlimb/TcpSpeed
   direction: subscribe
   throttle_rate: 10

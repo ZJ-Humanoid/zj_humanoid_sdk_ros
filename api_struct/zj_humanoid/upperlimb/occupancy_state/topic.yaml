@@ -1,6 +1,6 @@
 ﻿topic:
   name: /zj_humanoid/upperlimb/occupancy_state
-  description: 订阅上肢占用状态
+  description: 上肢占用控制
   type: std_msgs/Int8
   direction: subscribe
   throttle_rate: 10
