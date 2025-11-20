@@ -120,7 +120,7 @@ export default defineConfig({
             ]
           },
           {
-            text: '调试工具',
+            text: '调试开发工具',
             items: [
               { text: 'WEB 遥控器', link: 'tools/web_telec' },
               { text: 'WEB 示教器', link: 'tools/web_tech' },
