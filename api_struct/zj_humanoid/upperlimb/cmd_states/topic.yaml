@@ -1,7 +1,0 @@
-topic:
-  name: /zj_humanoid/upperlimb/cmd_states
-  description: 上肢运行模式
-  type: upperlimb/CmdState
-  direction: publish
-  throttle_rate: 10
-  note: "当前上肢运行模式是什么 回复应处于停止状态"

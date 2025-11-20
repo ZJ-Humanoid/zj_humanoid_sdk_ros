@@ -1,6 +1,0 @@
-﻿service:
-  name: /zj_humanoid/upperlimb/stop_robot
-  description: 停止上肢运动
-  type: std_srvs/Trigger
-  demos: data.yaml
-  note: "停止机器人运动"

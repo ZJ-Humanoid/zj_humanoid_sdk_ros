@@ -1,0 +1,6 @@
+# Service Request Data for /zj_humanoid/hand/finger_pressures/left/zero
+# Type: std_srvs/Trigger
+# Description: 调用左手指尖压力传感器零位校准服务
+
+# Trigger service has no request fields
+{}

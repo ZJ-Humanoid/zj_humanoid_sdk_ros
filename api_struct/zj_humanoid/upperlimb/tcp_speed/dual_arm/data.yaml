@@ -1,0 +1,6 @@
+# Topic Message Data for /zj_humanoid/upperlimb/tcp_speed/dual_arm
+# Type: upperlimb/TcpSpeed
+# Description: 订阅双臂TCP速度
+
+# This is a subscribe topic, data example for reference
+# Actual data will be published by the robot system

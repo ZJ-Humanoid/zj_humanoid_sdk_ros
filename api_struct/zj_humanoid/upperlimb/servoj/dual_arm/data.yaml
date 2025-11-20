@@ -1,0 +1,7 @@
+# Topic Message Data for /zj_humanoid/upperlimb/servoj/dual_arm
+# Type: upperlimb/Joints
+# Description: 关节空间下,双臂高频位置控制接口
+
+# Example data - modify according to actual message structure
+# Format: [left_arm(7), right_arm(7)]
+joint: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]

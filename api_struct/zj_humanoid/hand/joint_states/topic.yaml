@@ -1,7 +1,7 @@
 ﻿topic:
   name: /zj_humanoid/hand/joint_states
-  description: 手部关节状态
+  description: 订阅手部关节状态数据
   type: sensor_msgs/JointState
-  direction: publish
+  direction: subscribe
   throttle_rate: 10
-  note: "当前左手食指的角度是多少 应回复0-80度之间"
+  note: "订阅手部所有关节的位置状态,包括左右手各6个关节:拇指弯曲、拇指摆动、食指弯曲、中指弯曲、无名指弯曲、小指弯曲"

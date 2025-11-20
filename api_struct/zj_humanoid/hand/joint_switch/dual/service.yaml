@@ -1,9 +1,9 @@
 service:
   name: /zj_humanoid/hand/joint_switch/dual
-  description: 双手手掌关节运动
+  description: 调用双手关节控制服务
   type: hand/HandJoint
   demos:
   - dual_hand_joint_reset.yaml
   - dual_hand_set_gesture_two.yaml
   - dual_hand_set_gesture_yeah.yaml
-  note: ""
+  note: "同时控制双手各关节运动到指定角度。双手关节数组会被合并为12个元素的数组发送给服务。前6个为左手,后6个为右手"

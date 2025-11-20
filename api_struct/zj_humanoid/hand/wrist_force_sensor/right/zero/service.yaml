@@ -1,0 +1,6 @@
+service:
+  name: /zj_humanoid/hand/wrist_force_sensor/right/zero
+  description: 调用右手腕力传感器零位校准服务
+  type: std_srvs/Trigger
+  demos: data.yaml
+  note: "对右手腕力传感器进行零位校准,清除当前传感器偏置,将当前力和力矩读数设为零点"

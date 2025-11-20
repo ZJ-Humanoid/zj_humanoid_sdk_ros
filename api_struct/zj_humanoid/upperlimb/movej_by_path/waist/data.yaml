@@ -1,0 +1,11 @@
+# Service Request Data for /zj_humanoid/upperlimb/movej_by_path/waist
+# Type: upperlimb/MoveJByPath
+# Description: 关节空间下,腰部轨迹点路径运动
+
+# Example data - modify according to actual message structure
+path:
+  - [0.0, 0.0, 0.0]
+  - [0.1, 0.0, 0.1]
+  - [0.0, 0.0, 0.0]
+time: 3.0
+is_async: false

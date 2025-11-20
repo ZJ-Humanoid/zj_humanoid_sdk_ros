@@ -1,0 +1,7 @@
+topic:
+  name: /zj_humanoid/upperlimb/tcp_speed/dual_arm
+  description: 订阅双臂TCP速度
+  type: upperlimb/TcpSpeed
+  direction: subscribe
+  throttle_rate: 10
+  note: "该话题发布双臂末端执行器(TCP)的实时速度信息"

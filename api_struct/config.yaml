@@ -48,3 +48,7 @@ robot_models:
       - sensor/CAM_D
       - sensor/head_imu
       - sensor/realsense_down
+      - upperlimb/movej/lift
+      - upperlimb/go_home/lifting
+      - hand/task_switch
+      - hand/wrist_force_sensor

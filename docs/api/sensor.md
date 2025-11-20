@@ -25,7 +25,7 @@ markmap:
   - camera_info
 - CAM_D
   - camera_info
-## 📡 Topics (27)
+## 📡 Topics (36)
 - compressed
 - image_raw
 - compressed
@@ -46,7 +46,7 @@ markmap:
 - compressed
 - camera_info
 - image_raw
-- ... 还有 7 个话题`
+- ... 还有 16 个话题`
 </script>
 
 ---
@@ -89,7 +89,7 @@ markmap:
 | **Description** | 相机D参数信息 |
 | **Note** | 相机D的参数信息，相机D大致安装在机器人左侧太阳穴的位置上，相机D的分辨率是多少 回复应包含1280和720 |
 
-## 📡 Topics (27)
+## 📡 Topics (36)
 
 ### 1. `CAM_A/compressed`
 
@@ -271,7 +271,97 @@ markmap:
 | **Description** | 腹部深度压缩图 |
 | **Note** | 腹部深度相机的RGB图像JPG格式 |
 
-### 19. `realsense_up/aligned_depth_to_color/camera_info`
+### 19. `realsense_head/aligned_depth_to_color/camera_info`
+
+| 字段 | 值 |
+|------|-----|
+| **Topic Name** | /zj_humanoid/sensor/realsense_head/aligned_depth_to_color/camera_info |
+| **Type** | sensor_msgs/CameraInfo |
+| **Direction** | 📤 Publish |
+| **Description** | 头部深度aligned参数 |
+| **Note** | 头部深度相机的aligned_depth_to_color参数信息 |
+
+### 20. `realsense_head/aligned_depth_to_color/image_raw`
+
+| 字段 | 值 |
+|------|-----|
+| **Topic Name** | /zj_humanoid/sensor/realsense_head/aligned_depth_to_color/image_raw |
+| **Type** | sensor_msgs/Image |
+| **Direction** | 📤 Publish |
+| **Description** | 头部深度aligned图像 |
+| **Note** | 头部深度相机的aligned_depth_to_color RGB图像源数据 |
+
+### 21. `realsense_head/aligned_depth_to_color/image_raw/compressed`
+
+| 字段 | 值 |
+|------|-----|
+| **Topic Name** | /zj_humanoid/sensor/realsense_head/aligned_depth_to_color/image_raw/compressed |
+| **Type** | sensor_msgs/Image |
+| **Direction** | 📤 Publish |
+| **Description** | 头部深度aligned压缩图 |
+| **Note** | 头部深度相机的aligned_depth_to_color压缩格式 |
+
+### 22. `realsense_head/color/camera_info`
+
+| 字段 | 值 |
+|------|-----|
+| **Topic Name** | /zj_humanoid/sensor/realsense_head/color/camera_info |
+| **Type** | sensor_msgs/CameraInfo |
+| **Direction** | 📤 Publish |
+| **Description** | 头部深度RGB参数 |
+| **Note** | 头部深度相机的参数信息 |
+
+### 23. `realsense_head/color/image_raw`
+
+| 字段 | 值 |
+|------|-----|
+| **Topic Name** | /zj_humanoid/sensor/realsense_head/color/image_raw |
+| **Type** | sensor_msgs/Image |
+| **Direction** | 📤 Publish |
+| **Description** | 头部深度RGB图像 |
+| **Note** | 头部深度相机的RGB图像源数据 |
+
+### 24. `realsense_head/color/image_raw/compressed`
+
+| 字段 | 值 |
+|------|-----|
+| **Topic Name** | /zj_humanoid/sensor/realsense_head/color/image_raw/compressed |
+| **Type** | sensor_msgs/Image |
+| **Direction** | 📤 Publish |
+| **Description** | 头部深度压缩图 |
+| **Note** | 头部深度相机的RGB图像JPG格式 |
+
+### 25. `realsense_head/depth/camera_info`
+
+| 字段 | 值 |
+|------|-----|
+| **Topic Name** | /zj_humanoid/sensor/realsense_head/depth/camera_info |
+| **Type** | sensor_msgs/CameraInfo |
+| **Direction** | 📤 Publish |
+| **Description** | 头部相机深度参数 |
+| **Note** | 头部深度相机的参数信息 |
+
+### 26. `realsense_head/depth/image_rect_raw`
+
+| 字段 | 值 |
+|------|-----|
+| **Topic Name** | /zj_humanoid/sensor/realsense_head/depth/image_rect_raw |
+| **Type** | sensor_msgs/Image |
+| **Direction** | 📤 Publish |
+| **Description** | 头部深度RGB图像 |
+| **Note** | 头部深度相机的深度图像源数据 |
+
+### 27. `realsense_head/depth/image_rect_raw/compressed`
+
+| 字段 | 值 |
+|------|-----|
+| **Topic Name** | /zj_humanoid/sensor/realsense_head/depth/image_rect_raw/compressed |
+| **Type** | sensor_msgs/Image |
+| **Direction** | 📤 Publish |
+| **Description** | 头部深度压缩图 |
+| **Note** | 头部深度相机的深度图像JPG格式 |
+
+### 28. `realsense_up/aligned_depth_to_color/camera_info`
 
 | 字段 | 值 |
 |------|-----|
@@ -281,7 +371,7 @@ markmap:
 | **Description** | 胸部深度aligned参数 |
 | **Note** | 胸部深度相机的aligned_depth_to_color参数信息 |
 
-### 20. `realsense_up/aligned_depth_to_color/image_raw`
+### 29. `realsense_up/aligned_depth_to_color/image_raw`
 
 | 字段 | 值 |
 |------|-----|
@@ -291,7 +381,7 @@ markmap:
 | **Description** | 胸部深度aligned图像 |
 | **Note** | 胸部深度相机的aligned_depth_to_color RGB图像源数据 |
 
-### 21. `realsense_up/aligned_depth_to_color/image_raw/compressed`
+### 30. `realsense_up/aligned_depth_to_color/image_raw/compressed`
 
 | 字段 | 值 |
 |------|-----|
@@ -301,7 +391,7 @@ markmap:
 | **Description** | 胸部深度aligned压缩图 |
 | **Note** | 胸部深度相机的aligned_depth_to_color压缩格式 |
 
-### 22. `realsense_up/color/camera_info`
+### 31. `realsense_up/color/camera_info`
 
 | 字段 | 值 |
 |------|-----|
@@ -311,7 +401,7 @@ markmap:
 | **Description** | 胸部深度RGB参数 |
 | **Note** | 胸部深度相机的参数信息 |
 
-### 23. `realsense_up/color/image_raw`
+### 32. `realsense_up/color/image_raw`
 
 | 字段 | 值 |
 |------|-----|
@@ -321,7 +411,7 @@ markmap:
 | **Description** | 胸部深度RGB图像 |
 | **Note** | 胸部深度相机的RGB图像源数据 |
 
-### 24. `realsense_up/color/image_raw/compressed`
+### 33. `realsense_up/color/image_raw/compressed`
 
 | 字段 | 值 |
 |------|-----|
@@ -331,7 +421,7 @@ markmap:
 | **Description** | 胸部深度压缩图 |
 | **Note** | 胸部深度相机的RGB图像JPG格式 |
 
-### 25. `realsense_up/depth/camera_info`
+### 34. `realsense_up/depth/camera_info`
 
 | 字段 | 值 |
 |------|-----|
@@ -341,17 +431,17 @@ markmap:
 | **Description** | 胸部相机深度参数 |
 | **Note** | 胸部深度相机的参数信息 |
 
-### 26. `realsense_up/depth/image_rect_raw`
+### 35. `realsense_up/depth/image_rect_raw`
 
 | 字段 | 值 |
 |------|-----|
 | **Topic Name** | /zj_humanoid/sensor/realsense_up/depth/image_rect_raw |
 | **Type** | sensor_msgs/Image |
-| **Direction** | publishs |
+| **Direction** | 📤 Publish |
 | **Description** | 胸部深度RGB图像 |
 | **Note** | 胸部深度相机的RGB图像源数据 |
 
-### 27. `realsense_up/depth/image_rect_raw/compressed`
+### 36. `realsense_up/depth/image_rect_raw/compressed`
 
 | 字段 | 值 |
 |------|-----|

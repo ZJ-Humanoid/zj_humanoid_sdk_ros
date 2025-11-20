@@ -1,0 +1,6 @@
+# Topic Message Data for /zj_humanoid/upperlimb/uplimb_state
+# Type: upperlimb/UplimbState
+# Description: 订阅上肢机器人命令状态
+
+# This is a subscribe topic, data example for reference
+# Actual data will be published by the robot system

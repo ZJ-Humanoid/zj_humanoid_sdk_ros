@@ -1,8 +1,8 @@
 {
     "metadata": {
-        "generated_at": "2025-11-19 16:14:37",
         "description": "ZJ Humanoid ROS1 APIs",
-        "version": "v1.0.0"
+        "version": "v1.0.0",
+        "generated_at": "2025-11-20 10:59:34"
     },
     "services": [
         {
@@ -85,94 +85,91 @@
             "note": "置零压力传感器数值"
         },
         {
+            "name": "/zj_humanoid/hand/finger_pressures/left/zero",
+            "description": "调用左手指尖压力传感器零位校准服务",
+            "type": "std_srvs/Trigger",
+            "demos": [
+                "data.yaml"
+            ],
+            "note": "对左手指尖压力传感器进行零位校准,清除当前传感器偏置,将当前读数设为零点"
+        },
+        {
+            "name": "/zj_humanoid/hand/finger_pressures/right/zero",
+            "description": "调用右手指尖压力传感器零位校准服务",
+            "type": "std_srvs/Trigger",
+            "demos": [
+                "data.yaml"
+            ],
+            "note": "对右手指尖压力传感器进行零位校准,清除当前传感器偏置,将当前读数设为零点"
+        },
+        {
             "name": "/zj_humanoid/hand/gesture_switch/dual",
-            "description": "双手手势切换",
+            "description": "调用双手手势切换服务",
             "type": "hand/Gesture",
             "demos": [
                 "dual_hand_gesture_switch.yaml"
             ],
-            "note": ""
+            "note": "同时控制左右手执行指定手势。gesture_name数组中索引0为左手,索引1为右手。支持的手势包括:RESET、ROCK、ONE、TWO、THREE、FOUR等"
         },
         {
             "name": "/zj_humanoid/hand/gesture_switch/left",
-            "description": "左手手势切换",
+            "description": "左手手势切换服务",
             "type": "hand/Gesture",
             "demos": [
                 "left_hand_gesture_switch.yaml"
             ],
-            "note": ""
+            "note": "控制左手执行指定手势。支持的手势包括:RESET、ROCK、ONE、TWO、THREE、FOUR等,手势名称大小写不敏感"
         },
         {
             "name": "/zj_humanoid/hand/gesture_switch/right",
-            "description": "右手手势切换",
+            "description": "调用右手手势切换服务",
             "type": "hand/Gesture",
             "demos": [
                 "right_hand_gesture_switch.yaml"
             ],
-            "note": ""
+            "note": "控制右手执行指定手势。支持的手势包括:RESET、ROCK、ONE、TWO、THREE、FOUR等,手势名称大小写不敏感"
         },
         {
             "name": "/zj_humanoid/hand/joint_switch/dual",
-            "description": "双手手掌关节运动",
+            "description": "调用双手关节控制服务",
             "type": "hand/HandJoint",
             "demos": [
                 "dual_hand_joint_reset.yaml",
                 "dual_hand_set_gesture_two.yaml",
                 "dual_hand_set_gesture_yeah.yaml"
             ],
-            "note": ""
+            "note": "同时控制双手各关节运动到指定角度。双手关节数组会被合并为12个元素的数组发送给服务。前6个为左手,后6个为右手"
         },
         {
             "name": "/zj_humanoid/hand/joint_switch/left",
-            "description": "左手手掌关节运动",
+            "description": "调用左手关节控制服务",
             "type": "hand/HandJoint",
             "demos": [
                 "left_hand_joint_reset.yaml",
                 "left_hand_set_gesture_two.yaml",
                 "left_hand_set_gesture_yeah.yaml"
             ],
-            "note": "左手食指弯曲40度 订阅/hand_joint_states左手食指数值应接近40度"
+            "note": "控制左手各关节运动到指定角度。关节角度数组顺序为[拇指弯曲,拇指摆动,食指弯曲,中指弯曲,无名指弯曲,小指弯曲],单位:弧度。关节角度会被限制在安全范围内"
         },
         {
             "name": "/zj_humanoid/hand/joint_switch/right",
-            "description": "右手手掌关节运动",
+            "description": "调用右手关节控制服务",
             "type": "hand/HandJoint",
             "demos": [
                 "right_hand_joint_reset.yaml",
                 "right_hand_set_gesture_two.yaml",
                 "right_hand_set_gesture_yeah.yaml"
             ],
-            "note": "右手食指弯曲40度 订阅/hand_joint_states左手食指数值应接近40度"
+            "note": "控制右手各关节运动到指定角度。关节角度数组顺序为[拇指弯曲,拇指摆动,食指弯曲,中指弯曲,无名指弯曲,小指弯曲],单位:弧度。关节角度会被限制在安全范围内"
         },
         {
-            "name": "/zj_humanoid/hand/task_switch/left",
-            "description": "左手掌任务控制",
-            "type": "std_srvs/Bool",
-            "note": "",
-            "demos": []
-        },
-        {
-            "name": "/zj_humanoid/hand/task_switch/right",
-            "description": "右手掌任务控制",
-            "type": "std_srvs/Bool",
-            "note": "",
-            "demos": []
-        },
-        {
-            "name": "/zj_humanoid/hand/versions",
-            "description": "灵巧手版本号",
-            "type": "std_srvs/Trigger",
-            "note": "查询当前灵巧手子系统的版本号",
-            "demos": []
-        },
-        {
-            "name": "/zj_humanoid/hand/wrist_force_sensor/left/zero",
-            "description": "置零腕部传感器",
+            "name": "/zj_humanoid/hand/version",
+            "description": "获取手部控制模块版本信息",
             "type": "std_srvs/Trigger",
             "demos": [
                 "data.yaml"
             ],
-            "note": "置零腕部传感器数值"
+            "note": "查询手部控制模块的版本信息"
         },
         {
             "name": "/zj_humanoid/navigation/version",
@@ -315,6 +312,24 @@
                 "case1.yaml"
             ],
             "note": ""
+        },
+        {
+            "name": "/zj_humanoid/upperlimb/clear_servo_params",
+            "description": "清除伺服参数",
+            "type": "upperlimb/Servo",
+            "demos": [
+                "data.yaml"
+            ],
+            "note": "清除上肢伺服参数配置"
+        },
+        {
+            "name": "/zj_humanoid/upperlimb/enable_speedj",
+            "description": "启用/禁用关节速度控制模式",
+            "type": "std_srvs/SetBool",
+            "demos": [
+                "data.yaml"
+            ],
+            "note": "启用或禁用上肢speedj速度控制模式"
         },
         {
             "name": "/zj_humanoid/upperlimb/go_down/dual_arm",
@@ -495,6 +510,15 @@
             "note": "关节空间下,左臂轨迹点路径运动"
         },
         {
+            "name": "/zj_humanoid/upperlimb/movej_by_path/neck",
+            "description": "关节空间下,脖子轨迹点路径运动",
+            "type": "upperlimb/MoveJByPath",
+            "demos": [
+                "data.yaml"
+            ],
+            "note": "控制颈部按照关节空间路径运动"
+        },
+        {
             "name": "/zj_humanoid/upperlimb/movej_by_path/right_arm",
             "description": "右臂轨迹movej",
             "type": "upperlimb/MoveJByPath",
@@ -502,6 +526,24 @@
                 "case1.yaml"
             ],
             "note": "关节空间下,右臂轨迹点路径运动"
+        },
+        {
+            "name": "/zj_humanoid/upperlimb/movej_by_path/waist",
+            "description": "关节空间下,腰部轨迹点路径运动",
+            "type": "upperlimb/MoveJByPath",
+            "demos": [
+                "data.yaml"
+            ],
+            "note": "控制腰部按照关节空间路径运动"
+        },
+        {
+            "name": "/zj_humanoid/upperlimb/movej_by_path/whole_body",
+            "description": "关节空间下,全身轨迹点路径运动",
+            "type": "upperlimb/MoveJByPath",
+            "demos": [
+                "data.yaml"
+            ],
+            "note": "控制全身按照关节空间路径运动"
         },
         {
             "name": "/zj_humanoid/upperlimb/movej_by_pose/dual_arm",
@@ -558,20 +600,6 @@
             "note": "关节空间下,右臂直线轨迹点运动"
         },
         {
-            "name": "/zj_humanoid/upperlimb/servoj/clear_params",
-            "description": "退出servoj",
-            "type": "upperlimb/Servo",
-            "note": "退出笛卡尔空间 高频位置跟随控制",
-            "demos": []
-        },
-        {
-            "name": "/zj_humanoid/upperlimb/servoj/set_params",
-            "description": "设置servoj参数",
-            "type": "upperlimb/Servo",
-            "note": "设置关节空间 高频位置跟随控制参数",
-            "demos": []
-        },
-        {
             "name": "/zj_humanoid/upperlimb/servol/clear_params",
             "description": "退出servol",
             "type": "upperlimb/Servo",
@@ -586,6 +614,15 @@
             "demos": []
         },
         {
+            "name": "/zj_humanoid/upperlimb/set_servo_params",
+            "description": "设置伺服参数",
+            "type": "upperlimb/Servo",
+            "demos": [
+                "data.yaml"
+            ],
+            "note": "设置上肢伺服参数配置,包括时间和增益参数"
+        },
+        {
             "name": "/zj_humanoid/upperlimb/speedl/enable_speedl",
             "description": "启用speedl",
             "type": "std_srvs/SetBool",
@@ -593,13 +630,13 @@
             "demos": []
         },
         {
-            "name": "/zj_humanoid/upperlimb/stop_robot",
-            "description": "停止上肢运动",
+            "name": "/zj_humanoid/upperlimb/stop",
+            "description": "停止机器人运动",
             "type": "std_srvs/Trigger",
             "demos": [
                 "data.yaml"
             ],
-            "note": "停止机器人运动"
+            "note": "立即停止上肢所有运动"
         },
         {
             "name": "/zj_humanoid/upperlimb/teach_mode/enter",
@@ -620,11 +657,13 @@
             "note": ""
         },
         {
-            "name": "/zj_humanoid/upperlimb/versions",
-            "description": "上肢模块版本",
+            "name": "/zj_humanoid/upperlimb/version",
+            "description": "获取上肢版本信息",
             "type": "std_srvs/Trigger",
-            "note": "查询当前上肢子系统的软件版本号 应回复软件版本号",
-            "demos": []
+            "demos": [
+                "data.yaml"
+            ],
+            "note": "查询上肢控制模块的版本信息"
         }
     ],
     "topics": [
@@ -664,45 +703,29 @@
         },
         {
             "name": "/zj_humanoid/hand/finger_pressures/left",
-            "description": "左手压力传感器",
+            "description": "订阅左手指尖压力传感器数据",
             "type": "hand/PressureSensor",
-            "direction": "publish",
-            "note": "当前左手压力传感器数值",
+            "direction": "subscribe",
+            "throttle_rate": 10,
+            "note": "接收左手指尖压力传感器数据,压力值顺序为[大拇指,食指,中指,无名指,小拇指],单位为0.1N",
             "demos": []
         },
         {
             "name": "/zj_humanoid/hand/finger_pressures/right",
-            "description": "右手压力传感器数据",
+            "description": "订阅右手指尖压力传感器数据",
             "type": "hand/PressureSensor",
-            "direction": "publish",
-            "note": "当前右手压力传感器数值",
+            "direction": "subscribe",
+            "throttle_rate": 10,
+            "note": "接收右手指尖压力传感器数据,压力值顺序为[大拇指,食指,中指,无名指,小拇指],单位为0.1N",
             "demos": []
         },
         {
             "name": "/zj_humanoid/hand/joint_states",
-            "description": "手部关节状态",
+            "description": "订阅手部关节状态数据",
             "type": "sensor_msgs/JointState",
-            "direction": "publish",
+            "direction": "subscribe",
             "throttle_rate": 10,
-            "note": "当前左手食指的角度是多少 应回复0-80度之间",
-            "demos": []
-        },
-        {
-            "name": "/zj_humanoid/hand/wrist_force_sensor/left",
-            "description": "右手腕部传感器值",
-            "type": "geometry_msgs/WrenchStamped",
-            "direction": "publish",
-            "throttle_rate": 10,
-            "note": "当前左手腕部的检测到多少力 应回复0牛顿",
-            "demos": []
-        },
-        {
-            "name": "/zj_humanoid/hand/wrist_force_sensor/right",
-            "description": "左手腕部传感器值",
-            "type": "geometry_msgs/WrenchStamped",
-            "direction": "publish",
-            "throttle_rate": 10,
-            "note": "当前右手腕部的检测到多少力 应回复0牛顿",
+            "note": "订阅手部所有关节的位置状态,包括左右手各6个关节:拇指弯曲、拇指摆动、食指弯曲、中指弯曲、无名指弯曲、小指弯曲",
             "demos": []
         },
         {
@@ -1017,21 +1040,30 @@
             "demos": []
         },
         {
-            "name": "/zj_humanoid/upperlimb/cmd_states",
-            "description": "上肢运行模式",
-            "type": "upperlimb/CmdState",
-            "direction": "publish",
-            "throttle_rate": 10,
-            "note": "当前上肢运行模式是什么 回复应处于停止状态",
-            "demos": []
-        },
-        {
             "name": "/zj_humanoid/upperlimb/joint_states",
             "description": "上肢关节位置状态",
             "type": "sensor_msgs/JointState",
             "direction": "publish",
             "throttle_rate": 10,
             "note": "机器人上肢关节position状态值发布，查询当前机器人颈部pitch的角度 回复应处于+-42度间",
+            "demos": []
+        },
+        {
+            "name": "/zj_humanoid/upperlimb/occupancy_state",
+            "description": "订阅上肢占用状态",
+            "type": "std_msgs/Int8",
+            "direction": "subscribe",
+            "throttle_rate": 10,
+            "note": "该话题发布上肢的当前占用状态,用于防止多个控制源同时控制机器人",
+            "demos": []
+        },
+        {
+            "name": "/zj_humanoid/upperlimb/servoj/dual_arm",
+            "description": "关节空间下,双臂高频位置控制接口",
+            "type": "upperlimb/Joints",
+            "direction": "publish",
+            "throttle_rate": 125,
+            "note": "双臂关节空间伺服控制,不要使用定时sleep,该接口执行需要准确的时间戳会达到更好的效果",
             "demos": []
         },
         {
@@ -1096,6 +1128,15 @@
             "type": "geometry_msgs/Pose",
             "direction": "subscribe",
             "note": "笛卡尔空间 高频位置跟随控制",
+            "demos": []
+        },
+        {
+            "name": "/zj_humanoid/upperlimb/speedj/dual_arm",
+            "description": "双臂关节速度控制",
+            "type": "upperlimb/SpeedJ",
+            "direction": "publish",
+            "throttle_rate": 5,
+            "note": "双臂关节空间速度控制",
             "demos": []
         },
         {
@@ -1209,6 +1250,33 @@
             "direction": "publish",
             "throttle_rate": 10,
             "note": "左右手臂末端速度",
+            "demos": []
+        },
+        {
+            "name": "/zj_humanoid/upperlimb/tcp_speed/dual_arm",
+            "description": "订阅双臂TCP速度",
+            "type": "upperlimb/TcpSpeed",
+            "direction": "subscribe",
+            "throttle_rate": 10,
+            "note": "该话题发布双臂末端执行器(TCP)的实时速度信息",
+            "demos": []
+        },
+        {
+            "name": "/zj_humanoid/upperlimb/uplimb_occupation",
+            "description": "发布上肢占用状态",
+            "type": "std_msgs/Int8",
+            "direction": "publish",
+            "throttle_rate": 10,
+            "note": "用于发布上肢占用状态信息",
+            "demos": []
+        },
+        {
+            "name": "/zj_humanoid/upperlimb/uplimb_state",
+            "description": "订阅上肢机器人命令状态",
+            "type": "upperlimb/UplimbState",
+            "direction": "subscribe",
+            "throttle_rate": 10,
+            "note": "该话题发布上肢机器人的当前命令状态信息",
             "demos": []
         }
     ]

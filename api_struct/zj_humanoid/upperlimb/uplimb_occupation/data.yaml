@@ -1,0 +1,6 @@
+# Topic Message Data for /zj_humanoid/upperlimb/uplimb_occupation
+# Type: std_msgs/Int8
+# Description: 发布上肢占用状态
+
+# Example data - modify according to actual message structure
+data: 0  # 0: not occupied, 1: occupied
