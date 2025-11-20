@@ -1,6 +1,0 @@
-﻿service:
-  name: /zj_humanoid/hand/finger_pressures/left/zero
-  description: 置零手指传感器
-  type: std_srvs/Trigger
-  demos: data.yaml
-  note: "置零压力传感器数值"

@@ -73,7 +73,20 @@ def find_yaml_files(base_path):
                         subsystem = extract_subsystem(service_info.get('name', ''))
                         if subsystem not in services_by_subsystem:
                             services_by_subsystem[subsystem] = []
-                        services_by_subsystem[subsystem].append(service_info)
+                        
+                        # 检查是否已存在相同名称的 service（避免重复）
+                        service_name = service_info.get('name', '')
+                        existing_service = next(
+                            (s for s in services_by_subsystem[subsystem] if s.get('name') == service_name),
+                            None
+                        )
+                        if existing_service:
+                            print(f"警告: 发现重复的 service 名称 '{service_name}'")
+                            print(f"  已存在: {existing_service.get('description', 'N/A')[:50]}")
+                            print(f"  新文件: {service_info.get('description', 'N/A')[:50]} (来自 {service_file})")
+                            print(f"  跳过新文件，保留已存在的定义")
+                        else:
+                            services_by_subsystem[subsystem].append(service_info)
             except Exception as e:
                 print(f"Error reading {service_file}: {e}")
         
@@ -99,7 +112,20 @@ def find_yaml_files(base_path):
                         subsystem = extract_subsystem(topic_info.get('name', ''))
                         if subsystem not in topics_by_subsystem:
                             topics_by_subsystem[subsystem] = []
-                        topics_by_subsystem[subsystem].append(topic_info)
+                        
+                        # 检查是否已存在相同名称的 topic（避免重复）
+                        topic_name = topic_info.get('name', '')
+                        existing_topic = next(
+                            (t for t in topics_by_subsystem[subsystem] if t.get('name') == topic_name),
+                            None
+                        )
+                        if existing_topic:
+                            print(f"警告: 发现重复的 topic 名称 '{topic_name}'")
+                            print(f"  已存在: {existing_topic.get('description', 'N/A')[:50]}")
+                            print(f"  新文件: {topic_info.get('description', 'N/A')[:50]} (来自 {topic_file})")
+                            print(f"  跳过新文件，保留已存在的定义")
+                        else:
+                            topics_by_subsystem[subsystem].append(topic_info)
             except Exception as e:
                 print(f"Error reading {topic_file}: {e}")
         
