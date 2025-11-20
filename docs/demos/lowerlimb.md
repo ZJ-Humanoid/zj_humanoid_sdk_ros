@@ -6,16 +6,16 @@
 
 | 手柄键位       | 话题名称                     | 触发类型                                |
 | -------------- | ---------------------------- | --------------------------------------- |
-| **A键**        | `/``set_stand`               | 接收到数据就切换                        |
-| **B键**        | `/``emergency_stop`          | 接收到数据就切换                        |
-| **Y键**        | `/``load_walkgmp_controller` | 接收到数据就切换                        |
-| **X键**        | `/``load_turngmp_controller` | 接收到数据就切换                        |
-| **左****摇杆** | `/``cmd_vel`                 | `linear.x  前进后退，linear.y 左右侧移` |
-| **右****摇杆** | `/``cmd_vel`                 | `angular.z 左右旋转`                    |
+| **A键**        | `/set_stand`               | 接收到数据就切换                        |
+| **B键**        | `/emergency_stop`          | 接收到数据就切换                        |
+| **Y键**        | `/load_walkgmp_controller` | 接收到数据就切换                        |
+| **X键**        | `/load_turngmp_controller` | 接收到数据就切换                        |
+| **左****摇杆** | `/cmd_vel`                 | `linear.x  前进后退，linear.y 左右侧移` |
+| **右****摇杆** | `/cmd_vel`                 | `angular.z 左右旋转`                    |
 
 # 接口描述
 
-## `/``set_stand`
+## `/set_stand`
 
 **Description:**
 
@@ -73,7 +73,7 @@ def test_set_stand(data, *, name=f"{PREFIX}/set_stand"):
 test_set_stand(0)
 ```
 
-## `/``emergency_stop`
+## `/emergency_stop`
 
 **Description:**
 
@@ -134,7 +134,7 @@ def test_emergency_stop(data, *, name=f"{PREFIX}/emergency_stop"):
 test_emergency_stop(0)
 ```
 
-## `/``load_walkgmp_controller`
+## `/load_walkgmp_controller`
 
 **Description:**
 
@@ -191,7 +191,7 @@ def test_load_walkgmp_controller(data, *, name=f"{PREFIX}/load_walkgmp_controlle
 test_load_walkgmp_controller(0)
 ```
 
-## `/``load_turngmp_controller`
+## `/load_turngmp_controller`
 
 **Description:**
 
@@ -249,7 +249,7 @@ def test_load_turngmp_controller(data, *, name=f"{PREFIX}/load_turngmp_controlle
 test_load_turngmp_controller(0)
 ```
 
-## `/``cmd_vel`
+## `/cmd_vel`
 
 **Description:**
 
