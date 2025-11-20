@@ -2,6 +2,6 @@
   name: /zj_humanoid/hand/wrist_force_sensor/right
   description: 订阅右手腕力传感器数据
   type: geometry_msgs/WrenchStamped
-  direction: subscribe
+  direction: publish
   throttle_rate: 10
   note: "接收右手腕力传感器数据,包括力和力矩的三轴分量"

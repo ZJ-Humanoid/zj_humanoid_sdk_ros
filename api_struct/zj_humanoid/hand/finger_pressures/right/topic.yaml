@@ -2,6 +2,6 @@ topic:
   name: /zj_humanoid/hand/finger_pressures/right
   description: 订阅右手指尖压力传感器数据
   type: hand/PressureSensor
-  direction: subscribe
+  direction: publish
   throttle_rate: 10
   note: "接收右手指尖压力传感器数据,压力值顺序为[大拇指,食指,中指,无名指,小拇指],单位为0.1N"
