@@ -1,0 +1,6 @@
+# Topic Message Data for /zj_humanoid/hand/wrist_force_sensor/left
+# Type: geometry_msgs/WrenchStamped
+# Description: 订阅左手腕力传感器数据
+
+# This is a subscribe topic, data will be published by the robot system
+# Contains force and torque in three axes

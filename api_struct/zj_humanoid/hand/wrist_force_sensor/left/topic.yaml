@@ -1,7 +1,7 @@
 ﻿topic:
   name: /zj_humanoid/hand/wrist_force_sensor/left
-  description: 右手腕部传感器值
+  description: 订阅左手腕力传感器数据
   type: geometry_msgs/WrenchStamped
-  direction: publish
+  direction: subscribe
   throttle_rate: 10
-  note: "当前左手腕部的检测到多少力 应回复0牛顿"
+  note: "接收左手腕力传感器数据,包括力和力矩的三轴分量"

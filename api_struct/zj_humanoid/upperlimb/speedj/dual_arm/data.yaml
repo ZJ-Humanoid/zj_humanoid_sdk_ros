@@ -1,0 +1,7 @@
+# Topic Message Data for /zj_humanoid/upperlimb/speedj/dual_arm
+# Type: upperlimb/SpeedJ
+# Description: 双臂关节速度控制
+
+# Example data - modify according to actual message structure
+joint_speed: [0.0, 0.0, 0.01, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.01, 0.0, 0.0, 0.0, 0.0]
+acc: 0.5

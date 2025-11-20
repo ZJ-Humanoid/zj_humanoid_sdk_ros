@@ -1,9 +1,9 @@
 service:
   name: /zj_humanoid/hand/joint_switch/left
-  description: 左手手掌关节运动
+  description: 调用左手关节控制服务
   type: hand/HandJoint
   demos:
   - left_hand_joint_reset.yaml
   - left_hand_set_gesture_two.yaml
   - left_hand_set_gesture_yeah.yaml
-  note: "左手食指弯曲40度 订阅/hand_joint_states左手食指数值应接近40度"
+  note: "控制左手各关节运动到指定角度。关节角度数组顺序为[拇指弯曲,拇指摆动,食指弯曲,中指弯曲,无名指弯曲,小指弯曲],单位:弧度。关节角度会被限制在安全范围内"

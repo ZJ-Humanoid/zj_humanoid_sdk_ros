@@ -1,0 +1,7 @@
+topic:
+  name: /zj_humanoid/upperlimb/speedj/dual_arm
+  description: 双臂关节速度控制
+  type: upperlimb/SpeedJ
+  direction: publish
+  throttle_rate: 5
+  note: "双臂关节空间速度控制"

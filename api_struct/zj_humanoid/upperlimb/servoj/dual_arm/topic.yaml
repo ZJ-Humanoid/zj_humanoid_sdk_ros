@@ -1,0 +1,7 @@
+topic:
+  name: /zj_humanoid/upperlimb/servoj/dual_arm
+  description: 关节空间下,双臂高频位置控制接口
+  type: upperlimb/Joints
+  direction: publish
+  throttle_rate: 125
+  note: "双臂关节空间伺服控制,不要使用定时sleep,该接口执行需要准确的时间戳会达到更好的效果"

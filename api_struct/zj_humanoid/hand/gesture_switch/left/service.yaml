@@ -1,6 +1,6 @@
 service:
   name: /zj_humanoid/hand/gesture_switch/left
-  description: 左手手势切换
+  description: 左手手势切换服务
   type: hand/Gesture
   demos: left_hand_gesture_switch.yaml
-  note: ""
+  note: "控制左手执行指定手势。支持的手势包括:RESET、ROCK、ONE、TWO、THREE、FOUR等,手势名称大小写不敏感"

@@ -1,0 +1,6 @@
+service:
+  name: /zj_humanoid/upperlimb/version
+  description: 获取上肢版本信息
+  type: std_srvs/Trigger
+  demos: data.yaml
+  note: "查询上肢控制模块的版本信息"

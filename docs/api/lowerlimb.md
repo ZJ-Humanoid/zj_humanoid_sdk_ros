@@ -18,13 +18,12 @@ markmap:
 # 🦵 LOWERLIMB 子系统
 ## 📦 Services (1)
 - versions
-## 📡 Topics (9)
+## 📡 Topics (8)
 - body_imu
 - calib
 - joy
 - web
 - debug_info
-- occupancy_state
 - set_lie
 - set_stand
 - start_move`
@@ -42,7 +41,7 @@ markmap:
 | **Type** | std_srvs/Trigger |
 | **Description** | 下肢模块版本 |
 
-## 📡 Topics (9)
+## 📡 Topics (8)
 
 ### 1. `body_imu`
 
@@ -90,17 +89,7 @@ markmap:
 | **Description** | 运控debug信息 |
 | **Note** | 运控debug信息 |
 
-### 6. `occupancy_state`
-
-| 字段 | 值 |
-|------|-----|
-| **Topic Name** | /zj_humanoid/lowerlimb/occupancy_state |
-| **Type** | std_msgs/Float32 |
-| **Direction** | 📤 Publish |
-| **Description** | 上肢模式控制 |
-| **Note** | 上肢模式控制，可设置为下肢控制模式 |
-
-### 7. `set_lie`
+### 6. `set_lie`
 
 | 字段 | 值 |
 |------|-----|
@@ -110,7 +99,7 @@ markmap:
 | **Description** | 下肢泄力 |
 | **Note** | 下肢泄力，软急停 |
 
-### 8. `set_stand`
+### 7. `set_stand`
 
 | 字段 | 值 |
 |------|-----|
@@ -120,7 +109,7 @@ markmap:
 | **Description** | 站立姿态 |
 | **Note** | 站立姿态初始化 |
 
-### 9. `start_move`
+### 8. `start_move`
 
 | 字段 | 值 |
 |------|-----|

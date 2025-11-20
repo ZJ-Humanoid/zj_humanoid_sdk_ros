@@ -1,0 +1,6 @@
+service:
+  name: /zj_humanoid/upperlimb/set_servo_params
+  description: 设置伺服参数
+  type: upperlimb/Servo
+  demos: data.yaml
+  note: "设置上肢伺服参数配置,包括时间和增益参数"

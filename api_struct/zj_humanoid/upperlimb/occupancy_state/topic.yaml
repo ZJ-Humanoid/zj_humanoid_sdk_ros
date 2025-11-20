@@ -1,6 +1,7 @@
 ﻿topic:
-  name: /zj_humanoid/lowerlimb/occupancy_state
-  description: 上肢模式控制
-  type: std_msgs/Float32
-  direction: publish
-  note: "上肢模式控制，可设置为下肢控制模式"
+  name: /zj_humanoid/upperlimb/occupancy_state
+  description: 订阅上肢占用状态
+  type: std_msgs/Int8
+  direction: subscribe
+  throttle_rate: 10
+  note: "该话题发布上肢的当前占用状态,用于防止多个控制源同时控制机器人"

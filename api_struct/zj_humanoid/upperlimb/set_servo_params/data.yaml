@@ -1,0 +1,7 @@
+# Service Request Data for /zj_humanoid/upperlimb/set_servo_params
+# Type: upperlimb/Servo
+# Description: 设置伺服参数
+
+# Example data - modify according to actual message structure
+time: 0.02
+gain: 800

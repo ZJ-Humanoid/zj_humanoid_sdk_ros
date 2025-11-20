@@ -1,5 +1,0 @@
-﻿service:
-  name: /zj_humanoid/hand/versions
-  description: 灵巧手版本号
-  type: std_srvs/Trigger
-  note: "查询当前灵巧手子系统的版本号"

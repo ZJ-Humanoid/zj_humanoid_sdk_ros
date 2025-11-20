@@ -1,0 +1,6 @@
+service:
+  name: /zj_humanoid/upperlimb/clear_servo_params
+  description: 清除伺服参数
+  type: upperlimb/Servo
+  demos: data.yaml
+  note: "清除上肢伺服参数配置"

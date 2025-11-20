@@ -1,0 +1,7 @@
+# Topic Message Data for /zj_humanoid/hand/finger_pressures/left
+# Type: hand/PressureSensor
+# Description: 订阅左手指尖压力传感器数据
+
+# This is a subscribe topic, data will be published by the robot system
+# Pressure values order: [thumb, index, middle, ring, pinky]
+# Unit: 0.1N
