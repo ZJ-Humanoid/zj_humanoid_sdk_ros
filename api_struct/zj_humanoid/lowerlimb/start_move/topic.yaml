@@ -3,4 +3,4 @@
   description: 开启运动模式
   type: std_msgs/Float32
   direction: subscribe
-  note: "开启运动模式，算法开始响应速度控制请求"
+  note: "双足机器人开启运动模式，算法开始响应速度控制请求，轮臂机器人暂不适用"

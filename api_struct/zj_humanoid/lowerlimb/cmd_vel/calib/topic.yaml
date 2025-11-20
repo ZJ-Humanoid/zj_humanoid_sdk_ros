@@ -4,4 +4,4 @@
   type: geometry_msgs/Twist
   direction: subscribe
   throttle_rate: 100
-  note: ""
+  note: "在多个cmd_vel topic中，优先级joy > calib > web"
