@@ -4,4 +4,4 @@
   type: std_msgs/String
   direction: publish
   throttle_rate: 1000
-  note: "运控debug信息"
+  note: "双足型号运控debug信息，轮臂机器人暂不适用"
