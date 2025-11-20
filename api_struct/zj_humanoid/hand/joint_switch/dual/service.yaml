@@ -1,6 +1,6 @@
 service:
   name: /zj_humanoid/hand/joint_switch/dual
-  description: 调用双手关节控制服务
+  description: 双手关节控制
   type: hand/HandJoint
   demos:
   - dual_hand_joint_reset.yaml

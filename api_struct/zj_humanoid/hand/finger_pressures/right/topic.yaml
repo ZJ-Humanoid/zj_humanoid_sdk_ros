@@ -1,6 +1,6 @@
 topic:
   name: /zj_humanoid/hand/finger_pressures/right
-  description: 订阅右手指尖压力传感器数据
+  description: 右手指尖压力
   type: hand/PressureSensor
   direction: publish
   throttle_rate: 10

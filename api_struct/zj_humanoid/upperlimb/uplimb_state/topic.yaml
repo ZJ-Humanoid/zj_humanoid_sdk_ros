@@ -1,6 +1,6 @@
 topic:
   name: /zj_humanoid/upperlimb/uplimb_state
-  description: 订阅上肢机器人命令状态
+  description: 当前上肢命令
   type: upperlimb/UplimbState
   direction: subscribe
   throttle_rate: 10

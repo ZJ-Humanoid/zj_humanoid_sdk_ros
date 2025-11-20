@@ -1,6 +1,6 @@
 ﻿topic:
   name: /zj_humanoid/hand/joint_states
-  description: 订阅手部关节状态数据
+  description: 手部关节状态
   type: sensor_msgs/JointState
   direction: publish
   throttle_rate: 10

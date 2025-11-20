@@ -1,6 +1,6 @@
 topic:
   name: /zj_humanoid/upperlimb/uplimb_occupation
-  description: 发布上肢占用状态
+  description: 上肢占用状态
   type: std_msgs/Int8
   direction: publish
   throttle_rate: 10

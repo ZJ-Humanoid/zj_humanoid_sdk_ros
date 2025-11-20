@@ -1,6 +1,6 @@
 service:
   name: /zj_humanoid/upperlimb/enable_speedj
-  description: 启用/禁用关节速度控制模式
+  description: 关节速度控制开关
   type: std_srvs/SetBool
   demos: data.yaml
   note: "启用或禁用上肢speedj速度控制模式"

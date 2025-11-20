@@ -1,6 +1,6 @@
 service:
   name: /zj_humanoid/hand/joint_switch/left
-  description: 调用左手关节控制服务
+  description: 左手关节控制
   type: hand/HandJoint
   demos:
   - left_hand_joint_reset.yaml

@@ -1,6 +1,6 @@
 topic:
   name: /zj_humanoid/upperlimb/servoj/dual_arm
-  description: 关节空间下,双臂高频位置控制接口
+  description: 双臂servoj
   type: upperlimb/Joints
   direction: publish
   throttle_rate: 125
