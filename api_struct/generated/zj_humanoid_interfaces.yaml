@@ -55,17 +55,17 @@ services:
     demos: []
   hand:
   - name: /zj_humanoid/hand/finger_pressures/left/zero
-    description: 置零手指传感器
-    type: std_srvs/Trigger
-    demos:
-    - data.yaml
-    note: 置零压力传感器数值
-  - name: /zj_humanoid/hand/finger_pressures/left/zero
     description: 调用左手指尖压力传感器零位校准服务
     type: std_srvs/Trigger
     demos:
     - data.yaml
     note: 对左手指尖压力传感器进行零位校准,清除当前传感器偏置,将当前读数设为零点
+  - name: /zj_humanoid/hand/finger_pressures/left/zero
+    description: 置零手指传感器
+    type: std_srvs/Trigger
+    demos:
+    - data.yaml
+    note: 置零压力传感器数值
   - name: /zj_humanoid/hand/finger_pressures/right/zero
     description: 调用右手指尖压力传感器零位校准服务
     type: std_srvs/Trigger
@@ -131,17 +131,17 @@ services:
     - data.yaml
     note: 查询手部控制模块的版本信息
   - name: /zj_humanoid/hand/wrist_force_sensor/left/zero
-    description: 置零腕部传感器
-    type: std_srvs/Trigger
-    demos:
-    - data.yaml
-    note: 置零腕部传感器数值
-  - name: /zj_humanoid/hand/wrist_force_sensor/left/zero
     description: 调用左手腕力传感器零位校准服务
     type: std_srvs/Trigger
     demos:
     - data.yaml
     note: 对左手腕力传感器进行零位校准,清除当前传感器偏置,将当前力和力矩读数设为零点
+  - name: /zj_humanoid/hand/wrist_force_sensor/left/zero
+    description: 置零腕部传感器
+    type: std_srvs/Trigger
+    demos:
+    - data.yaml
+    note: 置零腕部传感器数值
   - name: /zj_humanoid/hand/wrist_force_sensor/right/zero
     description: 调用右手腕力传感器零位校准服务
     type: std_srvs/Trigger
@@ -175,7 +175,7 @@ services:
     note: 视觉示教抓取，让机器人知道该从什么方位抓取物品
   - name: /zj_humanoid/manipulation/joint_space_trajectory_planner
     description: 关节空间轨迹规划
-    type: manipulation/GetTrajectory
+    type: manipulation/JointSpaceTrajPlan
     demos:
     - data.yaml
     note: 节空间轨迹规划，输出关节轨迹，示教模式下记录各个关节数据，据此生成完整的执行轨迹
@@ -187,7 +187,7 @@ services:
     note: 输入图像获取指定物品的6D位姿
   - name: /zj_humanoid/manipulation/pose_space_trajectory_planner
     description: 末端轨迹规划
-    type: manipulation/MotionPlan
+    type: manipulation/PoseSpaceTrajPlan
     demos:
     - data.yaml
     note: 末端空间轨迹规划，示教模式下记录各个末端执行器数据，据此生成完整的执行轨迹
@@ -199,7 +199,7 @@ services:
     note: 机器人场景更新,基于二维码，需要场景中有二维码，机器人抓取物品前的环境感知
   - name: /zj_humanoid/manipulation/version
     description: 操作模块版本号
-    type: ''
+    type: std_srvs/Trigger
     demos:
     - data.yaml
     note: ''
@@ -632,14 +632,14 @@ topics:
     type: sensor_msgs/JointState
     direction: publish
     throttle_rate: 10
-    note: ''
+    note: 在双足I2机器人中，IMU位于URDF中的base_link，轮臂机器人目前暂不适用该topic
     demos: []
   - name: /zj_humanoid/lowerlimb/cmd_vel/calib
     description: 导航控制行走
     type: geometry_msgs/Twist
     direction: subscribe
     throttle_rate: 100
-    note: ''
+    note: 在多个cmd_vel topic中，优先级joy > calib > web
     demos: []
   - name: /zj_humanoid/lowerlimb/cmd_vel/joy
     description: 游戏手柄控制行走
@@ -653,7 +653,7 @@ topics:
     type: geometry_msgs/Twist
     direction: subscribe
     throttle_rate: 100
-    note: ''
+    note: 在多个cmd_vel topic中，优先级joy > calib > web
     demos: []
   - name: /zj_humanoid/lowerlimb/debug_info
     description: 运控debug信息
@@ -666,19 +666,19 @@ topics:
     description: 下肢泄力
     type: std_msgs/Float32
     direction: subscribe
-    note: 下肢泄力，软急停
+    note: 双足型号下肢泄力，软急停，轮臂机器人暂不适用
     demos: []
   - name: /zj_humanoid/lowerlimb/set_stand
     description: 站立姿态
     type: std_msgs/Float32
     direction: subscribe
-    note: 站立姿态初始化
+    note: 双足机器人站立姿态初始化，轮臂机器人暂不适用
     demos: []
   - name: /zj_humanoid/lowerlimb/start_move
     description: 开启运动模式
     type: std_msgs/Float32
     direction: subscribe
-    note: 开启运动模式，算法开始响应速度控制请求
+    note: 双足机器人开启运动模式，算法开始响应速度控制请求，轮臂机器人暂不适用
     demos: []
   navigation:
   - name: /zj_humanoid/navigation/local_map

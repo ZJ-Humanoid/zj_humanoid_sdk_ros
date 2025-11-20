@@ -2,7 +2,7 @@
     "metadata": {
         "description": "ZJ Humanoid ROS1 APIs",
         "version": "v1.0.0",
-        "generated_at": "2025-11-20 10:59:34"
+        "generated_at": "2025-11-20 12:11:40"
     },
     "services": [
         {
@@ -77,21 +77,21 @@
         },
         {
             "name": "/zj_humanoid/hand/finger_pressures/left/zero",
-            "description": "置零手指传感器",
-            "type": "std_srvs/Trigger",
-            "demos": [
-                "data.yaml"
-            ],
-            "note": "置零压力传感器数值"
-        },
-        {
-            "name": "/zj_humanoid/hand/finger_pressures/left/zero",
             "description": "调用左手指尖压力传感器零位校准服务",
             "type": "std_srvs/Trigger",
             "demos": [
                 "data.yaml"
             ],
             "note": "对左手指尖压力传感器进行零位校准,清除当前传感器偏置,将当前读数设为零点"
+        },
+        {
+            "name": "/zj_humanoid/hand/finger_pressures/left/zero",
+            "description": "置零手指传感器",
+            "type": "std_srvs/Trigger",
+            "demos": [
+                "data.yaml"
+            ],
+            "note": "置零压力传感器数值"
         },
         {
             "name": "/zj_humanoid/hand/finger_pressures/right/zero",
@@ -377,15 +377,6 @@
             "note": "左臂回到内置设置的home点"
         },
         {
-            "name": "/zj_humanoid/upperlimb/go_home/lifting",
-            "description": "升降回到内home点",
-            "type": "std_srvs/Trigger",
-            "demos": [
-                "data.yaml"
-            ],
-            "note": "升降回到内置设置的home点"
-        },
-        {
             "name": "/zj_humanoid/upperlimb/go_home/neck",
             "description": "脖子回到home点",
             "type": "std_srvs/Trigger",
@@ -440,16 +431,6 @@
                 "left_arm_t_case1.yaml"
             ],
             "note": "关节空间下,左臂点到点运动"
-        },
-        {
-            "name": "/zj_humanoid/upperlimb/movej/lift",
-            "description": "升降movej",
-            "type": "upperlimb/MoveJ",
-            "demos": [
-                "lift_v_acc_case1.yaml",
-                "lift_t_case1.yaml"
-            ],
-            "note": "关节空间下,升降点到点运动"
         },
         {
             "name": "/zj_humanoid/upperlimb/movej/neck",

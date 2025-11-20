@@ -12,7 +12,7 @@ File Structure:
     │   └── generate_json_from_yaml.py (this script)
     └── generated/
         ├── zj_humanoid_interfaces.yaml (input file)
-        ├── zj_humanoid_interfaces_H1.json (output)
+        ├── zj_humanoid_interfaces_U1.json (output)
         ├── zj_humanoid_interfaces_I2.json (output)
         ├── zj_humanoid_interfaces_WA1.json (output)
         ├── zj_humanoid_interfaces_WA2.json (output)
@@ -97,7 +97,7 @@ class InterfaceGenerator:
                 # Use default configuration
                 self.config = {
                     'robot_models': {
-                        'H1': {'exclude_modules': []},
+                        'U1': {'exclude_modules': []},
                         'I2': {'exclude_modules': []},
                         'WA1': {'exclude_modules': []},
                         'WA2': {'exclude_modules': []}
@@ -120,19 +120,19 @@ class InterfaceGenerator:
     
     def get_module_from_name(self, interface_name: str) -> str:
         """
-        Extract module name or module path from interface name.
+        Extract module path from interface name.
         
-        Supports both coarse-grained and fine-grained module extraction:
-        - Coarse: /zj_humanoid/audio/asr_text → 'audio'
-        - Fine: /zj_humanoid/sensor/CAM_A/camera_info → 'sensor/CAM_A'
-        - Fine: /zj_humanoid/manipulation/camera_calibration → 'manipulation/camera_calibration'
+        Supports hierarchical module paths at any depth:
+        - Level 1: /zj_humanoid/audio/asr_text → 'audio'
+        - Level 2: /zj_humanoid/sensor/CAM_A/camera_info → 'sensor/CAM_A'
+        - Level 3: /zj_humanoid/upperlimb/movej/lift → 'upperlimb/movej/lift'
+        - Level 3: /zj_humanoid/hand/task_switch/right → 'hand/task_switch/right'
         
         Args:
             interface_name: Full interface name
         
         Returns:
-            Module path (e.g., 'audio', 'sensor/CAM_A', 'manipulation/grasp_teach_service') 
-            or empty string if not found
+            Complete module path from zj_humanoid onwards, or empty string if not found
         """
         if not interface_name:
             return ''
@@ -141,40 +141,40 @@ class InterfaceGenerator:
         name = interface_name.lstrip('/')
         
         # Split by slash and get the parts
-        # Expected format: zj_humanoid/module/submodule/...
+        # Expected format: zj_humanoid/module/submodule/.../interface
         parts = name.split('/')
-        if len(parts) >= 2:
-            # Return the second part (module name)
-            module = parts[1]
-            
-            # Support fine-grained control: include submodule (third part) if exists
-            # This allows patterns like 'sensor/CAM_A', 'manipulation/grasp_teach_service', etc.
-            # Enable fine-grained control for all modules that have submodules
-            if len(parts) >= 3:
-                return f"{module}/{parts[2]}"
-            
-            return module
         
-        return ''
+        if len(parts) < 2:
+            return ''
+        
+        # Skip 'zj_humanoid' prefix and return the rest as module path
+        # This allows matching at any depth level
+        # Example: zj_humanoid/upperlimb/movej/lift → upperlimb/movej/lift
+        #          zj_humanoid/sensor/CAM_A → sensor/CAM_A
+        #          zj_humanoid/audio → audio
+        module_parts = parts[1:]  # Everything after 'zj_humanoid'
+        
+        return '/'.join(module_parts)
     
     def should_include_interface(self, interface_name: str, robot_model: str) -> bool:
         """
         Check if an interface should be included for a specific robot model.
         
-        Supports hierarchical module exclusion:
-        - Exact match: 'sensor/CAM_A' excludes only sensor/CAM_A interfaces
-        - Parent match: 'sensor' excludes all sensor/* interfaces
+        Supports hierarchical module exclusion at any depth:
+        - Exact match: 'upperlimb/movej/lift' excludes only /zj_humanoid/upperlimb/movej/lift
+        - Prefix match: 'upperlimb/movej' excludes all /zj_humanoid/upperlimb/movej/*
+        - Prefix match: 'upperlimb' excludes all /zj_humanoid/upperlimb/*
         
         Args:
             interface_name: Full interface name
-            robot_model: Robot model name (H1, I2, WA1, WA2)
+            robot_model: Robot model name (U1, I2, WA1, WA2)
         
         Returns:
             True if the interface should be included, False otherwise
         """
-        module = self.get_module_from_name(interface_name)
+        module_path = self.get_module_from_name(interface_name)
         
-        if not module:
+        if not module_path:
             return True
         
         # Get exclude modules for this robot model
@@ -183,13 +183,11 @@ class InterfaceGenerator:
         
         # Check if module should be excluded
         for exclude_pattern in exclude_modules:
-            # Exact match: e.g., 'sensor/CAM_A' matches 'sensor/CAM_A'
-            if module == exclude_pattern:
-                return False
-            
-            # Parent match: e.g., 'sensor' matches 'sensor/CAM_A'
-            # This ensures that excluding 'sensor' will exclude all sensor submodules
-            if module.startswith(exclude_pattern + '/'):
+            # Exact match or prefix match
+            # 'upperlimb/movej/lift' matches 'upperlimb/movej/lift'
+            # 'upperlimb/movej' matches 'upperlimb/movej/lift'
+            # 'upperlimb' matches 'upperlimb/movej/lift'
+            if module_path == exclude_pattern or module_path.startswith(exclude_pattern + '/'):
                 return False
         
         return True
@@ -206,7 +204,7 @@ class InterfaceGenerator:
         
         if not robot_models:
             print("Warning: No robot models found in config! Using defaults.")
-            robot_models = ['H1', 'I2', 'WA1', 'WA2']
+            robot_models = ['U1', 'I2', 'WA1', 'WA2']
         
         # Create a dictionary to hold data for each robot model
         robot_data = {}
