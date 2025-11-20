@@ -74,25 +74,38 @@ markmap:
 ## 📡 Topics (28)
 - joint_states
 - occupancy_state
-- dual_arm
-- left_arm
-- neck
-- right_arm
-- waist
-- whole_body
-- dual_arm
-- left_arm
-- right_arm
-- dual_arm
-- enable_speedj
-- left_arm
-- lift
-- neck
-- right_arm
-- waist
-- whole_body
-- dual_arm
-- ... 还有 8 个话题`
+- tcp_speed
+- uplimb_occupation
+- uplimb_state
+- servoj
+  - dual_arm
+  - left_arm
+  - neck
+  - right_arm
+  - waist
+  - whole_body
+- servol
+  - dual_arm
+  - left_arm
+  - right_arm
+- speedj
+  - dual_arm
+  - enable_speedj
+  - left_arm
+  - lift
+  - neck
+  - right_arm
+  - waist
+  - whole_body
+- speedl
+  - dual_arm
+  - left_arm
+  - right_arm
+- tcp_pose
+  - left_arm
+  - right_arm
+- tcp_speed
+  - dual_arm`
 </script>
 
 ---

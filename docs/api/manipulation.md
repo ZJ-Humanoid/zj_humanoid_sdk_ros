@@ -63,7 +63,7 @@ markmap:
 | 字段 | 值 |
 |------|-----|
 | **Service Name** | /zj_humanoid/manipulation/joint_space_trajectory_planner |
-| **Type** | [manipulation/GetTrajectory](../zj_humanoid_types#gettrajectory) |
+| **Type** | [manipulation/JointSpaceTrajPlan](../zj_humanoid_types#jointspacetrajplan) |
 | **Description** | 关节空间轨迹规划 |
 | **Note** | 节空间轨迹规划，输出关节轨迹，示教模式下记录各个关节数据，据此生成完整的执行轨迹 |
 
@@ -81,7 +81,7 @@ markmap:
 | 字段 | 值 |
 |------|-----|
 | **Service Name** | /zj_humanoid/manipulation/pose_space_trajectory_planner |
-| **Type** | [manipulation/MotionPlan](../zj_humanoid_types#motionplan) |
+| **Type** | [manipulation/PoseSpaceTrajPlan](../zj_humanoid_types#posespacetrajplan) |
 | **Description** | 末端轨迹规划 |
 | **Note** | 末端空间轨迹规划，示教模式下记录各个末端执行器数据，据此生成完整的执行轨迹 |
 
@@ -99,6 +99,6 @@ markmap:
 | 字段 | 值 |
 |------|-----|
 | **Service Name** | /zj_humanoid/manipulation/version |
-| **Type** |  |
+| **Type** | std_srvs/Trigger |
 | **Description** | 操作模块版本号 |
 

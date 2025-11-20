@@ -36,15 +36,18 @@ markmap:
   - stop
 ## 📡 Topics (10)
 - battery_info
-- errors
-- temperatures
 - monitor
-- errors
-- resource
-- errors
-- resource
 - robot_state
-- work_status_form_start`
+- work_status_form_start
+- joint_motor
+  - errors
+  - temperatures
+- orin_states
+  - errors
+  - resource
+- pico_states
+  - errors
+  - resource`
 </script>
 
 ---
