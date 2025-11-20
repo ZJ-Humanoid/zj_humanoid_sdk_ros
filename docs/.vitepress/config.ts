@@ -106,7 +106,7 @@ export default defineConfig({
                 text: '子系统示例',
                 collapsed: true,
                 items: [
-                  // { text: '🔊 Audio', link: '/api/subsystems/audio' ,},
+                  { text: '🔊 Audio', link: '/demos/audio_interfaces' },
                   { text: '🖐️ Hand', link: '/demos/dexhand_interface' },
                   { text: '🦵 Lowerlimb', link: '/demos/lowerlimb' },
                   { text: '🔧 Manipulation', link: '/demos/manipulation' },
@@ -124,6 +124,7 @@ export default defineConfig({
             items: [
               { text: 'WEB 遥控器', link: 'tools/web_telec' },
               { text: 'WEB 示教器', link: 'tools/web_tech' },
+              { text: '大屏展示软件', link: 'tools/data_display' },
               { text: 'HOS 安装', link: 'tools/hos_install' },
               { text: 'HOS 开发', link: 'tools/hos_dev' },
             ]

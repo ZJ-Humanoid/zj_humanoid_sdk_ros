@@ -48,7 +48,7 @@ markmap:
   - compressed
   - camera_info
   - image_rect_raw
-  - ... 还有 1 个
+  - compressed
 - realsense_head
   - camera_info
   - image_raw
@@ -58,7 +58,7 @@ markmap:
   - compressed
   - camera_info
   - image_rect_raw
-  - ... 还有 1 个
+  - compressed
 - realsense_up
   - camera_info
   - image_raw
@@ -68,7 +68,7 @@ markmap:
   - compressed
   - camera_info
   - image_rect_raw
-  - ... 还有 1 个`
+  - compressed`
 </script>
 
 ---

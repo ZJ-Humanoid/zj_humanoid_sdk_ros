@@ -241,9 +241,9 @@ class VitePressDocGenerator:
                     # 再显示分组后的服务，分组名作为列表项，子项使用缩进
                     for group, items in sorted(service_groups.items()):
                         markmap_lines.append(f"- {group}")
-                        for item in items[:8]:  # 每组最多显示8个
+                        for item in items[:10]:  # 每组最多显示8个
                             markmap_lines.append(f"  - {item}")  # 使用两个空格缩进表示子项
-                        if len(items) > 8:
+                        if len(items) > 10:
                             markmap_lines.append(f"  - ... 还有 {len(items) - 8} 个")
                 
                 if topics:
@@ -276,9 +276,9 @@ class VitePressDocGenerator:
                     # 再显示分组后的话题，分组名作为列表项，子项使用缩进
                     for group, items in sorted(topic_groups.items()):
                         markmap_lines.append(f"- {group}")
-                        for item in items[:8]:  # 每组最多显示8个
+                        for item in items[:10]:  # 每组最多显示8个
                             markmap_lines.append(f"  - {item}")  # 使用两个空格缩进表示子项
-                        if len(items) > 8:
+                        if len(items) > 10:
                             markmap_lines.append(f"  - ... 还有 {len(items) - 8} 个")
                 
                 markmap_content = '\n'.join(markmap_lines)
