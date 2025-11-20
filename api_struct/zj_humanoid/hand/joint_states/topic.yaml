@@ -2,6 +2,6 @@
   name: /zj_humanoid/hand/joint_states
   description: 订阅手部关节状态数据
   type: sensor_msgs/JointState
-  direction: subscribe
+  direction: publish
   throttle_rate: 10
   note: "订阅手部所有关节的位置状态,包括左右手各6个关节:拇指弯曲、拇指摆动、食指弯曲、中指弯曲、无名指弯曲、小指弯曲"
