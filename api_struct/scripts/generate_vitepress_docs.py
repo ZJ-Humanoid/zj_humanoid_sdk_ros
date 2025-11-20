@@ -248,12 +248,38 @@ class VitePressDocGenerator:
                 
                 if topics:
                     markmap_lines.append(f"## 📡 Topics ({len(topics)})")
-                    for topic in topics[:20]:  # 限制显示前20个
+                    # 按路径层级组织话题，与 Services 类似
+                    topic_groups = {}
+                    root_topics = []
+                    
+                    for topic in topics:
                         name = topic.get('name', '')
-                        short_name = name.split('/')[-1] if '/' in name else name
-                        markmap_lines.append(f"- {short_name}")
-                    if len(topics) > 20:
-                        markmap_lines.append(f"- ... 还有 {len(topics) - 20} 个话题")
+                        parts = [p for p in name.split('/') if p]  # 移除空字符串
+                        
+                        if len(parts) >= 4:
+                            # 有子路径，如 /zj_humanoid/hand/finger_pressures/left
+                            # parts: ['zj_humanoid', 'hand', 'finger_pressures', 'left']
+                            group = parts[2]  # finger_pressures, wrist_force_sensor 等（索引2）
+                            if group not in topic_groups:
+                                topic_groups[group] = []
+                            topic_groups[group].append(parts[-1])  # 只保存最后一部分
+                        else:
+                            # 直接在子系统下的话题，如 /zj_humanoid/hand/joint_states
+                            root_topics.append(parts[-1])
+                    
+                    # 先显示根级别的话题
+                    for item in root_topics[:10]:
+                        markmap_lines.append(f"- {item}")
+                    if len(root_topics) > 10:
+                        markmap_lines.append(f"- ... 还有 {len(root_topics) - 10} 个")
+                    
+                    # 再显示分组后的话题，分组名作为列表项，子项使用缩进
+                    for group, items in sorted(topic_groups.items()):
+                        markmap_lines.append(f"- {group}")
+                        for item in items[:8]:  # 每组最多显示8个
+                            markmap_lines.append(f"  - {item}")  # 使用两个空格缩进表示子项
+                        if len(items) > 8:
+                            markmap_lines.append(f"  - ... 还有 {len(items) - 8} 个")
                 
                 markmap_content = '\n'.join(markmap_lines)
                 markmap_frontmatter = """---
