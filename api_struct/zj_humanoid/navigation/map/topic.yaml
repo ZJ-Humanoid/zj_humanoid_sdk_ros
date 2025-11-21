@@ -1,5 +1,5 @@
 ﻿topic:
-  name: /zj_humanoid/navigation/map
+  name: /map
   description: 全局地图信息
   type: nav_msgs/OccupancyGrid
   direction: subscribe
