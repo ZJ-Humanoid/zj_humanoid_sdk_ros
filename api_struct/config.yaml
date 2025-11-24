@@ -38,6 +38,11 @@ robot_models:
     exclude_modules:
       - lowerlimb
       - sensor/realsense_down
+      - upperlimb/go_home/whole_body
+      - upperlimb/movej/whole_body
+      - upperlimb/movej_by_path/whole_body
+      - upperlimb/servoj/whole_body
+      - upperlimb/speedj/whole_body
   WA2:
     exclude_modules:
       - manipulation
