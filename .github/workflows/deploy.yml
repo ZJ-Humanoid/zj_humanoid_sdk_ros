@@ -41,6 +41,7 @@ jobs:
         run: |
           cd api_struct/scripts
           python3 generate_whole_yaml.py
+          python3 generate_json_from_yaml.py
           python3 generate_vitepress_docs.py
 
       - name: Build VitePress
