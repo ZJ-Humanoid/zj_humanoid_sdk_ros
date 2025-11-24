@@ -2,7 +2,7 @@
     "metadata": {
         "description": "ZJ Humanoid ROS1 APIs",
         "version": "v1.0.0",
-        "generated_at": "2025-11-21 18:05:58"
+        "generated_at": "2025-11-24 10:24:59"
     },
     "services": [
         {
@@ -518,74 +518,6 @@
             "note": "控制全身按照关节空间路径运动"
         },
         {
-            "name": "/zj_humanoid/upperlimb/movej_by_pose/dual_arm",
-            "description": "双臂末端movej",
-            "type": "upperlimb/MoveJByPose",
-            "demos": [
-                "case1.yaml"
-            ],
-            "note": "tcp末端空间下,双臂末端位姿movej"
-        },
-        {
-            "name": "/zj_humanoid/upperlimb/movej_by_pose/left_arm",
-            "description": "左臂末端movej",
-            "type": "upperlimb/MoveJByPose",
-            "demos": [
-                "case1.yaml"
-            ],
-            "note": "tcp末端空间下,左臂末端位姿movej"
-        },
-        {
-            "name": "/zj_humanoid/upperlimb/movej_by_pose/right_arm",
-            "description": "右臂末端movej",
-            "type": "upperlimb/MoveJByPose",
-            "demos": [
-                "case1.yaml"
-            ],
-            "note": "tcp末端空间下,右臂末端位姿movej"
-        },
-        {
-            "name": "/zj_humanoid/upperlimb/movel/dual_arm",
-            "description": "双臂movel",
-            "type": "upperlimb/MoveL",
-            "demos": [
-                "case1.yaml"
-            ],
-            "note": "关节空间下,双臂直线轨迹点运动"
-        },
-        {
-            "name": "/zj_humanoid/upperlimb/movel/left_arm",
-            "description": "左臂movel",
-            "type": "upperlimb/MoveL",
-            "demos": [
-                "case1.yaml"
-            ],
-            "note": "关节空间下,左臂直线轨迹点运动"
-        },
-        {
-            "name": "/zj_humanoid/upperlimb/movel/right_arm",
-            "description": "右臂movel",
-            "type": "upperlimb/MoveL",
-            "demos": [
-                "case1.yaml"
-            ],
-            "note": "关节空间下,右臂直线轨迹点运动"
-        },
-        {
-            "name": "/zj_humanoid/upperlimb/servol/clear_params",
-            "description": "退出servol",
-            "type": "upperlimb/Servo",
-            "note": "退出笛卡尔空间 高频位置跟随控制",
-            "demos": []
-        },
-        {
-            "name": "/zj_humanoid/upperlimb/servol/set_params",
-            "description": "设置servol参数",
-            "type": "upperlimb/Servo",
-            "note": "设置笛卡尔空间 高频位置跟随控制参数",
-            "demos": []
-        },
-        {
             "name": "/zj_humanoid/upperlimb/set_servo_params",
             "description": "设置伺服参数",
             "type": "upperlimb/Servo",
@@ -593,13 +525,6 @@
                 "data.yaml"
             ],
             "note": "设置上肢伺服参数配置,包括时间和增益参数"
-        },
-        {
-            "name": "/zj_humanoid/upperlimb/speedl/enable_speedl",
-            "description": "启用speedl",
-            "type": "std_srvs/SetBool",
-            "note": "启用笛卡尔空间 速度控制",
-            "demos": []
         },
         {
             "name": "/zj_humanoid/upperlimb/stop",
@@ -1079,30 +1004,6 @@
             "demos": []
         },
         {
-            "name": "/zj_humanoid/upperlimb/servol/dual_arm",
-            "description": "双臂servol",
-            "type": "geometry_msgs/Pose",
-            "direction": "subscribe",
-            "note": "笛卡尔空间 高频位置跟随控制",
-            "demos": []
-        },
-        {
-            "name": "/zj_humanoid/upperlimb/servol/left_arm",
-            "description": "左臂servol",
-            "type": "geometry_msgs/Pose",
-            "direction": "subscribe",
-            "note": "笛卡尔空间 高频位置跟随控制",
-            "demos": []
-        },
-        {
-            "name": "/zj_humanoid/upperlimb/servol/right_arm",
-            "description": "右臂servol",
-            "type": "geometry_msgs/Pose",
-            "direction": "subscribe",
-            "note": "笛卡尔空间 高频位置跟随控制",
-            "demos": []
-        },
-        {
             "name": "/zj_humanoid/upperlimb/speedj/dual_arm",
             "description": "双臂关节speedj",
             "type": "upperlimb/SpeedJ",
@@ -1122,15 +1023,6 @@
         {
             "name": "/zj_humanoid/upperlimb/speedj/left_arm",
             "description": "左臂speedj",
-            "type": "upperlimb/TcpSpeed",
-            "direction": "subscribe",
-            "throttle_rate": 10,
-            "note": "关节空间速度控制",
-            "demos": []
-        },
-        {
-            "name": "/zj_humanoid/upperlimb/speedj/lift",
-            "description": "升降speedj",
             "type": "upperlimb/TcpSpeed",
             "direction": "subscribe",
             "throttle_rate": 10,
@@ -1174,30 +1066,6 @@
             "demos": []
         },
         {
-            "name": "/zj_humanoid/upperlimb/speedl/dual_arm",
-            "description": "双臂speedl",
-            "type": "upperlimb/SpeedL",
-            "direction": "subscribe",
-            "note": "笛卡尔空间 速度控制",
-            "demos": []
-        },
-        {
-            "name": "/zj_humanoid/upperlimb/speedl/left_arm",
-            "description": "左臂speedl",
-            "type": "upperlimb/SpeedL",
-            "direction": "subscribe",
-            "note": "笛卡尔空间 速度控制",
-            "demos": []
-        },
-        {
-            "name": "/zj_humanoid/upperlimb/speedl/right_arm",
-            "description": "右臂speedl",
-            "type": "upperlimb/SpeedL",
-            "direction": "subscribe",
-            "note": "笛卡尔空间 速度控制",
-            "demos": []
-        },
-        {
             "name": "/zj_humanoid/upperlimb/tcp_pose/left_arm",
             "description": "左臂tcp位姿控制",
             "type": "upperlimb/Pose",
@@ -1213,15 +1081,6 @@
             "direction": "publish",
             "throttle_rate": 10,
             "note": "右手臂末端位姿",
-            "demos": []
-        },
-        {
-            "name": "/zj_humanoid/upperlimb/tcp_speed/dual_arm",
-            "description": "双臂TCP速度",
-            "type": "upperlimb/TcpSpeed",
-            "direction": "subscribe",
-            "throttle_rate": 10,
-            "note": "该话题发布双臂末端执行器(TCP)的实时速度信息",
             "demos": []
         },
         {
