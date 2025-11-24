@@ -55,6 +55,5 @@ robot_models:
       - upperlimb/servol
       - upperlimb/speedl
       - upperlimb/speedj/lift
-      - upperlimb/tcp_speed
       - hand/task_switch
       - hand/wrist_force_sensor

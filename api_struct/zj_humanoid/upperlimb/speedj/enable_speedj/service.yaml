@@ -1,6 +1,5 @@
-topic:
+service:
   name: /zj_humanoid/upperlimb/speedj/enable_speedj
   description: 启用speedj
   type: upperlimb/TcpSpeed
-  direction: subscribe
   note: "启用关节空间速度控制"
