@@ -2,7 +2,7 @@
     "metadata": {
         "description": "ZJ Humanoid ROS1 APIs",
         "version": "v1.0.0",
-        "generated_at": "2025-11-24 14:09:49"
+        "generated_at": "2025-11-24 08:15:26"
     },
     "services": [
         {
@@ -222,15 +222,6 @@
             "note": "视觉示教抓取，让机器人知道该从什么方位抓取物品"
         },
         {
-            "name": "/zj_humanoid/manipulation/joint_space_trajectory_planner",
-            "description": "关节空间轨迹规划",
-            "type": "manipulation/JointSpaceTrajPlan",
-            "demos": [
-                "data.yaml"
-            ],
-            "note": "节空间轨迹规划，输出关节轨迹，示教模式下记录各个关节数据，据此生成完整的执行轨迹"
-        },
-        {
             "name": "/zj_humanoid/manipulation/pose_estimation_service",
             "description": "获取目标位姿",
             "type": "manipulation/PoseEst",
@@ -238,24 +229,6 @@
                 "data.yaml"
             ],
             "note": "输入图像获取指定物品的6D位姿"
-        },
-        {
-            "name": "/zj_humanoid/manipulation/pose_space_trajectory_planner",
-            "description": "末端轨迹规划",
-            "type": "manipulation/PoseSpaceTrajPlan",
-            "demos": [
-                "data.yaml"
-            ],
-            "note": "末端空间轨迹规划，示教模式下记录各个末端执行器数据，据此生成完整的执行轨迹"
-        },
-        {
-            "name": "/zj_humanoid/manipulation/scene_update",
-            "description": "场景更新",
-            "type": "manipulation/SceneUpdate",
-            "demos": [
-                "data.yaml"
-            ],
-            "note": "机器人场景更新,基于二维码，需要场景中有二维码，机器人抓取物品前的环境感知"
         },
         {
             "name": "/zj_humanoid/manipulation/version",
@@ -370,34 +343,6 @@
             "description": "机器人软急停",
             "type": "std_srvs/Trigger",
             "note": "机器人软急停状态，状态机值将切换为ERR，在机器发生异常时使用，将机器人状态设置为stop 1秒后，检测robot_state话题，状态应切换为：ERR",
-            "demos": []
-        },
-        {
-            "name": "/zj_humanoid/sensor/CAM_A/camera_info",
-            "description": "左眼参数信息",
-            "type": "sensor/CameraInfo",
-            "note": "相机A的参数信息,相机A安装在机器人左眼的位置上，相机A的分辨率是多少 回复应包含1280和720",
-            "demos": []
-        },
-        {
-            "name": "/zj_humanoid/sensor/CAM_B/camera_info",
-            "description": "右眼参数信息",
-            "type": "sensor/CameraInfo",
-            "note": "相机B的参数信息，相机B安装在机器人右眼的位置上，相机B的分辨率是多少 回复应包含1280和720",
-            "demos": []
-        },
-        {
-            "name": "/zj_humanoid/sensor/CAM_C/camera_info",
-            "description": "相机C参数信息",
-            "type": "sensor/CameraInfo",
-            "note": "相机C的参数信息，相机C大致安装在机器人右侧太阳穴的位置上，相机C的分辨率是多少 回复应包含1280和720",
-            "demos": []
-        },
-        {
-            "name": "/zj_humanoid/sensor/CAM_D/camera_info",
-            "description": "相机D参数信息",
-            "type": "sensor/CameraInfo",
-            "note": "相机D的参数信息，相机D大致安装在机器人左侧太阳穴的位置上，相机D的分辨率是多少 回复应包含1280和720",
             "demos": []
         },
         {
@@ -1003,87 +948,6 @@
                 "robot_work_status.yaml"
             ],
             "note": "机器人开机后单次工作状态发布，包含已运行时间，剩余工作时间，行进里程数等，描述下机器人本次开机后工作状态 回复因包含：已运行时间，剩余工作时间，行进里程数"
-        },
-        {
-            "name": "/zj_humanoid/sensor/CAM_A/compressed",
-            "description": "左眼相机JPG",
-            "type": "sensor_msgs/CompressedImage",
-            "direction": "publish",
-            "throttle_rate": 62.5,
-            "note": "左眼相机的JPG图像数据",
-            "demos": []
-        },
-        {
-            "name": "/zj_humanoid/sensor/CAM_A/image_raw",
-            "description": "左眼相机RGB",
-            "type": "sensor_msgs/Image",
-            "direction": "publish",
-            "throttle_rate": 62.5,
-            "note": "左眼相机的RGB图像源数据",
-            "demos": []
-        },
-        {
-            "name": "/zj_humanoid/sensor/CAM_B/compressed",
-            "description": "右眼相机JPG",
-            "type": "sensor_msgs/CompressedImage",
-            "direction": "publish",
-            "throttle_rate": 62.5,
-            "note": "右眼相机的JPG图像数据",
-            "demos": []
-        },
-        {
-            "name": "/zj_humanoid/sensor/CAM_B/image_raw",
-            "description": "右眼相机RGB",
-            "type": "sensor_msgs/Image",
-            "direction": "publish",
-            "throttle_rate": 62.5,
-            "note": "右眼相机的RGB图像源数据",
-            "demos": []
-        },
-        {
-            "name": "/zj_humanoid/sensor/CAM_C/compressed",
-            "description": "相机C的JPG",
-            "type": "sensor_msgs/CompressedImage",
-            "direction": "publish",
-            "throttle_rate": 62.5,
-            "note": "右侧太阳穴相机C的JPG图像数据",
-            "demos": []
-        },
-        {
-            "name": "/zj_humanoid/sensor/CAM_C/image_raw",
-            "description": "相机C的RGB",
-            "type": "sensor_msgs/Image",
-            "direction": "publish",
-            "throttle_rate": 62.5,
-            "note": "右侧太阳穴相机C的RGB图像源数据",
-            "demos": []
-        },
-        {
-            "name": "/zj_humanoid/sensor/CAM_D/compressed",
-            "description": "相机D的JPG",
-            "type": "sensor_msgs/CompressedImage",
-            "direction": "publish",
-            "throttle_rate": 62.5,
-            "note": "左侧太阳穴相机D的JPG图像数据",
-            "demos": []
-        },
-        {
-            "name": "/zj_humanoid/sensor/CAM_D/image_raw",
-            "description": "相机D的RGB",
-            "type": "sensor_msgs/Image",
-            "direction": "publish",
-            "throttle_rate": 62.5,
-            "note": "左侧太阳穴相机D的RGB图像源数据",
-            "demos": []
-        },
-        {
-            "name": "/zj_humanoid/sensor/head_imu",
-            "description": "头部IMU数据",
-            "type": "sensor_msgs/Imu",
-            "direction": "publish",
-            "throttle_rate": 10,
-            "note": "头部IMU的目前帧率是多少 回复应接近100",
-            "demos": []
         },
         {
             "name": "/zj_humanoid/sensor/realsense_head/aligned_depth_to_color/camera_info",
