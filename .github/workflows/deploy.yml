@@ -8,9 +8,9 @@ on:
   # 允许手动触发
   workflow_dispatch:
 
-# 设置 GITHUB_TOKEN 的权限，允许部署到 GitHub Pages
+# 设置 GITHUB_TOKEN 的权限,允许部署到 GitHub Pages
 permissions:
-  contents: read
+  contents: write  # 改为 write 以允许提交文件
   pages: write
   id-token: write
 
@@ -43,6 +43,14 @@ jobs:
           python3 generate_whole_yaml.py
           python3 generate_json_from_yaml.py
           python3 generate_vitepress_docs.py
+
+      - name: Commit generated files
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add api_struct/generated/
+          git diff --staged --quiet || git commit -m "chore: update generated API documentation [skip ci]"
+          git push || echo "No changes to push"
 
       - name: Build VitePress
         run: npm run docs:build

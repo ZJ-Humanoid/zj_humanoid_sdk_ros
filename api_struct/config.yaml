@@ -37,7 +37,15 @@ robot_models:
   WA1:
     exclude_modules:
       - lowerlimb
+      - sensor/CAM_A
+      - sensor/CAM_B
+      - sensor/CAM_C
+      - sensor/CAM_D
+      - sensor/head_imu
       - sensor/realsense_down
+      - manipulation/joint_space_trajectory_planner
+      - manipulation/pose_space_trajectory_planner
+      - manipulation/scene_update
   WA2:
     exclude_modules:
       - manipulation
