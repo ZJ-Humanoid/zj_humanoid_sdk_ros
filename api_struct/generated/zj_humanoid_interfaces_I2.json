@@ -2,7 +2,7 @@
     "metadata": {
         "description": "ZJ Humanoid ROS1 APIs",
         "version": "v1.0.0",
-        "generated_at": "2025-11-24 08:24:58"
+        "generated_at": "2025-11-24 09:05:12"
     },
     "services": [
         {
@@ -665,13 +665,6 @@
                 "data.yaml"
             ],
             "note": "设置上肢伺服参数配置,包括时间和增益参数"
-        },
-        {
-            "name": "/zj_humanoid/upperlimb/speedj/enable_speedj",
-            "description": "启用speedj",
-            "type": "upperlimb/TcpSpeed",
-            "note": "启用关节空间速度控制",
-            "demos": []
         },
         {
             "name": "/zj_humanoid/upperlimb/speedl/enable_speedl",
