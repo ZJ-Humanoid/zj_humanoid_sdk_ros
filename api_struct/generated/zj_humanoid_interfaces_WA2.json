@@ -2,7 +2,7 @@
     "metadata": {
         "description": "ZJ Humanoid ROS1 APIs",
         "version": "v1.0.0",
-        "generated_at": "2025-11-24 08:15:26"
+        "generated_at": "2025-11-24 08:24:58"
     },
     "services": [
         {
@@ -527,6 +527,13 @@
             "note": "设置上肢伺服参数配置,包括时间和增益参数"
         },
         {
+            "name": "/zj_humanoid/upperlimb/speedj/enable_speedj",
+            "description": "启用speedj",
+            "type": "upperlimb/TcpSpeed",
+            "note": "启用关节空间速度控制",
+            "demos": []
+        },
+        {
             "name": "/zj_humanoid/upperlimb/stop",
             "description": "停止上肢运动",
             "type": "std_srvs/Trigger",
@@ -1013,14 +1020,6 @@
             "demos": []
         },
         {
-            "name": "/zj_humanoid/upperlimb/speedj/enable_speedj",
-            "description": "启用speedj",
-            "type": "upperlimb/TcpSpeed",
-            "direction": "subscribe",
-            "note": "启用关节空间速度控制",
-            "demos": []
-        },
-        {
             "name": "/zj_humanoid/upperlimb/speedj/left_arm",
             "description": "左臂speedj",
             "type": "upperlimb/TcpSpeed",
@@ -1081,6 +1080,15 @@
             "direction": "publish",
             "throttle_rate": 10,
             "note": "右手臂末端位姿",
+            "demos": []
+        },
+        {
+            "name": "/zj_humanoid/upperlimb/tcp_speed/dual_arm",
+            "description": "双臂TCP速度",
+            "type": "upperlimb/TcpSpeed",
+            "direction": "subscribe",
+            "throttle_rate": 10,
+            "note": "该话题发布双臂末端执行器(TCP)的实时速度信息",
             "demos": []
         },
         {

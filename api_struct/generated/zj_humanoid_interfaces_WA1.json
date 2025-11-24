@@ -2,7 +2,7 @@
     "metadata": {
         "description": "ZJ Humanoid ROS1 APIs",
         "version": "v1.0.0",
-        "generated_at": "2025-11-24 08:15:26"
+        "generated_at": "2025-11-24 08:24:58"
     },
     "services": [
         {
@@ -481,15 +481,6 @@
             "note": "腰部回到内置设置的home点"
         },
         {
-            "name": "/zj_humanoid/upperlimb/go_home/whole_body",
-            "description": "全身回到home点",
-            "type": "upperlimb/ArmType",
-            "demos": [
-                "left_arm_disenable_teachmode.yaml"
-            ],
-            "note": "全身指定部位回到内置设置的home点"
-        },
-        {
             "name": "/zj_humanoid/upperlimb/movej/dual_arm",
             "description": "双臂movej",
             "type": "upperlimb/MoveJ",
@@ -550,16 +541,6 @@
             "note": "关节空间下,腰部点到点运动"
         },
         {
-            "name": "/zj_humanoid/upperlimb/movej/whole_body",
-            "description": "全身movej",
-            "type": "upperlimb/MoveJ",
-            "demos": [
-                "whole_body_v_acc_case1.yaml",
-                "whole_body_t_case1.yaml"
-            ],
-            "note": "关节空间下,全身各部位点到点运动"
-        },
-        {
             "name": "/zj_humanoid/upperlimb/movej_by_path/dual_arm",
             "description": "双臂轨迹movej",
             "type": "upperlimb/MoveJByPath",
@@ -603,15 +584,6 @@
                 "data.yaml"
             ],
             "note": "控制腰部按照关节空间路径运动"
-        },
-        {
-            "name": "/zj_humanoid/upperlimb/movej_by_path/whole_body",
-            "description": "关节空间下,全身轨迹点路径运动",
-            "type": "upperlimb/MoveJByPath",
-            "demos": [
-                "data.yaml"
-            ],
-            "note": "控制全身按照关节空间路径运动"
         },
         {
             "name": "/zj_humanoid/upperlimb/movej_by_pose/dual_arm",
@@ -675,6 +647,13 @@
                 "data.yaml"
             ],
             "note": "设置上肢伺服参数配置,包括时间和增益参数"
+        },
+        {
+            "name": "/zj_humanoid/upperlimb/speedj/enable_speedj",
+            "description": "启用speedj",
+            "type": "upperlimb/TcpSpeed",
+            "note": "启用关节空间速度控制",
+            "demos": []
         },
         {
             "name": "/zj_humanoid/upperlimb/speedl/enable_speedl",
@@ -1171,14 +1150,6 @@
             "demos": []
         },
         {
-            "name": "/zj_humanoid/upperlimb/servoj/whole_body",
-            "description": "全身servoj",
-            "type": "upperlimb/Joints",
-            "direction": "subscribe",
-            "note": "关节空间 高频位置控制",
-            "demos": []
-        },
-        {
             "name": "/zj_humanoid/upperlimb/servol/dual_arm",
             "description": "双臂servol",
             "type": "geometry_msgs/Pose",
@@ -1209,14 +1180,6 @@
             "direction": "publish",
             "throttle_rate": 5,
             "note": "双臂关节空间速度控制",
-            "demos": []
-        },
-        {
-            "name": "/zj_humanoid/upperlimb/speedj/enable_speedj",
-            "description": "启用speedj",
-            "type": "upperlimb/TcpSpeed",
-            "direction": "subscribe",
-            "note": "启用关节空间速度控制",
             "demos": []
         },
         {
@@ -1258,15 +1221,6 @@
         {
             "name": "/zj_humanoid/upperlimb/speedj/waist",
             "description": "腰speedj",
-            "type": "upperlimb/TcpSpeed",
-            "direction": "subscribe",
-            "throttle_rate": 10,
-            "note": "关节空间速度控制",
-            "demos": []
-        },
-        {
-            "name": "/zj_humanoid/upperlimb/speedj/whole_body",
-            "description": "全身speedj",
             "type": "upperlimb/TcpSpeed",
             "direction": "subscribe",
             "throttle_rate": 10,
