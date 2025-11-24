@@ -2,7 +2,7 @@
     "metadata": {
         "description": "ZJ Humanoid ROS1 APIs",
         "version": "v1.0.0",
-        "generated_at": "2025-11-24 08:24:58"
+        "generated_at": "2025-11-24 08:32:48"
     },
     "services": [
         {
@@ -778,6 +778,16 @@
             "throttle_rate": 10,
             "note": "接收右手腕力传感器数据,包括力和力矩的三轴分量",
             "demos": []
+        },
+        {
+            "name": "/zj_humanoid/manipulation/instance_segmentation_action/goal",
+            "description": "实例分割Action",
+            "type": "manipulation/InstSeg",
+            "direction": "publish",
+            "demos": [
+                "data.yaml"
+            ],
+            "note": ""
         },
         {
             "name": "/zj_humanoid/navigation/local_map",

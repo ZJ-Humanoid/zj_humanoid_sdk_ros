@@ -663,6 +663,14 @@ topics:
     direction: subscribe
     note: 双足机器人开启运动模式，算法开始响应速度控制请求，轮臂机器人暂不适用
     demos: []
+  manipulation:
+  - name: /zj_humanoid/manipulation/instance_segmentation_action/goal
+    description: 实例分割Action
+    type: manipulation/InstSeg
+    direction: publish
+    demos:
+    - data.yaml
+    note: ''
   navigation:
   - name: /zj_humanoid/navigation/local_map
     description: 局部障碍物信息
@@ -1202,12 +1210,3 @@ topics:
     throttle_rate: 10
     note: 该话题发布上肢机器人的当前命令状态信息
     demos: []
-actions:
-  manipulation:
-  - name: /zj_humanoid/manipulation/instance_segmentation_action
-    description: 实例分割Action
-    type: manipulation/InstSeg
-    direction: publish
-    demos:
-    - data.yaml
-    note: ''
