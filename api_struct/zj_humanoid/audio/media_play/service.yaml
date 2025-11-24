@@ -2,7 +2,7 @@ service:
   name: /zj_humanoid/audio/media_play
   description: 音频文件播放
   type: audio/MediaPlay
-  note: "播放'公司介绍.mp3'"
+  note: "播放'公司介绍.mp3',播放的文件需将文件放置在共享目录下，文件路径是：/home/naviai/navi_project/share/ 下"
   
 # 请求示例数据
 file_path: "/path/to/company_intro.mp3"  # 音频文件路径 需将文件放置在共享目录下

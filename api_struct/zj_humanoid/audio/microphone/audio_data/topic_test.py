@@ -2,7 +2,7 @@
 """
 ROS Topic Test Script
 
-Topic: /zj_humanoid/audio/audio_data
+Topic: /zj_humanoid/audio/microphone/audio_data
 Type: audio/AudioData
 Description: 音频流数据
 
@@ -66,13 +66,13 @@ def main():
     yaml_file = sys.argv[1]
     
     # Initialize ROS node
-    rospy.init_node('topic_test_zj_humanoid_audio_audio_data', anonymous=True)
+    rospy.init_node('topic_test_zj_humanoid_audio_microphone_audio_data', anonymous=True)
     
     # Load data from YAML
     data = load_yaml_data(yaml_file)
     
     # Create publisher
-    pub = rospy.Publisher('/zj_humanoid/audio/audio_data', AudioData, queue_size=10)
+    pub = rospy.Publisher('/zj_humanoid/audio/microphone/audio_data', AudioData, queue_size=10)
     
     # Wait for subscribers
     rospy.sleep(1.0)
@@ -87,7 +87,7 @@ def main():
     # Publish at 10Hz
     rate = rospy.Rate(10)
     
-    rospy.loginfo(f"Publishing to /zj_humanoid/audio/audio_data at 10Hz...")
+    rospy.loginfo(f"Publishing to /zj_humanoid/audio/microphone/audio_data at 10Hz...")
     rospy.loginfo(f"Message type: audio/AudioData")
     rospy.loginfo(f"Channel: {msg.channel}, VAD: {msg.vad_status}, Final: {msg.is_final}")
     

@@ -1,5 +1,5 @@
 topic:
-  name: /zj_humanoid/audio/audio_data
+  name: /zj_humanoid/audio/microphone/audio_data
   description: 音频流数据
   type: audio/AudioData
   direction: publish

@@ -30,6 +30,29 @@ def extract_subsystem(name):
     return 'other'
 
 
+def infer_interface_name_from_path(file_path, base_path):
+    """
+    从文件路径推断期望的接口名称
+    
+    Args:
+        file_path: YAML 文件的完整路径，如 Path('/path/to/api_struct/zj_humanoid/audio/microphone/audio_data/topic.yaml')
+        base_path: 基础路径，如 Path('/path/to/api_struct/zj_humanoid')
+    
+    Returns:
+        期望的接口名称，如 /zj_humanoid/audio/microphone/audio_data
+    """
+    try:
+        # 获取相对于 base_path 的路径
+        rel_path = file_path.parent.relative_to(base_path)
+        # 转换为字符串，使用 / 作为分隔符
+        rel_str = str(rel_path).replace(os.sep, '/')
+        # 构建完整的接口名称
+        return '/zj_humanoid/' + rel_str
+    except (ValueError, AttributeError):
+        # 如果路径不在 base_path 下，返回 None
+        return None
+
+
 def find_yaml_files(base_path):
     """
     遍历目录，查找所有的 service.yaml、topic.yaml 和 action.yaml 文件
@@ -69,13 +92,22 @@ def find_yaml_files(base_path):
                         else:
                             service_info['demos'] = []
                         
+                        # 验证 name 字段是否与文件路径匹配
+                        service_name = service_info.get('name', '')
+                        expected_name = infer_interface_name_from_path(service_file, base_path)
+                        if expected_name and service_name != expected_name:
+                            print(f"⚠️  警告: service 名称与文件路径不匹配")
+                            print(f"  文件路径: {service_file.relative_to(base_path.parent.parent)}")
+                            print(f"  YAML 中的 name: {service_name}")
+                            print(f"  期望的 name: {expected_name}")
+                            print(f"  建议: 将 YAML 文件中的 name 字段修改为 '{expected_name}'")
+                        
                         # 提取子系统名称
                         subsystem = extract_subsystem(service_info.get('name', ''))
                         if subsystem not in services_by_subsystem:
                             services_by_subsystem[subsystem] = []
                         
                         # 检查是否已存在相同名称的 service（避免重复）
-                        service_name = service_info.get('name', '')
                         existing_service = next(
                             (s for s in services_by_subsystem[subsystem] if s.get('name') == service_name),
                             None
@@ -108,13 +140,22 @@ def find_yaml_files(base_path):
                         else:
                             topic_info['demos'] = []
                         
+                        # 验证 name 字段是否与文件路径匹配
+                        topic_name = topic_info.get('name', '')
+                        expected_name = infer_interface_name_from_path(topic_file, base_path)
+                        if expected_name and topic_name != expected_name:
+                            print(f"⚠️  警告: topic 名称与文件路径不匹配")
+                            print(f"  文件路径: {topic_file.relative_to(base_path.parent.parent)}")
+                            print(f"  YAML 中的 name: {topic_name}")
+                            print(f"  期望的 name: {expected_name}")
+                            print(f"  建议: 将 YAML 文件中的 name 字段修改为 '{expected_name}'")
+                        
                         # 提取子系统名称
                         subsystem = extract_subsystem(topic_info.get('name', ''))
                         if subsystem not in topics_by_subsystem:
                             topics_by_subsystem[subsystem] = []
                         
                         # 检查是否已存在相同名称的 topic（避免重复）
-                        topic_name = topic_info.get('name', '')
                         existing_topic = next(
                             (t for t in topics_by_subsystem[subsystem] if t.get('name') == topic_name),
                             None
@@ -146,6 +187,16 @@ def find_yaml_files(base_path):
                                 action_info['demos'] = []
                         else:
                             action_info['demos'] = []
+                        
+                        # 验证 name 字段是否与文件路径匹配
+                        action_name = action_info.get('name', '')
+                        expected_name = infer_interface_name_from_path(action_file, base_path)
+                        if expected_name and action_name != expected_name:
+                            print(f"⚠️  警告: action 名称与文件路径不匹配")
+                            print(f"  文件路径: {action_file.relative_to(base_path.parent.parent)}")
+                            print(f"  YAML 中的 name: {action_name}")
+                            print(f"  期望的 name: {expected_name}")
+                            print(f"  建议: 将 YAML 文件中的 name 字段修改为 '{expected_name}'")
                         
                         # 提取子系统名称
                         subsystem = extract_subsystem(action_info.get('name', ''))
