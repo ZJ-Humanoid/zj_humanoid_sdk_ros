@@ -2,7 +2,7 @@
     "metadata": {
         "description": "ZJ Humanoid ROS1 APIs",
         "version": "v1.0.0",
-        "generated_at": "2025-11-24 10:24:59"
+        "generated_at": "2025-11-24 14:09:49"
     },
     "services": [
         {
@@ -16,7 +16,7 @@
             "name": "/zj_humanoid/audio/media_play",
             "description": "音频文件播放",
             "type": "audio/MediaPlay",
-            "note": "播放'公司介绍.mp3'",
+            "note": "播放'公司介绍.mp3',播放的文件需将文件放置在共享目录下，文件路径是：/home/naviai/navi_project/share/ 下",
             "demos": []
         },
         {
@@ -573,15 +573,6 @@
             "demos": []
         },
         {
-            "name": "/zj_humanoid/audio/audio_data",
-            "description": "音频流数据",
-            "type": "audio/AudioData",
-            "direction": "publish",
-            "throttle_rate": 10,
-            "note": "麦克风收音后的音频数据流",
-            "demos": []
-        },
-        {
             "name": "/zj_humanoid/audio/listen",
             "description": "唤醒控制",
             "type": "std_msgs/Bool",
@@ -596,6 +587,15 @@
             "direction": "publish",
             "throttle_rate": 10,
             "note": "当前是否为倾听状态，true=正在倾听，false=未倾听",
+            "demos": []
+        },
+        {
+            "name": "/zj_humanoid/audio/microphone/audio_data",
+            "description": "音频流数据",
+            "type": "audio/AudioData",
+            "direction": "publish",
+            "throttle_rate": 10,
+            "note": "麦克风收音后的音频数据流",
             "demos": []
         },
         {
