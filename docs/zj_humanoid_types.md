@@ -20,28 +20,41 @@ float64[] pressure          # 指尖压力传感器压力值 顺序依次为:[no
 #### `HandJoint`
 
 ```bash
-# Request
 float32[] q    # 关节数组;     [拇指弯曲,拇指摆动,食指弯曲,中指弯曲,无名指弯曲,小指弯曲] 单位:弧度 当使用双手
 ---
-
-# Response
 bool success   # indicate successful run of triggered service
 string message # informational
+
+
+
+
+
+
+
+
+
+
+
+
 
 # -----------------------------------------------------------------
 # 手掌关节角度限位,如果发送超过关节角度限位的数据会被限制到限位内,并进行提示
 # -----------------------------------------------------------------
+
 ```
 #### `Gesture`
 
 ```bash
-# Request
 string[] gesture_name                   # 手势名称,大小写不敏感(当控制一只手时,索引0生效,当控制两只手时,索引0为左手,索引1为右手)
 ---
-
-# Response
 bool success                            # 执行结果,该结果只反映命令的调用结果,并不能代表动作是否执行到位   
 string message                          # 提示信息
+
+
+
+
+
+
 
 # -----------------------------------------------------------------
 # gesture_name
@@ -65,6 +78,75 @@ string message                          # 提示信息
 # 该数据只用来进行单次控制运动,无法通过设置手势数组状态进行连续的控制
 
 # -----------------------------------------------------------------
+
+```
+
+## wa1_msgs
+
+> version:0.0.0
+
+
+### MSG
+
+#### `PowerStatus`
+
+```bash
+# PowerStatus.msg：电源状态核心数据（被 PowerStatusStamped 嵌套）
+
+# 电源轨使能位（字符串格式，如 "0b1111" 或自定义编码）
+string power_rail_enable_bits
+# 电源轨异常位（字符串格式，如 "0b0000" 或自定义编码）
+string power_rail_except_bits
+# 各电源轨电压值（数组，单位：V）
+float64[] power_rail_voltage
+
+# 充电口状态
+bool charge_port_open        # 充电口打开状态（true=打开，false=关闭）
+bool charge_port_connected   # 充电桩连接状态（true=已连接，false=未连接）
+
+# 电池状态
+uint32 battery_charging_status  # 充电状态：0=未充电，1=正在充电，2=充电完成
+float32 battery_voltage         # 电池电压（单位：V）
+float32 battery_current         # 电池电流（单位：A；放电为正，充电为负）
+float32 battery_quantity        # 剩余电量百分比（0.0~1.0 对应 0%~100%）
+
+# 电控盒温度（数组，单位：℃；支持多个温度传感器）
+int32[] power_box_temperature
+
+# 电源管理模块错误码（0=无错误，非0=对应错误类型）
+uint32 power_manager_error_code
+```
+#### `PowerStatusStamped`
+
+```bash
+# PowerStatusStamped.msg：带时间戳和坐标系的电源状态消息
+# 用于ROS话题发布，包含标准头部和核心电源状态数据
+
+# 标准消息头部（必选，包含 seq 序号、stamp 时间戳、frame_id 坐标系）
+std_msgs/Header header
+
+# 核心电源状态数据（嵌套 PowerStatus 消息）
+wa1_msgs/PowerStatus status
+```
+#### `TriggerStamped`
+
+```bash
+# TriggerStamped.msg：带时间戳和坐标系的急停触发消息
+# 用于 ROS 话题发布，包含标准头部和核心急停数据
+
+# 标准消息头部（必选：包含序号、时间戳、坐标系）
+std_msgs/Header header
+
+# 核心急停数据（嵌套 Trigger 消息）
+wa1_msgs/Trigger trigger
+```
+#### `Trigger`
+
+```bash
+# Trigger.msg：急停触发核心数据（被 TriggerStamped 嵌套）
+
+bool trigger          # 车体急停触发状态（true=触发急停，false=正常）
+string trigger_type   # 急停触发类型（如 "manual"=手动急停、"fault"=故障急停、"remote"=远程急停）
 ```
 
 ## manipulation
@@ -115,7 +197,6 @@ geometry_msgs/Pose pose  # 物体位姿
 string which_arm               # 手臂选择, "left" or "right"
 geometry_msgs/Pose[] waypoints # 目标路点（笛卡尔空间）
 ---
-
 # Response
 bool success                      # 是否成功
 string message                    # 反馈信息
@@ -127,29 +208,27 @@ trajectory_msgs/JointTrajectory ros_trajectory # 规划生成的关节空间轨�
 # Request
 int16 scene_id  # 场景ID
 ---
-
 # Response
 bool[] success  # 是否成功
 string message  # 反馈信息
 string which_scene  # 场景名称
 geometry_msgs/Pose[] scene_poses  # 场景位姿
+
 ```
 #### `InstSeg`
 
 ```bash
-# instance segmentation service
-
 # Request
 string[] labels   # 物品名称列表
 sensor_msgs/Image color_image    # 场景彩色图像
 sensor_msgs/Image depth_image    # 场景深度图像
 ---
-
 # Response
 bool success  # 是否成功
 string message  # 反馈信息
 bool have_objs    # 是否检测到物体的标志
 manipulation/DetItem[] items    # 分割消息，每个项目包括标签、置信度、边界框和掩码
+
 ```
 #### `ExecutePickTask`
 
@@ -168,7 +247,6 @@ string message  # 反馈信息
 string which_arm  # 手臂选择，可选值：["left", "right"]
 string object_label  # 物体名称
 ---
-
 # Response
 bool success  # 是否成功
 string message  # 反馈信息
@@ -176,18 +254,16 @@ string message  # 反馈信息
 #### `PoseEst`
 
 ```bash
-# object pose estimation service 
-
 # Request
 sensor_msgs/Image color_image   # 场景彩色图像
 sensor_msgs/Image depth_image   # 场景深度图像
 manipulation/DetItem[] items    # 分割消息，每个项目包括标签、置信度、边界框和掩码
 ---
-
 # Response
 bool success  # 是否成功
 string message  # 反馈信息
 manipulation/ObjPose[] obj_poses   # 估计的物体位姿列表，包括物体标签和估计的位姿
+
 ```
 #### `CameraCalibration`
 
@@ -197,7 +273,6 @@ string camera_name  # 相机名称，可选值：["sacrum_to_hand", "left_in_han
 string purpose  # 目的，可选值：["extrinsic", "intrinsic"]
 string mode  # 模式，可选值：["from_folder", "run_trajectory"]
 ---
-
 # Response
 bool success  # 是否成功
 string message  # 反馈信息
@@ -208,7 +283,6 @@ string message  # 反馈信息
 # Request
 string[] obstacle_names  # 加载的模型名称
 ---
-
 # Response
 bool success  # 是否成功
 string message  # 反馈信息
@@ -220,7 +294,6 @@ string message  # 反馈信息
 string which_arm                  # 手臂选择, "left" or "right"
 sensor_msgs/JointState[] joint_states # 一系列的关节状态目标点（航点）
 ---
-
 # Response
 bool success                      # 是否成功
 string message                    # 反馈信息
@@ -268,7 +341,6 @@ bool success  # 是否成功
 string message  # 反馈信息
 ---
 # Feedback
-# bool have_objs
 int32 status  # 状态
 sensor_msgs/Image color_image    # 彩色图像
 sensor_msgs/Image depth_image   # 深度图像
@@ -325,6 +397,12 @@ string message  # 反馈信息
 
 ### MSG
 
+#### `StreamTTSData`
+
+```bash
+uint16[] data        
+uint32 data_length        
+```
 #### `AudioData`
 
 ```bash
@@ -342,14 +420,15 @@ uint8[] audio_data    # 语音数据
 
 ```bash
 # Request
-
 ---
-
 # Response
 bool success
 string message # 消息
 int32 status   # 状态码
 string[] devicelist  # 设备列表
+
+
+
 ```
 #### `LLMChat`
 
@@ -360,12 +439,12 @@ bool   enable_context     # 启用上下文理解
 bool   enable_save        # 是否记录
 string context_id         # 会话上下文ID
 ---
-
 # Response
 bool success
 string message   # 消息
 int32 status     #标准接口状态
 string response #文本生成结果
+
 ```
 #### `SetVolume`
 
@@ -373,23 +452,44 @@ string response #文本生成结果
 # Request
 int32 volume   # 音量
 ---
-
 # Response
 bool success
 string message # 消息
 int32 status   # 状态码
+
+```
+#### `AudioPlay`
+
+```bash
+# Request
+string file_path          # 音频文件路径（本地文件）
+bool delete_after_play
+---
+# Response
+bool success              # 是否成功加入队列
+string message            # 状态描述
+
 ```
 #### `Listen`
 
 ```bash
 # Request
-int8 operation      #0:stop 1:start 2:wakeup
+bool listen
 ---
-
 # Response
 bool success
-string message # 消息
-int32 status
+string message
+
+```
+#### `AudioStop`
+
+```bash
+# Request
+---
+# Response
+bool success
+string message
+
 ```
 #### `SetDevice`
 
@@ -397,19 +497,18 @@ int32 status
 # Request
 string name      # 设备名称
 ---
-
 # Response
 bool success
 string message   # 消息
 int32 status     # 状态码
+
+
 ```
 #### `GetVolume`
 
 ```bash
 # Request
-
 ---
-
 # Response
 bool success
 string message   # 消息
@@ -419,22 +518,18 @@ int32 volume     # 音量
 #### `LLMNLU`
 
 ```bash
-# NLUService.srv
-
-# 请求部分
 # Request
 string raw_input        # 原始输入文本
 bool enable_context     # 启用上下文理解
 bool enable_save        # 是否记录
 string context_id       # 会话上下文ID
 ---
-
-# 响应部分
 # Response
 bool success
 string message   # 消息
 int32 status            # 返回的状态码
 nlu_result[] nlu_result  # NLU 识别结果
+
 ```
 #### `MediaPlay`
 
@@ -442,11 +537,11 @@ nlu_result[] nlu_result  # NLU 识别结果
 # Request
 string file_path # 文件路径
 ---
-
 # Response
 bool success
 string message   # 消息
 int32 status     # 状态码
+
 ```
 #### `TTS`
 
@@ -455,12 +550,12 @@ int32 status     # 状态码
 string[] text # 文本
 bool isPlay  # 是否播放
 ---
-
 # Response
 bool success
 string message # 消息
 int32 status # 状态码
 string file_path # 文件路径
+
 ```
 
 ## navigation
@@ -484,6 +579,7 @@ int32 audio
 
 ```bash
 # PlanState.msg
+
 
 uint8 NONE = 0
 uint8 STANDBY = 1
@@ -545,9 +641,7 @@ float64 direction # 移动方向 [-pi, pi]
 
 ```bash
 # Request
-
 ---
-
 # Response
 bool success   # 是否成功
 string message # 返回消息
@@ -561,6 +655,127 @@ float64[] D  # 失真系数 D (k1, k2, p1, p2, k3, ...)
 # [0,  0,  1 ]
 float64[9] K  # 内参矩阵 K (3x3), 以行主序展开为9个元素的数组
 geometry_msgs/Transform T_cam_body  # 外参: 相机在机器人本体坐标系下的位姿 (T_cam_body: Transform from body frame to camera frame)
+```
+
+## wa2_msgs
+
+> version:0.0.0
+
+
+### MSG
+
+#### `MotorInfo`
+
+```bash
+std_msgs/Header header
+MotorState[] motor_info
+```
+#### `SteerInfo`
+
+```bash
+std_msgs/Header header
+SteerState[] steer_info
+```
+#### `OdomInfo`
+
+```bash
+# OdomFeedback.msg
+AgvPosition agv_position  # AGV位置信息
+AgvVelocity velocity      # AGV速度信息
+```
+#### `MotorState`
+
+```bash
+# MotorStatus.msg
+string motor_id          # 电机ID（front_trans/rotate等）
+int32 speed              # 电机转速（RPM）
+int32 position           # 电机位置（编码器计数）
+float64 current          # 电机电流（A）
+string state             # 状态：OK/ERROR
+string[] error_codes     # 错误代码列表（空表示无错误）
+bool connected           # 是否连接
+```
+#### `SteerCommand`
+
+```bash
+#舵轮控制命令
+float64 front_speed
+float64 front_angle  # 单位：度
+float64 rear_speed
+float64 rear_angle   # 单位：度
+```
+#### `SteerState`
+
+```bash
+# WheelStatus.msg
+string wheel_id        # 车轮ID（如"front"/"rear_left"）
+float64 steering_angle   # 转向角（rad）
+float64 travel_speed     # 行驶速度（m/s）
+```
+#### `AGVState`
+
+```bash
+#AGV 状态信息
+int32 state
+string description
+float64 battery_voltage
+float64 battery_current
+float64 battery_percentage
+float64 x
+float64 y
+float64 theta
+float64 vx
+float64 vy
+float64 omega
+string[] steer_wheel_ids
+float64[] steer_speeds
+float64[] steer_angles  # 单位：弧度
+```
+
+### SRV
+
+#### `SteerControl`
+
+```bash
+#舵轮控制开关
+bool start  # true=启动, false=停止
+float64 front_speed
+float64 front_angle  # 单位：度
+float64 rear_speed
+float64 rear_angle   # 单位：度
+---
+bool success
+string message
+```
+#### `ChargeControl`
+
+```bash
+#充电控制
+bool enable  # true=开启充电, false=关闭充电
+---
+bool success
+string message
+```
+#### `Connect`
+
+```bash
+string host
+int32 port
+---
+bool success
+string message
+```
+#### `SpeedControl`
+
+```bash
+#速度控制开关
+bool start  # true=启动, false=停止
+float64 vx
+float64 vy
+float64 omega
+---
+bool success
+string message
 ```
 
 ## zj_robot
@@ -688,27 +903,22 @@ float32 disk_usage
 
 ```bash
 # 请求部分：指定要播放的媒体信息
-# Request
 string media_path    # 媒体文件路径，可以是图片或视频
 bool loop            # 是否循环播放，true为循环，false为播放一次
 float32 duration       # 播放时长(秒)，0表示直到结束
 ---
-
 # 响应部分：返回播放操作的结果
-# Response
 bool success         # 操作是否成功
 string message       # 状态信息，如成功或错误原因
 int32 status_code    # 状态码，0表示成功，非0表示错误类型
+
 ```
 #### `SetZero`
 
 ```bash
-# Request
 int32 mode    # 0=prepare, 1=zero_joint, 2=exit
 int32 joint_id
 ---
-
-# Response
 bool success
 string message
 
@@ -730,12 +940,9 @@ string message
 #### `WifiList`
 
 ```bash
-# Request
 # 请求部分（无参数）
 ---
-
 # 响应部分
-# Response
 bool success             # 操作是否成功
 string message           # 状态描述（成功/错误信息）
 int32 wifi_count         # WiFi热点数量
@@ -744,12 +951,9 @@ string[] wifi_names      # WiFi信息数组，格式："BSSID|SSID"（例如："
 #### `ConnectWifi`
 
 ```bash
-# Request
 string wifi_name
 string wifi_password
 ---
-
-# Response
 bool success
 string message
 ```
@@ -757,123 +961,24 @@ string message
 
 ```bash
 # text_display.srv
-# Request
 string text           # 要展示的内容，可以为空
 bool force_stop       # 是否强制终止当前显示
 ---
-
-# Response
 bool success          # 是否成功
 string message        # 返回提示或异常信息
 int32 status_code     #状态码（0 = 成功，1 = 无活跃显示，2 = 显示冲突，3 = 初始化失败）
+
 ```
 #### `BasicInfo`
 
 ```bash
-# Request
-
 ---
-
-# Response
 bool success             # 是否成功
 string message           # 返回消息（如成功或失败的原因）
 string robot_version     # 机器人版本
 string hardware_version  # 硬件版本
 string software_version  # 软件版本
 string ip_addr           # IP地址
-```
-
-## wa2
-
-> version:1.1.0
-
-
-### MSG
-
-#### `SteerCommand`
-
-```bash
-#舵轮控制命令
-float64 front_speed
-float64 front_angle  # 单位：度
-float64 rear_speed
-float64 rear_angle   # 单位：度
-```
-#### `AGVState`
-
-```bash
-#AGV 状态信息
-int32 state
-string description
-float64 battery_voltage
-float64 battery_current
-float64 battery_percentage
-float64 x
-float64 y
-float64 theta
-float64 vx
-float64 vy
-float64 omega
-string[] steer_wheel_ids
-float64[] steer_speeds
-float64[] steer_angles  # 单位：弧度
-```
-
-### SRV
-
-#### `ResetAGV`
-
-```bash
-# Request
-#AGV 复位
----
-
-# Response
-bool success
-string message
-```
-#### `SteerControl`
-
-```bash
-#舵轮控制开关
-# Request
-bool start  # true=启动, false=停止
-float64 front_speed
-float64 front_angle  # 单位：度
-float64 rear_speed
-float64 rear_angle   # 单位：度
----
-
-# Response
-bool success
-string message
-```
-#### `ChargeControl`
-
-```bash
-#充电控制
-# Request
-bool enable  # true=开启充电, false=关闭充电
----
-
-# Response
-bool success
-string message
-```
-#### `SpeedControl`
-
-```bash
-#速度控制开关
-# Request
-bool start  # true=启动, false=停止
-float64 vx
-float64 vy
-float64 omega
----
-
-# Response
-bool success
-string message
 ```
 
 ## upperlimb
@@ -1039,26 +1144,22 @@ float64[] joint         # 由于会存在多个关节的同时运动，所以该
 #### `IK`
 
 ```bash
-# Request
 geometry_msgs/Pose pose           # tcp的位姿       xyz:[m]
 float64 q7                        # 第七关节角       [rad]
 ---
-
-# Response
 bool success                      # 是否有解
 string message                    # 提示信息
 int32 nums                        # 解的数量
 upperlimb/Joints[] joints         # 关节角          [rad]
 float64[] phi                     # 臂角,索引与逆解后的关节角对应
+
+
 ```
 #### `FK`
 
 ```bash
-# Request
 float64[] joints                # 关节角       [rad]
 ---
-
-# Response
 bool success
 string message
 geometry_msgs/Pose pose         # tcp的位姿     xyz:[m]
@@ -1070,7 +1171,6 @@ geometry_msgs/Pose pose         # tcp的位姿     xyz:[m]
 #### `ArmType`
 
 ```bash
-# Request
 int8 arm_type               # 机器人类型,使用8421叠加使用
 
 
@@ -1080,9 +1180,8 @@ byte RIGHT_ARM = 2
 byte NECK      = 4
 byte WAIST     = 8
 byte LIFT      = 16
----
 
-# Response
+---
 bool success
 string message
 
@@ -1104,14 +1203,11 @@ string message
 #### `MoveL`
 
 ```bash
-# Request
 geometry_msgs/Pose[2] pose              # 位姿数组,当控制单臂时始终使用索引为0的数据,当控制双臂时索引0为左臂,索引1为右臂    xyz 单位:m
 float64 v                               # 最大关节速度  [rad/s]
 float64 acc                             # 最大加速度    [rad/s^2]
 bool is_async                           # 执行方式 true:立即返回,并且可以被打断;false:阻塞执行,等待执行完成后返回.
 ---
-
-# Response
 bool success                            # 执行结果,该结果只反映命令的调用结果,并不能代表动作是否执行到位   
 string message                          # 提示信息
 
@@ -1122,31 +1218,31 @@ string message                          # 提示信息
 # 
 # 注意
 #   - 基坐标系位于URDF中的第一个连杆的坐标系，左臂末端坐标系位于“TCP_L”，右臂末端坐标系位于“TCP_R”。
+
 ```
 #### `MoveJByPose`
 
 ```bash
-# Request
 geometry_msgs/Pose[2] pose                # 对应的目标位姿     当调用左臂或右臂服务时,始终使用索引为0的数据;当调用双臂服务时，索引0为左臂,索引1为右臂 。    [m]、[rad]
 float64[2] q7                             # 第七关节角度       当调用左臂或右臂服务时,始终使用索引为0的数据;当调用双臂服务时，索引0为左臂,索引1为右臂。     [rad]
 float64 v                                 # 最大速度       [rad/s]
 float64 acc                               # 最大加速度      [rad/s^2]
 bool is_async                             # 执行方式 true:立即返回,并且可以被打断;false:阻塞执行,等待执行完成后返回.
 ---
-
-# Response
 bool success                              # 执行结果,该结果只反映命令的调用结果,并不能代表动作是否执行到位   
 string message                            # 提示信息
+
+
+
+
+
 ```
 #### `SpeedL`
 
 ```bash
-# Request
 float64[] tcp_speed    # 目标末端速度，末端平动速度[m/s]，末端转动角速度[rad/s]
 float64 acc            # 最大加速度     [m/s^2]
 ---
-
-# Response
 bool success
 string message
 
@@ -1159,15 +1255,12 @@ string message
 #### `MoveJByPath`
 
 ```bash
-# Request
 upperlimb/Joints[] path               # 关节角路径,
 float64 time                          # 运行总时间。  [s]    到达最后一个路径点所需的时间. 当指定总时间时 忽略时间戳参数
 float64[] timestamp                   # 时间戳。     [s]    每一个关节角路径对应的时间戳
 bool is_async                         # 是否同步运行
 int8 arm_type                         # 机器人身体部位。 仅当使用V1版本且全身控制时有用,用来指定当前要控制的目标部位,可以通过8421码进行叠加
 ---
-
-# Response
 bool success                          # 执行结果,该结果只反映命令的调用结果,并不能代表动作是否执行到位   
 string message                        # 提示信息
 
@@ -1185,26 +1278,23 @@ string message                        # 提示信息
 # - 半身不带腰：左臂为1，右臂为2，颈部为4。
 # - 轮臂：左臂为1，右臂为2，颈部为4，轮臂腰为16，轮臂腰上下平移为8。
 # -----------------------------------------------------------------
+
 ```
 #### `MoveLByPath`
 
 ```bash
-# Request
 geometry_msgs/Pose[] left_arm_path              # 位姿数组,当控制单臂时始终使用索引为0的数据,当控制双臂时索引0为左臂,索引1为右臂 
 geometry_msgs/Pose[] right_arm_path             # 位姿数组,当控制单臂时始终使用索引为0的数据,当控制双臂时索引0为左臂,索引1为右臂 
 float64 time                                    # 运行总时间 [s]    当指定总时间时 忽略时间戳参数
 float64[] timestamp                             # 每一个关节角路径对应的时间戳 [s]
 bool is_async                                   # 是否同步运行
 ---
-
-# Response
 bool success
 string message
 ```
 #### `Servo`
 
 ```bash
-# Request
 float64 v                       # 最大速度, 最大速度，此版本无效，默认写入0.0。  [rad/s]
 float64 acc                     # 最大加速度，此版本无效，默认写入0.0。 [rad/s^2]
 float64 time                    # 执行时间, 间隔点之间的运行时间        [s]
@@ -1212,8 +1302,6 @@ float64 lookahead_time          # 前瞻时间, 此版本无效, 默认写入0.2
 int32 gain                      # 位置跟踪参数，该参数越大，跟踪越慢，超调量越小，范围[100, 1000]
 int8 arm_type                   # 机器人身体部位。 仅当使用V1版本且全身控制时有用,用来指定当前要控制的目标部位,可以通过8421码进行叠加
 ---
-
-# Response
 bool success
 string message
 
@@ -1235,11 +1323,8 @@ string message
 #### `IsSingular`
 
 ```bash
-# Request
 float64[7] joints                     # 手臂关节      [rad]
 ---
-
-# Response
 bool success
 string message
 bool is_singular                      # 请求的手臂关节是否在奇异位置
@@ -1247,7 +1332,6 @@ bool is_singular                      # 请求的手臂关节是否在奇异位�
 #### `MoveJ`
 
 ```bash
-# Request
 float64[] joints                       # 关节数据,对应的关节数据维度,详情参考下方  [rad]
 float64 v                              # 最大速度    [rad/s]
 float64 acc                            # 最大加速度  [rad/s^2]
@@ -1255,8 +1339,6 @@ float64 t                              # 从当前位置到目标位置的总时
 bool is_async                          # 执行方式 true:立即返回,并且可以被打断;false:阻塞执行,等待执行完成后返回.
 int8 arm_type                          # 机器人身体部位。 仅当使用V1版本且全身控制时有用,用来指定当前要控制的目标部位,可以通过8421码进行叠加
 ---
-
-# Response
 bool success                            # 执行结果,该结果只反映命令的调用结果,并不能代表动作是否执行到位   
 string message                          # 提示信息
 
