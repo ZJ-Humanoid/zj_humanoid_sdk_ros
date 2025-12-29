@@ -2,7 +2,7 @@
     "metadata": {
         "description": "ZJ Humanoid ROS1 APIs",
         "version": "v1.0.0",
-        "generated_at": "2025-11-26 05:48:03"
+        "generated_at": "2025-12-29 08:39:49"
     },
     "services": [
         {
@@ -154,20 +154,6 @@
             "note": "控制右手各关节运动到指定角度。关节角度数组顺序为[拇指弯曲,拇指摆动,食指弯曲,中指弯曲,无名指弯曲,小指弯曲],单位:弧度。关节角度会被限制在安全范围内"
         },
         {
-            "name": "/zj_humanoid/hand/task_switch/left",
-            "description": "左手掌任务控制",
-            "type": "std_srvs/Bool",
-            "note": "",
-            "demos": []
-        },
-        {
-            "name": "/zj_humanoid/hand/task_switch/right",
-            "description": "右手掌任务控制",
-            "type": "std_srvs/Bool",
-            "note": "",
-            "demos": []
-        },
-        {
             "name": "/zj_humanoid/hand/version",
             "description": "手部模块版本号",
             "type": "std_srvs/Trigger",
@@ -175,78 +161,6 @@
                 "data.yaml"
             ],
             "note": "查询手部控制模块的版本信息"
-        },
-        {
-            "name": "/zj_humanoid/hand/wrist_force_sensor/left/zero",
-            "description": "调用左手腕力传感器零位校准服务",
-            "type": "std_srvs/Trigger",
-            "demos": [
-                "data.yaml"
-            ],
-            "note": "对左手腕力传感器进行零位校准,清除当前传感器偏置,将当前力和力矩读数设为零点"
-        },
-        {
-            "name": "/zj_humanoid/hand/wrist_force_sensor/right/zero",
-            "description": "调用右手腕力传感器零位校准服务",
-            "type": "std_srvs/Trigger",
-            "demos": [
-                "data.yaml"
-            ],
-            "note": "对右手腕力传感器进行零位校准,清除当前传感器偏置,将当前力和力矩读数设为零点"
-        },
-        {
-            "name": "/zj_humanoid/manipulation/camera_calibration",
-            "description": "相机内外参标定",
-            "type": "manipulation/CameraCalibration",
-            "demos": [
-                "data.yaml"
-            ],
-            "note": "自动相机内外参标定，外参标定时机器人会执行一段轨迹，拍摄不同角度的照片，从而计算外参"
-        },
-        {
-            "name": "/zj_humanoid/manipulation/execute_pick_task",
-            "description": "执行抓取服务",
-            "type": "manipulation/ExecutePickTask",
-            "demos": [
-                "data.yaml"
-            ],
-            "note": "输出物品名称执行抓取服务"
-        },
-        {
-            "name": "/zj_humanoid/manipulation/grasp_teach_service",
-            "description": "视觉抓取示教",
-            "type": "manipulation/GraspTeach",
-            "demos": [
-                "data.yaml"
-            ],
-            "note": "视觉示教抓取，让机器人知道该从什么方位抓取物品"
-        },
-        {
-            "name": "/zj_humanoid/manipulation/pose_estimation_service",
-            "description": "获取目标位姿",
-            "type": "manipulation/PoseEst",
-            "demos": [
-                "data.yaml"
-            ],
-            "note": "输入图像获取指定物品的6D位姿"
-        },
-        {
-            "name": "/zj_humanoid/manipulation/version",
-            "description": "操作模块版本号",
-            "type": "std_srvs/Trigger",
-            "demos": [
-                "data.yaml"
-            ],
-            "note": ""
-        },
-        {
-            "name": "/zj_humanoid/navigation/version",
-            "description": "定位导航版本号",
-            "type": "std_srvs/Trigger",
-            "demos": [
-                "data.yaml"
-            ],
-            "note": ""
         },
         {
             "name": "/zj_humanoid/robot/basic_info",
@@ -275,6 +189,13 @@
                 "Robot_text_show.yaml"
             ],
             "note": "机器人脸部屏幕显示文字，支持指令显示“Hello World”"
+        },
+        {
+            "name": "/zj_humanoid/robot/get_connection_info",
+            "description": "机器人关机",
+            "type": "std_srvs/Trigger",
+            "note": "将机器人关机 3秒后，大小脑关机，之后后没法检测到机器人建立ros链接",
+            "demos": []
         },
         {
             "name": "/zj_humanoid/robot/joint_motor/set_zero",
@@ -481,6 +402,15 @@
             "note": "腰部回到内置设置的home点"
         },
         {
+            "name": "/zj_humanoid/upperlimb/go_home/whole_body",
+            "description": "全身回到home点",
+            "type": "upperlimb/ArmType",
+            "demos": [
+                "left_arm_disenable_teachmode.yaml"
+            ],
+            "note": "全身指定部位回到内置设置的home点"
+        },
+        {
             "name": "/zj_humanoid/upperlimb/movej/dual_arm",
             "description": "双臂movej",
             "type": "upperlimb/MoveJ",
@@ -501,7 +431,7 @@
             "note": "关节空间下,左臂点到点运动"
         },
         {
-            "name": "/zj_humanoid/upperlimb/movej/lift",
+            "name": "/zj_humanoid/upperlimb/movej/lifting",
             "description": "升降movej",
             "type": "upperlimb/MoveJ",
             "demos": [
@@ -541,6 +471,16 @@
             "note": "关节空间下,腰部点到点运动"
         },
         {
+            "name": "/zj_humanoid/upperlimb/movej/whole_body",
+            "description": "全身movej",
+            "type": "upperlimb/MoveJ",
+            "demos": [
+                "whole_body_v_acc_case1.yaml",
+                "whole_body_t_case1.yaml"
+            ],
+            "note": "关节空间下,全身各部位点到点运动"
+        },
+        {
             "name": "/zj_humanoid/upperlimb/movej_by_path/dual_arm",
             "description": "双臂轨迹movej",
             "type": "upperlimb/MoveJByPath",
@@ -557,6 +497,15 @@
                 "case1.yaml"
             ],
             "note": "关节空间下,左臂轨迹点路径运动"
+        },
+        {
+            "name": "/zj_humanoid/upperlimb/movej_by_path/lifting",
+            "description": "关节空间下,脖子轨迹点路径运动",
+            "type": "upperlimb/MoveJByPath",
+            "demos": [
+                "data.yaml"
+            ],
+            "note": "控制颈部按照关节空间路径运动"
         },
         {
             "name": "/zj_humanoid/upperlimb/movej_by_path/neck",
@@ -584,6 +533,15 @@
                 "data.yaml"
             ],
             "note": "控制腰部按照关节空间路径运动"
+        },
+        {
+            "name": "/zj_humanoid/upperlimb/movej_by_path/whole_body",
+            "description": "关节空间下,全身轨迹点路径运动",
+            "type": "upperlimb/MoveJByPath",
+            "demos": [
+                "data.yaml"
+            ],
+            "note": "控制全身按照关节空间路径运动"
         },
         {
             "name": "/zj_humanoid/upperlimb/movej_by_pose/dual_arm",
@@ -638,6 +596,42 @@
                 "case1.yaml"
             ],
             "note": "关节空间下,右臂直线轨迹点运动"
+        },
+        {
+            "name": "/zj_humanoid/upperlimb/movel_by_path/dual_arm",
+            "description": "双臂轨迹movej",
+            "type": "upperlimb/MoveJByPath",
+            "demos": [
+                "case1.yaml"
+            ],
+            "note": "关节空间下,双臂轨迹点路径运动"
+        },
+        {
+            "name": "/zj_humanoid/upperlimb/movel_by_path/left_arm",
+            "description": "左臂轨迹movej",
+            "type": "upperlimb/MoveJByPath",
+            "demos": [
+                "case1.yaml"
+            ],
+            "note": "关节空间下,左臂轨迹点路径运动"
+        },
+        {
+            "name": "/zj_humanoid/upperlimb/movel_by_path/right_arm",
+            "description": "右臂轨迹movej",
+            "type": "upperlimb/MoveJByPath",
+            "demos": [
+                "case1.yaml"
+            ],
+            "note": "关节空间下,右臂轨迹点路径运动"
+        },
+        {
+            "name": "/zj_humanoid/upperlimb/movel_by_path/whole_body",
+            "description": "关节空间下,全身轨迹点路径运动",
+            "type": "upperlimb/MoveJByPath",
+            "demos": [
+                "data.yaml"
+            ],
+            "note": "控制全身按照关节空间路径运动"
         },
         {
             "name": "/zj_humanoid/upperlimb/set_servo_params",
@@ -728,6 +722,24 @@
             "demos": []
         },
         {
+            "name": "/zj_humanoid/audio/microphone/wake_data",
+            "description": "音频流数据",
+            "type": "audio/AudioData",
+            "direction": "publish",
+            "throttle_rate": 10,
+            "note": "麦克风收音后的音频数据流",
+            "demos": []
+        },
+        {
+            "name": "/zj_humanoid/audio/microphone/wake_info",
+            "description": "音频流数据",
+            "type": "audio/AudioData",
+            "direction": "publish",
+            "throttle_rate": 10,
+            "note": "麦克风收音后的音频数据流",
+            "demos": []
+        },
+        {
             "name": "/zj_humanoid/hand/finger_pressures/left",
             "description": "左手指尖压力",
             "type": "hand/PressureSensor",
@@ -753,34 +765,6 @@
             "throttle_rate": 10,
             "note": "订阅手部所有关节的位置状态,包括左右手各6个关节:拇指弯曲、拇指摆动、食指弯曲、中指弯曲、无名指弯曲、小指弯曲",
             "demos": []
-        },
-        {
-            "name": "/zj_humanoid/hand/wrist_force_sensor/left",
-            "description": "左手腕力传感器",
-            "type": "geometry_msgs/WrenchStamped",
-            "direction": "publish",
-            "throttle_rate": 10,
-            "note": "发布左手腕力传感器数据,包括力和力矩的三轴分量",
-            "demos": []
-        },
-        {
-            "name": "/zj_humanoid/hand/wrist_force_sensor/right",
-            "description": "右手腕力传感器",
-            "type": "geometry_msgs/WrenchStamped",
-            "direction": "publish",
-            "throttle_rate": 10,
-            "note": "接收右手腕力传感器数据,包括力和力矩的三轴分量",
-            "demos": []
-        },
-        {
-            "name": "/zj_humanoid/manipulation/instance_segmentation_action/goal",
-            "description": "实例分割Action",
-            "type": "manipulation/InstSeg",
-            "direction": "publish",
-            "demos": [
-                "data.yaml"
-            ],
-            "note": ""
         },
         {
             "name": "/zj_humanoid/navigation/local_map",
@@ -831,6 +815,17 @@
         {
             "name": "/zj_humanoid/robot/battery_info",
             "description": "电池相关信息",
+            "type": "zj_robot/BatteryInfo",
+            "direction": "publish",
+            "throttle_rate": 1000,
+            "demos": [
+                "battery_info.yaml"
+            ],
+            "note": "电池BMS相关信息，机器人当前电量还剩多少 回复值应为1~100%"
+        },
+        {
+            "name": "/zj_humanoid/robot/connection_status",
+            "description": "链接状态",
             "type": "zj_robot/BatteryInfo",
             "direction": "publish",
             "throttle_rate": 1000,
@@ -921,7 +916,7 @@
             "demos": []
         },
         {
-            "name": "/zj_humanoid/robot/work_status_form_start",
+            "name": "/zj_humanoid/robot/work_status_from_start",
             "description": "工作状态",
             "type": "zj_robot/WorkStatus",
             "direction": "publish",
@@ -1094,6 +1089,24 @@
             "demos": []
         },
         {
+            "name": "/zj_humanoid/upperlimb/is_singular/left_arm",
+            "description": "上肢占用控制",
+            "type": "std_msgs/Int8",
+            "direction": "subscribe",
+            "throttle_rate": 10,
+            "note": "该话题发布上肢的当前占用状态,用于防止多个控制源同时控制机器人",
+            "demos": []
+        },
+        {
+            "name": "/zj_humanoid/upperlimb/jacobian/left_arm",
+            "description": "上肢占用控制",
+            "type": "std_msgs/Int8",
+            "direction": "subscribe",
+            "throttle_rate": 10,
+            "note": "该话题发布上肢的当前占用状态,用于防止多个控制源同时控制机器人",
+            "demos": []
+        },
+        {
             "name": "/zj_humanoid/upperlimb/joint_states",
             "description": "上肢关节位置",
             "type": "sensor_msgs/JointState",
@@ -1129,6 +1142,14 @@
             "demos": []
         },
         {
+            "name": "/zj_humanoid/upperlimb/servoj/lifting",
+            "description": "全身servoj",
+            "type": "upperlimb/Joints",
+            "direction": "subscribe",
+            "note": "关节空间 高频位置控制",
+            "demos": []
+        },
+        {
             "name": "/zj_humanoid/upperlimb/servoj/neck",
             "description": "颈部servoj",
             "type": "upperlimb/Joints",
@@ -1147,6 +1168,14 @@
         {
             "name": "/zj_humanoid/upperlimb/servoj/waist",
             "description": "腰部servoj",
+            "type": "upperlimb/Joints",
+            "direction": "subscribe",
+            "note": "关节空间 高频位置控制",
+            "demos": []
+        },
+        {
+            "name": "/zj_humanoid/upperlimb/servoj/whole_body",
+            "description": "全身servoj",
             "type": "upperlimb/Joints",
             "direction": "subscribe",
             "note": "关节空间 高频位置控制",
@@ -1195,7 +1224,7 @@
             "demos": []
         },
         {
-            "name": "/zj_humanoid/upperlimb/speedj/lift",
+            "name": "/zj_humanoid/upperlimb/speedj/lifting",
             "description": "升降speedj",
             "type": "upperlimb/TcpSpeed",
             "direction": "subscribe",
@@ -1224,6 +1253,15 @@
         {
             "name": "/zj_humanoid/upperlimb/speedj/waist",
             "description": "腰speedj",
+            "type": "upperlimb/TcpSpeed",
+            "direction": "subscribe",
+            "throttle_rate": 10,
+            "note": "关节空间速度控制",
+            "demos": []
+        },
+        {
+            "name": "/zj_humanoid/upperlimb/speedj/whole_body",
+            "description": "全身speedj",
             "type": "upperlimb/TcpSpeed",
             "direction": "subscribe",
             "throttle_rate": 10,
