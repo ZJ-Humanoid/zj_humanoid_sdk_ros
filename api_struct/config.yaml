@@ -43,14 +43,11 @@ robot_models:
       - sensor/CAM_D
       - sensor/head_imu
       - sensor/realsense_down
-      - upperlimb/go_home/whole_body
-      - upperlimb/movej/whole_body
-      - upperlimb/movej_by_path/whole_body
-      - upperlimb/servoj/whole_body
-      - upperlimb/speedj/whole_body
-      - manipulation/joint_space_trajectory_planner
-      - manipulation/pose_space_trajectory_planner
-      - manipulation/scene_update
+      - manipulation
+      - hand/task_switch
+      - hand/wrist_force_sensor
+      - navigation/version
+
   WA2:
     exclude_modules:
       - manipulation

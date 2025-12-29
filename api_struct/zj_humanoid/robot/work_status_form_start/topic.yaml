@@ -1,5 +1,5 @@
 topic:
-  name: /zj_humanoid/robot/work_status_form_start
+  name: /zj_humanoid/robot/work_status_from_start
   description: 工作状态
   type: zj_robot/WorkStatus
   direction: publish

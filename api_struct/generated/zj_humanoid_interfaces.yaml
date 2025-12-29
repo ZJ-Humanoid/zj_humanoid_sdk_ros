@@ -218,6 +218,11 @@ services:
     demos:
     - Robot_text_show.yaml
     note: 机器人脸部屏幕显示文字，支持指令显示“Hello World”
+  - name: /zj_humanoid/robot/get_connection_info
+    description: 机器人关机
+    type: std_srvs/Trigger
+    note: 将机器人关机 3秒后，大小脑关机，之后后没法检测到机器人建立ros链接
+    demos: []
   - name: /zj_humanoid/robot/joint_motor/set_zero
     description: 电机自动标零
     type: zj_robot/SetZero
@@ -398,7 +403,7 @@ services:
     - left_arm_v_acc_case1.yaml
     - left_arm_t_case1.yaml
     note: 关节空间下,左臂点到点运动
-  - name: /zj_humanoid/upperlimb/movej/lift
+  - name: /zj_humanoid/upperlimb/movej/lifting
     description: 升降movej
     type: upperlimb/MoveJ
     demos:
@@ -445,6 +450,12 @@ services:
     demos:
     - case1.yaml
     note: 关节空间下,左臂轨迹点路径运动
+  - name: /zj_humanoid/upperlimb/movej_by_path/lifting
+    description: 关节空间下,脖子轨迹点路径运动
+    type: upperlimb/MoveJByPath
+    demos:
+    - data.yaml
+    note: 控制颈部按照关节空间路径运动
   - name: /zj_humanoid/upperlimb/movej_by_path/neck
     description: 关节空间下,脖子轨迹点路径运动
     type: upperlimb/MoveJByPath
@@ -505,6 +516,30 @@ services:
     demos:
     - case1.yaml
     note: 关节空间下,右臂直线轨迹点运动
+  - name: /zj_humanoid/upperlimb/movel_by_path/dual_arm
+    description: 双臂轨迹movej
+    type: upperlimb/MoveJByPath
+    demos:
+    - case1.yaml
+    note: 关节空间下,双臂轨迹点路径运动
+  - name: /zj_humanoid/upperlimb/movel_by_path/left_arm
+    description: 左臂轨迹movej
+    type: upperlimb/MoveJByPath
+    demos:
+    - case1.yaml
+    note: 关节空间下,左臂轨迹点路径运动
+  - name: /zj_humanoid/upperlimb/movel_by_path/right_arm
+    description: 右臂轨迹movej
+    type: upperlimb/MoveJByPath
+    demos:
+    - case1.yaml
+    note: 关节空间下,右臂轨迹点路径运动
+  - name: /zj_humanoid/upperlimb/movel_by_path/whole_body
+    description: 关节空间下,全身轨迹点路径运动
+    type: upperlimb/MoveJByPath
+    demos:
+    - data.yaml
+    note: 控制全身按照关节空间路径运动
   - name: /zj_humanoid/upperlimb/set_servo_params
     description: 设置伺服参数
     type: upperlimb/Servo
@@ -562,6 +597,20 @@ topics:
     note: 当前是否为倾听状态，true=正在倾听，false=未倾听
     demos: []
   - name: /zj_humanoid/audio/microphone/audio_data
+    description: 音频流数据
+    type: audio/AudioData
+    direction: publish
+    throttle_rate: 10
+    note: 麦克风收音后的音频数据流
+    demos: []
+  - name: /zj_humanoid/audio/microphone/wake_data
+    description: 音频流数据
+    type: audio/AudioData
+    direction: publish
+    throttle_rate: 10
+    note: 麦克风收音后的音频数据流
+    demos: []
+  - name: /zj_humanoid/audio/microphone/wake_info
     description: 音频流数据
     type: audio/AudioData
     direction: publish
@@ -712,6 +761,14 @@ topics:
     demos:
     - battery_info.yaml
     note: 电池BMS相关信息，机器人当前电量还剩多少 回复值应为1~100%
+  - name: /zj_humanoid/robot/connection_status
+    description: 链接状态
+    type: zj_robot/BatteryInfo
+    direction: publish
+    throttle_rate: 1000
+    demos:
+    - battery_info.yaml
+    note: 电池BMS相关信息，机器人当前电量还剩多少 回复值应为1~100%
   - name: /zj_humanoid/robot/joint_motor/errors
     description: 关节电机错误信息
     type: sensor_msgs/JointState
@@ -772,7 +829,7 @@ topics:
     throttle_rate: 1000
     note: 机器人状态机值实时发布，只有当机器人进入RUN状态，机器人才能进行动作的执行，机器人当前处于什么状态 回复应包含：RUN状态
     demos: []
-  - name: /zj_humanoid/robot/work_status_form_start
+  - name: /zj_humanoid/robot/work_status_from_start
     description: 工作状态
     type: zj_robot/WorkStatus
     direction: publish
@@ -1034,6 +1091,20 @@ topics:
     note: 胸部深度相机的RGB图像JPG格式
     demos: []
   upperlimb:
+  - name: /zj_humanoid/upperlimb/is_singular/left_arm
+    description: 上肢占用控制
+    type: std_msgs/Int8
+    direction: subscribe
+    throttle_rate: 10
+    note: 该话题发布上肢的当前占用状态,用于防止多个控制源同时控制机器人
+    demos: []
+  - name: /zj_humanoid/upperlimb/jacobian/left_arm
+    description: 上肢占用控制
+    type: std_msgs/Int8
+    direction: subscribe
+    throttle_rate: 10
+    note: 该话题发布上肢的当前占用状态,用于防止多个控制源同时控制机器人
+    demos: []
   - name: /zj_humanoid/upperlimb/joint_states
     description: 上肢关节位置
     type: sensor_msgs/JointState
@@ -1057,6 +1128,12 @@ topics:
     demos: []
   - name: /zj_humanoid/upperlimb/servoj/left_arm
     description: 左臂servoj
+    type: upperlimb/Joints
+    direction: subscribe
+    note: 关节空间 高频位置控制
+    demos: []
+  - name: /zj_humanoid/upperlimb/servoj/lifting
+    description: 全身servoj
     type: upperlimb/Joints
     direction: subscribe
     note: 关节空间 高频位置控制
@@ -1117,7 +1194,7 @@ topics:
     throttle_rate: 10
     note: 关节空间速度控制
     demos: []
-  - name: /zj_humanoid/upperlimb/speedj/lift
+  - name: /zj_humanoid/upperlimb/speedj/lifting
     description: 升降speedj
     type: upperlimb/TcpSpeed
     direction: subscribe
@@ -1205,3 +1282,10 @@ topics:
     throttle_rate: 10
     note: 该话题发布上肢机器人的当前命令状态信息
     demos: []
+actions:
+  upperlimb:
+  - name: /zj_humanoid/upperlimb/motion
+    description: 执行预加载轨迹
+    type: null
+    demos: []
+    note: null

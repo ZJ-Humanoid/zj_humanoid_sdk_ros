@@ -1,5 +1,5 @@
 service:
-  name: /zj_humanoid/upperlimb/movej/lift
+  name: /zj_humanoid/upperlimb/movej/lifting
   description: 升降movej
   type: upperlimb/MoveJ
   demos:

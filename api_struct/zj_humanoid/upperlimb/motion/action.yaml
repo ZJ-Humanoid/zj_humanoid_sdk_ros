@@ -1,0 +1,6 @@
+action:
+  name: /zj_humanoid/upperlimb/motion
+  description: 执行预加载轨迹
+  type: 
+  demos:
+  note: 
