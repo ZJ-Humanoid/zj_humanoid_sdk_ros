@@ -34,6 +34,12 @@ robot_models:
       - manipulation
       - sensor/realsense_down
       - sensor/realsense_head
+      - manipulation
+      - hand/task_switch
+      - hand/wrist_force_sensor
+      - navigation/version
+
+
   WA1:
     exclude_modules:
       - lowerlimb
