@@ -29,6 +29,7 @@ robot_models:
       - lowerlimb
       - sensor/realsense_down
       - sensor/realsense_head
+
   I2:
     exclude_modules:
       - manipulation
@@ -38,6 +39,7 @@ robot_models:
       - hand/task_switch
       - hand/wrist_force_sensor
       - navigation/version
+      - upperlimb/speedj/whole_body
 
 
   WA1:
@@ -53,6 +55,7 @@ robot_models:
       - hand/task_switch
       - hand/wrist_force_sensor
       - navigation/version
+      - upperlimb/speedj/whole_body
 
   WA2:
     exclude_modules:
@@ -73,3 +76,4 @@ robot_models:
       - upperlimb/speedj/lift
       - hand/task_switch
       - hand/wrist_force_sensor
+      - upperlimb/speedj/whole_body
