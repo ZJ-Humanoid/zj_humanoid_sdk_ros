@@ -2,7 +2,7 @@
     "metadata": {
         "description": "ZJ Humanoid ROS1 APIs",
         "version": "v1.0.0",
-        "generated_at": "2025-12-29 08:39:49"
+        "generated_at": "2025-12-30 13:19:09"
     },
     "services": [
         {
@@ -74,6 +74,13 @@
             "type": "std_srvs/Trigger",
             "note": "",
             "demos": []
+        },
+        {
+            "name": "/zj_humanoid/chassis/agv_version",
+            "description": "底盘AGV版本",
+            "type": "std_srvs/Trigger",
+            "demos": [],
+            "note": "获取底盘AGV模块的版本信息"
         },
         {
             "name": "/zj_humanoid/hand/finger_pressures/left/zero",
@@ -397,6 +404,13 @@
             "note": "启用或禁用上肢speedj速度控制模式"
         },
         {
+            "name": "/zj_humanoid/upperlimb/enable_speedl",
+            "description": "启用笛卡尔空间速度控制",
+            "type": "std_srvs/SetBool",
+            "note": "启用或禁用上肢speedl笛卡尔空间速度控制模式",
+            "demos": []
+        },
+        {
             "name": "/zj_humanoid/upperlimb/go_down/dual_arm",
             "description": "双臂放下",
             "type": "std_srvs/Trigger",
@@ -485,6 +499,48 @@
                 "left_arm_disenable_teachmode.yaml"
             ],
             "note": "全身指定部位回到内置设置的home点"
+        },
+        {
+            "name": "/zj_humanoid/upperlimb/is_singular/left_arm",
+            "description": "检查左臂奇异点",
+            "type": "std_srvs/Trigger",
+            "demos": [],
+            "note": "检查左臂当前位置是否处于奇异点配置"
+        },
+        {
+            "name": "/zj_humanoid/upperlimb/is_singular/right_arm",
+            "description": "检查右臂奇异点",
+            "type": "std_srvs/Trigger",
+            "demos": [],
+            "note": "检查右臂当前位置是否处于奇异点配置"
+        },
+        {
+            "name": "/zj_humanoid/upperlimb/motion/lists",
+            "description": "获取动作列表",
+            "type": "upperlimb/MotionLists",
+            "demos": [],
+            "note": "获取可用的预定义动作列表"
+        },
+        {
+            "name": "/zj_humanoid/upperlimb/motion/load",
+            "description": "加载动作文件",
+            "type": "upperlimb/MotionLoad",
+            "demos": [],
+            "note": "从文件加载预定义动作到内存"
+        },
+        {
+            "name": "/zj_humanoid/upperlimb/motion/loaded_lists",
+            "description": "获取已加载动作列表",
+            "type": "upperlimb/MotionLoadedLists",
+            "demos": [],
+            "note": "获取当前已加载到内存的动作列表"
+        },
+        {
+            "name": "/zj_humanoid/upperlimb/motion/unload",
+            "description": "卸载动作文件",
+            "type": "upperlimb/MotionUnload",
+            "demos": [],
+            "note": "从内存中卸载指定的预定义动作"
         },
         {
             "name": "/zj_humanoid/upperlimb/movej/dual_arm",
@@ -701,13 +757,11 @@
             "note": "关节空间下,右臂轨迹点路径运动"
         },
         {
-            "name": "/zj_humanoid/upperlimb/movel_by_path/whole_body",
-            "description": "关节空间下,全身轨迹点路径运动",
-            "type": "upperlimb/MoveJByPath",
-            "demos": [
-                "data.yaml"
-            ],
-            "note": "控制全身按照关节空间路径运动"
+            "name": "/zj_humanoid/upperlimb/safety_lock",
+            "description": "安全锁定",
+            "type": "std_srvs/Trigger",
+            "demos": [],
+            "note": "启用上肢安全锁定,防止意外运动"
         },
         {
             "name": "/zj_humanoid/upperlimb/set_servo_params",
@@ -717,13 +771,6 @@
                 "data.yaml"
             ],
             "note": "设置上肢伺服参数配置,包括时间和增益参数"
-        },
-        {
-            "name": "/zj_humanoid/upperlimb/speedl/enable_speedl",
-            "description": "启用speedl",
-            "type": "std_srvs/SetBool",
-            "note": "启用笛卡尔空间 速度控制",
-            "demos": []
         },
         {
             "name": "/zj_humanoid/upperlimb/stop",
@@ -751,6 +798,13 @@
                 "left_arm_disenable_teachmode.yaml"
             ],
             "note": ""
+        },
+        {
+            "name": "/zj_humanoid/upperlimb/unlock",
+            "description": "解除锁定",
+            "type": "std_srvs/Trigger",
+            "demos": [],
+            "note": "解除上肢安全锁定,允许运动控制"
         },
         {
             "name": "/zj_humanoid/upperlimb/version",
@@ -813,6 +867,51 @@
             "direction": "publish",
             "throttle_rate": 10,
             "note": "麦克风收音后的音频数据流",
+            "demos": []
+        },
+        {
+            "name": "/zj_humanoid/chassis/agv_imu",
+            "description": "底盘IMU数据",
+            "type": "sensor_msgs/Imu",
+            "direction": "publish",
+            "throttle_rate": 100,
+            "note": "底盘AGV的IMU传感器数据,包含角速度、加速度和姿态信息",
+            "demos": []
+        },
+        {
+            "name": "/zj_humanoid/chassis/charge_state",
+            "description": "底盘充电状态",
+            "type": "std_msgs/Bool",
+            "direction": "publish",
+            "throttle_rate": 10,
+            "note": "底盘当前充电状态,true表示正在充电,false表示未充电",
+            "demos": []
+        },
+        {
+            "name": "/zj_humanoid/chassis/collision_state",
+            "description": "底盘碰撞状态",
+            "type": "std_msgs/Bool",
+            "direction": "publish",
+            "throttle_rate": 10,
+            "note": "底盘碰撞检测状态,true表示检测到碰撞,false表示无碰撞",
+            "demos": []
+        },
+        {
+            "name": "/zj_humanoid/chassis/odom_info",
+            "description": "底盘里程计信息",
+            "type": "nav_msgs/Odometry",
+            "direction": "publish",
+            "throttle_rate": 100,
+            "note": "底盘里程计数据,包含位置、速度等信息",
+            "demos": []
+        },
+        {
+            "name": "/zj_humanoid/chassis/stop_state",
+            "description": "底盘停止状态",
+            "type": "std_msgs/Bool",
+            "direction": "publish",
+            "throttle_rate": 10,
+            "note": "底盘当前停止状态,true表示已停止,false表示运动中",
             "demos": []
         },
         {
@@ -955,17 +1054,6 @@
             "throttle_rate": 100,
             "note": "当前位姿信息，有定位时才会输出结果",
             "demos": []
-        },
-        {
-            "name": "/zj_humanoid/navigation/task_info",
-            "description": "发布导航任务",
-            "type": "navigation/TakInfo",
-            "direction": "publish",
-            "throttle_rate": 1000,
-            "demos": [
-                "rostopic_pub_zj_humanoid_navigation_task_info.yaml"
-            ],
-            "note": "任务信息，该话题仅发布导航任务，不返回导航的结果"
         },
         {
             "name": "/map",
@@ -1252,21 +1340,21 @@
             "demos": []
         },
         {
-            "name": "/zj_humanoid/upperlimb/is_singular/left_arm",
-            "description": "上肢占用控制",
-            "type": "std_msgs/Int8",
-            "direction": "subscribe",
+            "name": "/zj_humanoid/upperlimb/jacobian/left_arm",
+            "description": "左臂雅可比矩阵",
+            "type": "std_msgs/Float64MultiArray",
+            "direction": "publish",
             "throttle_rate": 10,
-            "note": "该话题发布上肢的当前占用状态,用于防止多个控制源同时控制机器人",
+            "note": "发布左臂当前位置的雅可比矩阵,用于速度和力的映射",
             "demos": []
         },
         {
-            "name": "/zj_humanoid/upperlimb/jacobian/left_arm",
-            "description": "上肢占用控制",
-            "type": "std_msgs/Int8",
-            "direction": "subscribe",
+            "name": "/zj_humanoid/upperlimb/jacobian/right_arm",
+            "description": "右臂雅可比矩阵",
+            "type": "std_msgs/Float64MultiArray",
+            "direction": "publish",
             "throttle_rate": 10,
-            "note": "该话题发布上肢的当前占用状态,用于防止多个控制源同时控制机器人",
+            "note": "发布右臂当前位置的雅可比矩阵,用于速度和力的映射",
             "demos": []
         },
         {
