@@ -1,0 +1,7 @@
+topic:
+  name: /zj_humanoid/chassis/collision_state
+  description: 底盘碰撞状态
+  type: std_msgs/Bool
+  direction: publish
+  throttle_rate: 10
+  note: "底盘碰撞检测状态,true表示检测到碰撞,false表示无碰撞"

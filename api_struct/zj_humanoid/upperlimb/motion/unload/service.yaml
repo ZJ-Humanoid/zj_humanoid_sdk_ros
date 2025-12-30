@@ -1,0 +1,6 @@
+service:
+  name: /zj_humanoid/upperlimb/motion/unload
+  description: 卸载动作文件
+  type: upperlimb/MotionUnload
+  demos:
+  note: "从内存中卸载指定的预定义动作"

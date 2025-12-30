@@ -1,0 +1,6 @@
+service:
+  name: /zj_humanoid/upperlimb/motion/lists
+  description: 获取动作列表
+  type: upperlimb/MotionLists
+  demos:
+  note: "获取可用的预定义动作列表"

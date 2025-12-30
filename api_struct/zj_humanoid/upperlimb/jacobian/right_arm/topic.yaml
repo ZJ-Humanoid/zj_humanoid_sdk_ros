@@ -1,7 +1,8 @@
 ﻿topic:
-  name: /zj_humanoid/upperlimb/jacobian/left_arm
-  description: 上肢占用控制
-  type: std_msgs/Int8
-  direction: subscribe
+  name: /zj_humanoid/upperlimb/jacobian/right_arm
+  description: 右臂雅可比矩阵
+  type: std_msgs/Float64MultiArray
+  direction: publish
   throttle_rate: 10
-  note: "该话题发布上肢的当前占用状态,用于防止多个控制源同时控制机器人"
+  note: "发布右臂当前位置的雅可比矩阵,用于速度和力的映射"
+

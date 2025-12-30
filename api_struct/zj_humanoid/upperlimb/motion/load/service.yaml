@@ -1,0 +1,6 @@
+service:
+  name: /zj_humanoid/upperlimb/motion/load
+  description: 加载动作文件
+  type: upperlimb/MotionLoad
+  demos:
+  note: "从文件加载预定义动作到内存"

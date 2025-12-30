@@ -1,0 +1,6 @@
+service:
+  name: /zj_humanoid/upperlimb/safety_lock
+  description: 安全锁定
+  type: std_srvs/Trigger
+  demos:
+  note: "启用上肢安全锁定,防止意外运动"

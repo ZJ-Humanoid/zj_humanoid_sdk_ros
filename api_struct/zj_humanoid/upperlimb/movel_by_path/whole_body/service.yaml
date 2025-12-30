@@ -1,6 +1,0 @@
-service:
-  name: /zj_humanoid/upperlimb/movel_by_path/whole_body
-  description: 关节空间下,全身轨迹点路径运动
-  type: upperlimb/MoveJByPath
-  demos: data.yaml
-  note: "控制全身按照关节空间路径运动"
