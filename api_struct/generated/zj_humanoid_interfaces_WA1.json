@@ -2,7 +2,7 @@
     "metadata": {
         "description": "ZJ Humanoid ROS1 APIs",
         "version": "v1.0.0",
-        "generated_at": "2025-12-30 05:23:37"
+        "generated_at": "2025-12-30 05:35:32"
     },
     "services": [
         {
@@ -1341,15 +1341,6 @@
         {
             "name": "/zj_humanoid/upperlimb/speedj/waist",
             "description": "腰speedj",
-            "type": "upperlimb/TcpSpeed",
-            "direction": "subscribe",
-            "throttle_rate": 10,
-            "note": "关节空间速度控制",
-            "demos": []
-        },
-        {
-            "name": "/zj_humanoid/upperlimb/speedj/whole_body",
-            "description": "全身speedj",
             "type": "upperlimb/TcpSpeed",
             "direction": "subscribe",
             "throttle_rate": 10,
