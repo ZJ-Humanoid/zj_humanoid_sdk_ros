@@ -2,7 +2,7 @@
     "metadata": {
         "description": "ZJ Humanoid ROS1 APIs",
         "version": "v1.0.0",
-        "generated_at": "2025-12-30 13:19:09"
+        "generated_at": "2025-12-30 05:23:37"
     },
     "services": [
         {
@@ -161,20 +161,6 @@
             "note": "控制右手各关节运动到指定角度。关节角度数组顺序为[拇指弯曲,拇指摆动,食指弯曲,中指弯曲,无名指弯曲,小指弯曲],单位:弧度。关节角度会被限制在安全范围内"
         },
         {
-            "name": "/zj_humanoid/hand/task_switch/left",
-            "description": "左手掌任务控制",
-            "type": "std_srvs/Bool",
-            "note": "",
-            "demos": []
-        },
-        {
-            "name": "/zj_humanoid/hand/task_switch/right",
-            "description": "右手掌任务控制",
-            "type": "std_srvs/Bool",
-            "note": "",
-            "demos": []
-        },
-        {
             "name": "/zj_humanoid/hand/version",
             "description": "手部模块版本号",
             "type": "std_srvs/Trigger",
@@ -184,38 +170,11 @@
             "note": "查询手部控制模块的版本信息"
         },
         {
-            "name": "/zj_humanoid/hand/wrist_force_sensor/left/zero",
-            "description": "调用左手腕力传感器零位校准服务",
-            "type": "std_srvs/Trigger",
-            "demos": [
-                "data.yaml"
-            ],
-            "note": "对左手腕力传感器进行零位校准,清除当前传感器偏置,将当前力和力矩读数设为零点"
-        },
-        {
-            "name": "/zj_humanoid/hand/wrist_force_sensor/right/zero",
-            "description": "调用右手腕力传感器零位校准服务",
-            "type": "std_srvs/Trigger",
-            "demos": [
-                "data.yaml"
-            ],
-            "note": "对右手腕力传感器进行零位校准,清除当前传感器偏置,将当前力和力矩读数设为零点"
-        },
-        {
             "name": "/zj_humanoid/lowerlimb/versions",
             "description": "下肢模块版本",
             "type": "std_srvs/Trigger",
             "note": "",
             "demos": []
-        },
-        {
-            "name": "/zj_humanoid/navigation/version",
-            "description": "定位导航版本号",
-            "type": "std_srvs/Trigger",
-            "demos": [
-                "data.yaml"
-            ],
-            "note": ""
         },
         {
             "name": "/zj_humanoid/robot/basic_info",
@@ -939,24 +898,6 @@
             "direction": "publish",
             "throttle_rate": 10,
             "note": "订阅手部所有关节的位置状态,包括左右手各6个关节:拇指弯曲、拇指摆动、食指弯曲、中指弯曲、无名指弯曲、小指弯曲",
-            "demos": []
-        },
-        {
-            "name": "/zj_humanoid/hand/wrist_force_sensor/left",
-            "description": "左手腕力传感器",
-            "type": "geometry_msgs/WrenchStamped",
-            "direction": "publish",
-            "throttle_rate": 10,
-            "note": "发布左手腕力传感器数据,包括力和力矩的三轴分量",
-            "demos": []
-        },
-        {
-            "name": "/zj_humanoid/hand/wrist_force_sensor/right",
-            "description": "右手腕力传感器",
-            "type": "geometry_msgs/WrenchStamped",
-            "direction": "publish",
-            "throttle_rate": 10,
-            "note": "接收右手腕力传感器数据,包括力和力矩的三轴分量",
             "demos": []
         },
         {
