@@ -70,8 +70,6 @@ robot_models:
       - upperlimb/movej/lift
       - upperlimb/go_home/lifting
       - upperlimb/movej_by_pose
-      - upperlimb/movel
-      - upperlimb/servol
       - upperlimb/speedl
       - upperlimb/speedj/lift
       - hand/task_switch
