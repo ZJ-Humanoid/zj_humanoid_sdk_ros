@@ -2,7 +2,7 @@
     "metadata": {
         "description": "ZJ Humanoid ROS1 APIs",
         "version": "v1.0.0",
-        "generated_at": "2025-12-31 08:02:30"
+        "generated_at": "2026-01-07 01:28:29"
     },
     "services": [
         {
@@ -598,6 +598,33 @@
                 "data.yaml"
             ],
             "note": "控制全身按照关节空间路径运动"
+        },
+        {
+            "name": "/zj_humanoid/upperlimb/movel/dual_arm",
+            "description": "双臂movel",
+            "type": "upperlimb/MoveL",
+            "demos": [
+                "case1.yaml"
+            ],
+            "note": "关节空间下,双臂直线轨迹点运动"
+        },
+        {
+            "name": "/zj_humanoid/upperlimb/movel/left_arm",
+            "description": "左臂movel",
+            "type": "upperlimb/MoveL",
+            "demos": [
+                "case1.yaml"
+            ],
+            "note": "关节空间下,左臂直线轨迹点运动"
+        },
+        {
+            "name": "/zj_humanoid/upperlimb/movel/right_arm",
+            "description": "右臂movel",
+            "type": "upperlimb/MoveL",
+            "demos": [
+                "case1.yaml"
+            ],
+            "note": "关节空间下,右臂直线轨迹点运动"
         },
         {
             "name": "/zj_humanoid/upperlimb/movel_by_path/dual_arm",
@@ -1213,6 +1240,30 @@
             "type": "upperlimb/Joints",
             "direction": "subscribe",
             "note": "关节空间 高频位置控制",
+            "demos": []
+        },
+        {
+            "name": "/zj_humanoid/upperlimb/servol/dual_arm",
+            "description": "双臂servol",
+            "type": "geometry_msgs/Pose",
+            "direction": "subscribe",
+            "note": "笛卡尔空间 高频位置跟随控制",
+            "demos": []
+        },
+        {
+            "name": "/zj_humanoid/upperlimb/servol/left_arm",
+            "description": "左臂servol",
+            "type": "geometry_msgs/Pose",
+            "direction": "subscribe",
+            "note": "笛卡尔空间 高频位置跟随控制",
+            "demos": []
+        },
+        {
+            "name": "/zj_humanoid/upperlimb/servol/right_arm",
+            "description": "右臂servol",
+            "type": "geometry_msgs/Pose",
+            "direction": "subscribe",
+            "note": "笛卡尔空间 高频位置跟随控制",
             "demos": []
         },
         {
