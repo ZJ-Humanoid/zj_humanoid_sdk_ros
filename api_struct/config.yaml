@@ -33,14 +33,11 @@ robot_models:
   I2:
     exclude_modules:
       - manipulation
-      - sensor/realsense_down
       - sensor/realsense_head
       - manipulation
-      - upperlimb/movej/lift
+      - upperlimb/movej/lifting
       - upperlimb/go_home/lifting
-      - upperlimb/movej_by_pose
-      - upperlimb/speedl
-      - upperlimb/speedj/lift
+      - upperlimb/speedj/lifting
       - hand/task_switch
       - hand/wrist_force_sensor
       - navigation/version
@@ -76,12 +73,12 @@ robot_models:
       - sensor/CAM_C
       - sensor/CAM_D
       - sensor/head_imu
+      - sensor/realsense_up
       - sensor/realsense_down
-      - upperlimb/movej/lift
+      - upperlimb/movej/lifting
       - upperlimb/go_home/lifting
       - upperlimb/movej_by_pose
-      - upperlimb/speedl
-      - upperlimb/speedj/lift
+      - upperlimb/speedj/lifting
       - hand/task_switch
       - hand/wrist_force_sensor
       - upperlimb/speedj/whole_body
