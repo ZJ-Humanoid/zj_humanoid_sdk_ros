@@ -2,7 +2,7 @@
     "metadata": {
         "description": "ZJ Humanoid ROS1 APIs",
         "version": "v1.0.0",
-        "generated_at": "2026-01-12 05:52:52"
+        "generated_at": "2026-01-12 07:02:26"
     },
     "services": [
         {
@@ -768,24 +768,6 @@
         },
         {
             "name": "/zj_humanoid/audio/microphone/audio_data",
-            "description": "音频流数据",
-            "type": "audio/AudioData",
-            "direction": "publish",
-            "throttle_rate": 10,
-            "note": "麦克风收音后的音频数据流",
-            "demos": []
-        },
-        {
-            "name": "/zj_humanoid/audio/microphone/wake_data",
-            "description": "音频流数据",
-            "type": "audio/AudioData",
-            "direction": "publish",
-            "throttle_rate": 10,
-            "note": "麦克风收音后的音频数据流",
-            "demos": []
-        },
-        {
-            "name": "/zj_humanoid/audio/microphone/wake_info",
             "description": "音频流数据",
             "type": "audio/AudioData",
             "direction": "publish",
