@@ -2,7 +2,7 @@
     "metadata": {
         "description": "ZJ Humanoid ROS1 APIs",
         "version": "v1.0.0",
-        "generated_at": "2026-01-07 01:28:29"
+        "generated_at": "2026-01-12 05:52:52"
     },
     "services": [
         {
@@ -74,13 +74,6 @@
             "type": "std_srvs/Trigger",
             "note": "",
             "demos": []
-        },
-        {
-            "name": "/zj_humanoid/chassis/agv_version",
-            "description": "底盘AGV版本",
-            "type": "std_srvs/Trigger",
-            "demos": [],
-            "note": "获取底盘AGV模块的版本信息"
         },
         {
             "name": "/zj_humanoid/hand/finger_pressures/left/zero",
@@ -170,7 +163,7 @@
             "note": "查询手部控制模块的版本信息"
         },
         {
-            "name": "/zj_humanoid/lowerlimb/versions",
+            "name": "/zj_humanoid/lowerlimb/version",
             "description": "下肢模块版本",
             "type": "std_srvs/Trigger",
             "note": "",
@@ -415,15 +408,6 @@
             "note": "左臂回到内置设置的home点"
         },
         {
-            "name": "/zj_humanoid/upperlimb/go_home/lifting",
-            "description": "升降回到home点",
-            "type": "std_srvs/Trigger",
-            "demos": [
-                "data.yaml"
-            ],
-            "note": "升降回到内置设置的home点"
-        },
-        {
             "name": "/zj_humanoid/upperlimb/go_home/neck",
             "description": "脖子回到home点",
             "type": "std_srvs/Trigger",
@@ -635,33 +619,6 @@
             "note": "控制全身按照关节空间路径运动"
         },
         {
-            "name": "/zj_humanoid/upperlimb/movej_by_pose/dual_arm",
-            "description": "双臂末端movej",
-            "type": "upperlimb/MoveJByPose",
-            "demos": [
-                "case1.yaml"
-            ],
-            "note": "tcp末端空间下,双臂末端位姿movej"
-        },
-        {
-            "name": "/zj_humanoid/upperlimb/movej_by_pose/left_arm",
-            "description": "左臂末端movej",
-            "type": "upperlimb/MoveJByPose",
-            "demos": [
-                "case1.yaml"
-            ],
-            "note": "tcp末端空间下,左臂末端位姿movej"
-        },
-        {
-            "name": "/zj_humanoid/upperlimb/movej_by_pose/right_arm",
-            "description": "右臂末端movej",
-            "type": "upperlimb/MoveJByPose",
-            "demos": [
-                "case1.yaml"
-            ],
-            "note": "tcp末端空间下,右臂末端位姿movej"
-        },
-        {
             "name": "/zj_humanoid/upperlimb/movel/dual_arm",
             "description": "双臂movel",
             "type": "upperlimb/MoveL",
@@ -829,51 +786,6 @@
             "demos": []
         },
         {
-            "name": "/zj_humanoid/chassis/agv_imu",
-            "description": "底盘IMU数据",
-            "type": "sensor_msgs/Imu",
-            "direction": "publish",
-            "throttle_rate": 100,
-            "note": "底盘AGV的IMU传感器数据,包含角速度、加速度和姿态信息",
-            "demos": []
-        },
-        {
-            "name": "/zj_humanoid/chassis/charge_state",
-            "description": "底盘充电状态",
-            "type": "std_msgs/Bool",
-            "direction": "publish",
-            "throttle_rate": 10,
-            "note": "底盘当前充电状态,true表示正在充电,false表示未充电",
-            "demos": []
-        },
-        {
-            "name": "/zj_humanoid/chassis/collision_state",
-            "description": "底盘碰撞状态",
-            "type": "std_msgs/Bool",
-            "direction": "publish",
-            "throttle_rate": 10,
-            "note": "底盘碰撞检测状态,true表示检测到碰撞,false表示无碰撞",
-            "demos": []
-        },
-        {
-            "name": "/zj_humanoid/chassis/odom_info",
-            "description": "底盘里程计信息",
-            "type": "nav_msgs/Odometry",
-            "direction": "publish",
-            "throttle_rate": 100,
-            "note": "底盘里程计数据,包含位置、速度等信息",
-            "demos": []
-        },
-        {
-            "name": "/zj_humanoid/chassis/stop_state",
-            "description": "底盘停止状态",
-            "type": "std_msgs/Bool",
-            "direction": "publish",
-            "throttle_rate": 10,
-            "note": "底盘当前停止状态,true表示已停止,false表示运动中",
-            "demos": []
-        },
-        {
             "name": "/zj_humanoid/hand/finger_pressures/left",
             "description": "左手指尖压力",
             "type": "hand/PressureSensor",
@@ -946,6 +858,15 @@
             "demos": []
         },
         {
+            "name": "/zj_humanoid/lowerlimb/motor_info",
+            "description": "下肢电机信息",
+            "type": "sensor_msgs/JointState",
+            "direction": "publish",
+            "throttle_rate": 10,
+            "note": "发布下肢各电机的状态信息，包括位置、速度、力矩等",
+            "demos": []
+        },
+        {
             "name": "/zj_humanoid/lowerlimb/set_lie",
             "description": "下肢泄力",
             "type": "std_msgs/Float32",
@@ -967,6 +888,24 @@
             "type": "std_msgs/Float32",
             "direction": "subscribe",
             "note": "双足机器人开启运动模式，算法开始响应速度控制请求，轮臂机器人暂不适用",
+            "demos": []
+        },
+        {
+            "name": "/zj_humanoid/lowerlimb/state",
+            "description": "下肢状态信息",
+            "type": "sensor_msgs/JointState",
+            "direction": "publish",
+            "throttle_rate": 10,
+            "note": "发布下肢整体状态信息，包括当前姿态、运动状态等",
+            "demos": []
+        },
+        {
+            "name": "/zj_humanoid/lowerlimb/version",
+            "description": "下肢模块版本信息",
+            "type": "std_msgs/String",
+            "direction": "publish",
+            "throttle_rate": 1,
+            "note": "发布下肢模块的版本信息，与service版本获取功能一致",
             "demos": []
         },
         {
@@ -1449,30 +1388,6 @@
             "direction": "subscribe",
             "throttle_rate": 10,
             "note": "关节空间速度控制",
-            "demos": []
-        },
-        {
-            "name": "/zj_humanoid/upperlimb/speedl/dual_arm",
-            "description": "双臂speedl",
-            "type": "upperlimb/SpeedL",
-            "direction": "subscribe",
-            "note": "笛卡尔空间 速度控制",
-            "demos": []
-        },
-        {
-            "name": "/zj_humanoid/upperlimb/speedl/left_arm",
-            "description": "左臂speedl",
-            "type": "upperlimb/SpeedL",
-            "direction": "subscribe",
-            "note": "笛卡尔空间 速度控制",
-            "demos": []
-        },
-        {
-            "name": "/zj_humanoid/upperlimb/speedl/right_arm",
-            "description": "右臂speedl",
-            "type": "upperlimb/SpeedL",
-            "direction": "subscribe",
-            "note": "笛卡尔空间 速度控制",
             "demos": []
         },
         {

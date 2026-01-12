@@ -143,7 +143,7 @@ services:
     - data.yaml
     note: 对右手腕力传感器进行零位校准,清除当前传感器偏置,将当前力和力矩读数设为零点
   lowerlimb:
-  - name: /zj_humanoid/lowerlimb/versions
+  - name: /zj_humanoid/lowerlimb/version
     description: 下肢模块版本
     type: std_srvs/Trigger
     note: ''
@@ -766,6 +766,13 @@ topics:
     throttle_rate: 1000
     note: 双足型号运控debug信息，轮臂机器人暂不适用
     demos: []
+  - name: /zj_humanoid/lowerlimb/motor_info
+    description: 下肢电机信息
+    type: sensor_msgs/JointState
+    direction: publish
+    throttle_rate: 10
+    note: 发布下肢各电机的状态信息，包括位置、速度、力矩等
+    demos: []
   - name: /zj_humanoid/lowerlimb/set_lie
     description: 下肢泄力
     type: std_msgs/Float32
@@ -783,6 +790,20 @@ topics:
     type: std_msgs/Float32
     direction: subscribe
     note: 双足机器人开启运动模式，算法开始响应速度控制请求，轮臂机器人暂不适用
+    demos: []
+  - name: /zj_humanoid/lowerlimb/state
+    description: 下肢状态信息
+    type: sensor_msgs/JointState
+    direction: publish
+    throttle_rate: 10
+    note: 发布下肢整体状态信息，包括当前姿态、运动状态等
+    demos: []
+  - name: /zj_humanoid/lowerlimb/version
+    description: 下肢模块版本信息
+    type: std_msgs/String
+    direction: publish
+    throttle_rate: 1
+    note: 发布下肢模块的版本信息，与service版本获取功能一致
     demos: []
   manipulation:
   - name: /zj_humanoid/manipulation/instance_segmentation_action/goal
