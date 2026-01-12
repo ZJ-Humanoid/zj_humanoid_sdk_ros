@@ -46,6 +46,8 @@ robot_models:
       - navigation/version
       - upperlimb/speedj/whole_body
       - chassis
+      - audio/microphone/wake_data
+      - audio/microphone/wake_info
 
 
   WA1:
@@ -62,6 +64,8 @@ robot_models:
       - hand/wrist_force_sensor
       - navigation/version
       - upperlimb/speedj/whole_body
+      - audio/microphone/wake_data
+      - audio/microphone/wake_info
 
   WA2:
     exclude_modules:
@@ -81,3 +85,5 @@ robot_models:
       - hand/task_switch
       - hand/wrist_force_sensor
       - upperlimb/speedj/whole_body
+      - audio/microphone/wake_data
+      - audio/microphone/wake_info
