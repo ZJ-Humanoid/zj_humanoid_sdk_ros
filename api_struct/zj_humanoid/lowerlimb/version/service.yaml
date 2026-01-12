@@ -1,5 +1,5 @@
 ﻿service:
-  name: /zj_humanoid/lowerlimb/versions
+  name: /zj_humanoid/lowerlimb/version
   description: 下肢模块版本
   type: std_srvs/Trigger
   note: ""

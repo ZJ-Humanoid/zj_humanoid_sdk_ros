@@ -36,10 +36,16 @@ robot_models:
       - sensor/realsense_down
       - sensor/realsense_head
       - manipulation
+      - upperlimb/movej/lift
+      - upperlimb/go_home/lifting
+      - upperlimb/movej_by_pose
+      - upperlimb/speedl
+      - upperlimb/speedj/lift
       - hand/task_switch
       - hand/wrist_force_sensor
       - navigation/version
       - upperlimb/speedj/whole_body
+      - chassis
 
 
   WA1:

@@ -1,0 +1,7 @@
+topic:
+  name: /zj_humanoid/lowerlimb/motor_info
+  description: 下肢电机信息
+  type: sensor_msgs/JointState
+  direction: publish
+  throttle_rate: 10
+  note: "发布下肢各电机的状态信息，包括位置、速度、力矩等"
