@@ -1377,7 +1377,7 @@ actions:
   navigation:
   - name: /zj_humanoid/navigation/navigation
     description: 导航接口
-    type: null
+    type: navigation/Navigation
     demos: []
     note: null
   upperlimb:

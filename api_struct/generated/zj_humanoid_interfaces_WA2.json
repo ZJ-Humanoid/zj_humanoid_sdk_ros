@@ -2,7 +2,7 @@
     "metadata": {
         "description": "ZJ Humanoid ROS1 APIs",
         "version": "v1.0.0",
-        "generated_at": "2026-01-12 07:50:47"
+        "generated_at": "2026-01-12 08:08:39"
     },
     "services": [
         {
@@ -1270,6 +1270,22 @@
             "throttle_rate": 10,
             "note": "该话题发布上肢机器人的当前命令状态信息",
             "demos": []
+        }
+    ],
+    "actions": [
+        {
+            "name": "/zj_humanoid/navigation/navigation",
+            "description": "导航接口",
+            "type": "navigation/Navigation",
+            "demos": [],
+            "note": null
+        },
+        {
+            "name": "/zj_humanoid/upperlimb/motion",
+            "description": "执行预加载轨迹",
+            "type": null,
+            "demos": [],
+            "note": null
         }
     ]
 }
