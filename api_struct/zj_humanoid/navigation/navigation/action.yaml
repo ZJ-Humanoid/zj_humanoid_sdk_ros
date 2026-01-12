@@ -1,6 +1,6 @@
 action:
   name: /zj_humanoid/navigation/navigation
   description: 导航接口
-  type: 
+  type: navigation/Navigation
   demos:
   note: 
