@@ -2,7 +2,7 @@
     "metadata": {
         "description": "ZJ Humanoid ROS1 APIs",
         "version": "v1.0.0",
-        "generated_at": "2026-01-12 07:38:47"
+        "generated_at": "2026-01-12 07:50:47"
     },
     "services": [
         {
@@ -562,15 +562,6 @@
                 "case1.yaml"
             ],
             "note": "关节空间下,左臂轨迹点路径运动"
-        },
-        {
-            "name": "/zj_humanoid/upperlimb/movej_by_path/lifting",
-            "description": "关节空间下,脖子轨迹点路径运动",
-            "type": "upperlimb/MoveJByPath",
-            "demos": [
-                "data.yaml"
-            ],
-            "note": "控制颈部按照关节空间路径运动"
         },
         {
             "name": "/zj_humanoid/upperlimb/movej_by_path/neck",
@@ -1347,14 +1338,6 @@
         {
             "name": "/zj_humanoid/upperlimb/servoj/left_arm",
             "description": "左臂servoj",
-            "type": "upperlimb/Joints",
-            "direction": "subscribe",
-            "note": "关节空间 高频位置控制",
-            "demos": []
-        },
-        {
-            "name": "/zj_humanoid/upperlimb/servoj/lifting",
-            "description": "全身servoj",
             "type": "upperlimb/Joints",
             "direction": "subscribe",
             "note": "关节空间 高频位置控制",
