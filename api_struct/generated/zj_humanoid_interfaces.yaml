@@ -1374,6 +1374,12 @@ topics:
     note: 该话题发布上肢机器人的当前命令状态信息
     demos: []
 actions:
+  navigation:
+  - name: /zj_humanoid/navigation/navigation
+    description: 导航接口
+    type: null
+    demos: []
+    note: null
   upperlimb:
   - name: /zj_humanoid/upperlimb/motion
     description: 执行预加载轨迹
