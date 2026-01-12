@@ -38,6 +38,8 @@ robot_models:
       - upperlimb/movej/lifting
       - upperlimb/go_home/lifting
       - upperlimb/speedj/lifting
+      - upperlimb/servoj/lifting
+      - upperlimb/movej_by_path/lifting
       - hand/task_switch
       - hand/wrist_force_sensor
       - navigation/version
