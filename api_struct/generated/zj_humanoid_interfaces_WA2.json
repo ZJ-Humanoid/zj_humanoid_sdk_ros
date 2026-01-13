@@ -2,7 +2,7 @@
     "metadata": {
         "description": "ZJ Humanoid ROS1 APIs",
         "version": "v1.0.0",
-        "generated_at": "2026-01-12 08:08:39"
+        "generated_at": "2026-01-13 10:19:09"
     },
     "services": [
         {
@@ -337,13 +337,6 @@
             "note": "启用或禁用上肢speedj速度控制模式"
         },
         {
-            "name": "/zj_humanoid/upperlimb/enable_speedl",
-            "description": "启用笛卡尔空间速度控制",
-            "type": "std_srvs/SetBool",
-            "note": "启用或禁用上肢speedl笛卡尔空间速度控制模式",
-            "demos": []
-        },
-        {
             "name": "/zj_humanoid/upperlimb/go_down/dual_arm",
             "description": "双臂放下",
             "type": "std_srvs/Trigger",
@@ -423,20 +416,6 @@
                 "left_arm_disenable_teachmode.yaml"
             ],
             "note": "全身指定部位回到内置设置的home点"
-        },
-        {
-            "name": "/zj_humanoid/upperlimb/is_singular/left_arm",
-            "description": "检查左臂奇异点",
-            "type": "std_srvs/Trigger",
-            "demos": [],
-            "note": "检查左臂当前位置是否处于奇异点配置"
-        },
-        {
-            "name": "/zj_humanoid/upperlimb/is_singular/right_arm",
-            "description": "检查右臂奇异点",
-            "type": "std_srvs/Trigger",
-            "demos": [],
-            "note": "检查右臂当前位置是否处于奇异点配置"
         },
         {
             "name": "/zj_humanoid/upperlimb/motion/lists",
@@ -525,69 +504,6 @@
                 "whole_body_t_case1.yaml"
             ],
             "note": "关节空间下,全身各部位点到点运动"
-        },
-        {
-            "name": "/zj_humanoid/upperlimb/movej_by_path/dual_arm",
-            "description": "双臂轨迹movej",
-            "type": "upperlimb/MoveJByPath",
-            "demos": [
-                "case1.yaml"
-            ],
-            "note": "关节空间下,双臂轨迹点路径运动"
-        },
-        {
-            "name": "/zj_humanoid/upperlimb/movej_by_path/left_arm",
-            "description": "左臂轨迹movej",
-            "type": "upperlimb/MoveJByPath",
-            "demos": [
-                "case1.yaml"
-            ],
-            "note": "关节空间下,左臂轨迹点路径运动"
-        },
-        {
-            "name": "/zj_humanoid/upperlimb/movej_by_path/lifting",
-            "description": "关节空间下,脖子轨迹点路径运动",
-            "type": "upperlimb/MoveJByPath",
-            "demos": [
-                "data.yaml"
-            ],
-            "note": "控制颈部按照关节空间路径运动"
-        },
-        {
-            "name": "/zj_humanoid/upperlimb/movej_by_path/neck",
-            "description": "关节空间下,脖子轨迹点路径运动",
-            "type": "upperlimb/MoveJByPath",
-            "demos": [
-                "data.yaml"
-            ],
-            "note": "控制颈部按照关节空间路径运动"
-        },
-        {
-            "name": "/zj_humanoid/upperlimb/movej_by_path/right_arm",
-            "description": "右臂轨迹movej",
-            "type": "upperlimb/MoveJByPath",
-            "demos": [
-                "case1.yaml"
-            ],
-            "note": "关节空间下,右臂轨迹点路径运动"
-        },
-        {
-            "name": "/zj_humanoid/upperlimb/movej_by_path/waist",
-            "description": "关节空间下,腰部轨迹点路径运动",
-            "type": "upperlimb/MoveJByPath",
-            "demos": [
-                "data.yaml"
-            ],
-            "note": "控制腰部按照关节空间路径运动"
-        },
-        {
-            "name": "/zj_humanoid/upperlimb/movej_by_path/whole_body",
-            "description": "关节空间下,全身轨迹点路径运动",
-            "type": "upperlimb/MoveJByPath",
-            "demos": [
-                "data.yaml"
-            ],
-            "note": "控制全身按照关节空间路径运动"
         },
         {
             "name": "/zj_humanoid/upperlimb/movel/dual_arm",
@@ -1041,6 +957,87 @@
             "demos": []
         },
         {
+            "name": "/zj_humanoid/sensor/realsense_up/aligned_depth_to_color/camera_info",
+            "description": "胸部深度aligned参数",
+            "type": "sensor_msgs/CameraInfo",
+            "direction": "publish",
+            "throttle_rate": 33.33,
+            "note": "胸部深度相机的aligned_depth_to_color参数信息",
+            "demos": []
+        },
+        {
+            "name": "/zj_humanoid/sensor/realsense_up/aligned_depth_to_color/image_raw",
+            "description": "胸部深度aligned图像",
+            "type": "sensor_msgs/Image",
+            "direction": "publish",
+            "throttle_rate": 33.33,
+            "note": "胸部深度相机的aligned_depth_to_color RGB图像源数据",
+            "demos": []
+        },
+        {
+            "name": "/zj_humanoid/sensor/realsense_up/aligned_depth_to_color/image_raw/compressed",
+            "description": "胸部深度aligned压缩图",
+            "type": "sensor_msgs/Image",
+            "direction": "publish",
+            "throttle_rate": 33.33,
+            "note": "胸部深度相机的aligned_depth_to_color压缩格式",
+            "demos": []
+        },
+        {
+            "name": "/zj_humanoid/sensor/realsense_up/color/camera_info",
+            "description": "胸部深度RGB参数",
+            "type": "sensor_msgs/CameraInfo",
+            "direction": "publish",
+            "throttle_rate": 33.33,
+            "note": "胸部深度相机的参数信息",
+            "demos": []
+        },
+        {
+            "name": "/zj_humanoid/sensor/realsense_up/color/image_raw",
+            "description": "胸部深度RGB图像",
+            "type": "sensor_msgs/Image",
+            "direction": "publish",
+            "throttle_rate": 33.33,
+            "note": "胸部深度相机的RGB图像源数据",
+            "demos": []
+        },
+        {
+            "name": "/zj_humanoid/sensor/realsense_up/color/image_raw/compressed",
+            "description": "胸部深度压缩图",
+            "type": "sensor_msgs/Image",
+            "direction": "publish",
+            "throttle_rate": 33.33,
+            "note": "胸部深度相机的RGB图像JPG格式",
+            "demos": []
+        },
+        {
+            "name": "/zj_humanoid/sensor/realsense_up/depth/camera_info",
+            "description": "胸部相机深度参数",
+            "type": "sensor_msgs/CameraInfo",
+            "direction": "publish",
+            "throttle_rate": 33.33,
+            "note": "胸部深度相机的参数信息",
+            "demos": []
+        },
+        {
+            "name": "/zj_humanoid/sensor/realsense_up/depth/image_rect_raw",
+            "description": "胸部深度RGB图像",
+            "type": "sensor_msgs/Image",
+            "direction": "publish",
+            "throttle_rate": 33.33,
+            "note": "胸部深度相机的RGB图像源数据",
+            "demos": []
+        },
+        {
+            "name": "/zj_humanoid/sensor/realsense_up/depth/image_rect_raw/compressed",
+            "description": "胸部深度压缩图",
+            "type": "sensor_msgs/Image",
+            "direction": "publish",
+            "throttle_rate": 33.33,
+            "note": "胸部深度相机的RGB图像JPG格式",
+            "demos": []
+        },
+        {
             "name": "/zj_humanoid/upperlimb/jacobian/left_arm",
             "description": "左臂雅可比矩阵",
             "type": "std_msgs/Float64MultiArray",
@@ -1088,14 +1085,6 @@
         {
             "name": "/zj_humanoid/upperlimb/servoj/left_arm",
             "description": "左臂servoj",
-            "type": "upperlimb/Joints",
-            "direction": "subscribe",
-            "note": "关节空间 高频位置控制",
-            "demos": []
-        },
-        {
-            "name": "/zj_humanoid/upperlimb/servoj/lifting",
-            "description": "全身servoj",
             "type": "upperlimb/Joints",
             "direction": "subscribe",
             "note": "关节空间 高频位置控制",
@@ -1200,30 +1189,6 @@
             "direction": "subscribe",
             "throttle_rate": 10,
             "note": "关节空间速度控制",
-            "demos": []
-        },
-        {
-            "name": "/zj_humanoid/upperlimb/speedl/dual_arm",
-            "description": "双臂speedl",
-            "type": "upperlimb/SpeedL",
-            "direction": "subscribe",
-            "note": "笛卡尔空间 速度控制",
-            "demos": []
-        },
-        {
-            "name": "/zj_humanoid/upperlimb/speedl/left_arm",
-            "description": "左臂speedl",
-            "type": "upperlimb/SpeedL",
-            "direction": "subscribe",
-            "note": "笛卡尔空间 速度控制",
-            "demos": []
-        },
-        {
-            "name": "/zj_humanoid/upperlimb/speedl/right_arm",
-            "description": "右臂speedl",
-            "type": "upperlimb/SpeedL",
-            "direction": "subscribe",
-            "note": "笛卡尔空间 速度控制",
             "demos": []
         },
         {
