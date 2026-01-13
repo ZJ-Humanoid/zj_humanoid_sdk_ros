@@ -75,7 +75,7 @@ robot_models:
       - sensor/CAM_C
       - sensor/CAM_D
       - sensor/head_imu
-      - sensor/realsense_up
+      # - sensor/realsense_up
       - sensor/realsense_down
       - upperlimb/movej/lifting
       - upperlimb/go_home/lifting
@@ -86,3 +86,9 @@ robot_models:
       - upperlimb/speedj/whole_body
       - audio/microphone/wake_data
       - audio/microphone/wake_info
+      - upperlimb/enable_speedl
+      - upperlimb/is_singular
+      - upperlimb/movej_by_path
+      - upperlimb/servoj/lifting
+      - upperlimb/speedl
+
