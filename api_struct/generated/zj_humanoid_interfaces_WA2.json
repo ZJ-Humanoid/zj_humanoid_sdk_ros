@@ -2,7 +2,7 @@
     "metadata": {
         "description": "ZJ Humanoid ROS1 APIs",
         "version": "v1.0.0",
-        "generated_at": "2026-01-13 10:19:09"
+        "generated_at": "2026-01-14 05:23:50"
     },
     "services": [
         {
@@ -504,6 +504,69 @@
                 "whole_body_t_case1.yaml"
             ],
             "note": "关节空间下,全身各部位点到点运动"
+        },
+        {
+            "name": "/zj_humanoid/upperlimb/movej_by_path/dual_arm",
+            "description": "双臂轨迹movej",
+            "type": "upperlimb/MoveJByPath",
+            "demos": [
+                "case1.yaml"
+            ],
+            "note": "关节空间下,双臂轨迹点路径运动"
+        },
+        {
+            "name": "/zj_humanoid/upperlimb/movej_by_path/left_arm",
+            "description": "左臂轨迹movej",
+            "type": "upperlimb/MoveJByPath",
+            "demos": [
+                "case1.yaml"
+            ],
+            "note": "关节空间下,左臂轨迹点路径运动"
+        },
+        {
+            "name": "/zj_humanoid/upperlimb/movej_by_path/lifting",
+            "description": "关节空间下,脖子轨迹点路径运动",
+            "type": "upperlimb/MoveJByPath",
+            "demos": [
+                "data.yaml"
+            ],
+            "note": "控制颈部按照关节空间路径运动"
+        },
+        {
+            "name": "/zj_humanoid/upperlimb/movej_by_path/neck",
+            "description": "关节空间下,脖子轨迹点路径运动",
+            "type": "upperlimb/MoveJByPath",
+            "demos": [
+                "data.yaml"
+            ],
+            "note": "控制颈部按照关节空间路径运动"
+        },
+        {
+            "name": "/zj_humanoid/upperlimb/movej_by_path/right_arm",
+            "description": "右臂轨迹movej",
+            "type": "upperlimb/MoveJByPath",
+            "demos": [
+                "case1.yaml"
+            ],
+            "note": "关节空间下,右臂轨迹点路径运动"
+        },
+        {
+            "name": "/zj_humanoid/upperlimb/movej_by_path/waist",
+            "description": "关节空间下,腰部轨迹点路径运动",
+            "type": "upperlimb/MoveJByPath",
+            "demos": [
+                "data.yaml"
+            ],
+            "note": "控制腰部按照关节空间路径运动"
+        },
+        {
+            "name": "/zj_humanoid/upperlimb/movej_by_path/whole_body",
+            "description": "关节空间下,全身轨迹点路径运动",
+            "type": "upperlimb/MoveJByPath",
+            "demos": [
+                "data.yaml"
+            ],
+            "note": "控制全身按照关节空间路径运动"
         },
         {
             "name": "/zj_humanoid/upperlimb/movel/dual_arm",
