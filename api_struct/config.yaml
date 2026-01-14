@@ -88,7 +88,6 @@ robot_models:
       - audio/microphone/wake_info
       - upperlimb/enable_speedl
       - upperlimb/is_singular
-      - upperlimb/movej_by_path
       - upperlimb/servoj/lifting
       - upperlimb/speedl
 
