@@ -2,7 +2,7 @@
     "metadata": {
         "description": "ZJ Humanoid ROS1 APIs",
         "version": "v1.0.0",
-        "generated_at": "2026-01-14 05:23:50"
+        "generated_at": "2026-01-14 06:10:24"
     },
     "services": [
         {
@@ -76,11 +76,72 @@
             "demos": []
         },
         {
+            "name": "/zj_humanoid/chassis/agv_charge",
+            "description": "底盘AGV充电控制",
+            "type": "zj_humanoid_msgs/AgvCharge",
+            "request": {
+                "command": "int"
+            },
+            "response": {
+                "success": "bool",
+                "charging": "bool",
+                "battery_level": "float",
+                "message": "string"
+            },
+            "demos": [],
+            "note": "控制底盘AGV的充电操作和查询充电状态"
+        },
+        {
+            "name": "/zj_humanoid/chassis/agv_connect",
+            "description": "连接底盘AGV",
+            "type": "std_srvs/Trigger",
+            "demos": [],
+            "note": "连接底盘AGV，建立通信连接"
+        },
+        {
+            "name": "/zj_humanoid/chassis/agv_reset",
+            "description": "底盘AGV复位",
+            "type": "std_srvs/Trigger",
+            "demos": [],
+            "note": "底盘AGV复位，恢复到初始状态"
+        },
+        {
             "name": "/zj_humanoid/chassis/agv_version",
             "description": "底盘AGV版本",
             "type": "std_srvs/Trigger",
             "demos": [],
             "note": "获取底盘AGV模块的版本信息"
+        },
+        {
+            "name": "/zj_humanoid/chassis/speed_control",
+            "description": "底盘速度控制",
+            "type": "zj_humanoid_msgs/SpeedControl",
+            "request": {
+                "linear_x": "float",
+                "linear_y": "float",
+                "angular_z": "float"
+            },
+            "response": {
+                "success": "bool",
+                "message": "string"
+            },
+            "demos": [],
+            "note": "控制底盘AGV的线速度和角速度"
+        },
+        {
+            "name": "/zj_humanoid/chassis/steer_control",
+            "description": "底盘转向控制",
+            "type": "zj_humanoid_msgs/SteerControl",
+            "request": {
+                "steer_angle": "float",
+                "steer_speed": "float"
+            },
+            "response": {
+                "success": "bool",
+                "message": "string"
+            },
+            "demos": [],
+            "note": "控制底盘AGV的转向角度和速度"
         },
         {
             "name": "/zj_humanoid/hand/finger_pressures/left/zero",
@@ -785,6 +846,24 @@
             "demos": []
         },
         {
+            "name": "/zj_humanoid/chassis/agv_state",
+            "description": "底盘AGV整体状态",
+            "type": "zj_humanoid_msgs/AgvState",
+            "direction": "publish",
+            "throttle_rate": 10,
+            "note": "底盘AGV的整体状态信息，包含运行状态、错误代码和系统状态",
+            "demos": []
+        },
+        {
+            "name": "/zj_humanoid/chassis/calib_vel",
+            "description": "底盘速度标定数据",
+            "type": "zj_humanoid_msgs/VelocityCalibData",
+            "direction": "publish",
+            "throttle_rate": 10,
+            "note": "底盘AGV的速度标定相关数据，用于速度控制系统的校准和优化",
+            "demos": []
+        },
+        {
             "name": "/zj_humanoid/chassis/charge_state",
             "description": "底盘充电状态",
             "type": "std_msgs/Bool",
@@ -803,12 +882,38 @@
             "demos": []
         },
         {
+            "name": "/zj_humanoid/chassis/motor_info",
+            "description": "底盘电机状态信息",
+            "type": "zj_humanoid_msgs/MotorInfoArray",
+            "direction": "publish",
+            "throttle_rate": 20,
+            "note": "底盘AGV的电机状态信息数组，包含各电机的电流、速度、温度等参数",
+            "demos": []
+        },
+        {
             "name": "/zj_humanoid/chassis/odom_info",
             "description": "底盘里程计信息",
             "type": "nav_msgs/Odometry",
             "direction": "publish",
             "throttle_rate": 100,
             "note": "底盘里程计数据,包含位置、速度等信息",
+            "demos": []
+        },
+        {
+            "name": "/zj_humanoid/chassis/steer_command",
+            "description": "底盘转向控制指令",
+            "type": "zj_humanoid_msgs/SteerCommand",
+            "direction": "subscribe",
+            "note": "发送到底盘的转向控制指令，包含目标角度和速度",
+            "demos": []
+        },
+        {
+            "name": "/zj_humanoid/chassis/steer_info",
+            "description": "底盘转向状态信息",
+            "type": "zj_humanoid_msgs/SteerInfo",
+            "direction": "publish",
+            "throttle_rate": 50,
+            "note": "底盘AGV的转向状态信息，包含当前转向角度、速度和目标位置",
             "demos": []
         },
         {
