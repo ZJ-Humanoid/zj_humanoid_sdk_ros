@@ -1,0 +1,6 @@
+service:
+  name: /zj_humanoid/chassis/agv_reset
+  description: 底盘AGV复位
+  type: std_srvs/Trigger
+  demos:
+  note: "底盘AGV复位，恢复到初始状态"

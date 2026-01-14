@@ -1,0 +1,6 @@
+topic:
+  name: /zj_humanoid/chassis/steer_command
+  description: 底盘转向控制指令
+  type: zj_humanoid_msgs/SteerCommand
+  direction: subscribe
+  note: "发送到底盘的转向控制指令，包含目标角度和速度"

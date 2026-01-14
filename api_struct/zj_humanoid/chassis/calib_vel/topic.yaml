@@ -1,0 +1,7 @@
+topic:
+  name: /zj_humanoid/chassis/calib_vel
+  description: 底盘速度标定数据
+  type: zj_humanoid_msgs/VelocityCalibData
+  direction: publish
+  throttle_rate: 10
+  note: "底盘AGV的速度标定相关数据，用于速度控制系统的校准和优化"

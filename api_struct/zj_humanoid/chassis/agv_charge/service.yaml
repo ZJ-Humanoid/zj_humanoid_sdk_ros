@@ -1,0 +1,13 @@
+service:
+  name: /zj_humanoid/chassis/agv_charge
+  description: 底盘AGV充电控制
+  type: zj_humanoid_msgs/AgvCharge
+  request:
+    command: int    # 充电指令: 0-停止充电, 1-开始充电, 2-查询充电状态
+  response:
+    success: bool   # 控制是否成功
+    charging: bool  # 是否正在充电
+    battery_level: float  # 电池电量百分比 (0-100)
+    message: string # 状态消息
+  demos:
+  note: "控制底盘AGV的充电操作和查询充电状态"

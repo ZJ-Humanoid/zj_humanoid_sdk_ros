@@ -1,0 +1,13 @@
+service:
+  name: /zj_humanoid/chassis/speed_control
+  description: 底盘速度控制
+  type: zj_humanoid_msgs/SpeedControl
+  request:
+    linear_x: float  # 线速度 x (m/s)
+    linear_y: float  # 线速度 y (m/s)
+    angular_z: float  # 角速度 z (rad/s)
+  response:
+    success: bool     # 控制是否成功
+    message: string   # 状态消息
+  demos:
+  note: "控制底盘AGV的线速度和角速度"

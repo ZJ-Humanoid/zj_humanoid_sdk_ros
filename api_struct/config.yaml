@@ -5,6 +5,7 @@ project:
 # 功能模块列表
 modules:
   - audio
+  - chassis
   - hand
   - lowerlimb
   - manipulation

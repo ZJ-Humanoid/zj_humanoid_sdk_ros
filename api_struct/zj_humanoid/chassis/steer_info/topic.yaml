@@ -1,0 +1,7 @@
+topic:
+  name: /zj_humanoid/chassis/steer_info
+  description: 底盘转向状态信息
+  type: zj_humanoid_msgs/SteerInfo
+  direction: publish
+  throttle_rate: 50
+  note: "底盘AGV的转向状态信息，包含当前转向角度、速度和目标位置"

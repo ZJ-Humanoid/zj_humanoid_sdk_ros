@@ -1,0 +1,12 @@
+service:
+  name: /zj_humanoid/chassis/steer_control
+  description: 底盘转向控制
+  type: zj_humanoid_msgs/SteerControl
+  request:
+    steer_angle: float  # 转向角度 (rad)
+    steer_speed: float  # 转向速度 (rad/s)
+  response:
+    success: bool       # 控制是否成功
+    message: string     # 状态消息
+  demos:
+  note: "控制底盘AGV的转向角度和速度"

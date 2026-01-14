@@ -1,0 +1,7 @@
+topic:
+  name: /zj_humanoid/chassis/motor_info
+  description: 底盘电机状态信息
+  type: zj_humanoid_msgs/MotorInfoArray
+  direction: publish
+  throttle_rate: 20
+  note: "底盘AGV的电机状态信息数组，包含各电机的电流、速度、温度等参数"
