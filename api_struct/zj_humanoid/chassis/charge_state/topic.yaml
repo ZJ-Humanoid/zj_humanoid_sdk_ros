@@ -1,7 +1,0 @@
-topic:
-  name: /zj_humanoid/chassis/charge_state
-  description: 底盘充电状态
-  type: std_msgs/Bool
-  direction: publish
-  throttle_rate: 10
-  note: "底盘当前充电状态,true表示正在充电,false表示未充电"

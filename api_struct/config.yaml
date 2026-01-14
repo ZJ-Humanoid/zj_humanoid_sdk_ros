@@ -80,6 +80,7 @@ robot_models:
       - sensor/realsense_down
       - upperlimb/movej/lifting
       - upperlimb/go_home/lifting
+      - upperlimb/movej_by_path/lifting
       - upperlimb/movej_by_pose
       - upperlimb/speedj/lifting
       - hand/task_switch

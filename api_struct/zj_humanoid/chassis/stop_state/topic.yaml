@@ -1,7 +1,0 @@
-topic:
-  name: /zj_humanoid/chassis/stop_state
-  description: 底盘停止状态
-  type: std_msgs/Bool
-  direction: publish
-  throttle_rate: 10
-  note: "底盘当前停止状态,true表示已停止,false表示运动中"
