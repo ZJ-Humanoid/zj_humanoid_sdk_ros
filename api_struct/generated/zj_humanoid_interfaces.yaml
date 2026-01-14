@@ -725,20 +725,6 @@ topics:
     throttle_rate: 10
     note: 底盘AGV的速度标定相关数据，用于速度控制系统的校准和优化
     demos: []
-  - name: /zj_humanoid/chassis/charge_state
-    description: 底盘充电状态
-    type: std_msgs/Bool
-    direction: publish
-    throttle_rate: 10
-    note: 底盘当前充电状态,true表示正在充电,false表示未充电
-    demos: []
-  - name: /zj_humanoid/chassis/collision_state
-    description: 底盘碰撞状态
-    type: std_msgs/Bool
-    direction: publish
-    throttle_rate: 10
-    note: 底盘碰撞检测状态,true表示检测到碰撞,false表示无碰撞
-    demos: []
   - name: /zj_humanoid/chassis/motor_info
     description: 底盘电机状态信息
     type: zj_humanoid_msgs/MotorInfoArray
@@ -765,13 +751,6 @@ topics:
     direction: publish
     throttle_rate: 50
     note: 底盘AGV的转向状态信息，包含当前转向角度、速度和目标位置
-    demos: []
-  - name: /zj_humanoid/chassis/stop_state
-    description: 底盘停止状态
-    type: std_msgs/Bool
-    direction: publish
-    throttle_rate: 10
-    note: 底盘当前停止状态,true表示已停止,false表示运动中
     demos: []
   hand:
   - name: /zj_humanoid/hand/finger_pressures/left

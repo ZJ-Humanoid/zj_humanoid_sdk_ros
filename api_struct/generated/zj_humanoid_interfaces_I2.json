@@ -2,7 +2,7 @@
     "metadata": {
         "description": "ZJ Humanoid ROS1 APIs",
         "version": "v1.0.0",
-        "generated_at": "2026-01-14 06:10:24"
+        "generated_at": "2026-01-14 06:27:55"
     },
     "services": [
         {
