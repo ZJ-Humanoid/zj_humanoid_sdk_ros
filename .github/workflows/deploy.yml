@@ -1,11 +1,13 @@
 name: Deploy VitePress to GitHub Pages
 
 on:
-  # 在推送到 main 分支时触发
+  # 在推送到 main 或 develop 分支时触发
   push:
     branches:
       - main
-      - v*
+      - develop
+    tags:
+      - 'v*'  # 当创建版本标签时触发
   # 允许手动触发
   workflow_dispatch:
 
@@ -45,12 +47,49 @@ jobs:
           python3 generate_json_from_yaml.py
           python3 generate_vitepress_docs.py
 
-      - name: Commit generated files
+      - name: Sync versions from Git tags and branches
+        run: |
+          BRANCH_NAME="${{ github.ref_name }}"
+          echo "当前分支/标签: $BRANCH_NAME"
+          
+          # 如果是标签推送，归档标签版本
+          if [[ "${{ github.ref }}" == refs/tags/* ]]; then
+            TAG_NAME="${{ github.ref_name }}"
+            echo "✓ 检测到标签推送: $TAG_NAME"
+            # 归档当前版本到 versions 目录
+            VERSION_NAME=$(echo "$TAG_NAME" | sed 's/^v//')
+            if [ -d "docs/src" ] && [ ! -d "docs/versions/$VERSION_NAME" ]; then
+              echo "归档当前版本到 docs/versions/$VERSION_NAME"
+              mkdir -p "docs/versions/$VERSION_NAME"
+              cp -r docs/src/* "docs/versions/$VERSION_NAME/"
+            fi
+          # 如果是 develop 分支推送，创建 develop 版本
+          elif [[ "${{ github.ref }}" == refs/heads/develop ]]; then
+            echo "✓ 检测到 develop 分支推送"
+            # 保存当前 develop 分支的 docs/src 到 versions/develop
+            if [ -d "docs/src" ]; then
+              echo "创建 develop 版本文档（从当前 develop 分支）"
+              rm -rf "docs/versions/develop"
+              mkdir -p "docs/versions/develop"
+              cp -r docs/src/* "docs/versions/develop/"
+              echo "✓ develop 版本已更新到 versions/develop/"
+              echo "注意：main 版本将在 main 分支下次推送时更新"
+            fi
+          # 如果是 main 分支推送，确保 main 版本是最新的
+          elif [[ "${{ github.ref }}" == refs/heads/main ]]; then
+            echo "✓ 检测到 main 分支推送"
+            echo "main 版本使用 docs/src 目录（当前 main 分支）"
+          fi
+          
+          # 同步所有标签版本
+          node docs/.vitepress/scripts/sync-versions-from-git.js || echo "版本同步完成（可能没有标签）"
+
+      - name: Commit generated files and versions
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add api_struct/generated/
-          git diff --staged --quiet || git commit -m "chore: update generated API documentation [skip ci]"
+          git add api_struct/generated/ docs/versions/
+          git diff --staged --quiet || git commit -m "chore: update generated API documentation and versions [skip ci]"
           git push || echo "No changes to push"
 
       - name: Build VitePress

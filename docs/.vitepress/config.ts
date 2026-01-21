@@ -1,4 +1,4 @@
-import { defineConfig } from 'vitepress';
+import { defineVersionedConfig } from '@viteplus/versions';
 import fs from 'fs';
 import path from 'path';
 
@@ -32,7 +32,7 @@ function getAutoSidebar(dir) {
             link:
               '/' +
               path
-                .relative('./docs', fullPath)
+                .relative('./docs/src', fullPath)
                 .replace(/\\/g, '/')
                 .replace(/\.md$/, '') // 去掉 .md 扩展名
           }
@@ -46,7 +46,7 @@ function getAutoSidebar(dir) {
 }
 
 // 尝试读取 zj_humanoid 目录（如果存在），否则返回空数组
-const autoSidebar = getAutoSidebar('./docs/zj_humanoid/');
+const autoSidebar = getAutoSidebar('./docs/src/zj_humanoid/');
 // console.log('自动生成的侧边栏:', JSON.stringify(autoSidebar, null, 1));
 const repositorySlug = process.env.GITHUB_REPOSITORY || '';
 const repositoryName = repositorySlug.includes('/') ? repositorySlug.split('/')[1] : repositorySlug;
@@ -55,14 +55,29 @@ const isGitHubActions = process.env.GITHUB_ACTIONS === 'true';
 // If deploying to <user>.github.io, base must be '/'
 const isUserOrOrgSite = repositoryName.endsWith('.github.io');
 
-export default defineConfig({
+export default defineVersionedConfig({
   title: 'Navi机器人SDK开发指南',
   description: '这是浙江人形机器人Navi系列的SDK和编程指引文档站点。',
   base: '/zj_humanoid_sdk_ros/',
-  outDir: '../dist', // 构建输出到项目根目录的 dist 文件夹
-  ignoreDeadLinks: true, // 忽略死链接检查，允许构建继续
+  outDir: '../dist',          // 构建输出到项目根目录的 dist 文件夹
+  ignoreDeadLinks: true,      // 忽略死链接检查，允许构建继续
+
+  // 版本管理配置
+  versionsConfig: {
+    current: 'main',          // 当前版本的标签（main 分支）
+    sources: 'src',           // 当前版本文档目录（相对于 docs/）
+    archive: 'versions',      // 旧版本归档目录（相对于 docs/）
+    versionSwitcher: {
+      text: '版本',           // 版本切换器显示文本
+      includeCurrentVersion: true  // 在版本列表中包含当前版本
+    }
+  },
 
   themeConfig: {
+    nav: [
+      { text: '首页', link: '/' },
+      { component: 'VersionSwitcher' }  // 版本切换器组件
+    ],
     sidebar: [
       {
         items: [

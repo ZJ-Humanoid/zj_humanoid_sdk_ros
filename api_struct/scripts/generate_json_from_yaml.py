@@ -292,9 +292,6 @@ class InterfaceGenerator:
             print("No data to process!")
             return
         
-        # Update metadata timestamp
-        self.data['metadata']['generated_at'] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        
         # Generate files
         print("\nGenerating JSON files for each robot model...")
         self.save_to_json()

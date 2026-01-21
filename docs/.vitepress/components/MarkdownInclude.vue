@@ -88,18 +88,19 @@ containerTypes.forEach(type => {
 })
 
 // 文件内容映射（在构建时预加载）
+// 注意：文档已移动到 src/ 目录，路径需要更新
 const fileMap = {
   // API文档
-  'api/zj_humanoid_ros_api.md': () => import('../../api/zj_humanoid_ros_api.md?raw'),
+  'api/zj_humanoid_ros_api.md': () => import('../../src/api/zj_humanoid_ros_api.md?raw'),
   // 子系统文档（完整路径）
-  'api/audio.md': () => import('../../api/audio.md?raw'),
-  'api/hand.md': () => import('../../api/hand.md?raw'),
-  'api/lowerlimb.md': () => import('../../api/lowerlimb.md?raw'),
-  'api/manipulation.md': () => import('../../api/manipulation.md?raw'),
-  'api/navigation.md': () => import('../../api/navigation.md?raw'),
-  'api/robot.md': () => import('../../api/robot.md?raw'),
-  'api/sensor.md': () => import('../../api/sensor.md?raw'),
-  'api/upperlimb.md': () => import('../../api/upperlimb.md?raw'),
+  'api/audio.md': () => import('../../src/api/audio.md?raw'),
+  'api/hand.md': () => import('../../src/api/hand.md?raw'),
+  'api/lowerlimb.md': () => import('../../src/api/lowerlimb.md?raw'),
+  'api/manipulation.md': () => import('../../src/api/manipulation.md?raw'),
+  'api/navigation.md': () => import('../../src/api/navigation.md?raw'),
+  'api/robot.md': () => import('../../src/api/robot.md?raw'),
+  'api/sensor.md': () => import('../../src/api/sensor.md?raw'),
+  'api/upperlimb.md': () => import('../../src/api/upperlimb.md?raw'),
 }
 
 onBeforeMount(() => {
@@ -176,7 +177,10 @@ onMounted(async () => {
           // 否则保持原样（相对于docs目录）
         }
         
-        const importPath = `../../${importSrc}?raw`
+        // 文档已移动到 src/ 目录，需要更新路径
+        let importPath = importSrc.startsWith('src/') 
+          ? `../../${importSrc}?raw`
+          : `../../src/${importSrc}?raw`
         console.log(`[MarkdownInclude] Trying dynamic import: "${importPath}"`)
         const module = await import(/* @vite-ignore */ importPath)
         content = module.default || ''

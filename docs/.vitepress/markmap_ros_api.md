@@ -6,7 +6,7 @@
 <Markmap :content="basicContent" />
 
 <script setup>
-import basicContentMd from './zj_humanoid_ros_api.md?raw'
+import basicContentMd from '../src/api/zj_humanoid_ros_api.md?raw'
 const frontmatter = `---
 title: markmap
 markmap:

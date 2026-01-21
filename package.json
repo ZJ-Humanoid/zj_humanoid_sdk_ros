@@ -9,9 +9,14 @@
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs",
     "docs:preview:network": "vitepress preview docs --host 0.0.0.0",
-    "docs:export:pdf": "node scripts/export-to-pdf.js"
+    "docs:export:pdf": "node scripts/export-to-pdf.js",
+    "docs:sync-versions": "node docs/.vitepress/scripts/sync-versions-from-git.js",
+    "docs:sync-version:tag": "node docs/.vitepress/scripts/sync-versions-from-git.js --tag",
+    "docs:sync-version:branch": "node docs/.vitepress/scripts/sync-versions-from-git.js --branch",
+    "docs:get-versions": "node docs/.vitepress/scripts/get-versions-from-git.js"
   },
   "devDependencies": {
+    "@viteplus/versions": "^2.0.6",
     "markmap-cli": "^0.15.8",
     "vitepress": "^1.6.4",
     "vitepress-sidebar": "^1.33.0"
