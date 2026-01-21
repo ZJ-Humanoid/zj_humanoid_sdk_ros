@@ -2,7 +2,7 @@
     "metadata": {
         "description": "ZJ Humanoid ROS1 APIs",
         "version": "v1.0.0",
-        "generated_at": "2026-01-14 06:27:55"
+        "generated_at": "2026-01-21 06:50:35"
     },
     "services": [
         {
@@ -361,13 +361,6 @@
                 "Robot_text_show.yaml"
             ],
             "note": "机器人脸部屏幕显示文字，支持指令显示“Hello World”"
-        },
-        {
-            "name": "/zj_humanoid/robot/get_connection_info",
-            "description": "获取机器人连接信息",
-            "type": "std_srvs/Trigger",
-            "note": "获取机器人XDDP连接状态，返回 success: True/False 和 message 描述连接状态。例如 'XDDP Connection Status: CONNECTED - All robot services are available'",
-            "demos": []
         },
         {
             "name": "/zj_humanoid/robot/joint_motor/set_zero",
@@ -1121,17 +1114,6 @@
                 "battery_info.yaml"
             ],
             "note": "电池BMS相关信息，机器人当前电量还剩多少 回复值应为1~100%"
-        },
-        {
-            "name": "/zj_humanoid/robot/connection_status",
-            "description": "链接状态",
-            "type": "zj_robot/RobotState",
-            "direction": "publish",
-            "throttle_rate": 1000,
-            "demos": [
-                "connection_status.yaml"
-            ],
-            "note": "机器人XDDP连接状态信息，state为状态码，state_info为状态描述。例如 state: 5, state_info: 'XDDP_CONNECTED' 表示已连接"
         },
         {
             "name": "/zj_humanoid/robot/joint_motor/errors",
