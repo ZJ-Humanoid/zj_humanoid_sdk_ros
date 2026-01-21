@@ -6,6 +6,8 @@ This script reads zj_humanoid_interfaces.yaml from generated/ and generates:
 - zj_humanoid_interfaces_*.json: JSON format for each robot model
 - zj_humanoid_interfaces.md: Markdown format for human-readable documentation
 
+The script processes services, topics, and actions from the YAML file.
+
 File Structure:
     api_struct/
     ├── scripts/
@@ -212,7 +214,8 @@ class InterfaceGenerator:
             robot_data[model] = {
                 'metadata': self.data['metadata'].copy(),
                 'services': [],
-                'topics': []
+                'topics': [],
+                'actions': []
             }
             
         # Filter services based on module exclusion rules
@@ -241,6 +244,19 @@ class InterfaceGenerator:
                                 if self.should_include_interface(topic_name, model):
                                     robot_data[model]['topics'].append(topic)
         
+        # Filter actions based on module exclusion rules
+        # Handle nested structure: actions -> module -> list of actions
+        actions_data = self.data.get('actions', {})
+        if isinstance(actions_data, dict):
+            for module, action_list in actions_data.items():
+                if isinstance(action_list, list):
+                    for action in action_list:
+                        if isinstance(action, dict):
+                            action_name = action.get('name', '')
+                            for model in robot_models:
+                                if self.should_include_interface(action_name, model):
+                                    robot_data[model]['actions'].append(action)
+        
         # Save a JSON file for each robot model
         try:
             # Ensure output directory exists
@@ -253,6 +269,7 @@ class InterfaceGenerator:
                 print(f"Successfully saved to {output_filename}")
                 print(f"  - Services: {len(robot_data[model]['services'])}")
                 print(f"  - Topics: {len(robot_data[model]['topics'])}")
+                print(f"  - Actions: {len(robot_data[model]['actions'])}")
                 
                 # Print excluded modules info
                 exclude_modules = self.config.get('robot_models', {}).get(model, {}).get('exclude_modules', [])

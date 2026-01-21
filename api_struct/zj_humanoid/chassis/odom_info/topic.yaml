@@ -1,0 +1,7 @@
+topic:
+  name: /zj_humanoid/chassis/odom_info
+  description: 底盘里程计信息
+  type: nav_msgs/Odometry
+  direction: publish
+  throttle_rate: 100
+  note: "底盘里程计数据,包含位置、速度等信息"

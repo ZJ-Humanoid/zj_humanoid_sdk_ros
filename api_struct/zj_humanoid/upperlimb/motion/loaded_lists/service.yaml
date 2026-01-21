@@ -1,0 +1,6 @@
+service:
+  name: /zj_humanoid/upperlimb/motion/loaded_lists
+  description: 获取已加载动作列表
+  type: upperlimb/MotionLoadedLists
+  demos:
+  note: "获取当前已加载到内存的动作列表"

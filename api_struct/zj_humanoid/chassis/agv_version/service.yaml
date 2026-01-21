@@ -1,0 +1,6 @@
+service:
+  name: /zj_humanoid/chassis/agv_version
+  description: 底盘AGV版本
+  type: std_srvs/Trigger
+  demos:
+  note: "获取底盘AGV模块的版本信息"

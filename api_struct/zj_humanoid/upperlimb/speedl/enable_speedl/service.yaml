@@ -1,5 +1,0 @@
-﻿service:
-  name: /zj_humanoid/upperlimb/speedl/enable_speedl
-  description: 启用speedl
-  type: std_srvs/SetBool
-  note: "启用笛卡尔空间 速度控制"

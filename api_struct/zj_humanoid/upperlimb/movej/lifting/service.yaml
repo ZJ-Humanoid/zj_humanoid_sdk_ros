@@ -1,0 +1,8 @@
+service:
+  name: /zj_humanoid/upperlimb/movej/lifting
+  description: 升降movej
+  type: upperlimb/MoveJ
+  demos:
+  - lift_v_acc_case1.yaml
+  - lift_t_case1.yaml
+  note: "关节空间下,升降点到点运动"

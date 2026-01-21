@@ -1,0 +1,7 @@
+topic:
+  name: /zj_humanoid/chassis/agv_state
+  description: 底盘AGV整体状态
+  type: zj_humanoid_msgs/AgvState
+  direction: publish
+  throttle_rate: 10
+  note: "底盘AGV的整体状态信息，包含运行状态、错误代码和系统状态"

@@ -1,0 +1,6 @@
+﻿service:
+  name: /zj_humanoid/upperlimb/is_singular/left_arm
+  description: 检查左臂奇异点
+  type: std_srvs/Trigger
+  demos:
+  note: "检查左臂当前位置是否处于奇异点配置"

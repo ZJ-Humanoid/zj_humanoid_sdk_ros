@@ -1,0 +1,6 @@
+service:
+  name: /zj_humanoid/upperlimb/unlock
+  description: 解除锁定
+  type: std_srvs/Trigger
+  demos:
+  note: "解除上肢安全锁定,允许运动控制"

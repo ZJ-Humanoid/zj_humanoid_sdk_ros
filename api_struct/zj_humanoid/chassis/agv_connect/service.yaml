@@ -1,0 +1,6 @@
+service:
+  name: /zj_humanoid/chassis/agv_connect
+  description: 连接底盘AGV
+  type: std_srvs/Trigger
+  demos:
+  note: "连接底盘AGV，建立通信连接"

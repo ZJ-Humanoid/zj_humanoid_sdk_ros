@@ -1,7 +1,0 @@
-topic:
-  name: /zj_humanoid/upperlimb/speedj/lift
-  description: 升降speedj
-  type: upperlimb/TcpSpeed
-  direction: subscribe
-  throttle_rate: 10
-  note: "关节空间速度控制"

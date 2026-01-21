@@ -1,0 +1,7 @@
+topic:
+  name: /zj_humanoid/lowerlimb/state
+  description: 下肢状态信息
+  type: sensor_msgs/JointState
+  direction: publish
+  throttle_rate: 10
+  note: "发布下肢整体状态信息，包括当前姿态、运动状态等"

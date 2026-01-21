@@ -1,0 +1,8 @@
+﻿topic:
+  name: /zj_humanoid/upperlimb/jacobian/right_arm
+  description: 右臂雅可比矩阵
+  type: std_msgs/Float64MultiArray
+  direction: publish
+  throttle_rate: 10
+  note: "发布右臂当前位置的雅可比矩阵,用于速度和力的映射"
+

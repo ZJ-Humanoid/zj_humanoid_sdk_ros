@@ -1,0 +1,7 @@
+topic:
+  name: /zj_humanoid/lowerlimb/version
+  description: 下肢模块版本信息
+  type: std_msgs/String
+  direction: publish
+  throttle_rate: 1
+  note: "发布下肢模块的版本信息，与service版本获取功能一致"

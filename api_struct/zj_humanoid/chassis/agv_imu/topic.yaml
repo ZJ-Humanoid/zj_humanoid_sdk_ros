@@ -1,0 +1,7 @@
+topic:
+  name: /zj_humanoid/chassis/agv_imu
+  description: 底盘IMU数据
+  type: sensor_msgs/Imu
+  direction: publish
+  throttle_rate: 100
+  note: "底盘AGV的IMU传感器数据,包含角速度、加速度和姿态信息"

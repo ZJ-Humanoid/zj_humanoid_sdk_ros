@@ -5,6 +5,7 @@ project:
 # 功能模块列表
 modules:
   - audio
+  - chassis
   - hand
   - lowerlimb
   - manipulation
@@ -29,11 +30,26 @@ robot_models:
       - lowerlimb
       - sensor/realsense_down
       - sensor/realsense_head
+
   I2:
     exclude_modules:
       - manipulation
-      - sensor/realsense_down
       - sensor/realsense_head
+      - manipulation
+      - upperlimb/movej/lifting
+      - upperlimb/go_home/lifting
+      - upperlimb/speedj/lifting
+      - upperlimb/servoj/lifting
+      - upperlimb/movej_by_path/lifting
+      - hand/task_switch
+      - hand/wrist_force_sensor
+      - navigation/version
+      - upperlimb/speedj/whole_body
+      - chassis
+      - audio/microphone/wake_data
+      - audio/microphone/wake_info
+
+
   WA1:
     exclude_modules:
       - lowerlimb
@@ -43,14 +59,14 @@ robot_models:
       - sensor/CAM_D
       - sensor/head_imu
       - sensor/realsense_down
-      - upperlimb/go_home/whole_body
-      - upperlimb/movej/whole_body
-      - upperlimb/movej_by_path/whole_body
-      - upperlimb/servoj/whole_body
+      - manipulation
+      - hand/task_switch
+      - hand/wrist_force_sensor
+      - navigation/version
       - upperlimb/speedj/whole_body
-      - manipulation/joint_space_trajectory_planner
-      - manipulation/pose_space_trajectory_planner
-      - manipulation/scene_update
+      - audio/microphone/wake_data
+      - audio/microphone/wake_info
+
   WA2:
     exclude_modules:
       - manipulation
@@ -60,13 +76,20 @@ robot_models:
       - sensor/CAM_C
       - sensor/CAM_D
       - sensor/head_imu
+      # - sensor/realsense_up
       - sensor/realsense_down
-      - upperlimb/movej/lift
+      - upperlimb/movej/lifting
       - upperlimb/go_home/lifting
+      - upperlimb/movej_by_path/lifting
       - upperlimb/movej_by_pose
-      - upperlimb/movel
-      - upperlimb/servol
-      - upperlimb/speedl
-      - upperlimb/speedj/lift
+      - upperlimb/speedj/lifting
       - hand/task_switch
       - hand/wrist_force_sensor
+      - upperlimb/speedj/whole_body
+      - audio/microphone/wake_data
+      - audio/microphone/wake_info
+      - upperlimb/enable_speedl
+      - upperlimb/is_singular
+      - upperlimb/servoj/lifting
+      - upperlimb/speedl
+
