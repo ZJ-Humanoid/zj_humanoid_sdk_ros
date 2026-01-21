@@ -1,5 +1,0 @@
-﻿service:
-  name: /zj_humanoid/robot/get_connection_info
-  description: 获取机器人连接信息
-  type: std_srvs/Trigger
-  note: "获取机器人XDDP连接状态，返回 success: True/False 和 message 描述连接状态。例如 'XDDP Connection Status: CONNECTED - All robot services are available'"

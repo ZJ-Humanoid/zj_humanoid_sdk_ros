@@ -1,8 +1,0 @@
-topic:
-  name: /zj_humanoid/robot/connection_status
-  description: 链接状态
-  type: zj_robot/RobotState
-  direction: publish
-  throttle_rate: 1000
-  demos: connection_status.yaml
-  note: "机器人XDDP连接状态信息，state为状态码，state_info为状态描述。例如 state: 5, state_info: 'XDDP_CONNECTED' 表示已连接"
