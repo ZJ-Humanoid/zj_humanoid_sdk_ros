@@ -1,0 +1,21 @@
+      <package format="2">
+        <name>zj_humanoid_mock</name>
+        <version>0.1.0</version>
+        <description>Mock services/topics for zj_humanoid interfaces.</description>
+        <maintainer email="dev@zj-humanoid.local">ZJ Humanoid</maintainer>
+        <license>Apache-2.0</license>
+        <buildtool_depend>catkin</buildtool_depend>
+<exec_depend>audio</exec_depend>
+<exec_depend>geometry_msgs</exec_depend>
+<exec_depend>hand</exec_depend>
+<exec_depend>manipulation</exec_depend>
+<exec_depend>nav_msgs</exec_depend>
+<exec_depend>navigation</exec_depend>
+<exec_depend>rospy</exec_depend>
+<exec_depend>sensor</exec_depend>
+<exec_depend>sensor_msgs</exec_depend>
+<exec_depend>std_msgs</exec_depend>
+<exec_depend>std_srvs</exec_depend>
+<exec_depend>upperlimb</exec_depend>
+<exec_depend>zj_robot</exec_depend>
+      </package>
