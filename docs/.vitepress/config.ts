@@ -67,86 +67,125 @@ export default defineVersionedConfig({
     current: 'main',          // 当前版本的标签（main 分支）
     sources: 'src',           // 当前版本文档目录（相对于 docs/）
     archive: 'versions',      // 旧版本归档目录（相对于 docs/）
-    versionSwitcher: {
-      text: '版本',           // 版本切换器显示文本
-      includeCurrentVersion: true  // 在版本列表中包含当前版本
-    }
+    // ⚠️ 关闭内置 VersionSwitcher：
+    // @viteplus/versions 在 VitePress v1 下不会把 archive 路由重写到 /<version>/，
+    // 实际生成路径是 /versions/<version>/。因此我们用自定义 nav 来指向正确路径。
+    versionSwitcher: false
   },
 
   themeConfig: {
-    nav: [
-      { text: '首页', link: '/' },
-      { component: 'VersionSwitcher' }  // 版本切换器组件
-    ],
-    sidebar: [
-      {
-        items: [
-          { text: '开发指南', link: '/',
-            items: [          
-              { text: '概述', link: '/#概述' },
-              { text: '快速开始', link: '/#快速开始' },]
-           },
-          {
-            text: 'ROS API',
-            items: [          
-              { text: '完整API文档', link: '/api/zj_humanoid_ros_api' },
-              { 
-                text: '子系统',
-                collapsed: true,
-                items: [
-                  { text: '🔊 Audio', link: '/api/audio' },
-                  { text: '🖐️ Hand', link: '/api/hand' },
-                  { text: '🦵 Lowerlimb', link: '/api/lowerlimb' },
-                  { text: '🔧 Manipulation', link: '/api/manipulation' },
-                  { text: '🧭 Navigation', link: '/api/navigation' },
-                  { text: '🤖 Robot', link: '/api/robot' },
-                  { text: '📷 Sensor', link: '/api/sensor' },
-                  { text: '🦾 Upperlimb', link: '/api/upperlimb' },
-                ]
+    nav: {
+      root: [
+        { text: '首页', link: '/' },
+        { text: '版本', items: [
+          { text: 'main', link: '/' },
+          ...(() => {
+            // 扫描 docs/versions 下的版本目录
+            try {
+              const versionsRoot = path.resolve('./docs/versions')
+              if (fs.existsSync(versionsRoot)) {
+                return fs
+                  .readdirSync(versionsRoot, { withFileTypes: true })
+                  .filter((e) => e.isDirectory())
+                  .map((e) => e.name)
+                  .filter((name) => !name.startsWith('.'))
+                  .sort((a, b) => a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' }))
+                  .map((v) => ({ text: v, link: `/versions/${v}/` }))
               }
+            } catch (e) {
+              // ignore
+            }
+            return []
+          })()
+        ]}
+      ],
+      develop: [
+        { text: '首页', link: '/versions/develop/' },
+        { text: '版本', items: [
+          { text: 'main', link: '../../' },
+          { text: 'develop', link: '/versions/develop/' }
+        ]}
+      ]
+    },
+    sidebar: (() => {
+      // 定义通用侧边栏配置
+      const commonSidebar = [
+        {
+          items: [
+            { text: '开发指南', link: '/',
+              items: [          
+                { text: '概述', link: '/#概述' },
+                { text: '快速开始', link: '/#快速开始' },]
+             },
+            {
+              text: 'ROS API',
+              items: [          
+                { text: '完整API文档', link: '/api/zj_humanoid_ros_api' },
+                { 
+                  text: '子系统',
+                  collapsed: true,
+                  items: [
+                    { text: '🔊 Audio', link: '/api/audio' },
+                    { text: '🖐️ Hand', link: '/api/hand' },
+                    { text: '🦵 Lowerlimb', link: '/api/lowerlimb' },
+                    { text: '🔧 Manipulation', link: '/api/manipulation' },
+                    { text: '🧭 Navigation', link: '/api/navigation' },
+                    { text: '🤖 Robot', link: '/api/robot' },
+                    { text: '📷 Sensor', link: '/api/sensor' },
+                    { text: '🦾 Upperlimb', link: '/api/upperlimb' },
+                  ]
+                }
 
-            ]
-          },
-          {
-            text: 'Message Type',
-            items: [
-              { text: '导图', link: '/markmap_message_type' },
-              { text: '文档', link: '/zj_humanoid_types' },
-            ]
-          },
-          {
-            text: '开发示例',
-            items: [          
-              { 
-                text: '子系统示例',
-                collapsed: true,
-                items: [
-                  { text: '🔊 Audio', link: '/demos/audio_interfaces' },
-                  { text: '🖐️ Hand', link: '/demos/dexhand_interface' },
-                  { text: '🦵 Lowerlimb', link: '/demos/lowerlimb' },
-                  { text: '🔧 Manipulation', link: '/demos/manipulation' },
-                  { text: '🧭 Navigation', link: '/demos/navigation' },
-                  { text: '🤖 Robot', link: '/demos/robot_interfaces' },
-                  { text: '📷 Sensor', link: '/demos/sensor' },
-                  { text: '🦾 Upperlimb', link: '/demos/uplimb_interface' },
-                ]
-              },
-              { text: '综合示例', link: '/demos/Combined_Example.md' },
-            ]
-          },
-          {
-            text: '调试开发工具',
-            items: [
-              { text: 'WEB 遥控器', link: 'tools/web_telec' },
-              { text: 'WEB 示教器', link: 'tools/web_tech' },
-              { text: '大屏展示软件', link: 'tools/data_display' },
-              { text: 'HOS 安装', link: 'tools/hos_install' },
-              { text: 'HOS 开发', link: 'tools/hos_dev' },
-            ]
-          },
-        ]
+              ]
+            },
+            {
+              text: 'Message Type',
+              items: [
+                { text: '导图', link: '/markmap_message_type' },
+                { text: '文档', link: '/zj_humanoid_types' },
+              ]
+            },
+            {
+              text: '开发示例',
+              items: [          
+                { 
+                  text: '子系统示例',
+                  collapsed: true,
+                  items: [
+                    { text: '🔊 Audio', link: '/demos/audio_interfaces' },
+                    { text: '🖐️ Hand', link: '/demos/dexhand_interface' },
+                    { text: '🦵 Lowerlimb', link: '/demos/lowerlimb' },
+                    { text: '🔧 Manipulation', link: '/demos/manipulation' },
+                    { text: '🧭 Navigation', link: '/demos/navigation' },
+                    { text: '🤖 Robot', link: '/demos/robot_interfaces' },
+                    { text: '📷 Sensor', link: '/demos/sensor' },
+                    { text: '🦾 Upperlimb', link: '/demos/uplimb_interface' },
+                  ]
+                },
+                { text: '综合示例', link: '/demos/Combined_Example.md' },
+              ]
+            },
+            {
+              text: '调试开发工具',
+              items: [
+                { text: 'WEB 遥控器', link: 'tools/web_telec' },
+                { text: 'WEB 示教器', link: 'tools/web_tech' },
+                { text: '大屏展示软件', link: 'tools/data_display' },
+                { text: 'HOS 安装', link: 'tools/hos_install' },
+                { text: 'HOS 开发', link: 'tools/hos_dev' },
+              ]
+            },
+          ]
+        }
+      ]
+      
+      // 为不同版本配置侧边栏
+      // @viteplus/versions 使用版本名作为 key
+      return {
+        root: commonSidebar,      // main 版本（root）
+        develop: commonSidebar    // develop 版本
       }
-    ],
+    })(),
 
     outline: { 
       level: [2, 4],  // 包含h2到h4，显示更详细的导航
