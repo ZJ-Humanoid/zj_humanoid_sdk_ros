@@ -67,17 +67,81 @@ export default defineVersionedConfig({
     current: 'main',          // 当前版本的标签（main 分支）
     sources: 'src',           // 当前版本文档目录（相对于 docs/）
     archive: 'versions',      // 旧版本归档目录（相对于 docs/）
-    versionSwitcher: {
-      text: '版本',           // 版本切换器显示文本
-      includeCurrentVersion: true  // 在版本列表中包含当前版本
-    }
+    // 关闭内置版本切换器，使用自定义导航
+    versionSwitcher: false
   },
 
   themeConfig: {
-    nav: [
-      { text: '首页', link: '/' },
-      { component: 'VersionSwitcher' }  // 版本切换器组件
-    ],
+    nav: {
+      root: (() => {
+        const items = [{ text: 'main', link: '/' }]
+        
+        // 扫描 docs/versions 下的版本目录，生成 /versions/<name>/ 链接
+        try {
+          const versionsRoot = path.resolve('./docs/versions')
+          if (fs.existsSync(versionsRoot)) {
+            const versions = fs
+              .readdirSync(versionsRoot, { withFileTypes: true })
+              .filter((e) => e.isDirectory())
+              .map((e) => e.name)
+              .filter((name) => !name.startsWith('.'))
+              .sort((a, b) => a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' }))
+            
+            for (const v of versions) {
+              // 为版本添加 "v" 前缀显示，但链接使用实际目录名
+              const displayName = v.match(/^\d+\.\d+/) ? `v${v}` : v
+              items.push({ text: displayName, link: `/versions/${v}/` })
+            }
+          }
+        } catch (e) {
+          // ignore
+        }
+        
+        return [
+          { text: '首页', link: '/' },
+          { text: '版本', items }
+        ]
+      })(),
+      // 为每个版本配置导航（确保 main 链接正确）
+      ...(() => {
+        const versionNavs = {}
+        try {
+          const versionsRoot = path.resolve('./docs/versions')
+          if (fs.existsSync(versionsRoot)) {
+            const versions = fs
+              .readdirSync(versionsRoot, { withFileTypes: true })
+              .filter((e) => e.isDirectory())
+              .map((e) => e.name)
+              .filter((name) => !name.startsWith('.'))
+            
+            for (const v of versions) {
+              const items = [
+                { text: 'main', link: '../../' },  // 使用相对路径回到根目录
+                { text: v.match(/^\d+\.\d+/) ? `v${v}` : v, link: `/versions/${v}/` }
+              ]
+              
+              // 添加其他版本
+              for (const otherV of versions) {
+                if (otherV !== v) {
+                  items.push({ 
+                    text: otherV.match(/^\d+\.\d+/) ? `v${otherV}` : otherV, 
+                    link: `/versions/${otherV}/` 
+                  })
+                }
+              }
+              
+              versionNavs[v] = [
+                { text: '首页', link: `/versions/${v}/` },
+                { text: '版本', items }
+              ]
+            }
+          }
+        } catch (e) {
+          // ignore
+        }
+        return versionNavs
+      })()
+    },
     sidebar: [
       {
         items: [
