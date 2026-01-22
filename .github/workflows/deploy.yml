@@ -56,13 +56,9 @@ jobs:
           if [[ "${{ github.ref }}" == refs/tags/* ]]; then
             TAG_NAME="${{ github.ref_name }}"
             echo "✓ 检测到标签推送: $TAG_NAME"
-            # 归档当前版本到 versions 目录
+            # 从标签对应的提交中提取文档（脚本会自动处理）
             VERSION_NAME=$(echo "$TAG_NAME" | sed 's/^v//')
-            if [ -d "docs/src" ] && [ ! -d "docs/versions/$VERSION_NAME" ]; then
-              echo "归档当前版本到 docs/versions/$VERSION_NAME"
-              mkdir -p "docs/versions/$VERSION_NAME"
-              cp -r docs/src/* "docs/versions/$VERSION_NAME/"
-            fi
+            echo "将从标签 $TAG_NAME 提取文档到 docs/versions/$VERSION_NAME"
           # 如果是 develop 分支推送，创建 develop 版本
           elif [[ "${{ github.ref }}" == refs/heads/develop ]]; then
             echo "✓ 检测到 develop 分支推送"
@@ -73,7 +69,6 @@ jobs:
               mkdir -p "docs/versions/develop"
               cp -r docs/src/* "docs/versions/develop/"
               echo "✓ develop 版本已更新到 versions/develop/"
-              echo "注意：main 版本将在 main 分支下次推送时更新"
             fi
           # 如果是 main 分支推送，确保 main 版本是最新的
           elif [[ "${{ github.ref }}" == refs/heads/main ]]; then
@@ -81,8 +76,13 @@ jobs:
             echo "main 版本使用 docs/src 目录（当前 main 分支）"
           fi
           
-          # 同步所有标签版本
-          node docs/.vitepress/scripts/sync-versions-from-git.js || echo "版本同步完成（可能没有标签）"
+          # 强制同步所有标签版本（确保所有版本都被同步）
+          echo "开始同步所有 Git 标签版本..."
+          node docs/.vitepress/scripts/sync-versions-from-git.js --force || echo "版本同步完成（可能没有标签）"
+          
+          # 验证版本目录
+          echo "已同步的版本："
+          ls -la docs/versions/ || echo "versions 目录为空"
 
       - name: Commit generated files and versions
         run: |

@@ -1,9 +1,0 @@
-# Docker
-*.log
-logs/
-
-# Build artifacts
-devel/
-build/
-install/
-

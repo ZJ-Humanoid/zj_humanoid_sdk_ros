@@ -121,8 +121,9 @@ function checkoutDocsFromRef(ref, versionDir) {
 
 /**
  * 同步所有标签版本
+ * @param {boolean} force - 是否强制同步（即使目录已存在）
  */
-function syncAllVersions() {
+function syncAllVersions(force = false) {
   const tags = getGitTags();
   console.log(`找到 ${tags.length} 个 Git 标签:`, tags);
   
@@ -131,9 +132,9 @@ function syncAllVersions() {
     const versionName = tag.startsWith('v') ? tag.substring(1) : tag;
     const versionDir = path.join(versionsDir, versionName);
     
-    // 如果版本目录已存在且是最新的，跳过
-    if (fs.existsSync(versionDir)) {
-      console.log(`版本 ${versionName} 已存在，跳过`);
+    // 如果版本目录已存在且不强制同步，跳过
+    if (fs.existsSync(versionDir) && !force) {
+      console.log(`版本 ${versionName} 已存在，跳过（使用 --force 强制同步）`);
       continue;
     }
     
@@ -185,6 +186,7 @@ function syncFromBranch(branchName) {
 // 主函数
 function main() {
   const args = process.argv.slice(2);
+  const force = args.includes('--force');
   
   if (args.includes('--tag')) {
     const tagIndex = args.indexOf('--tag');
@@ -206,8 +208,8 @@ function main() {
       process.exit(1);
     }
   } else {
-    // 默认：同步所有标签
-    syncAllVersions();
+    // 默认：同步所有标签（使用 --force 强制同步所有版本）
+    syncAllVersions(force);
   }
 }
 
