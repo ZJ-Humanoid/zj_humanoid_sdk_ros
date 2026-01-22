@@ -98,7 +98,6 @@ export default defineVersionedConfig({
         }
         
         return [
-          { text: '首页', link: '/' },
           { text: '版本', items }
         ]
       })(),
@@ -116,8 +115,8 @@ export default defineVersionedConfig({
             
             for (const v of versions) {
               const items = [
-                { text: 'main', link: '../../' },  // 使用相对路径回到根目录
-                { text: v.match(/^\d+\.\d+/) ? `v${v}` : v, link: `/versions/${v}/` }
+                { text: 'main', link: '/' },  // 相对于 base 的路径
+                { text: v.match(/^\d+\.\d+/) ? `v${v}` : v, link: `/versions/${v}/` }  // 相对于 base 的路径
               ]
               
               // 添加其他版本
@@ -125,13 +124,12 @@ export default defineVersionedConfig({
                 if (otherV !== v) {
                   items.push({ 
                     text: otherV.match(/^\d+\.\d+/) ? `v${otherV}` : otherV, 
-                    link: `/versions/${otherV}/` 
+                    link: `/versions/${otherV}/`  // 相对于 base 的路径
                   })
                 }
               }
               
               versionNavs[v] = [
-                { text: '首页', link: `/versions/${v}/` },
                 { text: '版本', items }
               ]
             }
@@ -142,75 +140,103 @@ export default defineVersionedConfig({
         return versionNavs
       })()
     },
-    sidebar: [
-      {
-        items: [
-          { text: '开发指南', link: '/',
-            items: [          
-              { text: '概述', link: '/#概述' },
-              { text: '快速开始', link: '/#快速开始' },]
-           },
-          {
-            text: 'ROS API',
-            items: [          
-              { text: '完整API文档', link: '/api/zj_humanoid_ros_api' },
-              { 
-                text: '子系统',
-                collapsed: true,
-                items: [
-                  { text: '🔊 Audio', link: '/api/audio' },
-                  { text: '🖐️ Hand', link: '/api/hand' },
-                  { text: '🦵 Lowerlimb', link: '/api/lowerlimb' },
-                  { text: '🔧 Manipulation', link: '/api/manipulation' },
-                  { text: '🧭 Navigation', link: '/api/navigation' },
-                  { text: '🤖 Robot', link: '/api/robot' },
-                  { text: '📷 Sensor', link: '/api/sensor' },
-                  { text: '🦾 Upperlimb', link: '/api/upperlimb' },
-                ]
-              }
+    sidebar: (() => {
+      // 通用侧边栏配置
+      const commonSidebar = [
+        {
+          items: [
+            { text: '开发指南', link: '/',
+              items: [          
+                { text: '概述', link: '/#概述' },
+                { text: '快速开始', link: '/#快速开始' },]
+             },
+            {
+              text: 'ROS API',
+              items: [          
+                { text: '完整API文档', link: '/api/zj_humanoid_ros_api' },
+                { 
+                  text: '子系统',
+                  collapsed: true,
+                  items: [
+                    { text: '🔊 Audio', link: '/api/audio' },
+                    { text: '🖐️ Hand', link: '/api/hand' },
+                    { text: '🦵 Lowerlimb', link: '/api/lowerlimb' },
+                    { text: '🔧 Manipulation', link: '/api/manipulation' },
+                    { text: '🧭 Navigation', link: '/api/navigation' },
+                    { text: '🤖 Robot', link: '/api/robot' },
+                    { text: '📷 Sensor', link: '/api/sensor' },
+                    { text: '🦾 Upperlimb', link: '/api/upperlimb' },
+                  ]
+                }
 
-            ]
-          },
-          {
-            text: 'Message Type',
-            items: [
-              { text: '导图', link: '/markmap_message_type' },
-              { text: '文档', link: '/zj_humanoid_types' },
-            ]
-          },
-          {
-            text: '开发示例',
-            items: [          
-              { 
-                text: '子系统示例',
-                collapsed: true,
-                items: [
-                  { text: '🔊 Audio', link: '/demos/audio_interfaces' },
-                  { text: '🖐️ Hand', link: '/demos/dexhand_interface' },
-                  { text: '🦵 Lowerlimb', link: '/demos/lowerlimb' },
-                  { text: '🔧 Manipulation', link: '/demos/manipulation' },
-                  { text: '🧭 Navigation', link: '/demos/navigation' },
-                  { text: '🤖 Robot', link: '/demos/robot_interfaces' },
-                  { text: '📷 Sensor', link: '/demos/sensor' },
-                  { text: '🦾 Upperlimb', link: '/demos/uplimb_interface' },
-                ]
-              },
-              { text: '综合示例', link: '/demos/Combined_Example.md' },
-            ]
-          },
-          {
-            text: '调试开发工具',
-            items: [
-              { text: 'WEB 遥控器', link: 'tools/web_telec' },
-              { text: 'WEB 示教器', link: 'tools/web_tech' },
-              { text: '大屏展示软件', link: 'tools/data_display' },
-              { text: 'HOS 安装', link: 'tools/hos_install' },
-              { text: 'HOS 开发', link: 'tools/hos_dev' },
-            ]
-          },
-        ]
+              ]
+            },
+            {
+              text: 'Message Type',
+              items: [
+                { text: '导图', link: '/markmap_message_type' },
+                { text: '文档', link: '/zj_humanoid_types' },
+              ]
+            },
+            {
+              text: '开发示例',
+              items: [          
+                { 
+                  text: '子系统示例',
+                  collapsed: true,
+                  items: [
+                    { text: '🔊 Audio', link: '/demos/audio_interfaces' },
+                    { text: '🖐️ Hand', link: '/demos/dexhand_interface' },
+                    { text: '🦵 Lowerlimb', link: '/demos/lowerlimb' },
+                    { text: '🔧 Manipulation', link: '/demos/manipulation' },
+                    { text: '🧭 Navigation', link: '/demos/navigation' },
+                    { text: '🤖 Robot', link: '/demos/robot_interfaces' },
+                    { text: '📷 Sensor', link: '/demos/sensor' },
+                    { text: '🦾 Upperlimb', link: '/demos/uplimb_interface' },
+                  ]
+                },
+                { text: '综合示例', link: '/demos/Combined_Example.md' },
+              ]
+            },
+            {
+              text: '调试开发工具',
+              items: [
+                { text: 'WEB 遥控器', link: 'tools/web_telec' },
+                { text: 'WEB 示教器', link: 'tools/web_tech' },
+                { text: '大屏展示软件', link: 'tools/data_display' },
+                { text: 'HOS 安装', link: 'tools/hos_install' },
+                { text: 'HOS 开发', link: 'tools/hos_dev' },
+              ]
+            },
+          ]
+        }
+      ]
+      
+      // 为 root 版本配置侧边栏
+      const sidebarConfig = {
+        '/': commonSidebar
       }
-    ],
+      
+      // 为每个版本配置侧边栏
+      try {
+        const versionsRoot = path.resolve('./docs/versions')
+        if (fs.existsSync(versionsRoot)) {
+          const versions = fs
+            .readdirSync(versionsRoot, { withFileTypes: true })
+            .filter((e) => e.isDirectory())
+            .map((e) => e.name)
+            .filter((name) => !name.startsWith('.'))
+          
+          for (const v of versions) {
+            sidebarConfig[`/versions/${v}/`] = commonSidebar
+          }
+        }
+      } catch (e) {
+        // ignore
+      }
+      
+      return sidebarConfig
+    })(),
 
     outline: { 
       level: [2, 4],  // 包含h2到h4，显示更详细的导航
