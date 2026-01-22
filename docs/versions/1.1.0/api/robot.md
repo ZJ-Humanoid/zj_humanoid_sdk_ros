@@ -59,7 +59,7 @@ markmap:
 | 字段 | 值 |
 |------|-----|
 | **Service Name** | /zj_humanoid/robot/basic_info |
-| **Type** | [robot/BasicInfo](../zj_humanoid_types#basicinfo) |
+| **Type** | zj_robot/BasicInfo |
 | **Description** | 机器人基础信息 |
 | **Note** | 描述下机器人的基础信息 回复应包含机器人的型号，硬件版本号，软件版本号，IP地址 |
 
@@ -68,7 +68,7 @@ markmap:
 | 字段 | 值 |
 |------|-----|
 | **Service Name** | /zj_humanoid/robot/face_show/media_play |
-| **Type** | [robot/FaceShow](../zj_humanoid_types#faceshow) |
+| **Type** | zj_robot/FaceShow |
 | **Description** | 脸部显示视频 |
 | **Note** | 机器人脸部屏幕显示,播放视频或图像文件，如播放“Hello_World.mp4” |
 
@@ -77,7 +77,7 @@ markmap:
 | 字段 | 值 |
 |------|-----|
 | **Service Name** | /zj_humanoid/robot/face_show/text_show |
-| **Type** | [robot/FaceScreen](../zj_humanoid_types#facescreen) |
+| **Type** | zj_robot/FaceText |
 | **Description** | 脸部显示文字 |
 | **Note** | 机器人脸部屏幕显示文字，支持指令显示“Hello World” |
 
@@ -86,7 +86,7 @@ markmap:
 | 字段 | 值 |
 |------|-----|
 | **Service Name** | /zj_humanoid/robot/joint_motor/set_zero |
-| **Type** | [robot/SetZero](../zj_humanoid_types#setzero) |
+| **Type** | zj_robot/SetZero |
 | **Description** | 电机自动标零 |
 | **Note** | 机器人关节自动标零 |
 
@@ -95,7 +95,7 @@ markmap:
 | 字段 | 值 |
 |------|-----|
 | **Service Name** | /zj_humanoid/robot/orin_states/connect_wifi |
-| **Type** | [robot/ConnectWifi](../zj_humanoid_types#connectwifi) |
+| **Type** | zj_robot/ConnectWifi |
 | **Description** | orin连接wifi |
 | **Note** | 尝试让机器人大脑orin去连接wifi热点 |
 
@@ -104,7 +104,7 @@ markmap:
 | 字段 | 值 |
 |------|-----|
 | **Service Name** | /zj_humanoid/robot/orin_states/wifi_list |
-| **Type** | [robot/WifiList](../zj_humanoid_types#wifilist) |
+| **Type** | zj_robot/WifiList |
 | **Description** | orin_wifi列表 |
 | **Note** | 获取机器人大脑检测到的wifi热点名称，当前机器人大脑检测到多少个wifi信号 回复应大于1 |
 
@@ -113,7 +113,7 @@ markmap:
 | 字段 | 值 |
 |------|-----|
 | **Service Name** | /zj_humanoid/robot/pico_states/connect_wifi |
-| **Type** | [robot/ConnectWifi](../zj_humanoid_types#connectwifi) |
+| **Type** | zj_robot/ConnectWifi |
 | **Description** | pico连接wifi |
 | **Note** | 尝试让机器人小脑pico去连接wifi热点 |
 
@@ -122,7 +122,7 @@ markmap:
 | 字段 | 值 |
 |------|-----|
 | **Service Name** | /zj_humanoid/robot/pico_states/wifi_list |
-| **Type** | [robot/WifiList](../zj_humanoid_types#wifilist) |
+| **Type** | zj_robot/WifiList |
 | **Description** | pico_wifi列表 |
 | **Note** | 获取机器人小脑检测到的wifi热点名称，当前机器人小脑检测到多少个wifi信号 回复应大于1 |
 
@@ -169,7 +169,7 @@ markmap:
 | 字段 | 值 |
 |------|-----|
 | **Topic Name** | /zj_humanoid/robot/battery_info |
-| **Type** | [robot/BatteryInfo](../zj_humanoid_types#batteryinfo) |
+| **Type** | zj_robot/BatteryInfo |
 | **Direction** | 📤 Publish |
 | **Description** | 电池相关信息 |
 | **Note** | 电池BMS相关信息，机器人当前电量还剩多少 回复值应为1~100% |
@@ -199,7 +199,7 @@ markmap:
 | 字段 | 值 |
 |------|-----|
 | **Topic Name** | /zj_humanoid/robot/monitor |
-| **Type** | [robot/ModulesMonitor](../zj_humanoid_types#modulesmonitor) |
+| **Type** | zj_robot/ModulesMonitor |
 | **Direction** | 📤 Publish |
 | **Description** | 运行状态检测 |
 | **Note** | 机器人内部软件和算法模块运行状态检测, 包含上肢，灵巧手，遥控器，下肢，四目相机，深度相机，定位模块，导航模块，语音模块等 |
@@ -209,7 +209,7 @@ markmap:
 | 字段 | 值 |
 |------|-----|
 | **Topic Name** | /zj_humanoid/robot/orin_states/errors |
-| **Type** | [robot/Errors](../zj_humanoid_types#errors) |
+| **Type** | zj_robot/Errors |
 | **Direction** | 📤 Publish |
 | **Description** | orin错误汇总 |
 | **Note** | 机器人大脑orin错误汇总，包括over_temp,over_cpu,over_mem,over_disk等，机器人大脑模块是否有错误发生 回复应包含：没有 |
@@ -219,7 +219,7 @@ markmap:
 | 字段 | 值 |
 |------|-----|
 | **Topic Name** | /zj_humanoid/robot/orin_states/resource |
-| **Type** | [robot/Resource](../zj_humanoid_types#resource) |
+| **Type** | zj_robot/Resource |
 | **Direction** | 📤 Publish |
 | **Description** | orin资源统计 |
 | **Note** | 机器人大脑的资源状态 回复应包含：大脑的cpu,温度，内存，硬盘的用量 |
@@ -229,7 +229,7 @@ markmap:
 | 字段 | 值 |
 |------|-----|
 | **Topic Name** | /zj_humanoid/robot/pico_states/errors |
-| **Type** | [robot/Errors](../zj_humanoid_types#errors) |
+| **Type** | zj_robot/Errors |
 | **Direction** | 📤 Publish |
 | **Description** | pico错误汇总 |
 | **Note** | 机器人小脑pico错误汇总，包括over_temp,over_cpu,over_mem,over_disk等，机器人小脑模块是否有错误发生 回复应包含：没有 |
@@ -239,7 +239,7 @@ markmap:
 | 字段 | 值 |
 |------|-----|
 | **Topic Name** | /zj_humanoid/robot/pico_states/resource |
-| **Type** | [robot/Resource](../zj_humanoid_types#resource) |
+| **Type** | zj_robot/Resource |
 | **Direction** | 📤 Publish |
 | **Description** | pico资源统计 |
 | **Note** | 机器人小脑pico资源状态 回复应包含：小脑的cpu,温度，内存，硬盘的用量 |
@@ -249,7 +249,7 @@ markmap:
 | 字段 | 值 |
 |------|-----|
 | **Topic Name** | /zj_humanoid/robot/robot_state |
-| **Type** | [robot/RobotState](../zj_humanoid_types#robotstate) |
+| **Type** | zj_robot/RobotState |
 | **Direction** | 📤 Publish |
 | **Description** | 机器人状态机值 |
 | **Note** | 机器人状态机值实时发布，只有当机器人进入RUN状态，机器人才能进行动作的执行，机器人当前处于什么状态 回复应包含：RUN状态 |
@@ -259,7 +259,7 @@ markmap:
 | 字段 | 值 |
 |------|-----|
 | **Topic Name** | /zj_humanoid/robot/work_status_form_start |
-| **Type** | [robot/WorkStatus](../zj_humanoid_types#workstatus) |
+| **Type** | zj_robot/WorkStatus |
 | **Direction** | 📤 Publish |
 | **Description** | 工作状态 |
 | **Note** | 机器人开机后单次工作状态发布，包含已运行时间，剩余工作时间，行进里程数等，描述下机器人本次开机后工作状态 回复因包含：已运行时间，剩余工作时间，行进里程数 |

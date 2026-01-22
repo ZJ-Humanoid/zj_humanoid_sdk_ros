@@ -59,22 +59,27 @@ class VitePressDocGenerator:
             return ''
         # 只对 zj_humanoid 相关的类型添加链接（排除标准库类型如 std_msgs, std_srvs 等）
         # 检查类型是否属于 zj_humanoid 命名空间
+        # 支持两种格式：zj_robot/BasicInfo 和 robot/BasicInfo
         zj_humanoid_namespaces = ['audio', 'hand', 'lowerlimb', 'manipulation', 'navigation', 
-                                  'robot', 'sensor', 'upperlimb']
+                                  'robot', 'sensor', 'upperlimb', 'zj_robot', 'wa2']
         type_namespace = type_name.split('/')[0] if '/' in type_name else ''
         
-        if type_namespace in zj_humanoid_namespaces:
+        # 处理 zj_ 前缀：zj_robot -> robot
+        display_namespace = type_namespace
+        if type_namespace.startswith('zj_'):
+            display_namespace = type_namespace[3:]  # 去掉 'zj_' 前缀
+        
+        if type_namespace in zj_humanoid_namespaces or display_namespace in zj_humanoid_namespaces:
             # 提取类型名称的最后部分作为锚点（去掉命名空间前缀）
-            # 例如：audio/LLMChat -> LLMChat
+            # 例如：zj_robot/BasicInfo -> BasicInfo, audio/LLMChat -> LLMChat
             type_anchor = type_name.split('/')[-1] if '/' in type_name else type_name
             # VitePress 的锚点格式：对于标题 `#### `BatteryInfo``，锚点通常是全部小写
             # 例如：BatteryInfo -> #batteryinfo
-            # 但 VitePress 也可能保持原样，所以先尝试小写格式
             type_anchor_lower = type_anchor.lower()
-            # 生成链接：在 VitePress 中，跨文档链接应使用绝对路径（相对于 base）
-            # base 是 /navi_sdk_documents/，所以绝对路径是 /zj_humanoid_types
-            # 使用绝对路径确保在不同页面都能正确跳转
-            return f"[{type_name}](../zj_humanoid_types#{type_anchor_lower})"
+            # 生成链接格式：[子系统/类型名](../zj_humanoid_types#类型名小写)
+            # 例如：[robot/BasicInfo](../zj_humanoid_types#basicinfo)
+            # 使用 display_namespace（去掉 zj_ 前缀后的命名空间）作为显示名称
+            return f"[{display_namespace}/{type_anchor}](../zj_humanoid_types#{type_anchor_lower})"
         else:
             # 标准库类型或其他类型，不添加链接，直接返回类型名称
             return type_name

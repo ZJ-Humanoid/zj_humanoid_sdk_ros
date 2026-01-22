@@ -20,9 +20,10 @@ import { dirname } from 'path';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const docsRoot = path.resolve(__dirname, '../..');
-const versionsDir = path.join(docsRoot, 'versions');
-const srcDir = path.join(docsRoot, 'src');
+const docsDir = path.resolve(__dirname, '../..'); // docs 目录
+const projectRoot = path.resolve(docsDir, '..'); // 项目根目录
+const versionsDir = path.join(docsDir, 'versions');
+const srcDir = path.join(docsDir, 'src');
 
 // 确保 versions 目录存在
 if (!fs.existsSync(versionsDir)) {
@@ -34,7 +35,7 @@ if (!fs.existsSync(versionsDir)) {
  */
 function getGitTags() {
   try {
-    const tags = execSync('git tag -l', { encoding: 'utf-8', cwd: docsRoot })
+    const tags = execSync('git tag -l', { encoding: 'utf-8', cwd: projectRoot })
       .trim()
       .split('\n')
       .filter(tag => tag.trim() !== '')
@@ -58,7 +59,7 @@ function checkoutDocsFromRef(ref, versionDir) {
     // 检查标签/分支是否存在
     execSync(`git rev-parse --verify ${ref}`, { 
       encoding: 'utf-8', 
-      cwd: docsRoot,
+      cwd: projectRoot,
       stdio: 'pipe'
     });
     
@@ -70,7 +71,7 @@ function checkoutDocsFromRef(ref, versionDir) {
       const docsPath = 'docs/src';
       const files = execSync(`git ls-tree -r --name-only ${ref} -- ${docsPath}`, {
         encoding: 'utf-8',
-        cwd: docsRoot
+        cwd: projectRoot
       }).trim().split('\n').filter(f => f);
       
       if (files.length === 0) {
@@ -89,7 +90,7 @@ function checkoutDocsFromRef(ref, versionDir) {
         try {
           const content = execSync(`git show ${ref}:${file}`, {
             encoding: 'utf-8',
-            cwd: docsRoot,
+            cwd: projectRoot,
             stdio: 'pipe'
           });
           
@@ -121,8 +122,9 @@ function checkoutDocsFromRef(ref, versionDir) {
 
 /**
  * 同步所有标签版本
+ * @param {boolean} force - 是否强制同步（即使目录已存在）
  */
-function syncAllVersions() {
+function syncAllVersions(force = false) {
   const tags = getGitTags();
   console.log(`找到 ${tags.length} 个 Git 标签:`, tags);
   
@@ -131,9 +133,9 @@ function syncAllVersions() {
     const versionName = tag.startsWith('v') ? tag.substring(1) : tag;
     const versionDir = path.join(versionsDir, versionName);
     
-    // 如果版本目录已存在且是最新的，跳过
-    if (fs.existsSync(versionDir)) {
-      console.log(`版本 ${versionName} 已存在，跳过`);
+    // 如果版本目录已存在且不强制同步，跳过
+    if (fs.existsSync(versionDir) && !force) {
+      console.log(`版本 ${versionName} 已存在，跳过（使用 --force 强制同步）`);
       continue;
     }
     
@@ -142,49 +144,86 @@ function syncAllVersions() {
 }
 
 /**
- * 从当前分支创建版本（用于开发分支）
+ * 从指定分支创建版本（用于开发分支）
+ * @param {string} branchName - 分支名称（可以是 'develop' 或 'origin/develop'）
  */
 function syncFromBranch(branchName) {
-  const versionName = branchName.replace(/^v/, '').replace(/\//g, '-');
+  const versionName = branchName.replace(/^v/, '').replace(/\//g, '-').replace(/^origin-/, '');
   const versionDir = path.join(versionsDir, versionName);
   
   console.log(`从分支 ${branchName} 创建版本: ${versionName}`);
   
-  // 直接复制当前的 src 目录
-  if (fs.existsSync(srcDir)) {
-    if (fs.existsSync(versionDir)) {
-      fs.rmSync(versionDir, { recursive: true, force: true });
+  // 尝试从远程分支提取文档（如果分支名不包含 origin/，尝试添加）
+  let refName = branchName;
+  if (!branchName.includes('/') && !branchName.startsWith('origin/')) {
+    // 尝试 origin/branchName
+    try {
+      execSync(`git rev-parse --verify origin/${branchName}`, { 
+        encoding: 'utf-8', 
+        cwd: projectRoot,
+        stdio: 'pipe'
+      });
+      refName = `origin/${branchName}`;
+      console.log(`使用远程分支: ${refName}`);
+    } catch (e) {
+      // 如果远程分支不存在，尝试本地分支
+      try {
+        execSync(`git rev-parse --verify ${branchName}`, { 
+          encoding: 'utf-8', 
+          cwd: projectRoot,
+          stdio: 'pipe'
+        });
+        refName = branchName;
+        console.log(`使用本地分支: ${refName}`);
+      } catch (e2) {
+        console.error(`分支 ${branchName} 不存在（本地和远程）`);
+        return;
+      }
     }
-    
-    // 递归复制目录
-    function copyDir(src, dest) {
-      if (!fs.existsSync(dest)) {
-        fs.mkdirSync(dest, { recursive: true });
+  }
+  
+  // 使用 checkoutDocsFromRef 从分支提取文档
+  const success = checkoutDocsFromRef(refName, versionDir);
+  
+  if (!success) {
+    console.warn(`从分支 ${refName} 提取文档失败，尝试使用当前工作目录的 docs/src`);
+    // 如果从分支提取失败，尝试使用当前工作目录（适用于 develop 分支推送时）
+    if (fs.existsSync(srcDir)) {
+      if (fs.existsSync(versionDir)) {
+        fs.rmSync(versionDir, { recursive: true, force: true });
       }
       
-      const entries = fs.readdirSync(src, { withFileTypes: true });
-      for (const entry of entries) {
-        const srcPath = path.join(src, entry.name);
-        const destPath = path.join(dest, entry.name);
+      // 递归复制目录
+      function copyDir(src, dest) {
+        if (!fs.existsSync(dest)) {
+          fs.mkdirSync(dest, { recursive: true });
+        }
         
-        if (entry.isDirectory()) {
-          copyDir(srcPath, destPath);
-        } else {
-          fs.copyFileSync(srcPath, destPath);
+        const entries = fs.readdirSync(src, { withFileTypes: true });
+        for (const entry of entries) {
+          const srcPath = path.join(src, entry.name);
+          const destPath = path.join(dest, entry.name);
+          
+          if (entry.isDirectory()) {
+            copyDir(srcPath, destPath);
+          } else {
+            fs.copyFileSync(srcPath, destPath);
+          }
         }
       }
+      
+      copyDir(srcDir, versionDir);
+      console.log(`✓ 成功从当前工作目录创建版本目录: ${versionDir}`);
+    } else {
+      console.error(`源目录不存在: ${srcDir}`);
     }
-    
-    copyDir(srcDir, versionDir);
-    console.log(`✓ 成功从分支 ${branchName} 创建版本目录: ${versionDir}`);
-  } else {
-    console.error(`源目录不存在: ${srcDir}`);
   }
 }
 
 // 主函数
 function main() {
   const args = process.argv.slice(2);
+  const force = args.includes('--force');
   
   if (args.includes('--tag')) {
     const tagIndex = args.indexOf('--tag');
@@ -206,8 +245,8 @@ function main() {
       process.exit(1);
     }
   } else {
-    // 默认：同步所有标签
-    syncAllVersions();
+    // 默认：同步所有标签（使用 --force 强制同步所有版本）
+    syncAllVersions(force);
   }
 }
 

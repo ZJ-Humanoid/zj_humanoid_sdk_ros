@@ -67,48 +67,81 @@ export default defineVersionedConfig({
     current: 'main',          // 当前版本的标签（main 分支）
     sources: 'src',           // 当前版本文档目录（相对于 docs/）
     archive: 'versions',      // 旧版本归档目录（相对于 docs/）
-    // ⚠️ 关闭内置 VersionSwitcher：
-    // @viteplus/versions 在 VitePress v1 下不会把 archive 路由重写到 /<version>/，
-    // 实际生成路径是 /versions/<version>/。因此我们用自定义 nav 来指向正确路径。
+    // 关闭内置版本切换器，使用自定义导航
     versionSwitcher: false
   },
 
   themeConfig: {
     nav: {
-      root: [
-        { text: '首页', link: '/' },
-        { text: '版本', items: [
-          { text: 'main', link: '/' },
-          ...(() => {
-            // 扫描 docs/versions 下的版本目录
-            try {
-              const versionsRoot = path.resolve('./docs/versions')
-              if (fs.existsSync(versionsRoot)) {
-                return fs
-                  .readdirSync(versionsRoot, { withFileTypes: true })
-                  .filter((e) => e.isDirectory())
-                  .map((e) => e.name)
-                  .filter((name) => !name.startsWith('.'))
-                  .sort((a, b) => a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' }))
-                  .map((v) => ({ text: v, link: `/versions/${v}/` }))
-              }
-            } catch (e) {
-              // ignore
+      root: (() => {
+        const items = [{ text: 'main', link: '/' }]
+        
+        // 扫描 docs/versions 下的版本目录，生成 /versions/<name>/ 链接
+        try {
+          const versionsRoot = path.resolve('./docs/versions')
+          if (fs.existsSync(versionsRoot)) {
+            const versions = fs
+              .readdirSync(versionsRoot, { withFileTypes: true })
+              .filter((e) => e.isDirectory())
+              .map((e) => e.name)
+              .filter((name) => !name.startsWith('.'))
+              .sort((a, b) => a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' }))
+            
+            for (const v of versions) {
+              // 为版本添加 "v" 前缀显示，但链接使用实际目录名
+              const displayName = v.match(/^\d+\.\d+/) ? `v${v}` : v
+              items.push({ text: displayName, link: `/versions/${v}/` })
             }
-            return []
-          })()
-        ]}
-      ],
-      develop: [
-        { text: '首页', link: '/versions/develop/' },
-        { text: '版本', items: [
-          { text: 'main', link: '../../' },
-          { text: 'develop', link: '/versions/develop/' }
-        ]}
-      ]
+          }
+        } catch (e) {
+          // ignore
+        }
+        
+        return [
+          { text: '版本', items }
+        ]
+      })(),
+      // 为每个版本配置导航（确保 main 链接正确）
+      ...(() => {
+        const versionNavs = {}
+        try {
+          const versionsRoot = path.resolve('./docs/versions')
+          if (fs.existsSync(versionsRoot)) {
+            const versions = fs
+              .readdirSync(versionsRoot, { withFileTypes: true })
+              .filter((e) => e.isDirectory())
+              .map((e) => e.name)
+              .filter((name) => !name.startsWith('.'))
+            
+            for (const v of versions) {
+              const items = [
+                { text: 'main', link: '/' },  // 相对于 base 的路径
+                { text: v.match(/^\d+\.\d+/) ? `v${v}` : v, link: `/versions/${v}/` }  // 相对于 base 的路径
+              ]
+              
+              // 添加其他版本
+              for (const otherV of versions) {
+                if (otherV !== v) {
+                  items.push({ 
+                    text: otherV.match(/^\d+\.\d+/) ? `v${otherV}` : otherV, 
+                    link: `/versions/${otherV}/`  // 相对于 base 的路径
+                  })
+                }
+              }
+              
+              versionNavs[v] = [
+                { text: '版本', items }
+              ]
+            }
+          }
+        } catch (e) {
+          // ignore
+        }
+        return versionNavs
+      })()
     },
     sidebar: (() => {
-      // 定义通用侧边栏配置
+      // 通用侧边栏配置
       const commonSidebar = [
         {
           items: [
@@ -179,12 +212,30 @@ export default defineVersionedConfig({
         }
       ]
       
-      // 为不同版本配置侧边栏
-      // @viteplus/versions 使用版本名作为 key
-      return {
-        root: commonSidebar,      // main 版本（root）
-        develop: commonSidebar    // develop 版本
+      // 为 root 版本配置侧边栏
+      const sidebarConfig = {
+        '/': commonSidebar
       }
+      
+      // 为每个版本配置侧边栏
+      try {
+        const versionsRoot = path.resolve('./docs/versions')
+        if (fs.existsSync(versionsRoot)) {
+          const versions = fs
+            .readdirSync(versionsRoot, { withFileTypes: true })
+            .filter((e) => e.isDirectory())
+            .map((e) => e.name)
+            .filter((name) => !name.startsWith('.'))
+          
+          for (const v of versions) {
+            sidebarConfig[`/versions/${v}/`] = commonSidebar
+          }
+        }
+      } catch (e) {
+        // ignore
+      }
+      
+      return sidebarConfig
     })(),
 
     outline: { 
