@@ -20,9 +20,10 @@ import { dirname } from 'path';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const docsRoot = path.resolve(__dirname, '../..');
-const versionsDir = path.join(docsRoot, 'versions');
-const srcDir = path.join(docsRoot, 'src');
+const docsDir = path.resolve(__dirname, '../..'); // docs 目录
+const projectRoot = path.resolve(docsDir, '..'); // 项目根目录
+const versionsDir = path.join(docsDir, 'versions');
+const srcDir = path.join(docsDir, 'src');
 
 // 确保 versions 目录存在
 if (!fs.existsSync(versionsDir)) {
@@ -34,7 +35,7 @@ if (!fs.existsSync(versionsDir)) {
  */
 function getGitTags() {
   try {
-    const tags = execSync('git tag -l', { encoding: 'utf-8', cwd: docsRoot })
+    const tags = execSync('git tag -l', { encoding: 'utf-8', cwd: projectRoot })
       .trim()
       .split('\n')
       .filter(tag => tag.trim() !== '')
@@ -58,7 +59,7 @@ function checkoutDocsFromRef(ref, versionDir) {
     // 检查标签/分支是否存在
     execSync(`git rev-parse --verify ${ref}`, { 
       encoding: 'utf-8', 
-      cwd: docsRoot,
+      cwd: projectRoot,
       stdio: 'pipe'
     });
     
@@ -70,7 +71,7 @@ function checkoutDocsFromRef(ref, versionDir) {
       const docsPath = 'docs/src';
       const files = execSync(`git ls-tree -r --name-only ${ref} -- ${docsPath}`, {
         encoding: 'utf-8',
-        cwd: docsRoot
+        cwd: projectRoot
       }).trim().split('\n').filter(f => f);
       
       if (files.length === 0) {
@@ -89,7 +90,7 @@ function checkoutDocsFromRef(ref, versionDir) {
         try {
           const content = execSync(`git show ${ref}:${file}`, {
             encoding: 'utf-8',
-            cwd: docsRoot,
+            cwd: projectRoot,
             stdio: 'pipe'
           });
           
