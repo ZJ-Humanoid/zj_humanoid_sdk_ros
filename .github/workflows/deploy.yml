@@ -30,6 +30,12 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0 # 获取完整历史记录，用于生成文档
+          ref: ${{ github.ref }} # 检出当前分支/标签
+      
+      - name: Fetch all branches and tags
+        run: |
+          git fetch --all --tags
+          echo "已获取所有分支和标签"
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -80,16 +86,27 @@ jobs:
           echo "开始同步所有 Git 标签版本..."
           node docs/.vitepress/scripts/sync-versions-from-git.js --force || echo "版本同步完成（可能没有标签）"
           
+          # 同步 develop 分支版本（如果 develop 分支存在）
+          echo "检查并同步 develop 分支版本..."
+          if git rev-parse --verify origin/develop >/dev/null 2>&1; then
+            echo "✓ 找到 develop 分支，从 develop 分支提取文档"
+            # 使用脚本从 develop 分支创建版本
+            node docs/.vitepress/scripts/sync-versions-from-git.js --branch develop || echo "develop 版本同步完成"
+          else
+            echo "⚠ develop 分支不存在，跳过"
+          fi
+          
           # 验证版本目录
           echo "已同步的版本："
           ls -la docs/versions/ || echo "versions 目录为空"
 
-      - name: Commit generated files and versions
+      - name: Commit generated files
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add api_struct/generated/ docs/versions/
-          git diff --staged --quiet || git commit -m "chore: update generated API documentation and versions [skip ci]"
+          # 只提交生成的 API 文档，不提交 versions 目录（versions 目录仅用于构建，不需要提交到仓库）
+          git add api_struct/generated/
+          git diff --staged --quiet || git commit -m "chore: update generated API documentation [skip ci]"
           git push || echo "No changes to push"
 
       - name: Build VitePress

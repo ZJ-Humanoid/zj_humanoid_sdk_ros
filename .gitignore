@@ -3,3 +3,7 @@ node_modules
 docs/.vitepress/cache
 docs/.vitepress/dist
 dist
+# 忽略版本目录内容（CI 自动生成，不需要提交到仓库）
+docs/versions/*
+# 但保留 README.md（如果存在）
+!docs/versions/README.md
