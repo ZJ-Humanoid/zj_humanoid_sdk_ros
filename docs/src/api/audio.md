@@ -56,7 +56,7 @@ markmap:
 | **Service Name** | /zj_humanoid/audio/media_play |
 | **Type** | [audio/MediaPlay](../zj_humanoid_types#mediaplay) |
 | **Description** | 音频文件播放 |
-| **Note** | 播放'公司介绍.mp3' |
+| **Note** | 播放'公司介绍.wav' |
 
 ### 3. `microphone/get_devices_list`
 

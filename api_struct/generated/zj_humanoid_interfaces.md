@@ -37,7 +37,7 @@ Total: 87 services in 8 subsystems
 | **Service Name** | `/zj_humanoid/audio/media_play` |
 | **Type** | `audio/MediaPlay` |
 | **Description** | 音频文件播放 |
-| **Note** | 播放’公司介绍.mp3‘ |
+| **Note** | 播放’公司介绍.wav‘ |
 
 ### audio.4. /zj_humanoid/audio/microphone/get_devices_list
 
