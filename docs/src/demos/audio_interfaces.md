@@ -196,7 +196,7 @@ def main():
         
         # Create request
         req = MediaPlayRequest()
-        req.file_path = "/path/to/company_intro.mp3"  # 音频文件路径，需将文件放置在共享目录下
+        req.file_path = "/path/to/company_intro.wav"  # 音频文件路径，需将文件放置在共享目录下
         req.delete_after_play = False  # 播放后是否删除文件
         
         rospy.loginfo(f"Playing audio file: {req.file_path}")
