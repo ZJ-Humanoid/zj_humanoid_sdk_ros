@@ -783,21 +783,46 @@ string software_version  # 软件版本
 string ip_addr           # IP地址
 ```
 
-## wa2
+## chassis
 
 > version:1.1.0
 
 
 ### MSG
 
-#### `SteerCommand`
+#### `MotorState`
 
 ```bash
-#舵轮控制命令
-float64 front_speed
-float64 front_angle  # 单位：度
-float64 rear_speed
-float64 rear_angle   # 单位：度
+# 电机状态信息
+string motor_id          # 电机ID（front_trans/rotate等）
+int32 speed              # 电机转速（RPM）
+int32 position           # 电机位置（编码器计数）
+float64 current          # 电机电流（A）
+string state             # 状态：OK/ERROR
+string[] error_codes     # 错误代码列表（空表示无错误）
+bool connected           # 是否连接
+```
+#### `MotorInfo`
+
+```bash
+# 电机信息
+std_msgs/Header header
+MotorState[] motor_info
+```
+#### `SteerState`
+
+```bash
+#舵轮状态信息
+string wheel_id        # 车轮ID（如"front"/"rear_left"）
+float64 steering_angle   # 转向角（rad）
+float64 travel_speed     # 行驶速度（m/s）
+```
+#### `SteerInfo`
+
+```bash
+#舵轮信息
+std_msgs/Header header
+SteerState[] steer_info
 ```
 #### `AGVState`
 
@@ -818,32 +843,65 @@ string[] steer_wheel_ids
 float64[] steer_speeds
 float64[] steer_angles  # 单位：弧度
 ```
+#### `Trigger`
+
+```bash
+#急停信息
+bool trigger          # 车体急停触发状态（true=触发急停，false=正常）
+string trigger_type   # 急停触发类型
+```
+#### `TriggerStamped`
+
+```bash
+#急停带时间戳信息
+std_msgs/Header header
+Trigger trigger
+```
+#### `PowerStatus`
+
+```bash
+#充电信息
+# 电源轨使能位（字符串格式，如 "0b1111" 或自定义编码）
+string power_rail_enable_bits
+# 电源轨异常位（字符串格式，如 "0b0000" 或自定义编码）
+string power_rail_except_bits
+# 各电源轨电压值（数组，单位：V）
+float64[] power_rail_voltage
+
+# 充电口状态
+bool charge_port_open        # 充电口打开状态（true=打开，false=关闭）
+bool charge_port_connected   # 充电桩连接状态（true=已连接，false=未连接）
+
+# 电池状态
+uint32 battery_charging_status  # 充电状态：0=未充电，1=正在充电，2=充电完成
+float32 battery_voltage         # 电池电压（单位：V）
+float32 battery_current         # 电池电流（单位：A；放电为正，充电为负）
+float32 battery_quantity        # 剩余电量百分比（0.0~1.0 对应 0%~100%）
+
+# 电控盒温度（数组，单位：℃；支持多个温度传感器）
+int32[] power_box_temperature
+
+# 电源管理模块错误码（0=无错误，非0=对应错误类型）
+uint32 power_manager_error_code
+```
+#### `PowerStatusStamped`
+
+```bash
+#充电状态带时间戳信息
+std_msgs/Header header
+PowerStatus power_status
+```
 
 ### SRV
 
-#### `ResetAGV`
+#### `ConnectAGV`
 
 ```bash
 # Request
-#AGV 复位
+#AGV 连接
+string host
+int32 port
 ---
-
-# Response
-bool success
-string message
-```
-#### `SteerControl`
-
-```bash
-#舵轮控制开关
-# Request
-bool start  # true=启动, false=停止
-float64 front_speed
-float64 front_angle  # 单位：度
-float64 rear_speed
-float64 rear_angle   # 单位：度
----
-
 # Response
 bool success
 string message
@@ -854,21 +912,6 @@ string message
 #充电控制
 # Request
 bool enable  # true=开启充电, false=关闭充电
----
-
-# Response
-bool success
-string message
-```
-#### `SpeedControl`
-
-```bash
-#速度控制开关
-# Request
-bool start  # true=启动, false=停止
-float64 vx
-float64 vy
-float64 omega
 ---
 
 # Response
