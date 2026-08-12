@@ -60,9 +60,21 @@ function patchHtml(filePath, versions) {
     const sb = locale?.themeConfig?.sidebar;
     if (!sb || !(v in sb)) continue;
     const value = sb[v];
+    // Deep clone and fix base from "/<v>/" to "/versions/<v>/"
+    const fixed = JSON.parse(JSON.stringify(value));
+    if (Array.isArray(fixed)) {
+      for (const group of fixed) {
+        if (group && typeof group === 'object' && group.base) {
+          group.base = group.base.replace(
+            new RegExp(`^/${v}/$`),
+            `/versions/${v}/`
+          );
+        }
+      }
+    }
     for (const k of [`/versions/${v}`, `/versions/${v}/`]) {
       if (!(k in sb)) {
-        sb[k] = value;
+        sb[k] = fixed;
         modified = true;
       }
     }
