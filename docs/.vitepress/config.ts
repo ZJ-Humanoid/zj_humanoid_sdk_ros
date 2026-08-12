@@ -98,7 +98,7 @@ const rawConfig = defineVersionedConfig({
         }
         
         return [
-          { text: '版本', items }
+          { text: '版本', items, skipVersioning: true }
         ]
       })(),
       // 为每个版本配置导航（确保 main 链接正确）
@@ -130,7 +130,7 @@ const rawConfig = defineVersionedConfig({
               }
               
               versionNavs[v] = [
-                { text: '版本', items }
+                { text: '版本', items, skipVersioning: true }
               ]
             }
           }
