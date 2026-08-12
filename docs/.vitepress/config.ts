@@ -159,8 +159,8 @@ export default defineVersionedConfig({
                   collapsed: true,
                   items: [
                     { text: '🔊 Audio', link: '/api/audio' },
-                    { text: '� Chassis', link: '/api/chassis' },
-                    { text: '�🖐️ Hand', link: '/api/hand' },
+                    { text: '🚙 Chassis', link: '/api/chassis' },
+                    { text: '🖐️ Hand', link: '/api/hand' },
                     { text: '🦵 Lowerlimb', link: '/api/lowerlimb' },
                     { text: '🔧 Manipulation', link: '/api/manipulation' },
                     { text: '🧭 Navigation', link: '/api/navigation' },
