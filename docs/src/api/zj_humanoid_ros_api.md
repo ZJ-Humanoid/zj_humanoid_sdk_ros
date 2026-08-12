@@ -26,7 +26,7 @@ version: v1.2.0
 
 **Services (服务):**
 - [🔊 AUDIO](#audio-services) (10 services)
-- [📦 CHASSIS](#chassis-services) (6 services)
+- [🚙 CHASSIS](#chassis-services) (6 services)
 - [🖐️ HAND](#hand-services) (13 services)
 - [🦵 LOWERLIMB](#lowerlimb-services) (1 services)
 - [🔧 MANIPULATION](#manipulation-services) (8 services)
@@ -37,12 +37,12 @@ version: v1.2.0
 
 **Topics (话题):**
 - [🔊 AUDIO](#audio-topics) (6 topics)
-- [📡 CHASSIS](#chassis-topics) (7 topics)
+- [🚙 CHASSIS](#chassis-topics) (7 topics)
 - [🖐️ HAND](#hand-topics) (5 topics)
 - [🦵 LOWERLIMB](#lowerlimb-topics) (11 topics)
 - [🔧 MANIPULATION](#manipulation-topics) (1 topics)
 - [🧭 NAVIGATION](#navigation-topics) (3 topics)
-- [📡 OTHER](#other-topics) (1 topics)
+- [📦 OTHER](#other-topics) (1 topics)
 - [🤖 ROBOT](#robot-topics) (10 topics)
 - [📷 SENSOR](#sensor-topics) (36 topics)
 - [🦾 UPPERLIMB](#upperlimb-topics) (29 topics)
@@ -59,7 +59,7 @@ version: v1.2.0
 
 <div style='margin: 2rem 0; border-top: 2px solid var(--vp-c-divider);'></div>
 
-### 📦 CHASSIS (6 services) {#chassis-services}
+### 🚙 CHASSIS (6 services) {#chassis-services}
 
 <MarkdownInclude src="api/chassis.md" :skip-frontmatter="true" :skip-title="true" section="services" />
 
@@ -118,7 +118,7 @@ version: v1.2.0
 
 <div style='margin: 2rem 0; border-top: 2px solid var(--vp-c-divider);'></div>
 
-### 📡 CHASSIS (7 topics) {#chassis-topics}
+### 🚙 CHASSIS (7 topics) {#chassis-topics}
 
 <MarkdownInclude src="api/chassis.md" :skip-frontmatter="true" :skip-title="true" section="topics" />
 
@@ -148,7 +148,7 @@ version: v1.2.0
 
 <div style='margin: 2rem 0; border-top: 2px solid var(--vp-c-divider);'></div>
 
-### 📡 OTHER (1 topics) {#other-topics}
+### 📦 OTHER (1 topics) {#other-topics}
 
 <MarkdownInclude src="api/other.md" :skip-frontmatter="true" :skip-title="true" section="topics" />
 

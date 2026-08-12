@@ -16,10 +16,12 @@ class VitePressDocGenerator:
     # 子系统图标映射
     SUBSYSTEM_ICONS = {
         'audio': '🔊',
+        'chassis': '🚙',
         'hand': '🖐️',
         'lowerlimb': '🦵',
         'manipulation': '🔧',
         'navigation': '🧭',
+        'other': '📦',
         'robot': '🤖',
         'sensor': '📷',
         'upperlimb': '🦾',
