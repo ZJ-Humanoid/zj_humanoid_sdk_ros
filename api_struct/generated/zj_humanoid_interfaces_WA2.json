@@ -2,7 +2,7 @@
     "metadata": {
         "description": "ZJ Humanoid ROS1 APIs",
         "version": "v1.2.0",
-        "generated_at": "2026-08-12 07:40:33"
+        "generated_at": "2026-08-12 07:49:46"
     },
     "services": [
         {
@@ -852,6 +852,14 @@
             "demos": []
         },
         {
+            "name": "/map",
+            "description": "全局地图信息",
+            "type": "nav_msgs/OccupancyGrid",
+            "direction": "subscribe",
+            "note": "全局地图信息",
+            "demos": []
+        },
+        {
             "name": "/zj_humanoid/navigation/local_map",
             "description": "局部障碍物信息",
             "type": "navigation/LocalMap",
@@ -876,14 +884,6 @@
             "direction": "subscribe",
             "throttle_rate": 100,
             "note": "当前位姿信息，有定位时才会输出结果",
-            "demos": []
-        },
-        {
-            "name": "/map",
-            "description": "全局地图信息",
-            "type": "nav_msgs/OccupancyGrid",
-            "direction": "subscribe",
-            "note": "全局地图信息",
             "demos": []
         },
         {
