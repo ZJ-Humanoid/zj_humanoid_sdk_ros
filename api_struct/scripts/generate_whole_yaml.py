@@ -11,23 +11,59 @@ from datetime import datetime
 from pathlib import Path
 
 
-def extract_subsystem(name):
+GLOBAL_TOPIC_SUBSYSTEM_MAP = {
+    '/map': 'navigation',
+    '/move_base_simple/goal': 'navigation',
+    '/move_base/goal': 'navigation',
+    '/tf': 'navigation',
+    '/tf_static': 'navigation',
+    '/odom': 'navigation',
+    '/cmd_vel': 'lowerlimb',
+}
+
+
+def extract_subsystem(name, file_path=None):
     """
     从接口名称中提取子系统名称
-    
+
     Args:
         name: 接口完整名称，如 /zj_humanoid/audio/LLM_chat
-    
+        file_path: 可选，YAML文件路径，用于从路径推断子系统
+
     Returns:
         子系统名称，如 audio
     """
-    if not name or not name.startswith('/zj_humanoid/'):
+    if not name:
         return 'other'
-    
-    parts = name.split('/')
-    if len(parts) >= 3:
-        return parts[2]  # /zj_humanoid/audio/... -> audio
+
+    if name.startswith('/zj_humanoid/'):
+        parts = name.split('/')
+        if len(parts) >= 3:
+            return parts[2]
+
+    if name in GLOBAL_TOPIC_SUBSYSTEM_MAP:
+        return GLOBAL_TOPIC_SUBSYSTEM_MAP[name]
+
+    if file_path:
+        subsystem = extract_subsystem_from_path(file_path)
+        if subsystem:
+            return subsystem
+
     return 'other'
+
+
+def extract_subsystem_from_path(file_path):
+    """从文件路径推断子系统名称"""
+    try:
+        rel_path = file_path.parent.relative_to(file_path.parents[1])
+        parts = str(rel_path).replace(os.sep, '/').split('/')
+        if parts and parts[0] in ('audio', 'chassis', 'hand', 'lowerlimb',
+                                  'manipulation', 'navigation', 'robot',
+                                  'sensor', 'upperlimb'):
+            return parts[0]
+    except (ValueError, IndexError):
+        pass
+    return None
 
 
 def infer_interface_name_from_path(file_path, base_path):
@@ -103,7 +139,7 @@ def find_yaml_files(base_path):
                             print(f"  建议: 将 YAML 文件中的 name 字段修改为 '{expected_name}'")
                         
                         # 提取子系统名称
-                        subsystem = extract_subsystem(service_info.get('name', ''))
+                        subsystem = extract_subsystem(service_info.get('name', ''), service_file)
                         if subsystem not in services_by_subsystem:
                             services_by_subsystem[subsystem] = []
                         
@@ -151,7 +187,7 @@ def find_yaml_files(base_path):
                             print(f"  建议: 将 YAML 文件中的 name 字段修改为 '{expected_name}'")
                         
                         # 提取子系统名称
-                        subsystem = extract_subsystem(topic_info.get('name', ''))
+                        subsystem = extract_subsystem(topic_info.get('name', ''), topic_file)
                         if subsystem not in topics_by_subsystem:
                             topics_by_subsystem[subsystem] = []
                         
@@ -199,7 +235,7 @@ def find_yaml_files(base_path):
                             print(f"  建议: 将 YAML 文件中的 name 字段修改为 '{expected_name}'")
                         
                         # 提取子系统名称
-                        subsystem = extract_subsystem(action_info.get('name', ''))
+                        subsystem = extract_subsystem(action_info.get('name', ''), action_file)
                         if subsystem not in actions_by_subsystem:
                             actions_by_subsystem[subsystem] = []
                         actions_by_subsystem[subsystem].append(action_info)

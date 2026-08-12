@@ -18,7 +18,8 @@ markmap:
 # 🧭 NAVIGATION 子系统
 ## 📦 Services (1)
 - version
-## 📡 Topics (3)
+## 📡 Topics (4)
+- map
 - local_map
 - navigation_status
 - odom_info`
@@ -36,9 +37,19 @@ markmap:
 | **Type** | std_srvs/Trigger |
 | **Description** | 定位导航版本号 |
 
-## 📡 Topics (3)
+## 📡 Topics (4)
 
-### 1. `local_map`
+### 1. `map`
+
+| 字段 | 值 |
+|------|-----|
+| **Topic Name** | /map |
+| **Type** | nav_msgs/OccupancyGrid |
+| **Direction** | 📥 Subscribe |
+| **Description** | 全局地图信息 |
+| **Note** | 全局地图信息 |
+
+### 2. `local_map`
 
 | 字段 | 值 |
 |------|-----|
@@ -47,7 +58,7 @@ markmap:
 | **Direction** | 📥 Subscribe |
 | **Description** | 局部障碍物信息 |
 
-### 2. `navigation_status`
+### 3. `navigation_status`
 
 | 字段 | 值 |
 |------|-----|
@@ -57,7 +68,7 @@ markmap:
 | **Description** | 当前导航状态 |
 | **Note** | 当前导航状态信息 |
 
-### 3. `odom_info`
+### 4. `odom_info`
 
 | 字段 | 值 |
 |------|-----|

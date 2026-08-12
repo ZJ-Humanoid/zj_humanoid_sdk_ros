@@ -10,7 +10,7 @@ version: v1.2.0
 ::: info 文档信息
 - **描述**: ZJ Humanoid ROS1 APIs
 - **版本**: v1.2.0
-- **生成时间**: 2026-08-12 15:27:06
+- **生成时间**: 2026-08-12 15:45:48
 :::
 
 ## 📊 统计信息
@@ -18,7 +18,7 @@ version: v1.2.0
 - **Services**: 108 个服务
 - **Topics**: 109 个话题
 - **总计**: 217 个接口
-- **子系统**: 9 个 (services), 10 个 (topics)
+- **子系统**: 9 个 (services), 9 个 (topics)
 
 ## 📑 目录导航
 
@@ -41,8 +41,7 @@ version: v1.2.0
 - [🖐️ HAND](#hand-topics) (5 topics)
 - [🦵 LOWERLIMB](#lowerlimb-topics) (11 topics)
 - [🔧 MANIPULATION](#manipulation-topics) (1 topics)
-- [🧭 NAVIGATION](#navigation-topics) (3 topics)
-- [📦 OTHER](#other-topics) (1 topics)
+- [🧭 NAVIGATION](#navigation-topics) (4 topics)
 - [🤖 ROBOT](#robot-topics) (10 topics)
 - [📷 SENSOR](#sensor-topics) (36 topics)
 - [🦾 UPPERLIMB](#upperlimb-topics) (29 topics)
@@ -110,7 +109,7 @@ version: v1.2.0
 
 ## 📡 Topics
 
-共 109 个话题，分布在 10 个子系统中。
+共 109 个话题，分布在 9 个子系统中。
 
 ### 🔊 AUDIO (6 topics) {#audio-topics}
 
@@ -142,15 +141,9 @@ version: v1.2.0
 
 <div style='margin: 2rem 0; border-top: 2px solid var(--vp-c-divider);'></div>
 
-### 🧭 NAVIGATION (3 topics) {#navigation-topics}
+### 🧭 NAVIGATION (4 topics) {#navigation-topics}
 
 <MarkdownInclude src="api/navigation.md" :skip-frontmatter="true" :skip-title="true" section="topics" />
-
-<div style='margin: 2rem 0; border-top: 2px solid var(--vp-c-divider);'></div>
-
-### 📦 OTHER (1 topics) {#other-topics}
-
-<MarkdownInclude src="api/other.md" :skip-frontmatter="true" :skip-title="true" section="topics" />
 
 <div style='margin: 2rem 0; border-top: 2px solid var(--vp-c-divider);'></div>
 

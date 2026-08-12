@@ -164,7 +164,6 @@ export default defineVersionedConfig({
                     { text: '🦵 Lowerlimb', link: '/api/lowerlimb' },
                     { text: '🔧 Manipulation', link: '/api/manipulation' },
                     { text: '🧭 Navigation', link: '/api/navigation' },
-                    { text: '📦 Other', link: '/api/other' },
                     { text: '🤖 Robot', link: '/api/robot' },
                     { text: '📷 Sensor', link: '/api/sensor' },
                     { text: '🦾 Upperlimb', link: '/api/upperlimb' },
