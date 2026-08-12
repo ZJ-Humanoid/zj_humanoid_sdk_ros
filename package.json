@@ -6,7 +6,7 @@
   "scripts": {
     "docs:dev": "vitepress dev docs",
     "docs:dev:network": "vitepress dev docs --host 0.0.0.0",
-    "docs:build": "vitepress build docs",
+    "docs:build": "vitepress build docs && node docs/.vitepress/scripts/fix-version-sidebar.js",
     "docs:preview": "vitepress preview docs",
     "docs:preview:network": "vitepress preview docs --host 0.0.0.0",
     "docs:export:pdf": "node scripts/export-to-pdf.js",

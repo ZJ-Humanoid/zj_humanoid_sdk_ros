@@ -55,7 +55,7 @@ const isGitHubActions = process.env.GITHUB_ACTIONS === 'true';
 // If deploying to <user>.github.io, base must be '/'
 const isUserOrOrgSite = repositoryName.endsWith('.github.io');
 
-export default defineVersionedConfig({
+const rawConfig = defineVersionedConfig({
   title: 'Navi机器人SDK开发指南',
   description: '这是浙江人形机器人Navi系列的SDK和编程指引文档站点。',
   base: '/zj_humanoid_sdk_ros/',
@@ -141,20 +141,22 @@ export default defineVersionedConfig({
       })()
     },
     sidebar: (() => {
-      // 通用侧边栏配置
+      // 通用侧边栏（链接使用 /path 形式，保持 VitePress 原有语义，由库自己处理重写）
       const commonSidebar = [
         {
           items: [
-            { text: '开发指南', link: '/',
-              items: [          
+            {
+              text: '开发指南', link: '/',
+              items: [
                 { text: '概述', link: '/#概述' },
-                { text: '快速开始', link: '/#快速开始' },]
-             },
+                { text: '快速开始', link: '/#快速开始' },
+              ]
+            },
             {
               text: 'ROS API',
-              items: [          
+              items: [
                 { text: '完整API文档', link: '/api/zj_humanoid_ros_api' },
-                { 
+                {
                   text: '子系统',
                   collapsed: true,
                   items: [
@@ -169,7 +171,6 @@ export default defineVersionedConfig({
                     { text: '🦾 Upperlimb', link: '/api/upperlimb' },
                   ]
                 }
-
               ]
             },
             {
@@ -181,8 +182,8 @@ export default defineVersionedConfig({
             },
             {
               text: '开发示例',
-              items: [          
-                { 
+              items: [
+                {
                   text: '子系统示例',
                   collapsed: true,
                   items: [
@@ -202,23 +203,28 @@ export default defineVersionedConfig({
             {
               text: '调试开发工具',
               items: [
-                { text: 'WEB 遥控器', link: 'tools/web_telec' },
-                { text: 'WEB 示教器', link: 'tools/web_tech' },
-                { text: '大屏展示软件', link: 'tools/data_display' },
-                { text: 'HOS 安装', link: 'tools/hos_install' },
-                { text: 'HOS 开发', link: 'tools/hos_dev' },
+                { text: 'WEB 遥控器', link: '/tools/web_telec' },
+                { text: 'WEB 示教器', link: '/tools/web_tech' },
+                { text: '大屏展示软件', link: '/tools/data_display' },
+                { text: 'HOS 安装', link: '/tools/hos_install' },
+                { text: 'HOS 开发', link: '/tools/hos_dev' },
               ]
             },
           ]
         }
       ]
-      
-      // 为 root 版本配置侧边栏
-      const sidebarConfig = {
+
+      // VitePress 的 sidebar key 匹配是基于 page.relativePath（源文件路径）：
+      //   - main 分支文档在 docs/src/xxx.md -> relativePath = "api/hand.md"
+      //     -> 需要匹配 sidebar key "/" 或 "/api/"
+      //   - 版本文档在 docs/src/versions/1.2.0/xxx.md -> relativePath = "versions/1.2.0/api/hand.md"
+      //     -> 需要匹配 sidebar key "/versions/1.2.0/" 或 "/versions/"
+      // 因此我们需要额外为 /versions/<v>/ 路径提供一份相同结构的 sidebar
+      // （VitePress 版本库会通过 rewritesHook 处理链接的渲染时 base）
+      const sidebarConfig: Record<string, any> = {
         '/': commonSidebar
       }
-      
-      // 为每个版本配置侧边栏
+
       try {
         const versionsRoot = path.resolve('./docs/versions')
         if (fs.existsSync(versionsRoot)) {
@@ -227,7 +233,7 @@ export default defineVersionedConfig({
             .filter((e) => e.isDirectory())
             .map((e) => e.name)
             .filter((name) => !name.startsWith('.'))
-          
+
           for (const v of versions) {
             sidebarConfig[`/versions/${v}/`] = commonSidebar
           }
@@ -235,7 +241,7 @@ export default defineVersionedConfig({
       } catch (e) {
         // ignore
       }
-      
+
       return sidebarConfig
     })(),
 
@@ -260,5 +266,7 @@ export default defineVersionedConfig({
     }
   }
 });
+
+export default rawConfig
 
 
