@@ -1,7 +1,5 @@
-# 说明
-此action下有五个话题，分别为
-/zj_humanoid/manipulation/instance_segmentation_action/cancel
-/zj_humanoid/manipulation/instance_segmentation_action/feedback
-/zj_humanoid/manipulation/instance_segmentation_action/goal
-/zj_humanoid/manipulation/instance_segmentation_action/result
-/zj_humanoid/manipulation/instance_segmentation_action/status
+# 实例分割 Action
+
+调用 `/zj_humanoid/manipulation/instance_segmentation_action`，类型为
+`manipulation/InstSeg`。Actionlib 自动生成的 `goal`、`feedback`、`result`、
+`status` 和 `cancel` 话题不作为独立业务接口重复列出。

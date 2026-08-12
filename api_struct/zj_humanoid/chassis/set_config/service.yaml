@@ -1,0 +1,6 @@
+service:
+  name: /zj_humanoid/chassis/set_config
+  description: 设置底盘配置
+  type: chassis_msgs/SetChassisConfig
+  demos:
+  note: "以键值对列表批量设置配置"

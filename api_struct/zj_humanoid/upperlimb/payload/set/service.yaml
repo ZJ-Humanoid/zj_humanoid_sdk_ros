@@ -1,0 +1,6 @@
+service:
+  name: /zj_humanoid/upperlimb/payload/set
+  description: 设置末端负载
+  type: upperlimb/PayLoadSet
+  demos:
+  note: ""

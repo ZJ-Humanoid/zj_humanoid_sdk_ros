@@ -1,0 +1,6 @@
+topic:
+  name: /zj_humanoid/chassis/laser_scan
+  description: 底盘二维激光数据
+  type: sensor_msgs/LaserScan
+  direction: publish
+  note: "WA1 专属"

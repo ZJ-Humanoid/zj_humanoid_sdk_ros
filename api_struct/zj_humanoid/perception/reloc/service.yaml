@@ -1,0 +1,6 @@
+service:
+  name: /zj_humanoid/perception/reloc
+  description: 触发地图重定位
+  type: naviai_localization_msgs/Lio
+  demos:
+  note: "支持按地图名称、ID或路径发起重定位"

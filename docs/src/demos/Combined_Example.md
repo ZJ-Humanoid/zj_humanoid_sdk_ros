@@ -6,7 +6,7 @@
 
 #### 使用机器人AP热点
 对于不方便接USB键鼠和HDMI屏幕的场景，也可以通过连接机器人自身的AP热点来配置机器人的网络；
-机器人大脑默认的AP名称前缀为nav01ap的Wi-Fi，此Wi-Fi就是机器人大脑的AP热点，密码为88888888。
+机器人大脑默认的 AP 名称以 `nav01ap` 开头，连接凭据请查阅设备交付资料。
 
 #### 终端连接
 完成机器人的网络配置之后，对于开发者而言，可能还需要使用终端登入大脑系统，支持如下方式登入：
@@ -14,7 +14,7 @@
 - 外部终端登入Linux：通过标准ssh协议登入orin Linux系统，ssh端口是22；
 - 登入到demos容器：
     - 在Linux终端内，支持使用docker exec -it navi_project-demos-1 bash
-    - 外部终端，可通过ssh协议登入demos，指令：ssh root@ip -p 2222，密码：naviai@2025
+    - 外部终端可通过 `ssh root@<robot-ip> -p 2222` 登录 demos，凭据请查阅设备交付资料
 
 # 运行一个代码示例
 首先进入到Orin的demos容器（docker exec -it navi_project-demos-1 bash）。navi_ws工作空间的结构如下

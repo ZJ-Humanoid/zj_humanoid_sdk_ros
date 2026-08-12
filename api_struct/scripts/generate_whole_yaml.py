@@ -21,6 +21,13 @@ GLOBAL_TOPIC_SUBSYSTEM_MAP = {
     '/cmd_vel': 'lowerlimb',
 }
 
+INTERFACE_PREFIX_SUBSYSTEM_MAP = {
+    '/perception/': 'perception',
+    '/projected_map': 'perception',
+    '/zj_humanoid/cmd_vel/': 'chassis',
+    '/zj_humanoid/sim/upperlimb/': 'upperlimb',
+}
+
 
 def extract_subsystem(name, file_path=None):
     """
@@ -35,6 +42,10 @@ def extract_subsystem(name, file_path=None):
     """
     if not name:
         return 'other'
+
+    for prefix, subsystem in INTERFACE_PREFIX_SUBSYSTEM_MAP.items():
+        if name.startswith(prefix):
+            return subsystem
 
     if name.startswith('/zj_humanoid/'):
         parts = name.split('/')
@@ -55,12 +66,13 @@ def extract_subsystem(name, file_path=None):
 def extract_subsystem_from_path(file_path):
     """从文件路径推断子系统名称"""
     try:
-        rel_path = file_path.parent.relative_to(file_path.parents[1])
-        parts = str(rel_path).replace(os.sep, '/').split('/')
-        if parts and parts[0] in ('audio', 'chassis', 'hand', 'lowerlimb',
-                                  'manipulation', 'navigation', 'robot',
-                                  'sensor', 'upperlimb'):
-            return parts[0]
+        parts = file_path.parts
+        root_index = parts.index('zj_humanoid')
+        subsystem = parts[root_index + 1]
+        if subsystem in ('audio', 'chassis', 'hand', 'lowerlimb',
+                         'manipulation', 'navigation', 'perception', 'robot',
+                         'sensor', 'upperlimb'):
+            return subsystem
     except (ValueError, IndexError):
         pass
     return None
@@ -87,6 +99,15 @@ def infer_interface_name_from_path(file_path, base_path):
     except (ValueError, AttributeError):
         # 如果路径不在 base_path 下，返回 None
         return None
+
+
+def is_intentional_path_alias(name, file_path):
+    """Return True when a compatibility endpoint is stored under its owner module."""
+    path_subsystem = extract_subsystem_from_path(file_path)
+    return any(
+        name.startswith(prefix) and subsystem == path_subsystem
+        for prefix, subsystem in INTERFACE_PREFIX_SUBSYSTEM_MAP.items()
+    )
 
 
 def find_yaml_files(base_path):
@@ -131,7 +152,8 @@ def find_yaml_files(base_path):
                         # 验证 name 字段是否与文件路径匹配
                         service_name = service_info.get('name', '')
                         expected_name = infer_interface_name_from_path(service_file, base_path)
-                        if expected_name and service_name != expected_name:
+                        if (expected_name and service_name != expected_name
+                                and not is_intentional_path_alias(service_name, service_file)):
                             print(f"⚠️  警告: service 名称与文件路径不匹配")
                             print(f"  文件路径: {service_file.relative_to(base_path.parent.parent)}")
                             print(f"  YAML 中的 name: {service_name}")
@@ -179,7 +201,8 @@ def find_yaml_files(base_path):
                         # 验证 name 字段是否与文件路径匹配
                         topic_name = topic_info.get('name', '')
                         expected_name = infer_interface_name_from_path(topic_file, base_path)
-                        if expected_name and topic_name != expected_name:
+                        if (expected_name and topic_name != expected_name
+                                and not is_intentional_path_alias(topic_name, topic_file)):
                             print(f"⚠️  警告: topic 名称与文件路径不匹配")
                             print(f"  文件路径: {topic_file.relative_to(base_path.parent.parent)}")
                             print(f"  YAML 中的 name: {topic_name}")
@@ -227,7 +250,8 @@ def find_yaml_files(base_path):
                         # 验证 name 字段是否与文件路径匹配
                         action_name = action_info.get('name', '')
                         expected_name = infer_interface_name_from_path(action_file, base_path)
-                        if expected_name and action_name != expected_name:
+                        if (expected_name and action_name != expected_name
+                                and not is_intentional_path_alias(action_name, action_file)):
                             print(f"⚠️  警告: action 名称与文件路径不匹配")
                             print(f"  文件路径: {action_file.relative_to(base_path.parent.parent)}")
                             print(f"  YAML 中的 name: {action_name}")

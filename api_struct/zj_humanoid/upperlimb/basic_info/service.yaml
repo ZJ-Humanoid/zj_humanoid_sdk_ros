@@ -1,0 +1,6 @@
+service:
+  name: /zj_humanoid/upperlimb/basic_info
+  description: 获取当前机型上肢部位与关节信息
+  type: upperlimb/BasicInfoGet
+  demos:
+  note: "上肢 2.0.0 新增，返回可用部位掩码、关节总数和部位列表"

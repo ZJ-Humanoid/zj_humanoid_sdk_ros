@@ -2,6 +2,6 @@
   name: /zj_humanoid/navigation/odom_info
   description: 当前位姿信息
   type: nav_msgs/Odometry
-  direction: subscribe
+  direction: publish
   throttle_rate: 100
   note: "当前位姿信息，有定位时才会输出结果"

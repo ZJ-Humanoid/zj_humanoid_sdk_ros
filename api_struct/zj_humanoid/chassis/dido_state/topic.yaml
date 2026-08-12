@@ -1,0 +1,6 @@
+topic:
+  name: /zj_humanoid/chassis/dido_state
+  description: 数字输入输出与关机状态
+  type: chassis_msgs/DIDOState
+  direction: publish
+  note: "WA1、WA2 通用"

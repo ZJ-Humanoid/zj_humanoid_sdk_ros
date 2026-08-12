@@ -7,3 +7,4 @@ service:
 # 请求示例数据
 text: ["hello world"]  # 文本数组
 isPlay: true  # 是否播放，true=播放，false=仅生成文件
+tts_profile: ""  # 单轮 TTS profile，可为空

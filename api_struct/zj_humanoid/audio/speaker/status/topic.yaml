@@ -1,0 +1,6 @@
+topic:
+  name: /zj_humanoid/audio/speaker/status
+  description: 扬声器设备与播放状态
+  type: audio/SpeakerStatus
+  direction: publish
+  note: "默认约 1 Hz 发布"

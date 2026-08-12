@@ -1,46 +1,44 @@
 ---
 layout: doc
-title: Navi机器人SDK开发指南
+title: Navi机器人SDK开发指南 v1.5.0
 description: 浙江人形机器人Navi系列的SDK和编程指引文档站点
 ---
 
-# Navi机器人SDK开发指南
+# Navi机器人SDK开发指南 v1.5.0
 
-::: tip 欢迎
-这是浙江人形机器人Navi系列的SDK和编程指引文档站点。
+::: info 当前版本
+本文档对应 Middleware v1.5.0，适用于 ROS1 Noetic。
 :::
 
 ## 📑 文档导航
 
-本文档包含完整的开发指南和API接口文档，您可以通过滚动浏览所有内容。
-
-- [概述](#概述) - 文档目的，SDK包含范围
-- [快速开始](#快速开始) - 开机、网络配置、开发环境
-- [ROS API](/api/zj_humanoid_ros_api) - 完整的服务(Service)和话题(Topic)接口
-- [Message Type](/markmap_message_type) - ROS API所需要用到的自定义数据类型
-- [开发示例](/demos/Combined_Example.md) - 展示如何通过实际代码调用API
-- [调试开发工具](tools/web_telec) - 展示机器人开发过程中可能用到的调试工具
+- [概述](#概述)：SDK 范围与运行环境
+- [快速开始](#快速开始)：开机、联网和终端连接
+- [ROS API](/api/zj_humanoid_ros_api)：Service、Topic 和 Action 接口
+- [版本变更](/release_notes)：v1.3.0 至 v1.5.0 的接口变化
+- [Message Type](/markmap_message_type)：自定义 ROS 数据类型
+- [开发示例](/demos/Combined_Example.md)：接口调用示例
+- [调试开发工具](tools/web_telec)：Web 调试工具
 ---
 
 ## 概述
 
-### 文档目的
-本 SDK 是专为浙江人形机器人创新中心推出的领航者 2 号（Navi02）人形机器人打造的 ROS1（Noetic）适配开发工具包。其核心目标是封装机器人底层接口（关节控制、定位导航、电源管理等），提供标准化的 ROS1 消息接口和工具集，降低开发者的二次开发门槛，支持快速搭建路径规划，手部操作等上层应用，使得机器人可以理解并执行操作者或开发者的指令意图，进而完成更为复杂的工作，和具身智能的使命。
+本 SDK 面向浙江人形机器人 Navi 系列，封装关节控制、定位导航、电源管理等底层能力，并提供统一的 ROS1 接口、示例和调试工具。
 
-### 机器人SDK包含范围：
-#### 机器人应用开发SDK主要包含：
-1. 一组基于分布式消息中间件的API集合，我们当前采用的机器人领域采用最广泛的ROS消息中间件与其msg/ srv/等数据结构来描述我们机器人的内在能力；
-2. 基于上述接口，提供了基于C++/Python等语言编写的各种demos，给开发者提供编程示例以及说明文档，引导初次接触人形机器人的开发人员；
-3. 除了编程语言，我们同时提供了各种界面化的示教器等调试工具，方便客户通过UI完成机器人的较为简单的控制和调试需求；
-4. 我们同时提供了机器人的图形化编程界面HOS，简化机器人开发时的环境配置和api调用逻辑，让开发者可以专注于自身的业务与算法开发，加快机器人应用开发和部署的步骤；
+SDK 包含：
 
-#### 机器人SDK层级图：
+1. ROS Service、Topic、Action 和配套自定义消息；
+2. C++、Python 调用示例；
+3. Web 示教与调试工具；
+4. HOS 图形化编程环境。
+
+### SDK 层级图
 ![SDK范围](./images/SDK_level.png)
 
 ### 开发环境
 - 操作系统：Ubuntu 20.04（ROS Noetic）
-- ROS版本：ROS1 Noetic
-- 支持语言：Python3.x，C++17及以上
+- ROS 版本：ROS1 Noetic
+- 支持语言：Python 3、C++17 及以上
 - 硬件兼容：支持领航者 2 号（Navi02）人形机器人，WA1/WA2轮臂机器人，半身机器人
 - 适用场景：第三方应用集成，二次开发，机器人导航、操作、行走等功能的快速部署
 
@@ -85,7 +83,7 @@ description: 浙江人形机器人Navi系列的SDK和编程指引文档站点
 
 #### 使用机器人AP热点
 对于不方便接USB键鼠和HDMI屏幕的场景，也可以通过连接机器人自身的AP热点来配置机器人的网络；
-机器人大脑默认的AP名称前缀为nav01ap的Wi-Fi，此Wi-Fi就是机器人大脑的AP热点，密码为88888888。
+机器人大脑默认的 AP 名称以 `nav01ap` 开头，连接凭据请查阅设备交付资料。
 
 #### 终端连接
 完成机器人的网络配置之后，对于开发者而言，可能还需要使用终端登入大脑系统，支持如下方式登入：
@@ -93,28 +91,28 @@ description: 浙江人形机器人Navi系列的SDK和编程指引文档站点
 - 外部终端登入Linux：通过标准ssh协议登入orin Linux系统，ssh端口是22；
 - 登入到demos容器：
     - 在Linux终端内，支持使用docker exec -it navi_project-demos-1 bash
-    - 外部终端，可通过ssh协议登入demos，指令：ssh root@ip -p 2222，密码：naviai@2025
+    - 外部终端可通过 `ssh root@<robot-ip> -p 2222` 登录 demos，凭据请查阅设备交付资料
     - ssh的IP取决于登入大脑的网卡IP，机器人联网操作参考[网络与连接](#网络与连接)，机器人网络拓扑参考[轮臂型网络拓扑](#轮臂型网络拓扑), 对于双足（I2）型号的机器人则是在轮臂型机器人的基础上取消了路由器，采用orin与pico的直连
 
 ### 开发
-对于开发者，需要机器人完成更复杂任务时，我们提供了ROS开发以及基于ROS API的HOS图形化编程； ROS API列表参考下一章节；
+开发者可以直接使用 ROS API，也可以通过 HOS 进行图形化编程。
 
 #### 开发环境配置
-在[开发环境](#开发环境)中安装<a href="/zj_humanoid_sdk_ros/zj_humanoid_types_25_R3.run" download>zj_humanoid_types_25_R3.run</a>，就可以使用我们机器人api的数据结构了； 数据结构内容，请查阅：[zj_humanoid_types](./zj_humanoid_types)
-```
+安装 <a href="/zj_humanoid_sdk_ros/zj_humanoid_types_v1.5.0.run" download>zj_humanoid_types_v1.5.0.run</a> 后即可使用 v1.5.0 自定义消息。类型定义见 [zj_humanoid_types](./zj_humanoid_types)。
+
+```bash
 Help:
-  ./zj_humanoid_types_25_R3.run                      # Install all .deb files in the current directory
-  ./zj_humanoid_types_25_R3.run -- --uninstall       # Uninstall all .deb files in the current directory
-  ./zj_humanoid_types_25_R3.run -- --version         # Show verison
-  ./zj_humanoid_types_25_R3.run -- --changelog       # Show changelog
-  ./zj_humanoid_types_25_R3.run -- --help            # Show the help info
+  ./zj_humanoid_types_v1.5.0.run                      # Install all .deb files in the current directory
+  ./zj_humanoid_types_v1.5.0.run -- --uninstall       # Uninstall all .deb files in the current directory
+  ./zj_humanoid_types_v1.5.0.run -- --version         # Show version
+  ./zj_humanoid_types_v1.5.0.run -- --changelog       # Show changelog
+  ./zj_humanoid_types_v1.5.0.run -- --help            # Show help
 ```
 #### ROS Python/C++
-我们提供了标准的ROS编程环境，帮助开发者快速的启动开发；demos可参考[demos](./demos/Combined_Example)
+开发示例见 [demos](./demos/Combined_Example)。
     
 #### HOS开发
-我们提供了HOS的图形化编程界面，帮助开发者更便捷的调用机器人的API接口，更便捷调试部署等工具，使得开发者可以专注于自身的逻辑开发；
-详细说明请参与[HOS开发](./tools/hos_dev)
+HOS 用于图形化调用 API 和部署任务，详见 [HOS 开发](./tools/hos_dev)。
 
 
 ### 常见问题和解决方法
@@ -124,5 +122,3 @@ Help:
 
 #### 2. 机器人启动后无法调用肢体动作
     需要确认急停按键是否被按下，或者电机是否有损坏；
-
-####

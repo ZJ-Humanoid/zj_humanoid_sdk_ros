@@ -1,0 +1,6 @@
+service:
+  name: /zj_humanoid/upperlimb/CartesianPlanningParamsGet
+  description: 获取笛卡尔规划参数
+  type: upperlimb/CartesianPlanningParamsGet
+  demos:
+  note: "1.4 新增"

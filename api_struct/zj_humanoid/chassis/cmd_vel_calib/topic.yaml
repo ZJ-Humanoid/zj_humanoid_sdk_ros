@@ -1,0 +1,6 @@
+topic:
+  name: /zj_humanoid/cmd_vel/calib
+  description: 底盘速度控制输入
+  type: geometry_msgs/Twist
+  direction: subscribe
+  note: "WA1、WA2 通用"

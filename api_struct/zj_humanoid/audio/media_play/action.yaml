@@ -1,0 +1,6 @@
+action:
+  name: /zj_humanoid/audio/media_play
+  description: 播放媒体文件
+  type: audio/MediaPlay
+  demos:
+  note: "文件播放倍率范围为 0.5-2.0，播放期间可调用 speaker/stop 中断"

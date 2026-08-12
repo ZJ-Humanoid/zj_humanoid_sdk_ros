@@ -1,0 +1,6 @@
+service:
+  name: /zj_humanoid/upperlimb/is_singular/whole_body
+  description: 检查全身目标位姿是否奇异
+  type: upperlimb/IsSingular
+  demos:
+  note: "1.4 新增"

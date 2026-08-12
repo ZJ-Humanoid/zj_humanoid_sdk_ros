@@ -1,0 +1,6 @@
+service:
+  name: /zj_humanoid/upperlimb/movel_by_path/whole_body
+  description: 全身笛卡尔直线路径运动
+  type: upperlimb/MoveLByPath
+  demos:
+  note: "1.4 新增"

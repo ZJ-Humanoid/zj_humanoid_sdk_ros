@@ -1,0 +1,6 @@
+service:
+  name: /zj_humanoid/audio/speaker/stop
+  description: 停止当前播放并清空播放队列
+  type: audio/SpeakerStop
+  demos:
+  note: "新一轮 TTS 播放前可调用此服务打断旧队列"

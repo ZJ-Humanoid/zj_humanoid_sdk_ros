@@ -1,0 +1,6 @@
+action:
+  name: /zj_humanoid/upperlimb/teach_mode/start_record
+  description: 开始记录拖动示教轨迹
+  type: upperlimb/DragTeachRecord
+  demos:
+  note: "1.3 新增"

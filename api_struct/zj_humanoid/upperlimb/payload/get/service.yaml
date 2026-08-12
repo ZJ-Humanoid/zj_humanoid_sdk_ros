@@ -1,0 +1,6 @@
+service:
+  name: /zj_humanoid/upperlimb/payload/get
+  description: 获取末端负载
+  type: upperlimb/PayLoadGet
+  demos:
+  note: ""

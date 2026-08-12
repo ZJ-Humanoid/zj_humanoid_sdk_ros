@@ -1,0 +1,6 @@
+topic:
+  name: /zj_humanoid/audio/speaker/ref_data
+  description: 扬声器软件播放参考数据
+  type: audio/AudioData
+  direction: publish
+  note: "用于 AEC 辅助处理"

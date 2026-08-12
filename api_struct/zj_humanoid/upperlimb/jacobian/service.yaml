@@ -1,0 +1,6 @@
+service:
+  name: /zj_humanoid/upperlimb/jacobian
+  description: 获取雅可比矩阵
+  type: upperlimb/JacobianMatrixGet
+  demos:
+  note: "通过请求中的 arm_type 选择左臂、右臂或全身"

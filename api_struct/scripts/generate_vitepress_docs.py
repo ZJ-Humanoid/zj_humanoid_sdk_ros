@@ -21,6 +21,7 @@ class VitePressDocGenerator:
         'lowerlimb': '🦵',
         'manipulation': '🔧',
         'navigation': '🧭',
+        'perception': '🗺️',
         'other': '📦',
         'robot': '🤖',
         'sensor': '📷',
@@ -62,8 +63,12 @@ class VitePressDocGenerator:
         # 只对 zj_humanoid 相关的类型添加链接（排除标准库类型如 std_msgs, std_srvs 等）
         # 检查类型是否属于 zj_humanoid 命名空间
         # 支持两种格式：zj_robot/BasicInfo 和 robot/BasicInfo
-        zj_humanoid_namespaces = ['audio', 'hand', 'lowerlimb', 'manipulation', 'navigation', 
-                                  'robot', 'sensor', 'upperlimb', 'zj_robot', 'wa2']
+        zj_humanoid_namespaces = [
+            'audio', 'chassis_msgs', 'diagnosis_msgs', 'hand', 'lowerlimb',
+            'manipulation', 'map_server_msgs', 'module_common_msgs',
+            'naviai_localization_msgs', 'navigation', 'robot', 'sensor',
+            'upperlimb', 'zj_robot', 'wa2'
+        ]
         type_namespace = type_name.split('/')[0] if '/' in type_name else ''
         
         # 处理 zj_ 前缀：zj_robot -> robot
@@ -93,9 +98,11 @@ class VitePressDocGenerator:
         metadata = self.data.get('metadata', {})
         services_data = self.data.get('services', {})
         topics_data = self.data.get('topics', {})
+        actions_data = self.data.get('actions', {})
         
         total_services = sum(len(v) for v in services_data.values()) if isinstance(services_data, dict) else len(services_data)
         total_topics = sum(len(v) for v in topics_data.values()) if isinstance(topics_data, dict) else len(topics_data)
+        total_actions = sum(len(v) for v in actions_data.values()) if isinstance(actions_data, dict) else len(actions_data)
         
         with open(output_file, 'w', encoding='utf-8') as f:
             # Frontmatter
@@ -120,12 +127,13 @@ class VitePressDocGenerator:
             f.write("## 📊 统计信息\n\n")
             f.write(f"- **Services**: {total_services} 个服务\n")
             f.write(f"- **Topics**: {total_topics} 个话题\n")
-            f.write(f"- **总计**: {total_services + total_topics} 个接口\n")
-            f.write(f"- **子系统**: {len(services_data)} 个 (services), {len(topics_data)} 个 (topics)\n\n")
+            f.write(f"- **Actions**: {total_actions} 个动作\n")
+            f.write(f"- **总计**: {total_services + total_topics + total_actions} 个接口\n")
+            f.write(f"- **子系统**: {len(services_data)} 个 (services), {len(topics_data)} 个 (topics), {len(actions_data)} 个 (actions)\n\n")
             
             # Table of Contents
             f.write("## 📑 目录导航\n\n")
-            f.write("本文档包含所有ROS接口的详细信息，您可以通过滚动浏览所有内容，或使用右侧导航快速跳转。\n\n")
+            f.write("接口按类型和子系统分类如下。\n\n")
             f.write("**Services (服务):**\n")
             for subsystem in sorted(services_data.keys()):
                 count = len(services_data[subsystem])
@@ -136,6 +144,11 @@ class VitePressDocGenerator:
                 count = len(topics_data[subsystem])
                 icon = self.SUBSYSTEM_ICONS.get(subsystem, '📡')
                 f.write(f"- [{icon} {subsystem.upper()}](#{subsystem.lower()}-topics) ({count} topics)\n")
+            f.write("\n**Actions (动作):**\n")
+            for subsystem in sorted(actions_data.keys()):
+                count = len(actions_data[subsystem])
+                icon = self.SUBSYSTEM_ICONS.get(subsystem, '⚙️')
+                f.write(f"- [{icon} {subsystem.upper()}](#{subsystem.lower()}-actions) ({count} actions)\n")
             f.write("\n---\n\n")
             
             # Services - 使用组件嵌套各个子系统文档
@@ -178,6 +191,24 @@ class VitePressDocGenerator:
                     # 只在子系统之间添加分隔线，最后一个不添加
                     if subsystem_idx < len(topics_data) - 1:
                         f.write("<div style='margin: 2rem 0; border-top: 2px solid var(--vp-c-divider);'></div>\n\n")
+
+            f.write("\n<div style='margin: 3rem 0; padding: 2rem 0; border-top: 3px solid var(--vp-c-brand-1);'></div>\n\n")
+
+            if actions_data and isinstance(actions_data, dict):
+                f.write("## ⚙️ Actions\n\n")
+                f.write(f"共 {total_actions} 个动作，分布在 {len(actions_data)} 个子系统中。\n\n")
+
+                for subsystem_idx, subsystem in enumerate(sorted(actions_data.keys())):
+                    actions = actions_data[subsystem]
+                    if not actions:
+                        continue
+
+                    icon = self.SUBSYSTEM_ICONS.get(subsystem, '⚙️')
+                    f.write(f"### {icon} {subsystem.upper()} ({len(actions)} actions) {{#{subsystem.lower()}-actions}}\n\n")
+                    f.write(f"<MarkdownInclude src=\"api/{subsystem}.md\" :skip-frontmatter=\"true\" :skip-title=\"true\" section=\"actions\" />\n\n")
+
+                    if subsystem_idx < len(actions_data) - 1:
+                        f.write("<div style='margin: 2rem 0; border-top: 2px solid var(--vp-c-divider);'></div>\n\n")
         
         print(f"✓ Generated: {output_file}")
     
@@ -185,6 +216,7 @@ class VitePressDocGenerator:
         """Generate separate pages for each subsystem."""
         services_data = self.data.get('services', {})
         topics_data = self.data.get('topics', {})
+        actions_data = self.data.get('actions', {})
         
         # 子系统文件直接输出到 api 目录（不再使用 subsystems 子目录）
         # subsystem_dir 就是 self.output_dir（即 api 目录）
@@ -197,10 +229,13 @@ class VitePressDocGenerator:
             all_subsystems.update(services_data.keys())
         if isinstance(topics_data, dict):
             all_subsystems.update(topics_data.keys())
+        if isinstance(actions_data, dict):
+            all_subsystems.update(actions_data.keys())
         
         for subsystem in sorted(all_subsystems):
             services = services_data.get(subsystem, []) if isinstance(services_data, dict) else []
             topics = topics_data.get(subsystem, []) if isinstance(topics_data, dict) else []
+            actions = actions_data.get(subsystem, []) if isinstance(actions_data, dict) else []
             
             output_file = subsystem_dir / f'{subsystem}.md'
             
@@ -210,12 +245,14 @@ class VitePressDocGenerator:
                 f.write(f"title: {subsystem.upper()} 子系统\n")
                 f.write(f"description: {subsystem.upper()} 子系统的所有ROS接口\n")
                 f.write("---\n\n")
+
+                icon = self.SUBSYSTEM_ICONS.get(subsystem, '📦')
+                f.write(f"# {icon} {subsystem.upper()} 子系统\n\n")
                 
                 # 添加 Markmap 思维导图
                 f.write("## 📊 接口概览\n\n")
                 
                 # 生成 markmap 内容
-                icon = self.SUBSYSTEM_ICONS.get(subsystem, '📦')
                 markmap_lines = [f"# {icon} {subsystem.upper()} 子系统"]
                 
                 if services:
@@ -287,6 +324,13 @@ class VitePressDocGenerator:
                             markmap_lines.append(f"  - {item}")  # 使用两个空格缩进表示子项
                         if len(items) > 10:
                             markmap_lines.append(f"  - ... 还有 {len(items) - 8} 个")
+
+                if actions:
+                    markmap_lines.append(f"## ⚙️ Actions ({len(actions)})")
+                    for action in actions:
+                        name = action.get('name', '')
+                        parts = [p for p in name.split('/') if p]
+                        markmap_lines.append(f"- {parts[-1] if parts else name}")
                 
                 markmap_content = '\n'.join(markmap_lines)
                 markmap_frontmatter = """---
@@ -374,6 +418,26 @@ markmap:
                         if note:
                             f.write(f"| **Note** | {note} |\n")
                         f.write("\n")
+
+                if actions:
+                    f.write(f"## ⚙️ Actions ({len(actions)})\n\n")
+                    for idx, action in enumerate(actions, 1):
+                        name = action.get('name', '')
+                        parts = [p for p in name.split('/') if p]
+                        short_name = '/'.join(parts[2:]) if len(parts) >= 3 else (parts[-1] if parts else name)
+                        action_type = action.get('type', '')
+                        description = self.escape_markdown(action.get('description', ''))
+                        note = self.escape_markdown(action.get('note', ''))
+
+                        f.write(f"### {idx}. `{short_name}`\n\n")
+                        f.write("| 字段 | 值 |\n")
+                        f.write("|------|-----|\n")
+                        f.write(f"| **Action Name** | {name} |\n")
+                        f.write(f"| **Type** | {self.format_type_link(action_type)} |\n")
+                        f.write(f"| **Description** | {description} |\n")
+                        if note:
+                            f.write(f"| **Note** | {note} |\n")
+                        f.write("\n")
             
             print(f"✓ Generated: {output_file}")
     
@@ -412,4 +476,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-

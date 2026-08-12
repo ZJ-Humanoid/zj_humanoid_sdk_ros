@@ -1,0 +1,6 @@
+topic:
+  name: /zj_humanoid/navigation/local_map_render
+  description: 前端展示用轻量局部地图
+  type: navigation/LocalMap
+  direction: publish
+  note: "v1.5.0 新增，不替代导航使用的 local_map"

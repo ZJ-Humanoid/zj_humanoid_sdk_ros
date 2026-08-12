@@ -1,0 +1,6 @@
+service:
+  name: /zj_humanoid/upperlimb/FK/whole_body
+  description: 全身运动学正解
+  type: upperlimb/FK
+  demos:
+  note: "1.4 新增；2.0.0 响应增加 arm_type 和 arm_type_array"

@@ -1,0 +1,6 @@
+topic:
+  name: /zj_humanoid/perception/perception_code
+  description: 感知模块状态与错误码
+  type: module_common_msgs/ModuleStatus
+  direction: publish
+  note: ""

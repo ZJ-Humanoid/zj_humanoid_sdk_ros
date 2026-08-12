@@ -1,7 +1,7 @@
 topic:
   name: /zj_humanoid/navigation/navigation_status
   description: 当前导航状态
-  type: navigation/NavigationStatus
-  direction: subscribe
+  type: navigation/NavigationState
+  direction: publish
   throttle_rate: 50
   note: "当前导航状态信息"

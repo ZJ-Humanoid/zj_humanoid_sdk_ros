@@ -1,0 +1,6 @@
+service:
+  name: /zj_humanoid/upperlimb/IK/whole_body
+  description: 全身运动学逆解
+  type: upperlimb/IK
+  demos:
+  note: "双臂求解时 pose 数组需包含两个目标位姿"

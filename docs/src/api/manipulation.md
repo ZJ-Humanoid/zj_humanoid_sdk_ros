@@ -3,6 +3,8 @@ title: MANIPULATION 子系统
 description: MANIPULATION 子系统的所有ROS接口
 ---
 
+# 🔧 MANIPULATION 子系统
+
 ## 📊 接口概览
 
 <Markmap :content="markmapContent" />
@@ -25,9 +27,8 @@ markmap:
 - pose_space_trajectory_planner
 - scene_update
 - version
-## 📡 Topics (1)
-- instance_segmentation_action
-  - goal`
+## ⚙️ Actions (1)
+- instance_segmentation_action`
 </script>
 
 ---
@@ -105,14 +106,13 @@ markmap:
 | **Type** | std_srvs/Trigger |
 | **Description** | 操作模块版本号 |
 
-## 📡 Topics (1)
+## ⚙️ Actions (1)
 
-### 1. `instance_segmentation_action/goal`
+### 1. `instance_segmentation_action`
 
 | 字段 | 值 |
 |------|-----|
-| **Topic Name** | /zj_humanoid/manipulation/instance_segmentation_action/goal |
+| **Action Name** | /zj_humanoid/manipulation/instance_segmentation_action |
 | **Type** | [manipulation/InstSeg](../zj_humanoid_types#instseg) |
-| **Direction** | 📤 Publish |
-| **Description** | 实例分割Action |
+| **Description** | 实例分割 |
 

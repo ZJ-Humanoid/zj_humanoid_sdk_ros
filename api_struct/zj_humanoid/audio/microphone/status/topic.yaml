@@ -1,0 +1,6 @@
+topic:
+  name: /zj_humanoid/audio/microphone/status
+  description: 麦克风设备与采集状态
+  type: audio/MicStatus
+  direction: publish
+  note: "默认约 1 Hz 发布，设备切换和错误发生时会及时更新"

@@ -1,0 +1,6 @@
+topic:
+  name: /zj_humanoid/navigation/map_metadata
+  description: 当前地图元数据
+  type: nav_msgs/MapMetaData
+  direction: publish
+  note: ""

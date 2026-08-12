@@ -1,0 +1,6 @@
+topic:
+  name: /zj_humanoid/sim/upperlimb/from_algo
+  description: 上肢算法输出仿真
+  type: upperlimb/Joints
+  direction: subscribe
+  note: "1.3 新增"

@@ -1,0 +1,6 @@
+service:
+  name: /zj_humanoid/chassis/soft_estop
+  description: 底盘软急停
+  type: std_srvs/Trigger
+  demos:
+  note: "触发底盘软件急停"

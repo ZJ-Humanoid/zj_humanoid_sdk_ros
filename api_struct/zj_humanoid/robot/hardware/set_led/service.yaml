@@ -1,0 +1,6 @@
+service:
+  name: /zj_humanoid/robot/hardware/set_led
+  description: 设置 WA2 左右灯带和前灯状态
+  type: zj_robot/SetLED
+  demos:
+  note: "1.5 新增；由 robot_manger 统一持有底层 XDDP 连接"

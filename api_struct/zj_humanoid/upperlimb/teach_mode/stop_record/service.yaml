@@ -1,0 +1,6 @@
+service:
+  name: /zj_humanoid/upperlimb/teach_mode/stop_record
+  description: 停止记录拖动示教轨迹
+  type: std_srvs/Trigger
+  demos:
+  note: ""

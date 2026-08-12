@@ -1,0 +1,6 @@
+service:
+  name: /zj_humanoid/navigation/map_server_version
+  description: 获取地图管理模块版本
+  type: std_srvs/Trigger
+  demos:
+  note: "1.5 新增"

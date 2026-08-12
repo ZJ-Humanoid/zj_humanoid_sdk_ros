@@ -1,0 +1,6 @@
+topic:
+  name: /zj_humanoid/audio/speaker/playback_status
+  description: 播放状态变化通知
+  type: audio/PlaybackStatus
+  direction: publish
+  note: "状态包含 IDLE、PLAYING 和 STOPPED"

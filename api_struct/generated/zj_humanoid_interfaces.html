@@ -193,43 +193,17 @@
         <h1>ZJ Humanoid ROS API 接口文档</h1>
 
         <div class="metadata">
-            <p><strong>Description:</strong> ZJ Humanoid ROS1 APIs</p>
-            <p><strong>Version:</strong> v1.2.0</p>
-            <p><strong>Generated At:</strong> 2026-08-12 15:27:06</p>
+            <p><strong>Description:</strong> 浙江人形机器人 Navi 系列 ROS1 API</p>
+            <p><strong>Version:</strong> v1.5.0</p>
+            <p><strong>Generated At:</strong> 2026-08-12 17:34:53</p>
         </div>
 
         <h2>Services</h2>
-        <div class="total-count">Total: 108 services in 9 subsystems</div>
+        <div class="total-count">Total: 137 services in 10 subsystems</div>
 
-        <h2 style="color: #e67e22; border-left: 5px solid #e67e22; padding-left: 15px; margin-top: 40px;">📦 AUDIO (10 services)</h2>
+        <h2 style="color: #e67e22; border-left: 5px solid #e67e22; padding-left: 15px; margin-top: 40px;">📦 AUDIO (9 services)</h2>
 
-        <h3>audio.1. /zj_humanoid/audio/LLM_chat</h3>
-        <table>
-            <thead>
-                <tr><th>Field</th><th>Value</th></tr>
-            </thead>
-            <tbody>
-                <tr><td>Service Name</td><td><code>/zj_humanoid/audio/LLM_chat</code></td></tr>
-                <tr><td>Type</td><td><code>audio/LLMChat</code></td></tr>
-                <tr><td>Description</td><td>LLM对话服务</td></tr>
-                <tr><td>Note</td><td>语音模块的版本号是多少</td></tr>
-            </tbody>
-        </table>
-
-        <h3>audio.2. /zj_humanoid/audio/media_play</h3>
-        <table>
-            <thead>
-                <tr><th>Field</th><th>Value</th></tr>
-            </thead>
-            <tbody>
-                <tr><td>Service Name</td><td><code>/zj_humanoid/audio/media_play</code></td></tr>
-                <tr><td>Type</td><td><code>audio/MediaPlay</code></td></tr>
-                <tr><td>Description</td><td>音频文件播放</td></tr>
-                <tr><td>Note</td><td>播放'公司介绍.wav',播放的文件需将文件放置在共享目录下，文件路径是：/share 下</td></tr>
-            </tbody>
-        </table>
-
-        <h3>audio.3. /zj_humanoid/audio/microphone/get_devices_list</h3>
+        <h3>audio.1. /zj_humanoid/audio/microphone/get_devices_list</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -242,7 +216,7 @@
             </tbody>
         </table>
 
-        <h3>audio.4. /zj_humanoid/audio/microphone/select_device</h3>
+        <h3>audio.2. /zj_humanoid/audio/microphone/select_device</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -255,7 +229,7 @@
             </tbody>
         </table>
 
-        <h3>audio.5. /zj_humanoid/audio/speaker/get_devices_list</h3>
+        <h3>audio.3. /zj_humanoid/audio/speaker/get_devices_list</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -268,7 +242,7 @@
             </tbody>
         </table>
 
-        <h3>audio.6. /zj_humanoid/audio/speaker/get_volume</h3>
+        <h3>audio.4. /zj_humanoid/audio/speaker/get_volume</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -281,7 +255,7 @@
             </tbody>
         </table>
 
-        <h3>audio.7. /zj_humanoid/audio/speaker/select_device</h3>
+        <h3>audio.5. /zj_humanoid/audio/speaker/select_device</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -294,7 +268,7 @@
             </tbody>
         </table>
 
-        <h3>audio.8. /zj_humanoid/audio/speaker/set_volume</h3>
+        <h3>audio.6. /zj_humanoid/audio/speaker/set_volume</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -307,7 +281,20 @@
             </tbody>
         </table>
 
-        <h3>audio.9. /zj_humanoid/audio/tts_service</h3>
+        <h3>audio.7. /zj_humanoid/audio/speaker/stop</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/audio/speaker/stop</code></td></tr>
+                <tr><td>Type</td><td><code>audio/SpeakerStop</code></td></tr>
+                <tr><td>Description</td><td>停止当前播放并清空播放队列</td></tr>
+                <tr><td>Note</td><td>新一轮 TTS 播放前可调用此服务打断旧队列</td></tr>
+            </tbody>
+        </table>
+
+        <h3>audio.8. /zj_humanoid/audio/tts_service</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -320,7 +307,7 @@
             </tbody>
         </table>
 
-        <h3>audio.10. /zj_humanoid/audio/version</h3>
+        <h3>audio.9. /zj_humanoid/audio/version</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -332,7 +319,7 @@
             </tbody>
         </table>
 
-        <h2 style="color: #e67e22; border-left: 5px solid #e67e22; padding-left: 15px; margin-top: 40px;">📦 CHASSIS (6 services)</h2>
+        <h2 style="color: #e67e22; border-left: 5px solid #e67e22; padding-left: 15px; margin-top: 40px;">📦 CHASSIS (7 services)</h2>
 
         <h3>chassis.1. /zj_humanoid/chassis/agv_charge</h3>
         <table>
@@ -341,26 +328,13 @@
             </thead>
             <tbody>
                 <tr><td>Service Name</td><td><code>/zj_humanoid/chassis/agv_charge</code></td></tr>
-                <tr><td>Type</td><td><code>zj_humanoid_msgs/AgvCharge</code></td></tr>
+                <tr><td>Type</td><td><code>chassis_msgs/ChargeControl</code></td></tr>
                 <tr><td>Description</td><td>底盘AGV充电控制</td></tr>
-                <tr><td>Note</td><td>控制底盘AGV的充电操作和查询充电状态</td></tr>
+                <tr><td>Note</td><td>WA1、WA2 通用</td></tr>
             </tbody>
         </table>
 
-        <h3>chassis.2. /zj_humanoid/chassis/agv_connect</h3>
-        <table>
-            <thead>
-                <tr><th>Field</th><th>Value</th></tr>
-            </thead>
-            <tbody>
-                <tr><td>Service Name</td><td><code>/zj_humanoid/chassis/agv_connect</code></td></tr>
-                <tr><td>Type</td><td><code>std_srvs/Trigger</code></td></tr>
-                <tr><td>Description</td><td>连接底盘AGV</td></tr>
-                <tr><td>Note</td><td>连接底盘AGV，建立通信连接</td></tr>
-            </tbody>
-        </table>
-
-        <h3>chassis.3. /zj_humanoid/chassis/agv_reset</h3>
+        <h3>chassis.2. /zj_humanoid/chassis/agv_reset</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -373,7 +347,7 @@
             </tbody>
         </table>
 
-        <h3>chassis.4. /zj_humanoid/chassis/agv_version</h3>
+        <h3>chassis.3. /zj_humanoid/chassis/agv_version</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -386,29 +360,55 @@
             </tbody>
         </table>
 
-        <h3>chassis.5. /zj_humanoid/chassis/speed_control</h3>
+        <h3>chassis.4. /zj_humanoid/chassis/get_config</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
             </thead>
             <tbody>
-                <tr><td>Service Name</td><td><code>/zj_humanoid/chassis/speed_control</code></td></tr>
-                <tr><td>Type</td><td><code>zj_humanoid_msgs/SpeedControl</code></td></tr>
-                <tr><td>Description</td><td>底盘速度控制</td></tr>
-                <tr><td>Note</td><td>控制底盘AGV的线速度和角速度</td></tr>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/chassis/get_config</code></td></tr>
+                <tr><td>Type</td><td><code>chassis_msgs/GetChassisConfig</code></td></tr>
+                <tr><td>Description</td><td>查询底盘配置</td></tr>
+                <tr><td>Note</td><td>按配置键查询，空键的行为以底盘实现为准</td></tr>
             </tbody>
         </table>
 
-        <h3>chassis.6. /zj_humanoid/chassis/steer_control</h3>
+        <h3>chassis.5. /zj_humanoid/chassis/set_config</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
             </thead>
             <tbody>
-                <tr><td>Service Name</td><td><code>/zj_humanoid/chassis/steer_control</code></td></tr>
-                <tr><td>Type</td><td><code>zj_humanoid_msgs/SteerControl</code></td></tr>
-                <tr><td>Description</td><td>底盘转向控制</td></tr>
-                <tr><td>Note</td><td>控制底盘AGV的转向角度和速度</td></tr>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/chassis/set_config</code></td></tr>
+                <tr><td>Type</td><td><code>chassis_msgs/SetChassisConfig</code></td></tr>
+                <tr><td>Description</td><td>设置底盘配置</td></tr>
+                <tr><td>Note</td><td>以键值对列表批量设置配置</td></tr>
+            </tbody>
+        </table>
+
+        <h3>chassis.6. /zj_humanoid/chassis/soc_keep</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/chassis/soc_keep</code></td></tr>
+                <tr><td>Type</td><td><code>chassis_msgs/SOCkeepControl</code></td></tr>
+                <tr><td>Description</td><td>设置底盘保电参数</td></tr>
+                <tr><td>Note</td><td>可设置上下限、电压和电流</td></tr>
+            </tbody>
+        </table>
+
+        <h3>chassis.7. /zj_humanoid/chassis/soft_estop</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/chassis/soft_estop</code></td></tr>
+                <tr><td>Type</td><td><code>std_srvs/Trigger</code></td></tr>
+                <tr><td>Description</td><td>底盘软急停</td></tr>
+                <tr><td>Note</td><td>触发底盘软件急停</td></tr>
             </tbody>
         </table>
 
@@ -700,9 +700,58 @@
             </tbody>
         </table>
 
-        <h2 style="color: #e67e22; border-left: 5px solid #e67e22; padding-left: 15px; margin-top: 40px;">📦 NAVIGATION (1 services)</h2>
+        <h2 style="color: #e67e22; border-left: 5px solid #e67e22; padding-left: 15px; margin-top: 40px;">📦 NAVIGATION (5 services)</h2>
 
-        <h3>navigation.1. /zj_humanoid/navigation/version</h3>
+        <h3>navigation.1. /zj_humanoid/navigation/get_cur_map_info</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/navigation/get_cur_map_info</code></td></tr>
+                <tr><td>Type</td><td><code>map_server_msgs/GetCurMapInfo</code></td></tr>
+                <tr><td>Description</td><td>获取当前地图信息</td></tr>
+            </tbody>
+        </table>
+
+        <h3>navigation.2. /zj_humanoid/navigation/get_map_list</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/navigation/get_map_list</code></td></tr>
+                <tr><td>Type</td><td><code>map_server_msgs/GetMapList</code></td></tr>
+                <tr><td>Description</td><td>获取可用地图列表</td></tr>
+            </tbody>
+        </table>
+
+        <h3>navigation.3. /zj_humanoid/navigation/map_server_version</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/navigation/map_server_version</code></td></tr>
+                <tr><td>Type</td><td><code>std_srvs/Trigger</code></td></tr>
+                <tr><td>Description</td><td>获取地图管理模块版本</td></tr>
+                <tr><td>Note</td><td>1.5 新增</td></tr>
+            </tbody>
+        </table>
+
+        <h3>navigation.4. /zj_humanoid/navigation/set_map</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/navigation/set_map</code></td></tr>
+                <tr><td>Type</td><td><code>map_server_msgs/SetMap</code></td></tr>
+                <tr><td>Description</td><td>切换当前地图</td></tr>
+            </tbody>
+        </table>
+
+        <h3>navigation.5. /zj_humanoid/navigation/version</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -714,7 +763,97 @@
             </tbody>
         </table>
 
-        <h2 style="color: #e67e22; border-left: 5px solid #e67e22; padding-left: 15px; margin-top: 40px;">📦 ROBOT (12 services)</h2>
+        <h2 style="color: #e67e22; border-left: 5px solid #e67e22; padding-left: 15px; margin-top: 40px;">📦 PERCEPTION (7 services)</h2>
+
+        <h3>perception.1. /perception/mapping_service</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/perception/mapping_service</code></td></tr>
+                <tr><td>Type</td><td><code>naviai_localization_msgs/Mapping</code></td></tr>
+                <tr><td>Description</td><td>开始建图兼容接口</td></tr>
+                <tr><td>Note</td><td>兼容旧版调用；1.5 推荐使用 /zj_humanoid/perception/start_mapping</td></tr>
+            </tbody>
+        </table>
+
+        <h3>perception.2. /perception/post_processing</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/perception/post_processing</code></td></tr>
+                <tr><td>Type</td><td><code>naviai_localization_msgs/Post_processing</code></td></tr>
+                <tr><td>Description</td><td>结束建图兼容接口</td></tr>
+                <tr><td>Note</td><td>兼容旧版调用；1.5 推荐使用 finish_mapping Action</td></tr>
+            </tbody>
+        </table>
+
+        <h3>perception.3. /zj_humanoid/perception/location_version</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/perception/location_version</code></td></tr>
+                <tr><td>Type</td><td><code>std_srvs/Trigger</code></td></tr>
+                <tr><td>Description</td><td>获取定位模块版本</td></tr>
+            </tbody>
+        </table>
+
+        <h3>perception.4. /zj_humanoid/perception/mapping_version</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/perception/mapping_version</code></td></tr>
+                <tr><td>Type</td><td><code>std_srvs/Trigger</code></td></tr>
+                <tr><td>Description</td><td>获取建图模块版本</td></tr>
+            </tbody>
+        </table>
+
+        <h3>perception.5. /zj_humanoid/perception/perception_version</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/perception/perception_version</code></td></tr>
+                <tr><td>Type</td><td><code>std_srvs/Trigger</code></td></tr>
+                <tr><td>Description</td><td>获取感知模块版本</td></tr>
+            </tbody>
+        </table>
+
+        <h3>perception.6. /zj_humanoid/perception/reloc</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/perception/reloc</code></td></tr>
+                <tr><td>Type</td><td><code>naviai_localization_msgs/Lio</code></td></tr>
+                <tr><td>Description</td><td>触发地图重定位</td></tr>
+                <tr><td>Note</td><td>支持按地图名称、ID或路径发起重定位</td></tr>
+            </tbody>
+        </table>
+
+        <h3>perception.7. /zj_humanoid/perception/start_mapping</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/perception/start_mapping</code></td></tr>
+                <tr><td>Type</td><td><code>naviai_localization_msgs/Mapping</code></td></tr>
+                <tr><td>Description</td><td>开始建图</td></tr>
+                <tr><td>Note</td><td>可设置地图名、高度范围、分辨率和场景类型</td></tr>
+            </tbody>
+        </table>
+
+        <h2 style="color: #e67e22; border-left: 5px solid #e67e22; padding-left: 15px; margin-top: 40px;">📦 ROBOT (13 services)</h2>
 
         <h3>robot.1. /zj_humanoid/robot/basic_info</h3>
         <table>
@@ -749,13 +888,26 @@
             </thead>
             <tbody>
                 <tr><td>Service Name</td><td><code>/zj_humanoid/robot/face_show/text_show</code></td></tr>
-                <tr><td>Type</td><td><code>zj_robot/FaceText</code></td></tr>
+                <tr><td>Type</td><td><code>zj_robot/FaceScreen</code></td></tr>
                 <tr><td>Description</td><td>脸部显示文字</td></tr>
                 <tr><td>Note</td><td>机器人脸部屏幕显示文字，支持指令显示“Hello World”</td></tr>
             </tbody>
         </table>
 
-        <h3>robot.4. /zj_humanoid/robot/joint_motor/set_zero</h3>
+        <h3>robot.4. /zj_humanoid/robot/hardware/set_led</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/robot/hardware/set_led</code></td></tr>
+                <tr><td>Type</td><td><code>zj_robot/SetLED</code></td></tr>
+                <tr><td>Description</td><td>设置 WA2 左右灯带和前灯状态</td></tr>
+                <tr><td>Note</td><td>1.5 新增；由 robot_manger 统一持有底层 XDDP 连接</td></tr>
+            </tbody>
+        </table>
+
+        <h3>robot.5. /zj_humanoid/robot/joint_motor/set_zero</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -768,7 +920,7 @@
             </tbody>
         </table>
 
-        <h3>robot.5. /zj_humanoid/robot/orin_states/connect_wifi</h3>
+        <h3>robot.6. /zj_humanoid/robot/orin_states/connect_wifi</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -781,7 +933,7 @@
             </tbody>
         </table>
 
-        <h3>robot.6. /zj_humanoid/robot/orin_states/wifi_list</h3>
+        <h3>robot.7. /zj_humanoid/robot/orin_states/wifi_list</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -794,7 +946,7 @@
             </tbody>
         </table>
 
-        <h3>robot.7. /zj_humanoid/robot/pico_states/connect_wifi</h3>
+        <h3>robot.8. /zj_humanoid/robot/pico_states/connect_wifi</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -807,7 +959,7 @@
             </tbody>
         </table>
 
-        <h3>robot.8. /zj_humanoid/robot/pico_states/wifi_list</h3>
+        <h3>robot.9. /zj_humanoid/robot/pico_states/wifi_list</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -820,7 +972,7 @@
             </tbody>
         </table>
 
-        <h3>robot.9. /zj_humanoid/robot/set_robot_state/OFF</h3>
+        <h3>robot.10. /zj_humanoid/robot/set_robot_state/OFF</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -833,7 +985,7 @@
             </tbody>
         </table>
 
-        <h3>robot.10. /zj_humanoid/robot/set_robot_state/restart</h3>
+        <h3>robot.11. /zj_humanoid/robot/set_robot_state/restart</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -846,7 +998,7 @@
             </tbody>
         </table>
 
-        <h3>robot.11. /zj_humanoid/robot/set_robot_state/run</h3>
+        <h3>robot.12. /zj_humanoid/robot/set_robot_state/run</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -859,7 +1011,7 @@
             </tbody>
         </table>
 
-        <h3>robot.12. /zj_humanoid/robot/set_robot_state/stop</h3>
+        <h3>robot.13. /zj_humanoid/robot/set_robot_state/stop</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -926,9 +1078,35 @@
             </tbody>
         </table>
 
-        <h2 style="color: #e67e22; border-left: 5px solid #e67e22; padding-left: 15px; margin-top: 40px;">📦 UPPERLIMB (53 services)</h2>
+        <h2 style="color: #e67e22; border-left: 5px solid #e67e22; padding-left: 15px; margin-top: 40px;">📦 UPPERLIMB (70 services)</h2>
 
-        <h3>upperlimb.1. /zj_humanoid/upperlimb/FK/left_arm</h3>
+        <h3>upperlimb.1. /zj_humanoid/upperlimb/CartesianPlanningParamsGet</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/upperlimb/CartesianPlanningParamsGet</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/CartesianPlanningParamsGet</code></td></tr>
+                <tr><td>Description</td><td>获取笛卡尔规划参数</td></tr>
+                <tr><td>Note</td><td>1.4 新增</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.2. /zj_humanoid/upperlimb/CartesianPlanningParamsSet</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/upperlimb/CartesianPlanningParamsSet</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/CartesianPlanningParamsSet</code></td></tr>
+                <tr><td>Description</td><td>设置笛卡尔规划参数</td></tr>
+                <tr><td>Note</td><td>1.4 新增</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.3. /zj_humanoid/upperlimb/FK/left_arm</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -940,7 +1118,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.2. /zj_humanoid/upperlimb/FK/right_arm</h3>
+        <h3>upperlimb.4. /zj_humanoid/upperlimb/FK/right_arm</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -952,7 +1130,20 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.3. /zj_humanoid/upperlimb/IK/left_arm</h3>
+        <h3>upperlimb.5. /zj_humanoid/upperlimb/FK/whole_body</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/upperlimb/FK/whole_body</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/FK</code></td></tr>
+                <tr><td>Description</td><td>全身运动学正解</td></tr>
+                <tr><td>Note</td><td>1.4 新增；2.0.0 响应增加 arm_type 和 arm_type_array</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.6. /zj_humanoid/upperlimb/IK/left_arm</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -965,7 +1156,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.4. /zj_humanoid/upperlimb/IK/right_arm</h3>
+        <h3>upperlimb.7. /zj_humanoid/upperlimb/IK/right_arm</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -977,7 +1168,33 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.5. /zj_humanoid/upperlimb/clear_servo_params</h3>
+        <h3>upperlimb.8. /zj_humanoid/upperlimb/IK/whole_body</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/upperlimb/IK/whole_body</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/IK</code></td></tr>
+                <tr><td>Description</td><td>全身运动学逆解</td></tr>
+                <tr><td>Note</td><td>双臂求解时 pose 数组需包含两个目标位姿</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.9. /zj_humanoid/upperlimb/basic_info</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/upperlimb/basic_info</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/BasicInfoGet</code></td></tr>
+                <tr><td>Description</td><td>获取当前机型上肢部位与关节信息</td></tr>
+                <tr><td>Note</td><td>上肢 2.0.0 新增，返回可用部位掩码、关节总数和部位列表</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.10. /zj_humanoid/upperlimb/clear_servo_params</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -990,7 +1207,44 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.6. /zj_humanoid/upperlimb/enable_speedj</h3>
+        <h3>upperlimb.11. /zj_humanoid/upperlimb/collision_detection/enable</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/upperlimb/collision_detection/enable</code></td></tr>
+                <tr><td>Type</td><td><code>std_srvs/SetBool</code></td></tr>
+                <tr><td>Description</td><td>启用或停用碰撞保护</td></tr>
+                <tr><td>Note</td><td>1.3 新增</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.12. /zj_humanoid/upperlimb/collision_detection/get_params</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/upperlimb/collision_detection/get_params</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/ParamsGet</code></td></tr>
+                <tr><td>Description</td><td>获取碰撞保护参数</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.13. /zj_humanoid/upperlimb/collision_detection/set_params</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/upperlimb/collision_detection/set_params</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/ParamsSet</code></td></tr>
+                <tr><td>Description</td><td>设置碰撞保护参数</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.14. /zj_humanoid/upperlimb/enable_speedj</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -1003,7 +1257,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.7. /zj_humanoid/upperlimb/enable_speedl</h3>
+        <h3>upperlimb.15. /zj_humanoid/upperlimb/enable_speedl</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -1016,7 +1270,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.8. /zj_humanoid/upperlimb/go_down/dual_arm</h3>
+        <h3>upperlimb.16. /zj_humanoid/upperlimb/go_down/dual_arm</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -1028,7 +1282,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.9. /zj_humanoid/upperlimb/go_down/left_arm</h3>
+        <h3>upperlimb.17. /zj_humanoid/upperlimb/go_down/left_arm</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -1040,7 +1294,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.10. /zj_humanoid/upperlimb/go_down/right_arm</h3>
+        <h3>upperlimb.18. /zj_humanoid/upperlimb/go_down/right_arm</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -1052,7 +1306,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.11. /zj_humanoid/upperlimb/go_home/dual_arm</h3>
+        <h3>upperlimb.19. /zj_humanoid/upperlimb/go_home/dual_arm</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -1065,7 +1319,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.12. /zj_humanoid/upperlimb/go_home/left_arm</h3>
+        <h3>upperlimb.20. /zj_humanoid/upperlimb/go_home/left_arm</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -1078,7 +1332,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.13. /zj_humanoid/upperlimb/go_home/lifting</h3>
+        <h3>upperlimb.21. /zj_humanoid/upperlimb/go_home/lifting</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -1091,7 +1345,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.14. /zj_humanoid/upperlimb/go_home/neck</h3>
+        <h3>upperlimb.22. /zj_humanoid/upperlimb/go_home/neck</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -1104,7 +1358,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.15. /zj_humanoid/upperlimb/go_home/right_arm</h3>
+        <h3>upperlimb.23. /zj_humanoid/upperlimb/go_home/right_arm</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -1117,7 +1371,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.16. /zj_humanoid/upperlimb/go_home/waist</h3>
+        <h3>upperlimb.24. /zj_humanoid/upperlimb/go_home/waist</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -1130,7 +1384,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.17. /zj_humanoid/upperlimb/go_home/whole_body</h3>
+        <h3>upperlimb.25. /zj_humanoid/upperlimb/go_home/whole_body</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -1143,7 +1397,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.18. /zj_humanoid/upperlimb/is_singular/left_arm</h3>
+        <h3>upperlimb.26. /zj_humanoid/upperlimb/is_singular/left_arm</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -1156,7 +1410,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.19. /zj_humanoid/upperlimb/is_singular/right_arm</h3>
+        <h3>upperlimb.27. /zj_humanoid/upperlimb/is_singular/right_arm</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -1169,59 +1423,85 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.20. /zj_humanoid/upperlimb/motion/lists</h3>
+        <h3>upperlimb.28. /zj_humanoid/upperlimb/is_singular/whole_body</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/upperlimb/is_singular/whole_body</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/IsSingular</code></td></tr>
+                <tr><td>Description</td><td>检查全身目标位姿是否奇异</td></tr>
+                <tr><td>Note</td><td>1.4 新增</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.29. /zj_humanoid/upperlimb/jacobian</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/upperlimb/jacobian</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/JacobianMatrixGet</code></td></tr>
+                <tr><td>Description</td><td>获取雅可比矩阵</td></tr>
+                <tr><td>Note</td><td>通过请求中的 arm_type 选择左臂、右臂或全身</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.30. /zj_humanoid/upperlimb/motion/lists</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
             </thead>
             <tbody>
                 <tr><td>Service Name</td><td><code>/zj_humanoid/upperlimb/motion/lists</code></td></tr>
-                <tr><td>Type</td><td><code>upperlimb/MotionLists</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/FilesLists</code></td></tr>
                 <tr><td>Description</td><td>获取动作列表</td></tr>
                 <tr><td>Note</td><td>获取可用的预定义动作列表</td></tr>
             </tbody>
         </table>
 
-        <h3>upperlimb.21. /zj_humanoid/upperlimb/motion/load</h3>
+        <h3>upperlimb.31. /zj_humanoid/upperlimb/motion/load</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
             </thead>
             <tbody>
                 <tr><td>Service Name</td><td><code>/zj_humanoid/upperlimb/motion/load</code></td></tr>
-                <tr><td>Type</td><td><code>upperlimb/MotionLoad</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/MotionsManage</code></td></tr>
                 <tr><td>Description</td><td>加载动作文件</td></tr>
                 <tr><td>Note</td><td>从文件加载预定义动作到内存</td></tr>
             </tbody>
         </table>
 
-        <h3>upperlimb.22. /zj_humanoid/upperlimb/motion/loaded_lists</h3>
+        <h3>upperlimb.32. /zj_humanoid/upperlimb/motion/loaded_lists</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
             </thead>
             <tbody>
                 <tr><td>Service Name</td><td><code>/zj_humanoid/upperlimb/motion/loaded_lists</code></td></tr>
-                <tr><td>Type</td><td><code>upperlimb/MotionLoadedLists</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/MotionsLoadedList</code></td></tr>
                 <tr><td>Description</td><td>获取已加载动作列表</td></tr>
                 <tr><td>Note</td><td>获取当前已加载到内存的动作列表</td></tr>
             </tbody>
         </table>
 
-        <h3>upperlimb.23. /zj_humanoid/upperlimb/motion/unload</h3>
+        <h3>upperlimb.33. /zj_humanoid/upperlimb/motion/unload</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
             </thead>
             <tbody>
                 <tr><td>Service Name</td><td><code>/zj_humanoid/upperlimb/motion/unload</code></td></tr>
-                <tr><td>Type</td><td><code>upperlimb/MotionUnload</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/MotionsManage</code></td></tr>
                 <tr><td>Description</td><td>卸载动作文件</td></tr>
                 <tr><td>Note</td><td>从内存中卸载指定的预定义动作</td></tr>
             </tbody>
         </table>
 
-        <h3>upperlimb.24. /zj_humanoid/upperlimb/movej/dual_arm</h3>
+        <h3>upperlimb.34. /zj_humanoid/upperlimb/movej/dual_arm</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -1234,7 +1514,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.25. /zj_humanoid/upperlimb/movej/left_arm</h3>
+        <h3>upperlimb.35. /zj_humanoid/upperlimb/movej/left_arm</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -1247,7 +1527,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.26. /zj_humanoid/upperlimb/movej/lifting</h3>
+        <h3>upperlimb.36. /zj_humanoid/upperlimb/movej/lifting</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -1260,7 +1540,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.27. /zj_humanoid/upperlimb/movej/neck</h3>
+        <h3>upperlimb.37. /zj_humanoid/upperlimb/movej/neck</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -1273,7 +1553,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.28. /zj_humanoid/upperlimb/movej/right_arm</h3>
+        <h3>upperlimb.38. /zj_humanoid/upperlimb/movej/right_arm</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -1286,7 +1566,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.29. /zj_humanoid/upperlimb/movej/waist</h3>
+        <h3>upperlimb.39. /zj_humanoid/upperlimb/movej/waist</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -1299,7 +1579,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.30. /zj_humanoid/upperlimb/movej/whole_body</h3>
+        <h3>upperlimb.40. /zj_humanoid/upperlimb/movej/whole_body</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -1312,7 +1592,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.31. /zj_humanoid/upperlimb/movej_by_path/dual_arm</h3>
+        <h3>upperlimb.41. /zj_humanoid/upperlimb/movej_by_path/dual_arm</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -1325,7 +1605,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.32. /zj_humanoid/upperlimb/movej_by_path/left_arm</h3>
+        <h3>upperlimb.42. /zj_humanoid/upperlimb/movej_by_path/left_arm</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -1338,7 +1618,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.33. /zj_humanoid/upperlimb/movej_by_path/lifting</h3>
+        <h3>upperlimb.43. /zj_humanoid/upperlimb/movej_by_path/lifting</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -1351,7 +1631,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.34. /zj_humanoid/upperlimb/movej_by_path/neck</h3>
+        <h3>upperlimb.44. /zj_humanoid/upperlimb/movej_by_path/neck</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -1364,7 +1644,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.35. /zj_humanoid/upperlimb/movej_by_path/right_arm</h3>
+        <h3>upperlimb.45. /zj_humanoid/upperlimb/movej_by_path/right_arm</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -1377,7 +1657,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.36. /zj_humanoid/upperlimb/movej_by_path/waist</h3>
+        <h3>upperlimb.46. /zj_humanoid/upperlimb/movej_by_path/waist</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -1390,7 +1670,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.37. /zj_humanoid/upperlimb/movej_by_path/whole_body</h3>
+        <h3>upperlimb.47. /zj_humanoid/upperlimb/movej_by_path/whole_body</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -1403,7 +1683,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.38. /zj_humanoid/upperlimb/movej_by_pose/dual_arm</h3>
+        <h3>upperlimb.48. /zj_humanoid/upperlimb/movej_by_pose/dual_arm</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -1416,7 +1696,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.39. /zj_humanoid/upperlimb/movej_by_pose/left_arm</h3>
+        <h3>upperlimb.49. /zj_humanoid/upperlimb/movej_by_pose/left_arm</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -1429,7 +1709,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.40. /zj_humanoid/upperlimb/movej_by_pose/right_arm</h3>
+        <h3>upperlimb.50. /zj_humanoid/upperlimb/movej_by_pose/right_arm</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -1442,7 +1722,20 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.41. /zj_humanoid/upperlimb/movel/dual_arm</h3>
+        <h3>upperlimb.51. /zj_humanoid/upperlimb/movej_by_pose/whole_body</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/upperlimb/movej_by_pose/whole_body</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/MoveJByPose</code></td></tr>
+                <tr><td>Description</td><td>通过目标位姿进行全身关节空间规划</td></tr>
+                <tr><td>Note</td><td>1.4 新增</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.52. /zj_humanoid/upperlimb/movel/dual_arm</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -1455,7 +1748,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.42. /zj_humanoid/upperlimb/movel/left_arm</h3>
+        <h3>upperlimb.53. /zj_humanoid/upperlimb/movel/left_arm</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -1468,7 +1761,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.43. /zj_humanoid/upperlimb/movel/right_arm</h3>
+        <h3>upperlimb.54. /zj_humanoid/upperlimb/movel/right_arm</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -1481,7 +1774,20 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.44. /zj_humanoid/upperlimb/movel_by_path/dual_arm</h3>
+        <h3>upperlimb.55. /zj_humanoid/upperlimb/movel/whole_body</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/upperlimb/movel/whole_body</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/MoveL</code></td></tr>
+                <tr><td>Description</td><td>全身笛卡尔直线点运动</td></tr>
+                <tr><td>Note</td><td>1.4 新增</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.56. /zj_humanoid/upperlimb/movel_by_path/dual_arm</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -1494,7 +1800,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.45. /zj_humanoid/upperlimb/movel_by_path/left_arm</h3>
+        <h3>upperlimb.57. /zj_humanoid/upperlimb/movel_by_path/left_arm</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -1507,7 +1813,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.46. /zj_humanoid/upperlimb/movel_by_path/right_arm</h3>
+        <h3>upperlimb.58. /zj_humanoid/upperlimb/movel_by_path/right_arm</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -1520,7 +1826,44 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.47. /zj_humanoid/upperlimb/safety_lock</h3>
+        <h3>upperlimb.59. /zj_humanoid/upperlimb/movel_by_path/whole_body</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/upperlimb/movel_by_path/whole_body</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/MoveLByPath</code></td></tr>
+                <tr><td>Description</td><td>全身笛卡尔直线路径运动</td></tr>
+                <tr><td>Note</td><td>1.4 新增</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.60. /zj_humanoid/upperlimb/payload/get</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/upperlimb/payload/get</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/PayLoadGet</code></td></tr>
+                <tr><td>Description</td><td>获取末端负载</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.61. /zj_humanoid/upperlimb/payload/set</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/upperlimb/payload/set</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/PayLoadSet</code></td></tr>
+                <tr><td>Description</td><td>设置末端负载</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.62. /zj_humanoid/upperlimb/safety_lock</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -1533,7 +1876,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.48. /zj_humanoid/upperlimb/set_servo_params</h3>
+        <h3>upperlimb.63. /zj_humanoid/upperlimb/set_servo_params</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -1546,7 +1889,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.49. /zj_humanoid/upperlimb/stop</h3>
+        <h3>upperlimb.64. /zj_humanoid/upperlimb/stop</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -1559,7 +1902,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.50. /zj_humanoid/upperlimb/teach_mode/enter</h3>
+        <h3>upperlimb.65. /zj_humanoid/upperlimb/teach_mode/enter</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -1571,7 +1914,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.51. /zj_humanoid/upperlimb/teach_mode/exit</h3>
+        <h3>upperlimb.66. /zj_humanoid/upperlimb/teach_mode/exit</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -1583,7 +1926,31 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.52. /zj_humanoid/upperlimb/unlock</h3>
+        <h3>upperlimb.67. /zj_humanoid/upperlimb/teach_mode/lists</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/upperlimb/teach_mode/lists</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/FilesLists</code></td></tr>
+                <tr><td>Description</td><td>获取拖动示教轨迹列表</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.68. /zj_humanoid/upperlimb/teach_mode/stop_record</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service Name</td><td><code>/zj_humanoid/upperlimb/teach_mode/stop_record</code></td></tr>
+                <tr><td>Type</td><td><code>std_srvs/Trigger</code></td></tr>
+                <tr><td>Description</td><td>停止记录拖动示教轨迹</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.69. /zj_humanoid/upperlimb/unlock</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -1596,7 +1963,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.53. /zj_humanoid/upperlimb/version</h3>
+        <h3>upperlimb.70. /zj_humanoid/upperlimb/version</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -1610,9 +1977,9 @@
         </table>
 
         <h2>Topics</h2>
-        <div class="total-count">Total: 109 topics in 10 subsystems</div>
+        <div class="total-count">Total: 126 topics in 9 subsystems</div>
 
-        <h2 style="color: #3498db; border-left: 5px solid #3498db; padding-left: 15px; margin-top: 40px;">📡 AUDIO (6 topics)</h2>
+        <h2 style="color: #3498db; border-left: 5px solid #3498db; padding-left: 15px; margin-top: 40px;">📡 AUDIO (11 topics)</h2>
 
         <h3>audio.1. /zj_humanoid/audio/asr_text</h3>
         <table>
@@ -1656,21 +2023,35 @@
             </tbody>
         </table>
 
-        <h3>audio.4. /zj_humanoid/audio/microphone/audio_data</h3>
+        <h3>audio.4. /zj_humanoid/audio/microphone/audio_data_raw</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
             </thead>
             <tbody>
-                <tr><td>Topic Name</td><td><code>/zj_humanoid/audio/microphone/audio_data</code></td></tr>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/audio/microphone/audio_data_raw</code></td></tr>
                 <tr><td>Type</td><td><code>audio/AudioData</code></td></tr>
                 <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
-                <tr><td>Description</td><td>音频流数据</td></tr>
-                <tr><td>Note</td><td>麦克风收音后的音频数据流</td></tr>
+                <tr><td>Description</td><td>麦克风原始 PCM 音频流</td></tr>
+                <tr><td>Note</td><td>采样率和声道数以消息字段为准</td></tr>
             </tbody>
         </table>
 
-        <h3>audio.5. /zj_humanoid/audio/microphone/wake_data</h3>
+        <h3>audio.5. /zj_humanoid/audio/microphone/status</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/audio/microphone/status</code></td></tr>
+                <tr><td>Type</td><td><code>audio/MicStatus</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>麦克风设备与采集状态</td></tr>
+                <tr><td>Note</td><td>默认约 1 Hz 发布，设备切换和错误发生时会及时更新</td></tr>
+            </tbody>
+        </table>
+
+        <h3>audio.6. /zj_humanoid/audio/microphone/wake_data</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -1684,7 +2065,7 @@
             </tbody>
         </table>
 
-        <h3>audio.6. /zj_humanoid/audio/microphone/wake_info</h3>
+        <h3>audio.7. /zj_humanoid/audio/microphone/wake_info</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -1698,7 +2079,63 @@
             </tbody>
         </table>
 
-        <h2 style="color: #3498db; border-left: 5px solid #3498db; padding-left: 15px; margin-top: 40px;">📡 CHASSIS (7 topics)</h2>
+        <h3>audio.8. /zj_humanoid/audio/speaker/pcm_play</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/audio/speaker/pcm_play</code></td></tr>
+                <tr><td>Type</td><td><code>audio/AudioData</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-subscribe">📥 Subscribe</span></td></tr>
+                <tr><td>Description</td><td>PCM 流式播放输入</td></tr>
+                <tr><td>Note</td><td>输入为 S16_LE PCM 数据</td></tr>
+            </tbody>
+        </table>
+
+        <h3>audio.9. /zj_humanoid/audio/speaker/playback_status</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/audio/speaker/playback_status</code></td></tr>
+                <tr><td>Type</td><td><code>audio/PlaybackStatus</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>播放状态变化通知</td></tr>
+                <tr><td>Note</td><td>状态包含 IDLE、PLAYING 和 STOPPED</td></tr>
+            </tbody>
+        </table>
+
+        <h3>audio.10. /zj_humanoid/audio/speaker/ref_data</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/audio/speaker/ref_data</code></td></tr>
+                <tr><td>Type</td><td><code>audio/AudioData</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>扬声器软件播放参考数据</td></tr>
+                <tr><td>Note</td><td>用于 AEC 辅助处理</td></tr>
+            </tbody>
+        </table>
+
+        <h3>audio.11. /zj_humanoid/audio/speaker/status</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/audio/speaker/status</code></td></tr>
+                <tr><td>Type</td><td><code>audio/SpeakerStatus</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>扬声器设备与播放状态</td></tr>
+                <tr><td>Note</td><td>默认约 1 Hz 发布</td></tr>
+            </tbody>
+        </table>
+
+        <h2 style="color: #3498db; border-left: 5px solid #3498db; padding-left: 15px; margin-top: 40px;">📡 CHASSIS (10 topics)</h2>
 
         <h3>chassis.1. /zj_humanoid/chassis/agv_imu</h3>
         <table>
@@ -1721,42 +2158,70 @@
             </thead>
             <tbody>
                 <tr><td>Topic Name</td><td><code>/zj_humanoid/chassis/agv_state</code></td></tr>
-                <tr><td>Type</td><td><code>zj_humanoid_msgs/AgvState</code></td></tr>
+                <tr><td>Type</td><td><code>chassis_msgs/AGVNewState</code></td></tr>
                 <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
                 <tr><td>Description</td><td>底盘AGV整体状态</td></tr>
-                <tr><td>Note</td><td>底盘AGV的整体状态信息，包含运行状态、错误代码和系统状态</td></tr>
+                <tr><td>Note</td><td>包含运行状态、急停、碰撞和电池信息</td></tr>
             </tbody>
         </table>
 
-        <h3>chassis.3. /zj_humanoid/chassis/calib_vel</h3>
+        <h3>chassis.3. /zj_humanoid/chassis/charge_state</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
             </thead>
             <tbody>
-                <tr><td>Topic Name</td><td><code>/zj_humanoid/chassis/calib_vel</code></td></tr>
-                <tr><td>Type</td><td><code>zj_humanoid_msgs/VelocityCalibData</code></td></tr>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/chassis/charge_state</code></td></tr>
+                <tr><td>Type</td><td><code>chassis_msgs/PowerStatusStamped</code></td></tr>
                 <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
-                <tr><td>Description</td><td>底盘速度标定数据</td></tr>
-                <tr><td>Note</td><td>底盘AGV的速度标定相关数据，用于速度控制系统的校准和优化</td></tr>
+                <tr><td>Description</td><td>手充连接状态</td></tr>
+                <tr><td>Note</td><td>WA1 专属</td></tr>
             </tbody>
         </table>
 
-        <h3>chassis.4. /zj_humanoid/chassis/motor_info</h3>
+        <h3>chassis.4. /zj_humanoid/chassis/dido_state</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/chassis/dido_state</code></td></tr>
+                <tr><td>Type</td><td><code>chassis_msgs/DIDOState</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>数字输入输出与关机状态</td></tr>
+                <tr><td>Note</td><td>WA1、WA2 通用</td></tr>
+            </tbody>
+        </table>
+
+        <h3>chassis.5. /zj_humanoid/chassis/laser_scan</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/chassis/laser_scan</code></td></tr>
+                <tr><td>Type</td><td><code>sensor_msgs/LaserScan</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>底盘二维激光数据</td></tr>
+                <tr><td>Note</td><td>WA1 专属</td></tr>
+            </tbody>
+        </table>
+
+        <h3>chassis.6. /zj_humanoid/chassis/motor_info</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
             </thead>
             <tbody>
                 <tr><td>Topic Name</td><td><code>/zj_humanoid/chassis/motor_info</code></td></tr>
-                <tr><td>Type</td><td><code>zj_humanoid_msgs/MotorInfoArray</code></td></tr>
+                <tr><td>Type</td><td><code>chassis_msgs/MotorInfo</code></td></tr>
                 <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
                 <tr><td>Description</td><td>底盘电机状态信息</td></tr>
-                <tr><td>Note</td><td>底盘AGV的电机状态信息数组，包含各电机的电流、速度、温度等参数</td></tr>
+                <tr><td>Note</td><td>包含各电机的转速、位置、电流、连接状态和错误码</td></tr>
             </tbody>
         </table>
 
-        <h3>chassis.5. /zj_humanoid/chassis/odom_info</h3>
+        <h3>chassis.7. /zj_humanoid/chassis/odom_info</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -1770,31 +2235,45 @@
             </tbody>
         </table>
 
-        <h3>chassis.6. /zj_humanoid/chassis/steer_command</h3>
+        <h3>chassis.8. /zj_humanoid/chassis/steer_command</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
             </thead>
             <tbody>
                 <tr><td>Topic Name</td><td><code>/zj_humanoid/chassis/steer_command</code></td></tr>
-                <tr><td>Type</td><td><code>zj_humanoid_msgs/SteerCommand</code></td></tr>
+                <tr><td>Type</td><td><code>chassis_msgs/SteerCommand</code></td></tr>
                 <tr><td>Direction</td><td><span class="direction-subscribe">📥 Subscribe</span></td></tr>
                 <tr><td>Description</td><td>底盘转向控制指令</td></tr>
                 <tr><td>Note</td><td>发送到底盘的转向控制指令，包含目标角度和速度</td></tr>
             </tbody>
         </table>
 
-        <h3>chassis.7. /zj_humanoid/chassis/steer_info</h3>
+        <h3>chassis.9. /zj_humanoid/chassis/steer_info</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
             </thead>
             <tbody>
                 <tr><td>Topic Name</td><td><code>/zj_humanoid/chassis/steer_info</code></td></tr>
-                <tr><td>Type</td><td><code>zj_humanoid_msgs/SteerInfo</code></td></tr>
+                <tr><td>Type</td><td><code>chassis_msgs/SteerInfo</code></td></tr>
                 <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
                 <tr><td>Description</td><td>底盘转向状态信息</td></tr>
                 <tr><td>Note</td><td>底盘AGV的转向状态信息，包含当前转向角度、速度和目标位置</td></tr>
+            </tbody>
+        </table>
+
+        <h3>chassis.10. /zj_humanoid/cmd_vel/calib</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/cmd_vel/calib</code></td></tr>
+                <tr><td>Type</td><td><code>geometry_msgs/Twist</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-subscribe">📥 Subscribe</span></td></tr>
+                <tr><td>Description</td><td>底盘速度控制输入</td></tr>
+                <tr><td>Note</td><td>WA1、WA2 通用</td></tr>
             </tbody>
         </table>
 
@@ -2026,22 +2505,7 @@
             </tbody>
         </table>
 
-        <h2 style="color: #3498db; border-left: 5px solid #3498db; padding-left: 15px; margin-top: 40px;">📡 MANIPULATION (1 topics)</h2>
-
-        <h3>manipulation.1. /zj_humanoid/manipulation/instance_segmentation_action/goal</h3>
-        <table>
-            <thead>
-                <tr><th>Field</th><th>Value</th></tr>
-            </thead>
-            <tbody>
-                <tr><td>Topic Name</td><td><code>/zj_humanoid/manipulation/instance_segmentation_action/goal</code></td></tr>
-                <tr><td>Type</td><td><code>manipulation/InstSeg</code></td></tr>
-                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
-                <tr><td>Description</td><td>实例分割Action</td></tr>
-            </tbody>
-        </table>
-
-        <h2 style="color: #3498db; border-left: 5px solid #3498db; padding-left: 15px; margin-top: 40px;">📡 NAVIGATION (3 topics)</h2>
+        <h2 style="color: #3498db; border-left: 5px solid #3498db; padding-left: 15px; margin-top: 40px;">📡 NAVIGATION (7 topics)</h2>
 
         <h3>navigation.1. /zj_humanoid/navigation/local_map</h3>
         <table>
@@ -2051,26 +2515,80 @@
             <tbody>
                 <tr><td>Topic Name</td><td><code>/zj_humanoid/navigation/local_map</code></td></tr>
                 <tr><td>Type</td><td><code>navigation/LocalMap</code></td></tr>
-                <tr><td>Direction</td><td><span class="direction-subscribe">📥 Subscribe</span></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
                 <tr><td>Description</td><td>局部障碍物信息</td></tr>
             </tbody>
         </table>
 
-        <h3>navigation.2. /zj_humanoid/navigation/navigation_status</h3>
+        <h3>navigation.2. /zj_humanoid/navigation/local_map_render</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/navigation/local_map_render</code></td></tr>
+                <tr><td>Type</td><td><code>navigation/LocalMap</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>前端展示用轻量局部地图</td></tr>
+                <tr><td>Note</td><td>v1.5.0 新增，不替代导航使用的 local_map</td></tr>
+            </tbody>
+        </table>
+
+        <h3>navigation.3. /zj_humanoid/navigation/map</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/navigation/map</code></td></tr>
+                <tr><td>Type</td><td><code>nav_msgs/OccupancyGrid</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>全局地图信息</td></tr>
+                <tr><td>Note</td><td>地图管理模块发布的当前全局地图</td></tr>
+            </tbody>
+        </table>
+
+        <h3>navigation.4. /zj_humanoid/navigation/map_metadata</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/navigation/map_metadata</code></td></tr>
+                <tr><td>Type</td><td><code>nav_msgs/MapMetaData</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>当前地图元数据</td></tr>
+            </tbody>
+        </table>
+
+        <h3>navigation.5. /zj_humanoid/navigation/navigation_code</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/navigation/navigation_code</code></td></tr>
+                <tr><td>Type</td><td><code>navigation/ModuleStatus</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>导航模块状态与错误码</td></tr>
+            </tbody>
+        </table>
+
+        <h3>navigation.6. /zj_humanoid/navigation/navigation_status</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
             </thead>
             <tbody>
                 <tr><td>Topic Name</td><td><code>/zj_humanoid/navigation/navigation_status</code></td></tr>
-                <tr><td>Type</td><td><code>navigation/NavigationStatus</code></td></tr>
-                <tr><td>Direction</td><td><span class="direction-subscribe">📥 Subscribe</span></td></tr>
+                <tr><td>Type</td><td><code>navigation/NavigationState</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
                 <tr><td>Description</td><td>当前导航状态</td></tr>
                 <tr><td>Note</td><td>当前导航状态信息</td></tr>
             </tbody>
         </table>
 
-        <h3>navigation.3. /zj_humanoid/navigation/odom_info</h3>
+        <h3>navigation.7. /zj_humanoid/navigation/odom_info</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -2078,25 +2596,64 @@
             <tbody>
                 <tr><td>Topic Name</td><td><code>/zj_humanoid/navigation/odom_info</code></td></tr>
                 <tr><td>Type</td><td><code>nav_msgs/Odometry</code></td></tr>
-                <tr><td>Direction</td><td><span class="direction-subscribe">📥 Subscribe</span></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
                 <tr><td>Description</td><td>当前位姿信息</td></tr>
                 <tr><td>Note</td><td>当前位姿信息，有定位时才会输出结果</td></tr>
             </tbody>
         </table>
 
-        <h2 style="color: #3498db; border-left: 5px solid #3498db; padding-left: 15px; margin-top: 40px;">📡 OTHER (1 topics)</h2>
+        <h2 style="color: #3498db; border-left: 5px solid #3498db; padding-left: 15px; margin-top: 40px;">📡 PERCEPTION (4 topics)</h2>
 
-        <h3>other.1. /map</h3>
+        <h3>perception.1. /perception/mapping_result</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
             </thead>
             <tbody>
-                <tr><td>Topic Name</td><td><code>/map</code></td></tr>
-                <tr><td>Type</td><td><code>nav_msgs/OccupancyGrid</code></td></tr>
-                <tr><td>Direction</td><td><span class="direction-subscribe">📥 Subscribe</span></td></tr>
-                <tr><td>Description</td><td>全局地图信息</td></tr>
-                <tr><td>Note</td><td>全局地图信息</td></tr>
+                <tr><td>Topic Name</td><td><code>/perception/mapping_result</code></td></tr>
+                <tr><td>Type</td><td><code>naviai_localization_msgs/MappingResult</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>建图结果</td></tr>
+                <tr><td>Note</td><td>兼容旧版建图结果话题</td></tr>
+            </tbody>
+        </table>
+
+        <h3>perception.2. /zj_humanoid/perception/location_code</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/perception/location_code</code></td></tr>
+                <tr><td>Type</td><td><code>module_common_msgs/ModuleStatus</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>定位模块状态与错误码</td></tr>
+            </tbody>
+        </table>
+
+        <h3>perception.3. /zj_humanoid/perception/mapping_code</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/perception/mapping_code</code></td></tr>
+                <tr><td>Type</td><td><code>module_common_msgs/ModuleStatus</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>建图模块状态与错误码</td></tr>
+            </tbody>
+        </table>
+
+        <h3>perception.4. /zj_humanoid/perception/perception_code</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/perception/perception_code</code></td></tr>
+                <tr><td>Type</td><td><code>module_common_msgs/ModuleStatus</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>感知模块状态与错误码</td></tr>
             </tbody>
         </table>
 
@@ -2109,10 +2666,10 @@
             </thead>
             <tbody>
                 <tr><td>Topic Name</td><td><code>/zj_humanoid/robot/battery_info</code></td></tr>
-                <tr><td>Type</td><td><code>zj_robot/BatteryInfo</code></td></tr>
+                <tr><td>Type</td><td><code>sensor_msgs/BatteryState</code></td></tr>
                 <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
                 <tr><td>Description</td><td>电池相关信息</td></tr>
-                <tr><td>Note</td><td>电池BMS相关信息，机器人当前电量还剩多少 回复值应为1~100%</td></tr>
+                <tr><td>Note</td><td>percentage 取值为 0.0-1.0，WA1、WA2 通用</td></tr>
             </tbody>
         </table>
 
@@ -2748,9 +3305,37 @@
             </tbody>
         </table>
 
-        <h2 style="color: #3498db; border-left: 5px solid #3498db; padding-left: 15px; margin-top: 40px;">📡 UPPERLIMB (29 topics)</h2>
+        <h2 style="color: #3498db; border-left: 5px solid #3498db; padding-left: 15px; margin-top: 40px;">📡 UPPERLIMB (32 topics)</h2>
 
-        <h3>upperlimb.1. /zj_humanoid/upperlimb/jacobian/left_arm</h3>
+        <h3>upperlimb.1. /zj_humanoid/sim/upperlimb/from_algo</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/sim/upperlimb/from_algo</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/Joints</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-subscribe">📥 Subscribe</span></td></tr>
+                <tr><td>Description</td><td>上肢算法输出仿真</td></tr>
+                <tr><td>Note</td><td>1.3 新增</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.2. /zj_humanoid/sim/upperlimb/to_algo</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/sim/upperlimb/to_algo</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/Joints</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-publish">📤 Publish</span></td></tr>
+                <tr><td>Description</td><td>仿真上肢数据输入算法</td></tr>
+                <tr><td>Note</td><td>1.3 新增</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.3. /zj_humanoid/upperlimb/jacobian/left_arm</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -2764,7 +3349,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.2. /zj_humanoid/upperlimb/jacobian/right_arm</h3>
+        <h3>upperlimb.4. /zj_humanoid/upperlimb/jacobian/right_arm</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -2778,7 +3363,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.3. /zj_humanoid/upperlimb/joint_states</h3>
+        <h3>upperlimb.5. /zj_humanoid/upperlimb/joint_states</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -2792,7 +3377,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.4. /zj_humanoid/upperlimb/occupancy_state</h3>
+        <h3>upperlimb.6. /zj_humanoid/upperlimb/occupancy_state</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -2806,7 +3391,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.5. /zj_humanoid/upperlimb/servoj/dual_arm</h3>
+        <h3>upperlimb.7. /zj_humanoid/upperlimb/servoj/dual_arm</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -2820,7 +3405,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.6. /zj_humanoid/upperlimb/servoj/left_arm</h3>
+        <h3>upperlimb.8. /zj_humanoid/upperlimb/servoj/left_arm</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -2834,7 +3419,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.7. /zj_humanoid/upperlimb/servoj/lifting</h3>
+        <h3>upperlimb.9. /zj_humanoid/upperlimb/servoj/lifting</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -2848,7 +3433,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.8. /zj_humanoid/upperlimb/servoj/neck</h3>
+        <h3>upperlimb.10. /zj_humanoid/upperlimb/servoj/neck</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -2862,7 +3447,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.9. /zj_humanoid/upperlimb/servoj/right_arm</h3>
+        <h3>upperlimb.11. /zj_humanoid/upperlimb/servoj/right_arm</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -2876,7 +3461,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.10. /zj_humanoid/upperlimb/servoj/waist</h3>
+        <h3>upperlimb.12. /zj_humanoid/upperlimb/servoj/waist</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -2890,7 +3475,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.11. /zj_humanoid/upperlimb/servoj/whole_body</h3>
+        <h3>upperlimb.13. /zj_humanoid/upperlimb/servoj/whole_body</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -2904,7 +3489,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.12. /zj_humanoid/upperlimb/servol/dual_arm</h3>
+        <h3>upperlimb.14. /zj_humanoid/upperlimb/servol/dual_arm</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -2918,7 +3503,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.13. /zj_humanoid/upperlimb/servol/left_arm</h3>
+        <h3>upperlimb.15. /zj_humanoid/upperlimb/servol/left_arm</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -2932,7 +3517,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.14. /zj_humanoid/upperlimb/servol/right_arm</h3>
+        <h3>upperlimb.16. /zj_humanoid/upperlimb/servol/right_arm</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -2946,7 +3531,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.15. /zj_humanoid/upperlimb/speedj/dual_arm</h3>
+        <h3>upperlimb.17. /zj_humanoid/upperlimb/speedj/dual_arm</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -2960,7 +3545,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.16. /zj_humanoid/upperlimb/speedj/left_arm</h3>
+        <h3>upperlimb.18. /zj_humanoid/upperlimb/speedj/left_arm</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -2974,7 +3559,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.17. /zj_humanoid/upperlimb/speedj/lifting</h3>
+        <h3>upperlimb.19. /zj_humanoid/upperlimb/speedj/lifting</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -2988,7 +3573,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.18. /zj_humanoid/upperlimb/speedj/neck</h3>
+        <h3>upperlimb.20. /zj_humanoid/upperlimb/speedj/neck</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -3002,7 +3587,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.19. /zj_humanoid/upperlimb/speedj/right_arm</h3>
+        <h3>upperlimb.21. /zj_humanoid/upperlimb/speedj/right_arm</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -3016,7 +3601,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.20. /zj_humanoid/upperlimb/speedj/waist</h3>
+        <h3>upperlimb.22. /zj_humanoid/upperlimb/speedj/waist</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -3030,7 +3615,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.21. /zj_humanoid/upperlimb/speedj/whole_body</h3>
+        <h3>upperlimb.23. /zj_humanoid/upperlimb/speedj/whole_body</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -3044,7 +3629,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.22. /zj_humanoid/upperlimb/speedl/dual_arm</h3>
+        <h3>upperlimb.24. /zj_humanoid/upperlimb/speedl/dual_arm</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -3058,7 +3643,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.23. /zj_humanoid/upperlimb/speedl/left_arm</h3>
+        <h3>upperlimb.25. /zj_humanoid/upperlimb/speedl/left_arm</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -3072,7 +3657,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.24. /zj_humanoid/upperlimb/speedl/right_arm</h3>
+        <h3>upperlimb.26. /zj_humanoid/upperlimb/speedl/right_arm</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -3086,7 +3671,21 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.25. /zj_humanoid/upperlimb/tcp_pose/left_arm</h3>
+        <h3>upperlimb.27. /zj_humanoid/upperlimb/speedl/whole_body</h3>
+        <table>
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Topic Name</td><td><code>/zj_humanoid/upperlimb/speedl/whole_body</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/SpeedL</code></td></tr>
+                <tr><td>Direction</td><td><span class="direction-subscribe">📥 Subscribe</span></td></tr>
+                <tr><td>Description</td><td>全身笛卡尔速度控制</td></tr>
+                <tr><td>Note</td><td>1.4 新增</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.28. /zj_humanoid/upperlimb/tcp_pose/left_arm</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -3100,7 +3699,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.26. /zj_humanoid/upperlimb/tcp_pose/right_arm</h3>
+        <h3>upperlimb.29. /zj_humanoid/upperlimb/tcp_pose/right_arm</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -3114,7 +3713,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.27. /zj_humanoid/upperlimb/tcp_speed/dual_arm</h3>
+        <h3>upperlimb.30. /zj_humanoid/upperlimb/tcp_speed/dual_arm</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -3128,7 +3727,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.28. /zj_humanoid/upperlimb/uplimb_occupation</h3>
+        <h3>upperlimb.31. /zj_humanoid/upperlimb/uplimb_occupation</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -3142,7 +3741,7 @@
             </tbody>
         </table>
 
-        <h3>upperlimb.29. /zj_humanoid/upperlimb/uplimb_state</h3>
+        <h3>upperlimb.32. /zj_humanoid/upperlimb/uplimb_state</h3>
         <table>
             <thead>
                 <tr><th>Field</th><th>Value</th></tr>
@@ -3156,15 +3755,114 @@
             </tbody>
         </table>
 
+        <h2>Actions</h2>
+        <div class="total-count">Total: 8 actions in 5 subsystems</div>
+
+        <h2 style="color: #16a085; border-left: 5px solid #16a085; padding-left: 15px; margin-top: 40px;">⚙️ AUDIO (2 actions)</h2>
+
+        <h3>audio.1. /zj_humanoid/audio/LLM_chat</h3>
+        <table>
+            <thead><tr><th>Field</th><th>Value</th></tr></thead>
+            <tbody>
+                <tr><td>Action Name</td><td><code>/zj_humanoid/audio/LLM_chat</code></td></tr>
+                <tr><td>Type</td><td><code>audio/LLMChat</code></td></tr>
+                <tr><td>Description</td><td>大模型对话</td></tr>
+                <tr><td>Note</td><td>支持上下文、语音输出和流式文本反馈</td></tr>
+            </tbody>
+        </table>
+
+        <h3>audio.2. /zj_humanoid/audio/media_play</h3>
+        <table>
+            <thead><tr><th>Field</th><th>Value</th></tr></thead>
+            <tbody>
+                <tr><td>Action Name</td><td><code>/zj_humanoid/audio/media_play</code></td></tr>
+                <tr><td>Type</td><td><code>audio/MediaPlay</code></td></tr>
+                <tr><td>Description</td><td>播放媒体文件</td></tr>
+                <tr><td>Note</td><td>文件播放倍率范围为 0.5-2.0，播放期间可调用 speaker/stop 中断</td></tr>
+            </tbody>
+        </table>
+
+        <h2 style="color: #16a085; border-left: 5px solid #16a085; padding-left: 15px; margin-top: 40px;">⚙️ MANIPULATION (1 actions)</h2>
+
+        <h3>manipulation.1. /zj_humanoid/manipulation/instance_segmentation_action</h3>
+        <table>
+            <thead><tr><th>Field</th><th>Value</th></tr></thead>
+            <tbody>
+                <tr><td>Action Name</td><td><code>/zj_humanoid/manipulation/instance_segmentation_action</code></td></tr>
+                <tr><td>Type</td><td><code>manipulation/InstSeg</code></td></tr>
+                <tr><td>Description</td><td>实例分割</td></tr>
+            </tbody>
+        </table>
+
+        <h2 style="color: #16a085; border-left: 5px solid #16a085; padding-left: 15px; margin-top: 40px;">⚙️ NAVIGATION (1 actions)</h2>
+
+        <h3>navigation.1. /zj_humanoid/navigation/navigation</h3>
+        <table>
+            <thead><tr><th>Field</th><th>Value</th></tr></thead>
+            <tbody>
+                <tr><td>Action Name</td><td><code>/zj_humanoid/navigation/navigation</code></td></tr>
+                <tr><td>Type</td><td><code>navigation/Navigation</code></td></tr>
+                <tr><td>Description</td><td>导航接口</td></tr>
+            </tbody>
+        </table>
+
+        <h2 style="color: #16a085; border-left: 5px solid #16a085; padding-left: 15px; margin-top: 40px;">⚙️ PERCEPTION (1 actions)</h2>
+
+        <h3>perception.1. /zj_humanoid/perception/finish_mapping</h3>
+        <table>
+            <thead><tr><th>Field</th><th>Value</th></tr></thead>
+            <tbody>
+                <tr><td>Action Name</td><td><code>/zj_humanoid/perception/finish_mapping</code></td></tr>
+                <tr><td>Type</td><td><code>naviai_localization_msgs/FinishMapping</code></td></tr>
+                <tr><td>Description</td><td>结束或中止建图</td></tr>
+                <tr><td>Note</td><td>method=0 时结束并保存地图，method=1 时中止且不保存；后处理开始后无法被取消</td></tr>
+            </tbody>
+        </table>
+
+        <h2 style="color: #16a085; border-left: 5px solid #16a085; padding-left: 15px; margin-top: 40px;">⚙️ UPPERLIMB (3 actions)</h2>
+
+        <h3>upperlimb.1. /zj_humanoid/upperlimb/motion</h3>
+        <table>
+            <thead><tr><th>Field</th><th>Value</th></tr></thead>
+            <tbody>
+                <tr><td>Action Name</td><td><code>/zj_humanoid/upperlimb/motion</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/MotionExecute</code></td></tr>
+                <tr><td>Description</td><td>执行预加载轨迹</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.2. /zj_humanoid/upperlimb/teach_mode/replay</h3>
+        <table>
+            <thead><tr><th>Field</th><th>Value</th></tr></thead>
+            <tbody>
+                <tr><td>Action Name</td><td><code>/zj_humanoid/upperlimb/teach_mode/replay</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/DragTeachReplay</code></td></tr>
+                <tr><td>Description</td><td>回放拖动示教轨迹</td></tr>
+                <tr><td>Note</td><td>1.3 新增</td></tr>
+            </tbody>
+        </table>
+
+        <h3>upperlimb.3. /zj_humanoid/upperlimb/teach_mode/start_record</h3>
+        <table>
+            <thead><tr><th>Field</th><th>Value</th></tr></thead>
+            <tbody>
+                <tr><td>Action Name</td><td><code>/zj_humanoid/upperlimb/teach_mode/start_record</code></td></tr>
+                <tr><td>Type</td><td><code>upperlimb/DragTeachRecord</code></td></tr>
+                <tr><td>Description</td><td>开始记录拖动示教轨迹</td></tr>
+                <tr><td>Note</td><td>1.3 新增</td></tr>
+            </tbody>
+        </table>
+
         <hr>
 
         <div class="summary">
             <h2>Summary</h2>
             <ul>
-                <li><strong>Total Services:</strong> 108</li>
-                <li><strong>Total Topics:</strong> 109</li>
-                <li><strong>Total Interfaces:</strong> 217</li>
-                <li><strong>Subsystems:</strong> 9 (services), 10 (topics)</li>
+                <li><strong>Total Services:</strong> 137</li>
+                <li><strong>Total Topics:</strong> 126</li>
+                <li><strong>Total Actions:</strong> 8</li>
+                <li><strong>Total Interfaces:</strong> 271</li>
+                <li><strong>Subsystems:</strong> 10 (services), 9 (topics), 5 (actions)</li>
             </ul>
         </div>
 

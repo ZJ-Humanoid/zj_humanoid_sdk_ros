@@ -1,0 +1,6 @@
+service:
+  name: /zj_humanoid/perception/mapping_version
+  description: 获取建图模块版本
+  type: std_srvs/Trigger
+  demos:
+  note: ""

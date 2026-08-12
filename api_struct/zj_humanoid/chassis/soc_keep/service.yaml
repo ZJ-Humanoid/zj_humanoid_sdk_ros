@@ -1,0 +1,6 @@
+service:
+  name: /zj_humanoid/chassis/soc_keep
+  description: 设置底盘保电参数
+  type: chassis_msgs/SOCkeepControl
+  demos:
+  note: "可设置上下限、电压和电流"

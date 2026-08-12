@@ -1,0 +1,6 @@
+service:
+  name: /zj_humanoid/upperlimb/collision_detection/enable
+  description: 启用或停用碰撞保护
+  type: std_srvs/SetBool
+  demos:
+  note: "1.3 新增"

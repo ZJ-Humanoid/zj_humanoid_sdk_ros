@@ -1,0 +1,6 @@
+service:
+  name: /zj_humanoid/upperlimb/CartesianPlanningParamsSet
+  description: 设置笛卡尔规划参数
+  type: upperlimb/CartesianPlanningParamsSet
+  demos:
+  note: "1.4 新增"

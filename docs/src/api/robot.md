@@ -3,6 +3,8 @@ title: ROBOT 子系统
 description: ROBOT 子系统的所有ROS接口
 ---
 
+# 🤖 ROBOT 子系统
+
 ## 📊 接口概览
 
 <Markmap :content="markmapContent" />
@@ -16,11 +18,13 @@ markmap:
 ---
 
 # 🤖 ROBOT 子系统
-## 📦 Services (12)
+## 📦 Services (13)
 - basic_info
 - face_show
   - media_play
   - text_show
+- hardware
+  - set_led
 - joint_motor
   - set_zero
 - orin_states
@@ -52,7 +56,7 @@ markmap:
 
 ---
 
-## 📦 Services (12)
+## 📦 Services (13)
 
 ### 1. `basic_info`
 
@@ -77,11 +81,20 @@ markmap:
 | 字段 | 值 |
 |------|-----|
 | **Service Name** | /zj_humanoid/robot/face_show/text_show |
-| **Type** | [robot/FaceText](../zj_humanoid_types#facetext) |
+| **Type** | [robot/FaceScreen](../zj_humanoid_types#facescreen) |
 | **Description** | 脸部显示文字 |
 | **Note** | 机器人脸部屏幕显示文字，支持指令显示“Hello World” |
 
-### 4. `joint_motor/set_zero`
+### 4. `hardware/set_led`
+
+| 字段 | 值 |
+|------|-----|
+| **Service Name** | /zj_humanoid/robot/hardware/set_led |
+| **Type** | [robot/SetLED](../zj_humanoid_types#setled) |
+| **Description** | 设置 WA2 左右灯带和前灯状态 |
+| **Note** | 1.5 新增；由 robot_manger 统一持有底层 XDDP 连接 |
+
+### 5. `joint_motor/set_zero`
 
 | 字段 | 值 |
 |------|-----|
@@ -90,7 +103,7 @@ markmap:
 | **Description** | 电机自动标零 |
 | **Note** | 机器人关节自动标零 |
 
-### 5. `orin_states/connect_wifi`
+### 6. `orin_states/connect_wifi`
 
 | 字段 | 值 |
 |------|-----|
@@ -99,7 +112,7 @@ markmap:
 | **Description** | orin连接wifi |
 | **Note** | 尝试让机器人大脑orin去连接wifi热点 |
 
-### 6. `orin_states/wifi_list`
+### 7. `orin_states/wifi_list`
 
 | 字段 | 值 |
 |------|-----|
@@ -108,7 +121,7 @@ markmap:
 | **Description** | orin_wifi列表 |
 | **Note** | 获取机器人大脑检测到的wifi热点名称，当前机器人大脑检测到多少个wifi信号 回复应大于1 |
 
-### 7. `pico_states/connect_wifi`
+### 8. `pico_states/connect_wifi`
 
 | 字段 | 值 |
 |------|-----|
@@ -117,7 +130,7 @@ markmap:
 | **Description** | pico连接wifi |
 | **Note** | 尝试让机器人小脑pico去连接wifi热点 |
 
-### 8. `pico_states/wifi_list`
+### 9. `pico_states/wifi_list`
 
 | 字段 | 值 |
 |------|-----|
@@ -126,7 +139,7 @@ markmap:
 | **Description** | pico_wifi列表 |
 | **Note** | 获取机器人小脑检测到的wifi热点名称，当前机器人小脑检测到多少个wifi信号 回复应大于1 |
 
-### 9. `set_robot_state/OFF`
+### 10. `set_robot_state/OFF`
 
 | 字段 | 值 |
 |------|-----|
@@ -135,7 +148,7 @@ markmap:
 | **Description** | 机器人关机 |
 | **Note** | 将机器人关机 3秒后，大小脑关机，之后后没法检测到机器人建立ros链接 |
 
-### 10. `set_robot_state/restart`
+### 11. `set_robot_state/restart`
 
 | 字段 | 值 |
 |------|-----|
@@ -144,7 +157,7 @@ markmap:
 | **Description** | 状态机重启 |
 | **Note** | 机器人先进stop软急停状态，再自动变为RUN启动运行，在某些故障状态可以执行，但如果有异常的存在，也可能会失败，将机器人状态机重启 持续检测robot_state话题，经过最长60秒钟的等待，状态应切换为：RUN |
 
-### 11. `set_robot_state/run`
+### 12. `set_robot_state/run`
 
 | 字段 | 值 |
 |------|-----|
@@ -153,7 +166,7 @@ markmap:
 | **Description** | 状态机运行 |
 | **Note** | 如果机器人处于非RUN状态，尝试将机器人状态值设置为RUN，但如果有异常的存在，也可能会失败，将机器人状态设置为RUN 持续检测robot_state话题，经过最长60秒钟的等待，状态应切换为：RUN |
 
-### 12. `set_robot_state/stop`
+### 13. `set_robot_state/stop`
 
 | 字段 | 值 |
 |------|-----|
@@ -169,10 +182,10 @@ markmap:
 | 字段 | 值 |
 |------|-----|
 | **Topic Name** | /zj_humanoid/robot/battery_info |
-| **Type** | [robot/BatteryInfo](../zj_humanoid_types#batteryinfo) |
+| **Type** | sensor_msgs/BatteryState |
 | **Direction** | 📤 Publish |
 | **Description** | 电池相关信息 |
-| **Note** | 电池BMS相关信息，机器人当前电量还剩多少 回复值应为1~100% |
+| **Note** | percentage 取值为 0.0-1.0，WA1、WA2 通用 |
 
 ### 2. `joint_motor/errors`
 

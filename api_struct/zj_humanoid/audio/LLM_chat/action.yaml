@@ -1,0 +1,6 @@
+action:
+  name: /zj_humanoid/audio/LLM_chat
+  description: 大模型对话
+  type: audio/LLMChat
+  demos:
+  note: "支持上下文、语音输出和流式文本反馈"

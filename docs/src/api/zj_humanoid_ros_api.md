@@ -1,64 +1,73 @@
 ---
 layout: doc
 title: ZJ Humanoid ROS API 接口文档
-description: ZJ Humanoid ROS1 APIs
-version: v1.2.0
+description: 浙江人形机器人 Navi 系列 ROS1 API
+version: v1.5.0
 ---
 
 # ZJ Humanoid ROS API 接口文档
 
 ::: info 文档信息
-- **描述**: ZJ Humanoid ROS1 APIs
-- **版本**: v1.2.0
-- **生成时间**: 2026-08-12 15:50:08
+- **描述**: 浙江人形机器人 Navi 系列 ROS1 API
+- **版本**: v1.5.0
+- **生成时间**: 2026-08-12 17:34:53
 :::
 
 ## 📊 统计信息
 
-- **Services**: 108 个服务
-- **Topics**: 109 个话题
-- **总计**: 217 个接口
-- **子系统**: 9 个 (services), 9 个 (topics)
+- **Services**: 137 个服务
+- **Topics**: 126 个话题
+- **Actions**: 8 个动作
+- **总计**: 271 个接口
+- **子系统**: 10 个 (services), 9 个 (topics), 5 个 (actions)
 
 ## 📑 目录导航
 
-本文档包含所有ROS接口的详细信息，您可以通过滚动浏览所有内容，或使用右侧导航快速跳转。
+接口按类型和子系统分类如下。
 
 **Services (服务):**
-- [🔊 AUDIO](#audio-services) (10 services)
-- [🚙 CHASSIS](#chassis-services) (6 services)
+- [🔊 AUDIO](#audio-services) (9 services)
+- [🚙 CHASSIS](#chassis-services) (7 services)
 - [🖐️ HAND](#hand-services) (13 services)
 - [🦵 LOWERLIMB](#lowerlimb-services) (1 services)
 - [🔧 MANIPULATION](#manipulation-services) (8 services)
-- [🧭 NAVIGATION](#navigation-services) (1 services)
-- [🤖 ROBOT](#robot-services) (12 services)
+- [🧭 NAVIGATION](#navigation-services) (5 services)
+- [🗺️ PERCEPTION](#perception-services) (7 services)
+- [🤖 ROBOT](#robot-services) (13 services)
 - [📷 SENSOR](#sensor-services) (4 services)
-- [🦾 UPPERLIMB](#upperlimb-services) (53 services)
+- [🦾 UPPERLIMB](#upperlimb-services) (70 services)
 
 **Topics (话题):**
-- [🔊 AUDIO](#audio-topics) (6 topics)
-- [🚙 CHASSIS](#chassis-topics) (7 topics)
+- [🔊 AUDIO](#audio-topics) (11 topics)
+- [🚙 CHASSIS](#chassis-topics) (10 topics)
 - [🖐️ HAND](#hand-topics) (5 topics)
 - [🦵 LOWERLIMB](#lowerlimb-topics) (11 topics)
-- [🔧 MANIPULATION](#manipulation-topics) (1 topics)
-- [🧭 NAVIGATION](#navigation-topics) (4 topics)
+- [🧭 NAVIGATION](#navigation-topics) (7 topics)
+- [🗺️ PERCEPTION](#perception-topics) (4 topics)
 - [🤖 ROBOT](#robot-topics) (10 topics)
 - [📷 SENSOR](#sensor-topics) (36 topics)
-- [🦾 UPPERLIMB](#upperlimb-topics) (29 topics)
+- [🦾 UPPERLIMB](#upperlimb-topics) (32 topics)
+
+**Actions (动作):**
+- [🔊 AUDIO](#audio-actions) (2 actions)
+- [🔧 MANIPULATION](#manipulation-actions) (1 actions)
+- [🧭 NAVIGATION](#navigation-actions) (1 actions)
+- [🗺️ PERCEPTION](#perception-actions) (1 actions)
+- [🦾 UPPERLIMB](#upperlimb-actions) (3 actions)
 
 ---
 
 ## 📦 Services
 
-共 108 个服务，分布在 9 个子系统中。
+共 137 个服务，分布在 10 个子系统中。
 
-### 🔊 AUDIO (10 services) {#audio-services}
+### 🔊 AUDIO (9 services) {#audio-services}
 
 <MarkdownInclude src="api/audio.md" :skip-frontmatter="true" :skip-title="true" section="services" />
 
 <div style='margin: 2rem 0; border-top: 2px solid var(--vp-c-divider);'></div>
 
-### 🚙 CHASSIS (6 services) {#chassis-services}
+### 🚙 CHASSIS (7 services) {#chassis-services}
 
 <MarkdownInclude src="api/chassis.md" :skip-frontmatter="true" :skip-title="true" section="services" />
 
@@ -82,13 +91,19 @@ version: v1.2.0
 
 <div style='margin: 2rem 0; border-top: 2px solid var(--vp-c-divider);'></div>
 
-### 🧭 NAVIGATION (1 services) {#navigation-services}
+### 🧭 NAVIGATION (5 services) {#navigation-services}
 
 <MarkdownInclude src="api/navigation.md" :skip-frontmatter="true" :skip-title="true" section="services" />
 
 <div style='margin: 2rem 0; border-top: 2px solid var(--vp-c-divider);'></div>
 
-### 🤖 ROBOT (12 services) {#robot-services}
+### 🗺️ PERCEPTION (7 services) {#perception-services}
+
+<MarkdownInclude src="api/perception.md" :skip-frontmatter="true" :skip-title="true" section="services" />
+
+<div style='margin: 2rem 0; border-top: 2px solid var(--vp-c-divider);'></div>
+
+### 🤖 ROBOT (13 services) {#robot-services}
 
 <MarkdownInclude src="api/robot.md" :skip-frontmatter="true" :skip-title="true" section="services" />
 
@@ -100,7 +115,7 @@ version: v1.2.0
 
 <div style='margin: 2rem 0; border-top: 2px solid var(--vp-c-divider);'></div>
 
-### 🦾 UPPERLIMB (53 services) {#upperlimb-services}
+### 🦾 UPPERLIMB (70 services) {#upperlimb-services}
 
 <MarkdownInclude src="api/upperlimb.md" :skip-frontmatter="true" :skip-title="true" section="services" />
 
@@ -109,15 +124,15 @@ version: v1.2.0
 
 ## 📡 Topics
 
-共 109 个话题，分布在 9 个子系统中。
+共 126 个话题，分布在 9 个子系统中。
 
-### 🔊 AUDIO (6 topics) {#audio-topics}
+### 🔊 AUDIO (11 topics) {#audio-topics}
 
 <MarkdownInclude src="api/audio.md" :skip-frontmatter="true" :skip-title="true" section="topics" />
 
 <div style='margin: 2rem 0; border-top: 2px solid var(--vp-c-divider);'></div>
 
-### 🚙 CHASSIS (7 topics) {#chassis-topics}
+### 🚙 CHASSIS (10 topics) {#chassis-topics}
 
 <MarkdownInclude src="api/chassis.md" :skip-frontmatter="true" :skip-title="true" section="topics" />
 
@@ -135,15 +150,15 @@ version: v1.2.0
 
 <div style='margin: 2rem 0; border-top: 2px solid var(--vp-c-divider);'></div>
 
-### 🔧 MANIPULATION (1 topics) {#manipulation-topics}
+### 🧭 NAVIGATION (7 topics) {#navigation-topics}
 
-<MarkdownInclude src="api/manipulation.md" :skip-frontmatter="true" :skip-title="true" section="topics" />
+<MarkdownInclude src="api/navigation.md" :skip-frontmatter="true" :skip-title="true" section="topics" />
 
 <div style='margin: 2rem 0; border-top: 2px solid var(--vp-c-divider);'></div>
 
-### 🧭 NAVIGATION (4 topics) {#navigation-topics}
+### 🗺️ PERCEPTION (4 topics) {#perception-topics}
 
-<MarkdownInclude src="api/navigation.md" :skip-frontmatter="true" :skip-title="true" section="topics" />
+<MarkdownInclude src="api/perception.md" :skip-frontmatter="true" :skip-title="true" section="topics" />
 
 <div style='margin: 2rem 0; border-top: 2px solid var(--vp-c-divider);'></div>
 
@@ -159,7 +174,42 @@ version: v1.2.0
 
 <div style='margin: 2rem 0; border-top: 2px solid var(--vp-c-divider);'></div>
 
-### 🦾 UPPERLIMB (29 topics) {#upperlimb-topics}
+### 🦾 UPPERLIMB (32 topics) {#upperlimb-topics}
 
 <MarkdownInclude src="api/upperlimb.md" :skip-frontmatter="true" :skip-title="true" section="topics" />
+
+
+<div style='margin: 3rem 0; padding: 2rem 0; border-top: 3px solid var(--vp-c-brand-1);'></div>
+
+## ⚙️ Actions
+
+共 8 个动作，分布在 5 个子系统中。
+
+### 🔊 AUDIO (2 actions) {#audio-actions}
+
+<MarkdownInclude src="api/audio.md" :skip-frontmatter="true" :skip-title="true" section="actions" />
+
+<div style='margin: 2rem 0; border-top: 2px solid var(--vp-c-divider);'></div>
+
+### 🔧 MANIPULATION (1 actions) {#manipulation-actions}
+
+<MarkdownInclude src="api/manipulation.md" :skip-frontmatter="true" :skip-title="true" section="actions" />
+
+<div style='margin: 2rem 0; border-top: 2px solid var(--vp-c-divider);'></div>
+
+### 🧭 NAVIGATION (1 actions) {#navigation-actions}
+
+<MarkdownInclude src="api/navigation.md" :skip-frontmatter="true" :skip-title="true" section="actions" />
+
+<div style='margin: 2rem 0; border-top: 2px solid var(--vp-c-divider);'></div>
+
+### 🗺️ PERCEPTION (1 actions) {#perception-actions}
+
+<MarkdownInclude src="api/perception.md" :skip-frontmatter="true" :skip-title="true" section="actions" />
+
+<div style='margin: 2rem 0; border-top: 2px solid var(--vp-c-divider);'></div>
+
+### 🦾 UPPERLIMB (3 actions) {#upperlimb-actions}
+
+<MarkdownInclude src="api/upperlimb.md" :skip-frontmatter="true" :skip-title="true" section="actions" />
 

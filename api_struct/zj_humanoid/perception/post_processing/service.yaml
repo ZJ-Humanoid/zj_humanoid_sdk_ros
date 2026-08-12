@@ -1,0 +1,6 @@
+service:
+  name: /perception/post_processing
+  description: 结束建图兼容接口
+  type: naviai_localization_msgs/Post_processing
+  demos:
+  note: "兼容旧版调用；1.5 推荐使用 finish_mapping Action"

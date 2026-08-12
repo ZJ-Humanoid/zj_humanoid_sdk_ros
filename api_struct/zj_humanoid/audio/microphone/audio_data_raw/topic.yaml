@@ -1,0 +1,7 @@
+topic:
+  name: /zj_humanoid/audio/microphone/audio_data_raw
+  description: 麦克风原始 PCM 音频流
+  type: audio/AudioData
+  direction: publish
+  throttle_rate: 10
+  note: "采样率和声道数以消息字段为准"

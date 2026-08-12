@@ -1,0 +1,6 @@
+topic:
+  name: /zj_humanoid/upperlimb/speedl/whole_body
+  description: 全身笛卡尔速度控制
+  type: upperlimb/SpeedL
+  direction: subscribe
+  note: "1.4 新增"

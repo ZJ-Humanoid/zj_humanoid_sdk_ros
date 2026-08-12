@@ -1,0 +1,6 @@
+service:
+  name: /zj_humanoid/navigation/get_cur_map_info
+  description: 获取当前地图信息
+  type: map_server_msgs/GetCurMapInfo
+  demos:
+  note: ""

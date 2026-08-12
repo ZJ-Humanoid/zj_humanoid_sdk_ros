@@ -1,0 +1,6 @@
+service:
+  name: /zj_humanoid/perception/start_mapping
+  description: 开始建图
+  type: naviai_localization_msgs/Mapping
+  demos:
+  note: "可设置地图名、高度范围、分辨率和场景类型"

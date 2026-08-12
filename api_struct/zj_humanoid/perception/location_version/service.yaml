@@ -1,0 +1,6 @@
+service:
+  name: /zj_humanoid/perception/location_version
+  description: 获取定位模块版本
+  type: std_srvs/Trigger
+  demos:
+  note: ""

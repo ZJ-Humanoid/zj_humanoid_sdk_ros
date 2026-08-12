@@ -1,0 +1,6 @@
+action:
+  name: /zj_humanoid/upperlimb/teach_mode/replay
+  description: 回放拖动示教轨迹
+  type: upperlimb/DragTeachReplay
+  demos:
+  note: "1.3 新增"

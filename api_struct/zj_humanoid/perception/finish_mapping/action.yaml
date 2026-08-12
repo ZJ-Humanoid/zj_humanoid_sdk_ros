@@ -1,0 +1,6 @@
+action:
+  name: /zj_humanoid/perception/finish_mapping
+  description: 结束或中止建图
+  type: naviai_localization_msgs/FinishMapping
+  demos:
+  note: "method=0 时结束并保存地图，method=1 时中止且不保存；后处理开始后无法被取消"

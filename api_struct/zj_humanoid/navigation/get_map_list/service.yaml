@@ -1,0 +1,6 @@
+service:
+  name: /zj_humanoid/navigation/get_map_list
+  description: 获取可用地图列表
+  type: map_server_msgs/GetMapList
+  demos:
+  note: ""

@@ -1,0 +1,6 @@
+topic:
+  name: /zj_humanoid/navigation/navigation_code
+  description: 导航模块状态与错误码
+  type: navigation/ModuleStatus
+  direction: publish
+  note: ""

@@ -1,0 +1,6 @@
+service:
+  name: /zj_humanoid/chassis/get_config
+  description: 查询底盘配置
+  type: chassis_msgs/GetChassisConfig
+  demos:
+  note: "按配置键查询，空键的行为以底盘实现为准"

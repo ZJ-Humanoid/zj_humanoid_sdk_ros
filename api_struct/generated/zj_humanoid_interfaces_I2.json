@@ -1,24 +1,10 @@
 {
     "metadata": {
-        "description": "ZJ Humanoid ROS1 APIs",
-        "version": "v1.2.0",
-        "generated_at": "2026-08-12 08:56:43"
+        "description": "浙江人形机器人 Navi 系列 ROS1 API",
+        "version": "v1.5.0",
+        "generated_at": "2026-08-12 17:34:53"
     },
     "services": [
-        {
-            "name": "/zj_humanoid/audio/LLM_chat",
-            "description": "LLM对话服务",
-            "type": "audio/LLMChat",
-            "note": "语音模块的版本号是多少",
-            "demos": []
-        },
-        {
-            "name": "/zj_humanoid/audio/media_play",
-            "description": "音频文件播放",
-            "type": "audio/MediaPlay",
-            "note": "播放'公司介绍.wav',播放的文件需将文件放置在共享目录下，文件路径是：/share 下",
-            "demos": []
-        },
         {
             "name": "/zj_humanoid/audio/microphone/get_devices_list",
             "description": "麦克风列表",
@@ -60,6 +46,13 @@
             "type": "audio/SetVolume",
             "note": "设置音量为50",
             "demos": []
+        },
+        {
+            "name": "/zj_humanoid/audio/speaker/stop",
+            "description": "停止当前播放并清空播放队列",
+            "type": "audio/SpeakerStop",
+            "demos": [],
+            "note": "新一轮 TTS 播放前可调用此服务打断旧队列"
         },
         {
             "name": "/zj_humanoid/audio/tts_service",
@@ -170,6 +163,83 @@
             "demos": []
         },
         {
+            "name": "/zj_humanoid/navigation/get_cur_map_info",
+            "description": "获取当前地图信息",
+            "type": "map_server_msgs/GetCurMapInfo",
+            "demos": [],
+            "note": ""
+        },
+        {
+            "name": "/zj_humanoid/navigation/get_map_list",
+            "description": "获取可用地图列表",
+            "type": "map_server_msgs/GetMapList",
+            "demos": [],
+            "note": ""
+        },
+        {
+            "name": "/zj_humanoid/navigation/map_server_version",
+            "description": "获取地图管理模块版本",
+            "type": "std_srvs/Trigger",
+            "demos": [],
+            "note": "1.5 新增"
+        },
+        {
+            "name": "/zj_humanoid/navigation/set_map",
+            "description": "切换当前地图",
+            "type": "map_server_msgs/SetMap",
+            "demos": [],
+            "note": ""
+        },
+        {
+            "name": "/perception/mapping_service",
+            "description": "开始建图兼容接口",
+            "type": "naviai_localization_msgs/Mapping",
+            "demos": [],
+            "note": "兼容旧版调用；1.5 推荐使用 /zj_humanoid/perception/start_mapping"
+        },
+        {
+            "name": "/perception/post_processing",
+            "description": "结束建图兼容接口",
+            "type": "naviai_localization_msgs/Post_processing",
+            "demos": [],
+            "note": "兼容旧版调用；1.5 推荐使用 finish_mapping Action"
+        },
+        {
+            "name": "/zj_humanoid/perception/location_version",
+            "description": "获取定位模块版本",
+            "type": "std_srvs/Trigger",
+            "demos": [],
+            "note": ""
+        },
+        {
+            "name": "/zj_humanoid/perception/mapping_version",
+            "description": "获取建图模块版本",
+            "type": "std_srvs/Trigger",
+            "demos": [],
+            "note": ""
+        },
+        {
+            "name": "/zj_humanoid/perception/perception_version",
+            "description": "获取感知模块版本",
+            "type": "std_srvs/Trigger",
+            "demos": [],
+            "note": ""
+        },
+        {
+            "name": "/zj_humanoid/perception/reloc",
+            "description": "触发地图重定位",
+            "type": "naviai_localization_msgs/Lio",
+            "demos": [],
+            "note": "支持按地图名称、ID或路径发起重定位"
+        },
+        {
+            "name": "/zj_humanoid/perception/start_mapping",
+            "description": "开始建图",
+            "type": "naviai_localization_msgs/Mapping",
+            "demos": [],
+            "note": "可设置地图名、高度范围、分辨率和场景类型"
+        },
+        {
             "name": "/zj_humanoid/robot/basic_info",
             "description": "机器人基础信息",
             "type": "zj_robot/BasicInfo",
@@ -191,11 +261,18 @@
         {
             "name": "/zj_humanoid/robot/face_show/text_show",
             "description": "脸部显示文字",
-            "type": "zj_robot/FaceText",
+            "type": "zj_robot/FaceScreen",
             "demos": [
                 "Robot_text_show.yaml"
             ],
             "note": "机器人脸部屏幕显示文字，支持指令显示“Hello World”"
+        },
+        {
+            "name": "/zj_humanoid/robot/hardware/set_led",
+            "description": "设置 WA2 左右灯带和前灯状态",
+            "type": "zj_robot/SetLED",
+            "demos": [],
+            "note": "1.5 新增；由 robot_manger 统一持有底层 XDDP 连接"
         },
         {
             "name": "/zj_humanoid/robot/joint_motor/set_zero",
@@ -295,6 +372,20 @@
             "demos": []
         },
         {
+            "name": "/zj_humanoid/upperlimb/CartesianPlanningParamsGet",
+            "description": "获取笛卡尔规划参数",
+            "type": "upperlimb/CartesianPlanningParamsGet",
+            "demos": [],
+            "note": "1.4 新增"
+        },
+        {
+            "name": "/zj_humanoid/upperlimb/CartesianPlanningParamsSet",
+            "description": "设置笛卡尔规划参数",
+            "type": "upperlimb/CartesianPlanningParamsSet",
+            "demos": [],
+            "note": "1.4 新增"
+        },
+        {
             "name": "/zj_humanoid/upperlimb/FK/left_arm",
             "description": "左臂正解",
             "type": "upperlimb/FK",
@@ -311,6 +402,13 @@
                 "case1.yaml"
             ],
             "note": ""
+        },
+        {
+            "name": "/zj_humanoid/upperlimb/FK/whole_body",
+            "description": "全身运动学正解",
+            "type": "upperlimb/FK",
+            "demos": [],
+            "note": "1.4 新增；2.0.0 响应增加 arm_type 和 arm_type_array"
         },
         {
             "name": "/zj_humanoid/upperlimb/IK/left_arm",
@@ -331,6 +429,20 @@
             "note": ""
         },
         {
+            "name": "/zj_humanoid/upperlimb/IK/whole_body",
+            "description": "全身运动学逆解",
+            "type": "upperlimb/IK",
+            "demos": [],
+            "note": "双臂求解时 pose 数组需包含两个目标位姿"
+        },
+        {
+            "name": "/zj_humanoid/upperlimb/basic_info",
+            "description": "获取当前机型上肢部位与关节信息",
+            "type": "upperlimb/BasicInfoGet",
+            "demos": [],
+            "note": "上肢 2.0.0 新增，返回可用部位掩码、关节总数和部位列表"
+        },
+        {
             "name": "/zj_humanoid/upperlimb/clear_servo_params",
             "description": "清除伺服参数",
             "type": "upperlimb/Servo",
@@ -338,6 +450,27 @@
                 "data.yaml"
             ],
             "note": "清除上肢伺服参数配置"
+        },
+        {
+            "name": "/zj_humanoid/upperlimb/collision_detection/enable",
+            "description": "启用或停用碰撞保护",
+            "type": "std_srvs/SetBool",
+            "demos": [],
+            "note": "1.3 新增"
+        },
+        {
+            "name": "/zj_humanoid/upperlimb/collision_detection/get_params",
+            "description": "获取碰撞保护参数",
+            "type": "upperlimb/ParamsGet",
+            "demos": [],
+            "note": ""
+        },
+        {
+            "name": "/zj_humanoid/upperlimb/collision_detection/set_params",
+            "description": "设置碰撞保护参数",
+            "type": "upperlimb/ParamsSet",
+            "demos": [],
+            "note": ""
         },
         {
             "name": "/zj_humanoid/upperlimb/enable_speedj",
@@ -451,30 +584,44 @@
             "note": "检查右臂当前位置是否处于奇异点配置"
         },
         {
+            "name": "/zj_humanoid/upperlimb/is_singular/whole_body",
+            "description": "检查全身目标位姿是否奇异",
+            "type": "upperlimb/IsSingular",
+            "demos": [],
+            "note": "1.4 新增"
+        },
+        {
+            "name": "/zj_humanoid/upperlimb/jacobian",
+            "description": "获取雅可比矩阵",
+            "type": "upperlimb/JacobianMatrixGet",
+            "demos": [],
+            "note": "通过请求中的 arm_type 选择左臂、右臂或全身"
+        },
+        {
             "name": "/zj_humanoid/upperlimb/motion/lists",
             "description": "获取动作列表",
-            "type": "upperlimb/MotionLists",
+            "type": "upperlimb/FilesLists",
             "demos": [],
             "note": "获取可用的预定义动作列表"
         },
         {
             "name": "/zj_humanoid/upperlimb/motion/load",
             "description": "加载动作文件",
-            "type": "upperlimb/MotionLoad",
+            "type": "upperlimb/MotionsManage",
             "demos": [],
             "note": "从文件加载预定义动作到内存"
         },
         {
             "name": "/zj_humanoid/upperlimb/motion/loaded_lists",
             "description": "获取已加载动作列表",
-            "type": "upperlimb/MotionLoadedLists",
+            "type": "upperlimb/MotionsLoadedList",
             "demos": [],
             "note": "获取当前已加载到内存的动作列表"
         },
         {
             "name": "/zj_humanoid/upperlimb/motion/unload",
             "description": "卸载动作文件",
-            "type": "upperlimb/MotionUnload",
+            "type": "upperlimb/MotionsManage",
             "demos": [],
             "note": "从内存中卸载指定的预定义动作"
         },
@@ -620,6 +767,13 @@
             "note": "tcp末端空间下,右臂末端位姿movej"
         },
         {
+            "name": "/zj_humanoid/upperlimb/movej_by_pose/whole_body",
+            "description": "通过目标位姿进行全身关节空间规划",
+            "type": "upperlimb/MoveJByPose",
+            "demos": [],
+            "note": "1.4 新增"
+        },
+        {
             "name": "/zj_humanoid/upperlimb/movel/dual_arm",
             "description": "双臂movel",
             "type": "upperlimb/MoveL",
@@ -647,6 +801,13 @@
             "note": "关节空间下,右臂直线轨迹点运动"
         },
         {
+            "name": "/zj_humanoid/upperlimb/movel/whole_body",
+            "description": "全身笛卡尔直线点运动",
+            "type": "upperlimb/MoveL",
+            "demos": [],
+            "note": "1.4 新增"
+        },
+        {
             "name": "/zj_humanoid/upperlimb/movel_by_path/dual_arm",
             "description": "双臂轨迹movej",
             "type": "upperlimb/MoveJByPath",
@@ -672,6 +833,27 @@
                 "case1.yaml"
             ],
             "note": "关节空间下,右臂轨迹点路径运动"
+        },
+        {
+            "name": "/zj_humanoid/upperlimb/movel_by_path/whole_body",
+            "description": "全身笛卡尔直线路径运动",
+            "type": "upperlimb/MoveLByPath",
+            "demos": [],
+            "note": "1.4 新增"
+        },
+        {
+            "name": "/zj_humanoid/upperlimb/payload/get",
+            "description": "获取末端负载",
+            "type": "upperlimb/PayLoadGet",
+            "demos": [],
+            "note": ""
+        },
+        {
+            "name": "/zj_humanoid/upperlimb/payload/set",
+            "description": "设置末端负载",
+            "type": "upperlimb/PayLoadSet",
+            "demos": [],
+            "note": ""
         },
         {
             "name": "/zj_humanoid/upperlimb/safety_lock",
@@ -714,6 +896,20 @@
             "demos": [
                 "left_arm_disenable_teachmode.yaml"
             ],
+            "note": ""
+        },
+        {
+            "name": "/zj_humanoid/upperlimb/teach_mode/lists",
+            "description": "获取拖动示教轨迹列表",
+            "type": "upperlimb/FilesLists",
+            "demos": [],
+            "note": ""
+        },
+        {
+            "name": "/zj_humanoid/upperlimb/teach_mode/stop_record",
+            "description": "停止记录拖动示教轨迹",
+            "type": "std_srvs/Trigger",
+            "demos": [],
             "note": ""
         },
         {
@@ -760,12 +956,60 @@
             "demos": []
         },
         {
-            "name": "/zj_humanoid/audio/microphone/audio_data",
-            "description": "音频流数据",
+            "name": "/zj_humanoid/audio/microphone/audio_data_raw",
+            "description": "麦克风原始 PCM 音频流",
             "type": "audio/AudioData",
             "direction": "publish",
             "throttle_rate": 10,
-            "note": "麦克风收音后的音频数据流",
+            "note": "采样率和声道数以消息字段为准",
+            "demos": []
+        },
+        {
+            "name": "/zj_humanoid/audio/microphone/status",
+            "description": "麦克风设备与采集状态",
+            "type": "audio/MicStatus",
+            "direction": "publish",
+            "note": "默认约 1 Hz 发布，设备切换和错误发生时会及时更新",
+            "demos": []
+        },
+        {
+            "name": "/zj_humanoid/audio/speaker/pcm_play",
+            "description": "PCM 流式播放输入",
+            "type": "audio/AudioData",
+            "direction": "subscribe",
+            "note": "输入为 S16_LE PCM 数据",
+            "demos": []
+        },
+        {
+            "name": "/zj_humanoid/audio/speaker/playback_status",
+            "description": "播放状态变化通知",
+            "type": "audio/PlaybackStatus",
+            "direction": "publish",
+            "note": "状态包含 IDLE、PLAYING 和 STOPPED",
+            "demos": []
+        },
+        {
+            "name": "/zj_humanoid/audio/speaker/ref_data",
+            "description": "扬声器软件播放参考数据",
+            "type": "audio/AudioData",
+            "direction": "publish",
+            "note": "用于 AEC 辅助处理",
+            "demos": []
+        },
+        {
+            "name": "/zj_humanoid/audio/speaker/status",
+            "description": "扬声器设备与播放状态",
+            "type": "audio/SpeakerStatus",
+            "direction": "publish",
+            "note": "默认约 1 Hz 发布",
+            "demos": []
+        },
+        {
+            "name": "/zj_humanoid/cmd_vel/calib",
+            "description": "底盘速度控制输入",
+            "type": "geometry_msgs/Twist",
+            "direction": "subscribe",
+            "note": "WA1、WA2 通用",
             "demos": []
         },
         {
@@ -892,27 +1136,51 @@
             "demos": []
         },
         {
-            "name": "/map",
-            "description": "全局地图信息",
-            "type": "nav_msgs/OccupancyGrid",
-            "direction": "subscribe",
-            "note": "全局地图信息",
-            "demos": []
-        },
-        {
             "name": "/zj_humanoid/navigation/local_map",
             "description": "局部障碍物信息",
             "type": "navigation/LocalMap",
-            "direction": "subscribe",
+            "direction": "publish",
             "throttle_rate": 100,
+            "note": "",
+            "demos": []
+        },
+        {
+            "name": "/zj_humanoid/navigation/local_map_render",
+            "description": "前端展示用轻量局部地图",
+            "type": "navigation/LocalMap",
+            "direction": "publish",
+            "note": "v1.5.0 新增，不替代导航使用的 local_map",
+            "demos": []
+        },
+        {
+            "name": "/zj_humanoid/navigation/map",
+            "description": "全局地图信息",
+            "type": "nav_msgs/OccupancyGrid",
+            "direction": "publish",
+            "note": "地图管理模块发布的当前全局地图",
+            "demos": []
+        },
+        {
+            "name": "/zj_humanoid/navigation/map_metadata",
+            "description": "当前地图元数据",
+            "type": "nav_msgs/MapMetaData",
+            "direction": "publish",
+            "note": "",
+            "demos": []
+        },
+        {
+            "name": "/zj_humanoid/navigation/navigation_code",
+            "description": "导航模块状态与错误码",
+            "type": "navigation/ModuleStatus",
+            "direction": "publish",
             "note": "",
             "demos": []
         },
         {
             "name": "/zj_humanoid/navigation/navigation_status",
             "description": "当前导航状态",
-            "type": "navigation/NavigationStatus",
-            "direction": "subscribe",
+            "type": "navigation/NavigationState",
+            "direction": "publish",
             "throttle_rate": 50,
             "note": "当前导航状态信息",
             "demos": []
@@ -921,21 +1189,53 @@
             "name": "/zj_humanoid/navigation/odom_info",
             "description": "当前位姿信息",
             "type": "nav_msgs/Odometry",
-            "direction": "subscribe",
+            "direction": "publish",
             "throttle_rate": 100,
             "note": "当前位姿信息，有定位时才会输出结果",
             "demos": []
         },
         {
+            "name": "/perception/mapping_result",
+            "description": "建图结果",
+            "type": "naviai_localization_msgs/MappingResult",
+            "direction": "publish",
+            "note": "兼容旧版建图结果话题",
+            "demos": []
+        },
+        {
+            "name": "/zj_humanoid/perception/location_code",
+            "description": "定位模块状态与错误码",
+            "type": "module_common_msgs/ModuleStatus",
+            "direction": "publish",
+            "note": "",
+            "demos": []
+        },
+        {
+            "name": "/zj_humanoid/perception/mapping_code",
+            "description": "建图模块状态与错误码",
+            "type": "module_common_msgs/ModuleStatus",
+            "direction": "publish",
+            "note": "",
+            "demos": []
+        },
+        {
+            "name": "/zj_humanoid/perception/perception_code",
+            "description": "感知模块状态与错误码",
+            "type": "module_common_msgs/ModuleStatus",
+            "direction": "publish",
+            "note": "",
+            "demos": []
+        },
+        {
             "name": "/zj_humanoid/robot/battery_info",
             "description": "电池相关信息",
-            "type": "zj_robot/BatteryInfo",
+            "type": "sensor_msgs/BatteryState",
             "direction": "publish",
-            "throttle_rate": 1000,
+            "throttle_rate": 10,
             "demos": [
                 "battery_info.yaml"
             ],
-            "note": "电池BMS相关信息，机器人当前电量还剩多少 回复值应为1~100%"
+            "note": "percentage 取值为 0.0-1.0，WA1、WA2 通用"
         },
         {
             "name": "/zj_humanoid/robot/joint_motor/errors",
@@ -1273,6 +1573,22 @@
             "demos": []
         },
         {
+            "name": "/zj_humanoid/sim/upperlimb/from_algo",
+            "description": "上肢算法输出仿真",
+            "type": "upperlimb/Joints",
+            "direction": "subscribe",
+            "note": "1.3 新增",
+            "demos": []
+        },
+        {
+            "name": "/zj_humanoid/sim/upperlimb/to_algo",
+            "description": "仿真上肢数据输入算法",
+            "type": "upperlimb/Joints",
+            "direction": "publish",
+            "note": "1.3 新增",
+            "demos": []
+        },
+        {
             "name": "/zj_humanoid/upperlimb/jacobian/left_arm",
             "description": "左臂雅可比矩阵",
             "type": "std_msgs/Float64MultiArray",
@@ -1451,6 +1767,14 @@
             "demos": []
         },
         {
+            "name": "/zj_humanoid/upperlimb/speedl/whole_body",
+            "description": "全身笛卡尔速度控制",
+            "type": "upperlimb/SpeedL",
+            "direction": "subscribe",
+            "note": "1.4 新增",
+            "demos": []
+        },
+        {
             "name": "/zj_humanoid/upperlimb/tcp_pose/left_arm",
             "description": "左臂tcp位姿控制",
             "type": "upperlimb/Pose",
@@ -1498,6 +1822,20 @@
     ],
     "actions": [
         {
+            "name": "/zj_humanoid/audio/LLM_chat",
+            "description": "大模型对话",
+            "type": "audio/LLMChat",
+            "demos": [],
+            "note": "支持上下文、语音输出和流式文本反馈"
+        },
+        {
+            "name": "/zj_humanoid/audio/media_play",
+            "description": "播放媒体文件",
+            "type": "audio/MediaPlay",
+            "demos": [],
+            "note": "文件播放倍率范围为 0.5-2.0，播放期间可调用 speaker/stop 中断"
+        },
+        {
             "name": "/zj_humanoid/navigation/navigation",
             "description": "导航接口",
             "type": "navigation/Navigation",
@@ -1505,11 +1843,32 @@
             "note": null
         },
         {
+            "name": "/zj_humanoid/perception/finish_mapping",
+            "description": "结束或中止建图",
+            "type": "naviai_localization_msgs/FinishMapping",
+            "demos": [],
+            "note": "method=0 时结束并保存地图，method=1 时中止且不保存；后处理开始后无法被取消"
+        },
+        {
             "name": "/zj_humanoid/upperlimb/motion",
             "description": "执行预加载轨迹",
-            "type": null,
+            "type": "upperlimb/MotionExecute",
             "demos": [],
             "note": null
+        },
+        {
+            "name": "/zj_humanoid/upperlimb/teach_mode/replay",
+            "description": "回放拖动示教轨迹",
+            "type": "upperlimb/DragTeachReplay",
+            "demos": [],
+            "note": "1.3 新增"
+        },
+        {
+            "name": "/zj_humanoid/upperlimb/teach_mode/start_record",
+            "description": "开始记录拖动示教轨迹",
+            "type": "upperlimb/DragTeachRecord",
+            "demos": [],
+            "note": "1.3 新增"
         }
     ]
 }

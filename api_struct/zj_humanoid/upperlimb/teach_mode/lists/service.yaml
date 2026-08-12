@@ -1,0 +1,6 @@
+service:
+  name: /zj_humanoid/upperlimb/teach_mode/lists
+  description: 获取拖动示教轨迹列表
+  type: upperlimb/FilesLists
+  demos:
+  note: ""

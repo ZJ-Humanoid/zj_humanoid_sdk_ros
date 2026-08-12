@@ -1,6 +1,6 @@
 project:
-  description: 'ZJ Humanoid ROS1 APIs'
-  version: "v1.2.0"
+  description: '浙江人形机器人 Navi 系列 ROS1 API'
+  version: "v1.5.0"
 
 # 功能模块列表
 modules:
@@ -10,6 +10,7 @@ modules:
   - lowerlimb
   - manipulation
   - navigation
+  - perception
   - robot
   - sensor
     - CAM_A
@@ -27,6 +28,7 @@ robot_models:
   U1:
     exclude_modules:
       - navigation
+      - perception
       - lowerlimb
       - sensor/realsense_down
       - sensor/realsense_head
@@ -35,7 +37,6 @@ robot_models:
     exclude_modules:
       - manipulation
       - sensor/realsense_head
-      - manipulation
       - upperlimb/movej/lifting
       - upperlimb/go_home/lifting
       - upperlimb/speedj/lifting
@@ -92,4 +93,3 @@ robot_models:
       - upperlimb/is_singular
       - upperlimb/servoj/lifting
       - upperlimb/speedl
-

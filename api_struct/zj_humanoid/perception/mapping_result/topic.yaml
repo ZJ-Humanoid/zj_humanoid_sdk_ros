@@ -1,0 +1,6 @@
+topic:
+  name: /perception/mapping_result
+  description: 建图结果
+  type: naviai_localization_msgs/MappingResult
+  direction: publish
+  note: "兼容旧版建图结果话题"

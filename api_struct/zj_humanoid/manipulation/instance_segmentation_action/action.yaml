@@ -1,0 +1,6 @@
+action:
+  name: /zj_humanoid/manipulation/instance_segmentation_action
+  description: 实例分割
+  type: manipulation/InstSeg
+  demos: data.yaml
+  note: ""

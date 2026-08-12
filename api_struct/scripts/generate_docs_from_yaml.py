@@ -178,14 +178,45 @@ class InterfaceGenerator:
                                 f.write(f"| **Note** | {note} |\n")
                             
                             f.write("\n")
+
+                # Write Actions grouped by subsystem
+                actions_data = self.data.get('actions', {})
+                total_actions = sum(len(v) for v in actions_data.values()) if isinstance(actions_data, dict) else 0
+                if actions_data and isinstance(actions_data, dict):
+                    f.write("## Actions\n\n")
+                    f.write(f"Total: {total_actions} actions in {len(actions_data)} subsystems\n\n")
+                    f.write("---\n\n")
+
+                    for subsystem in sorted(actions_data.keys()):
+                        actions = actions_data[subsystem]
+                        if not actions:
+                            continue
+
+                        f.write(f"## ⚙️ {subsystem.upper()} ({len(actions)} actions)\n\n")
+                        for idx, action in enumerate(actions, 1):
+                            name = action.get('name', '')
+                            action_type = action.get('type', '')
+                            description = action.get('description', '')
+                            note = action.get('note', '')
+
+                            f.write(f"### {subsystem}.{idx}. {name}\n\n")
+                            f.write("| Field | Value |\n")
+                            f.write("|-------|-------|\n")
+                            f.write(f"| **Action Name** | `{name}` |\n")
+                            f.write(f"| **Type** | `{action_type}` |\n")
+                            f.write(f"| **Description** | {description} |\n")
+                            if note:
+                                f.write(f"| **Note** | {note} |\n")
+                            f.write("\n")
                 
                 # Write summary statistics
                 f.write("---\n\n")
                 f.write("## Summary\n\n")
                 f.write(f"- **Total Services**: {total_services}\n")
                 f.write(f"- **Total Topics**: {total_topics}\n")
-                f.write(f"- **Total Interfaces**: {total_services + total_topics}\n")
-                f.write(f"- **Subsystems**: {len(services_data)} (services), {len(topics_data)} (topics)\n")
+                f.write(f"- **Total Actions**: {total_actions}\n")
+                f.write(f"- **Total Interfaces**: {total_services + total_topics + total_actions}\n")
+                f.write(f"- **Subsystems**: {len(services_data)} (services), {len(topics_data)} (topics), {len(actions_data)} (actions)\n")
             
             print(f"✓ Generated: {output_file}")
         
@@ -487,6 +518,37 @@ class InterfaceGenerator:
                                 f.write(f"                <tr><td>Note</td><td>{note}</td></tr>\n")
                             f.write("            </tbody>\n")
                             f.write("        </table>\n\n")
+
+                # Write Actions grouped by subsystem
+                actions_data = self.data.get('actions', {})
+                total_actions = sum(len(v) for v in actions_data.values()) if isinstance(actions_data, dict) else 0
+                if actions_data and isinstance(actions_data, dict):
+                    f.write("        <h2>Actions</h2>\n")
+                    f.write(f"        <div class=\"total-count\">Total: {total_actions} actions in {len(actions_data)} subsystems</div>\n\n")
+
+                    for subsystem in sorted(actions_data.keys()):
+                        actions = actions_data[subsystem]
+                        if not actions:
+                            continue
+
+                        f.write(f"        <h2 style=\"color: #16a085; border-left: 5px solid #16a085; padding-left: 15px; margin-top: 40px;\">⚙️ {subsystem.upper()} ({len(actions)} actions)</h2>\n\n")
+                        for idx, action in enumerate(actions, 1):
+                            name = str(action.get('name') or '').replace('<', '&lt;').replace('>', '&gt;')
+                            action_type = str(action.get('type') or '').replace('<', '&lt;').replace('>', '&gt;')
+                            description = str(action.get('description') or '').replace('<', '&lt;').replace('>', '&gt;')
+                            note = str(action.get('note') or '').replace('<', '&lt;').replace('>', '&gt;')
+
+                            f.write(f"        <h3>{subsystem}.{idx}. {name}</h3>\n")
+                            f.write("        <table>\n")
+                            f.write("            <thead><tr><th>Field</th><th>Value</th></tr></thead>\n")
+                            f.write("            <tbody>\n")
+                            f.write(f"                <tr><td>Action Name</td><td><code>{name}</code></td></tr>\n")
+                            f.write(f"                <tr><td>Type</td><td><code>{action_type}</code></td></tr>\n")
+                            f.write(f"                <tr><td>Description</td><td>{description}</td></tr>\n")
+                            if note:
+                                f.write(f"                <tr><td>Note</td><td>{note}</td></tr>\n")
+                            f.write("            </tbody>\n")
+                            f.write("        </table>\n\n")
                 
                 # Write summary
                 f.write("        <hr>\n\n")
@@ -495,8 +557,9 @@ class InterfaceGenerator:
                 f.write("            <ul>\n")
                 f.write(f"                <li><strong>Total Services:</strong> {total_services}</li>\n")
                 f.write(f"                <li><strong>Total Topics:</strong> {total_topics}</li>\n")
-                f.write(f"                <li><strong>Total Interfaces:</strong> {total_services + total_topics}</li>\n")
-                f.write(f"                <li><strong>Subsystems:</strong> {len(services_data)} (services), {len(topics_data)} (topics)</li>\n")
+                f.write(f"                <li><strong>Total Actions:</strong> {total_actions}</li>\n")
+                f.write(f"                <li><strong>Total Interfaces:</strong> {total_services + total_topics + total_actions}</li>\n")
+                f.write(f"                <li><strong>Subsystems:</strong> {len(services_data)} (services), {len(topics_data)} (topics), {len(actions_data)} (actions)</li>\n")
                 f.write("            </ul>\n")
                 f.write("        </div>\n\n")
                 
@@ -539,4 +602,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-

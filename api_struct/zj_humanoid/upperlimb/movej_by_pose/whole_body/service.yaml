@@ -1,0 +1,6 @@
+service:
+  name: /zj_humanoid/upperlimb/movej_by_pose/whole_body
+  description: 通过目标位姿进行全身关节空间规划
+  type: upperlimb/MoveJByPose
+  demos:
+  note: "1.4 新增"

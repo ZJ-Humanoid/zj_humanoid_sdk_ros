@@ -1,0 +1,6 @@
+topic:
+  name: /zj_humanoid/audio/speaker/pcm_play
+  description: PCM 流式播放输入
+  type: audio/AudioData
+  direction: subscribe
+  note: "输入为 S16_LE PCM 数据"

@@ -1,0 +1,6 @@
+service:
+  name: /zj_humanoid/navigation/set_map
+  description: 切换当前地图
+  type: map_server_msgs/SetMap
+  demos:
+  note: ""

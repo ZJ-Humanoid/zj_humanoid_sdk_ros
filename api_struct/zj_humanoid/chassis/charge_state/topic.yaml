@@ -1,0 +1,6 @@
+topic:
+  name: /zj_humanoid/chassis/charge_state
+  description: 手充连接状态
+  type: chassis_msgs/PowerStatusStamped
+  direction: publish
+  note: "WA1 专属"

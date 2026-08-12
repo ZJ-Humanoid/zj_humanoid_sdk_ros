@@ -1,0 +1,6 @@
+service:
+  name: /zj_humanoid/upperlimb/collision_detection/set_params
+  description: 设置碰撞保护参数
+  type: upperlimb/ParamsSet
+  demos:
+  note: ""

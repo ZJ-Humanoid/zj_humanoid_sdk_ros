@@ -1,0 +1,6 @@
+topic:
+  name: /zj_humanoid/perception/location_code
+  description: 定位模块状态与错误码
+  type: module_common_msgs/ModuleStatus
+  direction: publish
+  note: ""

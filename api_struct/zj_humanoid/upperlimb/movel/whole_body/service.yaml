@@ -1,0 +1,6 @@
+service:
+  name: /zj_humanoid/upperlimb/movel/whole_body
+  description: 全身笛卡尔直线点运动
+  type: upperlimb/MoveL
+  demos:
+  note: "1.4 新增"

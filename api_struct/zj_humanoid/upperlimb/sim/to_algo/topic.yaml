@@ -1,0 +1,6 @@
+topic:
+  name: /zj_humanoid/sim/upperlimb/to_algo
+  description: 仿真上肢数据输入算法
+  type: upperlimb/Joints
+  direction: publish
+  note: "1.3 新增"

@@ -1,0 +1,6 @@
+service:
+  name: /zj_humanoid/perception/perception_version
+  description: 获取感知模块版本
+  type: std_srvs/Trigger
+  demos:
+  note: ""
