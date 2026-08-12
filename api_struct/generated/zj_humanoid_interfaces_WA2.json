@@ -2,9 +2,23 @@
     "metadata": {
         "description": "浙江人形机器人 Navi 系列 ROS1 API",
         "version": "v1.5.0",
-        "generated_at": "2026-08-12 17:34:53"
+        "generated_at": "2026-08-12 12:31:25"
     },
     "services": [
+        {
+            "name": "/zj_humanoid/audio/LLM_chat",
+            "description": "LLM对话服务",
+            "type": "audio/LLMChat",
+            "note": "语音模块的版本号是多少",
+            "demos": []
+        },
+        {
+            "name": "/zj_humanoid/audio/media_play",
+            "description": "音频文件播放",
+            "type": "audio/MediaPlay",
+            "note": "播放'公司介绍.wav',播放的文件需将文件放置在共享目录下，文件路径是：/share 下",
+            "demos": []
+        },
         {
             "name": "/zj_humanoid/audio/microphone/get_devices_list",
             "description": "麦克风列表",
@@ -83,6 +97,13 @@
             "note": "WA1、WA2 通用"
         },
         {
+            "name": "/zj_humanoid/chassis/agv_connect",
+            "description": "连接底盘AGV",
+            "type": "std_srvs/Trigger",
+            "demos": [],
+            "note": "连接底盘AGV，建立通信连接"
+        },
+        {
             "name": "/zj_humanoid/chassis/agv_reset",
             "description": "底盘AGV复位",
             "type": "std_srvs/Trigger",
@@ -123,6 +144,37 @@
             "type": "std_srvs/Trigger",
             "demos": [],
             "note": "触发底盘软件急停"
+        },
+        {
+            "name": "/zj_humanoid/chassis/speed_control",
+            "description": "底盘速度控制",
+            "type": "zj_humanoid_msgs/SpeedControl",
+            "request": {
+                "linear_x": "float",
+                "linear_y": "float",
+                "angular_z": "float"
+            },
+            "response": {
+                "success": "bool",
+                "message": "string"
+            },
+            "demos": [],
+            "note": "控制底盘AGV的线速度和角速度"
+        },
+        {
+            "name": "/zj_humanoid/chassis/steer_control",
+            "description": "底盘转向控制",
+            "type": "zj_humanoid_msgs/SteerControl",
+            "request": {
+                "steer_angle": "float",
+                "steer_speed": "float"
+            },
+            "response": {
+                "success": "bool",
+                "message": "string"
+            },
+            "demos": [],
+            "note": "控制底盘AGV的转向角度和速度"
         },
         {
             "name": "/zj_humanoid/hand/finger_pressures/left/zero",
@@ -924,6 +976,15 @@
             "demos": []
         },
         {
+            "name": "/zj_humanoid/audio/microphone/audio_data",
+            "description": "音频流数据",
+            "type": "audio/AudioData",
+            "direction": "publish",
+            "throttle_rate": 10,
+            "note": "麦克风收音后的音频数据流",
+            "demos": []
+        },
+        {
             "name": "/zj_humanoid/audio/microphone/audio_data_raw",
             "description": "麦克风原始 PCM 音频流",
             "type": "audio/AudioData",
@@ -988,6 +1049,15 @@
             "direction": "publish",
             "throttle_rate": 10,
             "note": "包含运行状态、急停、碰撞和电池信息",
+            "demos": []
+        },
+        {
+            "name": "/zj_humanoid/chassis/calib_vel",
+            "description": "底盘速度标定数据",
+            "type": "zj_humanoid_msgs/VelocityCalibData",
+            "direction": "publish",
+            "throttle_rate": 10,
+            "note": "底盘AGV的速度标定相关数据，用于速度控制系统的校准和优化",
             "demos": []
         },
         {
