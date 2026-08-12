@@ -402,7 +402,7 @@ markmap:
 def main():
     script_dir = Path(__file__).parent.parent
     yaml_file = script_dir / 'generated' / 'zj_humanoid_interfaces.yaml'
-    output_dir = script_dir.parent / 'docs' / 'api'
+    output_dir = script_dir.parent / 'docs' / 'src' / 'api'
     
     generator = VitePressDocGenerator(str(yaml_file), str(output_dir))
     generator.generate_all()

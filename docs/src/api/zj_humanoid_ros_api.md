@@ -2,23 +2,23 @@
 layout: doc
 title: ZJ Humanoid ROS API 接口文档
 description: ZJ Humanoid ROS1 APIs
-version: v1.0.0
+version: v1.2.0
 ---
 
 # ZJ Humanoid ROS API 接口文档
 
 ::: info 文档信息
 - **描述**: ZJ Humanoid ROS1 APIs
-- **版本**: v1.0.0
-- **生成时间**: N/A
+- **版本**: v1.2.0
+- **生成时间**: 2026-08-12 15:27:06
 :::
 
 ## 📊 统计信息
 
-- **Services**: 94 个服务
-- **Topics**: 96 个话题
-- **总计**: 190 个接口
-- **子系统**: 8 个 (services), 7 个 (topics)
+- **Services**: 108 个服务
+- **Topics**: 109 个话题
+- **总计**: 217 个接口
+- **子系统**: 9 个 (services), 10 个 (topics)
 
 ## 📑 目录导航
 
@@ -26,28 +26,32 @@ version: v1.0.0
 
 **Services (服务):**
 - [🔊 AUDIO](#audio-services) (10 services)
-- [🖐️ HAND](#hand-services) (15 services)
+- [📦 CHASSIS](#chassis-services) (6 services)
+- [🖐️ HAND](#hand-services) (13 services)
 - [🦵 LOWERLIMB](#lowerlimb-services) (1 services)
 - [🔧 MANIPULATION](#manipulation-services) (8 services)
 - [🧭 NAVIGATION](#navigation-services) (1 services)
 - [🤖 ROBOT](#robot-services) (12 services)
 - [📷 SENSOR](#sensor-services) (4 services)
-- [🦾 UPPERLIMB](#upperlimb-services) (43 services)
+- [🦾 UPPERLIMB](#upperlimb-services) (53 services)
 
 **Topics (话题):**
-- [🔊 AUDIO](#audio-topics) (4 topics)
+- [🔊 AUDIO](#audio-topics) (6 topics)
+- [📡 CHASSIS](#chassis-topics) (7 topics)
 - [🖐️ HAND](#hand-topics) (5 topics)
-- [🦵 LOWERLIMB](#lowerlimb-topics) (8 topics)
-- [🧭 NAVIGATION](#navigation-topics) (5 topics)
+- [🦵 LOWERLIMB](#lowerlimb-topics) (11 topics)
+- [🔧 MANIPULATION](#manipulation-topics) (1 topics)
+- [🧭 NAVIGATION](#navigation-topics) (3 topics)
+- [📡 OTHER](#other-topics) (1 topics)
 - [🤖 ROBOT](#robot-topics) (10 topics)
 - [📷 SENSOR](#sensor-topics) (36 topics)
-- [🦾 UPPERLIMB](#upperlimb-topics) (28 topics)
+- [🦾 UPPERLIMB](#upperlimb-topics) (29 topics)
 
 ---
 
 ## 📦 Services
 
-共 94 个服务，分布在 8 个子系统中。
+共 108 个服务，分布在 9 个子系统中。
 
 ### 🔊 AUDIO (10 services) {#audio-services}
 
@@ -55,7 +59,13 @@ version: v1.0.0
 
 <div style='margin: 2rem 0; border-top: 2px solid var(--vp-c-divider);'></div>
 
-### 🖐️ HAND (15 services) {#hand-services}
+### 📦 CHASSIS (6 services) {#chassis-services}
+
+<MarkdownInclude src="api/chassis.md" :skip-frontmatter="true" :skip-title="true" section="services" />
+
+<div style='margin: 2rem 0; border-top: 2px solid var(--vp-c-divider);'></div>
+
+### 🖐️ HAND (13 services) {#hand-services}
 
 <MarkdownInclude src="api/hand.md" :skip-frontmatter="true" :skip-title="true" section="services" />
 
@@ -91,7 +101,7 @@ version: v1.0.0
 
 <div style='margin: 2rem 0; border-top: 2px solid var(--vp-c-divider);'></div>
 
-### 🦾 UPPERLIMB (43 services) {#upperlimb-services}
+### 🦾 UPPERLIMB (53 services) {#upperlimb-services}
 
 <MarkdownInclude src="api/upperlimb.md" :skip-frontmatter="true" :skip-title="true" section="services" />
 
@@ -100,11 +110,17 @@ version: v1.0.0
 
 ## 📡 Topics
 
-共 96 个话题，分布在 7 个子系统中。
+共 109 个话题，分布在 10 个子系统中。
 
-### 🔊 AUDIO (4 topics) {#audio-topics}
+### 🔊 AUDIO (6 topics) {#audio-topics}
 
 <MarkdownInclude src="api/audio.md" :skip-frontmatter="true" :skip-title="true" section="topics" />
+
+<div style='margin: 2rem 0; border-top: 2px solid var(--vp-c-divider);'></div>
+
+### 📡 CHASSIS (7 topics) {#chassis-topics}
+
+<MarkdownInclude src="api/chassis.md" :skip-frontmatter="true" :skip-title="true" section="topics" />
 
 <div style='margin: 2rem 0; border-top: 2px solid var(--vp-c-divider);'></div>
 
@@ -114,15 +130,27 @@ version: v1.0.0
 
 <div style='margin: 2rem 0; border-top: 2px solid var(--vp-c-divider);'></div>
 
-### 🦵 LOWERLIMB (8 topics) {#lowerlimb-topics}
+### 🦵 LOWERLIMB (11 topics) {#lowerlimb-topics}
 
 <MarkdownInclude src="api/lowerlimb.md" :skip-frontmatter="true" :skip-title="true" section="topics" />
 
 <div style='margin: 2rem 0; border-top: 2px solid var(--vp-c-divider);'></div>
 
-### 🧭 NAVIGATION (5 topics) {#navigation-topics}
+### 🔧 MANIPULATION (1 topics) {#manipulation-topics}
+
+<MarkdownInclude src="api/manipulation.md" :skip-frontmatter="true" :skip-title="true" section="topics" />
+
+<div style='margin: 2rem 0; border-top: 2px solid var(--vp-c-divider);'></div>
+
+### 🧭 NAVIGATION (3 topics) {#navigation-topics}
 
 <MarkdownInclude src="api/navigation.md" :skip-frontmatter="true" :skip-title="true" section="topics" />
+
+<div style='margin: 2rem 0; border-top: 2px solid var(--vp-c-divider);'></div>
+
+### 📡 OTHER (1 topics) {#other-topics}
+
+<MarkdownInclude src="api/other.md" :skip-frontmatter="true" :skip-title="true" section="topics" />
 
 <div style='margin: 2rem 0; border-top: 2px solid var(--vp-c-divider);'></div>
 
@@ -138,7 +166,7 @@ version: v1.0.0
 
 <div style='margin: 2rem 0; border-top: 2px solid var(--vp-c-divider);'></div>
 
-### 🦾 UPPERLIMB (28 topics) {#upperlimb-topics}
+### 🦾 UPPERLIMB (29 topics) {#upperlimb-topics}
 
 <MarkdownInclude src="api/upperlimb.md" :skip-frontmatter="true" :skip-title="true" section="topics" />
 

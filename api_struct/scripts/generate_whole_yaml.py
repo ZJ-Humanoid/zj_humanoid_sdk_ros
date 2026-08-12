@@ -255,7 +255,8 @@ def generate_whole_yaml(base_path, output_file, config_file):
     output_data = {
         'metadata': {
             'description': project_config.get('description', 'ZJ Humanoid ROS1 APIs'),
-            'version': project_config.get('version', 'v1.0.0')
+            'version': project_config.get('version', 'v1.0.0'),
+            'generated_at': datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         }
     }
     

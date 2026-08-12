@@ -1,45 +1,36 @@
 # ZJ Humanoid ROS API 接口文档
 
 **Description**: ZJ Humanoid ROS1 APIs
-**Version**: v1.0.0
-**Generated At**: 2025-11-12 15:33:05
+**Version**: v1.2.0
+**Generated At**: 2026-08-12 15:27:06
 
 ## Services
 
-Total: 87 services in 8 subsystems
+Total: 108 services in 9 subsystems
 
 ---
 
-## 📦 AUDIO (11 services)
+## 📦 AUDIO (10 services)
 
 ### audio.1. /zj_humanoid/audio/LLM_chat
 
 | Field | Value |
 |-------|-------|
 | **Service Name** | `/zj_humanoid/audio/LLM_chat` |
-| **Type** | `audio/LLM_chat` |
+| **Type** | `audio/LLMChat` |
 | **Description** | LLM对话服务 |
 | **Note** | 语音模块的版本号是多少 |
 
-### audio.2. /zj_humanoid/audio/listen
-
-| Field | Value |
-|-------|-------|
-| **Service Name** | `/zj_humanoid/audio/listen` |
-| **Type** | `audio/Listen` |
-| **Description** | 倾听服务 |
-| **Note** | 开始倾听 |
-
-### audio.3. /zj_humanoid/audio/media_play
+### audio.2. /zj_humanoid/audio/media_play
 
 | Field | Value |
 |-------|-------|
 | **Service Name** | `/zj_humanoid/audio/media_play` |
 | **Type** | `audio/MediaPlay` |
 | **Description** | 音频文件播放 |
-| **Note** | 播放’公司介绍.wav‘ |
+| **Note** | 播放'公司介绍.wav',播放的文件需将文件放置在共享目录下，文件路径是：/share 下 |
 
-### audio.4. /zj_humanoid/audio/microphone/get_devices_list
+### audio.3. /zj_humanoid/audio/microphone/get_devices_list
 
 | Field | Value |
 |-------|-------|
@@ -48,7 +39,7 @@ Total: 87 services in 8 subsystems
 | **Description** | 麦克风列表 |
 | **Note** | 检查当前有多少个麦克风设备 回复数量应大于1 |
 
-### audio.5. /zj_humanoid/audio/microphone/select_device
+### audio.4. /zj_humanoid/audio/microphone/select_device
 
 | Field | Value |
 |-------|-------|
@@ -57,7 +48,7 @@ Total: 87 services in 8 subsystems
 | **Description** | 选中麦克风 |
 | **Note** | 选择第一个麦克风 |
 
-### audio.6. /zj_humanoid/audio/speaker/get_devices_list
+### audio.5. /zj_humanoid/audio/speaker/get_devices_list
 
 | Field | Value |
 |-------|-------|
@@ -66,7 +57,7 @@ Total: 87 services in 8 subsystems
 | **Description** | 获取播放设备 |
 | **Note** | 检查当前有多少个喇叭设备 回复数量应大于1 |
 
-### audio.7. /zj_humanoid/audio/speaker/get_volume
+### audio.6. /zj_humanoid/audio/speaker/get_volume
 
 | Field | Value |
 |-------|-------|
@@ -75,7 +66,7 @@ Total: 87 services in 8 subsystems
 | **Description** | 获取当前音量 |
 | **Note** | 获取当前的系统音量大小 应回复音量0~100 |
 
-### audio.8. /zj_humanoid/audio/speaker/select_device
+### audio.7. /zj_humanoid/audio/speaker/select_device
 
 | Field | Value |
 |-------|-------|
@@ -84,7 +75,7 @@ Total: 87 services in 8 subsystems
 | **Description** | 选中生效喇叭 |
 | **Note** | 选择第一个喇叭 |
 
-### audio.9. /zj_humanoid/audio/speaker/set_volume
+### audio.8. /zj_humanoid/audio/speaker/set_volume
 
 | Field | Value |
 |-------|-------|
@@ -93,16 +84,16 @@ Total: 87 services in 8 subsystems
 | **Description** | 设置音量大小 |
 | **Note** | 设置音量为50 |
 
-### audio.10. /zj_humanoid/audio/tts_service
+### audio.9. /zj_humanoid/audio/tts_service
 
 | Field | Value |
 |-------|-------|
 | **Service Name** | `/zj_humanoid/audio/tts_service` |
 | **Type** | `audio/TTS` |
 | **Description** | 文字转语音 |
-| **Note** | 请让机器人说‘hello world‘ |
+| **Note** | 请让机器人说'hello world' |
 
-### audio.11. /zj_humanoid/audio/version
+### audio.10. /zj_humanoid/audio/version
 
 | Field | Value |
 |-------|-------|
@@ -110,7 +101,63 @@ Total: 87 services in 8 subsystems
 | **Type** | `std_srvs/Trigger` |
 | **Description** | 语音模块的版本号 |
 
-## 📦 HAND (11 services)
+## 📦 CHASSIS (6 services)
+
+### chassis.1. /zj_humanoid/chassis/agv_charge
+
+| Field | Value |
+|-------|-------|
+| **Service Name** | `/zj_humanoid/chassis/agv_charge` |
+| **Type** | `zj_humanoid_msgs/AgvCharge` |
+| **Description** | 底盘AGV充电控制 |
+| **Note** | 控制底盘AGV的充电操作和查询充电状态 |
+
+### chassis.2. /zj_humanoid/chassis/agv_connect
+
+| Field | Value |
+|-------|-------|
+| **Service Name** | `/zj_humanoid/chassis/agv_connect` |
+| **Type** | `std_srvs/Trigger` |
+| **Description** | 连接底盘AGV |
+| **Note** | 连接底盘AGV，建立通信连接 |
+
+### chassis.3. /zj_humanoid/chassis/agv_reset
+
+| Field | Value |
+|-------|-------|
+| **Service Name** | `/zj_humanoid/chassis/agv_reset` |
+| **Type** | `std_srvs/Trigger` |
+| **Description** | 底盘AGV复位 |
+| **Note** | 底盘AGV复位，恢复到初始状态 |
+
+### chassis.4. /zj_humanoid/chassis/agv_version
+
+| Field | Value |
+|-------|-------|
+| **Service Name** | `/zj_humanoid/chassis/agv_version` |
+| **Type** | `std_srvs/Trigger` |
+| **Description** | 底盘AGV版本 |
+| **Note** | 获取底盘AGV模块的版本信息 |
+
+### chassis.5. /zj_humanoid/chassis/speed_control
+
+| Field | Value |
+|-------|-------|
+| **Service Name** | `/zj_humanoid/chassis/speed_control` |
+| **Type** | `zj_humanoid_msgs/SpeedControl` |
+| **Description** | 底盘速度控制 |
+| **Note** | 控制底盘AGV的线速度和角速度 |
+
+### chassis.6. /zj_humanoid/chassis/steer_control
+
+| Field | Value |
+|-------|-------|
+| **Service Name** | `/zj_humanoid/chassis/steer_control` |
+| **Type** | `zj_humanoid_msgs/SteerControl` |
+| **Description** | 底盘转向控制 |
+| **Note** | 控制底盘AGV的转向角度和速度 |
+
+## 📦 HAND (13 services)
 
 ### hand.1. /zj_humanoid/hand/finger_pressures/left/zero
 
@@ -118,60 +165,73 @@ Total: 87 services in 8 subsystems
 |-------|-------|
 | **Service Name** | `/zj_humanoid/hand/finger_pressures/left/zero` |
 | **Type** | `std_srvs/Trigger` |
-| **Description** | 置零手指传感器 |
-| **Note** | 置零压力传感器数值 |
+| **Description** | 调用左手指尖压力传感器零位校准服务 |
+| **Note** | 对左手指尖压力传感器进行零位校准,清除当前传感器偏置,将当前读数设为零点 |
 
-### hand.2. /zj_humanoid/hand/gesture_switch/dual
+### hand.2. /zj_humanoid/hand/finger_pressures/right/zero
+
+| Field | Value |
+|-------|-------|
+| **Service Name** | `/zj_humanoid/hand/finger_pressures/right/zero` |
+| **Type** | `std_srvs/Trigger` |
+| **Description** | 调用右手指尖压力传感器零位校准服务 |
+| **Note** | 对右手指尖压力传感器进行零位校准,清除当前传感器偏置,将当前读数设为零点 |
+
+### hand.3. /zj_humanoid/hand/gesture_switch/dual
 
 | Field | Value |
 |-------|-------|
 | **Service Name** | `/zj_humanoid/hand/gesture_switch/dual` |
 | **Type** | `hand/Gesture` |
 | **Description** | 双手手势切换 |
+| **Note** | 同时控制左右手执行指定手势。gesture_name数组中索引0为左手,索引1为右手。支持的手势包括:RESET、ROCK、ONE、TWO、THREE、FOUR等 |
 
-### hand.3. /zj_humanoid/hand/gesture_switch/left
+### hand.4. /zj_humanoid/hand/gesture_switch/left
 
 | Field | Value |
 |-------|-------|
 | **Service Name** | `/zj_humanoid/hand/gesture_switch/left` |
 | **Type** | `hand/Gesture` |
 | **Description** | 左手手势切换 |
+| **Note** | 控制左手执行指定手势。支持的手势包括:RESET、ROCK、ONE、TWO、THREE、FOUR等,手势名称大小写不敏感 |
 
-### hand.4. /zj_humanoid/hand/gesture_switch/right
+### hand.5. /zj_humanoid/hand/gesture_switch/right
 
 | Field | Value |
 |-------|-------|
 | **Service Name** | `/zj_humanoid/hand/gesture_switch/right` |
 | **Type** | `hand/Gesture` |
 | **Description** | 右手手势切换 |
+| **Note** | 控制右手执行指定手势。支持的手势包括:RESET、ROCK、ONE、TWO、THREE、FOUR等,手势名称大小写不敏感 |
 
-### hand.5. /zj_humanoid/hand/joint_switch/dual
+### hand.6. /zj_humanoid/hand/joint_switch/dual
 
 | Field | Value |
 |-------|-------|
 | **Service Name** | `/zj_humanoid/hand/joint_switch/dual` |
 | **Type** | `hand/HandJoint` |
-| **Description** | 双手手掌关节运动 |
+| **Description** | 双手关节控制 |
+| **Note** | 同时控制双手各关节运动到指定角度。双手关节数组会被合并为12个元素的数组发送给服务。前6个为左手,后6个为右手 |
 
-### hand.6. /zj_humanoid/hand/joint_switch/left
+### hand.7. /zj_humanoid/hand/joint_switch/left
 
 | Field | Value |
 |-------|-------|
 | **Service Name** | `/zj_humanoid/hand/joint_switch/left` |
 | **Type** | `hand/HandJoint` |
-| **Description** | 左手手掌关节运动 |
-| **Note** | 左手食指弯曲40度 订阅/hand_joint_states左手食指数值应接近40度 |
+| **Description** | 左手关节控制 |
+| **Note** | 控制左手各关节运动到指定角度。关节角度数组顺序为[拇指弯曲,拇指摆动,食指弯曲,中指弯曲,无名指弯曲,小指弯曲],单位:弧度。关节角度会被限制在安全范围内 |
 
-### hand.7. /zj_humanoid/hand/joint_switch/right
+### hand.8. /zj_humanoid/hand/joint_switch/right
 
 | Field | Value |
 |-------|-------|
 | **Service Name** | `/zj_humanoid/hand/joint_switch/right` |
 | **Type** | `hand/HandJoint` |
-| **Description** | 右手手掌关节运动 |
-| **Note** | 右手食指弯曲40度 订阅/hand_joint_states左手食指数值应接近40度 |
+| **Description** | 右手关节控制 |
+| **Note** | 控制右手各关节运动到指定角度。关节角度数组顺序为[拇指弯曲,拇指摆动,食指弯曲,中指弯曲,无名指弯曲,小指弯曲],单位:弧度。关节角度会被限制在安全范围内 |
 
-### hand.8. /zj_humanoid/hand/task_switch/left
+### hand.9. /zj_humanoid/hand/task_switch/left
 
 | Field | Value |
 |-------|-------|
@@ -179,7 +239,7 @@ Total: 87 services in 8 subsystems
 | **Type** | `std_srvs/Bool` |
 | **Description** | 左手掌任务控制 |
 
-### hand.9. /zj_humanoid/hand/task_switch/right
+### hand.10. /zj_humanoid/hand/task_switch/right
 
 | Field | Value |
 |-------|-------|
@@ -187,31 +247,40 @@ Total: 87 services in 8 subsystems
 | **Type** | `std_srvs/Bool` |
 | **Description** | 右手掌任务控制 |
 
-### hand.10. /zj_humanoid/hand/versions
+### hand.11. /zj_humanoid/hand/version
 
 | Field | Value |
 |-------|-------|
-| **Service Name** | `/zj_humanoid/hand/versions` |
+| **Service Name** | `/zj_humanoid/hand/version` |
 | **Type** | `std_srvs/Trigger` |
-| **Description** | 灵巧手版本号 |
-| **Note** | 查询当前灵巧手子系统的版本号 |
+| **Description** | 手部模块版本号 |
+| **Note** | 查询手部控制模块的版本信息 |
 
-### hand.11. /zj_humanoid/hand/wrist_force_sensor/left/zero
+### hand.12. /zj_humanoid/hand/wrist_force_sensor/left/zero
 
 | Field | Value |
 |-------|-------|
 | **Service Name** | `/zj_humanoid/hand/wrist_force_sensor/left/zero` |
 | **Type** | `std_srvs/Trigger` |
-| **Description** | 置零腕部传感器 |
-| **Note** | 置零腕部传感器数值 |
+| **Description** | 调用左手腕力传感器零位校准服务 |
+| **Note** | 对左手腕力传感器进行零位校准,清除当前传感器偏置,将当前力和力矩读数设为零点 |
 
-## 📦 LOWERLIMB (1 services)
-
-### lowerlimb.1. /zj_humanoid/lowerlimb/versions
+### hand.13. /zj_humanoid/hand/wrist_force_sensor/right/zero
 
 | Field | Value |
 |-------|-------|
-| **Service Name** | `/zj_humanoid/lowerlimb/versions` |
+| **Service Name** | `/zj_humanoid/hand/wrist_force_sensor/right/zero` |
+| **Type** | `std_srvs/Trigger` |
+| **Description** | 调用右手腕力传感器零位校准服务 |
+| **Note** | 对右手腕力传感器进行零位校准,清除当前传感器偏置,将当前力和力矩读数设为零点 |
+
+## 📦 LOWERLIMB (1 services)
+
+### lowerlimb.1. /zj_humanoid/lowerlimb/version
+
+| Field | Value |
+|-------|-------|
+| **Service Name** | `/zj_humanoid/lowerlimb/version` |
 | **Type** | `std_srvs/Trigger` |
 | **Description** | 下肢模块版本 |
 
@@ -249,7 +318,7 @@ Total: 87 services in 8 subsystems
 | Field | Value |
 |-------|-------|
 | **Service Name** | `/zj_humanoid/manipulation/joint_space_trajectory_planner` |
-| **Type** | `manipulation/GetTrajectory` |
+| **Type** | `manipulation/JointSpaceTrajPlan` |
 | **Description** | 关节空间轨迹规划 |
 | **Note** | 节空间轨迹规划，输出关节轨迹，示教模式下记录各个关节数据，据此生成完整的执行轨迹 |
 
@@ -267,7 +336,7 @@ Total: 87 services in 8 subsystems
 | Field | Value |
 |-------|-------|
 | **Service Name** | `/zj_humanoid/manipulation/pose_space_trajectory_planner` |
-| **Type** | `manipulation/MotionPlan` |
+| **Type** | `manipulation/PoseSpaceTrajPlan` |
 | **Description** | 末端轨迹规划 |
 | **Note** | 末端空间轨迹规划，示教模式下记录各个末端执行器数据，据此生成完整的执行轨迹 |
 
@@ -285,7 +354,7 @@ Total: 87 services in 8 subsystems
 | Field | Value |
 |-------|-------|
 | **Service Name** | `/zj_humanoid/manipulation/version` |
-| **Type** | `` |
+| **Type** | `std_srvs/Trigger` |
 | **Description** | 操作模块版本号 |
 
 ## 📦 NAVIGATION (1 services)
@@ -446,7 +515,7 @@ Total: 87 services in 8 subsystems
 | **Description** | 相机D参数信息 |
 | **Note** | 相机D的参数信息，相机D大致安装在机器人左侧太阳穴的位置上，相机D的分辨率是多少 回复应包含1280和720 |
 
-## 📦 UPPERLIMB (39 services)
+## 📦 UPPERLIMB (53 services)
 
 ### upperlimb.1. /zj_humanoid/upperlimb/FK/left_arm
 
@@ -481,7 +550,34 @@ Total: 87 services in 8 subsystems
 | **Type** | `upperlimb/IK` |
 | **Description** | 右臂逆解 |
 
-### upperlimb.5. /zj_humanoid/upperlimb/go_down/dual_arm
+### upperlimb.5. /zj_humanoid/upperlimb/clear_servo_params
+
+| Field | Value |
+|-------|-------|
+| **Service Name** | `/zj_humanoid/upperlimb/clear_servo_params` |
+| **Type** | `upperlimb/Servo` |
+| **Description** | 清除伺服参数 |
+| **Note** | 清除上肢伺服参数配置 |
+
+### upperlimb.6. /zj_humanoid/upperlimb/enable_speedj
+
+| Field | Value |
+|-------|-------|
+| **Service Name** | `/zj_humanoid/upperlimb/enable_speedj` |
+| **Type** | `std_srvs/SetBool` |
+| **Description** | 关节速度控制开关 |
+| **Note** | 启用或禁用上肢speedj速度控制模式 |
+
+### upperlimb.7. /zj_humanoid/upperlimb/enable_speedl
+
+| Field | Value |
+|-------|-------|
+| **Service Name** | `/zj_humanoid/upperlimb/enable_speedl` |
+| **Type** | `std_srvs/SetBool` |
+| **Description** | 启用笛卡尔空间速度控制 |
+| **Note** | 启用或禁用上肢speedl笛卡尔空间速度控制模式 |
+
+### upperlimb.8. /zj_humanoid/upperlimb/go_down/dual_arm
 
 | Field | Value |
 |-------|-------|
@@ -489,7 +585,7 @@ Total: 87 services in 8 subsystems
 | **Type** | `std_srvs/Trigger` |
 | **Description** | 双臂放下 |
 
-### upperlimb.6. /zj_humanoid/upperlimb/go_down/left_arm
+### upperlimb.9. /zj_humanoid/upperlimb/go_down/left_arm
 
 | Field | Value |
 |-------|-------|
@@ -497,7 +593,7 @@ Total: 87 services in 8 subsystems
 | **Type** | `std_srvs/Trigger` |
 | **Description** | 左臂放下 |
 
-### upperlimb.7. /zj_humanoid/upperlimb/go_down/right_arm
+### upperlimb.10. /zj_humanoid/upperlimb/go_down/right_arm
 
 | Field | Value |
 |-------|-------|
@@ -505,7 +601,7 @@ Total: 87 services in 8 subsystems
 | **Type** | `std_srvs/Trigger` |
 | **Description** | 右臂放下 |
 
-### upperlimb.8. /zj_humanoid/upperlimb/go_home/dual_arm
+### upperlimb.11. /zj_humanoid/upperlimb/go_home/dual_arm
 
 | Field | Value |
 |-------|-------|
@@ -514,7 +610,7 @@ Total: 87 services in 8 subsystems
 | **Description** | 双臂回到home点 |
 | **Note** | 双臂回到内置设置的home点 |
 
-### upperlimb.9. /zj_humanoid/upperlimb/go_home/left_arm
+### upperlimb.12. /zj_humanoid/upperlimb/go_home/left_arm
 
 | Field | Value |
 |-------|-------|
@@ -523,16 +619,16 @@ Total: 87 services in 8 subsystems
 | **Description** | 左臂回到home点 |
 | **Note** | 左臂回到内置设置的home点 |
 
-### upperlimb.10. /zj_humanoid/upperlimb/go_home/lifting
+### upperlimb.13. /zj_humanoid/upperlimb/go_home/lifting
 
 | Field | Value |
 |-------|-------|
 | **Service Name** | `/zj_humanoid/upperlimb/go_home/lifting` |
 | **Type** | `std_srvs/Trigger` |
-| **Description** | 升降回到内home点 |
+| **Description** | 升降回到home点 |
 | **Note** | 升降回到内置设置的home点 |
 
-### upperlimb.11. /zj_humanoid/upperlimb/go_home/neck
+### upperlimb.14. /zj_humanoid/upperlimb/go_home/neck
 
 | Field | Value |
 |-------|-------|
@@ -541,7 +637,7 @@ Total: 87 services in 8 subsystems
 | **Description** | 脖子回到home点 |
 | **Note** | 脖子回到内置设置的home点 |
 
-### upperlimb.12. /zj_humanoid/upperlimb/go_home/right_arm
+### upperlimb.15. /zj_humanoid/upperlimb/go_home/right_arm
 
 | Field | Value |
 |-------|-------|
@@ -550,7 +646,7 @@ Total: 87 services in 8 subsystems
 | **Description** | 右臂回到home点 |
 | **Note** | 右臂回到内置设置的home点 |
 
-### upperlimb.13. /zj_humanoid/upperlimb/go_home/waist
+### upperlimb.16. /zj_humanoid/upperlimb/go_home/waist
 
 | Field | Value |
 |-------|-------|
@@ -559,7 +655,7 @@ Total: 87 services in 8 subsystems
 | **Description** | 腰部回到home点 |
 | **Note** | 腰部回到内置设置的home点 |
 
-### upperlimb.14. /zj_humanoid/upperlimb/go_home/whole_body
+### upperlimb.17. /zj_humanoid/upperlimb/go_home/whole_body
 
 | Field | Value |
 |-------|-------|
@@ -568,7 +664,61 @@ Total: 87 services in 8 subsystems
 | **Description** | 全身回到home点 |
 | **Note** | 全身指定部位回到内置设置的home点 |
 
-### upperlimb.15. /zj_humanoid/upperlimb/movej/dual_arm
+### upperlimb.18. /zj_humanoid/upperlimb/is_singular/left_arm
+
+| Field | Value |
+|-------|-------|
+| **Service Name** | `/zj_humanoid/upperlimb/is_singular/left_arm` |
+| **Type** | `std_srvs/Trigger` |
+| **Description** | 检查左臂奇异点 |
+| **Note** | 检查左臂当前位置是否处于奇异点配置 |
+
+### upperlimb.19. /zj_humanoid/upperlimb/is_singular/right_arm
+
+| Field | Value |
+|-------|-------|
+| **Service Name** | `/zj_humanoid/upperlimb/is_singular/right_arm` |
+| **Type** | `std_srvs/Trigger` |
+| **Description** | 检查右臂奇异点 |
+| **Note** | 检查右臂当前位置是否处于奇异点配置 |
+
+### upperlimb.20. /zj_humanoid/upperlimb/motion/lists
+
+| Field | Value |
+|-------|-------|
+| **Service Name** | `/zj_humanoid/upperlimb/motion/lists` |
+| **Type** | `upperlimb/MotionLists` |
+| **Description** | 获取动作列表 |
+| **Note** | 获取可用的预定义动作列表 |
+
+### upperlimb.21. /zj_humanoid/upperlimb/motion/load
+
+| Field | Value |
+|-------|-------|
+| **Service Name** | `/zj_humanoid/upperlimb/motion/load` |
+| **Type** | `upperlimb/MotionLoad` |
+| **Description** | 加载动作文件 |
+| **Note** | 从文件加载预定义动作到内存 |
+
+### upperlimb.22. /zj_humanoid/upperlimb/motion/loaded_lists
+
+| Field | Value |
+|-------|-------|
+| **Service Name** | `/zj_humanoid/upperlimb/motion/loaded_lists` |
+| **Type** | `upperlimb/MotionLoadedLists` |
+| **Description** | 获取已加载动作列表 |
+| **Note** | 获取当前已加载到内存的动作列表 |
+
+### upperlimb.23. /zj_humanoid/upperlimb/motion/unload
+
+| Field | Value |
+|-------|-------|
+| **Service Name** | `/zj_humanoid/upperlimb/motion/unload` |
+| **Type** | `upperlimb/MotionUnload` |
+| **Description** | 卸载动作文件 |
+| **Note** | 从内存中卸载指定的预定义动作 |
+
+### upperlimb.24. /zj_humanoid/upperlimb/movej/dual_arm
 
 | Field | Value |
 |-------|-------|
@@ -577,7 +727,7 @@ Total: 87 services in 8 subsystems
 | **Description** | 双臂movej |
 | **Note** | 关节空间下,双臂点到点运动 |
 
-### upperlimb.16. /zj_humanoid/upperlimb/movej/left_arm
+### upperlimb.25. /zj_humanoid/upperlimb/movej/left_arm
 
 | Field | Value |
 |-------|-------|
@@ -586,16 +736,16 @@ Total: 87 services in 8 subsystems
 | **Description** | 左臂movej |
 | **Note** | 关节空间下,左臂点到点运动 |
 
-### upperlimb.17. /zj_humanoid/upperlimb/movej/lift
+### upperlimb.26. /zj_humanoid/upperlimb/movej/lifting
 
 | Field | Value |
 |-------|-------|
-| **Service Name** | `/zj_humanoid/upperlimb/movej/lift` |
+| **Service Name** | `/zj_humanoid/upperlimb/movej/lifting` |
 | **Type** | `upperlimb/MoveJ` |
 | **Description** | 升降movej |
 | **Note** | 关节空间下,升降点到点运动 |
 
-### upperlimb.18. /zj_humanoid/upperlimb/movej/neck
+### upperlimb.27. /zj_humanoid/upperlimb/movej/neck
 
 | Field | Value |
 |-------|-------|
@@ -604,7 +754,7 @@ Total: 87 services in 8 subsystems
 | **Description** | 脖子movej |
 | **Note** | 关节空间下,脖子点到点运动 |
 
-### upperlimb.19. /zj_humanoid/upperlimb/movej/right_arm
+### upperlimb.28. /zj_humanoid/upperlimb/movej/right_arm
 
 | Field | Value |
 |-------|-------|
@@ -613,7 +763,7 @@ Total: 87 services in 8 subsystems
 | **Description** | 右臂movej |
 | **Note** | 关节空间下,右臂点到点运动 |
 
-### upperlimb.20. /zj_humanoid/upperlimb/movej/waist
+### upperlimb.29. /zj_humanoid/upperlimb/movej/waist
 
 | Field | Value |
 |-------|-------|
@@ -622,7 +772,7 @@ Total: 87 services in 8 subsystems
 | **Description** | 腰部movej |
 | **Note** | 关节空间下,腰部点到点运动 |
 
-### upperlimb.21. /zj_humanoid/upperlimb/movej/whole_body
+### upperlimb.30. /zj_humanoid/upperlimb/movej/whole_body
 
 | Field | Value |
 |-------|-------|
@@ -631,7 +781,7 @@ Total: 87 services in 8 subsystems
 | **Description** | 全身movej |
 | **Note** | 关节空间下,全身各部位点到点运动 |
 
-### upperlimb.22. /zj_humanoid/upperlimb/movej_by_path/dual_arm
+### upperlimb.31. /zj_humanoid/upperlimb/movej_by_path/dual_arm
 
 | Field | Value |
 |-------|-------|
@@ -640,7 +790,7 @@ Total: 87 services in 8 subsystems
 | **Description** | 双臂轨迹movej |
 | **Note** | 关节空间下,双臂轨迹点路径运动 |
 
-### upperlimb.23. /zj_humanoid/upperlimb/movej_by_path/left_arm
+### upperlimb.32. /zj_humanoid/upperlimb/movej_by_path/left_arm
 
 | Field | Value |
 |-------|-------|
@@ -649,7 +799,25 @@ Total: 87 services in 8 subsystems
 | **Description** | 左臂轨迹movej |
 | **Note** | 关节空间下,左臂轨迹点路径运动 |
 
-### upperlimb.24. /zj_humanoid/upperlimb/movej_by_path/right_arm
+### upperlimb.33. /zj_humanoid/upperlimb/movej_by_path/lifting
+
+| Field | Value |
+|-------|-------|
+| **Service Name** | `/zj_humanoid/upperlimb/movej_by_path/lifting` |
+| **Type** | `upperlimb/MoveJByPath` |
+| **Description** | 关节空间下,脖子轨迹点路径运动 |
+| **Note** | 控制颈部按照关节空间路径运动 |
+
+### upperlimb.34. /zj_humanoid/upperlimb/movej_by_path/neck
+
+| Field | Value |
+|-------|-------|
+| **Service Name** | `/zj_humanoid/upperlimb/movej_by_path/neck` |
+| **Type** | `upperlimb/MoveJByPath` |
+| **Description** | 关节空间下,脖子轨迹点路径运动 |
+| **Note** | 控制颈部按照关节空间路径运动 |
+
+### upperlimb.35. /zj_humanoid/upperlimb/movej_by_path/right_arm
 
 | Field | Value |
 |-------|-------|
@@ -658,7 +826,25 @@ Total: 87 services in 8 subsystems
 | **Description** | 右臂轨迹movej |
 | **Note** | 关节空间下,右臂轨迹点路径运动 |
 
-### upperlimb.25. /zj_humanoid/upperlimb/movej_by_pose/dual_arm
+### upperlimb.36. /zj_humanoid/upperlimb/movej_by_path/waist
+
+| Field | Value |
+|-------|-------|
+| **Service Name** | `/zj_humanoid/upperlimb/movej_by_path/waist` |
+| **Type** | `upperlimb/MoveJByPath` |
+| **Description** | 关节空间下,腰部轨迹点路径运动 |
+| **Note** | 控制腰部按照关节空间路径运动 |
+
+### upperlimb.37. /zj_humanoid/upperlimb/movej_by_path/whole_body
+
+| Field | Value |
+|-------|-------|
+| **Service Name** | `/zj_humanoid/upperlimb/movej_by_path/whole_body` |
+| **Type** | `upperlimb/MoveJByPath` |
+| **Description** | 关节空间下,全身轨迹点路径运动 |
+| **Note** | 控制全身按照关节空间路径运动 |
+
+### upperlimb.38. /zj_humanoid/upperlimb/movej_by_pose/dual_arm
 
 | Field | Value |
 |-------|-------|
@@ -667,7 +853,7 @@ Total: 87 services in 8 subsystems
 | **Description** | 双臂末端movej |
 | **Note** | tcp末端空间下,双臂末端位姿movej |
 
-### upperlimb.26. /zj_humanoid/upperlimb/movej_by_pose/left_arm
+### upperlimb.39. /zj_humanoid/upperlimb/movej_by_pose/left_arm
 
 | Field | Value |
 |-------|-------|
@@ -676,7 +862,7 @@ Total: 87 services in 8 subsystems
 | **Description** | 左臂末端movej |
 | **Note** | tcp末端空间下,左臂末端位姿movej |
 
-### upperlimb.27. /zj_humanoid/upperlimb/movej_by_pose/right_arm
+### upperlimb.40. /zj_humanoid/upperlimb/movej_by_pose/right_arm
 
 | Field | Value |
 |-------|-------|
@@ -685,7 +871,7 @@ Total: 87 services in 8 subsystems
 | **Description** | 右臂末端movej |
 | **Note** | tcp末端空间下,右臂末端位姿movej |
 
-### upperlimb.28. /zj_humanoid/upperlimb/movel/dual_arm
+### upperlimb.41. /zj_humanoid/upperlimb/movel/dual_arm
 
 | Field | Value |
 |-------|-------|
@@ -694,7 +880,7 @@ Total: 87 services in 8 subsystems
 | **Description** | 双臂movel |
 | **Note** | 关节空间下,双臂直线轨迹点运动 |
 
-### upperlimb.29. /zj_humanoid/upperlimb/movel/left_arm
+### upperlimb.42. /zj_humanoid/upperlimb/movel/left_arm
 
 | Field | Value |
 |-------|-------|
@@ -703,7 +889,7 @@ Total: 87 services in 8 subsystems
 | **Description** | 左臂movel |
 | **Note** | 关节空间下,左臂直线轨迹点运动 |
 
-### upperlimb.30. /zj_humanoid/upperlimb/movel/right_arm
+### upperlimb.43. /zj_humanoid/upperlimb/movel/right_arm
 
 | Field | Value |
 |-------|-------|
@@ -712,61 +898,61 @@ Total: 87 services in 8 subsystems
 | **Description** | 右臂movel |
 | **Note** | 关节空间下,右臂直线轨迹点运动 |
 
-### upperlimb.31. /zj_humanoid/upperlimb/servoj/clear_params
+### upperlimb.44. /zj_humanoid/upperlimb/movel_by_path/dual_arm
 
 | Field | Value |
 |-------|-------|
-| **Service Name** | `/zj_humanoid/upperlimb/servoj/clear_params` |
+| **Service Name** | `/zj_humanoid/upperlimb/movel_by_path/dual_arm` |
+| **Type** | `upperlimb/MoveJByPath` |
+| **Description** | 双臂轨迹movej |
+| **Note** | 关节空间下,双臂轨迹点路径运动 |
+
+### upperlimb.45. /zj_humanoid/upperlimb/movel_by_path/left_arm
+
+| Field | Value |
+|-------|-------|
+| **Service Name** | `/zj_humanoid/upperlimb/movel_by_path/left_arm` |
+| **Type** | `upperlimb/MoveJByPath` |
+| **Description** | 左臂轨迹movej |
+| **Note** | 关节空间下,左臂轨迹点路径运动 |
+
+### upperlimb.46. /zj_humanoid/upperlimb/movel_by_path/right_arm
+
+| Field | Value |
+|-------|-------|
+| **Service Name** | `/zj_humanoid/upperlimb/movel_by_path/right_arm` |
+| **Type** | `upperlimb/MoveJByPath` |
+| **Description** | 右臂轨迹movej |
+| **Note** | 关节空间下,右臂轨迹点路径运动 |
+
+### upperlimb.47. /zj_humanoid/upperlimb/safety_lock
+
+| Field | Value |
+|-------|-------|
+| **Service Name** | `/zj_humanoid/upperlimb/safety_lock` |
+| **Type** | `std_srvs/Trigger` |
+| **Description** | 安全锁定 |
+| **Note** | 启用上肢安全锁定,防止意外运动 |
+
+### upperlimb.48. /zj_humanoid/upperlimb/set_servo_params
+
+| Field | Value |
+|-------|-------|
+| **Service Name** | `/zj_humanoid/upperlimb/set_servo_params` |
 | **Type** | `upperlimb/Servo` |
-| **Description** | 退出servoj |
-| **Note** | 退出笛卡尔空间 高频位置跟随控制 |
+| **Description** | 设置伺服参数 |
+| **Note** | 设置上肢伺服参数配置,包括时间和增益参数 |
 
-### upperlimb.32. /zj_humanoid/upperlimb/servoj/set_params
-
-| Field | Value |
-|-------|-------|
-| **Service Name** | `/zj_humanoid/upperlimb/servoj/set_params` |
-| **Type** | `upperlimb/Servo` |
-| **Description** | 设置servoj参数 |
-| **Note** | 设置关节空间 高频位置跟随控制参数 |
-
-### upperlimb.33. /zj_humanoid/upperlimb/servol/clear_params
+### upperlimb.49. /zj_humanoid/upperlimb/stop
 
 | Field | Value |
 |-------|-------|
-| **Service Name** | `/zj_humanoid/upperlimb/servol/clear_params` |
-| **Type** | `upperlimb/Servo` |
-| **Description** | 退出servol |
-| **Note** | 退出笛卡尔空间 高频位置跟随控制 |
-
-### upperlimb.34. /zj_humanoid/upperlimb/servol/set_params
-
-| Field | Value |
-|-------|-------|
-| **Service Name** | `/zj_humanoid/upperlimb/servol/set_params` |
-| **Type** | `upperlimb/Servo` |
-| **Description** | 设置servol参数 |
-| **Note** | 设置笛卡尔空间 高频位置跟随控制参数 |
-
-### upperlimb.35. /zj_humanoid/upperlimb/speedl/enable_speedl
-
-| Field | Value |
-|-------|-------|
-| **Service Name** | `/zj_humanoid/upperlimb/speedl/enable_speedl` |
-| **Type** | `std_srvs/SetBool` |
-| **Description** | 启用speedl |
-| **Note** | 启用笛卡尔空间 速度控制 |
-
-### upperlimb.36. /zj_humanoid/upperlimb/stop_robot
-
-| Field | Value |
-|-------|-------|
-| **Service Name** | `/zj_humanoid/upperlimb/stop_robot` |
+| **Service Name** | `/zj_humanoid/upperlimb/stop` |
 | **Type** | `std_srvs/Trigger` |
 | **Description** | 停止上肢运动 |
-| **Note** | 停止机器人运动 |
+| **Note** | 立即停止上肢所有运动 |
 
-### upperlimb.37. /zj_humanoid/upperlimb/teach_mode/enter
+### upperlimb.50. /zj_humanoid/upperlimb/teach_mode/enter
 
 | Field | Value |
 |-------|-------|
@@ -774,7 +960,7 @@ Total: 87 services in 8 subsystems
 | **Type** | `upperlimb/ArmType` |
 | **Description** | 进入示教模式 |
 
-### upperlimb.38. /zj_humanoid/upperlimb/teach_mode/exit
+### upperlimb.51. /zj_humanoid/upperlimb/teach_mode/exit
 
 | Field | Value |
 |-------|-------|
@@ -782,22 +968,31 @@ Total: 87 services in 8 subsystems
 | **Type** | `upperlimb/ArmType` |
 | **Description** | 退出示教模式 |
 
-### upperlimb.39. /zj_humanoid/upperlimb/versions
+### upperlimb.52. /zj_humanoid/upperlimb/unlock
 
 | Field | Value |
 |-------|-------|
-| **Service Name** | `/zj_humanoid/upperlimb/versions` |
+| **Service Name** | `/zj_humanoid/upperlimb/unlock` |
 | **Type** | `std_srvs/Trigger` |
-| **Description** | 上肢模块版本 |
-| **Note** | 查询当前上肢子系统的软件版本号 应回复软件版本号 |
+| **Description** | 解除锁定 |
+| **Note** | 解除上肢安全锁定,允许运动控制 |
+
+### upperlimb.53. /zj_humanoid/upperlimb/version
+
+| Field | Value |
+|-------|-------|
+| **Service Name** | `/zj_humanoid/upperlimb/version` |
+| **Type** | `std_srvs/Trigger` |
+| **Description** | 上肢版本信息 |
+| **Note** | 查询上肢控制模块的版本信息 |
 
 ## Topics
 
-Total: 82 topics in 7 subsystems
+Total: 109 topics in 10 subsystems
 
 ---
 
-## 📡 AUDIO (3 topics)
+## 📡 AUDIO (6 topics)
 
 ### audio.1. /zj_humanoid/audio/asr_text
 
@@ -809,25 +1004,127 @@ Total: 82 topics in 7 subsystems
 | **Description** | 语音转文字 |
 | **Note** | 当前机器人听到了什么 |
 
-### audio.2. /zj_humanoid/audio/audio_data
+### audio.2. /zj_humanoid/audio/listen
 
 | Field | Value |
 |-------|-------|
-| **Topic Name** | `/zj_humanoid/audio/audio_data` |
-| **Type** | `audio/AudioData` |
-| **Direction** | 📤 Publish |
-| **Description** | 音频流数据 |
-| **Note** | 麦克风收音后的音频数据流 |
+| **Topic Name** | `/zj_humanoid/audio/listen` |
+| **Type** | `std_msgs/Bool` |
+| **Direction** | 📥 Subscribe |
+| **Description** | 唤醒控制 |
+| **Note** | 手动唤醒/关闭唤醒模式，true=唤醒，false=休眠 |
 
 ### audio.3. /zj_humanoid/audio/listen_state
 
 | Field | Value |
 |-------|-------|
 | **Topic Name** | `/zj_humanoid/audio/listen_state` |
-| **Type** | `audio/ListenInfo` |
+| **Type** | `std_msgs/Bool` |
 | **Direction** | 📤 Publish |
 | **Description** | 唤醒倾听状态 |
-| **Note** | 当前是否为倾听状态 |
+| **Note** | 当前是否为倾听状态，true=正在倾听，false=未倾听 |
+
+### audio.4. /zj_humanoid/audio/microphone/audio_data
+
+| Field | Value |
+|-------|-------|
+| **Topic Name** | `/zj_humanoid/audio/microphone/audio_data` |
+| **Type** | `audio/AudioData` |
+| **Direction** | 📤 Publish |
+| **Description** | 音频流数据 |
+| **Note** | 麦克风收音后的音频数据流 |
+
+### audio.5. /zj_humanoid/audio/microphone/wake_data
+
+| Field | Value |
+|-------|-------|
+| **Topic Name** | `/zj_humanoid/audio/microphone/wake_data` |
+| **Type** | `audio/AudioData` |
+| **Direction** | 📤 Publish |
+| **Description** | 音频流数据 |
+| **Note** | 麦克风收音后的音频数据流 |
+
+### audio.6. /zj_humanoid/audio/microphone/wake_info
+
+| Field | Value |
+|-------|-------|
+| **Topic Name** | `/zj_humanoid/audio/microphone/wake_info` |
+| **Type** | `audio/AudioData` |
+| **Direction** | 📤 Publish |
+| **Description** | 音频流数据 |
+| **Note** | 麦克风收音后的音频数据流 |
+
+## 📡 CHASSIS (7 topics)
+
+### chassis.1. /zj_humanoid/chassis/agv_imu
+
+| Field | Value |
+|-------|-------|
+| **Topic Name** | `/zj_humanoid/chassis/agv_imu` |
+| **Type** | `sensor_msgs/Imu` |
+| **Direction** | 📤 Publish |
+| **Description** | 底盘IMU数据 |
+| **Note** | 底盘AGV的IMU传感器数据,包含角速度、加速度和姿态信息 |
+
+### chassis.2. /zj_humanoid/chassis/agv_state
+
+| Field | Value |
+|-------|-------|
+| **Topic Name** | `/zj_humanoid/chassis/agv_state` |
+| **Type** | `zj_humanoid_msgs/AgvState` |
+| **Direction** | 📤 Publish |
+| **Description** | 底盘AGV整体状态 |
+| **Note** | 底盘AGV的整体状态信息，包含运行状态、错误代码和系统状态 |
+
+### chassis.3. /zj_humanoid/chassis/calib_vel
+
+| Field | Value |
+|-------|-------|
+| **Topic Name** | `/zj_humanoid/chassis/calib_vel` |
+| **Type** | `zj_humanoid_msgs/VelocityCalibData` |
+| **Direction** | 📤 Publish |
+| **Description** | 底盘速度标定数据 |
+| **Note** | 底盘AGV的速度标定相关数据，用于速度控制系统的校准和优化 |
+
+### chassis.4. /zj_humanoid/chassis/motor_info
+
+| Field | Value |
+|-------|-------|
+| **Topic Name** | `/zj_humanoid/chassis/motor_info` |
+| **Type** | `zj_humanoid_msgs/MotorInfoArray` |
+| **Direction** | 📤 Publish |
+| **Description** | 底盘电机状态信息 |
+| **Note** | 底盘AGV的电机状态信息数组，包含各电机的电流、速度、温度等参数 |
+
+### chassis.5. /zj_humanoid/chassis/odom_info
+
+| Field | Value |
+|-------|-------|
+| **Topic Name** | `/zj_humanoid/chassis/odom_info` |
+| **Type** | `nav_msgs/Odometry` |
+| **Direction** | 📤 Publish |
+| **Description** | 底盘里程计信息 |
+| **Note** | 底盘里程计数据,包含位置、速度等信息 |
+
+### chassis.6. /zj_humanoid/chassis/steer_command
+
+| Field | Value |
+|-------|-------|
+| **Topic Name** | `/zj_humanoid/chassis/steer_command` |
+| **Type** | `zj_humanoid_msgs/SteerCommand` |
+| **Direction** | 📥 Subscribe |
+| **Description** | 底盘转向控制指令 |
+| **Note** | 发送到底盘的转向控制指令，包含目标角度和速度 |
+
+### chassis.7. /zj_humanoid/chassis/steer_info
+
+| Field | Value |
+|-------|-------|
+| **Topic Name** | `/zj_humanoid/chassis/steer_info` |
+| **Type** | `zj_humanoid_msgs/SteerInfo` |
+| **Direction** | 📤 Publish |
+| **Description** | 底盘转向状态信息 |
+| **Note** | 底盘AGV的转向状态信息，包含当前转向角度、速度和目标位置 |
 
 ## 📡 HAND (5 topics)
 
@@ -838,8 +1135,8 @@ Total: 82 topics in 7 subsystems
 | **Topic Name** | `/zj_humanoid/hand/finger_pressures/left` |
 | **Type** | `hand/PressureSensor` |
 | **Direction** | 📤 Publish |
-| **Description** | 左手压力传感器 |
-| **Note** | 当前左手压力传感器数值 |
+| **Description** | 左手指尖压力 |
+| **Note** | 接收左手指尖压力传感器数据,压力值顺序为[大拇指,食指,中指,无名指,小拇指],单位为0.1N |
 
 ### hand.2. /zj_humanoid/hand/finger_pressures/right
 
@@ -848,8 +1145,8 @@ Total: 82 topics in 7 subsystems
 | **Topic Name** | `/zj_humanoid/hand/finger_pressures/right` |
 | **Type** | `hand/PressureSensor` |
 | **Direction** | 📤 Publish |
-| **Description** | 右手压力传感器数据 |
-| **Note** | 当前右手压力传感器数值 |
+| **Description** | 右手指尖压力 |
+| **Note** | 接收右手指尖压力传感器数据,压力值顺序为[大拇指,食指,中指,无名指,小拇指],单位为0.1N |
 
 ### hand.3. /zj_humanoid/hand/joint_states
 
@@ -859,7 +1156,7 @@ Total: 82 topics in 7 subsystems
 | **Type** | `sensor_msgs/JointState` |
 | **Direction** | 📤 Publish |
 | **Description** | 手部关节状态 |
-| **Note** | 当前左手食指的角度是多少 应回复0-80度之间 |
+| **Note** | 订阅手部所有关节的位置状态,包括左右手各6个关节:拇指弯曲、拇指摆动、食指弯曲、中指弯曲、无名指弯曲、小指弯曲 |
 
 ### hand.4. /zj_humanoid/hand/wrist_force_sensor/left
 
@@ -868,8 +1165,8 @@ Total: 82 topics in 7 subsystems
 | **Topic Name** | `/zj_humanoid/hand/wrist_force_sensor/left` |
 | **Type** | `geometry_msgs/WrenchStamped` |
 | **Direction** | 📤 Publish |
-| **Description** | 右手腕部传感器值 |
-| **Note** | 当前左手腕部的检测到多少力 应回复0牛顿 |
+| **Description** | 左手腕力传感器 |
+| **Note** | 发布左手腕力传感器数据,包括力和力矩的三轴分量 |
 
 ### hand.5. /zj_humanoid/hand/wrist_force_sensor/right
 
@@ -878,10 +1175,10 @@ Total: 82 topics in 7 subsystems
 | **Topic Name** | `/zj_humanoid/hand/wrist_force_sensor/right` |
 | **Type** | `geometry_msgs/WrenchStamped` |
 | **Direction** | 📤 Publish |
-| **Description** | 左手腕部传感器值 |
-| **Note** | 当前右手腕部的检测到多少力 应回复0牛顿 |
+| **Description** | 右手腕力传感器 |
+| **Note** | 接收右手腕力传感器数据,包括力和力矩的三轴分量 |
 
-## 📡 LOWERLIMB (9 topics)
+## 📡 LOWERLIMB (11 topics)
 
 ### lowerlimb.1. /zj_humanoid/lowerlimb/body_imu
 
@@ -891,6 +1188,7 @@ Total: 82 topics in 7 subsystems
 | **Type** | `sensor_msgs/JointState` |
 | **Direction** | 📤 Publish |
 | **Description** | 腰部imu值 |
+| **Note** | 在双足I2机器人中，IMU位于URDF中的base_link，轮臂机器人目前暂不适用该topic |
 
 ### lowerlimb.2. /zj_humanoid/lowerlimb/cmd_vel/calib
 
@@ -900,6 +1198,7 @@ Total: 82 topics in 7 subsystems
 | **Type** | `geometry_msgs/Twist` |
 | **Direction** | 📥 Subscribe |
 | **Description** | 导航控制行走 |
+| **Note** | 在多个cmd_vel topic中，优先级joy > calib > web |
 
 ### lowerlimb.3. /zj_humanoid/lowerlimb/cmd_vel/joy
 
@@ -909,6 +1208,7 @@ Total: 82 topics in 7 subsystems
 | **Type** | `geometry_msgs/Twist` |
 | **Direction** | 📥 Subscribe |
 | **Description** | 游戏手柄控制行走 |
+| **Note** | 在多个cmd_vel topic中，优先级joy > calib > web |
 
 ### lowerlimb.4. /zj_humanoid/lowerlimb/cmd_vel/web
 
@@ -918,6 +1218,7 @@ Total: 82 topics in 7 subsystems
 | **Type** | `geometry_msgs/Twist` |
 | **Direction** | 📥 Subscribe |
 | **Description** | 网页控制行走 |
+| **Note** | 在多个cmd_vel topic中，优先级joy > calib > web |
 
 ### lowerlimb.5. /zj_humanoid/lowerlimb/debug_info
 
@@ -927,17 +1228,17 @@ Total: 82 topics in 7 subsystems
 | **Type** | `std_msgs/String` |
 | **Direction** | 📤 Publish |
 | **Description** | 运控debug信息 |
-| **Note** | 运控debug信息 |
+| **Note** | 双足型号运控debug信息，轮臂机器人暂不适用 |
 
-### lowerlimb.6. /zj_humanoid/lowerlimb/occupancy_state
+### lowerlimb.6. /zj_humanoid/lowerlimb/motor_info
 
 | Field | Value |
 |-------|-------|
-| **Topic Name** | `/zj_humanoid/lowerlimb/occupancy_state` |
-| **Type** | `std_msgs/Float32` |
+| **Topic Name** | `/zj_humanoid/lowerlimb/motor_info` |
+| **Type** | `sensor_msgs/JointState` |
 | **Direction** | 📤 Publish |
-| **Description** | 上肢模式控制 |
-| **Note** | 上肢模式控制，可设置为下肢控制模式 |
+| **Description** | 下肢电机信息 |
+| **Note** | 发布下肢各电机的状态信息，包括位置、速度、力矩等 |
 
 ### lowerlimb.7. /zj_humanoid/lowerlimb/set_lie
 
@@ -947,7 +1248,7 @@ Total: 82 topics in 7 subsystems
 | **Type** | `std_msgs/Float32` |
 | **Direction** | 📥 Subscribe |
 | **Description** | 下肢泄力 |
-| **Note** | 下肢泄力，软急停 |
+| **Note** | 双足型号下肢泄力，软急停，轮臂机器人暂不适用 |
 
 ### lowerlimb.8. /zj_humanoid/lowerlimb/set_stand
 
@@ -957,7 +1258,7 @@ Total: 82 topics in 7 subsystems
 | **Type** | `std_msgs/Float32` |
 | **Direction** | 📥 Subscribe |
 | **Description** | 站立姿态 |
-| **Note** | 站立姿态初始化 |
+| **Note** | 双足机器人站立姿态初始化，轮臂机器人暂不适用 |
 
 ### lowerlimb.9. /zj_humanoid/lowerlimb/start_move
 
@@ -967,9 +1268,40 @@ Total: 82 topics in 7 subsystems
 | **Type** | `std_msgs/Float32` |
 | **Direction** | 📥 Subscribe |
 | **Description** | 开启运动模式 |
-| **Note** | 开启运动模式，算法开始响应速度控制请求 |
+| **Note** | 双足机器人开启运动模式，算法开始响应速度控制请求，轮臂机器人暂不适用 |
 
-## 📡 NAVIGATION (5 topics)
+### lowerlimb.10. /zj_humanoid/lowerlimb/state
+
+| Field | Value |
+|-------|-------|
+| **Topic Name** | `/zj_humanoid/lowerlimb/state` |
+| **Type** | `sensor_msgs/JointState` |
+| **Direction** | 📤 Publish |
+| **Description** | 下肢状态信息 |
+| **Note** | 发布下肢整体状态信息，包括当前姿态、运动状态等 |
+
+### lowerlimb.11. /zj_humanoid/lowerlimb/version
+
+| Field | Value |
+|-------|-------|
+| **Topic Name** | `/zj_humanoid/lowerlimb/version` |
+| **Type** | `std_msgs/String` |
+| **Direction** | 📤 Publish |
+| **Description** | 下肢模块版本信息 |
+| **Note** | 发布下肢模块的版本信息，与service版本获取功能一致 |
+
+## 📡 MANIPULATION (1 topics)
+
+### manipulation.1. /zj_humanoid/manipulation/instance_segmentation_action/goal
+
+| Field | Value |
+|-------|-------|
+| **Topic Name** | `/zj_humanoid/manipulation/instance_segmentation_action/goal` |
+| **Type** | `manipulation/InstSeg` |
+| **Direction** | 📤 Publish |
+| **Description** | 实例分割Action |
+
+## 📡 NAVIGATION (3 topics)
 
 ### navigation.1. /zj_humanoid/navigation/local_map
 
@@ -980,17 +1312,7 @@ Total: 82 topics in 7 subsystems
 | **Direction** | 📥 Subscribe |
 | **Description** | 局部障碍物信息 |
 
-### navigation.2. /zj_humanoid/navigation/map
-
-| Field | Value |
-|-------|-------|
-| **Topic Name** | `/zj_humanoid/navigation/map` |
-| **Type** | `nav_msgs/OccupancyGrid` |
-| **Direction** | 📥 Subscribe |
-| **Description** | 全局地图信息 |
-| **Note** | 全局地图信息 |
-
-### navigation.3. /zj_humanoid/navigation/navigation_status
+### navigation.2. /zj_humanoid/navigation/navigation_status
 
 | Field | Value |
 |-------|-------|
@@ -1000,7 +1322,7 @@ Total: 82 topics in 7 subsystems
 | **Description** | 当前导航状态 |
 | **Note** | 当前导航状态信息 |
 
-### navigation.4. /zj_humanoid/navigation/odom_info
+### navigation.3. /zj_humanoid/navigation/odom_info
 
 | Field | Value |
 |-------|-------|
@@ -1010,15 +1332,17 @@ Total: 82 topics in 7 subsystems
 | **Description** | 当前位姿信息 |
 | **Note** | 当前位姿信息，有定位时才会输出结果 |
 
-### navigation.5. /zj_humanoid/navigation/task_info
+## 📡 OTHER (1 topics)
+
+### other.1. /map
 
 | Field | Value |
 |-------|-------|
-| **Topic Name** | `/zj_humanoid/navigation/task_info` |
-| **Type** | `navigation/TakInfo` |
-| **Direction** | 📤 Publish |
-| **Description** | 发布导航任务 |
-| **Note** | 任务信息，该话题仅发布导航任务，不返回导航的结果 |
+| **Topic Name** | `/map` |
+| **Type** | `nav_msgs/OccupancyGrid` |
+| **Direction** | 📥 Subscribe |
+| **Description** | 全局地图信息 |
+| **Note** | 全局地图信息 |
 
 ## 📡 ROBOT (10 topics)
 
@@ -1112,17 +1436,17 @@ Total: 82 topics in 7 subsystems
 | **Description** | 机器人状态机值 |
 | **Note** | 机器人状态机值实时发布，只有当机器人进入RUN状态，机器人才能进行动作的执行，机器人当前处于什么状态 回复应包含：RUN状态 |
 
-### robot.10. /zj_humanoid/robot/work_status_form_start
+### robot.10. /zj_humanoid/robot/work_status_from_start
 
 | Field | Value |
 |-------|-------|
-| **Topic Name** | `/zj_humanoid/robot/work_status_form_start` |
+| **Topic Name** | `/zj_humanoid/robot/work_status_from_start` |
 | **Type** | `zj_robot/WorkStatus` |
 | **Direction** | 📤 Publish |
 | **Description** | 工作状态 |
 | **Note** | 机器人开机后单次工作状态发布，包含已运行时间，剩余工作时间，行进里程数等，描述下机器人本次开机后工作状态 回复因包含：已运行时间，剩余工作时间，行进里程数 |
 
-## 📡 SENSOR (27 topics)
+## 📡 SENSOR (36 topics)
 
 ### sensor.1. /zj_humanoid/sensor/CAM_A/compressed
 
@@ -1304,7 +1628,97 @@ Total: 82 topics in 7 subsystems
 | **Description** | 腹部深度压缩图 |
 | **Note** | 腹部深度相机的RGB图像JPG格式 |
 
-### sensor.19. /zj_humanoid/sensor/realsense_up/aligned_depth_to_color/camera_info
+### sensor.19. /zj_humanoid/sensor/realsense_head/aligned_depth_to_color/camera_info
+
+| Field | Value |
+|-------|-------|
+| **Topic Name** | `/zj_humanoid/sensor/realsense_head/aligned_depth_to_color/camera_info` |
+| **Type** | `sensor_msgs/CameraInfo` |
+| **Direction** | 📤 Publish |
+| **Description** | 头部深度aligned参数 |
+| **Note** | 头部深度相机的aligned_depth_to_color参数信息 |
+
+### sensor.20. /zj_humanoid/sensor/realsense_head/aligned_depth_to_color/image_raw
+
+| Field | Value |
+|-------|-------|
+| **Topic Name** | `/zj_humanoid/sensor/realsense_head/aligned_depth_to_color/image_raw` |
+| **Type** | `sensor_msgs/Image` |
+| **Direction** | 📤 Publish |
+| **Description** | 头部深度aligned图像 |
+| **Note** | 头部深度相机的aligned_depth_to_color RGB图像源数据 |
+
+### sensor.21. /zj_humanoid/sensor/realsense_head/aligned_depth_to_color/image_raw/compressed
+
+| Field | Value |
+|-------|-------|
+| **Topic Name** | `/zj_humanoid/sensor/realsense_head/aligned_depth_to_color/image_raw/compressed` |
+| **Type** | `sensor_msgs/Image` |
+| **Direction** | 📤 Publish |
+| **Description** | 头部深度aligned压缩图 |
+| **Note** | 头部深度相机的aligned_depth_to_color压缩格式 |
+
+### sensor.22. /zj_humanoid/sensor/realsense_head/color/camera_info
+
+| Field | Value |
+|-------|-------|
+| **Topic Name** | `/zj_humanoid/sensor/realsense_head/color/camera_info` |
+| **Type** | `sensor_msgs/CameraInfo` |
+| **Direction** | 📤 Publish |
+| **Description** | 头部深度RGB参数 |
+| **Note** | 头部深度相机的参数信息 |
+
+### sensor.23. /zj_humanoid/sensor/realsense_head/color/image_raw
+
+| Field | Value |
+|-------|-------|
+| **Topic Name** | `/zj_humanoid/sensor/realsense_head/color/image_raw` |
+| **Type** | `sensor_msgs/Image` |
+| **Direction** | 📤 Publish |
+| **Description** | 头部深度RGB图像 |
+| **Note** | 头部深度相机的RGB图像源数据 |
+
+### sensor.24. /zj_humanoid/sensor/realsense_head/color/image_raw/compressed
+
+| Field | Value |
+|-------|-------|
+| **Topic Name** | `/zj_humanoid/sensor/realsense_head/color/image_raw/compressed` |
+| **Type** | `sensor_msgs/Image` |
+| **Direction** | 📤 Publish |
+| **Description** | 头部深度压缩图 |
+| **Note** | 头部深度相机的RGB图像JPG格式 |
+
+### sensor.25. /zj_humanoid/sensor/realsense_head/depth/camera_info
+
+| Field | Value |
+|-------|-------|
+| **Topic Name** | `/zj_humanoid/sensor/realsense_head/depth/camera_info` |
+| **Type** | `sensor_msgs/CameraInfo` |
+| **Direction** | 📤 Publish |
+| **Description** | 头部相机深度参数 |
+| **Note** | 头部深度相机的参数信息 |
+
+### sensor.26. /zj_humanoid/sensor/realsense_head/depth/image_rect_raw
+
+| Field | Value |
+|-------|-------|
+| **Topic Name** | `/zj_humanoid/sensor/realsense_head/depth/image_rect_raw` |
+| **Type** | `sensor_msgs/Image` |
+| **Direction** | 📤 Publish |
+| **Description** | 头部深度RGB图像 |
+| **Note** | 头部深度相机的深度图像源数据 |
+
+### sensor.27. /zj_humanoid/sensor/realsense_head/depth/image_rect_raw/compressed
+
+| Field | Value |
+|-------|-------|
+| **Topic Name** | `/zj_humanoid/sensor/realsense_head/depth/image_rect_raw/compressed` |
+| **Type** | `sensor_msgs/Image` |
+| **Direction** | 📤 Publish |
+| **Description** | 头部深度压缩图 |
+| **Note** | 头部深度相机的深度图像JPG格式 |
+
+### sensor.28. /zj_humanoid/sensor/realsense_up/aligned_depth_to_color/camera_info
 
 | Field | Value |
 |-------|-------|
@@ -1314,7 +1728,7 @@ Total: 82 topics in 7 subsystems
 | **Description** | 胸部深度aligned参数 |
 | **Note** | 胸部深度相机的aligned_depth_to_color参数信息 |
 
-### sensor.20. /zj_humanoid/sensor/realsense_up/aligned_depth_to_color/image_raw
+### sensor.29. /zj_humanoid/sensor/realsense_up/aligned_depth_to_color/image_raw
 
 | Field | Value |
 |-------|-------|
@@ -1324,7 +1738,7 @@ Total: 82 topics in 7 subsystems
 | **Description** | 胸部深度aligned图像 |
 | **Note** | 胸部深度相机的aligned_depth_to_color RGB图像源数据 |
 
-### sensor.21. /zj_humanoid/sensor/realsense_up/aligned_depth_to_color/image_raw/compressed
+### sensor.30. /zj_humanoid/sensor/realsense_up/aligned_depth_to_color/image_raw/compressed
 
 | Field | Value |
 |-------|-------|
@@ -1334,7 +1748,7 @@ Total: 82 topics in 7 subsystems
 | **Description** | 胸部深度aligned压缩图 |
 | **Note** | 胸部深度相机的aligned_depth_to_color压缩格式 |
 
-### sensor.22. /zj_humanoid/sensor/realsense_up/color/camera_info
+### sensor.31. /zj_humanoid/sensor/realsense_up/color/camera_info
 
 | Field | Value |
 |-------|-------|
@@ -1344,7 +1758,7 @@ Total: 82 topics in 7 subsystems
 | **Description** | 胸部深度RGB参数 |
 | **Note** | 胸部深度相机的参数信息 |
 
-### sensor.23. /zj_humanoid/sensor/realsense_up/color/image_raw
+### sensor.32. /zj_humanoid/sensor/realsense_up/color/image_raw
 
 | Field | Value |
 |-------|-------|
@@ -1354,7 +1768,7 @@ Total: 82 topics in 7 subsystems
 | **Description** | 胸部深度RGB图像 |
 | **Note** | 胸部深度相机的RGB图像源数据 |
 
-### sensor.24. /zj_humanoid/sensor/realsense_up/color/image_raw/compressed
+### sensor.33. /zj_humanoid/sensor/realsense_up/color/image_raw/compressed
 
 | Field | Value |
 |-------|-------|
@@ -1364,7 +1778,7 @@ Total: 82 topics in 7 subsystems
 | **Description** | 胸部深度压缩图 |
 | **Note** | 胸部深度相机的RGB图像JPG格式 |
 
-### sensor.25. /zj_humanoid/sensor/realsense_up/depth/camera_info
+### sensor.34. /zj_humanoid/sensor/realsense_up/depth/camera_info
 
 | Field | Value |
 |-------|-------|
@@ -1374,17 +1788,17 @@ Total: 82 topics in 7 subsystems
 | **Description** | 胸部相机深度参数 |
 | **Note** | 胸部深度相机的参数信息 |
 
-### sensor.26. /zj_humanoid/sensor/realsense_up/depth/image_rect_raw
+### sensor.35. /zj_humanoid/sensor/realsense_up/depth/image_rect_raw
 
 | Field | Value |
 |-------|-------|
 | **Topic Name** | `/zj_humanoid/sensor/realsense_up/depth/image_rect_raw` |
 | **Type** | `sensor_msgs/Image` |
-| **Direction** | publishs |
+| **Direction** | 📤 Publish |
 | **Description** | 胸部深度RGB图像 |
 | **Note** | 胸部深度相机的RGB图像源数据 |
 
-### sensor.27. /zj_humanoid/sensor/realsense_up/depth/image_rect_raw/compressed
+### sensor.36. /zj_humanoid/sensor/realsense_up/depth/image_rect_raw/compressed
 
 | Field | Value |
 |-------|-------|
@@ -1394,29 +1808,59 @@ Total: 82 topics in 7 subsystems
 | **Description** | 胸部深度压缩图 |
 | **Note** | 胸部深度相机的RGB图像JPG格式 |
 
-## 📡 UPPERLIMB (23 topics)
+## 📡 UPPERLIMB (29 topics)
 
-### upperlimb.1. /zj_humanoid/upperlimb/cmd_states
+### upperlimb.1. /zj_humanoid/upperlimb/jacobian/left_arm
 
 | Field | Value |
 |-------|-------|
-| **Topic Name** | `/zj_humanoid/upperlimb/cmd_states` |
-| **Type** | `upperlimb/CmdState` |
+| **Topic Name** | `/zj_humanoid/upperlimb/jacobian/left_arm` |
+| **Type** | `std_msgs/Float64MultiArray` |
 | **Direction** | 📤 Publish |
-| **Description** | 上肢运行模式 |
-| **Note** | 当前上肢运行模式是什么 回复应处于停止状态 |
+| **Description** | 左臂雅可比矩阵 |
+| **Note** | 发布左臂当前位置的雅可比矩阵,用于速度和力的映射 |
 
-### upperlimb.2. /zj_humanoid/upperlimb/joint_states
+### upperlimb.2. /zj_humanoid/upperlimb/jacobian/right_arm
+
+| Field | Value |
+|-------|-------|
+| **Topic Name** | `/zj_humanoid/upperlimb/jacobian/right_arm` |
+| **Type** | `std_msgs/Float64MultiArray` |
+| **Direction** | 📤 Publish |
+| **Description** | 右臂雅可比矩阵 |
+| **Note** | 发布右臂当前位置的雅可比矩阵,用于速度和力的映射 |
+
+### upperlimb.3. /zj_humanoid/upperlimb/joint_states
 
 | Field | Value |
 |-------|-------|
 | **Topic Name** | `/zj_humanoid/upperlimb/joint_states` |
 | **Type** | `sensor_msgs/JointState` |
 | **Direction** | 📤 Publish |
-| **Description** | 上肢关节位置状态 |
+| **Description** | 上肢关节位置 |
 | **Note** | 机器人上肢关节position状态值发布，查询当前机器人颈部pitch的角度 回复应处于+-42度间 |
 
-### upperlimb.3. /zj_humanoid/upperlimb/servoj/left_arm
+### upperlimb.4. /zj_humanoid/upperlimb/occupancy_state
+
+| Field | Value |
+|-------|-------|
+| **Topic Name** | `/zj_humanoid/upperlimb/occupancy_state` |
+| **Type** | `std_msgs/Int8` |
+| **Direction** | 📥 Subscribe |
+| **Description** | 上肢占用控制 |
+| **Note** | 该话题发布上肢的当前占用状态,用于防止多个控制源同时控制机器人 |
+
+### upperlimb.5. /zj_humanoid/upperlimb/servoj/dual_arm
+
+| Field | Value |
+|-------|-------|
+| **Topic Name** | `/zj_humanoid/upperlimb/servoj/dual_arm` |
+| **Type** | `upperlimb/Joints` |
+| **Direction** | 📤 Publish |
+| **Description** | 双臂servoj |
+| **Note** | 双臂关节空间伺服控制,不要使用定时sleep,该接口执行需要准确的时间戳会达到更好的效果 |
+
+### upperlimb.6. /zj_humanoid/upperlimb/servoj/left_arm
 
 | Field | Value |
 |-------|-------|
@@ -1426,7 +1870,17 @@ Total: 82 topics in 7 subsystems
 | **Description** | 左臂servoj |
 | **Note** | 关节空间 高频位置控制 |
 
-### upperlimb.4. /zj_humanoid/upperlimb/servoj/neck
+### upperlimb.7. /zj_humanoid/upperlimb/servoj/lifting
+
+| Field | Value |
+|-------|-------|
+| **Topic Name** | `/zj_humanoid/upperlimb/servoj/lifting` |
+| **Type** | `upperlimb/Joints` |
+| **Direction** | 📥 Subscribe |
+| **Description** | 全身servoj |
+| **Note** | 关节空间 高频位置控制 |
+
+### upperlimb.8. /zj_humanoid/upperlimb/servoj/neck
 
 | Field | Value |
 |-------|-------|
@@ -1436,7 +1890,7 @@ Total: 82 topics in 7 subsystems
 | **Description** | 颈部servoj |
 | **Note** | 关节空间 高频位置控制 |
 
-### upperlimb.5. /zj_humanoid/upperlimb/servoj/right_arm
+### upperlimb.9. /zj_humanoid/upperlimb/servoj/right_arm
 
 | Field | Value |
 |-------|-------|
@@ -1446,7 +1900,7 @@ Total: 82 topics in 7 subsystems
 | **Description** | 右臂servoj |
 | **Note** | 关节空间 高频位置控制 |
 
-### upperlimb.6. /zj_humanoid/upperlimb/servoj/waist
+### upperlimb.10. /zj_humanoid/upperlimb/servoj/waist
 
 | Field | Value |
 |-------|-------|
@@ -1456,7 +1910,7 @@ Total: 82 topics in 7 subsystems
 | **Description** | 腰部servoj |
 | **Note** | 关节空间 高频位置控制 |
 
-### upperlimb.7. /zj_humanoid/upperlimb/servoj/whole_body
+### upperlimb.11. /zj_humanoid/upperlimb/servoj/whole_body
 
 | Field | Value |
 |-------|-------|
@@ -1466,7 +1920,7 @@ Total: 82 topics in 7 subsystems
 | **Description** | 全身servoj |
 | **Note** | 关节空间 高频位置控制 |
 
-### upperlimb.8. /zj_humanoid/upperlimb/servol/dual_arm
+### upperlimb.12. /zj_humanoid/upperlimb/servol/dual_arm
 
 | Field | Value |
 |-------|-------|
@@ -1476,7 +1930,7 @@ Total: 82 topics in 7 subsystems
 | **Description** | 双臂servol |
 | **Note** | 笛卡尔空间 高频位置跟随控制 |
 
-### upperlimb.9. /zj_humanoid/upperlimb/servol/left_arm
+### upperlimb.13. /zj_humanoid/upperlimb/servol/left_arm
 
 | Field | Value |
 |-------|-------|
@@ -1486,7 +1940,7 @@ Total: 82 topics in 7 subsystems
 | **Description** | 左臂servol |
 | **Note** | 笛卡尔空间 高频位置跟随控制 |
 
-### upperlimb.10. /zj_humanoid/upperlimb/servol/right_arm
+### upperlimb.14. /zj_humanoid/upperlimb/servol/right_arm
 
 | Field | Value |
 |-------|-------|
@@ -1496,17 +1950,17 @@ Total: 82 topics in 7 subsystems
 | **Description** | 右臂servol |
 | **Note** | 笛卡尔空间 高频位置跟随控制 |
 
-### upperlimb.11. /zj_humanoid/upperlimb/speedj/enable_speedj
+### upperlimb.15. /zj_humanoid/upperlimb/speedj/dual_arm
 
 | Field | Value |
 |-------|-------|
-| **Topic Name** | `/zj_humanoid/upperlimb/speedj/enable_speedj` |
-| **Type** | `upperlimb/TcpSpeed` |
-| **Direction** | 📥 Subscribe |
-| **Description** | 启用speedj |
-| **Note** | 启用关节空间速度控制 |
+| **Topic Name** | `/zj_humanoid/upperlimb/speedj/dual_arm` |
+| **Type** | `upperlimb/SpeedJ` |
+| **Direction** | 📤 Publish |
+| **Description** | 双臂关节speedj |
+| **Note** | 双臂关节空间速度控制 |
 
-### upperlimb.12. /zj_humanoid/upperlimb/speedj/left_arm
+### upperlimb.16. /zj_humanoid/upperlimb/speedj/left_arm
 
 | Field | Value |
 |-------|-------|
@@ -1516,17 +1970,17 @@ Total: 82 topics in 7 subsystems
 | **Description** | 左臂speedj |
 | **Note** | 关节空间速度控制 |
 
-### upperlimb.13. /zj_humanoid/upperlimb/speedj/lift
+### upperlimb.17. /zj_humanoid/upperlimb/speedj/lifting
 
 | Field | Value |
 |-------|-------|
-| **Topic Name** | `/zj_humanoid/upperlimb/speedj/lift` |
+| **Topic Name** | `/zj_humanoid/upperlimb/speedj/lifting` |
 | **Type** | `upperlimb/TcpSpeed` |
 | **Direction** | 📥 Subscribe |
 | **Description** | 升降speedj |
 | **Note** | 关节空间速度控制 |
 
-### upperlimb.14. /zj_humanoid/upperlimb/speedj/neck
+### upperlimb.18. /zj_humanoid/upperlimb/speedj/neck
 
 | Field | Value |
 |-------|-------|
@@ -1536,7 +1990,7 @@ Total: 82 topics in 7 subsystems
 | **Description** | 脖子speedj |
 | **Note** | 关节空间速度控制 |
 
-### upperlimb.15. /zj_humanoid/upperlimb/speedj/right_arm
+### upperlimb.19. /zj_humanoid/upperlimb/speedj/right_arm
 
 | Field | Value |
 |-------|-------|
@@ -1546,7 +2000,7 @@ Total: 82 topics in 7 subsystems
 | **Description** | 右臂speedj |
 | **Note** | 关节空间速度控制 |
 
-### upperlimb.16. /zj_humanoid/upperlimb/speedj/waist
+### upperlimb.20. /zj_humanoid/upperlimb/speedj/waist
 
 | Field | Value |
 |-------|-------|
@@ -1556,7 +2010,7 @@ Total: 82 topics in 7 subsystems
 | **Description** | 腰speedj |
 | **Note** | 关节空间速度控制 |
 
-### upperlimb.17. /zj_humanoid/upperlimb/speedj/whole_body
+### upperlimb.21. /zj_humanoid/upperlimb/speedj/whole_body
 
 | Field | Value |
 |-------|-------|
@@ -1566,7 +2020,7 @@ Total: 82 topics in 7 subsystems
 | **Description** | 全身speedj |
 | **Note** | 关节空间速度控制 |
 
-### upperlimb.18. /zj_humanoid/upperlimb/speedl/dual_arm
+### upperlimb.22. /zj_humanoid/upperlimb/speedl/dual_arm
 
 | Field | Value |
 |-------|-------|
@@ -1576,7 +2030,7 @@ Total: 82 topics in 7 subsystems
 | **Description** | 双臂speedl |
 | **Note** | 笛卡尔空间 速度控制 |
 
-### upperlimb.19. /zj_humanoid/upperlimb/speedl/left_arm
+### upperlimb.23. /zj_humanoid/upperlimb/speedl/left_arm
 
 | Field | Value |
 |-------|-------|
@@ -1586,7 +2040,7 @@ Total: 82 topics in 7 subsystems
 | **Description** | 左臂speedl |
 | **Note** | 笛卡尔空间 速度控制 |
 
-### upperlimb.20. /zj_humanoid/upperlimb/speedl/right_arm
+### upperlimb.24. /zj_humanoid/upperlimb/speedl/right_arm
 
 | Field | Value |
 |-------|-------|
@@ -1596,7 +2050,7 @@ Total: 82 topics in 7 subsystems
 | **Description** | 右臂speedl |
 | **Note** | 笛卡尔空间 速度控制 |
 
-### upperlimb.21. /zj_humanoid/upperlimb/tcp_pose/left_arm
+### upperlimb.25. /zj_humanoid/upperlimb/tcp_pose/left_arm
 
 | Field | Value |
 |-------|-------|
@@ -1606,7 +2060,7 @@ Total: 82 topics in 7 subsystems
 | **Description** | 左臂tcp位姿控制 |
 | **Note** | 左手臂末端位姿 |
 
-### upperlimb.22. /zj_humanoid/upperlimb/tcp_pose/right_arm
+### upperlimb.26. /zj_humanoid/upperlimb/tcp_pose/right_arm
 
 | Field | Value |
 |-------|-------|
@@ -1616,21 +2070,41 @@ Total: 82 topics in 7 subsystems
 | **Description** | 右臂tcp位姿控制 |
 | **Note** | 右手臂末端位姿 |
 
-### upperlimb.23. /zj_humanoid/upperlimb/tcp_speed
+### upperlimb.27. /zj_humanoid/upperlimb/tcp_speed/dual_arm
 
 | Field | Value |
 |-------|-------|
-| **Topic Name** | `/zj_humanoid/upperlimb/tcp_speed` |
+| **Topic Name** | `/zj_humanoid/upperlimb/tcp_speed/dual_arm` |
 | **Type** | `upperlimb/TcpSpeed` |
+| **Direction** | 📥 Subscribe |
+| **Description** | 双臂TCP速度 |
+| **Note** | 该话题发布双臂末端执行器(TCP)的实时速度信息 |
+
+### upperlimb.28. /zj_humanoid/upperlimb/uplimb_occupation
+
+| Field | Value |
+|-------|-------|
+| **Topic Name** | `/zj_humanoid/upperlimb/uplimb_occupation` |
+| **Type** | `std_msgs/Int8` |
 | **Direction** | 📤 Publish |
-| **Description** | 双臂tcp速度控制 |
-| **Note** | 左右手臂末端速度 |
+| **Description** | 上肢占用状态 |
+| **Note** | 用于发布上肢占用状态信息 |
+
+### upperlimb.29. /zj_humanoid/upperlimb/uplimb_state
+
+| Field | Value |
+|-------|-------|
+| **Topic Name** | `/zj_humanoid/upperlimb/uplimb_state` |
+| **Type** | `upperlimb/UplimbState` |
+| **Direction** | 📥 Subscribe |
+| **Description** | 当前上肢命令 |
+| **Note** | 该话题发布上肢机器人的当前命令状态信息 |
 
 ---
 
 ## Summary
 
-- **Total Services**: 87
-- **Total Topics**: 82
-- **Total Interfaces**: 169
-- **Subsystems**: 8 (services), 7 (topics)
+- **Total Services**: 108
+- **Total Topics**: 109
+- **Total Interfaces**: 217
+- **Subsystems**: 9 (services), 10 (topics)

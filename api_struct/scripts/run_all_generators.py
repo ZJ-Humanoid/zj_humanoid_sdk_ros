@@ -48,9 +48,10 @@ def main():
     print("╚" + "=" * 68 + "╝")
     
     scripts = [
-        ("generate_whole_yaml.py", "1/3 生成聚合 YAML 文件"),
-        ("generate_json_from_yaml.py", "2/3 生成 JSON 和 Markdown 文档"),
-        ("generate_ros_tests.py", "3/3 生成 ROS 测试脚本"),
+        ("generate_whole_yaml.py", "1/4 生成聚合 YAML 文件"),
+        ("generate_docs_from_yaml.py", "2/4 生成总览 JSON/Markdown/HTML"),
+        ("generate_json_from_yaml.py", "3/4 按机型生成 JSON 文档"),
+        ("generate_vitepress_docs.py", "4/4 生成 VitePress API 文档"),
     ]
     
     results = []
@@ -72,10 +73,10 @@ def main():
         print("\n🎉 所有文件生成成功！")
         print("\n生成的文件位于:")
         print("  - api_struct/generated/zj_humanoid_interfaces.yaml")
+        print("  - api_struct/generated/zj_humanoid_interfaces.json")
         print("  - api_struct/generated/zj_humanoid_interfaces_*.json")
         print("  - api_struct/generated/zj_humanoid_interfaces.md")
-        print("  - api_struct/zj_humanoid/**/topic_test.py")
-        print("  - api_struct/zj_humanoid/**/service_test.py")
+        print("  - docs/src/api/*.md (VitePress API 文档)")
         return 0
     else:
         print("\n⚠️ 部分文件生成失败，请检查错误信息")

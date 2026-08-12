@@ -1,6 +1,6 @@
 project:
   description: 'ZJ Humanoid ROS1 APIs'
-  version: "v1.0.0"
+  version: "v1.2.0"
 
 # 功能模块列表
 modules:

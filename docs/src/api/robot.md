@@ -38,7 +38,7 @@ markmap:
 - battery_info
 - monitor
 - robot_state
-- work_status_form_start
+- work_status_from_start
 - joint_motor
   - errors
   - temperatures
@@ -77,7 +77,7 @@ markmap:
 | 字段 | 值 |
 |------|-----|
 | **Service Name** | /zj_humanoid/robot/face_show/text_show |
-| **Type** | [robot/FaceScreen](../zj_humanoid_types#facescreen) |
+| **Type** | [robot/FaceText](../zj_humanoid_types#facetext) |
 | **Description** | 脸部显示文字 |
 | **Note** | 机器人脸部屏幕显示文字，支持指令显示“Hello World” |
 
@@ -254,11 +254,11 @@ markmap:
 | **Description** | 机器人状态机值 |
 | **Note** | 机器人状态机值实时发布，只有当机器人进入RUN状态，机器人才能进行动作的执行，机器人当前处于什么状态 回复应包含：RUN状态 |
 
-### 10. `work_status_form_start`
+### 10. `work_status_from_start`
 
 | 字段 | 值 |
 |------|-----|
-| **Topic Name** | /zj_humanoid/robot/work_status_form_start |
+| **Topic Name** | /zj_humanoid/robot/work_status_from_start |
 | **Type** | [robot/WorkStatus](../zj_humanoid_types#workstatus) |
 | **Direction** | 📤 Publish |
 | **Description** | 工作状态 |
