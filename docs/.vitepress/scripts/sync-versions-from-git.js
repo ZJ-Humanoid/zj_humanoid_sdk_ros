@@ -53,70 +53,104 @@ function getGitTags() {
 
 /**
  * 从指定标签或分支检出文档
+ * 如果标签指向当前 HEAD（或标签已过期/不存在），则直接从工作目录复制文档
  */
 function checkoutDocsFromRef(ref, versionDir) {
+  // 辅助函数：从工作目录复制 docs/src
+  function copyFromWorkingDir() {
+    if (!fs.existsSync(srcDir)) {
+      console.error(`源目录不存在: ${srcDir}`);
+      return false;
+    }
+    if (fs.existsSync(versionDir)) {
+      fs.rmSync(versionDir, { recursive: true, force: true });
+    }
+    function copyDir(src, dest) {
+      if (!fs.existsSync(dest)) {
+        fs.mkdirSync(dest, { recursive: true });
+      }
+      const entries = fs.readdirSync(src, { withFileTypes: true });
+      for (const entry of entries) {
+        const srcPath = path.join(src, entry.name);
+        const destPath = path.join(dest, entry.name);
+        if (entry.isDirectory()) {
+          copyDir(srcPath, destPath);
+        } else {
+          fs.copyFileSync(srcPath, destPath);
+        }
+      }
+    }
+    copyDir(srcDir, versionDir);
+    console.log(`✓ 从工作目录创建版本目录: ${versionDir}`);
+    return true;
+  }
+
   try {
     // 检查标签/分支是否存在
-    execSync(`git rev-parse --verify ${ref}`, { 
+    const refSha = execSync(`git rev-parse --verify ${ref}`, { 
       encoding: 'utf-8', 
       cwd: projectRoot,
       stdio: 'pipe'
-    });
-    
-    // 临时检出该版本的 docs/src 目录
-    const tempDir = path.join(versionsDir, `.temp-${ref}`);
-    
+    }).trim();
+
+    // 如果 ref 指向当前 HEAD，直接使用工作目录（避免 force-push 标签缓存问题）
     try {
-      // 使用 git show 提取特定目录的内容
-      const docsPath = 'docs/src';
-      const files = execSync(`git ls-tree -r --name-only ${ref} -- ${docsPath}`, {
-        encoding: 'utf-8',
-        cwd: projectRoot
-      }).trim().split('\n').filter(f => f);
-      
-      if (files.length === 0) {
-        console.warn(`标签 ${ref} 中没有找到 docs/src 目录`);
-        return false;
+      const headSha = execSync('git rev-parse HEAD', { encoding: 'utf-8', cwd: projectRoot }).trim();
+      if (headSha === refSha) {
+        console.log(`标签 ${ref} 指向当前 HEAD (${headSha.substring(0,8)})，使用工作目录文档`);
+        return copyFromWorkingDir();
       }
-      
-      // 创建版本目录
-      if (fs.existsSync(versionDir)) {
-        fs.rmSync(versionDir, { recursive: true, force: true });
-      }
-      fs.mkdirSync(versionDir, { recursive: true });
-      
-      // 提取每个文件
-      for (const file of files) {
-        try {
-          const content = execSync(`git show ${ref}:${file}`, {
-            encoding: 'utf-8',
-            cwd: projectRoot,
-            stdio: 'pipe'
-          });
-          
-          const relativePath = path.relative(docsPath, file);
-          const targetPath = path.join(versionDir, relativePath);
-          const targetDir = path.dirname(targetPath);
-          
-          if (!fs.existsSync(targetDir)) {
-            fs.mkdirSync(targetDir, { recursive: true });
-          }
-          
-          fs.writeFileSync(targetPath, content, 'utf-8');
-        } catch (fileError) {
-          console.warn(`无法提取文件 ${file}:`, fileError.message);
-        }
-      }
-      
-      console.log(`✓ 成功从 ${ref} 创建版本目录: ${versionDir}`);
-      return true;
-    } catch (error) {
-      console.error(`从 ${ref} 提取文档失败:`, error.message);
-      return false;
+    } catch (e) {
+      // ignore HEAD check error, continue with tag extraction
     }
+    
+    // 使用 git show 提取特定目录的内容
+    const docsPath = 'docs/src';
+    const files = execSync(`git ls-tree -r --name-only ${ref} -- ${docsPath}`, {
+      encoding: 'utf-8',
+      cwd: projectRoot
+    }).trim().split('\n').filter(f => f);
+    
+    if (files.length === 0) {
+      console.warn(`标签 ${ref} 中没有找到 docs/src 目录，使用工作目录`);
+      return copyFromWorkingDir();
+    }
+    
+    // 创建版本目录
+    if (fs.existsSync(versionDir)) {
+      fs.rmSync(versionDir, { recursive: true, force: true });
+    }
+    fs.mkdirSync(versionDir, { recursive: true });
+    
+    // 提取每个文件
+    for (const file of files) {
+      try {
+        const content = execSync(`git show ${ref}:${file}`, {
+          encoding: 'utf-8',
+          cwd: projectRoot,
+          stdio: 'pipe'
+        });
+        
+        const relativePath = path.relative(docsPath, file);
+        const targetPath = path.join(versionDir, relativePath);
+        const targetDir = path.dirname(targetPath);
+        
+        if (!fs.existsSync(targetDir)) {
+          fs.mkdirSync(targetDir, { recursive: true });
+        }
+        
+        fs.writeFileSync(targetPath, content, 'utf-8');
+      } catch (fileError) {
+        console.warn(`无法提取文件 ${file}:`, fileError.message);
+      }
+    }
+    
+    console.log(`✓ 成功从 ${ref} 创建版本目录: ${versionDir}`);
+    return true;
   } catch (error) {
-    console.warn(`标签/分支 ${ref} 不存在，跳过`);
-    return false;
+    // 标签不存在（如 force-push 后缓存失效），回退到工作目录
+    console.warn(`标签/分支 ${ref} 无法解析 (${error.message})，回退到工作目录`);
+    return copyFromWorkingDir();
   }
 }
 
