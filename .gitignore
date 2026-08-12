@@ -3,7 +3,10 @@ node_modules
 docs/.vitepress/cache
 docs/.vitepress/dist
 dist
-# 忽略版本目录内容（CI 自动生成，不需要提交到仓库）
+# 忽略版本目录中 CI 自动同步产生的内容（从 CI 运行时通过 git tag 拉取同步的版本）
 docs/versions/*
 # 但保留 README.md（如果存在）
 !docs/versions/README.md
+# 手动维护的 v1.5.0 版本目录，需要纳入版本控制
+!docs/versions/1.5.0
+!docs/versions/1.5.0/**

@@ -166,12 +166,17 @@ const rawConfig = defineVersionedConfig({
                     { text: '🦵 Lowerlimb', link: '/api/lowerlimb' },
                     { text: '🔧 Manipulation', link: '/api/manipulation' },
                     { text: '🧭 Navigation', link: '/api/navigation' },
+                    { text: '🗺️ Perception', link: '/api/perception' },
                     { text: '🤖 Robot', link: '/api/robot' },
                     { text: '📷 Sensor', link: '/api/sensor' },
                     { text: '🦾 Upperlimb', link: '/api/upperlimb' },
                   ]
                 }
               ]
+            },
+            {
+              text: '版本变更',
+              link: '/release_notes'
             },
             {
               text: 'Message Type',
